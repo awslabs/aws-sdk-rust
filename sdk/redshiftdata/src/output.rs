@@ -9,6 +9,7 @@ pub struct ListTablesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTablesOutput {
     /// <p>The tables that match the request pattern. </p>
@@ -20,6 +21,11 @@ impl ListTablesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTablesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
 
@@ -29,6 +35,7 @@ pub mod list_tables_output {
     pub struct Builder {
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::TableMember>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tables`.
@@ -60,11 +67,21 @@ pub mod list_tables_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
                 tables: self.tables,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -86,6 +103,7 @@ pub struct ListStatementsOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListStatementsOutput {
     /// <p>The SQL statements. </p>
@@ -97,6 +115,11 @@ impl ListStatementsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListStatementsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListStatementsOutput`](crate::output::ListStatementsOutput).
 pub mod list_statements_output {
 
@@ -106,6 +129,7 @@ pub mod list_statements_output {
     pub struct Builder {
         pub(crate) statements: std::option::Option<std::vec::Vec<crate::model::StatementData>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `statements`.
@@ -137,11 +161,21 @@ pub mod list_statements_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListStatementsOutput`](crate::output::ListStatementsOutput).
         pub fn build(self) -> crate::output::ListStatementsOutput {
             crate::output::ListStatementsOutput {
                 statements: self.statements,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -163,6 +197,7 @@ pub struct ListSchemasOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSchemasOutput {
     /// <p>The schemas that match the request pattern. </p>
@@ -174,6 +209,11 @@ impl ListSchemasOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSchemasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSchemasOutput`](crate::output::ListSchemasOutput).
 pub mod list_schemas_output {
 
@@ -183,6 +223,7 @@ pub mod list_schemas_output {
     pub struct Builder {
         pub(crate) schemas: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `schemas`.
@@ -214,11 +255,21 @@ pub mod list_schemas_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSchemasOutput`](crate::output::ListSchemasOutput).
         pub fn build(self) -> crate::output::ListSchemasOutput {
             crate::output::ListSchemasOutput {
                 schemas: self.schemas,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -240,6 +291,7 @@ pub struct ListDatabasesOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDatabasesOutput {
     /// <p>The names of databases. </p>
@@ -251,6 +303,11 @@ impl ListDatabasesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDatabasesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
 pub mod list_databases_output {
 
@@ -260,6 +317,7 @@ pub mod list_databases_output {
     pub struct Builder {
         pub(crate) databases: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `databases`.
@@ -291,11 +349,21 @@ pub mod list_databases_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDatabasesOutput`](crate::output::ListDatabasesOutput).
         pub fn build(self) -> crate::output::ListDatabasesOutput {
             crate::output::ListDatabasesOutput {
                 databases: self.databases,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -323,6 +391,7 @@ pub struct GetStatementResultOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetStatementResultOutput {
     /// <p>The results of the SQL statement.</p>
@@ -342,6 +411,11 @@ impl GetStatementResultOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetStatementResultOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
 pub mod get_statement_result_output {
 
@@ -354,6 +428,7 @@ pub mod get_statement_result_output {
             std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         pub(crate) total_num_rows: std::option::Option<i64>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -414,6 +489,15 @@ pub mod get_statement_result_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetStatementResultOutput`](crate::output::GetStatementResultOutput).
         pub fn build(self) -> crate::output::GetStatementResultOutput {
             crate::output::GetStatementResultOutput {
@@ -421,6 +505,7 @@ pub mod get_statement_result_output {
                 column_metadata: self.column_metadata,
                 total_num_rows: self.total_num_rows.unwrap_or_default(),
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -457,6 +542,7 @@ pub struct ExecuteStatementOutput {
     /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExecuteStatementOutput {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
@@ -488,6 +574,11 @@ impl ExecuteStatementOutput {
         self.workgroup_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExecuteStatementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
 pub mod execute_statement_output {
 
@@ -502,6 +593,7 @@ pub mod execute_statement_output {
         pub(crate) database: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
@@ -583,6 +675,15 @@ pub mod execute_statement_output {
             self.workgroup_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteStatementOutput`](crate::output::ExecuteStatementOutput).
         pub fn build(self) -> crate::output::ExecuteStatementOutput {
             crate::output::ExecuteStatementOutput {
@@ -593,6 +694,7 @@ pub mod execute_statement_output {
                 database: self.database,
                 secret_arn: self.secret_arn,
                 workgroup_name: self.workgroup_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -617,6 +719,7 @@ pub struct DescribeTableOutput {
     /// <p>A value that indicates the starting point for the next set of response records in a subsequent request. If a value is returned in a response, you can retrieve the next set of records by providing this returned NextToken value in the next NextToken parameter and retrying the command. If the NextToken field is empty, all response records have been retrieved for the request. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeTableOutput {
     /// <p>The table name. </p>
@@ -632,6 +735,11 @@ impl DescribeTableOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTableOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeTableOutput`](crate::output::DescribeTableOutput).
 pub mod describe_table_output {
 
@@ -642,6 +750,7 @@ pub mod describe_table_output {
         pub(crate) table_name: std::option::Option<std::string::String>,
         pub(crate) column_list: std::option::Option<std::vec::Vec<crate::model::ColumnMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The table name. </p>
@@ -683,12 +792,22 @@ pub mod describe_table_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTableOutput`](crate::output::DescribeTableOutput).
         pub fn build(self) -> crate::output::DescribeTableOutput {
             crate::output::DescribeTableOutput {
                 table_name: self.table_name,
                 column_list: self.column_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -770,6 +889,7 @@ pub struct DescribeStatementOutput {
     /// <p>The serverless workgroup name.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeStatementOutput {
     /// <p>The identifier of the SQL statement described. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
@@ -858,6 +978,11 @@ impl DescribeStatementOutput {
         self.workgroup_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeStatementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
 pub mod describe_statement_output {
 
@@ -885,6 +1010,7 @@ pub mod describe_statement_output {
         pub(crate) sub_statements:
             std::option::Option<std::vec::Vec<crate::model::SubStatementData>>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the SQL statement described. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. </p>
@@ -1128,6 +1254,15 @@ pub mod describe_statement_output {
             self.workgroup_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeStatementOutput`](crate::output::DescribeStatementOutput).
         pub fn build(self) -> crate::output::DescribeStatementOutput {
             crate::output::DescribeStatementOutput {
@@ -1150,6 +1285,7 @@ pub mod describe_statement_output {
                 query_parameters: self.query_parameters,
                 sub_statements: self.sub_statements,
                 workgroup_name: self.workgroup_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1168,11 +1304,17 @@ pub struct CancelStatementOutput {
     /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
     #[doc(hidden)]
     pub status: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl CancelStatementOutput {
     /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
     pub fn status(&self) -> std::option::Option<bool> {
         self.status
+    }
+}
+impl aws_http::request_id::RequestId for CancelStatementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CancelStatementOutput`](crate::output::CancelStatementOutput).
@@ -1183,6 +1325,7 @@ pub mod cancel_statement_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A value that indicates whether the cancel statement succeeded (true). </p>
@@ -1195,10 +1338,20 @@ pub mod cancel_statement_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelStatementOutput`](crate::output::CancelStatementOutput).
         pub fn build(self) -> crate::output::CancelStatementOutput {
             crate::output::CancelStatementOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1235,6 +1388,7 @@ pub struct BatchExecuteStatementOutput {
     /// <p>The serverless workgroup name. This element is not returned when connecting to a provisioned cluster.</p>
     #[doc(hidden)]
     pub workgroup_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl BatchExecuteStatementOutput {
     /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
@@ -1266,6 +1420,11 @@ impl BatchExecuteStatementOutput {
         self.workgroup_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchExecuteStatementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
 pub mod batch_execute_statement_output {
 
@@ -1280,6 +1439,7 @@ pub mod batch_execute_statement_output {
         pub(crate) database: std::option::Option<std::string::String>,
         pub(crate) secret_arn: std::option::Option<std::string::String>,
         pub(crate) workgroup_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the SQL statement whose results are to be fetched. This value is a universally unique identifier (UUID) generated by Amazon Redshift Data API. This identifier is returned by <code>BatchExecuteStatment</code>. </p>
@@ -1361,6 +1521,15 @@ pub mod batch_execute_statement_output {
             self.workgroup_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchExecuteStatementOutput`](crate::output::BatchExecuteStatementOutput).
         pub fn build(self) -> crate::output::BatchExecuteStatementOutput {
             crate::output::BatchExecuteStatementOutput {
@@ -1371,6 +1540,7 @@ pub mod batch_execute_statement_output {
                 database: self.database,
                 secret_arn: self.secret_arn,
                 workgroup_name: self.workgroup_name,
+                _request_id: self._request_id,
             }
         }
     }

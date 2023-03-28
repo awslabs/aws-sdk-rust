@@ -23,6 +23,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRole {
     type Output =
         std::result::Result<crate::output::AssumeRoleOutput, crate::error::AssumeRoleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_assume_role_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithSAML {
         crate::error::AssumeRoleWithSAMLError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_assume_role_with_saml_error(response)
         } else {
@@ -91,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssumeRoleWithWebIdentit
         crate::error::AssumeRoleWithWebIdentityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_assume_role_with_web_identity_error(response)
         } else {
@@ -125,6 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DecodeAuthorizationMessa
         crate::error::DecodeAuthorizationMessageError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_decode_authorization_message_error(response)
         } else {
@@ -159,6 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessKeyInfo {
         crate::error::GetAccessKeyInfoError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_key_info_error(response)
         } else {
@@ -193,6 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCallerIdentity {
         crate::error::GetCallerIdentityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_caller_identity_error(response)
         } else {
@@ -227,6 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFederationToken {
         crate::error::GetFederationTokenError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_federation_token_error(response)
         } else {
@@ -261,6 +268,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSessionToken {
         crate::error::GetSessionTokenError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_session_token_error(response)
         } else {

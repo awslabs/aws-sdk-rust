@@ -13,15 +13,8 @@ pub enum Error {
     ResourceInUseException(crate::error::ResourceInUseException),
     /// <p>We can't find that resource. Check the information that you've provided and try again.</p>
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,31 +37,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::QueryForecastError> for Error {
     fn from(err: crate::error::QueryForecastError) -> Self {
-        match err.kind {
-            crate::error::QueryForecastErrorKind::InvalidInputException(inner) => {
+        match err {
+            crate::error::QueryForecastError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::QueryForecastErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::QueryForecastError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::QueryForecastErrorKind::LimitExceededException(inner) => {
+            crate::error::QueryForecastError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::QueryForecastErrorKind::ResourceInUseException(inner) => {
+            crate::error::QueryForecastError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::QueryForecastErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::QueryForecastError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::QueryForecastErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::QueryForecastError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -83,32 +81,49 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::QueryWhatIfForecastError> for Error {
     fn from(err: crate::error::QueryWhatIfForecastError) -> Self {
-        match err.kind {
-            crate::error::QueryWhatIfForecastErrorKind::InvalidInputException(inner) => {
+        match err {
+            crate::error::QueryWhatIfForecastError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::QueryWhatIfForecastErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::QueryWhatIfForecastError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::QueryWhatIfForecastErrorKind::LimitExceededException(inner) => {
+            crate::error::QueryWhatIfForecastError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::QueryWhatIfForecastErrorKind::ResourceInUseException(inner) => {
+            crate::error::QueryWhatIfForecastError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::QueryWhatIfForecastErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::QueryWhatIfForecastError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::QueryWhatIfForecastErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::QueryWhatIfForecastError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InvalidInputException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

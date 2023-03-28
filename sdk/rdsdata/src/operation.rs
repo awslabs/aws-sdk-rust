@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchExecuteStatement {
         crate::error::BatchExecuteStatementError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_batch_execute_statement_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BeginTransaction {
         crate::error::BeginTransactionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_begin_transaction_error(response)
         } else {
@@ -93,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CommitTransaction {
         crate::error::CommitTransactionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_commit_transaction_error(response)
         } else {
@@ -125,6 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteSql {
     type Output =
         std::result::Result<crate::output::ExecuteSqlOutput, crate::error::ExecuteSqlError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_execute_sql_error(response)
         } else {
@@ -159,6 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExecuteStatement {
         crate::error::ExecuteStatementError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_execute_statement_error(response)
         } else {
@@ -193,6 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RollbackTransaction {
         crate::error::RollbackTransactionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_rollback_transaction_error(response)
         } else {

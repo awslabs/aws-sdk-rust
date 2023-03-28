@@ -17,15 +17,8 @@ pub enum Error {
     ServiceUnavailableError(crate::error::ServiceUnavailableError),
     /// <p>The execution of the SQL statement timed out.</p>
     StatementTimeoutException(crate::error::StatementTimeoutException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,34 +46,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchExecuteStatementError> for Error {
     fn from(err: crate::error::BatchExecuteStatementError) -> Self {
-        match err.kind {
-            crate::error::BatchExecuteStatementErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::BatchExecuteStatementError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::BatchExecuteStatementErrorKind::BadRequestException(inner) => {
+            crate::error::BatchExecuteStatementError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::BatchExecuteStatementErrorKind::ForbiddenException(inner) => {
+            crate::error::BatchExecuteStatementError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::BatchExecuteStatementErrorKind::InternalServerErrorException(inner) => {
+            crate::error::BatchExecuteStatementError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::BatchExecuteStatementErrorKind::ServiceUnavailableError(inner) => {
+            crate::error::BatchExecuteStatementError::ServiceUnavailableError(inner) => {
                 Error::ServiceUnavailableError(inner)
             }
-            crate::error::BatchExecuteStatementErrorKind::StatementTimeoutException(inner) => {
+            crate::error::BatchExecuteStatementError::StatementTimeoutException(inner) => {
                 Error::StatementTimeoutException(inner)
             }
-            crate::error::BatchExecuteStatementErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -95,34 +93,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BeginTransactionError> for Error {
     fn from(err: crate::error::BeginTransactionError) -> Self {
-        match err.kind {
-            crate::error::BeginTransactionErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::BeginTransactionError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::BeginTransactionErrorKind::BadRequestException(inner) => {
+            crate::error::BeginTransactionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::BeginTransactionErrorKind::ForbiddenException(inner) => {
+            crate::error::BeginTransactionError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::BeginTransactionErrorKind::InternalServerErrorException(inner) => {
+            crate::error::BeginTransactionError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::BeginTransactionErrorKind::ServiceUnavailableError(inner) => {
+            crate::error::BeginTransactionError::ServiceUnavailableError(inner) => {
                 Error::ServiceUnavailableError(inner)
             }
-            crate::error::BeginTransactionErrorKind::StatementTimeoutException(inner) => {
+            crate::error::BeginTransactionError::StatementTimeoutException(inner) => {
                 Error::StatementTimeoutException(inner)
             }
-            crate::error::BeginTransactionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BeginTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -137,37 +140,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CommitTransactionError> for Error {
     fn from(err: crate::error::CommitTransactionError) -> Self {
-        match err.kind {
-            crate::error::CommitTransactionErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CommitTransactionError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CommitTransactionErrorKind::BadRequestException(inner) => {
+            crate::error::CommitTransactionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CommitTransactionErrorKind::ForbiddenException(inner) => {
+            crate::error::CommitTransactionError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CommitTransactionErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CommitTransactionError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CommitTransactionErrorKind::NotFoundException(inner) => {
+            crate::error::CommitTransactionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CommitTransactionErrorKind::ServiceUnavailableError(inner) => {
+            crate::error::CommitTransactionError::ServiceUnavailableError(inner) => {
                 Error::ServiceUnavailableError(inner)
             }
-            crate::error::CommitTransactionErrorKind::StatementTimeoutException(inner) => {
+            crate::error::CommitTransactionError::StatementTimeoutException(inner) => {
                 Error::StatementTimeoutException(inner)
             }
-            crate::error::CommitTransactionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CommitTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -180,31 +188,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ExecuteSqlError> for Error {
     fn from(err: crate::error::ExecuteSqlError) -> Self {
-        match err.kind {
-            crate::error::ExecuteSqlErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ExecuteSqlError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ExecuteSqlErrorKind::BadRequestException(inner) => {
+            crate::error::ExecuteSqlError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ExecuteSqlErrorKind::ForbiddenException(inner) => {
+            crate::error::ExecuteSqlError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ExecuteSqlErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ExecuteSqlError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ExecuteSqlErrorKind::ServiceUnavailableError(inner) => {
+            crate::error::ExecuteSqlError::ServiceUnavailableError(inner) => {
                 Error::ServiceUnavailableError(inner)
             }
-            crate::error::ExecuteSqlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ExecuteSqlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -219,34 +232,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ExecuteStatementError> for Error {
     fn from(err: crate::error::ExecuteStatementError) -> Self {
-        match err.kind {
-            crate::error::ExecuteStatementErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ExecuteStatementError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ExecuteStatementErrorKind::BadRequestException(inner) => {
+            crate::error::ExecuteStatementError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ExecuteStatementErrorKind::ForbiddenException(inner) => {
+            crate::error::ExecuteStatementError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ExecuteStatementErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ExecuteStatementError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ExecuteStatementErrorKind::ServiceUnavailableError(inner) => {
+            crate::error::ExecuteStatementError::ServiceUnavailableError(inner) => {
                 Error::ServiceUnavailableError(inner)
             }
-            crate::error::ExecuteStatementErrorKind::StatementTimeoutException(inner) => {
+            crate::error::ExecuteStatementError::StatementTimeoutException(inner) => {
                 Error::StatementTimeoutException(inner)
             }
-            crate::error::ExecuteStatementErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ExecuteStatementError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -261,38 +279,57 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RollbackTransactionError> for Error {
     fn from(err: crate::error::RollbackTransactionError) -> Self {
-        match err.kind {
-            crate::error::RollbackTransactionErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::RollbackTransactionError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::RollbackTransactionErrorKind::BadRequestException(inner) => {
+            crate::error::RollbackTransactionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::RollbackTransactionErrorKind::ForbiddenException(inner) => {
+            crate::error::RollbackTransactionError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::RollbackTransactionErrorKind::InternalServerErrorException(inner) => {
+            crate::error::RollbackTransactionError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::RollbackTransactionErrorKind::NotFoundException(inner) => {
+            crate::error::RollbackTransactionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::RollbackTransactionErrorKind::ServiceUnavailableError(inner) => {
+            crate::error::RollbackTransactionError::ServiceUnavailableError(inner) => {
                 Error::ServiceUnavailableError(inner)
             }
-            crate::error::RollbackTransactionErrorKind::StatementTimeoutException(inner) => {
+            crate::error::RollbackTransactionError::StatementTimeoutException(inner) => {
                 Error::StatementTimeoutException(inner)
             }
-            crate::error::RollbackTransactionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RollbackTransactionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::InternalServerErrorException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ServiceUnavailableError(e) => e.request_id(),
+            Self::StatementTimeoutException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -9,6 +9,7 @@ pub struct ListMeshesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListMeshes</code> request. When the results of a <code>ListMeshes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListMeshesOutput {
     /// <p>The list of existing service meshes.</p>
@@ -20,6 +21,11 @@ impl ListMeshesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMeshesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListMeshesOutput`](crate::output::ListMeshesOutput).
 pub mod list_meshes_output {
 
@@ -29,6 +35,7 @@ pub mod list_meshes_output {
     pub struct Builder {
         pub(crate) meshes: std::option::Option<std::vec::Vec<crate::model::MeshRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `meshes`.
@@ -60,11 +67,21 @@ pub mod list_meshes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListMeshesOutput`](crate::output::ListMeshesOutput).
         pub fn build(self) -> crate::output::ListMeshesOutput {
             crate::output::ListMeshesOutput {
                 meshes: self.meshes,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -83,11 +100,17 @@ pub struct CreateMeshOutput {
     /// <p>The full description of your service mesh following the create call.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
+    _request_id: Option<String>,
 }
 impl CreateMeshOutput {
     /// <p>The full description of your service mesh following the create call.</p>
     pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
         self.mesh.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateMeshOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateMeshOutput`](crate::output::CreateMeshOutput).
@@ -98,6 +121,7 @@ pub mod create_mesh_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your service mesh following the create call.</p>
@@ -110,9 +134,21 @@ pub mod create_mesh_output {
             self.mesh = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMeshOutput`](crate::output::CreateMeshOutput).
         pub fn build(self) -> crate::output::CreateMeshOutput {
-            crate::output::CreateMeshOutput { mesh: self.mesh }
+            crate::output::CreateMeshOutput {
+                mesh: self.mesh,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -130,11 +166,17 @@ pub struct DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
+    _request_id: Option<String>,
 }
 impl DeleteMeshOutput {
     /// <p>The service mesh that was deleted.</p>
     pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
         self.mesh.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteMeshOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
@@ -145,6 +187,7 @@ pub mod delete_mesh_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The service mesh that was deleted.</p>
@@ -157,9 +200,21 @@ pub mod delete_mesh_output {
             self.mesh = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteMeshOutput`](crate::output::DeleteMeshOutput).
         pub fn build(self) -> crate::output::DeleteMeshOutput {
-            crate::output::DeleteMeshOutput { mesh: self.mesh }
+            crate::output::DeleteMeshOutput {
+                mesh: self.mesh,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -177,11 +232,17 @@ pub struct UpdateMeshOutput {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
+    _request_id: Option<String>,
 }
 impl UpdateMeshOutput {
     /// <p>An object that represents a service mesh returned by a describe operation.</p>
     pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
         self.mesh.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateMeshOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
@@ -192,6 +253,7 @@ pub mod update_mesh_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that represents a service mesh returned by a describe operation.</p>
@@ -204,9 +266,21 @@ pub mod update_mesh_output {
             self.mesh = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateMeshOutput`](crate::output::UpdateMeshOutput).
         pub fn build(self) -> crate::output::UpdateMeshOutput {
-            crate::output::UpdateMeshOutput { mesh: self.mesh }
+            crate::output::UpdateMeshOutput {
+                mesh: self.mesh,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -224,11 +298,17 @@ pub struct DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
     #[doc(hidden)]
     pub mesh: std::option::Option<crate::model::MeshData>,
+    _request_id: Option<String>,
 }
 impl DescribeMeshOutput {
     /// <p>The full description of your service mesh.</p>
     pub fn mesh(&self) -> std::option::Option<&crate::model::MeshData> {
         self.mesh.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeMeshOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
@@ -239,6 +319,7 @@ pub mod describe_mesh_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) mesh: std::option::Option<crate::model::MeshData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your service mesh.</p>
@@ -251,9 +332,21 @@ pub mod describe_mesh_output {
             self.mesh = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeMeshOutput`](crate::output::DescribeMeshOutput).
         pub fn build(self) -> crate::output::DescribeMeshOutput {
-            crate::output::DescribeMeshOutput { mesh: self.mesh }
+            crate::output::DescribeMeshOutput {
+                mesh: self.mesh,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -274,6 +367,7 @@ pub struct ListVirtualServicesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualServicesOutput {
     /// <p>The list of existing virtual services for the specified service mesh.</p>
@@ -283,6 +377,11 @@ impl ListVirtualServicesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualServices</code> request. When the results of a <code>ListVirtualServices</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListVirtualServicesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
@@ -295,6 +394,7 @@ pub mod list_virtual_services_output {
         pub(crate) virtual_services:
             std::option::Option<std::vec::Vec<crate::model::VirtualServiceRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_services`.
@@ -326,11 +426,21 @@ pub mod list_virtual_services_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVirtualServicesOutput`](crate::output::ListVirtualServicesOutput).
         pub fn build(self) -> crate::output::ListVirtualServicesOutput {
             crate::output::ListVirtualServicesOutput {
                 virtual_services: self.virtual_services,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -349,11 +459,17 @@ pub struct CreateVirtualServiceOutput {
     /// <p>The full description of your virtual service following the create call.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+    _request_id: Option<String>,
 }
 impl CreateVirtualServiceOutput {
     /// <p>The full description of your virtual service following the create call.</p>
     pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateVirtualServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
@@ -364,6 +480,7 @@ pub mod create_virtual_service_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual service following the create call.</p>
@@ -379,10 +496,20 @@ pub mod create_virtual_service_output {
             self.virtual_service = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateVirtualServiceOutput`](crate::output::CreateVirtualServiceOutput).
         pub fn build(self) -> crate::output::CreateVirtualServiceOutput {
             crate::output::CreateVirtualServiceOutput {
                 virtual_service: self.virtual_service,
+                _request_id: self._request_id,
             }
         }
     }
@@ -401,11 +528,17 @@ pub struct DeleteVirtualServiceOutput {
     /// <p>The virtual service that was deleted.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+    _request_id: Option<String>,
 }
 impl DeleteVirtualServiceOutput {
     /// <p>The virtual service that was deleted.</p>
     pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteVirtualServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
@@ -416,6 +549,7 @@ pub mod delete_virtual_service_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The virtual service that was deleted.</p>
@@ -431,10 +565,20 @@ pub mod delete_virtual_service_output {
             self.virtual_service = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteVirtualServiceOutput`](crate::output::DeleteVirtualServiceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualServiceOutput {
             crate::output::DeleteVirtualServiceOutput {
                 virtual_service: self.virtual_service,
+                _request_id: self._request_id,
             }
         }
     }
@@ -453,11 +597,17 @@ pub struct UpdateVirtualServiceOutput {
     /// <p>A full description of the virtual service that was updated.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+    _request_id: Option<String>,
 }
 impl UpdateVirtualServiceOutput {
     /// <p>A full description of the virtual service that was updated.</p>
     pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateVirtualServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
@@ -468,6 +618,7 @@ pub mod update_virtual_service_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the virtual service that was updated.</p>
@@ -483,10 +634,20 @@ pub mod update_virtual_service_output {
             self.virtual_service = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualServiceOutput`](crate::output::UpdateVirtualServiceOutput).
         pub fn build(self) -> crate::output::UpdateVirtualServiceOutput {
             crate::output::UpdateVirtualServiceOutput {
                 virtual_service: self.virtual_service,
+                _request_id: self._request_id,
             }
         }
     }
@@ -505,11 +666,17 @@ pub struct DescribeVirtualServiceOutput {
     /// <p>The full description of your virtual service.</p>
     #[doc(hidden)]
     pub virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualServiceOutput {
     /// <p>The full description of your virtual service.</p>
     pub fn virtual_service(&self) -> std::option::Option<&crate::model::VirtualServiceData> {
         self.virtual_service.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeVirtualServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
@@ -520,6 +687,7 @@ pub mod describe_virtual_service_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_service: std::option::Option<crate::model::VirtualServiceData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual service.</p>
@@ -535,10 +703,20 @@ pub mod describe_virtual_service_output {
             self.virtual_service = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVirtualServiceOutput`](crate::output::DescribeVirtualServiceOutput).
         pub fn build(self) -> crate::output::DescribeVirtualServiceOutput {
             crate::output::DescribeVirtualServiceOutput {
                 virtual_service: self.virtual_service,
+                _request_id: self._request_id,
             }
         }
     }
@@ -560,6 +738,7 @@ pub struct ListVirtualRoutersOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualRoutersOutput {
     /// <p>The list of existing virtual routers for the specified service mesh.</p>
@@ -569,6 +748,11 @@ impl ListVirtualRoutersOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualRouters</code> request. When the results of a <code>ListVirtualRouters</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListVirtualRoutersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
@@ -581,6 +765,7 @@ pub mod list_virtual_routers_output {
         pub(crate) virtual_routers:
             std::option::Option<std::vec::Vec<crate::model::VirtualRouterRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_routers`.
@@ -612,11 +797,21 @@ pub mod list_virtual_routers_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVirtualRoutersOutput`](crate::output::ListVirtualRoutersOutput).
         pub fn build(self) -> crate::output::ListVirtualRoutersOutput {
             crate::output::ListVirtualRoutersOutput {
                 virtual_routers: self.virtual_routers,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -635,11 +830,17 @@ pub struct CreateVirtualRouterOutput {
     /// <p>The full description of your virtual router following the create call.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+    _request_id: Option<String>,
 }
 impl CreateVirtualRouterOutput {
     /// <p>The full description of your virtual router following the create call.</p>
     pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateVirtualRouterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
@@ -650,6 +851,7 @@ pub mod create_virtual_router_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual router following the create call.</p>
@@ -665,10 +867,20 @@ pub mod create_virtual_router_output {
             self.virtual_router = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateVirtualRouterOutput`](crate::output::CreateVirtualRouterOutput).
         pub fn build(self) -> crate::output::CreateVirtualRouterOutput {
             crate::output::CreateVirtualRouterOutput {
                 virtual_router: self.virtual_router,
+                _request_id: self._request_id,
             }
         }
     }
@@ -687,11 +899,17 @@ pub struct DeleteVirtualRouterOutput {
     /// <p>The virtual router that was deleted.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+    _request_id: Option<String>,
 }
 impl DeleteVirtualRouterOutput {
     /// <p>The virtual router that was deleted.</p>
     pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteVirtualRouterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
@@ -702,6 +920,7 @@ pub mod delete_virtual_router_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The virtual router that was deleted.</p>
@@ -717,10 +936,20 @@ pub mod delete_virtual_router_output {
             self.virtual_router = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteVirtualRouterOutput`](crate::output::DeleteVirtualRouterOutput).
         pub fn build(self) -> crate::output::DeleteVirtualRouterOutput {
             crate::output::DeleteVirtualRouterOutput {
                 virtual_router: self.virtual_router,
+                _request_id: self._request_id,
             }
         }
     }
@@ -739,11 +968,17 @@ pub struct UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+    _request_id: Option<String>,
 }
 impl UpdateVirtualRouterOutput {
     /// <p>A full description of the virtual router that was updated.</p>
     pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateVirtualRouterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
@@ -754,6 +989,7 @@ pub mod update_virtual_router_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the virtual router that was updated.</p>
@@ -769,10 +1005,20 @@ pub mod update_virtual_router_output {
             self.virtual_router = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualRouterOutput`](crate::output::UpdateVirtualRouterOutput).
         pub fn build(self) -> crate::output::UpdateVirtualRouterOutput {
             crate::output::UpdateVirtualRouterOutput {
                 virtual_router: self.virtual_router,
+                _request_id: self._request_id,
             }
         }
     }
@@ -791,11 +1037,17 @@ pub struct DescribeVirtualRouterOutput {
     /// <p>The full description of your virtual router.</p>
     #[doc(hidden)]
     pub virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualRouterOutput {
     /// <p>The full description of your virtual router.</p>
     pub fn virtual_router(&self) -> std::option::Option<&crate::model::VirtualRouterData> {
         self.virtual_router.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeVirtualRouterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
@@ -806,6 +1058,7 @@ pub mod describe_virtual_router_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_router: std::option::Option<crate::model::VirtualRouterData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual router.</p>
@@ -821,10 +1074,20 @@ pub mod describe_virtual_router_output {
             self.virtual_router = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVirtualRouterOutput`](crate::output::DescribeVirtualRouterOutput).
         pub fn build(self) -> crate::output::DescribeVirtualRouterOutput {
             crate::output::DescribeVirtualRouterOutput {
                 virtual_router: self.virtual_router,
+                _request_id: self._request_id,
             }
         }
     }
@@ -846,6 +1109,7 @@ pub struct ListRoutesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListRoutes</code> request. When the results of a <code>ListRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRoutesOutput {
     /// <p>The list of existing routes for the specified service mesh and virtual router.</p>
@@ -857,6 +1121,11 @@ impl ListRoutesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRoutesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRoutesOutput`](crate::output::ListRoutesOutput).
 pub mod list_routes_output {
 
@@ -866,6 +1135,7 @@ pub mod list_routes_output {
     pub struct Builder {
         pub(crate) routes: std::option::Option<std::vec::Vec<crate::model::RouteRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `routes`.
@@ -897,11 +1167,21 @@ pub mod list_routes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::output::ListRoutesOutput).
         pub fn build(self) -> crate::output::ListRoutesOutput {
             crate::output::ListRoutesOutput {
                 routes: self.routes,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -920,11 +1200,17 @@ pub struct CreateRouteOutput {
     /// <p>The full description of your mesh following the create call.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
+    _request_id: Option<String>,
 }
 impl CreateRouteOutput {
     /// <p>The full description of your mesh following the create call.</p>
     pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
         self.route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateRouteOutput`](crate::output::CreateRouteOutput).
@@ -935,6 +1221,7 @@ pub mod create_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your mesh following the create call.</p>
@@ -947,9 +1234,21 @@ pub mod create_route_output {
             self.route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput).
         pub fn build(self) -> crate::output::CreateRouteOutput {
-            crate::output::CreateRouteOutput { route: self.route }
+            crate::output::CreateRouteOutput {
+                route: self.route,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -967,11 +1266,17 @@ pub struct DeleteRouteOutput {
     /// <p>The route that was deleted.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
+    _request_id: Option<String>,
 }
 impl DeleteRouteOutput {
     /// <p>The route that was deleted.</p>
     pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
         self.route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
@@ -982,6 +1287,7 @@ pub mod delete_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The route that was deleted.</p>
@@ -994,9 +1300,21 @@ pub mod delete_route_output {
             self.route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
         pub fn build(self) -> crate::output::DeleteRouteOutput {
-            crate::output::DeleteRouteOutput { route: self.route }
+            crate::output::DeleteRouteOutput {
+                route: self.route,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1014,11 +1332,17 @@ pub struct UpdateRouteOutput {
     /// <p>A full description of the route that was updated.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
+    _request_id: Option<String>,
 }
 impl UpdateRouteOutput {
     /// <p>A full description of the route that was updated.</p>
     pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
         self.route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
@@ -1029,6 +1353,7 @@ pub mod update_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the route that was updated.</p>
@@ -1041,9 +1366,21 @@ pub mod update_route_output {
             self.route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
         pub fn build(self) -> crate::output::UpdateRouteOutput {
-            crate::output::UpdateRouteOutput { route: self.route }
+            crate::output::UpdateRouteOutput {
+                route: self.route,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1061,11 +1398,17 @@ pub struct DescribeRouteOutput {
     /// <p>The full description of your route.</p>
     #[doc(hidden)]
     pub route: std::option::Option<crate::model::RouteData>,
+    _request_id: Option<String>,
 }
 impl DescribeRouteOutput {
     /// <p>The full description of your route.</p>
     pub fn route(&self) -> std::option::Option<&crate::model::RouteData> {
         self.route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
@@ -1076,6 +1419,7 @@ pub mod describe_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) route: std::option::Option<crate::model::RouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your route.</p>
@@ -1088,9 +1432,21 @@ pub mod describe_route_output {
             self.route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRouteOutput`](crate::output::DescribeRouteOutput).
         pub fn build(self) -> crate::output::DescribeRouteOutput {
-            crate::output::DescribeRouteOutput { route: self.route }
+            crate::output::DescribeRouteOutput {
+                route: self.route,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1111,6 +1467,7 @@ pub struct ListVirtualNodesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualNodes</code> request. When the results of a <code>ListVirtualNodes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualNodesOutput {
     /// <p>The list of existing virtual nodes for the specified service mesh.</p>
@@ -1122,6 +1479,11 @@ impl ListVirtualNodesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVirtualNodesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
 pub mod list_virtual_nodes_output {
 
@@ -1131,6 +1493,7 @@ pub mod list_virtual_nodes_output {
     pub struct Builder {
         pub(crate) virtual_nodes: std::option::Option<std::vec::Vec<crate::model::VirtualNodeRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_nodes`.
@@ -1162,11 +1525,21 @@ pub mod list_virtual_nodes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVirtualNodesOutput`](crate::output::ListVirtualNodesOutput).
         pub fn build(self) -> crate::output::ListVirtualNodesOutput {
             crate::output::ListVirtualNodesOutput {
                 virtual_nodes: self.virtual_nodes,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1185,11 +1558,17 @@ pub struct CreateVirtualNodeOutput {
     /// <p>The full description of your virtual node following the create call.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+    _request_id: Option<String>,
 }
 impl CreateVirtualNodeOutput {
     /// <p>The full description of your virtual node following the create call.</p>
     pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateVirtualNodeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
@@ -1200,6 +1579,7 @@ pub mod create_virtual_node_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual node following the create call.</p>
@@ -1215,10 +1595,20 @@ pub mod create_virtual_node_output {
             self.virtual_node = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateVirtualNodeOutput`](crate::output::CreateVirtualNodeOutput).
         pub fn build(self) -> crate::output::CreateVirtualNodeOutput {
             crate::output::CreateVirtualNodeOutput {
                 virtual_node: self.virtual_node,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1237,11 +1627,17 @@ pub struct DeleteVirtualNodeOutput {
     /// <p>The virtual node that was deleted.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+    _request_id: Option<String>,
 }
 impl DeleteVirtualNodeOutput {
     /// <p>The virtual node that was deleted.</p>
     pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteVirtualNodeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
@@ -1252,6 +1648,7 @@ pub mod delete_virtual_node_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The virtual node that was deleted.</p>
@@ -1267,10 +1664,20 @@ pub mod delete_virtual_node_output {
             self.virtual_node = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteVirtualNodeOutput`](crate::output::DeleteVirtualNodeOutput).
         pub fn build(self) -> crate::output::DeleteVirtualNodeOutput {
             crate::output::DeleteVirtualNodeOutput {
                 virtual_node: self.virtual_node,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1289,11 +1696,17 @@ pub struct UpdateVirtualNodeOutput {
     /// <p>A full description of the virtual node that was updated.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+    _request_id: Option<String>,
 }
 impl UpdateVirtualNodeOutput {
     /// <p>A full description of the virtual node that was updated.</p>
     pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateVirtualNodeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
@@ -1304,6 +1717,7 @@ pub mod update_virtual_node_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the virtual node that was updated.</p>
@@ -1319,10 +1733,20 @@ pub mod update_virtual_node_output {
             self.virtual_node = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualNodeOutput`](crate::output::UpdateVirtualNodeOutput).
         pub fn build(self) -> crate::output::UpdateVirtualNodeOutput {
             crate::output::UpdateVirtualNodeOutput {
                 virtual_node: self.virtual_node,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1341,11 +1765,17 @@ pub struct DescribeVirtualNodeOutput {
     /// <p>The full description of your virtual node.</p>
     #[doc(hidden)]
     pub virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualNodeOutput {
     /// <p>The full description of your virtual node.</p>
     pub fn virtual_node(&self) -> std::option::Option<&crate::model::VirtualNodeData> {
         self.virtual_node.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeVirtualNodeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
@@ -1356,6 +1786,7 @@ pub mod describe_virtual_node_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_node: std::option::Option<crate::model::VirtualNodeData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual node.</p>
@@ -1371,10 +1802,20 @@ pub mod describe_virtual_node_output {
             self.virtual_node = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVirtualNodeOutput`](crate::output::DescribeVirtualNodeOutput).
         pub fn build(self) -> crate::output::DescribeVirtualNodeOutput {
             crate::output::DescribeVirtualNodeOutput {
                 virtual_node: self.virtual_node,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1396,6 +1837,7 @@ pub struct ListVirtualGatewaysOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualGatewaysOutput {
     /// <p>The list of existing virtual gateways for the specified service mesh.</p>
@@ -1405,6 +1847,11 @@ impl ListVirtualGatewaysOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListVirtualGateways</code> request. When the results of a <code>ListVirtualGateways</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListVirtualGatewaysOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
@@ -1417,6 +1864,7 @@ pub mod list_virtual_gateways_output {
         pub(crate) virtual_gateways:
             std::option::Option<std::vec::Vec<crate::model::VirtualGatewayRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_gateways`.
@@ -1448,11 +1896,21 @@ pub mod list_virtual_gateways_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVirtualGatewaysOutput`](crate::output::ListVirtualGatewaysOutput).
         pub fn build(self) -> crate::output::ListVirtualGatewaysOutput {
             crate::output::ListVirtualGatewaysOutput {
                 virtual_gateways: self.virtual_gateways,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1471,11 +1929,17 @@ pub struct CreateVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway following the create call.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+    _request_id: Option<String>,
 }
 impl CreateVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway following the create call.</p>
     pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateVirtualGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
@@ -1486,6 +1950,7 @@ pub mod create_virtual_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual gateway following the create call.</p>
@@ -1501,10 +1966,20 @@ pub mod create_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateVirtualGatewayOutput`](crate::output::CreateVirtualGatewayOutput).
         pub fn build(self) -> crate::output::CreateVirtualGatewayOutput {
             crate::output::CreateVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1523,11 +1998,17 @@ pub struct DeleteVirtualGatewayOutput {
     /// <p>The virtual gateway that was deleted.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+    _request_id: Option<String>,
 }
 impl DeleteVirtualGatewayOutput {
     /// <p>The virtual gateway that was deleted.</p>
     pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteVirtualGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
@@ -1538,6 +2019,7 @@ pub mod delete_virtual_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The virtual gateway that was deleted.</p>
@@ -1553,10 +2035,20 @@ pub mod delete_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteVirtualGatewayOutput`](crate::output::DeleteVirtualGatewayOutput).
         pub fn build(self) -> crate::output::DeleteVirtualGatewayOutput {
             crate::output::DeleteVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1575,11 +2067,17 @@ pub struct UpdateVirtualGatewayOutput {
     /// <p>A full description of the virtual gateway that was updated.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+    _request_id: Option<String>,
 }
 impl UpdateVirtualGatewayOutput {
     /// <p>A full description of the virtual gateway that was updated.</p>
     pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateVirtualGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
@@ -1590,6 +2088,7 @@ pub mod update_virtual_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the virtual gateway that was updated.</p>
@@ -1605,10 +2104,20 @@ pub mod update_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualGatewayOutput`](crate::output::UpdateVirtualGatewayOutput).
         pub fn build(self) -> crate::output::UpdateVirtualGatewayOutput {
             crate::output::UpdateVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1627,11 +2136,17 @@ pub struct DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
     #[doc(hidden)]
     pub virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualGatewayOutput {
     /// <p>The full description of your virtual gateway.</p>
     pub fn virtual_gateway(&self) -> std::option::Option<&crate::model::VirtualGatewayData> {
         self.virtual_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeVirtualGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
@@ -1642,6 +2157,7 @@ pub mod describe_virtual_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_gateway: std::option::Option<crate::model::VirtualGatewayData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your virtual gateway.</p>
@@ -1657,10 +2173,20 @@ pub mod describe_virtual_gateway_output {
             self.virtual_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVirtualGatewayOutput`](crate::output::DescribeVirtualGatewayOutput).
         pub fn build(self) -> crate::output::DescribeVirtualGatewayOutput {
             crate::output::DescribeVirtualGatewayOutput {
                 virtual_gateway: self.virtual_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1682,6 +2208,7 @@ pub struct ListGatewayRoutesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGatewayRoutesOutput {
     /// <p>The list of existing gateway routes for the specified service mesh and virtual gateway.</p>
@@ -1691,6 +2218,11 @@ impl ListGatewayRoutesOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListGatewayRoutes</code> request. When the results of a <code>ListGatewayRoutes</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListGatewayRoutesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
@@ -1703,6 +2235,7 @@ pub mod list_gateway_routes_output {
         pub(crate) gateway_routes:
             std::option::Option<std::vec::Vec<crate::model::GatewayRouteRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `gateway_routes`.
@@ -1734,11 +2267,21 @@ pub mod list_gateway_routes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGatewayRoutesOutput`](crate::output::ListGatewayRoutesOutput).
         pub fn build(self) -> crate::output::ListGatewayRoutesOutput {
             crate::output::ListGatewayRoutesOutput {
                 gateway_routes: self.gateway_routes,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1757,11 +2300,17 @@ pub struct CreateGatewayRouteOutput {
     /// <p>The full description of your gateway route following the create call.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+    _request_id: Option<String>,
 }
 impl CreateGatewayRouteOutput {
     /// <p>The full description of your gateway route following the create call.</p>
     pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateGatewayRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
@@ -1772,6 +2321,7 @@ pub mod create_gateway_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your gateway route following the create call.</p>
@@ -1787,10 +2337,20 @@ pub mod create_gateway_route_output {
             self.gateway_route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateGatewayRouteOutput`](crate::output::CreateGatewayRouteOutput).
         pub fn build(self) -> crate::output::CreateGatewayRouteOutput {
             crate::output::CreateGatewayRouteOutput {
                 gateway_route: self.gateway_route,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1809,11 +2369,17 @@ pub struct DeleteGatewayRouteOutput {
     /// <p>The gateway route that was deleted.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+    _request_id: Option<String>,
 }
 impl DeleteGatewayRouteOutput {
     /// <p>The gateway route that was deleted.</p>
     pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteGatewayRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
@@ -1824,6 +2390,7 @@ pub mod delete_gateway_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The gateway route that was deleted.</p>
@@ -1839,10 +2406,20 @@ pub mod delete_gateway_route_output {
             self.gateway_route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteGatewayRouteOutput`](crate::output::DeleteGatewayRouteOutput).
         pub fn build(self) -> crate::output::DeleteGatewayRouteOutput {
             crate::output::DeleteGatewayRouteOutput {
                 gateway_route: self.gateway_route,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1861,11 +2438,17 @@ pub struct UpdateGatewayRouteOutput {
     /// <p>A full description of the gateway route that was updated.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+    _request_id: Option<String>,
 }
 impl UpdateGatewayRouteOutput {
     /// <p>A full description of the gateway route that was updated.</p>
     pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateGatewayRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
@@ -1876,6 +2459,7 @@ pub mod update_gateway_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the gateway route that was updated.</p>
@@ -1891,10 +2475,20 @@ pub mod update_gateway_route_output {
             self.gateway_route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGatewayRouteOutput`](crate::output::UpdateGatewayRouteOutput).
         pub fn build(self) -> crate::output::UpdateGatewayRouteOutput {
             crate::output::UpdateGatewayRouteOutput {
                 gateway_route: self.gateway_route,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1913,11 +2507,17 @@ pub struct DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
     #[doc(hidden)]
     pub gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+    _request_id: Option<String>,
 }
 impl DescribeGatewayRouteOutput {
     /// <p>The full description of your gateway route.</p>
     pub fn gateway_route(&self) -> std::option::Option<&crate::model::GatewayRouteData> {
         self.gateway_route.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeGatewayRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
@@ -1928,6 +2528,7 @@ pub mod describe_gateway_route_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_route: std::option::Option<crate::model::GatewayRouteData>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full description of your gateway route.</p>
@@ -1943,10 +2544,20 @@ pub mod describe_gateway_route_output {
             self.gateway_route = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeGatewayRouteOutput`](crate::output::DescribeGatewayRouteOutput).
         pub fn build(self) -> crate::output::DescribeGatewayRouteOutput {
             crate::output::DescribeGatewayRouteOutput {
                 gateway_route: self.gateway_route,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1961,18 +2572,38 @@ impl DescribeGatewayRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1986,18 +2617,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2018,6 +2669,7 @@ pub struct ListTagsForResourceOutput {
     /// <p>The <code>nextToken</code> value to include in a future <code>ListTagsForResource</code> request. When the results of a <code>ListTagsForResource</code> request exceed <code>limit</code>, you can use this value to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the resource.</p>
@@ -2029,6 +2681,11 @@ impl ListTagsForResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -2038,6 +2695,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::TagRef>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -2069,11 +2727,21 @@ pub mod list_tags_for_resource_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }

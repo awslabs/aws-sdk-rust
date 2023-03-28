@@ -6,11 +6,17 @@ pub struct UpdateGroupQueryOutput {
     /// <p>The updated resource query associated with the resource group after the update.</p>
     #[doc(hidden)]
     pub group_query: std::option::Option<crate::model::GroupQuery>,
+    _request_id: Option<String>,
 }
 impl UpdateGroupQueryOutput {
     /// <p>The updated resource query associated with the resource group after the update.</p>
     pub fn group_query(&self) -> std::option::Option<&crate::model::GroupQuery> {
         self.group_query.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateGroupQueryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput).
@@ -21,6 +27,7 @@ pub mod update_group_query_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_query: std::option::Option<crate::model::GroupQuery>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated resource query associated with the resource group after the update.</p>
@@ -36,10 +43,20 @@ pub mod update_group_query_output {
             self.group_query = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGroupQueryOutput`](crate::output::UpdateGroupQueryOutput).
         pub fn build(self) -> crate::output::UpdateGroupQueryOutput {
             crate::output::UpdateGroupQueryOutput {
                 group_query: self.group_query,
+                _request_id: self._request_id,
             }
         }
     }
@@ -58,11 +75,17 @@ pub struct UpdateGroupOutput {
     /// <p>The update description of the resource group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
+    _request_id: Option<String>,
 }
 impl UpdateGroupOutput {
     /// <p>The update description of the resource group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
@@ -73,6 +96,7 @@ pub mod update_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The update description of the resource group.</p>
@@ -85,9 +109,21 @@ pub mod update_group_output {
             self.group = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGroupOutput`](crate::output::UpdateGroupOutput).
         pub fn build(self) -> crate::output::UpdateGroupOutput {
-            crate::output::UpdateGroupOutput { group: self.group }
+            crate::output::UpdateGroupOutput {
+                group: self.group,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -105,11 +141,17 @@ pub struct UpdateAccountSettingsOutput {
     /// <p>A structure that displays the status of the optional features in the account.</p>
     #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
+    _request_id: Option<String>,
 }
 impl UpdateAccountSettingsOutput {
     /// <p>A structure that displays the status of the optional features in the account.</p>
     pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
         self.account_settings.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAccountSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
@@ -120,6 +162,7 @@ pub mod update_account_settings_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that displays the status of the optional features in the account.</p>
@@ -135,10 +178,20 @@ pub mod update_account_settings_output {
             self.account_settings = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAccountSettingsOutput`](crate::output::UpdateAccountSettingsOutput).
         pub fn build(self) -> crate::output::UpdateAccountSettingsOutput {
             crate::output::UpdateAccountSettingsOutput {
                 account_settings: self.account_settings,
+                _request_id: self._request_id,
             }
         }
     }
@@ -160,6 +213,7 @@ pub struct UntagOutput {
     /// <p>The keys of the tags that were removed.</p>
     #[doc(hidden)]
     pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UntagOutput {
     /// <p>The ARN of the resource group from which tags have been removed.</p>
@@ -171,6 +225,11 @@ impl UntagOutput {
         self.keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UntagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagOutput`](crate::output::UntagOutput).
 pub mod untag_output {
 
@@ -180,6 +239,7 @@ pub mod untag_output {
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the resource group from which tags have been removed.</p>
@@ -211,11 +271,21 @@ pub mod untag_output {
             self.keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagOutput`](crate::output::UntagOutput).
         pub fn build(self) -> crate::output::UntagOutput {
             crate::output::UntagOutput {
                 arn: self.arn,
                 keys: self.keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -240,6 +310,7 @@ pub struct UngroupResourcesOutput {
     /// <p>A list of any resources that are still in the process of being removed from the group by this operation. These pending removals continue asynchronously. You can check the status of pending removals by using the <code> <code>ListGroupResources</code> </code> operation. After the resource is successfully removed, it no longer appears in the response.</p>
     #[doc(hidden)]
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
+    _request_id: Option<String>,
 }
 impl UngroupResourcesOutput {
     /// <p>A list of resources that were successfully removed from the group by this operation.</p>
@@ -255,6 +326,11 @@ impl UngroupResourcesOutput {
         self.pending.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UngroupResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UngroupResourcesOutput`](crate::output::UngroupResourcesOutput).
 pub mod ungroup_resources_output {
 
@@ -265,6 +341,7 @@ pub mod ungroup_resources_output {
         pub(crate) succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
         pub(crate) pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `succeeded`.
@@ -324,12 +401,22 @@ pub mod ungroup_resources_output {
             self.pending = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UngroupResourcesOutput`](crate::output::UngroupResourcesOutput).
         pub fn build(self) -> crate::output::UngroupResourcesOutput {
             crate::output::UngroupResourcesOutput {
                 succeeded: self.succeeded,
                 failed: self.failed,
                 pending: self.pending,
+                _request_id: self._request_id,
             }
         }
     }
@@ -352,6 +439,7 @@ pub struct TagOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl TagOutput {
     /// <p>The ARN of the tagged resource.</p>
@@ -366,6 +454,11 @@ impl TagOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for TagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagOutput`](crate::output::TagOutput).
 pub mod tag_output {
 
@@ -377,6 +470,7 @@ pub mod tag_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the tagged resource.</p>
@@ -414,11 +508,21 @@ pub mod tag_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagOutput`](crate::output::TagOutput).
         pub fn build(self) -> crate::output::TagOutput {
             crate::output::TagOutput {
                 arn: self.arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -448,6 +552,7 @@ pub struct SearchResourcesOutput {
     /// </ul>
     #[doc(hidden)]
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
+    _request_id: Option<String>,
 }
 impl SearchResourcesOutput {
     /// <p>The ARNs and resource types of resources that are members of the group that you specified.</p>
@@ -468,6 +573,11 @@ impl SearchResourcesOutput {
         self.query_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
 pub mod search_resources_output {
 
@@ -479,6 +589,7 @@ pub mod search_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_identifiers`.
@@ -539,12 +650,22 @@ pub mod search_resources_output {
             self.query_errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchResourcesOutput`](crate::output::SearchResourcesOutput).
         pub fn build(self) -> crate::output::SearchResourcesOutput {
             crate::output::SearchResourcesOutput {
                 resource_identifiers: self.resource_identifiers,
                 next_token: self.next_token,
                 query_errors: self.query_errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -559,18 +680,38 @@ impl SearchResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutGroupConfigurationOutput {}
+pub struct PutGroupConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutGroupConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput).
 pub mod put_group_configuration_output {
 
     /// A builder for [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutGroupConfigurationOutput`](crate::output::PutGroupConfigurationOutput).
         pub fn build(self) -> crate::output::PutGroupConfigurationOutput {
-            crate::output::PutGroupConfigurationOutput {}
+            crate::output::PutGroupConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -597,6 +738,7 @@ pub struct ListGroupsOutput {
     /// <p>If present, indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGroupsOutput {
     /// <p>A list of <code>GroupIdentifier</code> objects. Each identifier is an object that contains both the <code>Name</code> and the <code>GroupArn</code>.</p>
@@ -615,6 +757,11 @@ impl ListGroupsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGroupsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListGroupsOutput`](crate::output::ListGroupsOutput).
 pub mod list_groups_output {
 
@@ -626,6 +773,7 @@ pub mod list_groups_output {
             std::option::Option<std::vec::Vec<crate::model::GroupIdentifier>>,
         pub(crate) groups: std::option::Option<std::vec::Vec<crate::model::Group>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `group_identifiers`.
@@ -682,12 +830,22 @@ pub mod list_groups_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGroupsOutput`](crate::output::ListGroupsOutput).
         pub fn build(self) -> crate::output::ListGroupsOutput {
             crate::output::ListGroupsOutput {
                 group_identifiers: self.group_identifiers,
                 groups: self.groups,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -718,6 +876,7 @@ pub struct ListGroupResourcesOutput {
     /// <p>A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code> and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.</p>
     #[doc(hidden)]
     pub query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
+    _request_id: Option<String>,
 }
 impl ListGroupResourcesOutput {
     /// <p>An array of resources from which you can determine each resource's identity, type, and group membership status.</p>
@@ -740,6 +899,11 @@ impl ListGroupResourcesOutput {
         self.query_errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGroupResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
 pub mod list_group_resources_output {
 
@@ -753,6 +917,7 @@ pub mod list_group_resources_output {
             std::option::Option<std::vec::Vec<crate::model::ResourceIdentifier>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) query_errors: std::option::Option<std::vec::Vec<crate::model::QueryError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resources`.
@@ -828,6 +993,15 @@ pub mod list_group_resources_output {
             self.query_errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGroupResourcesOutput`](crate::output::ListGroupResourcesOutput).
         pub fn build(self) -> crate::output::ListGroupResourcesOutput {
             crate::output::ListGroupResourcesOutput {
@@ -835,6 +1009,7 @@ pub mod list_group_resources_output {
                 resource_identifiers: self.resource_identifiers,
                 next_token: self.next_token,
                 query_errors: self.query_errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -859,6 +1034,7 @@ pub struct GroupResourcesOutput {
     /// <p>A list of ARNs of any resources that this operation is still in the process adding to the group. These pending additions continue asynchronously. You can check the status of pending additions by using the <code> <code>ListGroupResources</code> </code> operation, and checking the <code>Resources</code> array in the response and the <code>Status</code> field of each object in that array. </p>
     #[doc(hidden)]
     pub pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
+    _request_id: Option<String>,
 }
 impl GroupResourcesOutput {
     /// <p>A list of ARNs of the resources that this operation successfully added to the group.</p>
@@ -874,6 +1050,11 @@ impl GroupResourcesOutput {
         self.pending.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GroupResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GroupResourcesOutput`](crate::output::GroupResourcesOutput).
 pub mod group_resources_output {
 
@@ -884,6 +1065,7 @@ pub mod group_resources_output {
         pub(crate) succeeded: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) failed: std::option::Option<std::vec::Vec<crate::model::FailedResource>>,
         pub(crate) pending: std::option::Option<std::vec::Vec<crate::model::PendingResource>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `succeeded`.
@@ -943,12 +1125,22 @@ pub mod group_resources_output {
             self.pending = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GroupResourcesOutput`](crate::output::GroupResourcesOutput).
         pub fn build(self) -> crate::output::GroupResourcesOutput {
             crate::output::GroupResourcesOutput {
                 succeeded: self.succeeded,
                 failed: self.failed,
                 pending: self.pending,
+                _request_id: self._request_id,
             }
         }
     }
@@ -971,6 +1163,7 @@ pub struct GetTagsOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetTagsOutput {
     /// <p>The ARN of the tagged resource group.</p>
@@ -985,6 +1178,11 @@ impl GetTagsOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetTagsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
 pub mod get_tags_output {
 
@@ -996,6 +1194,7 @@ pub mod get_tags_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the tagged resource group.</p>
@@ -1033,11 +1232,21 @@ pub mod get_tags_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTagsOutput`](crate::output::GetTagsOutput).
         pub fn build(self) -> crate::output::GetTagsOutput {
             crate::output::GetTagsOutput {
                 arn: self.arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1056,11 +1265,17 @@ pub struct GetGroupQueryOutput {
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_query: std::option::Option<crate::model::GroupQuery>,
+    _request_id: Option<String>,
 }
 impl GetGroupQueryOutput {
     /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
     pub fn group_query(&self) -> std::option::Option<&crate::model::GroupQuery> {
         self.group_query.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetGroupQueryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetGroupQueryOutput`](crate::output::GetGroupQueryOutput).
@@ -1071,6 +1286,7 @@ pub mod get_group_query_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_query: std::option::Option<crate::model::GroupQuery>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The resource query associated with the specified group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>
@@ -1086,10 +1302,20 @@ pub mod get_group_query_output {
             self.group_query = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetGroupQueryOutput`](crate::output::GetGroupQueryOutput).
         pub fn build(self) -> crate::output::GetGroupQueryOutput {
             crate::output::GetGroupQueryOutput {
                 group_query: self.group_query,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1108,11 +1334,17 @@ pub struct GetGroupConfigurationOutput {
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetGroupConfigurationOutput {
     /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     pub fn group_configuration(&self) -> std::option::Option<&crate::model::GroupConfiguration> {
         self.group_configuration.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetGroupConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput).
@@ -1123,6 +1355,7 @@ pub mod get_group_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group_configuration: std::option::Option<crate::model::GroupConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that describes the service configuration attached with the specified group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
@@ -1138,10 +1371,20 @@ pub mod get_group_configuration_output {
             self.group_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetGroupConfigurationOutput`](crate::output::GetGroupConfigurationOutput).
         pub fn build(self) -> crate::output::GetGroupConfigurationOutput {
             crate::output::GetGroupConfigurationOutput {
                 group_configuration: self.group_configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1160,11 +1403,17 @@ pub struct GetGroupOutput {
     /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
+    _request_id: Option<String>,
 }
 impl GetGroupOutput {
     /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetGroupOutput`](crate::output::GetGroupOutput).
@@ -1175,6 +1424,7 @@ pub mod get_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains the metadata details for the specified resource group. Use <code>GetGroupQuery</code> and <code>GetGroupConfiguration</code> to get those additional details of the resource group.</p>
@@ -1187,9 +1437,21 @@ pub mod get_group_output {
             self.group = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetGroupOutput`](crate::output::GetGroupOutput).
         pub fn build(self) -> crate::output::GetGroupOutput {
-            crate::output::GetGroupOutput { group: self.group }
+            crate::output::GetGroupOutput {
+                group: self.group,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1207,11 +1469,17 @@ pub struct GetAccountSettingsOutput {
     /// <p>The current settings for the optional features in Resource Groups.</p>
     #[doc(hidden)]
     pub account_settings: std::option::Option<crate::model::AccountSettings>,
+    _request_id: Option<String>,
 }
 impl GetAccountSettingsOutput {
     /// <p>The current settings for the optional features in Resource Groups.</p>
     pub fn account_settings(&self) -> std::option::Option<&crate::model::AccountSettings> {
         self.account_settings.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAccountSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
@@ -1222,6 +1490,7 @@ pub mod get_account_settings_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_settings: std::option::Option<crate::model::AccountSettings>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The current settings for the optional features in Resource Groups.</p>
@@ -1237,10 +1506,20 @@ pub mod get_account_settings_output {
             self.account_settings = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccountSettingsOutput`](crate::output::GetAccountSettingsOutput).
         pub fn build(self) -> crate::output::GetAccountSettingsOutput {
             crate::output::GetAccountSettingsOutput {
                 account_settings: self.account_settings,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1259,11 +1538,17 @@ pub struct DeleteGroupOutput {
     /// <p>A full description of the deleted resource group.</p>
     #[doc(hidden)]
     pub group: std::option::Option<crate::model::Group>,
+    _request_id: Option<String>,
 }
 impl DeleteGroupOutput {
     /// <p>A full description of the deleted resource group.</p>
     pub fn group(&self) -> std::option::Option<&crate::model::Group> {
         self.group.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
@@ -1274,6 +1559,7 @@ pub mod delete_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) group: std::option::Option<crate::model::Group>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A full description of the deleted resource group.</p>
@@ -1286,9 +1572,21 @@ pub mod delete_group_output {
             self.group = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteGroupOutput`](crate::output::DeleteGroupOutput).
         pub fn build(self) -> crate::output::DeleteGroupOutput {
-            crate::output::DeleteGroupOutput { group: self.group }
+            crate::output::DeleteGroupOutput {
+                group: self.group,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1316,6 +1614,7 @@ pub struct CreateGroupOutput {
     /// <p>The service configuration associated with the resource group. For details about the syntax of a service configuration, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>
     #[doc(hidden)]
     pub group_configuration: std::option::Option<crate::model::GroupConfiguration>,
+    _request_id: Option<String>,
 }
 impl CreateGroupOutput {
     /// <p>The description of the resource group.</p>
@@ -1338,6 +1637,11 @@ impl CreateGroupOutput {
         self.group_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateGroupOutput`](crate::output::CreateGroupOutput).
 pub mod create_group_output {
 
@@ -1351,6 +1655,7 @@ pub mod create_group_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) group_configuration: std::option::Option<crate::model::GroupConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of the resource group.</p>
@@ -1414,6 +1719,15 @@ pub mod create_group_output {
             self.group_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateGroupOutput`](crate::output::CreateGroupOutput).
         pub fn build(self) -> crate::output::CreateGroupOutput {
             crate::output::CreateGroupOutput {
@@ -1421,6 +1735,7 @@ pub mod create_group_output {
                 resource_query: self.resource_query,
                 tags: self.tags,
                 group_configuration: self.group_configuration,
+                _request_id: self._request_id,
             }
         }
     }

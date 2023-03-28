@@ -6,11 +6,17 @@ pub struct StartLendingAnalysisOutput {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartLendingAnalysisOutput {
     /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for StartLendingAnalysisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
@@ -21,6 +27,7 @@ pub mod start_lending_analysis_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier for the lending or text-detection job. The <code>JobId</code> is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
@@ -33,10 +40,20 @@ pub mod start_lending_analysis_output {
             self.job_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartLendingAnalysisOutput`](crate::output::StartLendingAnalysisOutput).
         pub fn build(self) -> crate::output::StartLendingAnalysisOutput {
             crate::output::StartLendingAnalysisOutput {
                 job_id: self.job_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -55,11 +72,17 @@ pub struct StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartExpenseAnalysisOutput {
     /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for StartExpenseAnalysisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
@@ -70,6 +93,7 @@ pub mod start_expense_analysis_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier for the text detection job. The <code>JobId</code> is returned from <code>StartExpenseAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
@@ -82,10 +106,20 @@ pub mod start_expense_analysis_output {
             self.job_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartExpenseAnalysisOutput`](crate::output::StartExpenseAnalysisOutput).
         pub fn build(self) -> crate::output::StartExpenseAnalysisOutput {
             crate::output::StartExpenseAnalysisOutput {
                 job_id: self.job_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -104,11 +138,17 @@ pub struct StartDocumentTextDetectionOutput {
     /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartDocumentTextDetectionOutput {
     /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for StartDocumentTextDetectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
@@ -119,6 +159,7 @@ pub mod start_document_text_detection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the text detection job for the document. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>. A <code>JobId</code> value is only valid for 7 days.</p>
@@ -131,10 +172,20 @@ pub mod start_document_text_detection_output {
             self.job_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartDocumentTextDetectionOutput`](crate::output::StartDocumentTextDetectionOutput).
         pub fn build(self) -> crate::output::StartDocumentTextDetectionOutput {
             crate::output::StartDocumentTextDetectionOutput {
                 job_id: self.job_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -153,11 +204,17 @@ pub struct StartDocumentAnalysisOutput {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     #[doc(hidden)]
     pub job_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartDocumentAnalysisOutput {
     /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
     pub fn job_id(&self) -> std::option::Option<&str> {
         self.job_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for StartDocumentAnalysisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
@@ -168,6 +225,7 @@ pub mod start_document_analysis_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier for the document text detection job. Use <code>JobId</code> to identify the job in a subsequent call to <code>GetDocumentAnalysis</code>. A <code>JobId</code> value is only valid for 7 days.</p>
@@ -180,10 +238,20 @@ pub mod start_document_analysis_output {
             self.job_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartDocumentAnalysisOutput`](crate::output::StartDocumentAnalysisOutput).
         pub fn build(self) -> crate::output::StartDocumentAnalysisOutput {
             crate::output::StartDocumentAnalysisOutput {
                 job_id: self.job_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -217,6 +285,7 @@ pub struct GetLendingAnalysisSummaryOutput {
     /// <p>The current model version of the Analyze Lending API.</p>
     #[doc(hidden)]
     pub analyze_lending_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetLendingAnalysisSummaryOutput {
     /// <p>Information about the input document.</p>
@@ -244,6 +313,11 @@ impl GetLendingAnalysisSummaryOutput {
         self.analyze_lending_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetLendingAnalysisSummaryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
 pub mod get_lending_analysis_summary_output {
 
@@ -257,6 +331,7 @@ pub mod get_lending_analysis_summary_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) analyze_lending_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the input document.</p>
@@ -346,6 +421,15 @@ pub mod get_lending_analysis_summary_output {
             self.analyze_lending_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLendingAnalysisSummaryOutput`](crate::output::GetLendingAnalysisSummaryOutput).
         pub fn build(self) -> crate::output::GetLendingAnalysisSummaryOutput {
             crate::output::GetLendingAnalysisSummaryOutput {
@@ -355,6 +439,7 @@ pub mod get_lending_analysis_summary_output {
                 warnings: self.warnings,
                 status_message: self.status_message,
                 analyze_lending_model_version: self.analyze_lending_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -391,6 +476,7 @@ pub struct GetLendingAnalysisOutput {
     /// <p> The current model version of the Analyze Lending API.</p>
     #[doc(hidden)]
     pub analyze_lending_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetLendingAnalysisOutput {
     /// <p>Information about the input document.</p>
@@ -422,6 +508,11 @@ impl GetLendingAnalysisOutput {
         self.analyze_lending_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetLendingAnalysisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
 pub mod get_lending_analysis_output {
 
@@ -436,6 +527,7 @@ pub mod get_lending_analysis_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) analyze_lending_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the input document.</p>
@@ -541,6 +633,15 @@ pub mod get_lending_analysis_output {
             self.analyze_lending_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLendingAnalysisOutput`](crate::output::GetLendingAnalysisOutput).
         pub fn build(self) -> crate::output::GetLendingAnalysisOutput {
             crate::output::GetLendingAnalysisOutput {
@@ -551,6 +652,7 @@ pub mod get_lending_analysis_output {
                 warnings: self.warnings,
                 status_message: self.status_message,
                 analyze_lending_model_version: self.analyze_lending_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -587,6 +689,7 @@ pub struct GetExpenseAnalysisOutput {
     /// <p>The current model version of AnalyzeExpense.</p>
     #[doc(hidden)]
     pub analyze_expense_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetExpenseAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
@@ -618,6 +721,11 @@ impl GetExpenseAnalysisOutput {
         self.analyze_expense_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetExpenseAnalysisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
 pub mod get_expense_analysis_output {
 
@@ -633,6 +741,7 @@ pub mod get_expense_analysis_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) analyze_expense_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract operation.</p>
@@ -738,6 +847,15 @@ pub mod get_expense_analysis_output {
             self.analyze_expense_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetExpenseAnalysisOutput`](crate::output::GetExpenseAnalysisOutput).
         pub fn build(self) -> crate::output::GetExpenseAnalysisOutput {
             crate::output::GetExpenseAnalysisOutput {
@@ -748,6 +866,7 @@ pub mod get_expense_analysis_output {
                 warnings: self.warnings,
                 status_message: self.status_message,
                 analyze_expense_model_version: self.analyze_expense_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -784,6 +903,7 @@ pub struct GetDocumentTextDetectionOutput {
     /// <p></p>
     #[doc(hidden)]
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDocumentTextDetectionOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
@@ -815,6 +935,11 @@ impl GetDocumentTextDetectionOutput {
         self.detect_document_text_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDocumentTextDetectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
 pub mod get_document_text_detection_output {
 
@@ -829,6 +954,7 @@ pub mod get_document_text_detection_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) detect_document_text_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
@@ -934,6 +1060,15 @@ pub mod get_document_text_detection_output {
             self.detect_document_text_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDocumentTextDetectionOutput`](crate::output::GetDocumentTextDetectionOutput).
         pub fn build(self) -> crate::output::GetDocumentTextDetectionOutput {
             crate::output::GetDocumentTextDetectionOutput {
@@ -944,6 +1079,7 @@ pub mod get_document_text_detection_output {
                 warnings: self.warnings,
                 status_message: self.status_message,
                 detect_document_text_model_version: self.detect_document_text_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -980,6 +1116,7 @@ pub struct GetDocumentAnalysisOutput {
     /// <p></p>
     #[doc(hidden)]
     pub analyze_document_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDocumentAnalysisOutput {
     /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
@@ -1011,6 +1148,11 @@ impl GetDocumentAnalysisOutput {
         self.analyze_document_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDocumentAnalysisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
 pub mod get_document_analysis_output {
 
@@ -1025,6 +1167,7 @@ pub mod get_document_analysis_output {
         pub(crate) warnings: std::option::Option<std::vec::Vec<crate::model::Warning>>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) analyze_document_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a document that Amazon Textract processed. <code>DocumentMetadata</code> is returned in every page of paginated responses from an Amazon Textract video operation.</p>
@@ -1130,6 +1273,15 @@ pub mod get_document_analysis_output {
             self.analyze_document_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDocumentAnalysisOutput`](crate::output::GetDocumentAnalysisOutput).
         pub fn build(self) -> crate::output::GetDocumentAnalysisOutput {
             crate::output::GetDocumentAnalysisOutput {
@@ -1140,6 +1292,7 @@ pub mod get_document_analysis_output {
                 warnings: self.warnings,
                 status_message: self.status_message,
                 analyze_document_model_version: self.analyze_document_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1164,6 +1317,7 @@ pub struct DetectDocumentTextOutput {
     /// <p></p>
     #[doc(hidden)]
     pub detect_document_text_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DetectDocumentTextOutput {
     /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
@@ -1179,6 +1333,11 @@ impl DetectDocumentTextOutput {
         self.detect_document_text_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DetectDocumentTextOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
 pub mod detect_document_text_output {
 
@@ -1189,6 +1348,7 @@ pub mod detect_document_text_output {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) blocks: std::option::Option<std::vec::Vec<crate::model::Block>>,
         pub(crate) detect_document_text_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata about the document. It contains the number of pages that are detected in the document.</p>
@@ -1239,12 +1399,22 @@ pub mod detect_document_text_output {
             self.detect_document_text_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DetectDocumentTextOutput`](crate::output::DetectDocumentTextOutput).
         pub fn build(self) -> crate::output::DetectDocumentTextOutput {
             crate::output::DetectDocumentTextOutput {
                 document_metadata: self.document_metadata,
                 blocks: self.blocks,
                 detect_document_text_model_version: self.detect_document_text_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1269,6 +1439,7 @@ pub struct AnalyzeIdOutput {
     /// <p>The version of the AnalyzeIdentity API being used to process documents.</p>
     #[doc(hidden)]
     pub analyze_id_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AnalyzeIdOutput {
     /// <p>The list of documents processed by AnalyzeID. Includes a number denoting their place in the list and the response structure for the document.</p>
@@ -1284,6 +1455,11 @@ impl AnalyzeIdOutput {
         self.analyze_id_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AnalyzeIdOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
 pub mod analyze_id_output {
 
@@ -1295,6 +1471,7 @@ pub mod analyze_id_output {
             std::option::Option<std::vec::Vec<crate::model::IdentityDocument>>,
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) analyze_id_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `identity_documents`.
@@ -1342,12 +1519,22 @@ pub mod analyze_id_output {
             self.analyze_id_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AnalyzeIdOutput`](crate::output::AnalyzeIdOutput).
         pub fn build(self) -> crate::output::AnalyzeIdOutput {
             crate::output::AnalyzeIdOutput {
                 identity_documents: self.identity_documents,
                 document_metadata: self.document_metadata,
                 analyze_id_model_version: self.analyze_id_model_version,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1369,6 +1556,7 @@ pub struct AnalyzeExpenseOutput {
     /// <p>The expenses detected by Amazon Textract.</p>
     #[doc(hidden)]
     pub expense_documents: std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+    _request_id: Option<String>,
 }
 impl AnalyzeExpenseOutput {
     /// <p>Information about the input document.</p>
@@ -1378,6 +1566,11 @@ impl AnalyzeExpenseOutput {
     /// <p>The expenses detected by Amazon Textract.</p>
     pub fn expense_documents(&self) -> std::option::Option<&[crate::model::ExpenseDocument]> {
         self.expense_documents.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AnalyzeExpenseOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
@@ -1390,6 +1583,7 @@ pub mod analyze_expense_output {
         pub(crate) document_metadata: std::option::Option<crate::model::DocumentMetadata>,
         pub(crate) expense_documents:
             std::option::Option<std::vec::Vec<crate::model::ExpenseDocument>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the input document.</p>
@@ -1424,11 +1618,21 @@ pub mod analyze_expense_output {
             self.expense_documents = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AnalyzeExpenseOutput`](crate::output::AnalyzeExpenseOutput).
         pub fn build(self) -> crate::output::AnalyzeExpenseOutput {
             crate::output::AnalyzeExpenseOutput {
                 document_metadata: self.document_metadata,
                 expense_documents: self.expense_documents,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1456,6 +1660,7 @@ pub struct AnalyzeDocumentOutput {
     /// <p>The version of the model used to analyze the document.</p>
     #[doc(hidden)]
     pub analyze_document_model_version: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AnalyzeDocumentOutput {
     /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
@@ -1477,6 +1682,11 @@ impl AnalyzeDocumentOutput {
         self.analyze_document_model_version.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AnalyzeDocumentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
 pub mod analyze_document_output {
 
@@ -1489,6 +1699,7 @@ pub mod analyze_document_output {
         pub(crate) human_loop_activation_output:
             std::option::Option<crate::model::HumanLoopActivationOutput>,
         pub(crate) analyze_document_model_version: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata about the analyzed document. An example is the number of pages.</p>
@@ -1555,6 +1766,15 @@ pub mod analyze_document_output {
             self.analyze_document_model_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AnalyzeDocumentOutput`](crate::output::AnalyzeDocumentOutput).
         pub fn build(self) -> crate::output::AnalyzeDocumentOutput {
             crate::output::AnalyzeDocumentOutput {
@@ -1562,6 +1782,7 @@ pub mod analyze_document_output {
                 blocks: self.blocks,
                 human_loop_activation_output: self.human_loop_activation_output,
                 analyze_document_model_version: self.analyze_document_model_version,
+                _request_id: self._request_id,
             }
         }
     }

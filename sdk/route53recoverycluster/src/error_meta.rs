@@ -19,15 +19,8 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>There was a validation error on the request.</p>
     ValidationException(crate::error::ValidationException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -56,20 +49,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetRoutingControlStateError> for Error {
     fn from(err: crate::error::GetRoutingControlStateError) -> Self {
-        match err.kind {
-            crate::error::GetRoutingControlStateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::GetRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::error::GetRoutingControlStateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::GetRoutingControlStateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::GetRoutingControlStateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::GetRoutingControlStateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::GetRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::GetRoutingControlStateError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetRoutingControlStateError::EndpointTemporarilyUnavailableException(
+                inner,
+            ) => Error::EndpointTemporarilyUnavailableException(inner),
+            crate::error::GetRoutingControlStateError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::GetRoutingControlStateError::ResourceNotFoundException(inner) => {
+                Error::ResourceNotFoundException(inner)
+            }
+            crate::error::GetRoutingControlStateError::ThrottlingException(inner) => {
+                Error::ThrottlingException(inner)
+            }
+            crate::error::GetRoutingControlStateError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetRoutingControlStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -84,34 +96,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListRoutingControlsError> for Error {
     fn from(err: crate::error::ListRoutingControlsError) -> Self {
-        match err.kind {
-            crate::error::ListRoutingControlsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListRoutingControlsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListRoutingControlsErrorKind::EndpointTemporarilyUnavailableException(
+            crate::error::ListRoutingControlsError::EndpointTemporarilyUnavailableException(
                 inner,
             ) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::error::ListRoutingControlsErrorKind::InternalServerException(inner) => {
+            crate::error::ListRoutingControlsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListRoutingControlsErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListRoutingControlsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListRoutingControlsErrorKind::ThrottlingException(inner) => {
+            crate::error::ListRoutingControlsError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::ListRoutingControlsErrorKind::ValidationException(inner) => {
+            crate::error::ListRoutingControlsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListRoutingControlsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRoutingControlsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -127,21 +144,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateRoutingControlStateError> for Error {
     fn from(err: crate::error::UpdateRoutingControlStateError) -> Self {
-        match err.kind {
-            crate::error::UpdateRoutingControlStateErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateRoutingControlStateErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateRoutingControlStateError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateRoutingControlStateError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateRoutingControlStateError::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
+            crate::error::UpdateRoutingControlStateError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateRoutingControlStateError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateRoutingControlStateError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateRoutingControlStateError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateRoutingControlStateError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -157,23 +181,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateRoutingControlStatesError> for Error {
     fn from(err: crate::error::UpdateRoutingControlStatesError) -> Self {
-        match err.kind {
-            crate::error::UpdateRoutingControlStatesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::ConflictException(inner) => Error::ConflictException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateRoutingControlStatesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateRoutingControlStatesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateRoutingControlStatesError::ConflictException(inner) => Error::ConflictException(inner),
+            crate::error::UpdateRoutingControlStatesError::EndpointTemporarilyUnavailableException(inner) => Error::EndpointTemporarilyUnavailableException(inner),
+            crate::error::UpdateRoutingControlStatesError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateRoutingControlStatesError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateRoutingControlStatesError::ServiceLimitExceededException(inner) => Error::ServiceLimitExceededException(inner),
+            crate::error::UpdateRoutingControlStatesError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateRoutingControlStatesError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateRoutingControlStatesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::EndpointTemporarilyUnavailableException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceLimitExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

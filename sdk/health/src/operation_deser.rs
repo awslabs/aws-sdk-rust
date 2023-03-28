@@ -6,8 +6,11 @@ pub fn parse_describe_affected_accounts_for_organization_error(
     crate::output::DescribeAffectedAccountsForOrganizationOutput,
     crate::error::DescribeAffectedAccountsForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,23 +22,24 @@ pub fn parse_describe_affected_accounts_for_organization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeAffectedAccountsForOrganizationError { meta: generic, kind: crate::error::DescribeAffectedAccountsForOrganizationErrorKind::InvalidPaginationToken({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidPaginationToken" => {
+            crate::error::DescribeAffectedAccountsForOrganizationError::InvalidPaginationToken({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeAffectedAccountsForOrganizationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeAffectedAccountsForOrganizationError::generic(generic),
     })
 }
 
@@ -52,6 +56,9 @@ pub fn parse_describe_affected_accounts_for_organization_response(
             crate::output::describe_affected_accounts_for_organization_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_affected_accounts_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedAccountsForOrganizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -63,8 +70,11 @@ pub fn parse_describe_affected_entities_error(
     crate::output::DescribeAffectedEntitiesOutput,
     crate::error::DescribeAffectedEntitiesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -76,42 +86,43 @@ pub fn parse_describe_affected_entities_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeAffectedEntitiesError {
-            meta: generic,
-            kind: crate::error::DescribeAffectedEntitiesErrorKind::InvalidPaginationToken({
+        "InvalidPaginationToken" => {
+            crate::error::DescribeAffectedEntitiesError::InvalidPaginationToken({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedLocale" => {
-            crate::error::DescribeAffectedEntitiesError {
-                meta: generic,
-                kind: crate::error::DescribeAffectedEntitiesErrorKind::UnsupportedLocale({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::unsupported_locale::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "UnsupportedLocale" => crate::error::DescribeAffectedEntitiesError::UnsupportedLocale({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::unsupported_locale::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeAffectedEntitiesError::generic(generic),
     })
 }
@@ -132,6 +143,9 @@ pub fn parse_describe_affected_entities_response(
             output,
         )
         .map_err(crate::error::DescribeAffectedEntitiesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -143,8 +157,11 @@ pub fn parse_describe_affected_entities_for_organization_error(
     crate::output::DescribeAffectedEntitiesForOrganizationOutput,
     crate::error::DescribeAffectedEntitiesForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -156,39 +173,48 @@ pub fn parse_describe_affected_entities_for_organization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeAffectedEntitiesForOrganizationError { meta: generic, kind: crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::InvalidPaginationToken({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidPaginationToken" => {
+            crate::error::DescribeAffectedEntitiesForOrganizationError::InvalidPaginationToken({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnsupportedLocale" => crate::error::DescribeAffectedEntitiesForOrganizationError { meta: generic, kind: crate::error::DescribeAffectedEntitiesForOrganizationErrorKind::UnsupportedLocale({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnsupportedLocale" => {
+            crate::error::DescribeAffectedEntitiesForOrganizationError::UnsupportedLocale({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unsupported_locale::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeAffectedEntitiesForOrganizationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeAffectedEntitiesForOrganizationError::generic(generic),
     })
 }
 
@@ -205,6 +231,9 @@ pub fn parse_describe_affected_entities_for_organization_response(
             crate::output::describe_affected_entities_for_organization_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_affected_entities_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeAffectedEntitiesForOrganizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -216,8 +245,11 @@ pub fn parse_describe_entity_aggregates_error(
     crate::output::DescribeEntityAggregatesOutput,
     crate::error::DescribeEntityAggregatesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEntityAggregatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEntityAggregatesError::generic(
         generic,
     ))
@@ -239,6 +271,9 @@ pub fn parse_describe_entity_aggregates_response(
             output,
         )
         .map_err(crate::error::DescribeEntityAggregatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -250,8 +285,11 @@ pub fn parse_describe_event_aggregates_error(
     crate::output::DescribeEventAggregatesOutput,
     crate::error::DescribeEventAggregatesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -263,23 +301,23 @@ pub fn parse_describe_event_aggregates_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeEventAggregatesError {
-            meta: generic,
-            kind: crate::error::DescribeEventAggregatesErrorKind::InvalidPaginationToken({
+        "InvalidPaginationToken" => {
+            crate::error::DescribeEventAggregatesError::InvalidPaginationToken({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeEventAggregatesError::generic(generic),
     })
 }
@@ -300,6 +338,9 @@ pub fn parse_describe_event_aggregates_response(
             output,
         )
         .map_err(crate::error::DescribeEventAggregatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -311,8 +352,11 @@ pub fn parse_describe_event_details_error(
     crate::output::DescribeEventDetailsOutput,
     crate::error::DescribeEventDetailsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeEventDetailsError::unhandled(generic)),
@@ -320,25 +364,26 @@ pub fn parse_describe_event_details_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "UnsupportedLocale" => {
-            crate::error::DescribeEventDetailsError {
-                meta: generic,
-                kind: crate::error::DescribeEventDetailsErrorKind::UnsupportedLocale({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::unsupported_locale::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "UnsupportedLocale" => crate::error::DescribeEventDetailsError::UnsupportedLocale({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::unsupported_locale::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeEventDetailsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
         _ => crate::error::DescribeEventDetailsError::generic(generic),
     })
 }
@@ -359,6 +404,9 @@ pub fn parse_describe_event_details_response(
             output,
         )
         .map_err(crate::error::DescribeEventDetailsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -370,8 +418,11 @@ pub fn parse_describe_event_details_for_organization_error(
     crate::output::DescribeEventDetailsForOrganizationOutput,
     crate::error::DescribeEventDetailsForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -382,25 +433,28 @@ pub fn parse_describe_event_details_for_organization_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "UnsupportedLocale" => {
-            crate::error::DescribeEventDetailsForOrganizationError {
-                meta: generic,
-                kind: crate::error::DescribeEventDetailsForOrganizationErrorKind::UnsupportedLocale(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output = crate::error::unsupported_locale::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
+            crate::error::DescribeEventDetailsForOrganizationError::UnsupportedLocale({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unsupported_locale::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::DescribeEventDetailsForOrganizationError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         _ => crate::error::DescribeEventDetailsForOrganizationError::generic(generic),
     })
@@ -419,6 +473,9 @@ pub fn parse_describe_event_details_for_organization_response(
             crate::output::describe_event_details_for_organization_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_event_details_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeEventDetailsForOrganizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -427,8 +484,11 @@ pub fn parse_describe_event_details_for_organization_response(
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeEventsError::unhandled(generic)),
@@ -436,42 +496,41 @@ pub fn parse_describe_events_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeEventsError {
-            meta: generic,
-            kind: crate::error::DescribeEventsErrorKind::InvalidPaginationToken({
+        "InvalidPaginationToken" => crate::error::DescribeEventsError::InvalidPaginationToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_pagination_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnsupportedLocale" => {
-            crate::error::DescribeEventsError {
-                meta: generic,
-                kind: crate::error::DescribeEventsErrorKind::UnsupportedLocale({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::unsupported_locale::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::invalid_pagination_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
+        "UnsupportedLocale" => crate::error::DescribeEventsError::UnsupportedLocale({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::unsupported_locale::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeEventsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeEventsError::generic(generic),
     })
 }
@@ -489,6 +548,9 @@ pub fn parse_describe_events_response(
             output,
         )
         .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -500,8 +562,11 @@ pub fn parse_describe_events_for_organization_error(
     crate::output::DescribeEventsForOrganizationOutput,
     crate::error::DescribeEventsForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -513,41 +578,44 @@ pub fn parse_describe_events_for_organization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeEventsForOrganizationError {
-            meta: generic,
-            kind: crate::error::DescribeEventsForOrganizationErrorKind::InvalidPaginationToken({
+        "InvalidPaginationToken" => {
+            crate::error::DescribeEventsForOrganizationError::InvalidPaginationToken({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         "UnsupportedLocale" => {
-            crate::error::DescribeEventsForOrganizationError {
-                meta: generic,
-                kind: crate::error::DescribeEventsForOrganizationErrorKind::UnsupportedLocale({
+            crate::error::DescribeEventsForOrganizationError::UnsupportedLocale({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::unsupported_locale::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let mut output = crate::error::unsupported_locale::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         _ => crate::error::DescribeEventsForOrganizationError::generic(generic),
     })
@@ -570,6 +638,9 @@ pub fn parse_describe_events_for_organization_response(
                 output,
             )
             .map_err(crate::error::DescribeEventsForOrganizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -581,8 +652,11 @@ pub fn parse_describe_event_types_error(
     crate::output::DescribeEventTypesOutput,
     crate::error::DescribeEventTypesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeEventTypesError::unhandled(generic)),
@@ -590,42 +664,43 @@ pub fn parse_describe_event_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPaginationToken" => crate::error::DescribeEventTypesError {
-            meta: generic,
-            kind: crate::error::DescribeEventTypesErrorKind::InvalidPaginationToken({
+        "InvalidPaginationToken" => {
+            crate::error::DescribeEventTypesError::InvalidPaginationToken({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_pagination_token::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_pagination_token_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedLocale" => {
-            crate::error::DescribeEventTypesError {
-                meta: generic,
-                kind: crate::error::DescribeEventTypesErrorKind::UnsupportedLocale({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::unsupported_locale::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventTypesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "UnsupportedLocale" => crate::error::DescribeEventTypesError::UnsupportedLocale({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::unsupported_locale::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_unsupported_locale_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeEventTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeEventTypesError::generic(generic),
     })
 }
@@ -646,6 +721,9 @@ pub fn parse_describe_event_types_response(
             output,
         )
         .map_err(crate::error::DescribeEventTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -657,8 +735,11 @@ pub fn parse_describe_health_service_status_for_organization_error(
     crate::output::DescribeHealthServiceStatusForOrganizationOutput,
     crate::error::DescribeHealthServiceStatusForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHealthServiceStatusForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeHealthServiceStatusForOrganizationError::generic(generic))
 }
 
@@ -676,6 +757,9 @@ pub fn parse_describe_health_service_status_for_organization_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_health_service_status_for_organization(response.body().as_ref(), output).map_err(crate::error::DescribeHealthServiceStatusForOrganizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -687,8 +771,11 @@ pub fn parse_disable_health_service_access_for_organization_error(
     crate::output::DisableHealthServiceAccessForOrganizationOutput,
     crate::error::DisableHealthServiceAccessForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableHealthServiceAccessForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -700,7 +787,7 @@ pub fn parse_disable_health_service_access_for_organization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::DisableHealthServiceAccessForOrganizationError { meta: generic, kind: crate::error::DisableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => crate::error::DisableHealthServiceAccessForOrganizationError::ConcurrentModificationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -708,6 +795,7 @@ pub fn parse_disable_health_service_access_for_organization_error(
                     let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableHealthServiceAccessForOrganizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -715,7 +803,7 @@ pub fn parse_disable_health_service_access_for_organization_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DisableHealthServiceAccessForOrganizationError::generic(generic)
     })
 }
@@ -733,6 +821,9 @@ pub fn parse_disable_health_service_access_for_organization_response(
             crate::output::disable_health_service_access_for_organization_output::Builder::default(
             );
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -744,8 +835,11 @@ pub fn parse_enable_health_service_access_for_organization_error(
     crate::output::EnableHealthServiceAccessForOrganizationOutput,
     crate::error::EnableHealthServiceAccessForOrganizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableHealthServiceAccessForOrganizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -757,7 +851,7 @@ pub fn parse_enable_health_service_access_for_organization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::EnableHealthServiceAccessForOrganizationError { meta: generic, kind: crate::error::EnableHealthServiceAccessForOrganizationErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => crate::error::EnableHealthServiceAccessForOrganizationError::ConcurrentModificationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -765,6 +859,7 @@ pub fn parse_enable_health_service_access_for_organization_error(
                     let mut output = crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableHealthServiceAccessForOrganizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -772,7 +867,7 @@ pub fn parse_enable_health_service_access_for_organization_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::EnableHealthServiceAccessForOrganizationError::generic(generic)
     })
 }
@@ -789,6 +884,9 @@ pub fn parse_enable_health_service_access_for_organization_response(
         let mut output =
             crate::output::enable_health_service_access_for_organization_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

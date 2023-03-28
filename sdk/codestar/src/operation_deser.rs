@@ -6,8 +6,11 @@ pub fn parse_associate_team_member_error(
     crate::output::AssociateTeamMemberOutput,
     crate::error::AssociateTeamMemberError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssociateTeamMemberError::unhandled(generic)),
@@ -15,9 +18,8 @@ pub fn parse_associate_team_member_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::AssociateTeamMemberError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -25,17 +27,17 @@ pub fn parse_associate_team_member_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidServiceRoleException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::InvalidServiceRoleException({
+            })
+        }
+        "InvalidServiceRoleException" => {
+            crate::error::AssociateTeamMemberError::InvalidServiceRoleException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -43,34 +45,34 @@ pub fn parse_associate_team_member_error(
                         crate::error::invalid_service_role_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_service_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::AssociateTeamMemberError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectConfigurationException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::ProjectConfigurationException({
+            })
+        }
+        "ProjectConfigurationException" => {
+            crate::error::AssociateTeamMemberError::ProjectConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -78,67 +80,67 @@ pub fn parse_associate_team_member_error(
                         crate::error::project_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => {
+            crate::error::AssociateTeamMemberError::ProjectNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::project_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TeamMemberAlreadyAssociatedException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::TeamMemberAlreadyAssociatedException(
-                {
+            })
+        }
+        "TeamMemberAlreadyAssociatedException" => {
+            crate::error::AssociateTeamMemberError::TeamMemberAlreadyAssociatedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::team_member_already_associated_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_team_member_already_associated_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ValidationException" => crate::error::AssociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::AssociateTeamMemberErrorKind::ValidationException({
+                    let mut output =
+                        crate::error::team_member_already_associated_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_team_member_already_associated_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ValidationException" => {
+            crate::error::AssociateTeamMemberError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssociateTeamMemberError::generic(generic),
     })
 }
@@ -159,6 +161,9 @@ pub fn parse_associate_team_member_response(
             output,
         )
         .map_err(crate::error::AssociateTeamMemberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -167,8 +172,11 @@ pub fn parse_associate_team_member_response(
 pub fn parse_create_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateProjectOutput, crate::error::CreateProjectError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateProjectError::unhandled(generic)),
@@ -176,9 +184,8 @@ pub fn parse_create_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::CreateProjectError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -186,17 +193,17 @@ pub fn parse_create_project_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidServiceRoleException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::InvalidServiceRoleException({
+            })
+        }
+        "InvalidServiceRoleException" => {
+            crate::error::CreateProjectError::InvalidServiceRoleException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -204,34 +211,32 @@ pub fn parse_create_project_error(
                         crate::error::invalid_service_role_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_service_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::CreateProjectError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ProjectAlreadyExistsException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::ProjectAlreadyExistsException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ProjectAlreadyExistsException" => {
+            crate::error::CreateProjectError::ProjectAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -239,17 +244,17 @@ pub fn parse_create_project_error(
                         crate::error::project_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectConfigurationException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::ProjectConfigurationException({
+            })
+        }
+        "ProjectConfigurationException" => {
+            crate::error::CreateProjectError::ProjectConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -257,17 +262,17 @@ pub fn parse_create_project_error(
                         crate::error::project_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectCreationFailedException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::ProjectCreationFailedException({
+            })
+        }
+        "ProjectCreationFailedException" => {
+            crate::error::CreateProjectError::ProjectCreationFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -275,31 +280,32 @@ pub fn parse_create_project_error(
                         crate::error::project_creation_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_creation_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::CreateProjectError {
-            meta: generic,
-            kind: crate::error::CreateProjectErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::CreateProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateProjectError::generic(generic),
     })
 }
@@ -317,6 +323,9 @@ pub fn parse_create_project_response(
             output,
         )
         .map_err(crate::error::CreateProjectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -326,8 +335,11 @@ pub fn parse_create_user_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateUserProfileOutput, crate::error::CreateUserProfileError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateUserProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateUserProfileError::unhandled(generic)),
@@ -335,9 +347,8 @@ pub fn parse_create_user_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "UserProfileAlreadyExistsException" => crate::error::CreateUserProfileError {
-            meta: generic,
-            kind: crate::error::CreateUserProfileErrorKind::UserProfileAlreadyExistsException({
+        "UserProfileAlreadyExistsException" => {
+            crate::error::CreateUserProfileError::UserProfileAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -345,31 +356,32 @@ pub fn parse_create_user_profile_error(
                         crate::error::user_profile_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_profile_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::CreateUserProfileError {
-            meta: generic,
-            kind: crate::error::CreateUserProfileErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::CreateUserProfileError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateUserProfileError::generic(generic),
     })
 }
@@ -388,6 +400,9 @@ pub fn parse_create_user_profile_response(
             output,
         )
         .map_err(crate::error::CreateUserProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -396,8 +411,11 @@ pub fn parse_create_user_profile_response(
 pub fn parse_delete_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteProjectOutput, crate::error::DeleteProjectError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteProjectError::unhandled(generic)),
@@ -405,9 +423,8 @@ pub fn parse_delete_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::DeleteProjectError {
-            meta: generic,
-            kind: crate::error::DeleteProjectErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::DeleteProjectError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -415,17 +432,17 @@ pub fn parse_delete_project_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidServiceRoleException" => crate::error::DeleteProjectError {
-            meta: generic,
-            kind: crate::error::DeleteProjectErrorKind::InvalidServiceRoleException({
+            })
+        }
+        "InvalidServiceRoleException" => {
+            crate::error::DeleteProjectError::InvalidServiceRoleException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -433,31 +450,32 @@ pub fn parse_delete_project_error(
                         crate::error::invalid_service_role_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_service_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::DeleteProjectError {
-            meta: generic,
-            kind: crate::error::DeleteProjectErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::DeleteProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteProjectError::generic(generic),
     })
 }
@@ -475,6 +493,9 @@ pub fn parse_delete_project_response(
             output,
         )
         .map_err(crate::error::DeleteProjectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -484,8 +505,11 @@ pub fn parse_delete_user_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUserProfileOutput, crate::error::DeleteUserProfileError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteUserProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteUserProfileError::unhandled(generic)),
@@ -493,23 +517,23 @@ pub fn parse_delete_user_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ValidationException" => crate::error::DeleteUserProfileError {
-            meta: generic,
-            kind: crate::error::DeleteUserProfileErrorKind::ValidationException({
+        "ValidationException" => {
+            crate::error::DeleteUserProfileError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteUserProfileError::generic(generic),
     })
 }
@@ -528,6 +552,9 @@ pub fn parse_delete_user_profile_response(
             output,
         )
         .map_err(crate::error::DeleteUserProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -536,8 +563,11 @@ pub fn parse_delete_user_profile_response(
 pub fn parse_describe_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeProjectOutput, crate::error::DescribeProjectError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeProjectError::unhandled(generic)),
@@ -545,9 +575,8 @@ pub fn parse_describe_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::DescribeProjectError {
-            meta: generic,
-            kind: crate::error::DescribeProjectErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::DescribeProjectError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -555,17 +584,17 @@ pub fn parse_describe_project_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidServiceRoleException" => crate::error::DescribeProjectError {
-            meta: generic,
-            kind: crate::error::DescribeProjectErrorKind::InvalidServiceRoleException({
+            })
+        }
+        "InvalidServiceRoleException" => {
+            crate::error::DescribeProjectError::InvalidServiceRoleException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -573,17 +602,17 @@ pub fn parse_describe_project_error(
                         crate::error::invalid_service_role_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_service_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectConfigurationException" => crate::error::DescribeProjectError {
-            meta: generic,
-            kind: crate::error::DescribeProjectErrorKind::ProjectConfigurationException({
+            })
+        }
+        "ProjectConfigurationException" => {
+            crate::error::DescribeProjectError::ProjectConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -591,48 +620,49 @@ pub fn parse_describe_project_error(
                         crate::error::project_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::DescribeProjectError {
-            meta: generic,
-            kind: crate::error::DescribeProjectErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => {
+            crate::error::DescribeProjectError::ProjectNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::project_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::DescribeProjectError {
-            meta: generic,
-            kind: crate::error::DescribeProjectErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::DescribeProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeProjectError::generic(generic),
     })
 }
@@ -650,6 +680,9 @@ pub fn parse_describe_project_response(
             output,
         )
         .map_err(crate::error::DescribeProjectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -661,8 +694,11 @@ pub fn parse_describe_user_profile_error(
     crate::output::DescribeUserProfileOutput,
     crate::error::DescribeUserProfileError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeUserProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeUserProfileError::unhandled(generic)),
@@ -670,9 +706,8 @@ pub fn parse_describe_user_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "UserProfileNotFoundException" => crate::error::DescribeUserProfileError {
-            meta: generic,
-            kind: crate::error::DescribeUserProfileErrorKind::UserProfileNotFoundException({
+        "UserProfileNotFoundException" => {
+            crate::error::DescribeUserProfileError::UserProfileNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -680,31 +715,32 @@ pub fn parse_describe_user_profile_error(
                         crate::error::user_profile_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_profile_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::DescribeUserProfileError {
-            meta: generic,
-            kind: crate::error::DescribeUserProfileErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::DescribeUserProfileError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeUserProfileError::generic(generic),
     })
 }
@@ -725,6 +761,9 @@ pub fn parse_describe_user_profile_response(
             output,
         )
         .map_err(crate::error::DescribeUserProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -736,8 +775,11 @@ pub fn parse_disassociate_team_member_error(
     crate::output::DisassociateTeamMemberOutput,
     crate::error::DisassociateTeamMemberError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateTeamMemberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -749,9 +791,8 @@ pub fn parse_disassociate_team_member_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::DisassociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::DisassociateTeamMemberErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::DisassociateTeamMemberError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -759,17 +800,17 @@ pub fn parse_disassociate_team_member_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidServiceRoleException" => crate::error::DisassociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::DisassociateTeamMemberErrorKind::InvalidServiceRoleException({
+            })
+        }
+        "InvalidServiceRoleException" => {
+            crate::error::DisassociateTeamMemberError::InvalidServiceRoleException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -777,48 +818,49 @@ pub fn parse_disassociate_team_member_error(
                         crate::error::invalid_service_role_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_service_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::DisassociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::DisassociateTeamMemberErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => {
+            crate::error::DisassociateTeamMemberError::ProjectNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::project_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::DisassociateTeamMemberError {
-            meta: generic,
-            kind: crate::error::DisassociateTeamMemberErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::DisassociateTeamMemberError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisassociateTeamMemberError::generic(generic),
     })
 }
@@ -834,6 +876,9 @@ pub fn parse_disassociate_team_member_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_team_member_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -842,8 +887,11 @@ pub fn parse_disassociate_team_member_response(
 pub fn parse_list_projects_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListProjectsOutput, crate::error::ListProjectsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListProjectsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListProjectsError::unhandled(generic)),
@@ -851,40 +899,40 @@ pub fn parse_list_projects_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListProjectsError {
-            meta: generic,
-            kind: crate::error::ListProjectsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::ListProjectsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListProjectsError {
-            meta: generic,
-            kind: crate::error::ListProjectsErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ListProjectsError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProjectsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListProjectsError::generic(generic),
     })
 }
@@ -902,6 +950,9 @@ pub fn parse_list_projects_response(
             output,
         )
         .map_err(crate::error::ListProjectsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -910,8 +961,11 @@ pub fn parse_list_projects_response(
 pub fn parse_list_resources_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResourcesOutput, crate::error::ListResourcesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListResourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListResourcesError::unhandled(generic)),
@@ -919,57 +973,55 @@ pub fn parse_list_resources_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListResourcesError {
-            meta: generic,
-            kind: crate::error::ListResourcesErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::ListResourcesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::ListResourcesError {
-            meta: generic,
-            kind: crate::error::ListResourcesErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => crate::error::ListResourcesError::ProjectNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::project_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListResourcesError {
-            meta: generic,
-            kind: crate::error::ListResourcesErrorKind::ValidationException({
+                let mut output = crate::error::project_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::ListResourcesError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListResourcesError::generic(generic),
     })
 }
@@ -987,6 +1039,9 @@ pub fn parse_list_resources_response(
             output,
         )
         .map_err(crate::error::ListResourcesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -998,8 +1053,11 @@ pub fn parse_list_tags_for_project_error(
     crate::output::ListTagsForProjectOutput,
     crate::error::ListTagsForProjectError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForProjectError::unhandled(generic)),
@@ -1007,57 +1065,57 @@ pub fn parse_list_tags_for_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListTagsForProjectError {
-            meta: generic,
-            kind: crate::error::ListTagsForProjectErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::ListTagsForProjectError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::ListTagsForProjectError {
-            meta: generic,
-            kind: crate::error::ListTagsForProjectErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => {
+            crate::error::ListTagsForProjectError::ProjectNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::project_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListTagsForProjectError {
-            meta: generic,
-            kind: crate::error::ListTagsForProjectErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ListTagsForProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForProjectError::generic(generic),
     })
 }
@@ -1078,6 +1136,9 @@ pub fn parse_list_tags_for_project_response(
             output,
         )
         .map_err(crate::error::ListTagsForProjectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1086,8 +1147,11 @@ pub fn parse_list_tags_for_project_response(
 pub fn parse_list_team_members_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTeamMembersOutput, crate::error::ListTeamMembersError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTeamMembersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTeamMembersError::unhandled(generic)),
@@ -1095,57 +1159,57 @@ pub fn parse_list_team_members_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListTeamMembersError {
-            meta: generic,
-            kind: crate::error::ListTeamMembersErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::ListTeamMembersError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTeamMembersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::ListTeamMembersError {
-            meta: generic,
-            kind: crate::error::ListTeamMembersErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => {
+            crate::error::ListTeamMembersError::ProjectNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::project_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTeamMembersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListTeamMembersError {
-            meta: generic,
-            kind: crate::error::ListTeamMembersErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ListTeamMembersError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTeamMembersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTeamMembersError::generic(generic),
     })
 }
@@ -1163,6 +1227,9 @@ pub fn parse_list_team_members_response(
             output,
         )
         .map_err(crate::error::ListTeamMembersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1172,8 +1239,11 @@ pub fn parse_list_user_profiles_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUserProfilesOutput, crate::error::ListUserProfilesError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListUserProfilesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListUserProfilesError::unhandled(generic)),
@@ -1181,40 +1251,40 @@ pub fn parse_list_user_profiles_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListUserProfilesError {
-            meta: generic,
-            kind: crate::error::ListUserProfilesErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::ListUserProfilesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserProfilesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListUserProfilesError {
-            meta: generic,
-            kind: crate::error::ListUserProfilesErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ListUserProfilesError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListUserProfilesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListUserProfilesError::generic(generic),
     })
 }
@@ -1233,6 +1303,9 @@ pub fn parse_list_user_profiles_response(
             output,
         )
         .map_err(crate::error::ListUserProfilesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1241,8 +1314,11 @@ pub fn parse_list_user_profiles_response(
 pub fn parse_tag_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagProjectOutput, crate::error::TagProjectError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagProjectError::unhandled(generic)),
@@ -1250,9 +1326,8 @@ pub fn parse_tag_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::TagProjectError {
-            meta: generic,
-            kind: crate::error::TagProjectErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::TagProjectError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1260,65 +1335,62 @@ pub fn parse_tag_project_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::TagProjectError {
-            meta: generic,
-            kind: crate::error::TagProjectErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::TagProjectError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagProjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::TagProjectError {
-            meta: generic,
-            kind: crate::error::TagProjectErrorKind::ProjectNotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagProjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ProjectNotFoundException" => crate::error::TagProjectError::ProjectNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::project_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagProjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::TagProjectError {
-            meta: generic,
-            kind: crate::error::TagProjectErrorKind::ValidationException({
+                let mut output = crate::error::project_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagProjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::TagProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TagProjectError::generic(generic),
     })
 }
@@ -1336,6 +1408,9 @@ pub fn parse_tag_project_response(
             output,
         )
         .map_err(crate::error::TagProjectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1344,8 +1419,11 @@ pub fn parse_tag_project_response(
 pub fn parse_untag_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagProjectOutput, crate::error::UntagProjectError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagProjectError::unhandled(generic)),
@@ -1353,9 +1431,8 @@ pub fn parse_untag_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::UntagProjectError {
-            meta: generic,
-            kind: crate::error::UntagProjectErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::UntagProjectError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1363,65 +1440,62 @@ pub fn parse_untag_project_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::UntagProjectError {
-            meta: generic,
-            kind: crate::error::UntagProjectErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::UntagProjectError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagProjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::UntagProjectError {
-            meta: generic,
-            kind: crate::error::UntagProjectErrorKind::ProjectNotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagProjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ProjectNotFoundException" => crate::error::UntagProjectError::ProjectNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::project_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagProjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::UntagProjectError {
-            meta: generic,
-            kind: crate::error::UntagProjectErrorKind::ValidationException({
+                let mut output = crate::error::project_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagProjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::UntagProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagProjectError::generic(generic),
     })
 }
@@ -1434,6 +1508,9 @@ pub fn parse_untag_project_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_project_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1442,8 +1519,11 @@ pub fn parse_untag_project_response(
 pub fn parse_update_project_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateProjectOutput, crate::error::UpdateProjectError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateProjectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateProjectError::unhandled(generic)),
@@ -1451,40 +1531,38 @@ pub fn parse_update_project_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ProjectNotFoundException" => crate::error::UpdateProjectError {
-            meta: generic,
-            kind: crate::error::UpdateProjectErrorKind::ProjectNotFoundException({
+        "ProjectNotFoundException" => crate::error::UpdateProjectError::ProjectNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::project_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::UpdateProjectError {
-            meta: generic,
-            kind: crate::error::UpdateProjectErrorKind::ValidationException({
+                let mut output = crate::error::project_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::UpdateProjectError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateProjectError::generic(generic),
     })
 }
@@ -1497,6 +1575,9 @@ pub fn parse_update_project_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_project_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1506,8 +1587,11 @@ pub fn parse_update_team_member_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateTeamMemberOutput, crate::error::UpdateTeamMemberError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateTeamMemberError::unhandled(generic)),
@@ -1515,9 +1599,8 @@ pub fn parse_update_team_member_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModificationException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::ConcurrentModificationException({
+        "ConcurrentModificationException" => {
+            crate::error::UpdateTeamMemberError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1525,17 +1608,17 @@ pub fn parse_update_team_member_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_concurrent_modification_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidServiceRoleException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::InvalidServiceRoleException({
+            })
+        }
+        "InvalidServiceRoleException" => {
+            crate::error::UpdateTeamMemberError::InvalidServiceRoleException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1543,34 +1626,32 @@ pub fn parse_update_team_member_error(
                         crate::error::invalid_service_role_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_service_role_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::UpdateTeamMemberError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ProjectConfigurationException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::ProjectConfigurationException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ProjectConfigurationException" => {
+            crate::error::UpdateTeamMemberError::ProjectConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1578,34 +1659,34 @@ pub fn parse_update_team_member_error(
                         crate::error::project_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProjectNotFoundException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::ProjectNotFoundException({
+            })
+        }
+        "ProjectNotFoundException" => {
+            crate::error::UpdateTeamMemberError::ProjectNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::project_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_project_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TeamMemberNotFoundException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::TeamMemberNotFoundException({
+            })
+        }
+        "TeamMemberNotFoundException" => {
+            crate::error::UpdateTeamMemberError::TeamMemberNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1613,31 +1694,32 @@ pub fn parse_update_team_member_error(
                         crate::error::team_member_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_team_member_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::UpdateTeamMemberError {
-            meta: generic,
-            kind: crate::error::UpdateTeamMemberErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::UpdateTeamMemberError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateTeamMemberError::generic(generic),
     })
 }
@@ -1656,6 +1738,9 @@ pub fn parse_update_team_member_response(
             output,
         )
         .map_err(crate::error::UpdateTeamMemberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1665,8 +1750,11 @@ pub fn parse_update_user_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateUserProfileOutput, crate::error::UpdateUserProfileError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateUserProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateUserProfileError::unhandled(generic)),
@@ -1674,9 +1762,8 @@ pub fn parse_update_user_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "UserProfileNotFoundException" => crate::error::UpdateUserProfileError {
-            meta: generic,
-            kind: crate::error::UpdateUserProfileErrorKind::UserProfileNotFoundException({
+        "UserProfileNotFoundException" => {
+            crate::error::UpdateUserProfileError::UserProfileNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1684,31 +1771,32 @@ pub fn parse_update_user_profile_error(
                         crate::error::user_profile_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_user_profile_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::UpdateUserProfileError {
-            meta: generic,
-            kind: crate::error::UpdateUserProfileErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::UpdateUserProfileError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateUserProfileError::generic(generic),
     })
 }
@@ -1727,6 +1815,9 @@ pub fn parse_update_user_profile_response(
             output,
         )
         .map_err(crate::error::UpdateUserProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

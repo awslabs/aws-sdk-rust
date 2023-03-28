@@ -3,8 +3,11 @@
 pub fn parse_get_deployments_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetDeploymentsOutput, crate::error::GetDeploymentsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetDeploymentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetDeploymentsError::unhandled(generic)),
@@ -12,23 +15,23 @@ pub fn parse_get_deployments_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::GetDeploymentsError {
-            meta: generic,
-            kind: crate::error::GetDeploymentsErrorKind::InternalServiceException({
+        "InternalServiceException" => {
+            crate::error::GetDeploymentsError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeploymentsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetDeploymentsError::generic(generic),
     })
 }
@@ -46,6 +49,9 @@ pub fn parse_get_deployments_response(
             output,
         )
         .map_err(crate::error::GetDeploymentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -57,8 +63,11 @@ pub fn parse_get_device_registration_error(
     crate::output::GetDeviceRegistrationOutput,
     crate::error::GetDeviceRegistrationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetDeviceRegistrationError::unhandled(generic)),
@@ -66,23 +75,23 @@ pub fn parse_get_device_registration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::GetDeviceRegistrationError {
-            meta: generic,
-            kind: crate::error::GetDeviceRegistrationErrorKind::InternalServiceException({
+        "InternalServiceException" => {
+            crate::error::GetDeviceRegistrationError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetDeviceRegistrationError::generic(generic),
     })
 }
@@ -103,6 +112,9 @@ pub fn parse_get_device_registration_response(
             output,
         )
         .map_err(crate::error::GetDeviceRegistrationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -111,8 +123,11 @@ pub fn parse_get_device_registration_response(
 pub fn parse_send_heartbeat_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendHeartbeatOutput, crate::error::SendHeartbeatError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendHeartbeatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendHeartbeatError::unhandled(generic)),
@@ -120,23 +135,21 @@ pub fn parse_send_heartbeat_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::SendHeartbeatError {
-            meta: generic,
-            kind: crate::error::SendHeartbeatErrorKind::InternalServiceException({
+        "InternalServiceException" => crate::error::SendHeartbeatError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendHeartbeatError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::internal_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_internal_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendHeartbeatError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendHeartbeatError::generic(generic),
     })
 }
@@ -149,6 +162,9 @@ pub fn parse_send_heartbeat_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_heartbeat_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

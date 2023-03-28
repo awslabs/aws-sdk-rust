@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendHeartbeatOutput {}
+pub struct SendHeartbeatOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for SendHeartbeatOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
 pub mod send_heartbeat_output {
 
     /// A builder for [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendHeartbeatOutput`](crate::output::SendHeartbeatOutput).
         pub fn build(self) -> crate::output::SendHeartbeatOutput {
-            crate::output::SendHeartbeatOutput {}
+            crate::output::SendHeartbeatOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -34,6 +54,7 @@ pub struct GetDeviceRegistrationOutput {
     /// <p>The amount of time, in seconds, that the registration status is stored on the device’s cache before it is refreshed.</p>
     #[doc(hidden)]
     pub cache_ttl: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDeviceRegistrationOutput {
     /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
@@ -45,6 +66,11 @@ impl GetDeviceRegistrationOutput {
         self.cache_ttl.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDeviceRegistrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
 pub mod get_device_registration_output {
 
@@ -54,6 +80,7 @@ pub mod get_device_registration_output {
     pub struct Builder {
         pub(crate) device_registration: std::option::Option<std::string::String>,
         pub(crate) cache_ttl: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes if the device is currently registered with SageMaker Edge Manager.</p>
@@ -79,11 +106,21 @@ pub mod get_device_registration_output {
             self.cache_ttl = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDeviceRegistrationOutput`](crate::output::GetDeviceRegistrationOutput).
         pub fn build(self) -> crate::output::GetDeviceRegistrationOutput {
             crate::output::GetDeviceRegistrationOutput {
                 device_registration: self.device_registration,
                 cache_ttl: self.cache_ttl,
+                _request_id: self._request_id,
             }
         }
     }
@@ -102,11 +139,17 @@ pub struct GetDeploymentsOutput {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
     #[doc(hidden)]
     pub deployments: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,
+    _request_id: Option<String>,
 }
 impl GetDeploymentsOutput {
     /// <p>Returns a list of the configurations of the active deployments on the device.</p>
     pub fn deployments(&self) -> std::option::Option<&[crate::model::EdgeDeployment]> {
         self.deployments.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDeploymentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
@@ -117,6 +160,7 @@ pub mod get_deployments_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deployments: std::option::Option<std::vec::Vec<crate::model::EdgeDeployment>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `deployments`.
@@ -138,10 +182,20 @@ pub mod get_deployments_output {
             self.deployments = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDeploymentsOutput`](crate::output::GetDeploymentsOutput).
         pub fn build(self) -> crate::output::GetDeploymentsOutput {
             crate::output::GetDeploymentsOutput {
                 deployments: self.deployments,
+                _request_id: self._request_id,
             }
         }
     }

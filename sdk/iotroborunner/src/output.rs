@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSiteOutput {}
+pub struct DeleteSiteOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteSiteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
 pub mod delete_site_output {
 
     /// A builder for [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSiteOutput`](crate::output::DeleteSiteOutput).
         pub fn build(self) -> crate::output::DeleteSiteOutput {
-            crate::output::DeleteSiteOutput {}
+            crate::output::DeleteSiteOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -34,6 +54,7 @@ pub struct ListSitesOutput {
     /// List of facilities.
     #[doc(hidden)]
     pub sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
+    _request_id: Option<String>,
 }
 impl ListSitesOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -45,6 +66,11 @@ impl ListSitesOutput {
         self.sites.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSitesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSitesOutput`](crate::output::ListSitesOutput).
 pub mod list_sites_output {
 
@@ -54,6 +80,7 @@ pub mod list_sites_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) sites: std::option::Option<std::vec::Vec<crate::model::Site>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -85,11 +112,21 @@ pub mod list_sites_output {
             self.sites = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSitesOutput`](crate::output::ListSitesOutput).
         pub fn build(self) -> crate::output::ListSitesOutput {
             crate::output::ListSitesOutput {
                 next_token: self.next_token,
                 sites: self.sites,
+                _request_id: self._request_id,
             }
         }
     }
@@ -117,6 +154,7 @@ pub struct CreateSiteOutput {
     /// Timestamp at which the resource was last updated.
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateSiteOutput {
     /// Site ARN.
@@ -136,6 +174,11 @@ impl CreateSiteOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSiteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateSiteOutput`](crate::output::CreateSiteOutput).
 pub mod create_site_output {
 
@@ -147,6 +190,7 @@ pub mod create_site_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Site ARN.
@@ -195,6 +239,15 @@ pub mod create_site_output {
             self.updated_at = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSiteOutput`](crate::output::CreateSiteOutput).
         pub fn build(self) -> crate::output::CreateSiteOutput {
             crate::output::CreateSiteOutput {
@@ -202,6 +255,7 @@ pub mod create_site_output {
                 id: self.id,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
+                _request_id: self._request_id,
             }
         }
     }
@@ -235,6 +289,7 @@ pub struct UpdateSiteOutput {
     /// Timestamp at which the resource was last updated.
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateSiteOutput {
     /// Site ARN.
@@ -262,6 +317,11 @@ impl UpdateSiteOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSiteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
 pub mod update_site_output {
 
@@ -275,6 +335,7 @@ pub mod update_site_output {
         pub(crate) country_code: std::option::Option<std::string::String>,
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Site ARN.
@@ -340,6 +401,15 @@ pub mod update_site_output {
             self.updated_at = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSiteOutput`](crate::output::UpdateSiteOutput).
         pub fn build(self) -> crate::output::UpdateSiteOutput {
             crate::output::UpdateSiteOutput {
@@ -349,6 +419,7 @@ pub mod update_site_output {
                 country_code: self.country_code,
                 description: self.description,
                 updated_at: self.updated_at,
+                _request_id: self._request_id,
             }
         }
     }
@@ -385,6 +456,7 @@ pub struct GetSiteOutput {
     /// Timestamp at which the resource was last updated.
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetSiteOutput {
     /// Site ARN.
@@ -416,6 +488,11 @@ impl GetSiteOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSiteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSiteOutput`](crate::output::GetSiteOutput).
 pub mod get_site_output {
 
@@ -430,6 +507,7 @@ pub mod get_site_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Site ARN.
@@ -508,6 +586,15 @@ pub mod get_site_output {
             self.updated_at = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSiteOutput`](crate::output::GetSiteOutput).
         pub fn build(self) -> crate::output::GetSiteOutput {
             crate::output::GetSiteOutput {
@@ -518,6 +605,7 @@ pub mod get_site_output {
                 description: self.description,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
+                _request_id: self._request_id,
             }
         }
     }
@@ -539,6 +627,7 @@ pub struct ListWorkerFleetsOutput {
     /// List of worker fleets.
     #[doc(hidden)]
     pub worker_fleets: std::option::Option<std::vec::Vec<crate::model::WorkerFleet>>,
+    _request_id: Option<String>,
 }
 impl ListWorkerFleetsOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -550,6 +639,11 @@ impl ListWorkerFleetsOutput {
         self.worker_fleets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkerFleetsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
 pub mod list_worker_fleets_output {
 
@@ -559,6 +653,7 @@ pub mod list_worker_fleets_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) worker_fleets: std::option::Option<std::vec::Vec<crate::model::WorkerFleet>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -590,11 +685,21 @@ pub mod list_worker_fleets_output {
             self.worker_fleets = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkerFleetsOutput`](crate::output::ListWorkerFleetsOutput).
         pub fn build(self) -> crate::output::ListWorkerFleetsOutput {
             crate::output::ListWorkerFleetsOutput {
                 next_token: self.next_token,
                 worker_fleets: self.worker_fleets,
+                _request_id: self._request_id,
             }
         }
     }
@@ -622,6 +727,7 @@ pub struct CreateWorkerFleetOutput {
     /// Timestamp at which the resource was last updated.
     #[doc(hidden)]
     pub updated_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
@@ -641,6 +747,11 @@ impl CreateWorkerFleetOutput {
         self.updated_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkerFleetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
 pub mod create_worker_fleet_output {
 
@@ -652,6 +763,7 @@ pub mod create_worker_fleet_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Full ARN of the worker fleet.
@@ -700,6 +812,15 @@ pub mod create_worker_fleet_output {
             self.updated_at = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkerFleetOutput`](crate::output::CreateWorkerFleetOutput).
         pub fn build(self) -> crate::output::CreateWorkerFleetOutput {
             crate::output::CreateWorkerFleetOutput {
@@ -707,6 +828,7 @@ pub mod create_worker_fleet_output {
                 id: self.id,
                 created_at: self.created_at,
                 updated_at: self.updated_at,
+                _request_id: self._request_id,
             }
         }
     }
@@ -721,18 +843,38 @@ impl CreateWorkerFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDestinationOutput {}
+pub struct DeleteDestinationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
 pub mod delete_destination_output {
 
     /// A builder for [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDestinationOutput`](crate::output::DeleteDestinationOutput).
         pub fn build(self) -> crate::output::DeleteDestinationOutput {
-            crate::output::DeleteDestinationOutput {}
+            crate::output::DeleteDestinationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -753,6 +895,7 @@ pub struct ListDestinationsOutput {
     /// List of destinations.
     #[doc(hidden)]
     pub destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+    _request_id: Option<String>,
 }
 impl ListDestinationsOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -764,6 +907,11 @@ impl ListDestinationsOutput {
         self.destinations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDestinationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
 pub mod list_destinations_output {
 
@@ -773,6 +921,7 @@ pub mod list_destinations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) destinations: std::option::Option<std::vec::Vec<crate::model::Destination>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -804,11 +953,21 @@ pub mod list_destinations_output {
             self.destinations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDestinationsOutput`](crate::output::ListDestinationsOutput).
         pub fn build(self) -> crate::output::ListDestinationsOutput {
             crate::output::ListDestinationsOutput {
                 next_token: self.next_token,
                 destinations: self.destinations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -839,6 +998,7 @@ pub struct CreateDestinationOutput {
     /// State of the destination.
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::DestinationState>,
+    _request_id: Option<String>,
 }
 impl CreateDestinationOutput {
     /// Destination ARN.
@@ -862,6 +1022,11 @@ impl CreateDestinationOutput {
         self.state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
 pub mod create_destination_output {
 
@@ -874,6 +1039,7 @@ pub mod create_destination_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::DestinationState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Destination ARN.
@@ -935,6 +1101,15 @@ pub mod create_destination_output {
             self.state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDestinationOutput`](crate::output::CreateDestinationOutput).
         pub fn build(self) -> crate::output::CreateDestinationOutput {
             crate::output::CreateDestinationOutput {
@@ -943,6 +1118,7 @@ pub mod create_destination_output {
                 created_at: self.created_at,
                 updated_at: self.updated_at,
                 state: self.state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -976,6 +1152,7 @@ pub struct UpdateDestinationOutput {
     /// JSON document containing additional fixed properties regarding the destination
     #[doc(hidden)]
     pub additional_fixed_properties: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateDestinationOutput {
     /// Destination ARN.
@@ -1003,6 +1180,11 @@ impl UpdateDestinationOutput {
         self.additional_fixed_properties.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
 pub mod update_destination_output {
 
@@ -1016,6 +1198,7 @@ pub mod update_destination_output {
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::DestinationState>,
         pub(crate) additional_fixed_properties: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Destination ARN.
@@ -1090,6 +1273,15 @@ pub mod update_destination_output {
             self.additional_fixed_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDestinationOutput`](crate::output::UpdateDestinationOutput).
         pub fn build(self) -> crate::output::UpdateDestinationOutput {
             crate::output::UpdateDestinationOutput {
@@ -1099,6 +1291,7 @@ pub mod update_destination_output {
                 updated_at: self.updated_at,
                 state: self.state,
                 additional_fixed_properties: self.additional_fixed_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1138,6 +1331,7 @@ pub struct GetDestinationOutput {
     /// JSON document containing additional fixed properties regarding the destination
     #[doc(hidden)]
     pub additional_fixed_properties: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDestinationOutput {
     /// Destination ARN.
@@ -1173,6 +1367,11 @@ impl GetDestinationOutput {
         self.additional_fixed_properties.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDestinationOutput`](crate::output::GetDestinationOutput).
 pub mod get_destination_output {
 
@@ -1188,6 +1387,7 @@ pub mod get_destination_output {
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) state: std::option::Option<crate::model::DestinationState>,
         pub(crate) additional_fixed_properties: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Destination ARN.
@@ -1285,6 +1485,15 @@ pub mod get_destination_output {
             self.additional_fixed_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDestinationOutput`](crate::output::GetDestinationOutput).
         pub fn build(self) -> crate::output::GetDestinationOutput {
             crate::output::GetDestinationOutput {
@@ -1296,6 +1505,7 @@ pub mod get_destination_output {
                 updated_at: self.updated_at,
                 state: self.state,
                 additional_fixed_properties: self.additional_fixed_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1326,6 +1536,7 @@ pub struct UpdateWorkerFleetOutput {
     /// JSON blob containing additional fixed properties regarding the worker fleet
     #[doc(hidden)]
     pub additional_fixed_properties: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkerFleetOutput {
     /// Full ARN of the worker fleet.
@@ -1349,6 +1560,11 @@ impl UpdateWorkerFleetOutput {
         self.additional_fixed_properties.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWorkerFleetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
 pub mod update_worker_fleet_output {
 
@@ -1361,6 +1577,7 @@ pub mod update_worker_fleet_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) additional_fixed_properties: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Full ARN of the worker fleet.
@@ -1422,6 +1639,15 @@ pub mod update_worker_fleet_output {
             self.additional_fixed_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkerFleetOutput`](crate::output::UpdateWorkerFleetOutput).
         pub fn build(self) -> crate::output::UpdateWorkerFleetOutput {
             crate::output::UpdateWorkerFleetOutput {
@@ -1430,6 +1656,7 @@ pub mod update_worker_fleet_output {
                 name: self.name,
                 updated_at: self.updated_at,
                 additional_fixed_properties: self.additional_fixed_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1475,6 +1702,7 @@ pub struct UpdateWorkerOutput {
     /// Supported coordinates for worker position.
     #[doc(hidden)]
     pub position: std::option::Option<crate::model::PositionCoordinates>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkerOutput {
     /// Full ARN of the worker.
@@ -1518,6 +1746,11 @@ impl UpdateWorkerOutput {
         self.position.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWorkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
 pub mod update_worker_output {
 
@@ -1535,6 +1768,7 @@ pub mod update_worker_output {
         pub(crate) orientation: std::option::Option<crate::model::Orientation>,
         pub(crate) vendor_properties: std::option::Option<crate::model::VendorProperties>,
         pub(crate) position: std::option::Option<crate::model::PositionCoordinates>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Full ARN of the worker.
@@ -1661,6 +1895,15 @@ pub mod update_worker_output {
             self.position = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkerOutput`](crate::output::UpdateWorkerOutput).
         pub fn build(self) -> crate::output::UpdateWorkerOutput {
             crate::output::UpdateWorkerOutput {
@@ -1674,6 +1917,7 @@ pub mod update_worker_output {
                 orientation: self.orientation,
                 vendor_properties: self.vendor_properties,
                 position: self.position,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1695,6 +1939,7 @@ pub struct ListWorkersOutput {
     /// List of workers.
     #[doc(hidden)]
     pub workers: std::option::Option<std::vec::Vec<crate::model::Worker>>,
+    _request_id: Option<String>,
 }
 impl ListWorkersOutput {
     /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -1706,6 +1951,11 @@ impl ListWorkersOutput {
         self.workers.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkersOutput`](crate::output::ListWorkersOutput).
 pub mod list_workers_output {
 
@@ -1715,6 +1965,7 @@ pub mod list_workers_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workers: std::option::Option<std::vec::Vec<crate::model::Worker>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Pagination token returned when another page of data exists. Provide it in your next call to the API to receive the next page.
@@ -1746,11 +1997,21 @@ pub mod list_workers_output {
             self.workers = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkersOutput`](crate::output::ListWorkersOutput).
         pub fn build(self) -> crate::output::ListWorkersOutput {
             crate::output::ListWorkersOutput {
                 next_token: self.next_token,
                 workers: self.workers,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1787,6 +2048,7 @@ pub struct GetWorkerFleetOutput {
     /// JSON blob containing additional fixed properties regarding the worker fleet
     #[doc(hidden)]
     pub additional_fixed_properties: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetWorkerFleetOutput {
     /// Filters access by the worker fleet's identifier
@@ -1818,6 +2080,11 @@ impl GetWorkerFleetOutput {
         self.additional_fixed_properties.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetWorkerFleetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
 pub mod get_worker_fleet_output {
 
@@ -1832,6 +2099,7 @@ pub mod get_worker_fleet_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) additional_fixed_properties: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Filters access by the worker fleet's identifier
@@ -1916,6 +2184,15 @@ pub mod get_worker_fleet_output {
             self.additional_fixed_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWorkerFleetOutput`](crate::output::GetWorkerFleetOutput).
         pub fn build(self) -> crate::output::GetWorkerFleetOutput {
             crate::output::GetWorkerFleetOutput {
@@ -1926,6 +2203,7 @@ pub mod get_worker_fleet_output {
                 created_at: self.created_at,
                 updated_at: self.updated_at,
                 additional_fixed_properties: self.additional_fixed_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1977,6 +2255,7 @@ pub struct GetWorkerOutput {
     /// Worker orientation measured in units clockwise from north.
     #[doc(hidden)]
     pub orientation: std::option::Option<crate::model::Orientation>,
+    _request_id: Option<String>,
 }
 impl GetWorkerOutput {
     /// Full ARN of the worker.
@@ -2028,6 +2307,11 @@ impl GetWorkerOutput {
         self.orientation.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetWorkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetWorkerOutput`](crate::output::GetWorkerOutput).
 pub mod get_worker_output {
 
@@ -2047,6 +2331,7 @@ pub mod get_worker_output {
         pub(crate) vendor_properties: std::option::Option<crate::model::VendorProperties>,
         pub(crate) position: std::option::Option<crate::model::PositionCoordinates>,
         pub(crate) orientation: std::option::Option<crate::model::Orientation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Full ARN of the worker.
@@ -2196,6 +2481,15 @@ pub mod get_worker_output {
             self.orientation = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWorkerOutput`](crate::output::GetWorkerOutput).
         pub fn build(self) -> crate::output::GetWorkerOutput {
             crate::output::GetWorkerOutput {
@@ -2211,6 +2505,7 @@ pub mod get_worker_output {
                 vendor_properties: self.vendor_properties,
                 position: self.position,
                 orientation: self.orientation,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2225,18 +2520,38 @@ impl GetWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerFleetOutput {}
+pub struct DeleteWorkerFleetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteWorkerFleetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
 pub mod delete_worker_fleet_output {
 
     /// A builder for [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkerFleetOutput`](crate::output::DeleteWorkerFleetOutput).
         pub fn build(self) -> crate::output::DeleteWorkerFleetOutput {
-            crate::output::DeleteWorkerFleetOutput {}
+            crate::output::DeleteWorkerFleetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2250,18 +2565,38 @@ impl DeleteWorkerFleetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerOutput {}
+pub struct DeleteWorkerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteWorkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
 pub mod delete_worker_output {
 
     /// A builder for [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkerOutput`](crate::output::DeleteWorkerOutput).
         pub fn build(self) -> crate::output::DeleteWorkerOutput {
-            crate::output::DeleteWorkerOutput {}
+            crate::output::DeleteWorkerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2291,6 +2626,7 @@ pub struct CreateWorkerOutput {
     /// Site ARN.
     #[doc(hidden)]
     pub site: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWorkerOutput {
     /// Full ARN of the worker.
@@ -2314,6 +2650,11 @@ impl CreateWorkerOutput {
         self.site.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
 pub mod create_worker_output {
 
@@ -2326,6 +2667,7 @@ pub mod create_worker_output {
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) updated_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) site: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Full ARN of the worker.
@@ -2384,6 +2726,15 @@ pub mod create_worker_output {
             self.site = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkerOutput`](crate::output::CreateWorkerOutput).
         pub fn build(self) -> crate::output::CreateWorkerOutput {
             crate::output::CreateWorkerOutput {
@@ -2392,6 +2743,7 @@ pub mod create_worker_output {
                 created_at: self.created_at,
                 updated_at: self.updated_at,
                 site: self.site,
+                _request_id: self._request_id,
             }
         }
     }

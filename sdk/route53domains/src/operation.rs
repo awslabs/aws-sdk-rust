@@ -26,6 +26,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptDomainTransferFrom
         crate::error::AcceptDomainTransferFromAnotherAwsAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_accept_domain_transfer_from_another_aws_account_error(
                 response,
@@ -64,6 +65,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDelegationSigne
         crate::error::AssociateDelegationSignerToDomainError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_delegation_signer_to_domain_error(response)
         } else {
@@ -98,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CancelDomainTransferToAn
         crate::error::CancelDomainTransferToAnotherAwsAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_cancel_domain_transfer_to_another_aws_account_error(
                 response,
@@ -136,6 +139,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainAvailability 
         crate::error::CheckDomainAvailabilityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_check_domain_availability_error(response)
         } else {
@@ -170,6 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CheckDomainTransferabili
         crate::error::CheckDomainTransferabilityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_check_domain_transferability_error(response)
         } else {
@@ -202,6 +207,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDomain {
     type Output =
         std::result::Result<crate::output::DeleteDomainOutput, crate::error::DeleteDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_domain_error(response)
         } else {
@@ -236,6 +242,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTagsForDomain {
         crate::error::DeleteTagsForDomainError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_tags_for_domain_error(response)
         } else {
@@ -270,6 +277,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainAutoRenew {
         crate::error::DisableDomainAutoRenewError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disable_domain_auto_renew_error(response)
         } else {
@@ -304,6 +312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableDomainTransferLoc
         crate::error::DisableDomainTransferLockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disable_domain_transfer_lock_error(response)
         } else {
@@ -338,6 +347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDelegationSi
         crate::error::DisassociateDelegationSignerFromDomainError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_delegation_signer_from_domain_error(response)
         } else {
@@ -374,6 +384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainAutoRenew {
         crate::error::EnableDomainAutoRenewError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_domain_auto_renew_error(response)
         } else {
@@ -408,6 +419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableDomainTransferLock
         crate::error::EnableDomainTransferLockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_domain_transfer_lock_error(response)
         } else {
@@ -442,6 +454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactReachabilitySt
         crate::error::GetContactReachabilityStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_contact_reachability_status_error(response)
         } else {
@@ -476,6 +489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainDetail {
         crate::error::GetDomainDetailError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_domain_detail_error(response)
         } else {
@@ -510,6 +524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDomainSuggestions {
         crate::error::GetDomainSuggestionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_domain_suggestions_error(response)
         } else {
@@ -544,6 +559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetOperationDetail {
         crate::error::GetOperationDetailError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_operation_detail_error(response)
         } else {
@@ -576,6 +592,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDomains {
     type Output =
         std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_domains_error(response)
         } else {
@@ -608,6 +625,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOperations {
     type Output =
         std::result::Result<crate::output::ListOperationsOutput, crate::error::ListOperationsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_operations_error(response)
         } else {
@@ -640,6 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrices {
     type Output =
         std::result::Result<crate::output::ListPricesOutput, crate::error::ListPricesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_prices_error(response)
         } else {
@@ -674,6 +693,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDomain {
         crate::error::ListTagsForDomainError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_domain_error(response)
         } else {
@@ -706,6 +726,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PushDomain {
     type Output =
         std::result::Result<crate::output::PushDomainOutput, crate::error::PushDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_push_domain_error(response)
         } else {
@@ -738,6 +759,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterDomain {
     type Output =
         std::result::Result<crate::output::RegisterDomainOutput, crate::error::RegisterDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_register_domain_error(response)
         } else {
@@ -773,6 +795,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RejectDomainTransferFrom
         crate::error::RejectDomainTransferFromAnotherAwsAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_reject_domain_transfer_from_another_aws_account_error(
                 response,
@@ -809,6 +832,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RenewDomain {
     type Output =
         std::result::Result<crate::output::RenewDomainOutput, crate::error::RenewDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_renew_domain_error(response)
         } else {
@@ -843,6 +867,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendContactReachabilit
         crate::error::ResendContactReachabilityEmailError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_resend_contact_reachability_email_error(response)
         } else {
@@ -877,6 +902,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResendOperationAuthoriza
         crate::error::ResendOperationAuthorizationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_resend_operation_authorization_error(response)
         } else {
@@ -911,6 +937,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RetrieveDomainAuthCode {
         crate::error::RetrieveDomainAuthCodeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_retrieve_domain_auth_code_error(response)
         } else {
@@ -943,6 +970,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomain {
     type Output =
         std::result::Result<crate::output::TransferDomainOutput, crate::error::TransferDomainError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_transfer_domain_error(response)
         } else {
@@ -977,6 +1005,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferDomainToAnotherA
         crate::error::TransferDomainToAnotherAwsAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_transfer_domain_to_another_aws_account_error(response)
         } else {
@@ -1011,6 +1040,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContact {
         crate::error::UpdateDomainContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_domain_contact_error(response)
         } else {
@@ -1045,6 +1075,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainContactPriva
         crate::error::UpdateDomainContactPrivacyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_domain_contact_privacy_error(response)
         } else {
@@ -1079,6 +1110,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDomainNameservers 
         crate::error::UpdateDomainNameserversError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_domain_nameservers_error(response)
         } else {
@@ -1113,6 +1145,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTagsForDomain {
         crate::error::UpdateTagsForDomainError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_tags_for_domain_error(response)
         } else {
@@ -1145,6 +1178,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ViewBilling {
     type Output =
         std::result::Result<crate::output::ViewBillingOutput, crate::error::ViewBillingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_view_billing_error(response)
         } else {

@@ -22,6 +22,7 @@ impl AddTags {
 impl aws_smithy_http::response::ParseStrictResponse for AddTags {
     type Output = std::result::Result<crate::output::AddTagsOutput, crate::error::AddTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_add_tags_error(response)
         } else {
@@ -56,6 +57,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ApplySecurityGroupsToLoa
         crate::error::ApplySecurityGroupsToLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_apply_security_groups_to_load_balancer_error(response)
         } else {
@@ -90,6 +92,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AttachLoadBalancerToSubn
         crate::error::AttachLoadBalancerToSubnetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_attach_load_balancer_to_subnets_error(response)
         } else {
@@ -124,6 +127,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfigureHealthCheck {
         crate::error::ConfigureHealthCheckError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_configure_health_check_error(response)
         } else {
@@ -158,6 +162,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAppCookieStickines
         crate::error::CreateAppCookieStickinessPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_app_cookie_stickiness_policy_error(response)
         } else {
@@ -192,6 +197,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLBCookieStickiness
         crate::error::CreateLBCookieStickinessPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_lb_cookie_stickiness_policy_error(response)
         } else {
@@ -226,6 +232,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancer {
         crate::error::CreateLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_load_balancer_error(response)
         } else {
@@ -260,6 +267,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancerListen
         crate::error::CreateLoadBalancerListenersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_load_balancer_listeners_error(response)
         } else {
@@ -294,6 +302,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateLoadBalancerPolicy
         crate::error::CreateLoadBalancerPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_load_balancer_policy_error(response)
         } else {
@@ -328,6 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancer {
         crate::error::DeleteLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_load_balancer_error(response)
         } else {
@@ -362,6 +372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerListen
         crate::error::DeleteLoadBalancerListenersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_load_balancer_listeners_error(response)
         } else {
@@ -396,6 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLoadBalancerPolicy
         crate::error::DeleteLoadBalancerPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_load_balancer_policy_error(response)
         } else {
@@ -430,6 +442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeregisterInstancesFromL
         crate::error::DeregisterInstancesFromLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_deregister_instances_from_load_balancer_error(response)
         } else {
@@ -464,6 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAccountLimits {
         crate::error::DescribeAccountLimitsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_account_limits_error(response)
         } else {
@@ -498,6 +512,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceHealth {
         crate::error::DescribeInstanceHealthError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_instance_health_error(response)
         } else {
@@ -532,6 +547,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerAttr
         crate::error::DescribeLoadBalancerAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_load_balancer_attributes_error(response)
         } else {
@@ -566,6 +582,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
         crate::error::DescribeLoadBalancerPoliciesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_load_balancer_policies_error(response)
         } else {
@@ -600,6 +617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancerPoli
         crate::error::DescribeLoadBalancerPolicyTypesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_load_balancer_policy_types_error(response)
         } else {
@@ -634,6 +652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoadBalancers {
         crate::error::DescribeLoadBalancersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_load_balancers_error(response)
         } else {
@@ -666,6 +685,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
     type Output =
         std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_tags_error(response)
         } else {
@@ -700,6 +720,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DetachLoadBalancerFromSu
         crate::error::DetachLoadBalancerFromSubnetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_detach_load_balancer_from_subnets_error(response)
         } else {
@@ -734,6 +755,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableAvailabilityZones
         crate::error::DisableAvailabilityZonesForLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disable_availability_zones_for_load_balancer_error(
                 response,
@@ -772,6 +794,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableAvailabilityZonesF
         crate::error::EnableAvailabilityZonesForLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_availability_zones_for_load_balancer_error(
                 response,
@@ -810,6 +833,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ModifyLoadBalancerAttrib
         crate::error::ModifyLoadBalancerAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_modify_load_balancer_attributes_error(response)
         } else {
@@ -844,6 +868,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterInstancesWithLoa
         crate::error::RegisterInstancesWithLoadBalancerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_register_instances_with_load_balancer_error(response)
         } else {
@@ -876,6 +901,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RemoveTags {
     type Output =
         std::result::Result<crate::output::RemoveTagsOutput, crate::error::RemoveTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_remove_tags_error(response)
         } else {
@@ -910,6 +936,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerListenerS
         crate::error::SetLoadBalancerListenerSSLCertificateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_set_load_balancer_listener_ssl_certificate_error(response)
         } else {
@@ -946,6 +973,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerPoliciesF
         crate::error::SetLoadBalancerPoliciesForBackendServerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_set_load_balancer_policies_for_backend_server_error(
                 response,
@@ -984,6 +1012,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SetLoadBalancerPoliciesO
         crate::error::SetLoadBalancerPoliciesOfListenerError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_set_load_balancer_policies_of_listener_error(response)
         } else {

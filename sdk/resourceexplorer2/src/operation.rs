@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDefaultView {
         crate::error::AssociateDefaultViewError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_default_view_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetView {
     type Output =
         std::result::Result<crate::output::BatchGetViewOutput, crate::error::BatchGetViewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_batch_get_view_error(response)
         } else {
@@ -89,6 +91,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIndex {
     type Output =
         std::result::Result<crate::output::CreateIndexOutput, crate::error::CreateIndexError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_index_error(response)
         } else {
@@ -121,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateView {
     type Output =
         std::result::Result<crate::output::CreateViewOutput, crate::error::CreateViewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_view_error(response)
         } else {
@@ -153,6 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIndex {
     type Output =
         std::result::Result<crate::output::DeleteIndexOutput, crate::error::DeleteIndexError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_index_error(response)
         } else {
@@ -185,6 +190,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteView {
     type Output =
         std::result::Result<crate::output::DeleteViewOutput, crate::error::DeleteViewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_view_error(response)
         } else {
@@ -219,6 +225,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateDefaultView 
         crate::error::DisassociateDefaultViewError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_default_view_error(response)
         } else {
@@ -251,6 +258,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDefaultView {
     type Output =
         std::result::Result<crate::output::GetDefaultViewOutput, crate::error::GetDefaultViewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_default_view_error(response)
         } else {
@@ -282,6 +290,7 @@ impl GetIndex {
 impl aws_smithy_http::response::ParseStrictResponse for GetIndex {
     type Output = std::result::Result<crate::output::GetIndexOutput, crate::error::GetIndexError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_index_error(response)
         } else {
@@ -313,6 +322,7 @@ impl GetView {
 impl aws_smithy_http::response::ParseStrictResponse for GetView {
     type Output = std::result::Result<crate::output::GetViewOutput, crate::error::GetViewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_view_error(response)
         } else {
@@ -345,6 +355,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIndexes {
     type Output =
         std::result::Result<crate::output::ListIndexesOutput, crate::error::ListIndexesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_indexes_error(response)
         } else {
@@ -379,6 +390,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSupportedResourceTyp
         crate::error::ListSupportedResourceTypesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_supported_resource_types_error(response)
         } else {
@@ -413,6 +425,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
         crate::error::ListTagsForResourceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
@@ -444,6 +457,7 @@ impl ListViews {
 impl aws_smithy_http::response::ParseStrictResponse for ListViews {
     type Output = std::result::Result<crate::output::ListViewsOutput, crate::error::ListViewsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_views_error(response)
         } else {
@@ -475,6 +489,7 @@ impl Search {
 impl aws_smithy_http::response::ParseStrictResponse for Search {
     type Output = std::result::Result<crate::output::SearchOutput, crate::error::SearchError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_error(response)
         } else {
@@ -507,6 +522,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -539,6 +555,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -573,6 +590,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateIndexType {
         crate::error::UpdateIndexTypeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_index_type_error(response)
         } else {
@@ -605,6 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateView {
     type Output =
         std::result::Result<crate::output::UpdateViewOutput, crate::error::UpdateViewError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_view_error(response)
         } else {

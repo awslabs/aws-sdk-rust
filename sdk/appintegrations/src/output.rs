@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateEventIntegrationOutput {}
+pub struct UpdateEventIntegrationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateEventIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
 pub mod update_event_integration_output {
 
     /// A builder for [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateEventIntegrationOutput`](crate::output::UpdateEventIntegrationOutput).
         pub fn build(self) -> crate::output::UpdateEventIntegrationOutput {
-            crate::output::UpdateEventIntegrationOutput {}
+            crate::output::UpdateEventIntegrationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UpdateEventIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDataIntegrationOutput {}
+pub struct UpdateDataIntegrationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateDataIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
 pub mod update_data_integration_output {
 
     /// A builder for [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDataIntegrationOutput`](crate::output::UpdateDataIntegrationOutput).
         pub fn build(self) -> crate::output::UpdateDataIntegrationOutput {
-            crate::output::UpdateDataIntegrationOutput {}
+            crate::output::UpdateDataIntegrationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -52,18 +92,38 @@ impl UpdateDataIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -77,18 +137,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -107,6 +187,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
@@ -115,6 +196,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -127,6 +213,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -154,9 +241,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -177,6 +276,7 @@ pub struct ListEventIntegrationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEventIntegrationsOutput {
     /// <p>The event integrations.</p>
@@ -186,6 +286,11 @@ impl ListEventIntegrationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListEventIntegrationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
@@ -198,6 +303,7 @@ pub mod list_event_integrations_output {
         pub(crate) event_integrations:
             std::option::Option<std::vec::Vec<crate::model::EventIntegration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_integrations`.
@@ -229,11 +335,21 @@ pub mod list_event_integrations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEventIntegrationsOutput`](crate::output::ListEventIntegrationsOutput).
         pub fn build(self) -> crate::output::ListEventIntegrationsOutput {
             crate::output::ListEventIntegrationsOutput {
                 event_integrations: self.event_integrations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -256,6 +372,7 @@ pub struct ListEventIntegrationAssociationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEventIntegrationAssociationsOutput {
     /// <p>The event integration associations.</p>
@@ -269,6 +386,11 @@ impl ListEventIntegrationAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEventIntegrationAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
 pub mod list_event_integration_associations_output {
 
@@ -279,6 +401,7 @@ pub mod list_event_integration_associations_output {
         pub(crate) event_integration_associations:
             std::option::Option<std::vec::Vec<crate::model::EventIntegrationAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_integration_associations`.
@@ -313,11 +436,21 @@ pub mod list_event_integration_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEventIntegrationAssociationsOutput`](crate::output::ListEventIntegrationAssociationsOutput).
         pub fn build(self) -> crate::output::ListEventIntegrationAssociationsOutput {
             crate::output::ListEventIntegrationAssociationsOutput {
                 event_integration_associations: self.event_integration_associations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -339,6 +472,7 @@ pub struct ListDataIntegrationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDataIntegrationsOutput {
     /// <p>The DataIntegrations associated with this account.</p>
@@ -352,6 +486,11 @@ impl ListDataIntegrationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDataIntegrationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
 pub mod list_data_integrations_output {
 
@@ -362,6 +501,7 @@ pub mod list_data_integrations_output {
         pub(crate) data_integrations:
             std::option::Option<std::vec::Vec<crate::model::DataIntegrationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `data_integrations`.
@@ -393,11 +533,21 @@ pub mod list_data_integrations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDataIntegrationsOutput`](crate::output::ListDataIntegrationsOutput).
         pub fn build(self) -> crate::output::ListDataIntegrationsOutput {
             crate::output::ListDataIntegrationsOutput {
                 data_integrations: self.data_integrations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -420,6 +570,7 @@ pub struct ListDataIntegrationAssociationsOutput {
     /// <p>If there are additional results, this is the token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDataIntegrationAssociationsOutput {
     /// <p>The Amazon Resource Name (ARN) and unique ID of the DataIntegration association.</p>
@@ -433,6 +584,11 @@ impl ListDataIntegrationAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDataIntegrationAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
 pub mod list_data_integration_associations_output {
 
@@ -443,6 +599,7 @@ pub mod list_data_integration_associations_output {
         pub(crate) data_integration_associations:
             std::option::Option<std::vec::Vec<crate::model::DataIntegrationAssociationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `data_integration_associations`.
@@ -479,11 +636,21 @@ pub mod list_data_integration_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDataIntegrationAssociationsOutput`](crate::output::ListDataIntegrationAssociationsOutput).
         pub fn build(self) -> crate::output::ListDataIntegrationAssociationsOutput {
             crate::output::ListDataIntegrationAssociationsOutput {
                 data_integration_associations: self.data_integration_associations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -518,6 +685,7 @@ pub struct GetEventIntegrationOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetEventIntegrationOutput {
     /// <p>The name of the event integration. </p>
@@ -548,6 +716,11 @@ impl GetEventIntegrationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetEventIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
 pub mod get_event_integration_output {
 
@@ -563,6 +736,7 @@ pub mod get_event_integration_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the event integration. </p>
@@ -649,6 +823,15 @@ pub mod get_event_integration_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEventIntegrationOutput`](crate::output::GetEventIntegrationOutput).
         pub fn build(self) -> crate::output::GetEventIntegrationOutput {
             crate::output::GetEventIntegrationOutput {
@@ -658,6 +841,7 @@ pub mod get_event_integration_output {
                 event_bridge_bus: self.event_bridge_bus,
                 event_filter: self.event_filter,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -698,6 +882,7 @@ pub struct GetDataIntegrationOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
@@ -738,6 +923,11 @@ impl GetDataIntegrationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetDataIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
 pub mod get_data_integration_output {
 
@@ -755,6 +945,7 @@ pub mod get_data_integration_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) for the DataIntegration.</p>
@@ -858,6 +1049,15 @@ pub mod get_data_integration_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDataIntegrationOutput`](crate::output::GetDataIntegrationOutput).
         pub fn build(self) -> crate::output::GetDataIntegrationOutput {
             crate::output::GetDataIntegrationOutput {
@@ -869,6 +1069,7 @@ pub mod get_data_integration_output {
                 source_uri: self.source_uri,
                 schedule_configuration: self.schedule_configuration,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -883,18 +1084,38 @@ impl GetDataIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEventIntegrationOutput {}
+pub struct DeleteEventIntegrationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteEventIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
 pub mod delete_event_integration_output {
 
     /// A builder for [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteEventIntegrationOutput`](crate::output::DeleteEventIntegrationOutput).
         pub fn build(self) -> crate::output::DeleteEventIntegrationOutput {
-            crate::output::DeleteEventIntegrationOutput {}
+            crate::output::DeleteEventIntegrationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -908,18 +1129,38 @@ impl DeleteEventIntegrationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDataIntegrationOutput {}
+pub struct DeleteDataIntegrationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteDataIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
 pub mod delete_data_integration_output {
 
     /// A builder for [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDataIntegrationOutput`](crate::output::DeleteDataIntegrationOutput).
         pub fn build(self) -> crate::output::DeleteDataIntegrationOutput {
-            crate::output::DeleteDataIntegrationOutput {}
+            crate::output::DeleteDataIntegrationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -937,11 +1178,17 @@ pub struct CreateEventIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     #[doc(hidden)]
     pub event_integration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateEventIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
     pub fn event_integration_arn(&self) -> std::option::Option<&str> {
         self.event_integration_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateEventIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
@@ -952,6 +1199,7 @@ pub mod create_event_integration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) event_integration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the event integration. </p>
@@ -967,10 +1215,20 @@ pub mod create_event_integration_output {
             self.event_integration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEventIntegrationOutput`](crate::output::CreateEventIntegrationOutput).
         pub fn build(self) -> crate::output::CreateEventIntegrationOutput {
             crate::output::CreateEventIntegrationOutput {
                 event_integration_arn: self.event_integration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1014,6 +1272,7 @@ pub struct CreateDataIntegrationOutput {
     /// <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateDataIntegrationOutput {
     /// <p>The Amazon Resource Name (ARN)</p>
@@ -1058,6 +1317,11 @@ impl CreateDataIntegrationOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDataIntegrationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
 pub mod create_data_integration_output {
 
@@ -1076,6 +1340,7 @@ pub mod create_data_integration_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN)</p>
@@ -1189,6 +1454,15 @@ pub mod create_data_integration_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDataIntegrationOutput`](crate::output::CreateDataIntegrationOutput).
         pub fn build(self) -> crate::output::CreateDataIntegrationOutput {
             crate::output::CreateDataIntegrationOutput {
@@ -1201,6 +1475,7 @@ pub mod create_data_integration_output {
                 schedule_configuration: self.schedule_configuration,
                 tags: self.tags,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }

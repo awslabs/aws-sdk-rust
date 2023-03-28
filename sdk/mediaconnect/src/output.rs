@@ -9,6 +9,7 @@ pub struct UpdateFlowSourceOutput {
     /// The settings for the source of the flow.
     #[doc(hidden)]
     pub source: std::option::Option<crate::model::Source>,
+    _request_id: Option<String>,
 }
 impl UpdateFlowSourceOutput {
     /// The ARN of the flow that you want to update.
@@ -20,6 +21,11 @@ impl UpdateFlowSourceOutput {
         self.source.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFlowSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
 pub mod update_flow_source_output {
 
@@ -29,6 +35,7 @@ pub mod update_flow_source_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source: std::option::Option<crate::model::Source>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that you want to update.
@@ -51,11 +58,21 @@ pub mod update_flow_source_output {
             self.source = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFlowSourceOutput`](crate::output::UpdateFlowSourceOutput).
         pub fn build(self) -> crate::output::UpdateFlowSourceOutput {
             crate::output::UpdateFlowSourceOutput {
                 flow_arn: self.flow_arn,
                 source: self.source,
+                _request_id: self._request_id,
             }
         }
     }
@@ -77,6 +94,7 @@ pub struct UpdateFlowOutputOutput {
     /// The new settings of the output that you updated.
     #[doc(hidden)]
     pub output: std::option::Option<crate::model::Output>,
+    _request_id: Option<String>,
 }
 impl UpdateFlowOutputOutput {
     /// The ARN of the flow that is associated with the updated output.
@@ -88,6 +106,11 @@ impl UpdateFlowOutputOutput {
         self.output.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFlowOutputOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
 pub mod update_flow_output_output {
 
@@ -97,6 +120,7 @@ pub mod update_flow_output_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) output: std::option::Option<crate::model::Output>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that is associated with the updated output.
@@ -119,11 +143,21 @@ pub mod update_flow_output_output {
             self.output = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFlowOutputOutput`](crate::output::UpdateFlowOutputOutput).
         pub fn build(self) -> crate::output::UpdateFlowOutputOutput {
             crate::output::UpdateFlowOutputOutput {
                 flow_arn: self.flow_arn,
                 output: self.output,
+                _request_id: self._request_id,
             }
         }
     }
@@ -145,6 +179,7 @@ pub struct UpdateFlowMediaStreamOutput {
     /// The media stream that you updated.
     #[doc(hidden)]
     pub media_stream: std::option::Option<crate::model::MediaStream>,
+    _request_id: Option<String>,
 }
 impl UpdateFlowMediaStreamOutput {
     /// The ARN of the flow that is associated with the media stream that you updated.
@@ -156,6 +191,11 @@ impl UpdateFlowMediaStreamOutput {
         self.media_stream.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFlowMediaStreamOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
 pub mod update_flow_media_stream_output {
 
@@ -165,6 +205,7 @@ pub mod update_flow_media_stream_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_stream: std::option::Option<crate::model::MediaStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that is associated with the media stream that you updated.
@@ -190,11 +231,21 @@ pub mod update_flow_media_stream_output {
             self.media_stream = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFlowMediaStreamOutput`](crate::output::UpdateFlowMediaStreamOutput).
         pub fn build(self) -> crate::output::UpdateFlowMediaStreamOutput {
             crate::output::UpdateFlowMediaStreamOutput {
                 flow_arn: self.flow_arn,
                 media_stream: self.media_stream,
+                _request_id: self._request_id,
             }
         }
     }
@@ -216,6 +267,7 @@ pub struct UpdateFlowEntitlementOutput {
     /// The ARN of the flow that this entitlement was granted on.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateFlowEntitlementOutput {
     /// The new configuration of the entitlement that you updated.
@@ -227,6 +279,11 @@ impl UpdateFlowEntitlementOutput {
         self.flow_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateFlowEntitlementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
 pub mod update_flow_entitlement_output {
 
@@ -236,6 +293,7 @@ pub mod update_flow_entitlement_output {
     pub struct Builder {
         pub(crate) entitlement: std::option::Option<crate::model::Entitlement>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The new configuration of the entitlement that you updated.
@@ -261,11 +319,21 @@ pub mod update_flow_entitlement_output {
             self.flow_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFlowEntitlementOutput`](crate::output::UpdateFlowEntitlementOutput).
         pub fn build(self) -> crate::output::UpdateFlowEntitlementOutput {
             crate::output::UpdateFlowEntitlementOutput {
                 entitlement: self.entitlement,
                 flow_arn: self.flow_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -284,11 +352,17 @@ pub struct UpdateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
     #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
+    _request_id: Option<String>,
 }
 impl UpdateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
         self.flow.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
@@ -299,6 +373,7 @@ pub mod update_flow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow: std::option::Option<crate::model::Flow>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The settings for a flow, including its source, outputs, and entitlements.
@@ -311,9 +386,21 @@ pub mod update_flow_output {
             self.flow = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateFlowOutput`](crate::output::UpdateFlowOutput).
         pub fn build(self) -> crate::output::UpdateFlowOutput {
-            crate::output::UpdateFlowOutput { flow: self.flow }
+            crate::output::UpdateFlowOutput {
+                flow: self.flow,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -327,18 +414,38 @@ impl UpdateFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -352,18 +459,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -384,6 +511,7 @@ pub struct StopFlowOutput {
     /// The status of the flow when the StopFlow process begins.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    _request_id: Option<String>,
 }
 impl StopFlowOutput {
     /// The ARN of the flow that you stopped.
@@ -395,6 +523,11 @@ impl StopFlowOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StopFlowOutput`](crate::output::StopFlowOutput).
 pub mod stop_flow_output {
 
@@ -404,6 +537,7 @@ pub mod stop_flow_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that you stopped.
@@ -426,11 +560,21 @@ pub mod stop_flow_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopFlowOutput`](crate::output::StopFlowOutput).
         pub fn build(self) -> crate::output::StopFlowOutput {
             crate::output::StopFlowOutput {
                 flow_arn: self.flow_arn,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -452,6 +596,7 @@ pub struct StartFlowOutput {
     /// The status of the flow when the StartFlow process begins.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    _request_id: Option<String>,
 }
 impl StartFlowOutput {
     /// The ARN of the flow that you started.
@@ -463,6 +608,11 @@ impl StartFlowOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartFlowOutput`](crate::output::StartFlowOutput).
 pub mod start_flow_output {
 
@@ -472,6 +622,7 @@ pub mod start_flow_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that you started.
@@ -494,11 +645,21 @@ pub mod start_flow_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartFlowOutput`](crate::output::StartFlowOutput).
         pub fn build(self) -> crate::output::StartFlowOutput {
             crate::output::StartFlowOutput {
                 flow_arn: self.flow_arn,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -520,6 +681,7 @@ pub struct RevokeFlowEntitlementOutput {
     /// The ARN of the flow that the entitlement was revoked from.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RevokeFlowEntitlementOutput {
     /// The ARN of the entitlement that was revoked.
@@ -531,6 +693,11 @@ impl RevokeFlowEntitlementOutput {
         self.flow_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RevokeFlowEntitlementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
 pub mod revoke_flow_entitlement_output {
 
@@ -540,6 +707,7 @@ pub mod revoke_flow_entitlement_output {
     pub struct Builder {
         pub(crate) entitlement_arn: std::option::Option<std::string::String>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the entitlement that was revoked.
@@ -565,11 +733,21 @@ pub mod revoke_flow_entitlement_output {
             self.flow_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RevokeFlowEntitlementOutput`](crate::output::RevokeFlowEntitlementOutput).
         pub fn build(self) -> crate::output::RevokeFlowEntitlementOutput {
             crate::output::RevokeFlowEntitlementOutput {
                 entitlement_arn: self.entitlement_arn,
                 flow_arn: self.flow_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -594,6 +772,7 @@ pub struct RemoveFlowVpcInterfaceOutput {
     /// The name of the VPC interface that was removed.
     #[doc(hidden)]
     pub vpc_interface_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveFlowVpcInterfaceOutput {
     /// The ARN of the flow that is associated with the VPC interface you removed.
@@ -609,6 +788,11 @@ impl RemoveFlowVpcInterfaceOutput {
         self.vpc_interface_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveFlowVpcInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
 pub mod remove_flow_vpc_interface_output {
 
@@ -620,6 +804,7 @@ pub mod remove_flow_vpc_interface_output {
         pub(crate) non_deleted_network_interface_ids:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) vpc_interface_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that is associated with the VPC interface you removed.
@@ -667,12 +852,22 @@ pub mod remove_flow_vpc_interface_output {
             self.vpc_interface_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveFlowVpcInterfaceOutput`](crate::output::RemoveFlowVpcInterfaceOutput).
         pub fn build(self) -> crate::output::RemoveFlowVpcInterfaceOutput {
             crate::output::RemoveFlowVpcInterfaceOutput {
                 flow_arn: self.flow_arn,
                 non_deleted_network_interface_ids: self.non_deleted_network_interface_ids,
                 vpc_interface_name: self.vpc_interface_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -694,6 +889,7 @@ pub struct RemoveFlowSourceOutput {
     /// The ARN of the source that was removed.
     #[doc(hidden)]
     pub source_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveFlowSourceOutput {
     /// The ARN of the flow that is associated with the source you removed.
@@ -705,6 +901,11 @@ impl RemoveFlowSourceOutput {
         self.source_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveFlowSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
 pub mod remove_flow_source_output {
 
@@ -714,6 +915,7 @@ pub mod remove_flow_source_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) source_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that is associated with the source you removed.
@@ -736,11 +938,21 @@ pub mod remove_flow_source_output {
             self.source_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveFlowSourceOutput`](crate::output::RemoveFlowSourceOutput).
         pub fn build(self) -> crate::output::RemoveFlowSourceOutput {
             crate::output::RemoveFlowSourceOutput {
                 flow_arn: self.flow_arn,
                 source_arn: self.source_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -762,6 +974,7 @@ pub struct RemoveFlowOutputOutput {
     /// The ARN of the output that was removed.
     #[doc(hidden)]
     pub output_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveFlowOutputOutput {
     /// The ARN of the flow that is associated with the output you removed.
@@ -773,6 +986,11 @@ impl RemoveFlowOutputOutput {
         self.output_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveFlowOutputOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
 pub mod remove_flow_output_output {
 
@@ -782,6 +1000,7 @@ pub mod remove_flow_output_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) output_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that is associated with the output you removed.
@@ -804,11 +1023,21 @@ pub mod remove_flow_output_output {
             self.output_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveFlowOutputOutput`](crate::output::RemoveFlowOutputOutput).
         pub fn build(self) -> crate::output::RemoveFlowOutputOutput {
             crate::output::RemoveFlowOutputOutput {
                 flow_arn: self.flow_arn,
                 output_arn: self.output_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -830,6 +1059,7 @@ pub struct RemoveFlowMediaStreamOutput {
     /// The name of the media stream that was removed.
     #[doc(hidden)]
     pub media_stream_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveFlowMediaStreamOutput {
     /// The Amazon Resource Name (ARN) of the flow.
@@ -841,6 +1071,11 @@ impl RemoveFlowMediaStreamOutput {
         self.media_stream_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveFlowMediaStreamOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
 pub mod remove_flow_media_stream_output {
 
@@ -850,6 +1085,7 @@ pub mod remove_flow_media_stream_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_stream_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) of the flow.
@@ -875,11 +1111,21 @@ pub mod remove_flow_media_stream_output {
             self.media_stream_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveFlowMediaStreamOutput`](crate::output::RemoveFlowMediaStreamOutput).
         pub fn build(self) -> crate::output::RemoveFlowMediaStreamOutput {
             crate::output::RemoveFlowMediaStreamOutput {
                 flow_arn: self.flow_arn,
                 media_stream_name: self.media_stream_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -898,11 +1144,17 @@ pub struct PurchaseOfferingOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
+    _request_id: Option<String>,
 }
 impl PurchaseOfferingOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
         self.reservation.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for PurchaseOfferingOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
@@ -913,6 +1165,7 @@ pub mod purchase_offering_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation: std::option::Option<crate::model::Reservation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
@@ -928,10 +1181,20 @@ pub mod purchase_offering_output {
             self.reservation = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PurchaseOfferingOutput`](crate::output::PurchaseOfferingOutput).
         pub fn build(self) -> crate::output::PurchaseOfferingOutput {
             crate::output::PurchaseOfferingOutput {
                 reservation: self.reservation,
+                _request_id: self._request_id,
             }
         }
     }
@@ -951,6 +1214,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// A map from tag keys to values. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
@@ -959,6 +1223,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -971,6 +1240,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -998,9 +1268,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1021,6 +1303,7 @@ pub struct ListReservationsOutput {
     /// A list of all reservations that have been purchased by this account in the current AWS Region.
     #[doc(hidden)]
     pub reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
+    _request_id: Option<String>,
 }
 impl ListReservationsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
@@ -1032,6 +1315,11 @@ impl ListReservationsOutput {
         self.reservations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReservationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListReservationsOutput`](crate::output::ListReservationsOutput).
 pub mod list_reservations_output {
 
@@ -1041,6 +1329,7 @@ pub mod list_reservations_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) reservations: std::option::Option<std::vec::Vec<crate::model::Reservation>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListReservations request a second time and specify the NextToken value.
@@ -1072,11 +1361,21 @@ pub mod list_reservations_output {
             self.reservations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListReservationsOutput`](crate::output::ListReservationsOutput).
         pub fn build(self) -> crate::output::ListReservationsOutput {
             crate::output::ListReservationsOutput {
                 next_token: self.next_token,
                 reservations: self.reservations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1098,6 +1397,7 @@ pub struct ListOfferingsOutput {
     /// A list of offerings that are available to this account in the current AWS Region.
     #[doc(hidden)]
     pub offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
+    _request_id: Option<String>,
 }
 impl ListOfferingsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
@@ -1109,6 +1409,11 @@ impl ListOfferingsOutput {
         self.offerings.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListOfferingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
 pub mod list_offerings_output {
 
@@ -1118,6 +1423,7 @@ pub mod list_offerings_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) offerings: std::option::Option<std::vec::Vec<crate::model::Offering>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
@@ -1149,11 +1455,21 @@ pub mod list_offerings_output {
             self.offerings = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListOfferingsOutput`](crate::output::ListOfferingsOutput).
         pub fn build(self) -> crate::output::ListOfferingsOutput {
             crate::output::ListOfferingsOutput {
                 next_token: self.next_token,
                 offerings: self.offerings,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1175,6 +1491,7 @@ pub struct ListFlowsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFlowsOutput {
     /// A list of flow summaries.
@@ -1186,6 +1503,11 @@ impl ListFlowsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFlowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListFlowsOutput`](crate::output::ListFlowsOutput).
 pub mod list_flows_output {
 
@@ -1195,6 +1517,7 @@ pub mod list_flows_output {
     pub struct Builder {
         pub(crate) flows: std::option::Option<std::vec::Vec<crate::model::ListedFlow>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `flows`.
@@ -1226,11 +1549,21 @@ pub mod list_flows_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListFlowsOutput`](crate::output::ListFlowsOutput).
         pub fn build(self) -> crate::output::ListFlowsOutput {
             crate::output::ListFlowsOutput {
                 flows: self.flows,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1252,6 +1585,7 @@ pub struct ListEntitlementsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEntitlementsOutput {
     /// A list of entitlements that have been granted to you from other AWS accounts.
@@ -1261,6 +1595,11 @@ impl ListEntitlementsOutput {
     /// The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListEntitlementsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
@@ -1273,6 +1612,7 @@ pub mod list_entitlements_output {
         pub(crate) entitlements:
             std::option::Option<std::vec::Vec<crate::model::ListedEntitlement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entitlements`.
@@ -1304,11 +1644,21 @@ pub mod list_entitlements_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEntitlementsOutput`](crate::output::ListEntitlementsOutput).
         pub fn build(self) -> crate::output::ListEntitlementsOutput {
             crate::output::ListEntitlementsOutput {
                 entitlements: self.entitlements,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1330,6 +1680,7 @@ pub struct GrantFlowEntitlementsOutput {
     /// The ARN of the flow that these entitlements were granted to.
     #[doc(hidden)]
     pub flow_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GrantFlowEntitlementsOutput {
     /// The entitlements that were just granted.
@@ -1341,6 +1692,11 @@ impl GrantFlowEntitlementsOutput {
         self.flow_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GrantFlowEntitlementsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
 pub mod grant_flow_entitlements_output {
 
@@ -1350,6 +1706,7 @@ pub mod grant_flow_entitlements_output {
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) flow_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entitlements`.
@@ -1381,11 +1738,21 @@ pub mod grant_flow_entitlements_output {
             self.flow_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GrantFlowEntitlementsOutput`](crate::output::GrantFlowEntitlementsOutput).
         pub fn build(self) -> crate::output::GrantFlowEntitlementsOutput {
             crate::output::GrantFlowEntitlementsOutput {
                 entitlements: self.entitlements,
                 flow_arn: self.flow_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1404,11 +1771,17 @@ pub struct DescribeReservationOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     #[doc(hidden)]
     pub reservation: std::option::Option<crate::model::Reservation>,
+    _request_id: Option<String>,
 }
 impl DescribeReservationOutput {
     /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
     pub fn reservation(&self) -> std::option::Option<&crate::model::Reservation> {
         self.reservation.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeReservationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
@@ -1419,6 +1792,7 @@ pub mod describe_reservation_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) reservation: std::option::Option<crate::model::Reservation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A pricing agreement for a discounted rate for a specific outbound bandwidth that your MediaConnect account will use each month over a specific time period. The discounted rate in the reservation applies to outbound bandwidth for all flows from your account until your account reaches the amount of bandwidth in your reservation. If you use more outbound bandwidth than the agreed upon amount in a single month, the overage is charged at the on-demand rate.
@@ -1434,10 +1808,20 @@ pub mod describe_reservation_output {
             self.reservation = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeReservationOutput`](crate::output::DescribeReservationOutput).
         pub fn build(self) -> crate::output::DescribeReservationOutput {
             crate::output::DescribeReservationOutput {
                 reservation: self.reservation,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1456,11 +1840,17 @@ pub struct DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     #[doc(hidden)]
     pub offering: std::option::Option<crate::model::Offering>,
+    _request_id: Option<String>,
 }
 impl DescribeOfferingOutput {
     /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
     pub fn offering(&self) -> std::option::Option<&crate::model::Offering> {
         self.offering.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeOfferingOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
@@ -1471,6 +1861,7 @@ pub mod describe_offering_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) offering: std::option::Option<crate::model::Offering>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A savings plan that reserves a certain amount of outbound bandwidth usage at a discounted rate each month over a period of time.
@@ -1483,10 +1874,20 @@ pub mod describe_offering_output {
             self.offering = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeOfferingOutput`](crate::output::DescribeOfferingOutput).
         pub fn build(self) -> crate::output::DescribeOfferingOutput {
             crate::output::DescribeOfferingOutput {
                 offering: self.offering,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1508,6 +1909,7 @@ pub struct DescribeFlowOutput {
     /// Messages that provide the state of the flow.
     #[doc(hidden)]
     pub messages: std::option::Option<crate::model::Messages>,
+    _request_id: Option<String>,
 }
 impl DescribeFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
@@ -1519,6 +1921,11 @@ impl DescribeFlowOutput {
         self.messages.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
 pub mod describe_flow_output {
 
@@ -1528,6 +1935,7 @@ pub mod describe_flow_output {
     pub struct Builder {
         pub(crate) flow: std::option::Option<crate::model::Flow>,
         pub(crate) messages: std::option::Option<crate::model::Messages>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The settings for a flow, including its source, outputs, and entitlements.
@@ -1550,11 +1958,21 @@ pub mod describe_flow_output {
             self.messages = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFlowOutput`](crate::output::DescribeFlowOutput).
         pub fn build(self) -> crate::output::DescribeFlowOutput {
             crate::output::DescribeFlowOutput {
                 flow: self.flow,
                 messages: self.messages,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1576,6 +1994,7 @@ pub struct DeleteFlowOutput {
     /// The status of the flow when the DeleteFlow process begins.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    _request_id: Option<String>,
 }
 impl DeleteFlowOutput {
     /// The ARN of the flow that was deleted.
@@ -1587,6 +2006,11 @@ impl DeleteFlowOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
 pub mod delete_flow_output {
 
@@ -1596,6 +2020,7 @@ pub mod delete_flow_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that was deleted.
@@ -1618,11 +2043,21 @@ pub mod delete_flow_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteFlowOutput`](crate::output::DeleteFlowOutput).
         pub fn build(self) -> crate::output::DeleteFlowOutput {
             crate::output::DeleteFlowOutput {
                 flow_arn: self.flow_arn,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1641,11 +2076,17 @@ pub struct CreateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
     #[doc(hidden)]
     pub flow: std::option::Option<crate::model::Flow>,
+    _request_id: Option<String>,
 }
 impl CreateFlowOutput {
     /// The settings for a flow, including its source, outputs, and entitlements.
     pub fn flow(&self) -> std::option::Option<&crate::model::Flow> {
         self.flow.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateFlowOutput`](crate::output::CreateFlowOutput).
@@ -1656,6 +2097,7 @@ pub mod create_flow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) flow: std::option::Option<crate::model::Flow>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The settings for a flow, including its source, outputs, and entitlements.
@@ -1668,9 +2110,21 @@ pub mod create_flow_output {
             self.flow = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFlowOutput`](crate::output::CreateFlowOutput).
         pub fn build(self) -> crate::output::CreateFlowOutput {
-            crate::output::CreateFlowOutput { flow: self.flow }
+            crate::output::CreateFlowOutput {
+                flow: self.flow,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1691,6 +2145,7 @@ pub struct AddFlowVpcInterfacesOutput {
     /// The details of the newly added VPC interfaces.
     #[doc(hidden)]
     pub vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
+    _request_id: Option<String>,
 }
 impl AddFlowVpcInterfacesOutput {
     /// The ARN of the flow that these VPC interfaces were added to.
@@ -1702,6 +2157,11 @@ impl AddFlowVpcInterfacesOutput {
         self.vpc_interfaces.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddFlowVpcInterfacesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
 pub mod add_flow_vpc_interfaces_output {
 
@@ -1711,6 +2171,7 @@ pub mod add_flow_vpc_interfaces_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) vpc_interfaces: std::option::Option<std::vec::Vec<crate::model::VpcInterface>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that these VPC interfaces were added to.
@@ -1742,11 +2203,21 @@ pub mod add_flow_vpc_interfaces_output {
             self.vpc_interfaces = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AddFlowVpcInterfacesOutput`](crate::output::AddFlowVpcInterfacesOutput).
         pub fn build(self) -> crate::output::AddFlowVpcInterfacesOutput {
             crate::output::AddFlowVpcInterfacesOutput {
                 flow_arn: self.flow_arn,
                 vpc_interfaces: self.vpc_interfaces,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1768,6 +2239,7 @@ pub struct AddFlowSourcesOutput {
     /// The details of the newly added sources.
     #[doc(hidden)]
     pub sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
+    _request_id: Option<String>,
 }
 impl AddFlowSourcesOutput {
     /// The ARN of the flow that these sources were added to.
@@ -1779,6 +2251,11 @@ impl AddFlowSourcesOutput {
         self.sources.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddFlowSourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
 pub mod add_flow_sources_output {
 
@@ -1788,6 +2265,7 @@ pub mod add_flow_sources_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) sources: std::option::Option<std::vec::Vec<crate::model::Source>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that these sources were added to.
@@ -1819,11 +2297,21 @@ pub mod add_flow_sources_output {
             self.sources = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AddFlowSourcesOutput`](crate::output::AddFlowSourcesOutput).
         pub fn build(self) -> crate::output::AddFlowSourcesOutput {
             crate::output::AddFlowSourcesOutput {
                 flow_arn: self.flow_arn,
                 sources: self.sources,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1845,6 +2333,7 @@ pub struct AddFlowOutputsOutput {
     /// The details of the newly added outputs.
     #[doc(hidden)]
     pub outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
+    _request_id: Option<String>,
 }
 impl AddFlowOutputsOutput {
     /// The ARN of the flow that these outputs were added to.
@@ -1856,6 +2345,11 @@ impl AddFlowOutputsOutput {
         self.outputs.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddFlowOutputsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
 pub mod add_flow_outputs_output {
 
@@ -1865,6 +2359,7 @@ pub mod add_flow_outputs_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::Output>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that these outputs were added to.
@@ -1896,11 +2391,21 @@ pub mod add_flow_outputs_output {
             self.outputs = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AddFlowOutputsOutput`](crate::output::AddFlowOutputsOutput).
         pub fn build(self) -> crate::output::AddFlowOutputsOutput {
             crate::output::AddFlowOutputsOutput {
                 flow_arn: self.flow_arn,
                 outputs: self.outputs,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1922,6 +2427,7 @@ pub struct AddFlowMediaStreamsOutput {
     /// The media streams that you added to the flow.
     #[doc(hidden)]
     pub media_streams: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
+    _request_id: Option<String>,
 }
 impl AddFlowMediaStreamsOutput {
     /// The ARN of the flow that you added media streams to.
@@ -1933,6 +2439,11 @@ impl AddFlowMediaStreamsOutput {
         self.media_streams.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AddFlowMediaStreamsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
 pub mod add_flow_media_streams_output {
 
@@ -1942,6 +2453,7 @@ pub mod add_flow_media_streams_output {
     pub struct Builder {
         pub(crate) flow_arn: std::option::Option<std::string::String>,
         pub(crate) media_streams: std::option::Option<std::vec::Vec<crate::model::MediaStream>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The ARN of the flow that you added media streams to.
@@ -1973,11 +2485,21 @@ pub mod add_flow_media_streams_output {
             self.media_streams = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AddFlowMediaStreamsOutput`](crate::output::AddFlowMediaStreamsOutput).
         pub fn build(self) -> crate::output::AddFlowMediaStreamsOutput {
             crate::output::AddFlowMediaStreamsOutput {
                 flow_arn: self.flow_arn,
                 media_streams: self.media_streams,
+                _request_id: self._request_id,
             }
         }
     }

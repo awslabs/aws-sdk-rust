@@ -3,8 +3,11 @@
 pub fn parse_send_command_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendCommandOutput, crate::error::SendCommandError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendCommandError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendCommandError::unhandled(generic)),
@@ -12,108 +15,100 @@ pub fn parse_send_command_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::SendCommandError {
-            meta: generic,
-            kind: crate::error::SendCommandErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::SendCommandError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CapacityExceededException" => crate::error::SendCommandError {
-            meta: generic,
-            kind: crate::error::SendCommandErrorKind::CapacityExceededException({
+            })
+        }
+        "CapacityExceededException" => crate::error::SendCommandError::CapacityExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::capacity_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_capacity_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidSessionException" => crate::error::SendCommandError {
-            meta: generic,
-            kind: crate::error::SendCommandErrorKind::InvalidSessionException({
+                let mut output = crate::error::capacity_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_capacity_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSessionException" => crate::error::SendCommandError::InvalidSessionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_session_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_session_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::SendCommandError {
-            meta: generic,
-            kind: crate::error::SendCommandErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_session_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_session_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::SendCommandError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "OccConflictException" => crate::error::SendCommandError {
-            meta: generic,
-            kind: crate::error::SendCommandErrorKind::OccConflictException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "OccConflictException" => {
+            crate::error::SendCommandError::OccConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::occ_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_occ_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RateExceededException" => crate::error::SendCommandError {
-            meta: generic,
-            kind: crate::error::SendCommandErrorKind::RateExceededException({
+            })
+        }
+        "RateExceededException" => crate::error::SendCommandError::RateExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::rate_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_rate_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::rate_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_rate_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendCommandError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendCommandError::generic(generic),
     })
 }
@@ -131,6 +126,9 @@ pub fn parse_send_command_response(
             output,
         )
         .map_err(crate::error::SendCommandError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

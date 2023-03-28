@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnectorProfile {
         crate::error::CreateConnectorProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_connector_profile_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFlow {
     type Output =
         std::result::Result<crate::output::CreateFlowOutput, crate::error::CreateFlowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_flow_error(response)
         } else {
@@ -91,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnectorProfile {
         crate::error::DeleteConnectorProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_connector_profile_error(response)
         } else {
@@ -123,6 +126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFlow {
     type Output =
         std::result::Result<crate::output::DeleteFlowOutput, crate::error::DeleteFlowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_flow_error(response)
         } else {
@@ -157,6 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnector {
         crate::error::DescribeConnectorError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connector_error(response)
         } else {
@@ -191,6 +196,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectorEntity 
         crate::error::DescribeConnectorEntityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connector_entity_error(response)
         } else {
@@ -225,6 +231,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectorProfile
         crate::error::DescribeConnectorProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connector_profiles_error(response)
         } else {
@@ -259,6 +266,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectors {
         crate::error::DescribeConnectorsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connectors_error(response)
         } else {
@@ -291,6 +299,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlow {
     type Output =
         std::result::Result<crate::output::DescribeFlowOutput, crate::error::DescribeFlowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_flow_error(response)
         } else {
@@ -325,6 +334,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeFlowExecutionRec
         crate::error::DescribeFlowExecutionRecordsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_flow_execution_records_error(response)
         } else {
@@ -359,6 +369,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectorEntities {
         crate::error::ListConnectorEntitiesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_connector_entities_error(response)
         } else {
@@ -391,6 +402,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListConnectors {
     type Output =
         std::result::Result<crate::output::ListConnectorsOutput, crate::error::ListConnectorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_connectors_error(response)
         } else {
@@ -422,6 +434,7 @@ impl ListFlows {
 impl aws_smithy_http::response::ParseStrictResponse for ListFlows {
     type Output = std::result::Result<crate::output::ListFlowsOutput, crate::error::ListFlowsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_flows_error(response)
         } else {
@@ -456,6 +469,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
         crate::error::ListTagsForResourceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
@@ -490,6 +504,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RegisterConnector {
         crate::error::RegisterConnectorError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_register_connector_error(response)
         } else {
@@ -521,6 +536,7 @@ impl StartFlow {
 impl aws_smithy_http::response::ParseStrictResponse for StartFlow {
     type Output = std::result::Result<crate::output::StartFlowOutput, crate::error::StartFlowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_flow_error(response)
         } else {
@@ -552,6 +568,7 @@ impl StopFlow {
 impl aws_smithy_http::response::ParseStrictResponse for StopFlow {
     type Output = std::result::Result<crate::output::StopFlowOutput, crate::error::StopFlowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_flow_error(response)
         } else {
@@ -584,6 +601,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -618,6 +636,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UnregisterConnector {
         crate::error::UnregisterConnectorError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_unregister_connector_error(response)
         } else {
@@ -650,6 +669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -684,6 +704,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectorProfile {
         crate::error::UpdateConnectorProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_connector_profile_error(response)
         } else {
@@ -718,6 +739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnectorRegistrat
         crate::error::UpdateConnectorRegistrationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_connector_registration_error(response)
         } else {
@@ -750,6 +772,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFlow {
     type Output =
         std::result::Result<crate::output::UpdateFlowOutput, crate::error::UpdateFlowError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_flow_error(response)
         } else {

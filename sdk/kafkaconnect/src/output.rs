@@ -9,6 +9,7 @@ pub struct UpdateConnectorOutput {
     /// <p>The state of the connector.</p>
     #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
+    _request_id: Option<String>,
 }
 impl UpdateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) of the connector.</p>
@@ -20,6 +21,11 @@ impl UpdateConnectorOutput {
         self.connector_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateConnectorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
 pub mod update_connector_output {
 
@@ -29,6 +35,7 @@ pub mod update_connector_output {
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) connector_state: std::option::Option<crate::model::ConnectorState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the connector.</p>
@@ -57,11 +64,21 @@ pub mod update_connector_output {
             self.connector_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateConnectorOutput`](crate::output::UpdateConnectorOutput).
         pub fn build(self) -> crate::output::UpdateConnectorOutput {
             crate::output::UpdateConnectorOutput {
                 connector_arn: self.connector_arn,
                 connector_state: self.connector_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,6 +101,7 @@ pub struct ListWorkerConfigurationsOutput {
     #[doc(hidden)]
     pub worker_configurations:
         std::option::Option<std::vec::Vec<crate::model::WorkerConfigurationSummary>>,
+    _request_id: Option<String>,
 }
 impl ListWorkerConfigurationsOutput {
     /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -97,6 +115,11 @@ impl ListWorkerConfigurationsOutput {
         self.worker_configurations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkerConfigurationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkerConfigurationsOutput`](crate::output::ListWorkerConfigurationsOutput).
 pub mod list_worker_configurations_output {
 
@@ -107,6 +130,7 @@ pub mod list_worker_configurations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) worker_configurations:
             std::option::Option<std::vec::Vec<crate::model::WorkerConfigurationSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the response of a ListWorkerConfigurations operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
@@ -141,11 +165,21 @@ pub mod list_worker_configurations_output {
             self.worker_configurations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkerConfigurationsOutput`](crate::output::ListWorkerConfigurationsOutput).
         pub fn build(self) -> crate::output::ListWorkerConfigurationsOutput {
             crate::output::ListWorkerConfigurationsOutput {
                 next_token: self.next_token,
                 worker_configurations: self.worker_configurations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -167,6 +201,7 @@ pub struct ListCustomPluginsOutput {
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomPluginsOutput {
     /// <p>An array of custom plugin descriptions.</p>
@@ -176,6 +211,11 @@ impl ListCustomPluginsOutput {
     /// <p>If the response of a ListCustomPlugins operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where the previous operation left off.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListCustomPluginsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListCustomPluginsOutput`](crate::output::ListCustomPluginsOutput).
@@ -188,6 +228,7 @@ pub mod list_custom_plugins_output {
         pub(crate) custom_plugins:
             std::option::Option<std::vec::Vec<crate::model::CustomPluginSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `custom_plugins`.
@@ -219,11 +260,21 @@ pub mod list_custom_plugins_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCustomPluginsOutput`](crate::output::ListCustomPluginsOutput).
         pub fn build(self) -> crate::output::ListCustomPluginsOutput {
             crate::output::ListCustomPluginsOutput {
                 custom_plugins: self.custom_plugins,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -245,6 +296,7 @@ pub struct ListConnectorsOutput {
     /// <p>If the response of a ListConnectors operation is truncated, it will include a NextToken. Send this NextToken in a subsequent request to continue listing from where it left off.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListConnectorsOutput {
     /// <p>An array of connector descriptions.</p>
@@ -256,6 +308,11 @@ impl ListConnectorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListConnectorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
 pub mod list_connectors_output {
 
@@ -265,6 +322,7 @@ pub mod list_connectors_output {
     pub struct Builder {
         pub(crate) connectors: std::option::Option<std::vec::Vec<crate::model::ConnectorSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `connectors`.
@@ -296,11 +354,21 @@ pub mod list_connectors_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListConnectorsOutput`](crate::output::ListConnectorsOutput).
         pub fn build(self) -> crate::output::ListConnectorsOutput {
             crate::output::ListConnectorsOutput {
                 connectors: self.connectors,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -331,6 +399,7 @@ pub struct DescribeWorkerConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom configuration.</p>
     #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
@@ -356,6 +425,11 @@ impl DescribeWorkerConfigurationOutput {
         self.worker_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeWorkerConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeWorkerConfigurationOutput`](crate::output::DescribeWorkerConfigurationOutput).
 pub mod describe_worker_configuration_output {
 
@@ -369,6 +443,7 @@ pub mod describe_worker_configuration_output {
             std::option::Option<crate::model::WorkerConfigurationRevisionDescription>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) worker_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time that the worker configuration was created.</p>
@@ -433,6 +508,15 @@ pub mod describe_worker_configuration_output {
             self.worker_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeWorkerConfigurationOutput`](crate::output::DescribeWorkerConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeWorkerConfigurationOutput {
             crate::output::DescribeWorkerConfigurationOutput {
@@ -441,6 +525,7 @@ pub mod describe_worker_configuration_output {
                 latest_revision: self.latest_revision,
                 name: self.name,
                 worker_configuration_arn: self.worker_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -477,6 +562,7 @@ pub struct DescribeCustomPluginOutput {
     /// <p>Details about the state of a custom plugin.</p>
     #[doc(hidden)]
     pub state_description: std::option::Option<crate::model::StateDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomPluginOutput {
     /// <p>The time that the custom plugin was created.</p>
@@ -510,6 +596,11 @@ impl DescribeCustomPluginOutput {
         self.state_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomPluginOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput).
 pub mod describe_custom_plugin_output {
 
@@ -524,6 +615,7 @@ pub mod describe_custom_plugin_output {
         pub(crate) latest_revision: std::option::Option<crate::model::CustomPluginRevisionSummary>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) state_description: std::option::Option<crate::model::StateDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time that the custom plugin was created.</p>
@@ -611,6 +703,15 @@ pub mod describe_custom_plugin_output {
             self.state_description = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCustomPluginOutput`](crate::output::DescribeCustomPluginOutput).
         pub fn build(self) -> crate::output::DescribeCustomPluginOutput {
             crate::output::DescribeCustomPluginOutput {
@@ -621,6 +722,7 @@ pub mod describe_custom_plugin_output {
                 latest_revision: self.latest_revision,
                 name: self.name,
                 state_description: self.state_description,
+                _request_id: self._request_id,
             }
         }
     }
@@ -690,6 +792,7 @@ pub struct DescribeConnectorOutput {
     /// <p>Details about the state of a connector.</p>
     #[doc(hidden)]
     pub state_description: std::option::Option<crate::model::StateDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeConnectorOutput {
     /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
@@ -802,7 +905,13 @@ impl std::fmt::Debug for DescribeConnectorOutput {
         );
         formatter.field("worker_configuration", &self.worker_configuration);
         formatter.field("state_description", &self.state_description);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeConnectorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
@@ -834,6 +943,7 @@ pub mod describe_connector_output {
         pub(crate) worker_configuration:
             std::option::Option<crate::model::WorkerConfigurationDescription>,
         pub(crate) state_description: std::option::Option<crate::model::StateDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the capacity of the connector, whether it is auto scaled or provisioned.</p>
@@ -1084,6 +1194,15 @@ pub mod describe_connector_output {
             self.state_description = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeConnectorOutput`](crate::output::DescribeConnectorOutput).
         pub fn build(self) -> crate::output::DescribeConnectorOutput {
             crate::output::DescribeConnectorOutput {
@@ -1104,6 +1223,7 @@ pub mod describe_connector_output {
                 service_execution_role_arn: self.service_execution_role_arn,
                 worker_configuration: self.worker_configuration,
                 state_description: self.state_description,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1139,6 +1259,7 @@ pub mod describe_connector_output {
             );
             formatter.field("worker_configuration", &self.worker_configuration);
             formatter.field("state_description", &self.state_description);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1160,6 +1281,7 @@ pub struct DeleteCustomPluginOutput {
     /// <p>The state of the custom plugin.</p>
     #[doc(hidden)]
     pub custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
+    _request_id: Option<String>,
 }
 impl DeleteCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
@@ -1171,6 +1293,11 @@ impl DeleteCustomPluginOutput {
         self.custom_plugin_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteCustomPluginOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput).
 pub mod delete_custom_plugin_output {
 
@@ -1180,6 +1307,7 @@ pub mod delete_custom_plugin_output {
     pub struct Builder {
         pub(crate) custom_plugin_arn: std::option::Option<std::string::String>,
         pub(crate) custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the custom plugin that you requested to delete.</p>
@@ -1208,11 +1336,21 @@ pub mod delete_custom_plugin_output {
             self.custom_plugin_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteCustomPluginOutput`](crate::output::DeleteCustomPluginOutput).
         pub fn build(self) -> crate::output::DeleteCustomPluginOutput {
             crate::output::DeleteCustomPluginOutput {
                 custom_plugin_arn: self.custom_plugin_arn,
                 custom_plugin_state: self.custom_plugin_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1234,6 +1372,7 @@ pub struct DeleteConnectorOutput {
     /// <p>The state of the connector that you requested to delete.</p>
     #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
+    _request_id: Option<String>,
 }
 impl DeleteConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
@@ -1245,6 +1384,11 @@ impl DeleteConnectorOutput {
         self.connector_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteConnectorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
 pub mod delete_connector_output {
 
@@ -1254,6 +1398,7 @@ pub mod delete_connector_output {
     pub struct Builder {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) connector_state: std::option::Option<crate::model::ConnectorState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the connector that you requested to delete.</p>
@@ -1282,11 +1427,21 @@ pub mod delete_connector_output {
             self.connector_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteConnectorOutput`](crate::output::DeleteConnectorOutput).
         pub fn build(self) -> crate::output::DeleteConnectorOutput {
             crate::output::DeleteConnectorOutput {
                 connector_arn: self.connector_arn,
                 connector_state: self.connector_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1314,6 +1469,7 @@ pub struct CreateWorkerConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the worker configuration.</p>
     #[doc(hidden)]
     pub worker_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWorkerConfigurationOutput {
     /// <p>The time that the worker configuration was created.</p>
@@ -1335,6 +1491,11 @@ impl CreateWorkerConfigurationOutput {
         self.worker_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkerConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkerConfigurationOutput`](crate::output::CreateWorkerConfigurationOutput).
 pub mod create_worker_configuration_output {
 
@@ -1347,6 +1508,7 @@ pub mod create_worker_configuration_output {
             std::option::Option<crate::model::WorkerConfigurationRevisionSummary>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) worker_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time that the worker configuration was created.</p>
@@ -1401,6 +1563,15 @@ pub mod create_worker_configuration_output {
             self.worker_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkerConfigurationOutput`](crate::output::CreateWorkerConfigurationOutput).
         pub fn build(self) -> crate::output::CreateWorkerConfigurationOutput {
             crate::output::CreateWorkerConfigurationOutput {
@@ -1408,6 +1579,7 @@ pub mod create_worker_configuration_output {
                 latest_revision: self.latest_revision,
                 name: self.name,
                 worker_configuration_arn: self.worker_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1435,6 +1607,7 @@ pub struct CreateCustomPluginOutput {
     /// <p>The revision of the custom plugin.</p>
     #[doc(hidden)]
     pub revision: i64,
+    _request_id: Option<String>,
 }
 impl CreateCustomPluginOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
@@ -1454,6 +1627,11 @@ impl CreateCustomPluginOutput {
         self.revision
     }
 }
+impl aws_http::request_id::RequestId for CreateCustomPluginOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateCustomPluginOutput`](crate::output::CreateCustomPluginOutput).
 pub mod create_custom_plugin_output {
 
@@ -1465,6 +1643,7 @@ pub mod create_custom_plugin_output {
         pub(crate) custom_plugin_state: std::option::Option<crate::model::CustomPluginState>,
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) revision: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the custom plugin.</p>
@@ -1513,6 +1692,15 @@ pub mod create_custom_plugin_output {
             self.revision = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCustomPluginOutput`](crate::output::CreateCustomPluginOutput).
         pub fn build(self) -> crate::output::CreateCustomPluginOutput {
             crate::output::CreateCustomPluginOutput {
@@ -1520,6 +1708,7 @@ pub mod create_custom_plugin_output {
                 custom_plugin_state: self.custom_plugin_state,
                 name: self.name,
                 revision: self.revision.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -1544,6 +1733,7 @@ pub struct CreateConnectorOutput {
     /// <p>The state of the connector.</p>
     #[doc(hidden)]
     pub connector_state: std::option::Option<crate::model::ConnectorState>,
+    _request_id: Option<String>,
 }
 impl CreateConnectorOutput {
     /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
@@ -1559,6 +1749,11 @@ impl CreateConnectorOutput {
         self.connector_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateConnectorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
 pub mod create_connector_output {
 
@@ -1569,6 +1764,7 @@ pub mod create_connector_output {
         pub(crate) connector_arn: std::option::Option<std::string::String>,
         pub(crate) connector_name: std::option::Option<std::string::String>,
         pub(crate) connector_state: std::option::Option<crate::model::ConnectorState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) that Amazon assigned to the connector.</p>
@@ -1610,12 +1806,22 @@ pub mod create_connector_output {
             self.connector_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateConnectorOutput`](crate::output::CreateConnectorOutput).
         pub fn build(self) -> crate::output::CreateConnectorOutput {
             crate::output::CreateConnectorOutput {
                 connector_arn: self.connector_arn,
                 connector_name: self.connector_name,
                 connector_state: self.connector_state,
+                _request_id: self._request_id,
             }
         }
     }

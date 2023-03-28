@@ -3,8 +3,11 @@
 pub fn parse_get_entitlements_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetEntitlementsOutput, crate::error::GetEntitlementsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetEntitlementsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetEntitlementsError::unhandled(generic)),
@@ -12,9 +15,8 @@ pub fn parse_get_entitlements_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::GetEntitlementsError {
-            meta: generic,
-            kind: crate::error::GetEntitlementsErrorKind::InternalServiceErrorException({
+        "InternalServiceErrorException" => {
+            crate::error::GetEntitlementsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -22,48 +24,49 @@ pub fn parse_get_entitlements_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::GetEntitlementsError {
-            meta: generic,
-            kind: crate::error::GetEntitlementsErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => {
+            crate::error::GetEntitlementsError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottlingException" => crate::error::GetEntitlementsError {
-            meta: generic,
-            kind: crate::error::GetEntitlementsErrorKind::ThrottlingException({
+            })
+        }
+        "ThrottlingException" => {
+            crate::error::GetEntitlementsError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEntitlementsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetEntitlementsError::generic(generic),
     })
 }
@@ -81,6 +84,9 @@ pub fn parse_get_entitlements_response(
             output,
         )
         .map_err(crate::error::GetEntitlementsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

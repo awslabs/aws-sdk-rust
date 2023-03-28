@@ -6,8 +6,11 @@ pub fn parse_associate_channel_flow_error(
     crate::output::AssociateChannelFlowOutput,
     crate::error::AssociateChannelFlowError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssociateChannelFlowError::unhandled(generic)),
@@ -15,96 +18,96 @@ pub fn parse_associate_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::AssociateChannelFlowError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::AssociateChannelFlowError {
-                meta: generic,
-                kind: crate::error::AssociateChannelFlowErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::AssociateChannelFlowError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::AssociateChannelFlowError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::AssociateChannelFlowError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::AssociateChannelFlowError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::AssociateChannelFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -112,34 +115,34 @@ pub fn parse_associate_channel_flow_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::AssociateChannelFlowError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::AssociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::AssociateChannelFlowErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::AssociateChannelFlowError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -147,14 +150,15 @@ pub fn parse_associate_channel_flow_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssociateChannelFlowError::generic(generic),
     })
 }
@@ -170,6 +174,9 @@ pub fn parse_associate_channel_flow_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_channel_flow_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -181,8 +188,11 @@ pub fn parse_batch_create_channel_membership_error(
     crate::output::BatchCreateChannelMembershipOutput,
     crate::error::BatchCreateChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -194,152 +204,145 @@ pub fn parse_batch_create_channel_membership_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::BatchCreateChannelMembershipError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::BatchCreateChannelMembershipError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::BatchCreateChannelMembershipError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind:
-                crate::error::BatchCreateChannelMembershipErrorKind::ResourceLimitExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_limit_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ServiceFailureException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::ServiceFailureException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::BatchCreateChannelMembershipError::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::BatchCreateChannelMembershipError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::BatchCreateChannelMembershipError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::BatchCreateChannelMembershipError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::BatchCreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::BatchCreateChannelMembershipErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::BatchCreateChannelMembershipError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::BatchCreateChannelMembershipError::generic(generic),
     })
 }
@@ -361,6 +364,9 @@ pub fn parse_batch_create_channel_membership_response(
                 output,
             )
             .map_err(crate::error::BatchCreateChannelMembershipError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -372,8 +378,11 @@ pub fn parse_channel_flow_callback_error(
     crate::output::ChannelFlowCallbackOutput,
     crate::error::ChannelFlowCallbackError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ChannelFlowCallbackError::unhandled(generic)),
@@ -381,79 +390,79 @@ pub fn parse_channel_flow_callback_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ChannelFlowCallbackError {
-            meta: generic,
-            kind: crate::error::ChannelFlowCallbackErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ChannelFlowCallbackError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::ChannelFlowCallbackError {
-                meta: generic,
-                kind: crate::error::ChannelFlowCallbackErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::ChannelFlowCallbackError {
-            meta: generic,
-            kind: crate::error::ChannelFlowCallbackErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::ChannelFlowCallbackError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::ChannelFlowCallbackError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ChannelFlowCallbackError {
-            meta: generic,
-            kind: crate::error::ChannelFlowCallbackErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ChannelFlowCallbackError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ChannelFlowCallbackError {
-            meta: generic,
-            kind: crate::error::ChannelFlowCallbackErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ChannelFlowCallbackError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -461,34 +470,34 @@ pub fn parse_channel_flow_callback_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ChannelFlowCallbackError {
-            meta: generic,
-            kind: crate::error::ChannelFlowCallbackErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ChannelFlowCallbackError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ChannelFlowCallbackError {
-            meta: generic,
-            kind: crate::error::ChannelFlowCallbackErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ChannelFlowCallbackError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -496,14 +505,15 @@ pub fn parse_channel_flow_callback_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ChannelFlowCallbackError::generic(generic),
     })
 }
@@ -524,6 +534,9 @@ pub fn parse_channel_flow_callback_response(
             output,
         )
         .map_err(crate::error::ChannelFlowCallbackError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -532,8 +545,11 @@ pub fn parse_channel_flow_callback_response(
 pub fn parse_create_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChannelOutput, crate::error::CreateChannelError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateChannelError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateChannelError::unhandled(generic)),
@@ -541,62 +557,62 @@ pub fn parse_create_channel_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateChannelError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateChannelError {
-                meta: generic,
-                kind: crate::error::CreateChannelErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateChannelError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateChannelError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateChannelError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -604,34 +620,32 @@ pub fn parse_create_channel_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::CreateChannelError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::CreateChannelError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -639,34 +653,32 @@ pub fn parse_create_channel_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::CreateChannelError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateChannelError {
-            meta: generic,
-            kind: crate::error::CreateChannelErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::CreateChannelError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -674,14 +686,15 @@ pub fn parse_create_channel_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateChannelError::generic(generic),
     })
 }
@@ -699,6 +712,9 @@ pub fn parse_create_channel_response(
             output,
         )
         .map_err(crate::error::CreateChannelError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -708,8 +724,11 @@ pub fn parse_create_channel_ban_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChannelBanOutput, crate::error::CreateChannelBanError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateChannelBanError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateChannelBanError::unhandled(generic)),
@@ -717,62 +736,62 @@ pub fn parse_create_channel_ban_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateChannelBanError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateChannelBanError {
-                meta: generic,
-                kind: crate::error::CreateChannelBanErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateChannelBanError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateChannelBanError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateChannelBanError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateChannelBanError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -780,34 +799,34 @@ pub fn parse_create_channel_ban_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateChannelBanError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateChannelBanError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -815,34 +834,34 @@ pub fn parse_create_channel_ban_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateChannelBanError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateChannelBanError {
-            meta: generic,
-            kind: crate::error::CreateChannelBanErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateChannelBanError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -850,14 +869,15 @@ pub fn parse_create_channel_ban_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateChannelBanError::generic(generic),
     })
 }
@@ -876,6 +896,9 @@ pub fn parse_create_channel_ban_response(
             output,
         )
         .map_err(crate::error::CreateChannelBanError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -885,8 +908,11 @@ pub fn parse_create_channel_flow_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateChannelFlowOutput, crate::error::CreateChannelFlowError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateChannelFlowError::unhandled(generic)),
@@ -894,62 +920,62 @@ pub fn parse_create_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateChannelFlowError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateChannelFlowError {
-                meta: generic,
-                kind: crate::error::CreateChannelFlowErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateChannelFlowError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateChannelFlowError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateChannelFlowError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -957,34 +983,34 @@ pub fn parse_create_channel_flow_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateChannelFlowError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateChannelFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -992,34 +1018,34 @@ pub fn parse_create_channel_flow_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateChannelFlowError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateChannelFlowError {
-            meta: generic,
-            kind: crate::error::CreateChannelFlowErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateChannelFlowError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1027,14 +1053,15 @@ pub fn parse_create_channel_flow_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateChannelFlowError::generic(generic),
     })
 }
@@ -1053,6 +1080,9 @@ pub fn parse_create_channel_flow_response(
             output,
         )
         .map_err(crate::error::CreateChannelFlowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1064,8 +1094,11 @@ pub fn parse_create_channel_membership_error(
     crate::output::CreateChannelMembershipOutput,
     crate::error::CreateChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1077,79 +1110,79 @@ pub fn parse_create_channel_membership_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateChannelMembershipError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateChannelMembershipError {
-                meta: generic,
-                kind: crate::error::CreateChannelMembershipErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateChannelMembershipError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateChannelMembershipError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::CreateChannelMembershipError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateChannelMembershipError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1157,34 +1190,34 @@ pub fn parse_create_channel_membership_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateChannelMembershipError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateChannelMembershipError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1192,34 +1225,34 @@ pub fn parse_create_channel_membership_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateChannelMembershipError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateChannelMembershipError {
-            meta: generic,
-            kind: crate::error::CreateChannelMembershipErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateChannelMembershipError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1227,14 +1260,15 @@ pub fn parse_create_channel_membership_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateChannelMembershipError::generic(generic),
     })
 }
@@ -1255,6 +1289,9 @@ pub fn parse_create_channel_membership_response(
             output,
         )
         .map_err(crate::error::CreateChannelMembershipError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1266,8 +1303,11 @@ pub fn parse_create_channel_moderator_error(
     crate::output::CreateChannelModeratorOutput,
     crate::error::CreateChannelModeratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1279,62 +1319,62 @@ pub fn parse_create_channel_moderator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateChannelModeratorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateChannelModeratorError {
-                meta: generic,
-                kind: crate::error::CreateChannelModeratorErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateChannelModeratorError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateChannelModeratorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateChannelModeratorError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1342,34 +1382,34 @@ pub fn parse_create_channel_moderator_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateChannelModeratorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateChannelModeratorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1377,34 +1417,34 @@ pub fn parse_create_channel_moderator_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateChannelModeratorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateChannelModeratorError {
-            meta: generic,
-            kind: crate::error::CreateChannelModeratorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateChannelModeratorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1412,14 +1452,15 @@ pub fn parse_create_channel_moderator_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateChannelModeratorError::generic(generic),
     })
 }
@@ -1440,6 +1481,9 @@ pub fn parse_create_channel_moderator_response(
             output,
         )
         .map_err(crate::error::CreateChannelModeratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1448,8 +1492,11 @@ pub fn parse_create_channel_moderator_response(
 pub fn parse_delete_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChannelOutput, crate::error::DeleteChannelError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChannelError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteChannelError::unhandled(generic)),
@@ -1457,60 +1504,57 @@ pub fn parse_delete_channel_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteChannelError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteChannelError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::DeleteChannelError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::DeleteChannelError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1518,34 +1562,32 @@ pub fn parse_delete_channel_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::DeleteChannelError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteChannelError {
-            meta: generic,
-            kind: crate::error::DeleteChannelErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::DeleteChannelError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1553,14 +1595,15 @@ pub fn parse_delete_channel_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChannelError::generic(generic),
     })
 }
@@ -1573,6 +1616,9 @@ pub fn parse_delete_channel_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_channel_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1582,8 +1628,11 @@ pub fn parse_delete_channel_ban_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChannelBanOutput, crate::error::DeleteChannelBanError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChannelBanError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteChannelBanError::unhandled(generic)),
@@ -1591,60 +1640,59 @@ pub fn parse_delete_channel_ban_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteChannelBanError {
-            meta: generic,
-            kind: crate::error::DeleteChannelBanErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteChannelBanError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteChannelBanError {
-            meta: generic,
-            kind: crate::error::DeleteChannelBanErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteChannelBanError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteChannelBanError {
-            meta: generic,
-            kind: crate::error::DeleteChannelBanErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteChannelBanError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteChannelBanError {
-            meta: generic,
-            kind: crate::error::DeleteChannelBanErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteChannelBanError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1652,34 +1700,34 @@ pub fn parse_delete_channel_ban_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteChannelBanError {
-            meta: generic,
-            kind: crate::error::DeleteChannelBanErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteChannelBanError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteChannelBanError {
-            meta: generic,
-            kind: crate::error::DeleteChannelBanErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteChannelBanError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1687,14 +1735,15 @@ pub fn parse_delete_channel_ban_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChannelBanError::generic(generic),
     })
 }
@@ -1708,6 +1757,9 @@ pub fn parse_delete_channel_ban_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_channel_ban_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1717,8 +1769,11 @@ pub fn parse_delete_channel_flow_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteChannelFlowOutput, crate::error::DeleteChannelFlowError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteChannelFlowError::unhandled(generic)),
@@ -1726,79 +1781,79 @@ pub fn parse_delete_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteChannelFlowError {
-            meta: generic,
-            kind: crate::error::DeleteChannelFlowErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteChannelFlowError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DeleteChannelFlowError {
-                meta: generic,
-                kind: crate::error::DeleteChannelFlowErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DeleteChannelFlowError {
-            meta: generic,
-            kind: crate::error::DeleteChannelFlowErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DeleteChannelFlowError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DeleteChannelFlowError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteChannelFlowError {
-            meta: generic,
-            kind: crate::error::DeleteChannelFlowErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteChannelFlowError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteChannelFlowError {
-            meta: generic,
-            kind: crate::error::DeleteChannelFlowErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteChannelFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1806,34 +1861,34 @@ pub fn parse_delete_channel_flow_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteChannelFlowError {
-            meta: generic,
-            kind: crate::error::DeleteChannelFlowErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteChannelFlowError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteChannelFlowError {
-            meta: generic,
-            kind: crate::error::DeleteChannelFlowErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteChannelFlowError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1841,14 +1896,15 @@ pub fn parse_delete_channel_flow_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChannelFlowError::generic(generic),
     })
 }
@@ -1862,6 +1918,9 @@ pub fn parse_delete_channel_flow_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_channel_flow_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1873,8 +1932,11 @@ pub fn parse_delete_channel_membership_error(
     crate::output::DeleteChannelMembershipOutput,
     crate::error::DeleteChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1886,79 +1948,79 @@ pub fn parse_delete_channel_membership_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMembershipErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteChannelMembershipError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DeleteChannelMembershipError {
-                meta: generic,
-                kind: crate::error::DeleteChannelMembershipErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DeleteChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMembershipErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DeleteChannelMembershipError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DeleteChannelMembershipError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMembershipErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteChannelMembershipError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMembershipErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteChannelMembershipError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1966,34 +2028,34 @@ pub fn parse_delete_channel_membership_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMembershipErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteChannelMembershipError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMembershipErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteChannelMembershipError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2001,14 +2063,15 @@ pub fn parse_delete_channel_membership_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChannelMembershipError::generic(generic),
     })
 }
@@ -2024,6 +2087,9 @@ pub fn parse_delete_channel_membership_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_channel_membership_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2035,8 +2101,11 @@ pub fn parse_delete_channel_message_error(
     crate::output::DeleteChannelMessageOutput,
     crate::error::DeleteChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteChannelMessageError::unhandled(generic)),
@@ -2044,60 +2113,59 @@ pub fn parse_delete_channel_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteChannelMessageError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMessageErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteChannelMessageError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteChannelMessageError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMessageErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteChannelMessageError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteChannelMessageError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMessageErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteChannelMessageError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteChannelMessageError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMessageErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteChannelMessageError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2105,34 +2173,34 @@ pub fn parse_delete_channel_message_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteChannelMessageError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMessageErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteChannelMessageError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteChannelMessageError {
-            meta: generic,
-            kind: crate::error::DeleteChannelMessageErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteChannelMessageError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2140,14 +2208,15 @@ pub fn parse_delete_channel_message_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChannelMessageError::generic(generic),
     })
 }
@@ -2163,6 +2232,9 @@ pub fn parse_delete_channel_message_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_channel_message_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2174,8 +2246,11 @@ pub fn parse_delete_channel_moderator_error(
     crate::output::DeleteChannelModeratorOutput,
     crate::error::DeleteChannelModeratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2187,60 +2262,59 @@ pub fn parse_delete_channel_moderator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DeleteChannelModeratorErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteChannelModeratorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DeleteChannelModeratorErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteChannelModeratorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DeleteChannelModeratorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteChannelModeratorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DeleteChannelModeratorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteChannelModeratorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2248,34 +2322,34 @@ pub fn parse_delete_channel_moderator_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DeleteChannelModeratorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteChannelModeratorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DeleteChannelModeratorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteChannelModeratorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2283,14 +2357,15 @@ pub fn parse_delete_channel_moderator_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChannelModeratorError::generic(generic),
     })
 }
@@ -2306,6 +2381,9 @@ pub fn parse_delete_channel_moderator_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_channel_moderator_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2314,8 +2392,11 @@ pub fn parse_delete_channel_moderator_response(
 pub fn parse_describe_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeChannelOutput, crate::error::DescribeChannelError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeChannelError::unhandled(generic)),
@@ -2323,60 +2404,57 @@ pub fn parse_describe_channel_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DescribeChannelError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DescribeChannelError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::DescribeChannelError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::DescribeChannelError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2384,34 +2462,34 @@ pub fn parse_describe_channel_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DescribeChannelError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DescribeChannelError {
-            meta: generic,
-            kind: crate::error::DescribeChannelErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DescribeChannelError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2419,14 +2497,15 @@ pub fn parse_describe_channel_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeChannelError::generic(generic),
     })
 }
@@ -2444,6 +2523,9 @@ pub fn parse_describe_channel_response(
             output,
         )
         .map_err(crate::error::DescribeChannelError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2455,8 +2537,11 @@ pub fn parse_describe_channel_ban_error(
     crate::output::DescribeChannelBanOutput,
     crate::error::DescribeChannelBanError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelBanError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeChannelBanError::unhandled(generic)),
@@ -2464,77 +2549,76 @@ pub fn parse_describe_channel_ban_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DescribeChannelBanError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DescribeChannelBanError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DescribeChannelBanError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DescribeChannelBanError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeChannelBanError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2542,34 +2626,34 @@ pub fn parse_describe_channel_ban_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DescribeChannelBanError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DescribeChannelBanError {
-            meta: generic,
-            kind: crate::error::DescribeChannelBanErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DescribeChannelBanError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2577,14 +2661,15 @@ pub fn parse_describe_channel_ban_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelBanError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeChannelBanError::generic(generic),
     })
 }
@@ -2605,6 +2690,9 @@ pub fn parse_describe_channel_ban_response(
             output,
         )
         .map_err(crate::error::DescribeChannelBanError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2616,8 +2704,11 @@ pub fn parse_describe_channel_flow_error(
     crate::output::DescribeChannelFlowOutput,
     crate::error::DescribeChannelFlowError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeChannelFlowError::unhandled(generic)),
@@ -2625,60 +2716,59 @@ pub fn parse_describe_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelFlowError {
-            meta: generic,
-            kind: crate::error::DescribeChannelFlowErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DescribeChannelFlowError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeChannelFlowError {
-            meta: generic,
-            kind: crate::error::DescribeChannelFlowErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DescribeChannelFlowError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DescribeChannelFlowError {
-            meta: generic,
-            kind: crate::error::DescribeChannelFlowErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DescribeChannelFlowError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DescribeChannelFlowError {
-            meta: generic,
-            kind: crate::error::DescribeChannelFlowErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeChannelFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2686,34 +2776,34 @@ pub fn parse_describe_channel_flow_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DescribeChannelFlowError {
-            meta: generic,
-            kind: crate::error::DescribeChannelFlowErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DescribeChannelFlowError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DescribeChannelFlowError {
-            meta: generic,
-            kind: crate::error::DescribeChannelFlowErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DescribeChannelFlowError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2721,14 +2811,15 @@ pub fn parse_describe_channel_flow_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeChannelFlowError::generic(generic),
     })
 }
@@ -2749,6 +2840,9 @@ pub fn parse_describe_channel_flow_response(
             output,
         )
         .map_err(crate::error::DescribeChannelFlowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2760,8 +2854,11 @@ pub fn parse_describe_channel_membership_error(
     crate::output::DescribeChannelMembershipOutput,
     crate::error::DescribeChannelMembershipError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2773,77 +2870,76 @@ pub fn parse_describe_channel_membership_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DescribeChannelMembershipError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DescribeChannelMembershipError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DescribeChannelMembershipError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DescribeChannelMembershipError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeChannelMembershipError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2851,34 +2947,34 @@ pub fn parse_describe_channel_membership_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DescribeChannelMembershipError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DescribeChannelMembershipError {
-            meta: generic,
-            kind: crate::error::DescribeChannelMembershipErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DescribeChannelMembershipError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2886,14 +2982,15 @@ pub fn parse_describe_channel_membership_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeChannelMembershipError::generic(generic),
     })
 }
@@ -2914,6 +3011,9 @@ pub fn parse_describe_channel_membership_response(
             output,
         )
         .map_err(crate::error::DescribeChannelMembershipError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2925,8 +3025,11 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
     crate::output::DescribeChannelMembershipForAppInstanceUserOutput,
     crate::error::DescribeChannelMembershipForAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2938,7 +3041,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelMembershipForAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelMembershipForAppInstanceUserErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DescribeChannelMembershipForAppInstanceUserError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2946,6 +3049,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2953,8 +3057,8 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DescribeChannelMembershipForAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelMembershipForAppInstanceUserErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DescribeChannelMembershipForAppInstanceUserError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2962,6 +3066,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2969,8 +3074,8 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DescribeChannelMembershipForAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DescribeChannelMembershipForAppInstanceUserError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2978,6 +3083,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2985,8 +3091,8 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DescribeChannelMembershipForAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelMembershipForAppInstanceUserErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DescribeChannelMembershipForAppInstanceUserError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2994,6 +3100,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3001,8 +3108,8 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DescribeChannelMembershipForAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelMembershipForAppInstanceUserErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DescribeChannelMembershipForAppInstanceUserError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3010,6 +3117,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3017,8 +3125,8 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DescribeChannelMembershipForAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelMembershipForAppInstanceUserErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DescribeChannelMembershipForAppInstanceUserError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3026,6 +3134,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3033,7 +3142,7 @@ pub fn parse_describe_channel_membership_for_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DescribeChannelMembershipForAppInstanceUserError::generic(generic)
     })
 }
@@ -3050,6 +3159,9 @@ pub fn parse_describe_channel_membership_for_app_instance_user_response(
         let mut output = crate::output::describe_channel_membership_for_app_instance_user_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_channel_membership_for_app_instance_user(response.body().as_ref(), output).map_err(crate::error::DescribeChannelMembershipForAppInstanceUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3061,8 +3173,11 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
     crate::output::DescribeChannelModeratedByAppInstanceUserOutput,
     crate::error::DescribeChannelModeratedByAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3074,7 +3189,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelModeratedByAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelModeratedByAppInstanceUserErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DescribeChannelModeratedByAppInstanceUserError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3082,6 +3197,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3089,8 +3205,8 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DescribeChannelModeratedByAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelModeratedByAppInstanceUserErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DescribeChannelModeratedByAppInstanceUserError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3098,6 +3214,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3105,8 +3222,8 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DescribeChannelModeratedByAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DescribeChannelModeratedByAppInstanceUserError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3114,6 +3231,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3121,8 +3239,8 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DescribeChannelModeratedByAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelModeratedByAppInstanceUserErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DescribeChannelModeratedByAppInstanceUserError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3130,6 +3248,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3137,8 +3256,8 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DescribeChannelModeratedByAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelModeratedByAppInstanceUserErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DescribeChannelModeratedByAppInstanceUserError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3146,6 +3265,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3153,8 +3273,8 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DescribeChannelModeratedByAppInstanceUserError { meta: generic, kind: crate::error::DescribeChannelModeratedByAppInstanceUserErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DescribeChannelModeratedByAppInstanceUserError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3162,6 +3282,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3169,7 +3290,7 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DescribeChannelModeratedByAppInstanceUserError::generic(generic)
     })
 }
@@ -3188,6 +3309,9 @@ pub fn parse_describe_channel_moderated_by_app_instance_user_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_channel_moderated_by_app_instance_user(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratedByAppInstanceUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3199,8 +3323,11 @@ pub fn parse_describe_channel_moderator_error(
     crate::output::DescribeChannelModeratorOutput,
     crate::error::DescribeChannelModeratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3212,77 +3339,76 @@ pub fn parse_describe_channel_moderator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DescribeChannelModeratorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DescribeChannelModeratorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DescribeChannelModeratorError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DescribeChannelModeratorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DescribeChannelModeratorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3290,34 +3416,34 @@ pub fn parse_describe_channel_moderator_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DescribeChannelModeratorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DescribeChannelModeratorError {
-            meta: generic,
-            kind: crate::error::DescribeChannelModeratorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DescribeChannelModeratorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3325,14 +3451,15 @@ pub fn parse_describe_channel_moderator_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeChannelModeratorError::generic(generic),
     })
 }
@@ -3353,6 +3480,9 @@ pub fn parse_describe_channel_moderator_response(
             output,
         )
         .map_err(crate::error::DescribeChannelModeratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3364,8 +3494,11 @@ pub fn parse_disassociate_channel_flow_error(
     crate::output::DisassociateChannelFlowOutput,
     crate::error::DisassociateChannelFlowError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3377,96 +3510,96 @@ pub fn parse_disassociate_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DisassociateChannelFlowError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DisassociateChannelFlowError {
-                meta: generic,
-                kind: crate::error::DisassociateChannelFlowErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DisassociateChannelFlowError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DisassociateChannelFlowError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DisassociateChannelFlowError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DisassociateChannelFlowError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DisassociateChannelFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3474,34 +3607,34 @@ pub fn parse_disassociate_channel_flow_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DisassociateChannelFlowError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DisassociateChannelFlowError {
-            meta: generic,
-            kind: crate::error::DisassociateChannelFlowErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DisassociateChannelFlowError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3509,14 +3642,15 @@ pub fn parse_disassociate_channel_flow_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisassociateChannelFlowError::generic(generic),
     })
 }
@@ -3532,6 +3666,9 @@ pub fn parse_disassociate_channel_flow_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_channel_flow_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3543,8 +3680,11 @@ pub fn parse_get_channel_membership_preferences_error(
     crate::output::GetChannelMembershipPreferencesOutput,
     crate::error::GetChannelMembershipPreferencesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetChannelMembershipPreferencesError::unhandled(generic)),
@@ -3552,122 +3692,110 @@ pub fn parse_get_channel_membership_preferences_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::GetChannelMembershipPreferencesErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetChannelMembershipPreferencesError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::GetChannelMembershipPreferencesErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetChannelMembershipPreferencesError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::GetChannelMembershipPreferencesErrorKind::ServiceFailureException(
-                {
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetChannelMembershipPreferencesError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_failure_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceUnavailableException" => crate::error::GetChannelMembershipPreferencesError {
-            meta: generic,
-            kind:
-                crate::error::GetChannelMembershipPreferencesErrorKind::ServiceUnavailableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_unavailable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ThrottledClientException" => crate::error::GetChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::GetChannelMembershipPreferencesErrorKind::ThrottledClientException(
-                {
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetChannelMembershipPreferencesError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::throttled_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnauthorizedClientException" => crate::error::GetChannelMembershipPreferencesError {
-            meta: generic,
-            kind:
-                crate::error::GetChannelMembershipPreferencesErrorKind::UnauthorizedClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::unauthorized_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetChannelMembershipPreferencesError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetChannelMembershipPreferencesError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetChannelMembershipPreferencesError::generic(generic),
     })
 }
@@ -3690,6 +3818,9 @@ pub fn parse_get_channel_membership_preferences_response(
                 output,
             )
             .map_err(crate::error::GetChannelMembershipPreferencesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3699,8 +3830,11 @@ pub fn parse_get_channel_message_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetChannelMessageOutput, crate::error::GetChannelMessageError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetChannelMessageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetChannelMessageError::unhandled(generic)),
@@ -3708,77 +3842,76 @@ pub fn parse_get_channel_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetChannelMessageError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetChannelMessageError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetChannelMessageError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetChannelMessageError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetChannelMessageError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3786,34 +3919,34 @@ pub fn parse_get_channel_message_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetChannelMessageError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetChannelMessageError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetChannelMessageError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3821,14 +3954,15 @@ pub fn parse_get_channel_message_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetChannelMessageError::generic(generic),
     })
 }
@@ -3847,6 +3981,9 @@ pub fn parse_get_channel_message_response(
             output,
         )
         .map_err(crate::error::GetChannelMessageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3858,8 +3995,11 @@ pub fn parse_get_channel_message_status_error(
     crate::output::GetChannelMessageStatusOutput,
     crate::error::GetChannelMessageStatusError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3871,60 +4011,59 @@ pub fn parse_get_channel_message_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetChannelMessageStatusError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageStatusErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetChannelMessageStatusError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetChannelMessageStatusError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageStatusErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetChannelMessageStatusError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetChannelMessageStatusError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageStatusErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetChannelMessageStatusError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetChannelMessageStatusError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageStatusErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetChannelMessageStatusError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3932,34 +4071,34 @@ pub fn parse_get_channel_message_status_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetChannelMessageStatusError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageStatusErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetChannelMessageStatusError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetChannelMessageStatusError {
-            meta: generic,
-            kind: crate::error::GetChannelMessageStatusErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetChannelMessageStatusError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3967,14 +4106,15 @@ pub fn parse_get_channel_message_status_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetChannelMessageStatusError::generic(generic),
     })
 }
@@ -3995,6 +4135,9 @@ pub fn parse_get_channel_message_status_response(
             output,
         )
         .map_err(crate::error::GetChannelMessageStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4006,8 +4149,11 @@ pub fn parse_get_messaging_session_endpoint_error(
     crate::output::GetMessagingSessionEndpointOutput,
     crate::error::GetMessagingSessionEndpointError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4019,97 +4165,93 @@ pub fn parse_get_messaging_session_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::GetMessagingSessionEndpointError {
-            meta: generic,
-            kind: crate::error::GetMessagingSessionEndpointErrorKind::ForbiddenException({
+        "ForbiddenException" => {
+            crate::error::GetMessagingSessionEndpointError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetMessagingSessionEndpointError {
-            meta: generic,
-            kind: crate::error::GetMessagingSessionEndpointErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetMessagingSessionEndpointError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetMessagingSessionEndpointError {
-            meta: generic,
-            kind: crate::error::GetMessagingSessionEndpointErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetMessagingSessionEndpointError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::GetMessagingSessionEndpointError {
-            meta: generic,
-            kind: crate::error::GetMessagingSessionEndpointErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetMessagingSessionEndpointError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetMessagingSessionEndpointError {
-            meta: generic,
-            kind: crate::error::GetMessagingSessionEndpointErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetMessagingSessionEndpointError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetMessagingSessionEndpointError::generic(generic),
     })
 }
@@ -4130,6 +4272,9 @@ pub fn parse_get_messaging_session_endpoint_response(
             output,
         )
         .map_err(crate::error::GetMessagingSessionEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4138,8 +4283,11 @@ pub fn parse_get_messaging_session_endpoint_response(
 pub fn parse_list_channel_bans_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelBansOutput, crate::error::ListChannelBansError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelBansError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListChannelBansError::unhandled(generic)),
@@ -4147,60 +4295,57 @@ pub fn parse_list_channel_bans_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelBansError {
-            meta: generic,
-            kind: crate::error::ListChannelBansErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListChannelBansError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelBansError {
-            meta: generic,
-            kind: crate::error::ListChannelBansErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelBansError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListChannelBansError {
-            meta: generic,
-            kind: crate::error::ListChannelBansErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::ListChannelBansError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListChannelBansError {
-            meta: generic,
-            kind: crate::error::ListChannelBansErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelBansError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4208,34 +4353,34 @@ pub fn parse_list_channel_bans_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListChannelBansError {
-            meta: generic,
-            kind: crate::error::ListChannelBansErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelBansError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListChannelBansError {
-            meta: generic,
-            kind: crate::error::ListChannelBansErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelBansError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4243,14 +4388,15 @@ pub fn parse_list_channel_bans_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelBansError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListChannelBansError::generic(generic),
     })
 }
@@ -4268,6 +4414,9 @@ pub fn parse_list_channel_bans_response(
             output,
         )
         .map_err(crate::error::ListChannelBansError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4277,8 +4426,11 @@ pub fn parse_list_channel_flows_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelFlowsOutput, crate::error::ListChannelFlowsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelFlowsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListChannelFlowsError::unhandled(generic)),
@@ -4286,60 +4438,59 @@ pub fn parse_list_channel_flows_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelFlowsError {
-            meta: generic,
-            kind: crate::error::ListChannelFlowsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListChannelFlowsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelFlowsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelFlowsError {
-            meta: generic,
-            kind: crate::error::ListChannelFlowsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelFlowsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelFlowsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListChannelFlowsError {
-            meta: generic,
-            kind: crate::error::ListChannelFlowsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelFlowsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelFlowsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListChannelFlowsError {
-            meta: generic,
-            kind: crate::error::ListChannelFlowsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelFlowsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4347,34 +4498,34 @@ pub fn parse_list_channel_flows_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelFlowsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListChannelFlowsError {
-            meta: generic,
-            kind: crate::error::ListChannelFlowsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelFlowsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelFlowsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListChannelFlowsError {
-            meta: generic,
-            kind: crate::error::ListChannelFlowsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelFlowsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4382,14 +4533,15 @@ pub fn parse_list_channel_flows_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelFlowsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListChannelFlowsError::generic(generic),
     })
 }
@@ -4408,6 +4560,9 @@ pub fn parse_list_channel_flows_response(
             output,
         )
         .map_err(crate::error::ListChannelFlowsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4419,8 +4574,11 @@ pub fn parse_list_channel_memberships_error(
     crate::output::ListChannelMembershipsOutput,
     crate::error::ListChannelMembershipsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4432,60 +4590,59 @@ pub fn parse_list_channel_memberships_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelMembershipsError {
-            meta: generic,
-            kind: crate::error::ListChannelMembershipsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListChannelMembershipsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelMembershipsError {
-            meta: generic,
-            kind: crate::error::ListChannelMembershipsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelMembershipsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListChannelMembershipsError {
-            meta: generic,
-            kind: crate::error::ListChannelMembershipsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelMembershipsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListChannelMembershipsError {
-            meta: generic,
-            kind: crate::error::ListChannelMembershipsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelMembershipsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4493,34 +4650,34 @@ pub fn parse_list_channel_memberships_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListChannelMembershipsError {
-            meta: generic,
-            kind: crate::error::ListChannelMembershipsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelMembershipsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListChannelMembershipsError {
-            meta: generic,
-            kind: crate::error::ListChannelMembershipsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelMembershipsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4528,14 +4685,15 @@ pub fn parse_list_channel_memberships_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListChannelMembershipsError::generic(generic),
     })
 }
@@ -4556,6 +4714,9 @@ pub fn parse_list_channel_memberships_response(
             output,
         )
         .map_err(crate::error::ListChannelMembershipsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4567,8 +4728,11 @@ pub fn parse_list_channel_memberships_for_app_instance_user_error(
     crate::output::ListChannelMembershipsForAppInstanceUserOutput,
     crate::error::ListChannelMembershipsForAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4580,103 +4744,115 @@ pub fn parse_list_channel_memberships_for_app_instance_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelMembershipsForAppInstanceUserError { meta: generic, kind: crate::error::ListChannelMembershipsForAppInstanceUserErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::ListChannelMembershipsForAppInstanceUserError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::ListChannelMembershipsForAppInstanceUserError { meta: generic, kind: crate::error::ListChannelMembershipsForAppInstanceUserErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelMembershipsForAppInstanceUserError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::ListChannelMembershipsForAppInstanceUserError { meta: generic, kind: crate::error::ListChannelMembershipsForAppInstanceUserErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelMembershipsForAppInstanceUserError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::ListChannelMembershipsForAppInstanceUserError { meta: generic, kind: crate::error::ListChannelMembershipsForAppInstanceUserErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelMembershipsForAppInstanceUserError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::ListChannelMembershipsForAppInstanceUserError { meta: generic, kind: crate::error::ListChannelMembershipsForAppInstanceUserErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelMembershipsForAppInstanceUserError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::ListChannelMembershipsForAppInstanceUserError { meta: generic, kind: crate::error::ListChannelMembershipsForAppInstanceUserErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelMembershipsForAppInstanceUserError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListChannelMembershipsForAppInstanceUserError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::ListChannelMembershipsForAppInstanceUserError::generic(generic),
     })
 }
 
@@ -4694,6 +4870,9 @@ pub fn parse_list_channel_memberships_for_app_instance_user_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_channel_memberships_for_app_instance_user(response.body().as_ref(), output).map_err(crate::error::ListChannelMembershipsForAppInstanceUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4705,8 +4884,11 @@ pub fn parse_list_channel_messages_error(
     crate::output::ListChannelMessagesOutput,
     crate::error::ListChannelMessagesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelMessagesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListChannelMessagesError::unhandled(generic)),
@@ -4714,60 +4896,59 @@ pub fn parse_list_channel_messages_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelMessagesError {
-            meta: generic,
-            kind: crate::error::ListChannelMessagesErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListChannelMessagesError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMessagesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelMessagesError {
-            meta: generic,
-            kind: crate::error::ListChannelMessagesErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelMessagesError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMessagesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListChannelMessagesError {
-            meta: generic,
-            kind: crate::error::ListChannelMessagesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelMessagesError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMessagesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListChannelMessagesError {
-            meta: generic,
-            kind: crate::error::ListChannelMessagesErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelMessagesError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4775,34 +4956,34 @@ pub fn parse_list_channel_messages_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMessagesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListChannelMessagesError {
-            meta: generic,
-            kind: crate::error::ListChannelMessagesErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelMessagesError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMessagesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListChannelMessagesError {
-            meta: generic,
-            kind: crate::error::ListChannelMessagesErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelMessagesError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4810,14 +4991,15 @@ pub fn parse_list_channel_messages_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelMessagesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListChannelMessagesError::generic(generic),
     })
 }
@@ -4838,6 +5020,9 @@ pub fn parse_list_channel_messages_response(
             output,
         )
         .map_err(crate::error::ListChannelMessagesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4849,8 +5034,11 @@ pub fn parse_list_channel_moderators_error(
     crate::output::ListChannelModeratorsOutput,
     crate::error::ListChannelModeratorsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListChannelModeratorsError::unhandled(generic)),
@@ -4858,60 +5046,59 @@ pub fn parse_list_channel_moderators_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelModeratorsError {
-            meta: generic,
-            kind: crate::error::ListChannelModeratorsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListChannelModeratorsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelModeratorsError {
-            meta: generic,
-            kind: crate::error::ListChannelModeratorsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelModeratorsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListChannelModeratorsError {
-            meta: generic,
-            kind: crate::error::ListChannelModeratorsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelModeratorsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListChannelModeratorsError {
-            meta: generic,
-            kind: crate::error::ListChannelModeratorsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelModeratorsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4919,34 +5106,34 @@ pub fn parse_list_channel_moderators_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListChannelModeratorsError {
-            meta: generic,
-            kind: crate::error::ListChannelModeratorsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelModeratorsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListChannelModeratorsError {
-            meta: generic,
-            kind: crate::error::ListChannelModeratorsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelModeratorsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4954,14 +5141,15 @@ pub fn parse_list_channel_moderators_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListChannelModeratorsError::generic(generic),
     })
 }
@@ -4982,6 +5170,9 @@ pub fn parse_list_channel_moderators_response(
             output,
         )
         .map_err(crate::error::ListChannelModeratorsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4990,8 +5181,11 @@ pub fn parse_list_channel_moderators_response(
 pub fn parse_list_channels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListChannelsOutput, crate::error::ListChannelsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListChannelsError::unhandled(generic)),
@@ -4999,60 +5193,57 @@ pub fn parse_list_channels_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListChannelsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::ListChannelsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5060,34 +5251,32 @@ pub fn parse_list_channels_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::ListChannelsError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListChannelsError {
-            meta: generic,
-            kind: crate::error::ListChannelsErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5095,14 +5284,15 @@ pub fn parse_list_channels_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListChannelsError::generic(generic),
     })
 }
@@ -5120,6 +5310,9 @@ pub fn parse_list_channels_response(
             output,
         )
         .map_err(crate::error::ListChannelsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5131,8 +5324,11 @@ pub fn parse_list_channels_associated_with_channel_flow_error(
     crate::output::ListChannelsAssociatedWithChannelFlowOutput,
     crate::error::ListChannelsAssociatedWithChannelFlowError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5144,103 +5340,111 @@ pub fn parse_list_channels_associated_with_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelsAssociatedWithChannelFlowError { meta: generic, kind: crate::error::ListChannelsAssociatedWithChannelFlowErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::ListChannelsAssociatedWithChannelFlowError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::ListChannelsAssociatedWithChannelFlowError { meta: generic, kind: crate::error::ListChannelsAssociatedWithChannelFlowErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelsAssociatedWithChannelFlowError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::ListChannelsAssociatedWithChannelFlowError { meta: generic, kind: crate::error::ListChannelsAssociatedWithChannelFlowErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelsAssociatedWithChannelFlowError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::ListChannelsAssociatedWithChannelFlowError { meta: generic, kind: crate::error::ListChannelsAssociatedWithChannelFlowErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelsAssociatedWithChannelFlowError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::ListChannelsAssociatedWithChannelFlowError { meta: generic, kind: crate::error::ListChannelsAssociatedWithChannelFlowErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelsAssociatedWithChannelFlowError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::ListChannelsAssociatedWithChannelFlowError { meta: generic, kind: crate::error::ListChannelsAssociatedWithChannelFlowErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelsAssociatedWithChannelFlowError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListChannelsAssociatedWithChannelFlowError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListChannelsAssociatedWithChannelFlowError::generic(generic),
     })
 }
 
@@ -5257,6 +5461,9 @@ pub fn parse_list_channels_associated_with_channel_flow_response(
             crate::output::list_channels_associated_with_channel_flow_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_channels_associated_with_channel_flow(response.body().as_ref(), output).map_err(crate::error::ListChannelsAssociatedWithChannelFlowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5268,8 +5475,11 @@ pub fn parse_list_channels_moderated_by_app_instance_user_error(
     crate::output::ListChannelsModeratedByAppInstanceUserOutput,
     crate::error::ListChannelsModeratedByAppInstanceUserError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5281,103 +5491,115 @@ pub fn parse_list_channels_moderated_by_app_instance_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListChannelsModeratedByAppInstanceUserError { meta: generic, kind: crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::ListChannelsModeratedByAppInstanceUserError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::ListChannelsModeratedByAppInstanceUserError { meta: generic, kind: crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListChannelsModeratedByAppInstanceUserError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::ListChannelsModeratedByAppInstanceUserError { meta: generic, kind: crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListChannelsModeratedByAppInstanceUserError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::ListChannelsModeratedByAppInstanceUserError { meta: generic, kind: crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListChannelsModeratedByAppInstanceUserError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::ListChannelsModeratedByAppInstanceUserError { meta: generic, kind: crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::ListChannelsModeratedByAppInstanceUserError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::ListChannelsModeratedByAppInstanceUserError { meta: generic, kind: crate::error::ListChannelsModeratedByAppInstanceUserErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListChannelsModeratedByAppInstanceUserError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListChannelsModeratedByAppInstanceUserError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::ListChannelsModeratedByAppInstanceUserError::generic(generic),
     })
 }
 
@@ -5394,6 +5616,9 @@ pub fn parse_list_channels_moderated_by_app_instance_user_response(
             crate::output::list_channels_moderated_by_app_instance_user_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_channels_moderated_by_app_instance_user(response.body().as_ref(), output).map_err(crate::error::ListChannelsModeratedByAppInstanceUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5402,8 +5627,11 @@ pub fn parse_list_channels_moderated_by_app_instance_user_response(
 pub fn parse_list_sub_channels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSubChannelsOutput, crate::error::ListSubChannelsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSubChannelsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListSubChannelsError::unhandled(generic)),
@@ -5411,60 +5639,57 @@ pub fn parse_list_sub_channels_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListSubChannelsError {
-            meta: generic,
-            kind: crate::error::ListSubChannelsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListSubChannelsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListSubChannelsError {
-            meta: generic,
-            kind: crate::error::ListSubChannelsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListSubChannelsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListSubChannelsError {
-            meta: generic,
-            kind: crate::error::ListSubChannelsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::ListSubChannelsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListSubChannelsError {
-            meta: generic,
-            kind: crate::error::ListSubChannelsErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::ListSubChannelsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5472,34 +5697,34 @@ pub fn parse_list_sub_channels_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListSubChannelsError {
-            meta: generic,
-            kind: crate::error::ListSubChannelsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListSubChannelsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListSubChannelsError {
-            meta: generic,
-            kind: crate::error::ListSubChannelsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListSubChannelsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5507,14 +5732,15 @@ pub fn parse_list_sub_channels_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSubChannelsError::generic(generic),
     })
 }
@@ -5532,6 +5758,9 @@ pub fn parse_list_sub_channels_response(
             output,
         )
         .map_err(crate::error::ListSubChannelsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5543,8 +5772,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -5552,60 +5784,59 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListTagsForResourceError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListTagsForResourceError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListTagsForResourceError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListTagsForResourceError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5613,34 +5844,34 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListTagsForResourceError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListTagsForResourceError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5648,14 +5879,15 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -5676,6 +5908,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5687,8 +5922,11 @@ pub fn parse_put_channel_membership_preferences_error(
     crate::output::PutChannelMembershipPreferencesOutput,
     crate::error::PutChannelMembershipPreferencesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutChannelMembershipPreferencesError::unhandled(generic)),
@@ -5696,141 +5934,132 @@ pub fn parse_put_channel_membership_preferences_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::PutChannelMembershipPreferencesErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::PutChannelMembershipPreferencesError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::PutChannelMembershipPreferencesError {
-                meta: generic,
-                kind: crate::error::PutChannelMembershipPreferencesErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::PutChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::PutChannelMembershipPreferencesErrorKind::ForbiddenException({
+        "ConflictException" => {
+            crate::error::PutChannelMembershipPreferencesError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutChannelMembershipPreferencesError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::PutChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::PutChannelMembershipPreferencesErrorKind::ServiceFailureException(
-                {
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutChannelMembershipPreferencesError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_failure_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceUnavailableException" => crate::error::PutChannelMembershipPreferencesError {
-            meta: generic,
-            kind:
-                crate::error::PutChannelMembershipPreferencesErrorKind::ServiceUnavailableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_unavailable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ThrottledClientException" => crate::error::PutChannelMembershipPreferencesError {
-            meta: generic,
-            kind: crate::error::PutChannelMembershipPreferencesErrorKind::ThrottledClientException(
-                {
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutChannelMembershipPreferencesError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::throttled_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnauthorizedClientException" => crate::error::PutChannelMembershipPreferencesError {
-            meta: generic,
-            kind:
-                crate::error::PutChannelMembershipPreferencesErrorKind::UnauthorizedClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::unauthorized_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::PutChannelMembershipPreferencesError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutChannelMembershipPreferencesError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::PutChannelMembershipPreferencesError::generic(generic),
     })
 }
@@ -5853,6 +6082,9 @@ pub fn parse_put_channel_membership_preferences_response(
                 output,
             )
             .map_err(crate::error::PutChannelMembershipPreferencesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5864,8 +6096,11 @@ pub fn parse_redact_channel_message_error(
     crate::output::RedactChannelMessageOutput,
     crate::error::RedactChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RedactChannelMessageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RedactChannelMessageError::unhandled(generic)),
@@ -5873,79 +6108,79 @@ pub fn parse_redact_channel_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::RedactChannelMessageError {
-            meta: generic,
-            kind: crate::error::RedactChannelMessageErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::RedactChannelMessageError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::RedactChannelMessageError {
-                meta: generic,
-                kind: crate::error::RedactChannelMessageErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::RedactChannelMessageError {
-            meta: generic,
-            kind: crate::error::RedactChannelMessageErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::RedactChannelMessageError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::RedactChannelMessageError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::RedactChannelMessageError {
-            meta: generic,
-            kind: crate::error::RedactChannelMessageErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::RedactChannelMessageError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::RedactChannelMessageError {
-            meta: generic,
-            kind: crate::error::RedactChannelMessageErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::RedactChannelMessageError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5953,34 +6188,34 @@ pub fn parse_redact_channel_message_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::RedactChannelMessageError {
-            meta: generic,
-            kind: crate::error::RedactChannelMessageErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::RedactChannelMessageError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::RedactChannelMessageError {
-            meta: generic,
-            kind: crate::error::RedactChannelMessageErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::RedactChannelMessageError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5988,14 +6223,15 @@ pub fn parse_redact_channel_message_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RedactChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RedactChannelMessageError::generic(generic),
     })
 }
@@ -6016,6 +6252,9 @@ pub fn parse_redact_channel_message_response(
             output,
         )
         .map_err(crate::error::RedactChannelMessageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6024,8 +6263,11 @@ pub fn parse_redact_channel_message_response(
 pub fn parse_search_channels_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SearchChannelsOutput, crate::error::SearchChannelsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SearchChannelsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SearchChannelsError::unhandled(generic)),
@@ -6033,60 +6275,57 @@ pub fn parse_search_channels_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::SearchChannelsError {
-            meta: generic,
-            kind: crate::error::SearchChannelsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::SearchChannelsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::SearchChannelsError {
-            meta: generic,
-            kind: crate::error::SearchChannelsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::SearchChannelsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::SearchChannelsError {
-            meta: generic,
-            kind: crate::error::SearchChannelsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::SearchChannelsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::SearchChannelsError {
-            meta: generic,
-            kind: crate::error::SearchChannelsErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::SearchChannelsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6094,34 +6333,34 @@ pub fn parse_search_channels_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::SearchChannelsError {
-            meta: generic,
-            kind: crate::error::SearchChannelsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::SearchChannelsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::SearchChannelsError {
-            meta: generic,
-            kind: crate::error::SearchChannelsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::SearchChannelsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6129,14 +6368,15 @@ pub fn parse_search_channels_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchChannelsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SearchChannelsError::generic(generic),
     })
 }
@@ -6154,6 +6394,9 @@ pub fn parse_search_channels_response(
             output,
         )
         .map_err(crate::error::SearchChannelsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6165,8 +6408,11 @@ pub fn parse_send_channel_message_error(
     crate::output::SendChannelMessageOutput,
     crate::error::SendChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendChannelMessageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendChannelMessageError::unhandled(generic)),
@@ -6174,79 +6420,79 @@ pub fn parse_send_channel_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::SendChannelMessageError {
-            meta: generic,
-            kind: crate::error::SendChannelMessageErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::SendChannelMessageError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::SendChannelMessageError {
-                meta: generic,
-                kind: crate::error::SendChannelMessageErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::SendChannelMessageError {
-            meta: generic,
-            kind: crate::error::SendChannelMessageErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::SendChannelMessageError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SendChannelMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::SendChannelMessageError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::SendChannelMessageError {
-            meta: generic,
-            kind: crate::error::SendChannelMessageErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::SendChannelMessageError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::SendChannelMessageError {
-            meta: generic,
-            kind: crate::error::SendChannelMessageErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::SendChannelMessageError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6254,34 +6500,34 @@ pub fn parse_send_channel_message_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::SendChannelMessageError {
-            meta: generic,
-            kind: crate::error::SendChannelMessageErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::SendChannelMessageError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::SendChannelMessageError {
-            meta: generic,
-            kind: crate::error::SendChannelMessageErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::SendChannelMessageError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6289,14 +6535,15 @@ pub fn parse_send_channel_message_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SendChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SendChannelMessageError::generic(generic),
     })
 }
@@ -6317,6 +6564,9 @@ pub fn parse_send_channel_message_response(
             output,
         )
         .map_err(crate::error::SendChannelMessageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6325,8 +6575,11 @@ pub fn parse_send_channel_message_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -6334,43 +6587,42 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::TagResourceError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::TagResourceError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::TagResourceError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6378,34 +6630,32 @@ pub fn parse_tag_resource_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::TagResourceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::TagResourceError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6413,34 +6663,32 @@ pub fn parse_tag_resource_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::TagResourceError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::TagResourceError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6448,14 +6696,15 @@ pub fn parse_tag_resource_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -6468,6 +6717,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6476,8 +6728,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -6485,60 +6740,57 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UntagResourceError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::UntagResourceError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::UntagResourceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::UntagResourceError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6546,34 +6798,32 @@ pub fn parse_untag_resource_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::UntagResourceError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::UntagResourceError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6581,14 +6831,15 @@ pub fn parse_untag_resource_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -6601,6 +6852,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6609,8 +6863,11 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_channel_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateChannelOutput, crate::error::UpdateChannelError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateChannelError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateChannelError::unhandled(generic)),
@@ -6618,79 +6875,77 @@ pub fn parse_update_channel_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateChannelError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateChannelError {
-                meta: generic,
-                kind: crate::error::UpdateChannelErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateChannelError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateChannelError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::UpdateChannelError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::UpdateChannelError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6698,34 +6953,32 @@ pub fn parse_update_channel_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::UpdateChannelError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateChannelError {
-            meta: generic,
-            kind: crate::error::UpdateChannelErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::UpdateChannelError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6733,14 +6986,15 @@ pub fn parse_update_channel_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateChannelError::generic(generic),
     })
 }
@@ -6758,6 +7012,9 @@ pub fn parse_update_channel_response(
             output,
         )
         .map_err(crate::error::UpdateChannelError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6767,8 +7024,11 @@ pub fn parse_update_channel_flow_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateChannelFlowOutput, crate::error::UpdateChannelFlowError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateChannelFlowError::unhandled(generic)),
@@ -6776,79 +7036,79 @@ pub fn parse_update_channel_flow_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateChannelFlowError {
-            meta: generic,
-            kind: crate::error::UpdateChannelFlowErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateChannelFlowError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateChannelFlowError {
-                meta: generic,
-                kind: crate::error::UpdateChannelFlowErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateChannelFlowError {
-            meta: generic,
-            kind: crate::error::UpdateChannelFlowErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateChannelFlowError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateChannelFlowError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateChannelFlowError {
-            meta: generic,
-            kind: crate::error::UpdateChannelFlowErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateChannelFlowError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateChannelFlowError {
-            meta: generic,
-            kind: crate::error::UpdateChannelFlowErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateChannelFlowError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6856,34 +7116,34 @@ pub fn parse_update_channel_flow_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateChannelFlowError {
-            meta: generic,
-            kind: crate::error::UpdateChannelFlowErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateChannelFlowError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateChannelFlowError {
-            meta: generic,
-            kind: crate::error::UpdateChannelFlowErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateChannelFlowError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6891,14 +7151,15 @@ pub fn parse_update_channel_flow_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateChannelFlowError::generic(generic),
     })
 }
@@ -6917,6 +7178,9 @@ pub fn parse_update_channel_flow_response(
             output,
         )
         .map_err(crate::error::UpdateChannelFlowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6928,8 +7192,11 @@ pub fn parse_update_channel_message_error(
     crate::output::UpdateChannelMessageOutput,
     crate::error::UpdateChannelMessageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateChannelMessageError::unhandled(generic)),
@@ -6937,79 +7204,79 @@ pub fn parse_update_channel_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateChannelMessageError {
-            meta: generic,
-            kind: crate::error::UpdateChannelMessageErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateChannelMessageError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateChannelMessageError {
-                meta: generic,
-                kind: crate::error::UpdateChannelMessageErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateChannelMessageError {
-            meta: generic,
-            kind: crate::error::UpdateChannelMessageErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateChannelMessageError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateChannelMessageError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateChannelMessageError {
-            meta: generic,
-            kind: crate::error::UpdateChannelMessageErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateChannelMessageError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateChannelMessageError {
-            meta: generic,
-            kind: crate::error::UpdateChannelMessageErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateChannelMessageError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7017,34 +7284,34 @@ pub fn parse_update_channel_message_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateChannelMessageError {
-            meta: generic,
-            kind: crate::error::UpdateChannelMessageErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateChannelMessageError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateChannelMessageError {
-            meta: generic,
-            kind: crate::error::UpdateChannelMessageErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateChannelMessageError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7052,14 +7319,15 @@ pub fn parse_update_channel_message_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateChannelMessageError::generic(generic),
     })
 }
@@ -7080,6 +7348,9 @@ pub fn parse_update_channel_message_response(
             output,
         )
         .map_err(crate::error::UpdateChannelMessageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7091,8 +7362,11 @@ pub fn parse_update_channel_read_marker_error(
     crate::output::UpdateChannelReadMarkerOutput,
     crate::error::UpdateChannelReadMarkerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7104,79 +7378,79 @@ pub fn parse_update_channel_read_marker_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateChannelReadMarkerError {
-            meta: generic,
-            kind: crate::error::UpdateChannelReadMarkerErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateChannelReadMarkerError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateChannelReadMarkerError {
-                meta: generic,
-                kind: crate::error::UpdateChannelReadMarkerErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateChannelReadMarkerError {
-            meta: generic,
-            kind: crate::error::UpdateChannelReadMarkerErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateChannelReadMarkerError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateChannelReadMarkerError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateChannelReadMarkerError {
-            meta: generic,
-            kind: crate::error::UpdateChannelReadMarkerErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateChannelReadMarkerError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateChannelReadMarkerError {
-            meta: generic,
-            kind: crate::error::UpdateChannelReadMarkerErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateChannelReadMarkerError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7184,34 +7458,34 @@ pub fn parse_update_channel_read_marker_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateChannelReadMarkerError {
-            meta: generic,
-            kind: crate::error::UpdateChannelReadMarkerErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateChannelReadMarkerError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateChannelReadMarkerError {
-            meta: generic,
-            kind: crate::error::UpdateChannelReadMarkerErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateChannelReadMarkerError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7219,14 +7493,15 @@ pub fn parse_update_channel_read_marker_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateChannelReadMarkerError::generic(generic),
     })
 }
@@ -7247,6 +7522,9 @@ pub fn parse_update_channel_read_marker_response(
             output,
         )
         .map_err(crate::error::UpdateChannelReadMarkerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

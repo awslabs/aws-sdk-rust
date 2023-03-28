@@ -7,7 +7,7 @@
 
 use aws_credential_types::cache::CredentialsCache;
 use aws_credential_types::provider::{self, error::CredentialsError, future, ProvideCredentials};
-use aws_sdk_sts::error::AssumeRoleErrorKind;
+use aws_sdk_sts::error::AssumeRoleError;
 use aws_sdk_sts::middleware::DefaultMiddleware;
 use aws_sdk_sts::model::PolicyDescriptorType;
 use aws_sdk_sts::operation::AssumeRole;
@@ -266,9 +266,9 @@ impl Inner {
             }
             Err(SdkError::ServiceError(ref context))
                 if matches!(
-                    context.err().kind,
-                    AssumeRoleErrorKind::RegionDisabledException(_)
-                        | AssumeRoleErrorKind::MalformedPolicyDocumentException(_)
+                    context.err(),
+                    AssumeRoleError::RegionDisabledException(_)
+                        | AssumeRoleError::MalformedPolicyDocumentException(_)
                 ) =>
             {
                 Err(CredentialsError::invalid_configuration(

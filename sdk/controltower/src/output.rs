@@ -9,6 +9,7 @@ pub struct ListEnabledControlsOutput {
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEnabledControlsOutput {
     /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>
@@ -18,6 +19,11 @@ impl ListEnabledControlsOutput {
     /// <p>Retrieves the next page of results. If the string is empty, the current response is the end of the results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListEnabledControlsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput).
@@ -30,6 +36,7 @@ pub mod list_enabled_controls_output {
         pub(crate) enabled_controls:
             std::option::Option<std::vec::Vec<crate::model::EnabledControlSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `enabled_controls`.
@@ -61,11 +68,21 @@ pub mod list_enabled_controls_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEnabledControlsOutput`](crate::output::ListEnabledControlsOutput).
         pub fn build(self) -> crate::output::ListEnabledControlsOutput {
             crate::output::ListEnabledControlsOutput {
                 enabled_controls: self.enabled_controls,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,11 +101,17 @@ pub struct GetControlOperationOutput {
     /// <p></p>
     #[doc(hidden)]
     pub control_operation: std::option::Option<crate::model::ControlOperation>,
+    _request_id: Option<String>,
 }
 impl GetControlOperationOutput {
     /// <p></p>
     pub fn control_operation(&self) -> std::option::Option<&crate::model::ControlOperation> {
         self.control_operation.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetControlOperationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetControlOperationOutput`](crate::output::GetControlOperationOutput).
@@ -99,6 +122,7 @@ pub mod get_control_operation_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) control_operation: std::option::Option<crate::model::ControlOperation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p></p>
@@ -114,10 +138,20 @@ pub mod get_control_operation_output {
             self.control_operation = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetControlOperationOutput`](crate::output::GetControlOperationOutput).
         pub fn build(self) -> crate::output::GetControlOperationOutput {
             crate::output::GetControlOperationOutput {
                 control_operation: self.control_operation,
+                _request_id: self._request_id,
             }
         }
     }
@@ -136,11 +170,17 @@ pub struct EnableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     #[doc(hidden)]
     pub operation_identifier: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl EnableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     pub fn operation_identifier(&self) -> std::option::Option<&str> {
         self.operation_identifier.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for EnableControlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`EnableControlOutput`](crate::output::EnableControlOutput).
@@ -151,6 +191,7 @@ pub mod enable_control_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_identifier: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
@@ -166,10 +207,20 @@ pub mod enable_control_output {
             self.operation_identifier = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableControlOutput`](crate::output::EnableControlOutput).
         pub fn build(self) -> crate::output::EnableControlOutput {
             crate::output::EnableControlOutput {
                 operation_identifier: self.operation_identifier,
+                _request_id: self._request_id,
             }
         }
     }
@@ -188,11 +239,17 @@ pub struct DisableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     #[doc(hidden)]
     pub operation_identifier: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisableControlOutput {
     /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
     pub fn operation_identifier(&self) -> std::option::Option<&str> {
         self.operation_identifier.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DisableControlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisableControlOutput`](crate::output::DisableControlOutput).
@@ -203,6 +260,7 @@ pub mod disable_control_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_identifier: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.</p>
@@ -218,10 +276,20 @@ pub mod disable_control_output {
             self.operation_identifier = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableControlOutput`](crate::output::DisableControlOutput).
         pub fn build(self) -> crate::output::DisableControlOutput {
             crate::output::DisableControlOutput {
                 operation_identifier: self.operation_identifier,
+                _request_id: self._request_id,
             }
         }
     }

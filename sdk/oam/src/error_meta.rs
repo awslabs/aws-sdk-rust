@@ -19,15 +19,8 @@ pub enum Error {
     TooManyTagsException(crate::error::TooManyTagsException),
     /// <p>The value of a parameter in the request caused an error.</p>
     ValidationException(crate::error::ValidationException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,31 +46,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateLinkError> for Error {
     fn from(err: crate::error::CreateLinkError) -> Self {
-        match err.kind {
-            crate::error::CreateLinkErrorKind::ConflictException(inner) => {
+        match err {
+            crate::error::CreateLinkError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateLinkErrorKind::InternalServiceFault(inner) => {
+            crate::error::CreateLinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::CreateLinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::CreateLinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::CreateLinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::CreateLinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::CreateLinkErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::CreateLinkError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::CreateLinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateLinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -90,31 +88,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateSinkError> for Error {
     fn from(err: crate::error::CreateSinkError) -> Self {
-        match err.kind {
-            crate::error::CreateSinkErrorKind::ConflictException(inner) => {
+        match err {
+            crate::error::CreateSinkError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateSinkErrorKind::InternalServiceFault(inner) => {
+            crate::error::CreateSinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::CreateSinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::CreateSinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::CreateSinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::CreateSinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::CreateSinkErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::CreateSinkError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::CreateSinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -127,28 +130,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteLinkError> for Error {
     fn from(err: crate::error::DeleteLinkError) -> Self {
-        match err.kind {
-            crate::error::DeleteLinkErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::DeleteLinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::DeleteLinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::DeleteLinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::DeleteLinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::DeleteLinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::DeleteLinkErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::DeleteLinkError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteLinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteLinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -161,31 +169,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteSinkError> for Error {
     fn from(err: crate::error::DeleteSinkError) -> Self {
-        match err.kind {
-            crate::error::DeleteSinkErrorKind::ConflictException(inner) => {
+        match err {
+            crate::error::DeleteSinkError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteSinkErrorKind::InternalServiceFault(inner) => {
+            crate::error::DeleteSinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::DeleteSinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::DeleteSinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::DeleteSinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::DeleteSinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::DeleteSinkErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::DeleteSinkError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteSinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -198,28 +211,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetLinkError> for Error {
     fn from(err: crate::error::GetLinkError) -> Self {
-        match err.kind {
-            crate::error::GetLinkErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::GetLinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::GetLinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::GetLinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::GetLinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::GetLinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::GetLinkErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetLinkError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetLinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetLinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -232,28 +250,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSinkError> for Error {
     fn from(err: crate::error::GetSinkError) -> Self {
-        match err.kind {
-            crate::error::GetSinkErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::GetSinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::GetSinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::GetSinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::GetSinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::GetSinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::GetSinkErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetSinkError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetSinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -266,28 +289,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSinkPolicyError> for Error {
     fn from(err: crate::error::GetSinkPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetSinkPolicyErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::GetSinkPolicyError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::GetSinkPolicyErrorKind::InvalidParameterException(inner) => {
+            crate::error::GetSinkPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::GetSinkPolicyErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::GetSinkPolicyError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::GetSinkPolicyErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetSinkPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetSinkPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSinkPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -302,28 +330,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListAttachedLinksError> for Error {
     fn from(err: crate::error::ListAttachedLinksError) -> Self {
-        match err.kind {
-            crate::error::ListAttachedLinksErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::ListAttachedLinksError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::ListAttachedLinksErrorKind::InvalidParameterException(inner) => {
+            crate::error::ListAttachedLinksError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::ListAttachedLinksErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::ListAttachedLinksError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::ListAttachedLinksErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListAttachedLinksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListAttachedLinksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAttachedLinksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -336,25 +369,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListLinksError> for Error {
     fn from(err: crate::error::ListLinksError) -> Self {
-        match err.kind {
-            crate::error::ListLinksErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::ListLinksError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::ListLinksErrorKind::InvalidParameterException(inner) => {
+            crate::error::ListLinksError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::ListLinksErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListLinksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListLinksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListLinksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -367,25 +405,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListSinksError> for Error {
     fn from(err: crate::error::ListSinksError) -> Self {
-        match err.kind {
-            crate::error::ListSinksErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::ListSinksError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::ListSinksErrorKind::InvalidParameterException(inner) => {
+            crate::error::ListSinksError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::ListSinksErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListSinksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListSinksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSinksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -400,22 +443,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ValidationException(inner) => {
+            crate::error::ListTagsForResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -428,28 +476,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutSinkPolicyError> for Error {
     fn from(err: crate::error::PutSinkPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutSinkPolicyErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::PutSinkPolicyError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::PutSinkPolicyErrorKind::InvalidParameterException(inner) => {
+            crate::error::PutSinkPolicyError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::PutSinkPolicyErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::PutSinkPolicyError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::PutSinkPolicyErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::PutSinkPolicyError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::PutSinkPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutSinkPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -462,25 +515,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+        match err {
+            crate::error::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+            crate::error::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceErrorKind::ValidationException(inner) => {
+            crate::error::TagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -493,22 +551,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+        match err {
+            crate::error::UntagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::ValidationException(inner) => {
+            crate::error::UntagResourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -521,29 +584,49 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateLinkError> for Error {
     fn from(err: crate::error::UpdateLinkError) -> Self {
-        match err.kind {
-            crate::error::UpdateLinkErrorKind::InternalServiceFault(inner) => {
+        match err {
+            crate::error::UpdateLinkError::InternalServiceFault(inner) => {
                 Error::InternalServiceFault(inner)
             }
-            crate::error::UpdateLinkErrorKind::InvalidParameterException(inner) => {
+            crate::error::UpdateLinkError::InvalidParameterException(inner) => {
                 Error::InvalidParameterException(inner)
             }
-            crate::error::UpdateLinkErrorKind::MissingRequiredParameterException(inner) => {
+            crate::error::UpdateLinkError::MissingRequiredParameterException(inner) => {
                 Error::MissingRequiredParameterException(inner)
             }
-            crate::error::UpdateLinkErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::UpdateLinkError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::UpdateLinkErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateLinkError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServiceFault(e) => e.request_id(),
+            Self::InvalidParameterException(e) => e.request_id(),
+            Self::MissingRequiredParameterException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

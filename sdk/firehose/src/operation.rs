@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDeliveryStream {
         crate::error::CreateDeliveryStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_delivery_stream_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDeliveryStream {
         crate::error::DeleteDeliveryStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_delivery_stream_error(response)
         } else {
@@ -93,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDeliveryStream {
         crate::error::DescribeDeliveryStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_delivery_stream_error(response)
         } else {
@@ -127,6 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDeliveryStreams {
         crate::error::ListDeliveryStreamsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_delivery_streams_error(response)
         } else {
@@ -161,6 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForDeliveryStrea
         crate::error::ListTagsForDeliveryStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_delivery_stream_error(response)
         } else {
@@ -192,6 +197,7 @@ impl PutRecord {
 impl aws_smithy_http::response::ParseStrictResponse for PutRecord {
     type Output = std::result::Result<crate::output::PutRecordOutput, crate::error::PutRecordError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_record_error(response)
         } else {
@@ -224,6 +230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecordBatch {
     type Output =
         std::result::Result<crate::output::PutRecordBatchOutput, crate::error::PutRecordBatchError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_record_batch_error(response)
         } else {
@@ -258,6 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartDeliveryStreamEncry
         crate::error::StartDeliveryStreamEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_delivery_stream_encryption_error(response)
         } else {
@@ -292,6 +300,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopDeliveryStreamEncryp
         crate::error::StopDeliveryStreamEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_delivery_stream_encryption_error(response)
         } else {
@@ -326,6 +335,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagDeliveryStream {
         crate::error::TagDeliveryStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_delivery_stream_error(response)
         } else {
@@ -360,6 +370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagDeliveryStream {
         crate::error::UntagDeliveryStreamError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_delivery_stream_error(response)
         } else {
@@ -394,6 +405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
         crate::error::UpdateDestinationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_destination_error(response)
         } else {

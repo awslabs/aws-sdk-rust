@@ -3,8 +3,11 @@
 pub fn parse_batch_put_metrics_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchPutMetricsOutput, crate::error::BatchPutMetricsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchPutMetricsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::BatchPutMetricsError::generic(generic))
 }
 
@@ -21,6 +24,9 @@ pub fn parse_batch_put_metrics_response(
             output,
         )
         .map_err(crate::error::BatchPutMetricsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

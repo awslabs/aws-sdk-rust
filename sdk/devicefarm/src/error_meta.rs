@@ -27,15 +27,8 @@ pub enum Error {
     TagPolicyException(crate::error::TagPolicyException),
     /// <p>The list of tags on the repository is over the limit. The maximum number of tags that can be applied to a repository is 50. </p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -67,28 +60,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDevicePoolError> for Error {
     fn from(err: crate::error::CreateDevicePoolError) -> Self {
-        match err.kind {
-            crate::error::CreateDevicePoolErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateDevicePoolError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateDevicePoolErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateDevicePoolError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateDevicePoolErrorKind::NotFoundException(inner) => {
+            crate::error::CreateDevicePoolError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateDevicePoolErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateDevicePoolError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateDevicePoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateDevicePoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -104,28 +102,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateInstanceProfileError> for Error {
     fn from(err: crate::error::CreateInstanceProfileError) -> Self {
-        match err.kind {
-            crate::error::CreateInstanceProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateInstanceProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateInstanceProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateInstanceProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateInstanceProfileErrorKind::NotFoundException(inner) => {
+            crate::error::CreateInstanceProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateInstanceProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateInstanceProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateInstanceProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateInstanceProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -141,28 +144,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateNetworkProfileError> for Error {
     fn from(err: crate::error::CreateNetworkProfileError) -> Self {
-        match err.kind {
-            crate::error::CreateNetworkProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateNetworkProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateNetworkProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateNetworkProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateNetworkProfileErrorKind::NotFoundException(inner) => {
+            crate::error::CreateNetworkProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateNetworkProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateNetworkProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateNetworkProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateNetworkProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -175,31 +183,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateProjectError> for Error {
     fn from(err: crate::error::CreateProjectError) -> Self {
-        match err.kind {
-            crate::error::CreateProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateProjectErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateProjectErrorKind::NotFoundException(inner) => {
+            crate::error::CreateProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateProjectErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateProjectError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateProjectErrorKind::TagOperationException(inner) => {
+            crate::error::CreateProjectError::TagOperationException(inner) => {
                 Error::TagOperationException(inner)
             }
-            crate::error::CreateProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -215,27 +228,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateRemoteAccessSessionError> for Error {
     fn from(err: crate::error::CreateRemoteAccessSessionError) -> Self {
-        match err.kind {
-            crate::error::CreateRemoteAccessSessionErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateRemoteAccessSessionError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateRemoteAccessSessionErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateRemoteAccessSessionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateRemoteAccessSessionErrorKind::NotFoundException(inner) => {
+            crate::error::CreateRemoteAccessSessionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateRemoteAccessSessionErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateRemoteAccessSessionError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateRemoteAccessSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreateRemoteAccessSessionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -252,25 +272,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTestGridProjectError> for Error {
     fn from(err: crate::error::CreateTestGridProjectError) -> Self {
-        match err.kind {
-            crate::error::CreateTestGridProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateTestGridProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateTestGridProjectErrorKind::InternalServiceException(inner) => {
+            crate::error::CreateTestGridProjectError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::CreateTestGridProjectErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateTestGridProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateTestGridProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTestGridProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -285,25 +310,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTestGridUrlError> for Error {
     fn from(err: crate::error::CreateTestGridUrlError) -> Self {
-        match err.kind {
-            crate::error::CreateTestGridUrlErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateTestGridUrlError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateTestGridUrlErrorKind::InternalServiceException(inner) => {
+            crate::error::CreateTestGridUrlError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::CreateTestGridUrlErrorKind::NotFoundException(inner) => {
+            crate::error::CreateTestGridUrlError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateTestGridUrlErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTestGridUrlError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -316,28 +346,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateUploadError> for Error {
     fn from(err: crate::error::CreateUploadError) -> Self {
-        match err.kind {
-            crate::error::CreateUploadErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateUploadError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateUploadErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateUploadError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateUploadErrorKind::NotFoundException(inner) => {
+            crate::error::CreateUploadError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateUploadErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateUploadError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateUploadErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -353,25 +388,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateVPCEConfigurationError> for Error {
     fn from(err: crate::error::CreateVPCEConfigurationError) -> Self {
-        match err.kind {
-            crate::error::CreateVPCEConfigurationErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::CreateVPCEConfigurationError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::CreateVPCEConfigurationErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateVPCEConfigurationError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateVPCEConfigurationErrorKind::ServiceAccountException(inner) => {
+            crate::error::CreateVPCEConfigurationError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::CreateVPCEConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVPCEConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -386,28 +426,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDevicePoolError> for Error {
     fn from(err: crate::error::DeleteDevicePoolError) -> Self {
-        match err.kind {
-            crate::error::DeleteDevicePoolErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteDevicePoolError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteDevicePoolErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteDevicePoolError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteDevicePoolErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteDevicePoolError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteDevicePoolErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteDevicePoolError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteDevicePoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteDevicePoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -423,28 +468,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteInstanceProfileError> for Error {
     fn from(err: crate::error::DeleteInstanceProfileError) -> Self {
-        match err.kind {
-            crate::error::DeleteInstanceProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteInstanceProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteInstanceProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteInstanceProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteInstanceProfileErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteInstanceProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteInstanceProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteInstanceProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteInstanceProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteInstanceProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -460,28 +510,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteNetworkProfileError> for Error {
     fn from(err: crate::error::DeleteNetworkProfileError) -> Self {
-        match err.kind {
-            crate::error::DeleteNetworkProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteNetworkProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteNetworkProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteNetworkProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteNetworkProfileErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteNetworkProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteNetworkProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteNetworkProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteNetworkProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteNetworkProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -494,28 +549,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteProjectError> for Error {
     fn from(err: crate::error::DeleteProjectError) -> Self {
-        match err.kind {
-            crate::error::DeleteProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteProjectErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteProjectErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteProjectErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteProjectError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -531,27 +591,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteRemoteAccessSessionError> for Error {
     fn from(err: crate::error::DeleteRemoteAccessSessionError) -> Self {
-        match err.kind {
-            crate::error::DeleteRemoteAccessSessionErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteRemoteAccessSessionError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteRemoteAccessSessionErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteRemoteAccessSessionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteRemoteAccessSessionErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteRemoteAccessSessionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteRemoteAccessSessionErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteRemoteAccessSessionError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteRemoteAccessSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteRemoteAccessSessionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -565,28 +632,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteRunError> for Error {
     fn from(err: crate::error::DeleteRunError) -> Self {
-        match err.kind {
-            crate::error::DeleteRunErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteRunError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteRunErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteRunError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteRunErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteRunError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteRunErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteRunError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -602,28 +674,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteTestGridProjectError> for Error {
     fn from(err: crate::error::DeleteTestGridProjectError) -> Self {
-        match err.kind {
-            crate::error::DeleteTestGridProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteTestGridProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteTestGridProjectErrorKind::CannotDeleteException(inner) => {
+            crate::error::DeleteTestGridProjectError::CannotDeleteException(inner) => {
                 Error::CannotDeleteException(inner)
             }
-            crate::error::DeleteTestGridProjectErrorKind::InternalServiceException(inner) => {
+            crate::error::DeleteTestGridProjectError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::DeleteTestGridProjectErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteTestGridProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteTestGridProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteTestGridProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -636,28 +713,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteUploadError> for Error {
     fn from(err: crate::error::DeleteUploadError) -> Self {
-        match err.kind {
-            crate::error::DeleteUploadErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteUploadError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteUploadErrorKind::LimitExceededException(inner) => {
+            crate::error::DeleteUploadError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::DeleteUploadErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteUploadError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteUploadErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteUploadError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteUploadErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -673,28 +755,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteVPCEConfigurationError> for Error {
     fn from(err: crate::error::DeleteVPCEConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteVPCEConfigurationErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::DeleteVPCEConfigurationError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::DeleteVPCEConfigurationErrorKind::InvalidOperationException(inner) => {
+            crate::error::DeleteVPCEConfigurationError::InvalidOperationException(inner) => {
                 Error::InvalidOperationException(inner)
             }
-            crate::error::DeleteVPCEConfigurationErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteVPCEConfigurationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVPCEConfigurationErrorKind::ServiceAccountException(inner) => {
+            crate::error::DeleteVPCEConfigurationError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::DeleteVPCEConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVPCEConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -709,28 +796,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccountSettingsError> for Error {
     fn from(err: crate::error::GetAccountSettingsError) -> Self {
-        match err.kind {
-            crate::error::GetAccountSettingsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetAccountSettingsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::LimitExceededException(inner) => {
+            crate::error::GetAccountSettingsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::NotFoundException(inner) => {
+            crate::error::GetAccountSettingsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetAccountSettingsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -743,28 +835,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeviceError> for Error {
     fn from(err: crate::error::GetDeviceError) -> Self {
-        match err.kind {
-            crate::error::GetDeviceErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetDeviceError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetDeviceErrorKind::LimitExceededException(inner) => {
+            crate::error::GetDeviceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetDeviceErrorKind::NotFoundException(inner) => {
+            crate::error::GetDeviceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetDeviceErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetDeviceError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -779,28 +876,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeviceInstanceError> for Error {
     fn from(err: crate::error::GetDeviceInstanceError) -> Self {
-        match err.kind {
-            crate::error::GetDeviceInstanceErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetDeviceInstanceError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetDeviceInstanceErrorKind::LimitExceededException(inner) => {
+            crate::error::GetDeviceInstanceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetDeviceInstanceErrorKind::NotFoundException(inner) => {
+            crate::error::GetDeviceInstanceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetDeviceInstanceErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetDeviceInstanceError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetDeviceInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDeviceInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -813,28 +915,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDevicePoolError> for Error {
     fn from(err: crate::error::GetDevicePoolError) -> Self {
-        match err.kind {
-            crate::error::GetDevicePoolErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetDevicePoolError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetDevicePoolErrorKind::LimitExceededException(inner) => {
+            crate::error::GetDevicePoolError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetDevicePoolErrorKind::NotFoundException(inner) => {
+            crate::error::GetDevicePoolError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetDevicePoolErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetDevicePoolError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetDevicePoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDevicePoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -850,27 +957,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDevicePoolCompatibilityError> for Error {
     fn from(err: crate::error::GetDevicePoolCompatibilityError) -> Self {
-        match err.kind {
-            crate::error::GetDevicePoolCompatibilityErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetDevicePoolCompatibilityError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetDevicePoolCompatibilityErrorKind::LimitExceededException(inner) => {
+            crate::error::GetDevicePoolCompatibilityError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetDevicePoolCompatibilityErrorKind::NotFoundException(inner) => {
+            crate::error::GetDevicePoolCompatibilityError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetDevicePoolCompatibilityErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetDevicePoolCompatibilityError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetDevicePoolCompatibilityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetDevicePoolCompatibilityError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -886,28 +1000,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInstanceProfileError> for Error {
     fn from(err: crate::error::GetInstanceProfileError) -> Self {
-        match err.kind {
-            crate::error::GetInstanceProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetInstanceProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetInstanceProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::GetInstanceProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetInstanceProfileErrorKind::NotFoundException(inner) => {
+            crate::error::GetInstanceProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetInstanceProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetInstanceProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetInstanceProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInstanceProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -920,28 +1039,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetJobError> for Error {
     fn from(err: crate::error::GetJobError) -> Self {
-        match err.kind {
-            crate::error::GetJobErrorKind::ArgumentException(inner) => {
-                Error::ArgumentException(inner)
-            }
-            crate::error::GetJobErrorKind::LimitExceededException(inner) => {
+        match err {
+            crate::error::GetJobError::ArgumentException(inner) => Error::ArgumentException(inner),
+            crate::error::GetJobError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetJobErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetJobError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -956,28 +1076,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetNetworkProfileError> for Error {
     fn from(err: crate::error::GetNetworkProfileError) -> Self {
-        match err.kind {
-            crate::error::GetNetworkProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetNetworkProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetNetworkProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::GetNetworkProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetNetworkProfileErrorKind::NotFoundException(inner) => {
+            crate::error::GetNetworkProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetNetworkProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetNetworkProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetNetworkProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetNetworkProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -992,31 +1117,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetOfferingStatusError> for Error {
     fn from(err: crate::error::GetOfferingStatusError) -> Self {
-        match err.kind {
-            crate::error::GetOfferingStatusErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetOfferingStatusError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetOfferingStatusErrorKind::LimitExceededException(inner) => {
+            crate::error::GetOfferingStatusError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetOfferingStatusErrorKind::NotEligibleException(inner) => {
+            crate::error::GetOfferingStatusError::NotEligibleException(inner) => {
                 Error::NotEligibleException(inner)
             }
-            crate::error::GetOfferingStatusErrorKind::NotFoundException(inner) => {
+            crate::error::GetOfferingStatusError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetOfferingStatusErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetOfferingStatusError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetOfferingStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOfferingStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1029,28 +1159,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetProjectError> for Error {
     fn from(err: crate::error::GetProjectError) -> Self {
-        match err.kind {
-            crate::error::GetProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetProjectErrorKind::LimitExceededException(inner) => {
+            crate::error::GetProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetProjectErrorKind::NotFoundException(inner) => {
+            crate::error::GetProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetProjectErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetProjectError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1066,28 +1201,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetRemoteAccessSessionError> for Error {
     fn from(err: crate::error::GetRemoteAccessSessionError) -> Self {
-        match err.kind {
-            crate::error::GetRemoteAccessSessionErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetRemoteAccessSessionError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetRemoteAccessSessionErrorKind::LimitExceededException(inner) => {
+            crate::error::GetRemoteAccessSessionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetRemoteAccessSessionErrorKind::NotFoundException(inner) => {
+            crate::error::GetRemoteAccessSessionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetRemoteAccessSessionErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetRemoteAccessSessionError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetRemoteAccessSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRemoteAccessSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1100,28 +1240,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetRunError> for Error {
     fn from(err: crate::error::GetRunError) -> Self {
-        match err.kind {
-            crate::error::GetRunErrorKind::ArgumentException(inner) => {
-                Error::ArgumentException(inner)
-            }
-            crate::error::GetRunErrorKind::LimitExceededException(inner) => {
+        match err {
+            crate::error::GetRunError::ArgumentException(inner) => Error::ArgumentException(inner),
+            crate::error::GetRunError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetRunErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetRunErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetRunError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetRunError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1134,28 +1275,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSuiteError> for Error {
     fn from(err: crate::error::GetSuiteError) -> Self {
-        match err.kind {
-            crate::error::GetSuiteErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetSuiteError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetSuiteErrorKind::LimitExceededException(inner) => {
+            crate::error::GetSuiteError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetSuiteErrorKind::NotFoundException(inner) => {
+            crate::error::GetSuiteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetSuiteErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetSuiteError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetSuiteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSuiteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1168,28 +1314,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTestError> for Error {
     fn from(err: crate::error::GetTestError) -> Self {
-        match err.kind {
-            crate::error::GetTestErrorKind::ArgumentException(inner) => {
-                Error::ArgumentException(inner)
-            }
-            crate::error::GetTestErrorKind::LimitExceededException(inner) => {
+        match err {
+            crate::error::GetTestError::ArgumentException(inner) => Error::ArgumentException(inner),
+            crate::error::GetTestError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetTestErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetTestErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetTestError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetTestError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetTestErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1204,25 +1351,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTestGridProjectError> for Error {
     fn from(err: crate::error::GetTestGridProjectError) -> Self {
-        match err.kind {
-            crate::error::GetTestGridProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetTestGridProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetTestGridProjectErrorKind::InternalServiceException(inner) => {
+            crate::error::GetTestGridProjectError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::GetTestGridProjectErrorKind::NotFoundException(inner) => {
+            crate::error::GetTestGridProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetTestGridProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTestGridProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1237,25 +1389,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTestGridSessionError> for Error {
     fn from(err: crate::error::GetTestGridSessionError) -> Self {
-        match err.kind {
-            crate::error::GetTestGridSessionErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetTestGridSessionError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetTestGridSessionErrorKind::InternalServiceException(inner) => {
+            crate::error::GetTestGridSessionError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::GetTestGridSessionErrorKind::NotFoundException(inner) => {
+            crate::error::GetTestGridSessionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetTestGridSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTestGridSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1268,28 +1425,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetUploadError> for Error {
     fn from(err: crate::error::GetUploadError) -> Self {
-        match err.kind {
-            crate::error::GetUploadErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetUploadError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetUploadErrorKind::LimitExceededException(inner) => {
+            crate::error::GetUploadError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetUploadErrorKind::NotFoundException(inner) => {
+            crate::error::GetUploadError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetUploadErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetUploadError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetUploadErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1305,25 +1467,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetVPCEConfigurationError> for Error {
     fn from(err: crate::error::GetVPCEConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetVPCEConfigurationErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::GetVPCEConfigurationError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::GetVPCEConfigurationErrorKind::NotFoundException(inner) => {
+            crate::error::GetVPCEConfigurationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetVPCEConfigurationErrorKind::ServiceAccountException(inner) => {
+            crate::error::GetVPCEConfigurationError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::GetVPCEConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetVPCEConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1339,27 +1506,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::InstallToRemoteAccessSessionError> for Error {
     fn from(err: crate::error::InstallToRemoteAccessSessionError) -> Self {
-        match err.kind {
-            crate::error::InstallToRemoteAccessSessionErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::InstallToRemoteAccessSessionError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::InstallToRemoteAccessSessionErrorKind::LimitExceededException(inner) => {
+            crate::error::InstallToRemoteAccessSessionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::InstallToRemoteAccessSessionErrorKind::NotFoundException(inner) => {
+            crate::error::InstallToRemoteAccessSessionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::InstallToRemoteAccessSessionErrorKind::ServiceAccountException(inner) => {
+            crate::error::InstallToRemoteAccessSessionError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::InstallToRemoteAccessSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::InstallToRemoteAccessSessionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1373,28 +1547,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListArtifactsError> for Error {
     fn from(err: crate::error::ListArtifactsError) -> Self {
-        match err.kind {
-            crate::error::ListArtifactsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListArtifactsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListArtifactsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListArtifactsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListArtifactsErrorKind::NotFoundException(inner) => {
+            crate::error::ListArtifactsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListArtifactsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListArtifactsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListArtifactsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListArtifactsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1409,28 +1588,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDeviceInstancesError> for Error {
     fn from(err: crate::error::ListDeviceInstancesError) -> Self {
-        match err.kind {
-            crate::error::ListDeviceInstancesErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListDeviceInstancesError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListDeviceInstancesErrorKind::LimitExceededException(inner) => {
+            crate::error::ListDeviceInstancesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListDeviceInstancesErrorKind::NotFoundException(inner) => {
+            crate::error::ListDeviceInstancesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListDeviceInstancesErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListDeviceInstancesError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListDeviceInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDeviceInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1443,28 +1627,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDevicePoolsError> for Error {
     fn from(err: crate::error::ListDevicePoolsError) -> Self {
-        match err.kind {
-            crate::error::ListDevicePoolsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListDevicePoolsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListDevicePoolsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListDevicePoolsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListDevicePoolsErrorKind::NotFoundException(inner) => {
+            crate::error::ListDevicePoolsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListDevicePoolsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListDevicePoolsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListDevicePoolsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDevicePoolsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1477,28 +1666,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDevicesError> for Error {
     fn from(err: crate::error::ListDevicesError) -> Self {
-        match err.kind {
-            crate::error::ListDevicesErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListDevicesError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListDevicesErrorKind::LimitExceededException(inner) => {
+            crate::error::ListDevicesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListDevicesErrorKind::NotFoundException(inner) => {
+            crate::error::ListDevicesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListDevicesErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListDevicesError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListDevicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDevicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1514,28 +1708,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListInstanceProfilesError> for Error {
     fn from(err: crate::error::ListInstanceProfilesError) -> Self {
-        match err.kind {
-            crate::error::ListInstanceProfilesErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListInstanceProfilesError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListInstanceProfilesErrorKind::LimitExceededException(inner) => {
+            crate::error::ListInstanceProfilesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListInstanceProfilesErrorKind::NotFoundException(inner) => {
+            crate::error::ListInstanceProfilesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListInstanceProfilesErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListInstanceProfilesError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListInstanceProfilesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInstanceProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1548,28 +1747,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListJobsError> for Error {
     fn from(err: crate::error::ListJobsError) -> Self {
-        match err.kind {
-            crate::error::ListJobsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListJobsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListJobsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListJobsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListJobsErrorKind::NotFoundException(inner) => {
+            crate::error::ListJobsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListJobsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListJobsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1584,28 +1788,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListNetworkProfilesError> for Error {
     fn from(err: crate::error::ListNetworkProfilesError) -> Self {
-        match err.kind {
-            crate::error::ListNetworkProfilesErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListNetworkProfilesError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListNetworkProfilesErrorKind::LimitExceededException(inner) => {
+            crate::error::ListNetworkProfilesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListNetworkProfilesErrorKind::NotFoundException(inner) => {
+            crate::error::ListNetworkProfilesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListNetworkProfilesErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListNetworkProfilesError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListNetworkProfilesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListNetworkProfilesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1621,31 +1830,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListOfferingPromotionsError> for Error {
     fn from(err: crate::error::ListOfferingPromotionsError) -> Self {
-        match err.kind {
-            crate::error::ListOfferingPromotionsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListOfferingPromotionsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListOfferingPromotionsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListOfferingPromotionsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListOfferingPromotionsErrorKind::NotEligibleException(inner) => {
+            crate::error::ListOfferingPromotionsError::NotEligibleException(inner) => {
                 Error::NotEligibleException(inner)
             }
-            crate::error::ListOfferingPromotionsErrorKind::NotFoundException(inner) => {
+            crate::error::ListOfferingPromotionsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListOfferingPromotionsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListOfferingPromotionsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListOfferingPromotionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOfferingPromotionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1658,31 +1872,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListOfferingsError> for Error {
     fn from(err: crate::error::ListOfferingsError) -> Self {
-        match err.kind {
-            crate::error::ListOfferingsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListOfferingsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListOfferingsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListOfferingsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListOfferingsErrorKind::NotEligibleException(inner) => {
+            crate::error::ListOfferingsError::NotEligibleException(inner) => {
                 Error::NotEligibleException(inner)
             }
-            crate::error::ListOfferingsErrorKind::NotFoundException(inner) => {
+            crate::error::ListOfferingsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListOfferingsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListOfferingsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListOfferingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1698,30 +1917,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListOfferingTransactionsError> for Error {
     fn from(err: crate::error::ListOfferingTransactionsError) -> Self {
-        match err.kind {
-            crate::error::ListOfferingTransactionsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListOfferingTransactionsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListOfferingTransactionsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListOfferingTransactionsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListOfferingTransactionsErrorKind::NotEligibleException(inner) => {
+            crate::error::ListOfferingTransactionsError::NotEligibleException(inner) => {
                 Error::NotEligibleException(inner)
             }
-            crate::error::ListOfferingTransactionsErrorKind::NotFoundException(inner) => {
+            crate::error::ListOfferingTransactionsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListOfferingTransactionsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListOfferingTransactionsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListOfferingTransactionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListOfferingTransactionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1735,28 +1961,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListProjectsError> for Error {
     fn from(err: crate::error::ListProjectsError) -> Self {
-        match err.kind {
-            crate::error::ListProjectsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListProjectsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListProjectsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListProjectsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListProjectsErrorKind::NotFoundException(inner) => {
+            crate::error::ListProjectsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListProjectsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListProjectsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListProjectsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListProjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1772,27 +2003,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListRemoteAccessSessionsError> for Error {
     fn from(err: crate::error::ListRemoteAccessSessionsError) -> Self {
-        match err.kind {
-            crate::error::ListRemoteAccessSessionsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListRemoteAccessSessionsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListRemoteAccessSessionsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListRemoteAccessSessionsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListRemoteAccessSessionsErrorKind::NotFoundException(inner) => {
+            crate::error::ListRemoteAccessSessionsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListRemoteAccessSessionsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListRemoteAccessSessionsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListRemoteAccessSessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListRemoteAccessSessionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1806,28 +2044,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListRunsError> for Error {
     fn from(err: crate::error::ListRunsError) -> Self {
-        match err.kind {
-            crate::error::ListRunsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListRunsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListRunsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListRunsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListRunsErrorKind::NotFoundException(inner) => {
+            crate::error::ListRunsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListRunsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListRunsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListRunsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRunsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1840,28 +2083,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListSamplesError> for Error {
     fn from(err: crate::error::ListSamplesError) -> Self {
-        match err.kind {
-            crate::error::ListSamplesErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListSamplesError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListSamplesErrorKind::LimitExceededException(inner) => {
+            crate::error::ListSamplesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListSamplesErrorKind::NotFoundException(inner) => {
+            crate::error::ListSamplesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListSamplesErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListSamplesError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListSamplesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSamplesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1874,28 +2122,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListSuitesError> for Error {
     fn from(err: crate::error::ListSuitesError) -> Self {
-        match err.kind {
-            crate::error::ListSuitesErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListSuitesError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListSuitesErrorKind::LimitExceededException(inner) => {
+            crate::error::ListSuitesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListSuitesErrorKind::NotFoundException(inner) => {
+            crate::error::ListSuitesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListSuitesErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListSuitesError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListSuitesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSuitesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1910,25 +2163,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+            crate::error::ListTagsForResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::TagOperationException(inner) => {
+            crate::error::ListTagsForResourceError::TagOperationException(inner) => {
                 Error::TagOperationException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1944,22 +2202,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTestGridProjectsError> for Error {
     fn from(err: crate::error::ListTestGridProjectsError) -> Self {
-        match err.kind {
-            crate::error::ListTestGridProjectsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListTestGridProjectsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListTestGridProjectsErrorKind::InternalServiceException(inner) => {
+            crate::error::ListTestGridProjectsError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::ListTestGridProjectsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTestGridProjectsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1975,24 +2238,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTestGridSessionActionsError> for Error {
     fn from(err: crate::error::ListTestGridSessionActionsError) -> Self {
-        match err.kind {
-            crate::error::ListTestGridSessionActionsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListTestGridSessionActionsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListTestGridSessionActionsErrorKind::InternalServiceException(inner) => {
+            crate::error::ListTestGridSessionActionsError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::ListTestGridSessionActionsErrorKind::NotFoundException(inner) => {
+            crate::error::ListTestGridSessionActionsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTestGridSessionActionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListTestGridSessionActionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2009,24 +2279,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTestGridSessionArtifactsError> for Error {
     fn from(err: crate::error::ListTestGridSessionArtifactsError) -> Self {
-        match err.kind {
-            crate::error::ListTestGridSessionArtifactsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListTestGridSessionArtifactsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListTestGridSessionArtifactsErrorKind::InternalServiceException(
-                inner,
-            ) => Error::InternalServiceException(inner),
-            crate::error::ListTestGridSessionArtifactsErrorKind::NotFoundException(inner) => {
+            crate::error::ListTestGridSessionArtifactsError::InternalServiceException(inner) => {
+                Error::InternalServiceException(inner)
+            }
+            crate::error::ListTestGridSessionArtifactsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTestGridSessionArtifactsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListTestGridSessionArtifactsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2043,25 +2320,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTestGridSessionsError> for Error {
     fn from(err: crate::error::ListTestGridSessionsError) -> Self {
-        match err.kind {
-            crate::error::ListTestGridSessionsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListTestGridSessionsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListTestGridSessionsErrorKind::InternalServiceException(inner) => {
+            crate::error::ListTestGridSessionsError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::ListTestGridSessionsErrorKind::NotFoundException(inner) => {
+            crate::error::ListTestGridSessionsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTestGridSessionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTestGridSessionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2074,28 +2356,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTestsError> for Error {
     fn from(err: crate::error::ListTestsError) -> Self {
-        match err.kind {
-            crate::error::ListTestsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListTestsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListTestsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListTestsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListTestsErrorKind::NotFoundException(inner) => {
+            crate::error::ListTestsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTestsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListTestsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListTestsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTestsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2110,28 +2397,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListUniqueProblemsError> for Error {
     fn from(err: crate::error::ListUniqueProblemsError) -> Self {
-        match err.kind {
-            crate::error::ListUniqueProblemsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListUniqueProblemsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListUniqueProblemsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListUniqueProblemsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListUniqueProblemsErrorKind::NotFoundException(inner) => {
+            crate::error::ListUniqueProblemsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListUniqueProblemsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListUniqueProblemsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListUniqueProblemsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListUniqueProblemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2144,28 +2436,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListUploadsError> for Error {
     fn from(err: crate::error::ListUploadsError) -> Self {
-        match err.kind {
-            crate::error::ListUploadsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListUploadsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListUploadsErrorKind::LimitExceededException(inner) => {
+            crate::error::ListUploadsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ListUploadsErrorKind::NotFoundException(inner) => {
+            crate::error::ListUploadsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListUploadsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListUploadsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListUploadsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListUploadsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2181,22 +2478,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListVPCEConfigurationsError> for Error {
     fn from(err: crate::error::ListVPCEConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::ListVPCEConfigurationsErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ListVPCEConfigurationsError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ListVPCEConfigurationsErrorKind::ServiceAccountException(inner) => {
+            crate::error::ListVPCEConfigurationsError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ListVPCEConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVPCEConfigurationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2211,31 +2513,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PurchaseOfferingError> for Error {
     fn from(err: crate::error::PurchaseOfferingError) -> Self {
-        match err.kind {
-            crate::error::PurchaseOfferingErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::PurchaseOfferingError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::LimitExceededException(inner) => {
+            crate::error::PurchaseOfferingError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::NotEligibleException(inner) => {
+            crate::error::PurchaseOfferingError::NotEligibleException(inner) => {
                 Error::NotEligibleException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::NotFoundException(inner) => {
+            crate::error::PurchaseOfferingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::ServiceAccountException(inner) => {
+            crate::error::PurchaseOfferingError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PurchaseOfferingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2248,31 +2555,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RenewOfferingError> for Error {
     fn from(err: crate::error::RenewOfferingError) -> Self {
-        match err.kind {
-            crate::error::RenewOfferingErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::RenewOfferingError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::RenewOfferingErrorKind::LimitExceededException(inner) => {
+            crate::error::RenewOfferingError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::RenewOfferingErrorKind::NotEligibleException(inner) => {
+            crate::error::RenewOfferingError::NotEligibleException(inner) => {
                 Error::NotEligibleException(inner)
             }
-            crate::error::RenewOfferingErrorKind::NotFoundException(inner) => {
+            crate::error::RenewOfferingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::RenewOfferingErrorKind::ServiceAccountException(inner) => {
+            crate::error::RenewOfferingError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::RenewOfferingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RenewOfferingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2285,31 +2597,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ScheduleRunError> for Error {
     fn from(err: crate::error::ScheduleRunError) -> Self {
-        match err.kind {
-            crate::error::ScheduleRunErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::ScheduleRunError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::ScheduleRunErrorKind::IdempotencyException(inner) => {
+            crate::error::ScheduleRunError::IdempotencyException(inner) => {
                 Error::IdempotencyException(inner)
             }
-            crate::error::ScheduleRunErrorKind::LimitExceededException(inner) => {
+            crate::error::ScheduleRunError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ScheduleRunErrorKind::NotFoundException(inner) => {
+            crate::error::ScheduleRunError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ScheduleRunErrorKind::ServiceAccountException(inner) => {
+            crate::error::ScheduleRunError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::ScheduleRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ScheduleRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2322,28 +2639,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopJobError> for Error {
     fn from(err: crate::error::StopJobError) -> Self {
-        match err.kind {
-            crate::error::StopJobErrorKind::ArgumentException(inner) => {
-                Error::ArgumentException(inner)
-            }
-            crate::error::StopJobErrorKind::LimitExceededException(inner) => {
+        match err {
+            crate::error::StopJobError::ArgumentException(inner) => Error::ArgumentException(inner),
+            crate::error::StopJobError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::StopJobErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopJobErrorKind::ServiceAccountException(inner) => {
+            crate::error::StopJobError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopJobError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::StopJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2359,28 +2677,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopRemoteAccessSessionError> for Error {
     fn from(err: crate::error::StopRemoteAccessSessionError) -> Self {
-        match err.kind {
-            crate::error::StopRemoteAccessSessionErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::StopRemoteAccessSessionError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::StopRemoteAccessSessionErrorKind::LimitExceededException(inner) => {
+            crate::error::StopRemoteAccessSessionError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::StopRemoteAccessSessionErrorKind::NotFoundException(inner) => {
+            crate::error::StopRemoteAccessSessionError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::StopRemoteAccessSessionErrorKind::ServiceAccountException(inner) => {
+            crate::error::StopRemoteAccessSessionError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::StopRemoteAccessSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopRemoteAccessSessionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2393,28 +2716,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopRunError> for Error {
     fn from(err: crate::error::StopRunError) -> Self {
-        match err.kind {
-            crate::error::StopRunErrorKind::ArgumentException(inner) => {
-                Error::ArgumentException(inner)
-            }
-            crate::error::StopRunErrorKind::LimitExceededException(inner) => {
+        match err {
+            crate::error::StopRunError::ArgumentException(inner) => Error::ArgumentException(inner),
+            crate::error::StopRunError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::StopRunErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::StopRunErrorKind::ServiceAccountException(inner) => {
+            crate::error::StopRunError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::StopRunError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::StopRunErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopRunError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2427,31 +2751,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::TagResourceError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+            crate::error::TagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::TagOperationException(inner) => {
+            crate::error::TagResourceError::TagOperationException(inner) => {
                 Error::TagOperationException(inner)
             }
-            crate::error::TagResourceErrorKind::TagPolicyException(inner) => {
+            crate::error::TagResourceError::TagPolicyException(inner) => {
                 Error::TagPolicyException(inner)
             }
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+            crate::error::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2464,25 +2793,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UntagResourceError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+            crate::error::UntagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::TagOperationException(inner) => {
+            crate::error::UntagResourceError::TagOperationException(inner) => {
                 Error::TagOperationException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2498,28 +2832,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateDeviceInstanceError> for Error {
     fn from(err: crate::error::UpdateDeviceInstanceError) -> Self {
-        match err.kind {
-            crate::error::UpdateDeviceInstanceErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateDeviceInstanceError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateDeviceInstanceErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateDeviceInstanceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateDeviceInstanceErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateDeviceInstanceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateDeviceInstanceErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateDeviceInstanceError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateDeviceInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateDeviceInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2534,28 +2873,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateDevicePoolError> for Error {
     fn from(err: crate::error::UpdateDevicePoolError) -> Self {
-        match err.kind {
-            crate::error::UpdateDevicePoolErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateDevicePoolError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateDevicePoolErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateDevicePoolError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateDevicePoolErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateDevicePoolError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateDevicePoolErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateDevicePoolError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateDevicePoolErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateDevicePoolError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2571,28 +2915,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateInstanceProfileError> for Error {
     fn from(err: crate::error::UpdateInstanceProfileError) -> Self {
-        match err.kind {
-            crate::error::UpdateInstanceProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateInstanceProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateInstanceProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateInstanceProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateInstanceProfileErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateInstanceProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateInstanceProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateInstanceProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateInstanceProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateInstanceProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2608,28 +2957,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateNetworkProfileError> for Error {
     fn from(err: crate::error::UpdateNetworkProfileError) -> Self {
-        match err.kind {
-            crate::error::UpdateNetworkProfileErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateNetworkProfileError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateNetworkProfileErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateNetworkProfileError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateNetworkProfileErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateNetworkProfileError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateNetworkProfileErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateNetworkProfileError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateNetworkProfileErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateNetworkProfileError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2642,28 +2996,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateProjectError> for Error {
     fn from(err: crate::error::UpdateProjectError) -> Self {
-        match err.kind {
-            crate::error::UpdateProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateProjectErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateProjectErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateProjectErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateProjectError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2679,28 +3038,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateTestGridProjectError> for Error {
     fn from(err: crate::error::UpdateTestGridProjectError) -> Self {
-        match err.kind {
-            crate::error::UpdateTestGridProjectErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateTestGridProjectError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateTestGridProjectErrorKind::InternalServiceException(inner) => {
+            crate::error::UpdateTestGridProjectError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::UpdateTestGridProjectErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateTestGridProjectError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateTestGridProjectErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateTestGridProjectError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateTestGridProjectErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateTestGridProjectError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2713,28 +3077,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateUploadError> for Error {
     fn from(err: crate::error::UpdateUploadError) -> Self {
-        match err.kind {
-            crate::error::UpdateUploadErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateUploadError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateUploadErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateUploadError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateUploadErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateUploadError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateUploadErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateUploadError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateUploadErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateUploadError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2750,29 +3119,53 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateVPCEConfigurationError> for Error {
     fn from(err: crate::error::UpdateVPCEConfigurationError) -> Self {
-        match err.kind {
-            crate::error::UpdateVPCEConfigurationErrorKind::ArgumentException(inner) => {
+        match err {
+            crate::error::UpdateVPCEConfigurationError::ArgumentException(inner) => {
                 Error::ArgumentException(inner)
             }
-            crate::error::UpdateVPCEConfigurationErrorKind::InvalidOperationException(inner) => {
+            crate::error::UpdateVPCEConfigurationError::InvalidOperationException(inner) => {
                 Error::InvalidOperationException(inner)
             }
-            crate::error::UpdateVPCEConfigurationErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateVPCEConfigurationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVPCEConfigurationErrorKind::ServiceAccountException(inner) => {
+            crate::error::UpdateVPCEConfigurationError::ServiceAccountException(inner) => {
                 Error::ServiceAccountException(inner)
             }
-            crate::error::UpdateVPCEConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVPCEConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ArgumentException(e) => e.request_id(),
+            Self::CannotDeleteException(e) => e.request_id(),
+            Self::IdempotencyException(e) => e.request_id(),
+            Self::InternalServiceException(e) => e.request_id(),
+            Self::InvalidOperationException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::NotEligibleException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ServiceAccountException(e) => e.request_id(),
+            Self::TagOperationException(e) => e.request_id(),
+            Self::TagPolicyException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

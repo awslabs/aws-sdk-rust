@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -62,6 +102,7 @@ pub struct StartFhirImportJobOutput {
     /// <p>The AWS-generated Data Store ID.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartFhirImportJobOutput {
     /// <p>The AWS-generated job ID.</p>
@@ -77,6 +118,11 @@ impl StartFhirImportJobOutput {
         self.datastore_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartFhirImportJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
 pub mod start_fhir_import_job_output {
 
@@ -87,6 +133,7 @@ pub mod start_fhir_import_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The AWS-generated job ID.</p>
@@ -122,12 +169,22 @@ pub mod start_fhir_import_job_output {
             self.datastore_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartFhirImportJobOutput`](crate::output::StartFhirImportJobOutput).
         pub fn build(self) -> crate::output::StartFhirImportJobOutput {
             crate::output::StartFhirImportJobOutput {
                 job_id: self.job_id,
                 job_status: self.job_status,
                 datastore_id: self.datastore_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -152,6 +209,7 @@ pub struct StartFhirExportJobOutput {
     /// <p>The AWS generated ID for the Data Store from which files are being exported for an export job.</p>
     #[doc(hidden)]
     pub datastore_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartFhirExportJobOutput {
     /// <p>The AWS generated ID for an export job.</p>
@@ -167,6 +225,11 @@ impl StartFhirExportJobOutput {
         self.datastore_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartFhirExportJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
 pub mod start_fhir_export_job_output {
 
@@ -177,6 +240,7 @@ pub mod start_fhir_export_job_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
         pub(crate) datastore_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The AWS generated ID for an export job.</p>
@@ -212,12 +276,22 @@ pub mod start_fhir_export_job_output {
             self.datastore_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartFhirExportJobOutput`](crate::output::StartFhirExportJobOutput).
         pub fn build(self) -> crate::output::StartFhirExportJobOutput {
             crate::output::StartFhirExportJobOutput {
                 job_id: self.job_id,
                 job_status: self.job_status,
                 datastore_id: self.datastore_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -236,11 +310,17 @@ pub struct ListTagsForResourceOutput {
     /// <p> Returns a list of tags associated with a Data Store. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p> Returns a list of tags associated with a Data Store. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -251,6 +331,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -272,9 +353,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -296,6 +389,7 @@ pub struct ListFhirImportJobsOutput {
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRImportJobs query. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFhirImportJobsOutput {
     /// <p> The properties of a listed FHIR import jobs, including the ID, ARN, name, and the status of the job. </p>
@@ -309,6 +403,11 @@ impl ListFhirImportJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFhirImportJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
 pub mod list_fhir_import_jobs_output {
 
@@ -319,6 +418,7 @@ pub mod list_fhir_import_jobs_output {
         pub(crate) import_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ImportJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `import_job_properties_list`.
@@ -353,11 +453,21 @@ pub mod list_fhir_import_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListFhirImportJobsOutput`](crate::output::ListFhirImportJobsOutput).
         pub fn build(self) -> crate::output::ListFhirImportJobsOutput {
             crate::output::ListFhirImportJobsOutput {
                 import_job_properties_list: self.import_job_properties_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -380,6 +490,7 @@ pub struct ListFhirExportJobsOutput {
     /// <p> A pagination token used to identify the next page of results to return for a ListFHIRExportJobs query. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFhirExportJobsOutput {
     /// <p> The properties of listed FHIR export jobs, including the ID, ARN, name, and the status of the job. </p>
@@ -393,6 +504,11 @@ impl ListFhirExportJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFhirExportJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
 pub mod list_fhir_export_jobs_output {
 
@@ -403,6 +519,7 @@ pub mod list_fhir_export_jobs_output {
         pub(crate) export_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ExportJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `export_job_properties_list`.
@@ -437,11 +554,21 @@ pub mod list_fhir_export_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListFhirExportJobsOutput`](crate::output::ListFhirExportJobsOutput).
         pub fn build(self) -> crate::output::ListFhirExportJobsOutput {
             crate::output::ListFhirExportJobsOutput {
                 export_job_properties_list: self.export_job_properties_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -464,6 +591,7 @@ pub struct ListFhirDatastoresOutput {
     /// <p>Pagination token that can be used to retrieve the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFhirDatastoresOutput {
     /// <p>All properties associated with the listed Data Stores.</p>
@@ -477,6 +605,11 @@ impl ListFhirDatastoresOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFhirDatastoresOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
 pub mod list_fhir_datastores_output {
 
@@ -487,6 +620,7 @@ pub mod list_fhir_datastores_output {
         pub(crate) datastore_properties_list:
             std::option::Option<std::vec::Vec<crate::model::DatastoreProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `datastore_properties_list`.
@@ -521,11 +655,21 @@ pub mod list_fhir_datastores_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListFhirDatastoresOutput`](crate::output::ListFhirDatastoresOutput).
         pub fn build(self) -> crate::output::ListFhirDatastoresOutput {
             crate::output::ListFhirDatastoresOutput {
                 datastore_properties_list: self.datastore_properties_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -544,11 +688,17 @@ pub struct DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
     #[doc(hidden)]
     pub import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeFhirImportJobOutput {
     /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
     pub fn import_job_properties(&self) -> std::option::Option<&crate::model::ImportJobProperties> {
         self.import_job_properties.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeFhirImportJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
@@ -559,6 +709,7 @@ pub mod describe_fhir_import_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_job_properties: std::option::Option<crate::model::ImportJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The properties of the Import job request, including the ID, ARN, name, and the status of the job.</p>
@@ -574,10 +725,20 @@ pub mod describe_fhir_import_job_output {
             self.import_job_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFhirImportJobOutput`](crate::output::DescribeFhirImportJobOutput).
         pub fn build(self) -> crate::output::DescribeFhirImportJobOutput {
             crate::output::DescribeFhirImportJobOutput {
                 import_job_properties: self.import_job_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -596,11 +757,17 @@ pub struct DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     #[doc(hidden)]
     pub export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeFhirExportJobOutput {
     /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
     pub fn export_job_properties(&self) -> std::option::Option<&crate::model::ExportJobProperties> {
         self.export_job_properties.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeFhirExportJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
@@ -611,6 +778,7 @@ pub mod describe_fhir_export_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_job_properties: std::option::Option<crate::model::ExportJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Displays the properties of the export job, including the ID, Arn, Name, and the status of the job. </p>
@@ -626,10 +794,20 @@ pub mod describe_fhir_export_job_output {
             self.export_job_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFhirExportJobOutput`](crate::output::DescribeFhirExportJobOutput).
         pub fn build(self) -> crate::output::DescribeFhirExportJobOutput {
             crate::output::DescribeFhirExportJobOutput {
                 export_job_properties: self.export_job_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -648,11 +826,17 @@ pub struct DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     #[doc(hidden)]
     pub datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeFhirDatastoreOutput {
     /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
     pub fn datastore_properties(&self) -> std::option::Option<&crate::model::DatastoreProperties> {
         self.datastore_properties.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeFhirDatastoreOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
@@ -663,6 +847,7 @@ pub mod describe_fhir_datastore_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datastore_properties: std::option::Option<crate::model::DatastoreProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>All properties associated with a Data Store, including the Data Store ID, Data Store ARN, Data Store name, Data Store status, created at, Data Store type version, and Data Store endpoint.</p>
@@ -678,10 +863,20 @@ pub mod describe_fhir_datastore_output {
             self.datastore_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeFhirDatastoreOutput`](crate::output::DescribeFhirDatastoreOutput).
         pub fn build(self) -> crate::output::DescribeFhirDatastoreOutput {
             crate::output::DescribeFhirDatastoreOutput {
                 datastore_properties: self.datastore_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -709,6 +904,7 @@ pub struct DeleteFhirDatastoreOutput {
     /// <p>The AWS endpoint for the Data Store the user has requested to be deleted.</p>
     #[doc(hidden)]
     pub datastore_endpoint: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteFhirDatastoreOutput {
     /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
@@ -728,6 +924,11 @@ impl DeleteFhirDatastoreOutput {
         self.datastore_endpoint.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFhirDatastoreOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
 pub mod delete_fhir_datastore_output {
 
@@ -739,6 +940,7 @@ pub mod delete_fhir_datastore_output {
         pub(crate) datastore_arn: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,
         pub(crate) datastore_endpoint: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The AWS-generated ID for the Data Store to be deleted.</p>
@@ -790,6 +992,15 @@ pub mod delete_fhir_datastore_output {
             self.datastore_endpoint = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteFhirDatastoreOutput`](crate::output::DeleteFhirDatastoreOutput).
         pub fn build(self) -> crate::output::DeleteFhirDatastoreOutput {
             crate::output::DeleteFhirDatastoreOutput {
@@ -797,6 +1008,7 @@ pub mod delete_fhir_datastore_output {
                 datastore_arn: self.datastore_arn,
                 datastore_status: self.datastore_status,
                 datastore_endpoint: self.datastore_endpoint,
+                _request_id: self._request_id,
             }
         }
     }
@@ -824,6 +1036,7 @@ pub struct CreateFhirDatastoreOutput {
     /// <p>The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints are supported.</p>
     #[doc(hidden)]
     pub datastore_endpoint: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateFhirDatastoreOutput {
     /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
@@ -843,6 +1056,11 @@ impl CreateFhirDatastoreOutput {
         self.datastore_endpoint.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateFhirDatastoreOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
 pub mod create_fhir_datastore_output {
 
@@ -854,6 +1072,7 @@ pub mod create_fhir_datastore_output {
         pub(crate) datastore_arn: std::option::Option<std::string::String>,
         pub(crate) datastore_status: std::option::Option<crate::model::DatastoreStatus>,
         pub(crate) datastore_endpoint: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The AWS-generated Data Store id. This id is in the output from the initial Data Store creation call.</p>
@@ -905,6 +1124,15 @@ pub mod create_fhir_datastore_output {
             self.datastore_endpoint = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateFhirDatastoreOutput`](crate::output::CreateFhirDatastoreOutput).
         pub fn build(self) -> crate::output::CreateFhirDatastoreOutput {
             crate::output::CreateFhirDatastoreOutput {
@@ -912,6 +1140,7 @@ pub mod create_fhir_datastore_output {
                 datastore_arn: self.datastore_arn,
                 datastore_status: self.datastore_status,
                 datastore_endpoint: self.datastore_endpoint,
+                _request_id: self._request_id,
             }
         }
     }

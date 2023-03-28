@@ -4,8 +4,11 @@ pub fn parse_delete_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteConnectionOutput, crate::error::DeleteConnectionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteConnectionError::unhandled(generic)),
@@ -13,62 +16,57 @@ pub fn parse_delete_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::DeleteConnectionError {
-            meta: generic,
-            kind: crate::error::DeleteConnectionErrorKind::ForbiddenException({
+        "ForbiddenException" => {
+            crate::error::DeleteConnectionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GoneException" => crate::error::DeleteConnectionError {
-            meta: generic,
-            kind: crate::error::DeleteConnectionErrorKind::GoneException({
+            })
+        }
+        "GoneException" => crate::error::DeleteConnectionError::GoneException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::gone_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_gone_exception_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::DeleteConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::DeleteConnectionError {
-            meta: generic,
-            kind: crate::error::DeleteConnectionErrorKind::LimitExceededException({
+                let mut output = crate::error::gone_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_gone_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::DeleteConnectionError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteConnectionError::generic(generic),
     })
 }
@@ -82,6 +80,9 @@ pub fn parse_delete_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_connection_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -90,8 +91,11 @@ pub fn parse_delete_connection_response(
 pub fn parse_get_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetConnectionOutput, crate::error::GetConnectionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetConnectionError::unhandled(generic)),
@@ -99,62 +103,57 @@ pub fn parse_get_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::GetConnectionError {
-            meta: generic,
-            kind: crate::error::GetConnectionErrorKind::ForbiddenException({
+        "ForbiddenException" => {
+            crate::error::GetConnectionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GoneException" => crate::error::GetConnectionError {
-            meta: generic,
-            kind: crate::error::GetConnectionErrorKind::GoneException({
+            })
+        }
+        "GoneException" => crate::error::GetConnectionError::GoneException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::gone_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_gone_exception_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::GetConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetConnectionError {
-            meta: generic,
-            kind: crate::error::GetConnectionErrorKind::LimitExceededException({
+                let mut output = crate::error::gone_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_gone_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::GetConnectionError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetConnectionError::generic(generic),
     })
 }
@@ -172,6 +171,9 @@ pub fn parse_get_connection_response(
             output,
         )
         .map_err(crate::error::GetConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -181,8 +183,11 @@ pub fn parse_post_to_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PostToConnectionOutput, crate::error::PostToConnectionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PostToConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PostToConnectionError::unhandled(generic)),
@@ -190,79 +195,74 @@ pub fn parse_post_to_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ForbiddenException" => crate::error::PostToConnectionError {
-            meta: generic,
-            kind: crate::error::PostToConnectionErrorKind::ForbiddenException({
+        "ForbiddenException" => {
+            crate::error::PostToConnectionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostToConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GoneException" => crate::error::PostToConnectionError {
-            meta: generic,
-            kind: crate::error::PostToConnectionErrorKind::GoneException({
+            })
+        }
+        "GoneException" => crate::error::PostToConnectionError::GoneException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::gone_exception::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_gone_exception_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::PostToConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::PostToConnectionError {
-            meta: generic,
-            kind: crate::error::PostToConnectionErrorKind::LimitExceededException({
+                let mut output = crate::error::gone_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_gone_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PostToConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::PostToConnectionError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostToConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PayloadTooLargeException" => crate::error::PostToConnectionError {
-            meta: generic,
-            kind: crate::error::PostToConnectionErrorKind::PayloadTooLargeException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostToConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PayloadTooLargeException" => {
+            crate::error::PostToConnectionError::PayloadTooLargeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::payload_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_payload_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PostToConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PostToConnectionError::generic(generic),
     })
 }
@@ -276,6 +276,9 @@ pub fn parse_post_to_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::post_to_connection_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

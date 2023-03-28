@@ -9,6 +9,7 @@ pub struct GetSessionTokenOutput {
     /// </note>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::Credentials>,
+    _request_id: Option<String>,
 }
 impl GetSessionTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -16,6 +17,11 @@ impl GetSessionTokenOutput {
     /// </note>
     pub fn credentials(&self) -> std::option::Option<&crate::model::Credentials> {
         self.credentials.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetSessionTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
@@ -26,6 +32,7 @@ pub mod get_session_token_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -45,10 +52,20 @@ pub mod get_session_token_output {
             self.credentials = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSessionTokenOutput`](crate::output::GetSessionTokenOutput).
         pub fn build(self) -> crate::output::GetSessionTokenOutput {
             crate::output::GetSessionTokenOutput {
                 credentials: self.credentials,
+                _request_id: self._request_id,
             }
         }
     }
@@ -75,6 +92,7 @@ pub struct GetFederationTokenOutput {
     /// <p>A percentage value that indicates the packed size of the session policies and session tags combined passed in the request. The request fails if the packed size is greater than 100 percent, which means the policies and tags exceeded the allowed space.</p>
     #[doc(hidden)]
     pub packed_policy_size: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl GetFederationTokenOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -92,6 +110,11 @@ impl GetFederationTokenOutput {
         self.packed_policy_size
     }
 }
+impl aws_http::request_id::RequestId for GetFederationTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
 pub mod get_federation_token_output {
 
@@ -102,6 +125,7 @@ pub mod get_federation_token_output {
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
         pub(crate) federated_user: std::option::Option<crate::model::FederatedUser>,
         pub(crate) packed_policy_size: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -144,12 +168,22 @@ pub mod get_federation_token_output {
             self.packed_policy_size = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFederationTokenOutput`](crate::output::GetFederationTokenOutput).
         pub fn build(self) -> crate::output::GetFederationTokenOutput {
             crate::output::GetFederationTokenOutput {
                 credentials: self.credentials,
                 federated_user: self.federated_user,
                 packed_policy_size: self.packed_policy_size,
+                _request_id: self._request_id,
             }
         }
     }
@@ -174,6 +208,7 @@ pub struct GetCallerIdentityOutput {
     /// <p>The Amazon Web Services ARN associated with the calling entity.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetCallerIdentityOutput {
     /// <p>The unique identifier of the calling entity. The exact value depends on the type of entity that is making the call. The values returned are those listed in the <b>aws:userid</b> column in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.</p>
@@ -189,6 +224,11 @@ impl GetCallerIdentityOutput {
         self.arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCallerIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
 pub mod get_caller_identity_output {
 
@@ -199,6 +239,7 @@ pub mod get_caller_identity_output {
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) account: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the calling entity. The exact value depends on the type of entity that is making the call. The values returned are those listed in the <b>aws:userid</b> column in the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_variables.html#principaltable">Principal table</a> found on the <b>Policy Variables</b> reference page in the <i>IAM User Guide</i>.</p>
@@ -231,12 +272,22 @@ pub mod get_caller_identity_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCallerIdentityOutput`](crate::output::GetCallerIdentityOutput).
         pub fn build(self) -> crate::output::GetCallerIdentityOutput {
             crate::output::GetCallerIdentityOutput {
                 user_id: self.user_id,
                 account: self.account,
                 arn: self.arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -255,11 +306,17 @@ pub struct GetAccessKeyInfoOutput {
     /// <p>The number used to identify the Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAccessKeyInfoOutput {
     /// <p>The number used to identify the Amazon Web Services account.</p>
     pub fn account(&self) -> std::option::Option<&str> {
         self.account.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAccessKeyInfoOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
@@ -270,6 +327,7 @@ pub mod get_access_key_info_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number used to identify the Amazon Web Services account.</p>
@@ -282,10 +340,20 @@ pub mod get_access_key_info_output {
             self.account = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccessKeyInfoOutput`](crate::output::GetAccessKeyInfoOutput).
         pub fn build(self) -> crate::output::GetAccessKeyInfoOutput {
             crate::output::GetAccessKeyInfoOutput {
                 account: self.account,
+                _request_id: self._request_id,
             }
         }
     }
@@ -304,11 +372,17 @@ pub struct DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
     #[doc(hidden)]
     pub decoded_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DecodeAuthorizationMessageOutput {
     /// <p>The API returns a response with the decoded message.</p>
     pub fn decoded_message(&self) -> std::option::Option<&str> {
         self.decoded_message.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DecodeAuthorizationMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
@@ -319,6 +393,7 @@ pub mod decode_authorization_message_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) decoded_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The API returns a response with the decoded message.</p>
@@ -334,10 +409,20 @@ pub mod decode_authorization_message_output {
             self.decoded_message = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DecodeAuthorizationMessageOutput`](crate::output::DecodeAuthorizationMessageOutput).
         pub fn build(self) -> crate::output::DecodeAuthorizationMessageOutput {
             crate::output::DecodeAuthorizationMessageOutput {
                 decoded_message: self.decoded_message,
+                _request_id: self._request_id,
             }
         }
     }
@@ -378,6 +463,7 @@ pub struct AssumeRoleWithWebIdentityOutput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     #[doc(hidden)]
     pub source_identity: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssumeRoleWithWebIdentityOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p> <note>
@@ -413,6 +499,11 @@ impl AssumeRoleWithWebIdentityOutput {
         self.source_identity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssumeRoleWithWebIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
 pub mod assume_role_with_web_identity_output {
 
@@ -427,6 +518,7 @@ pub mod assume_role_with_web_identity_output {
         pub(crate) provider: std::option::Option<std::string::String>,
         pub(crate) audience: std::option::Option<std::string::String>,
         pub(crate) source_identity: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security token.</p> <note>
@@ -522,6 +614,15 @@ pub mod assume_role_with_web_identity_output {
             self.source_identity = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssumeRoleWithWebIdentityOutput`](crate::output::AssumeRoleWithWebIdentityOutput).
         pub fn build(self) -> crate::output::AssumeRoleWithWebIdentityOutput {
             crate::output::AssumeRoleWithWebIdentityOutput {
@@ -532,6 +633,7 @@ pub mod assume_role_with_web_identity_output {
                 provider: self.provider,
                 audience: self.audience,
                 source_identity: self.source_identity,
+                _request_id: self._request_id,
             }
         }
     }
@@ -587,6 +689,7 @@ pub struct AssumeRoleWithSamlOutput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     #[doc(hidden)]
     pub source_identity: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssumeRoleWithSamlOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -639,6 +742,11 @@ impl AssumeRoleWithSamlOutput {
         self.source_identity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssumeRoleWithSamlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
 pub mod assume_role_with_saml_output {
 
@@ -655,6 +763,7 @@ pub mod assume_role_with_saml_output {
         pub(crate) audience: std::option::Option<std::string::String>,
         pub(crate) name_qualifier: std::option::Option<std::string::String>,
         pub(crate) source_identity: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -785,6 +894,15 @@ pub mod assume_role_with_saml_output {
             self.source_identity = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssumeRoleWithSamlOutput`](crate::output::AssumeRoleWithSamlOutput).
         pub fn build(self) -> crate::output::AssumeRoleWithSamlOutput {
             crate::output::AssumeRoleWithSamlOutput {
@@ -797,6 +915,7 @@ pub mod assume_role_with_saml_output {
                 audience: self.audience,
                 name_qualifier: self.name_qualifier,
                 source_identity: self.source_identity,
+                _request_id: self._request_id,
             }
         }
     }
@@ -828,6 +947,7 @@ pub struct AssumeRoleOutput {
     /// <p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-</p>
     #[doc(hidden)]
     pub source_identity: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssumeRoleOutput {
     /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -851,6 +971,11 @@ impl AssumeRoleOutput {
         self.source_identity.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssumeRoleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
 pub mod assume_role_output {
 
@@ -862,6 +987,7 @@ pub mod assume_role_output {
         pub(crate) assumed_role_user: std::option::Option<crate::model::AssumedRoleUser>,
         pub(crate) packed_policy_size: std::option::Option<i32>,
         pub(crate) source_identity: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p> <note>
@@ -921,6 +1047,15 @@ pub mod assume_role_output {
             self.source_identity = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssumeRoleOutput`](crate::output::AssumeRoleOutput).
         pub fn build(self) -> crate::output::AssumeRoleOutput {
             crate::output::AssumeRoleOutput {
@@ -928,6 +1063,7 @@ pub mod assume_role_output {
                 assumed_role_user: self.assumed_role_user,
                 packed_policy_size: self.packed_policy_size,
                 source_identity: self.source_identity,
+                _request_id: self._request_id,
             }
         }
     }

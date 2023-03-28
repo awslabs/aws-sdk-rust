@@ -52,6 +52,7 @@ pub struct UpdateOriginEndpointOutput {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
@@ -122,6 +123,11 @@ impl UpdateOriginEndpointOutput {
         self.whitelist.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateOriginEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
 pub mod update_origin_endpoint_output {
 
@@ -147,6 +153,7 @@ pub mod update_origin_endpoint_output {
         pub(crate) time_delay_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
@@ -354,6 +361,15 @@ pub mod update_origin_endpoint_output {
             self.whitelist = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateOriginEndpointOutput`](crate::output::UpdateOriginEndpointOutput).
         pub fn build(self) -> crate::output::UpdateOriginEndpointOutput {
             crate::output::UpdateOriginEndpointOutput {
@@ -373,6 +389,7 @@ pub mod update_origin_endpoint_output {
                 time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
                 url: self.url,
                 whitelist: self.whitelist,
+                _request_id: self._request_id,
             }
         }
     }
@@ -410,6 +427,7 @@ pub struct UpdateChannelOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -444,6 +462,11 @@ impl UpdateChannelOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
 
@@ -460,6 +483,7 @@ pub mod update_channel_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -556,6 +580,15 @@ pub mod update_channel_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
@@ -566,6 +599,7 @@ pub mod update_channel_output {
                 id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -580,18 +614,38 @@ impl UpdateChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -605,18 +659,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -653,6 +727,7 @@ pub struct RotateIngestEndpointCredentialsOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl RotateIngestEndpointCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -687,6 +762,11 @@ impl RotateIngestEndpointCredentialsOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RotateIngestEndpointCredentialsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
 pub mod rotate_ingest_endpoint_credentials_output {
 
@@ -703,6 +783,7 @@ pub mod rotate_ingest_endpoint_credentials_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -799,6 +880,15 @@ pub mod rotate_ingest_endpoint_credentials_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RotateIngestEndpointCredentialsOutput`](crate::output::RotateIngestEndpointCredentialsOutput).
         pub fn build(self) -> crate::output::RotateIngestEndpointCredentialsOutput {
             crate::output::RotateIngestEndpointCredentialsOutput {
@@ -809,6 +899,7 @@ pub mod rotate_ingest_endpoint_credentials_output {
                 id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -847,6 +938,7 @@ pub struct RotateChannelCredentialsOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl RotateChannelCredentialsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -881,6 +973,11 @@ impl RotateChannelCredentialsOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RotateChannelCredentialsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
 pub mod rotate_channel_credentials_output {
 
@@ -897,6 +994,7 @@ pub mod rotate_channel_credentials_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -993,6 +1091,15 @@ pub mod rotate_channel_credentials_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RotateChannelCredentialsOutput`](crate::output::RotateChannelCredentialsOutput).
         pub fn build(self) -> crate::output::RotateChannelCredentialsOutput {
             crate::output::RotateChannelCredentialsOutput {
@@ -1003,6 +1110,7 @@ pub mod rotate_channel_credentials_output {
                 id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1022,6 +1130,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     #[allow(missing_docs)] // documentation missing in model
@@ -1030,6 +1139,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1042,6 +1156,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1068,9 +1183,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1091,6 +1218,7 @@ pub struct ListOriginEndpointsOutput {
     /// A list of OriginEndpoint records.
     #[doc(hidden)]
     pub origin_endpoints: std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
+    _request_id: Option<String>,
 }
 impl ListOriginEndpointsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
@@ -1100,6 +1228,11 @@ impl ListOriginEndpointsOutput {
     /// A list of OriginEndpoint records.
     pub fn origin_endpoints(&self) -> std::option::Option<&[crate::model::OriginEndpoint]> {
         self.origin_endpoints.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListOriginEndpointsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
@@ -1112,6 +1245,7 @@ pub mod list_origin_endpoints_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) origin_endpoints:
             std::option::Option<std::vec::Vec<crate::model::OriginEndpoint>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A token that can be used to resume pagination from the end of the collection.
@@ -1143,11 +1277,21 @@ pub mod list_origin_endpoints_output {
             self.origin_endpoints = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListOriginEndpointsOutput`](crate::output::ListOriginEndpointsOutput).
         pub fn build(self) -> crate::output::ListOriginEndpointsOutput {
             crate::output::ListOriginEndpointsOutput {
                 next_token: self.next_token,
                 origin_endpoints: self.origin_endpoints,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1169,6 +1313,7 @@ pub struct ListHarvestJobsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListHarvestJobsOutput {
     /// A list of HarvestJob records.
@@ -1180,6 +1325,11 @@ impl ListHarvestJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHarvestJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
 pub mod list_harvest_jobs_output {
 
@@ -1189,6 +1339,7 @@ pub mod list_harvest_jobs_output {
     pub struct Builder {
         pub(crate) harvest_jobs: std::option::Option<std::vec::Vec<crate::model::HarvestJob>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `harvest_jobs`.
@@ -1220,11 +1371,21 @@ pub mod list_harvest_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListHarvestJobsOutput`](crate::output::ListHarvestJobsOutput).
         pub fn build(self) -> crate::output::ListHarvestJobsOutput {
             crate::output::ListHarvestJobsOutput {
                 harvest_jobs: self.harvest_jobs,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1246,6 +1407,7 @@ pub struct ListChannelsOutput {
     /// A token that can be used to resume pagination from the end of the collection.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelsOutput {
     /// A list of Channel records.
@@ -1257,6 +1419,11 @@ impl ListChannelsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListChannelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
 
@@ -1266,6 +1433,7 @@ pub mod list_channels_output {
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::Channel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channels`.
@@ -1297,11 +1465,21 @@ pub mod list_channels_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
         pub fn build(self) -> crate::output::ListChannelsOutput {
             crate::output::ListChannelsOutput {
                 channels: self.channels,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1366,6 +1544,7 @@ pub struct DescribeOriginEndpointOutput {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
@@ -1436,6 +1615,11 @@ impl DescribeOriginEndpointOutput {
         self.whitelist.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeOriginEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
 pub mod describe_origin_endpoint_output {
 
@@ -1461,6 +1645,7 @@ pub mod describe_origin_endpoint_output {
         pub(crate) time_delay_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
@@ -1668,6 +1853,15 @@ pub mod describe_origin_endpoint_output {
             self.whitelist = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeOriginEndpointOutput`](crate::output::DescribeOriginEndpointOutput).
         pub fn build(self) -> crate::output::DescribeOriginEndpointOutput {
             crate::output::DescribeOriginEndpointOutput {
@@ -1687,6 +1881,7 @@ pub mod describe_origin_endpoint_output {
                 time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
                 url: self.url,
                 whitelist: self.whitelist,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1729,6 +1924,7 @@ pub struct DescribeHarvestJobOutput {
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    _request_id: Option<String>,
 }
 impl DescribeHarvestJobOutput {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
@@ -1768,6 +1964,11 @@ impl DescribeHarvestJobOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeHarvestJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
 pub mod describe_harvest_job_output {
 
@@ -1784,6 +1985,7 @@ pub mod describe_harvest_job_output {
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
         pub(crate) start_time: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
@@ -1882,6 +2084,15 @@ pub mod describe_harvest_job_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeHarvestJobOutput`](crate::output::DescribeHarvestJobOutput).
         pub fn build(self) -> crate::output::DescribeHarvestJobOutput {
             crate::output::DescribeHarvestJobOutput {
@@ -1894,6 +2105,7 @@ pub mod describe_harvest_job_output {
                 s3_destination: self.s3_destination,
                 start_time: self.start_time,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1931,6 +2143,7 @@ pub struct DescribeChannelOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -1965,6 +2178,11 @@ impl DescribeChannelOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
 pub mod describe_channel_output {
 
@@ -1981,6 +2199,7 @@ pub mod describe_channel_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -2077,6 +2296,15 @@ pub mod describe_channel_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
         pub fn build(self) -> crate::output::DescribeChannelOutput {
             crate::output::DescribeChannelOutput {
@@ -2087,6 +2315,7 @@ pub mod describe_channel_output {
                 id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2101,18 +2330,38 @@ impl DescribeChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteOriginEndpointOutput {}
+pub struct DeleteOriginEndpointOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteOriginEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
 pub mod delete_origin_endpoint_output {
 
     /// A builder for [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteOriginEndpointOutput`](crate::output::DeleteOriginEndpointOutput).
         pub fn build(self) -> crate::output::DeleteOriginEndpointOutput {
-            crate::output::DeleteOriginEndpointOutput {}
+            crate::output::DeleteOriginEndpointOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2126,18 +2375,38 @@ impl DeleteOriginEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {}
+pub struct DeleteChannelOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
         pub fn build(self) -> crate::output::DeleteChannelOutput {
-            crate::output::DeleteChannelOutput {}
+            crate::output::DeleteChannelOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2201,6 +2470,7 @@ pub struct CreateOriginEndpointOutput {
     /// A list of source IP CIDR blocks that will be allowed to access the OriginEndpoint.
     #[doc(hidden)]
     pub whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateOriginEndpointOutput {
     /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
@@ -2271,6 +2541,11 @@ impl CreateOriginEndpointOutput {
         self.whitelist.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateOriginEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
 pub mod create_origin_endpoint_output {
 
@@ -2296,6 +2571,7 @@ pub mod create_origin_endpoint_output {
         pub(crate) time_delay_seconds: std::option::Option<i32>,
         pub(crate) url: std::option::Option<std::string::String>,
         pub(crate) whitelist: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
@@ -2503,6 +2779,15 @@ pub mod create_origin_endpoint_output {
             self.whitelist = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateOriginEndpointOutput`](crate::output::CreateOriginEndpointOutput).
         pub fn build(self) -> crate::output::CreateOriginEndpointOutput {
             crate::output::CreateOriginEndpointOutput {
@@ -2522,6 +2807,7 @@ pub mod create_origin_endpoint_output {
                 time_delay_seconds: self.time_delay_seconds.unwrap_or_default(),
                 url: self.url,
                 whitelist: self.whitelist,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2564,6 +2850,7 @@ pub struct CreateHarvestJobOutput {
     /// The current status of the HarvestJob. Consider setting up a CloudWatch Event to listen for HarvestJobs as they succeed or fail. In the event of failure, the CloudWatch Event will include an explanation of why the HarvestJob failed.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::Status>,
+    _request_id: Option<String>,
 }
 impl CreateHarvestJobOutput {
     /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
@@ -2603,6 +2890,11 @@ impl CreateHarvestJobOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateHarvestJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
 pub mod create_harvest_job_output {
 
@@ -2619,6 +2911,7 @@ pub mod create_harvest_job_output {
         pub(crate) s3_destination: std::option::Option<crate::model::S3Destination>,
         pub(crate) start_time: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the HarvestJob.
@@ -2717,6 +3010,15 @@ pub mod create_harvest_job_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateHarvestJobOutput`](crate::output::CreateHarvestJobOutput).
         pub fn build(self) -> crate::output::CreateHarvestJobOutput {
             crate::output::CreateHarvestJobOutput {
@@ -2729,6 +3031,7 @@ pub mod create_harvest_job_output {
                 s3_destination: self.s3_destination,
                 start_time: self.start_time,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2766,6 +3069,7 @@ pub struct CreateChannelOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateChannelOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -2800,6 +3104,11 @@ impl CreateChannelOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
 
@@ -2816,6 +3125,7 @@ pub mod create_channel_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -2912,6 +3222,15 @@ pub mod create_channel_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
@@ -2922,6 +3241,7 @@ pub mod create_channel_output {
                 id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2959,6 +3279,7 @@ pub struct ConfigureLogsOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ConfigureLogsOutput {
     /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -2993,6 +3314,11 @@ impl ConfigureLogsOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfigureLogsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
 pub mod configure_logs_output {
 
@@ -3009,6 +3335,7 @@ pub mod configure_logs_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The Amazon Resource Name (ARN) assigned to the Channel.
@@ -3105,6 +3432,15 @@ pub mod configure_logs_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfigureLogsOutput`](crate::output::ConfigureLogsOutput).
         pub fn build(self) -> crate::output::ConfigureLogsOutput {
             crate::output::ConfigureLogsOutput {
@@ -3115,6 +3451,7 @@ pub mod configure_logs_output {
                 id: self.id,
                 ingress_access_logs: self.ingress_access_logs,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }

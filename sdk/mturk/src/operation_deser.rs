@@ -6,8 +6,11 @@ pub fn parse_accept_qualification_request_error(
     crate::output::AcceptQualificationRequestOutput,
     crate::error::AcceptQualificationRequestError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,48 +22,44 @@ pub fn parse_accept_qualification_request_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::AcceptQualificationRequestError {
-            meta: generic,
-            kind: crate::error::AcceptQualificationRequestErrorKind::RequestError({
+        "RequestError" => crate::error::AcceptQualificationRequestError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::AcceptQualificationRequestError {
-            meta: generic,
-            kind: crate::error::AcceptQualificationRequestErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::AcceptQualificationRequestError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AcceptQualificationRequestError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AcceptQualificationRequestError::generic(generic),
     })
 }
@@ -76,6 +75,9 @@ pub fn parse_accept_qualification_request_response(
         #[allow(unused_mut)]
         let mut output = crate::output::accept_qualification_request_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -85,8 +87,11 @@ pub fn parse_approve_assignment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ApproveAssignmentOutput, crate::error::ApproveAssignmentError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ApproveAssignmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ApproveAssignmentError::unhandled(generic)),
@@ -94,48 +99,44 @@ pub fn parse_approve_assignment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ApproveAssignmentError {
-            meta: generic,
-            kind: crate::error::ApproveAssignmentErrorKind::RequestError({
+        "RequestError" => crate::error::ApproveAssignmentError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ApproveAssignmentError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ApproveAssignmentError {
-            meta: generic,
-            kind: crate::error::ApproveAssignmentErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ApproveAssignmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ApproveAssignmentError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ApproveAssignmentError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ApproveAssignmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ApproveAssignmentError::generic(generic),
     })
 }
@@ -149,6 +150,9 @@ pub fn parse_approve_assignment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::approve_assignment_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -160,8 +164,11 @@ pub fn parse_associate_qualification_with_worker_error(
     crate::output::AssociateQualificationWithWorkerOutput,
     crate::error::AssociateQualificationWithWorkerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -171,48 +178,44 @@ pub fn parse_associate_qualification_with_worker_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::AssociateQualificationWithWorkerError {
-            meta: generic,
-            kind: crate::error::AssociateQualificationWithWorkerErrorKind::RequestError({
+        "RequestError" => crate::error::AssociateQualificationWithWorkerError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::AssociateQualificationWithWorkerError {
-            meta: generic,
-            kind: crate::error::AssociateQualificationWithWorkerErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::AssociateQualificationWithWorkerError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AssociateQualificationWithWorkerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AssociateQualificationWithWorkerError::generic(generic),
     })
 }
@@ -229,6 +232,9 @@ pub fn parse_associate_qualification_with_worker_response(
         let mut output =
             crate::output::associate_qualification_with_worker_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -240,8 +246,11 @@ pub fn parse_create_additional_assignments_for_hit_error(
     crate::output::CreateAdditionalAssignmentsForHitOutput,
     crate::error::CreateAdditionalAssignmentsForHITError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -251,48 +260,44 @@ pub fn parse_create_additional_assignments_for_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::CreateAdditionalAssignmentsForHITError {
-            meta: generic,
-            kind: crate::error::CreateAdditionalAssignmentsForHITErrorKind::RequestError({
+        "RequestError" => crate::error::CreateAdditionalAssignmentsForHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::CreateAdditionalAssignmentsForHITError {
-            meta: generic,
-            kind: crate::error::CreateAdditionalAssignmentsForHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::CreateAdditionalAssignmentsForHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAdditionalAssignmentsForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateAdditionalAssignmentsForHITError::generic(generic),
     })
 }
@@ -309,6 +314,9 @@ pub fn parse_create_additional_assignments_for_hit_response(
         let mut output =
             crate::output::create_additional_assignments_for_hit_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -317,8 +325,11 @@ pub fn parse_create_additional_assignments_for_hit_response(
 pub fn parse_create_hit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHitOutput, crate::error::CreateHITError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateHITError::unhandled(generic)),
@@ -326,48 +337,44 @@ pub fn parse_create_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::CreateHITError {
-            meta: generic,
-            kind: crate::error::CreateHITErrorKind::RequestError({
+        "RequestError" => crate::error::CreateHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::CreateHITError {
-            meta: generic,
-            kind: crate::error::CreateHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::CreateHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateHITError::generic(generic),
     })
 }
@@ -385,6 +392,9 @@ pub fn parse_create_hit_response(
             output,
         )
         .map_err(crate::error::CreateHITError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -393,8 +403,11 @@ pub fn parse_create_hit_response(
 pub fn parse_create_hit_type_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHitTypeOutput, crate::error::CreateHITTypeError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateHITTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateHITTypeError::unhandled(generic)),
@@ -402,48 +415,44 @@ pub fn parse_create_hit_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::CreateHITTypeError {
-            meta: generic,
-            kind: crate::error::CreateHITTypeErrorKind::RequestError({
+        "RequestError" => crate::error::CreateHITTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHITTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::CreateHITTypeError {
-            meta: generic,
-            kind: crate::error::CreateHITTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHITTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::CreateHITTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHITTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHITTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateHITTypeError::generic(generic),
     })
 }
@@ -461,6 +470,9 @@ pub fn parse_create_hit_type_response(
             output,
         )
         .map_err(crate::error::CreateHITTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -472,8 +484,11 @@ pub fn parse_create_hit_with_hit_type_error(
     crate::output::CreateHitWithHitTypeOutput,
     crate::error::CreateHITWithHITTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateHITWithHITTypeError::unhandled(generic)),
@@ -481,48 +496,44 @@ pub fn parse_create_hit_with_hit_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::CreateHITWithHITTypeError {
-            meta: generic,
-            kind: crate::error::CreateHITWithHITTypeErrorKind::RequestError({
+        "RequestError" => crate::error::CreateHITWithHITTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::CreateHITWithHITTypeError {
-            meta: generic,
-            kind: crate::error::CreateHITWithHITTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::CreateHITWithHITTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateHITWithHITTypeError::generic(generic),
     })
 }
@@ -543,6 +554,9 @@ pub fn parse_create_hit_with_hit_type_response(
             output,
         )
         .map_err(crate::error::CreateHITWithHITTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -554,8 +568,11 @@ pub fn parse_create_qualification_type_error(
     crate::output::CreateQualificationTypeOutput,
     crate::error::CreateQualificationTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -567,48 +584,44 @@ pub fn parse_create_qualification_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::CreateQualificationTypeError {
-            meta: generic,
-            kind: crate::error::CreateQualificationTypeErrorKind::RequestError({
+        "RequestError" => crate::error::CreateQualificationTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::CreateQualificationTypeError {
-            meta: generic,
-            kind: crate::error::CreateQualificationTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::CreateQualificationTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateQualificationTypeError::generic(generic),
     })
 }
@@ -629,6 +642,9 @@ pub fn parse_create_qualification_type_response(
             output,
         )
         .map_err(crate::error::CreateQualificationTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -638,8 +654,11 @@ pub fn parse_create_worker_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateWorkerBlockOutput, crate::error::CreateWorkerBlockError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateWorkerBlockError::unhandled(generic)),
@@ -647,48 +666,44 @@ pub fn parse_create_worker_block_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::CreateWorkerBlockError {
-            meta: generic,
-            kind: crate::error::CreateWorkerBlockErrorKind::RequestError({
+        "RequestError" => crate::error::CreateWorkerBlockError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::CreateWorkerBlockError {
-            meta: generic,
-            kind: crate::error::CreateWorkerBlockErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::CreateWorkerBlockError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateWorkerBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateWorkerBlockError::generic(generic),
     })
 }
@@ -702,6 +717,9 @@ pub fn parse_create_worker_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_worker_block_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -710,8 +728,11 @@ pub fn parse_create_worker_block_response(
 pub fn parse_delete_hit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHitOutput, crate::error::DeleteHITError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteHITError::unhandled(generic)),
@@ -719,48 +740,44 @@ pub fn parse_delete_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::DeleteHITError {
-            meta: generic,
-            kind: crate::error::DeleteHITErrorKind::RequestError({
+        "RequestError" => crate::error::DeleteHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::DeleteHITError {
-            meta: generic,
-            kind: crate::error::DeleteHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::DeleteHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteHITError::generic(generic),
     })
 }
@@ -773,6 +790,9 @@ pub fn parse_delete_hit_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_hit_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -784,8 +804,11 @@ pub fn parse_delete_qualification_type_error(
     crate::output::DeleteQualificationTypeOutput,
     crate::error::DeleteQualificationTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -797,48 +820,44 @@ pub fn parse_delete_qualification_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::DeleteQualificationTypeError {
-            meta: generic,
-            kind: crate::error::DeleteQualificationTypeErrorKind::RequestError({
+        "RequestError" => crate::error::DeleteQualificationTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::DeleteQualificationTypeError {
-            meta: generic,
-            kind: crate::error::DeleteQualificationTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::DeleteQualificationTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteQualificationTypeError::generic(generic),
     })
 }
@@ -854,6 +873,9 @@ pub fn parse_delete_qualification_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_qualification_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -863,8 +885,11 @@ pub fn parse_delete_worker_block_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteWorkerBlockOutput, crate::error::DeleteWorkerBlockError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteWorkerBlockError::unhandled(generic)),
@@ -872,48 +897,44 @@ pub fn parse_delete_worker_block_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::DeleteWorkerBlockError {
-            meta: generic,
-            kind: crate::error::DeleteWorkerBlockErrorKind::RequestError({
+        "RequestError" => crate::error::DeleteWorkerBlockError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::DeleteWorkerBlockError {
-            meta: generic,
-            kind: crate::error::DeleteWorkerBlockErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::DeleteWorkerBlockError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteWorkerBlockError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteWorkerBlockError::generic(generic),
     })
 }
@@ -927,6 +948,9 @@ pub fn parse_delete_worker_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_worker_block_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -938,8 +962,11 @@ pub fn parse_disassociate_qualification_from_worker_error(
     crate::output::DisassociateQualificationFromWorkerOutput,
     crate::error::DisassociateQualificationFromWorkerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -949,48 +976,44 @@ pub fn parse_disassociate_qualification_from_worker_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::DisassociateQualificationFromWorkerError {
-            meta: generic,
-            kind: crate::error::DisassociateQualificationFromWorkerErrorKind::RequestError({
+        "RequestError" => crate::error::DisassociateQualificationFromWorkerError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::DisassociateQualificationFromWorkerError {
-            meta: generic,
-            kind: crate::error::DisassociateQualificationFromWorkerErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::DisassociateQualificationFromWorkerError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DisassociateQualificationFromWorkerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DisassociateQualificationFromWorkerError::generic(generic),
     })
 }
@@ -1007,6 +1030,9 @@ pub fn parse_disassociate_qualification_from_worker_response(
         let mut output =
             crate::output::disassociate_qualification_from_worker_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1016,8 +1042,11 @@ pub fn parse_get_account_balance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccountBalanceOutput, crate::error::GetAccountBalanceError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccountBalanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAccountBalanceError::unhandled(generic)),
@@ -1025,48 +1054,44 @@ pub fn parse_get_account_balance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::GetAccountBalanceError {
-            meta: generic,
-            kind: crate::error::GetAccountBalanceErrorKind::RequestError({
+        "RequestError" => crate::error::GetAccountBalanceError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetAccountBalanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::GetAccountBalanceError {
-            meta: generic,
-            kind: crate::error::GetAccountBalanceErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountBalanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::GetAccountBalanceError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetAccountBalanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountBalanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetAccountBalanceError::generic(generic),
     })
 }
@@ -1085,6 +1110,9 @@ pub fn parse_get_account_balance_response(
             output,
         )
         .map_err(crate::error::GetAccountBalanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1093,8 +1121,11 @@ pub fn parse_get_account_balance_response(
 pub fn parse_get_assignment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAssignmentOutput, crate::error::GetAssignmentError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAssignmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAssignmentError::unhandled(generic)),
@@ -1102,48 +1133,44 @@ pub fn parse_get_assignment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::GetAssignmentError {
-            meta: generic,
-            kind: crate::error::GetAssignmentErrorKind::RequestError({
+        "RequestError" => crate::error::GetAssignmentError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetAssignmentError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::GetAssignmentError {
-            meta: generic,
-            kind: crate::error::GetAssignmentErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAssignmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::GetAssignmentError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetAssignmentError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAssignmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetAssignmentError::generic(generic),
     })
 }
@@ -1161,6 +1188,9 @@ pub fn parse_get_assignment_response(
             output,
         )
         .map_err(crate::error::GetAssignmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1170,8 +1200,11 @@ pub fn parse_get_file_upload_url_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetFileUploadUrlOutput, crate::error::GetFileUploadURLError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFileUploadURLError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetFileUploadURLError::unhandled(generic)),
@@ -1179,48 +1212,44 @@ pub fn parse_get_file_upload_url_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::GetFileUploadURLError {
-            meta: generic,
-            kind: crate::error::GetFileUploadURLErrorKind::RequestError({
+        "RequestError" => crate::error::GetFileUploadURLError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetFileUploadURLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::GetFileUploadURLError {
-            meta: generic,
-            kind: crate::error::GetFileUploadURLErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFileUploadURLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::GetFileUploadURLError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetFileUploadURLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFileUploadURLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetFileUploadURLError::generic(generic),
     })
 }
@@ -1239,6 +1268,9 @@ pub fn parse_get_file_upload_url_response(
             output,
         )
         .map_err(crate::error::GetFileUploadURLError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1247,8 +1279,11 @@ pub fn parse_get_file_upload_url_response(
 pub fn parse_get_hit_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetHitOutput, crate::error::GetHITError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetHITError::unhandled(generic)),
@@ -1256,48 +1291,44 @@ pub fn parse_get_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::GetHITError {
-            meta: generic,
-            kind: crate::error::GetHITErrorKind::RequestError({
+        "RequestError" => crate::error::GetHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::GetHITError {
-            meta: generic,
-            kind: crate::error::GetHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::GetHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetHITError::generic(generic),
     })
 }
@@ -1315,6 +1346,9 @@ pub fn parse_get_hit_response(
             output,
         )
         .map_err(crate::error::GetHITError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1326,8 +1360,11 @@ pub fn parse_get_qualification_score_error(
     crate::output::GetQualificationScoreOutput,
     crate::error::GetQualificationScoreError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetQualificationScoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetQualificationScoreError::unhandled(generic)),
@@ -1335,48 +1372,44 @@ pub fn parse_get_qualification_score_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::GetQualificationScoreError {
-            meta: generic,
-            kind: crate::error::GetQualificationScoreErrorKind::RequestError({
+        "RequestError" => crate::error::GetQualificationScoreError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetQualificationScoreError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::GetQualificationScoreError {
-            meta: generic,
-            kind: crate::error::GetQualificationScoreErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetQualificationScoreError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::GetQualificationScoreError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetQualificationScoreError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetQualificationScoreError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetQualificationScoreError::generic(generic),
     })
 }
@@ -1397,6 +1430,9 @@ pub fn parse_get_qualification_score_response(
             output,
         )
         .map_err(crate::error::GetQualificationScoreError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1408,8 +1444,11 @@ pub fn parse_get_qualification_type_error(
     crate::output::GetQualificationTypeOutput,
     crate::error::GetQualificationTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetQualificationTypeError::unhandled(generic)),
@@ -1417,48 +1456,44 @@ pub fn parse_get_qualification_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::GetQualificationTypeError {
-            meta: generic,
-            kind: crate::error::GetQualificationTypeErrorKind::RequestError({
+        "RequestError" => crate::error::GetQualificationTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::GetQualificationTypeError {
-            meta: generic,
-            kind: crate::error::GetQualificationTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::GetQualificationTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetQualificationTypeError::generic(generic),
     })
 }
@@ -1479,6 +1514,9 @@ pub fn parse_get_qualification_type_response(
             output,
         )
         .map_err(crate::error::GetQualificationTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1490,8 +1528,11 @@ pub fn parse_list_assignments_for_hit_error(
     crate::output::ListAssignmentsForHitOutput,
     crate::error::ListAssignmentsForHITError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAssignmentsForHITError::unhandled(generic)),
@@ -1499,48 +1540,44 @@ pub fn parse_list_assignments_for_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListAssignmentsForHITError {
-            meta: generic,
-            kind: crate::error::ListAssignmentsForHITErrorKind::RequestError({
+        "RequestError" => crate::error::ListAssignmentsForHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListAssignmentsForHITError {
-            meta: generic,
-            kind: crate::error::ListAssignmentsForHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListAssignmentsForHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListAssignmentsForHITError::generic(generic),
     })
 }
@@ -1561,6 +1598,9 @@ pub fn parse_list_assignments_for_hit_response(
             output,
         )
         .map_err(crate::error::ListAssignmentsForHITError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1570,8 +1610,11 @@ pub fn parse_list_bonus_payments_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBonusPaymentsOutput, crate::error::ListBonusPaymentsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListBonusPaymentsError::unhandled(generic)),
@@ -1579,48 +1622,44 @@ pub fn parse_list_bonus_payments_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListBonusPaymentsError {
-            meta: generic,
-            kind: crate::error::ListBonusPaymentsErrorKind::RequestError({
+        "RequestError" => crate::error::ListBonusPaymentsError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListBonusPaymentsError {
-            meta: generic,
-            kind: crate::error::ListBonusPaymentsErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListBonusPaymentsError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListBonusPaymentsError::generic(generic),
     })
 }
@@ -1639,6 +1678,9 @@ pub fn parse_list_bonus_payments_response(
             output,
         )
         .map_err(crate::error::ListBonusPaymentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1647,8 +1689,11 @@ pub fn parse_list_bonus_payments_response(
 pub fn parse_list_hi_ts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHiTsOutput, crate::error::ListHITsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListHITsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListHITsError::unhandled(generic)),
@@ -1656,48 +1701,44 @@ pub fn parse_list_hi_ts_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListHITsError {
-            meta: generic,
-            kind: crate::error::ListHITsErrorKind::RequestError({
+        "RequestError" => crate::error::ListHITsError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHITsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListHITsError {
-            meta: generic,
-            kind: crate::error::ListHITsErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHITsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListHITsError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHITsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHITsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListHITsError::generic(generic),
     })
 }
@@ -1715,6 +1756,9 @@ pub fn parse_list_hi_ts_response(
             output,
         )
         .map_err(crate::error::ListHITsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1726,8 +1770,11 @@ pub fn parse_list_hi_ts_for_qualification_type_error(
     crate::output::ListHiTsForQualificationTypeOutput,
     crate::error::ListHITsForQualificationTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1739,48 +1786,44 @@ pub fn parse_list_hi_ts_for_qualification_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListHITsForQualificationTypeError {
-            meta: generic,
-            kind: crate::error::ListHITsForQualificationTypeErrorKind::RequestError({
+        "RequestError" => crate::error::ListHITsForQualificationTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListHITsForQualificationTypeError {
-            meta: generic,
-            kind: crate::error::ListHITsForQualificationTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListHITsForQualificationTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListHITsForQualificationTypeError::generic(generic),
     })
 }
@@ -1803,6 +1846,9 @@ pub fn parse_list_hi_ts_for_qualification_type_response(
                 output,
             )
             .map_err(crate::error::ListHITsForQualificationTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1814,8 +1860,11 @@ pub fn parse_list_qualification_requests_error(
     crate::output::ListQualificationRequestsOutput,
     crate::error::ListQualificationRequestsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1827,48 +1876,44 @@ pub fn parse_list_qualification_requests_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListQualificationRequestsError {
-            meta: generic,
-            kind: crate::error::ListQualificationRequestsErrorKind::RequestError({
+        "RequestError" => crate::error::ListQualificationRequestsError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListQualificationRequestsError {
-            meta: generic,
-            kind: crate::error::ListQualificationRequestsErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListQualificationRequestsError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListQualificationRequestsError::generic(generic),
     })
 }
@@ -1889,6 +1934,9 @@ pub fn parse_list_qualification_requests_response(
             output,
         )
         .map_err(crate::error::ListQualificationRequestsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1900,8 +1948,11 @@ pub fn parse_list_qualification_types_error(
     crate::output::ListQualificationTypesOutput,
     crate::error::ListQualificationTypesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListQualificationTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1913,48 +1964,44 @@ pub fn parse_list_qualification_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListQualificationTypesError {
-            meta: generic,
-            kind: crate::error::ListQualificationTypesErrorKind::RequestError({
+        "RequestError" => crate::error::ListQualificationTypesError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListQualificationTypesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListQualificationTypesError {
-            meta: generic,
-            kind: crate::error::ListQualificationTypesErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQualificationTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListQualificationTypesError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListQualificationTypesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListQualificationTypesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListQualificationTypesError::generic(generic),
     })
 }
@@ -1975,6 +2022,9 @@ pub fn parse_list_qualification_types_response(
             output,
         )
         .map_err(crate::error::ListQualificationTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1986,8 +2036,11 @@ pub fn parse_list_reviewable_hi_ts_error(
     crate::output::ListReviewableHiTsOutput,
     crate::error::ListReviewableHITsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListReviewableHITsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListReviewableHITsError::unhandled(generic)),
@@ -1995,48 +2048,44 @@ pub fn parse_list_reviewable_hi_ts_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListReviewableHITsError {
-            meta: generic,
-            kind: crate::error::ListReviewableHITsErrorKind::RequestError({
+        "RequestError" => crate::error::ListReviewableHITsError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReviewableHITsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListReviewableHITsError {
-            meta: generic,
-            kind: crate::error::ListReviewableHITsErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReviewableHITsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListReviewableHITsError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReviewableHITsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReviewableHITsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListReviewableHITsError::generic(generic),
     })
 }
@@ -2057,6 +2106,9 @@ pub fn parse_list_reviewable_hi_ts_response(
             output,
         )
         .map_err(crate::error::ListReviewableHITsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2068,8 +2120,11 @@ pub fn parse_list_review_policy_results_for_hit_error(
     crate::output::ListReviewPolicyResultsForHitOutput,
     crate::error::ListReviewPolicyResultsForHITError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2081,48 +2136,44 @@ pub fn parse_list_review_policy_results_for_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListReviewPolicyResultsForHITError {
-            meta: generic,
-            kind: crate::error::ListReviewPolicyResultsForHITErrorKind::RequestError({
+        "RequestError" => crate::error::ListReviewPolicyResultsForHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListReviewPolicyResultsForHITError {
-            meta: generic,
-            kind: crate::error::ListReviewPolicyResultsForHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListReviewPolicyResultsForHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListReviewPolicyResultsForHITError::generic(generic),
     })
 }
@@ -2145,6 +2196,9 @@ pub fn parse_list_review_policy_results_for_hit_response(
                 output,
             )
             .map_err(crate::error::ListReviewPolicyResultsForHITError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2154,8 +2208,11 @@ pub fn parse_list_worker_blocks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListWorkerBlocksOutput, crate::error::ListWorkerBlocksError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListWorkerBlocksError::unhandled(generic)),
@@ -2163,48 +2220,44 @@ pub fn parse_list_worker_blocks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListWorkerBlocksError {
-            meta: generic,
-            kind: crate::error::ListWorkerBlocksErrorKind::RequestError({
+        "RequestError" => crate::error::ListWorkerBlocksError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListWorkerBlocksError {
-            meta: generic,
-            kind: crate::error::ListWorkerBlocksErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListWorkerBlocksError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListWorkerBlocksError::generic(generic),
     })
 }
@@ -2223,6 +2276,9 @@ pub fn parse_list_worker_blocks_response(
             output,
         )
         .map_err(crate::error::ListWorkerBlocksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2234,8 +2290,11 @@ pub fn parse_list_workers_with_qualification_type_error(
     crate::output::ListWorkersWithQualificationTypeOutput,
     crate::error::ListWorkersWithQualificationTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2245,48 +2304,44 @@ pub fn parse_list_workers_with_qualification_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::ListWorkersWithQualificationTypeError {
-            meta: generic,
-            kind: crate::error::ListWorkersWithQualificationTypeErrorKind::RequestError({
+        "RequestError" => crate::error::ListWorkersWithQualificationTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::ListWorkersWithQualificationTypeError {
-            meta: generic,
-            kind: crate::error::ListWorkersWithQualificationTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::ListWorkersWithQualificationTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListWorkersWithQualificationTypeError::generic(generic),
     })
 }
@@ -2304,6 +2359,9 @@ pub fn parse_list_workers_with_qualification_type_response(
             crate::output::list_workers_with_qualification_type_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_workers_with_qualification_type(response.body().as_ref(), output).map_err(crate::error::ListWorkersWithQualificationTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2312,8 +2370,11 @@ pub fn parse_list_workers_with_qualification_type_response(
 pub fn parse_notify_workers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::NotifyWorkersOutput, crate::error::NotifyWorkersError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::NotifyWorkersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::NotifyWorkersError::unhandled(generic)),
@@ -2321,48 +2382,44 @@ pub fn parse_notify_workers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::NotifyWorkersError {
-            meta: generic,
-            kind: crate::error::NotifyWorkersErrorKind::RequestError({
+        "RequestError" => crate::error::NotifyWorkersError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::NotifyWorkersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::NotifyWorkersError {
-            meta: generic,
-            kind: crate::error::NotifyWorkersErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::NotifyWorkersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::NotifyWorkersError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::NotifyWorkersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::NotifyWorkersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::NotifyWorkersError::generic(generic),
     })
 }
@@ -2380,6 +2437,9 @@ pub fn parse_notify_workers_response(
             output,
         )
         .map_err(crate::error::NotifyWorkersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2389,8 +2449,11 @@ pub fn parse_reject_assignment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RejectAssignmentOutput, crate::error::RejectAssignmentError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectAssignmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RejectAssignmentError::unhandled(generic)),
@@ -2398,48 +2461,44 @@ pub fn parse_reject_assignment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::RejectAssignmentError {
-            meta: generic,
-            kind: crate::error::RejectAssignmentErrorKind::RequestError({
+        "RequestError" => crate::error::RejectAssignmentError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RejectAssignmentError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::RejectAssignmentError {
-            meta: generic,
-            kind: crate::error::RejectAssignmentErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectAssignmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::RejectAssignmentError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RejectAssignmentError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectAssignmentError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::RejectAssignmentError::generic(generic),
     })
 }
@@ -2453,6 +2512,9 @@ pub fn parse_reject_assignment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reject_assignment_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2464,8 +2526,11 @@ pub fn parse_reject_qualification_request_error(
     crate::output::RejectQualificationRequestOutput,
     crate::error::RejectQualificationRequestError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2477,48 +2542,44 @@ pub fn parse_reject_qualification_request_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::RejectQualificationRequestError {
-            meta: generic,
-            kind: crate::error::RejectQualificationRequestErrorKind::RequestError({
+        "RequestError" => crate::error::RejectQualificationRequestError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::RejectQualificationRequestError {
-            meta: generic,
-            kind: crate::error::RejectQualificationRequestErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::RejectQualificationRequestError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RejectQualificationRequestError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::RejectQualificationRequestError::generic(generic),
     })
 }
@@ -2534,6 +2595,9 @@ pub fn parse_reject_qualification_request_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reject_qualification_request_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2542,8 +2606,11 @@ pub fn parse_reject_qualification_request_response(
 pub fn parse_send_bonus_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendBonusOutput, crate::error::SendBonusError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendBonusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendBonusError::unhandled(generic)),
@@ -2551,48 +2618,44 @@ pub fn parse_send_bonus_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::SendBonusError {
-            meta: generic,
-            kind: crate::error::SendBonusErrorKind::RequestError({
+        "RequestError" => crate::error::SendBonusError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendBonusError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::SendBonusError {
-            meta: generic,
-            kind: crate::error::SendBonusErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBonusError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::SendBonusError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendBonusError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBonusError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendBonusError::generic(generic),
     })
 }
@@ -2605,6 +2668,9 @@ pub fn parse_send_bonus_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_bonus_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2616,8 +2682,11 @@ pub fn parse_send_test_event_notification_error(
     crate::output::SendTestEventNotificationOutput,
     crate::error::SendTestEventNotificationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2629,48 +2698,44 @@ pub fn parse_send_test_event_notification_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::SendTestEventNotificationError {
-            meta: generic,
-            kind: crate::error::SendTestEventNotificationErrorKind::RequestError({
+        "RequestError" => crate::error::SendTestEventNotificationError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::SendTestEventNotificationError {
-            meta: generic,
-            kind: crate::error::SendTestEventNotificationErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::SendTestEventNotificationError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTestEventNotificationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendTestEventNotificationError::generic(generic),
     })
 }
@@ -2686,6 +2751,9 @@ pub fn parse_send_test_event_notification_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_test_event_notification_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2697,8 +2765,11 @@ pub fn parse_update_expiration_for_hit_error(
     crate::output::UpdateExpirationForHitOutput,
     crate::error::UpdateExpirationForHITError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2710,48 +2781,44 @@ pub fn parse_update_expiration_for_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::UpdateExpirationForHITError {
-            meta: generic,
-            kind: crate::error::UpdateExpirationForHITErrorKind::RequestError({
+        "RequestError" => crate::error::UpdateExpirationForHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::UpdateExpirationForHITError {
-            meta: generic,
-            kind: crate::error::UpdateExpirationForHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::UpdateExpirationForHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateExpirationForHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateExpirationForHITError::generic(generic),
     })
 }
@@ -2767,6 +2834,9 @@ pub fn parse_update_expiration_for_hit_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_expiration_for_hit_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2778,8 +2848,11 @@ pub fn parse_update_hit_review_status_error(
     crate::output::UpdateHitReviewStatusOutput,
     crate::error::UpdateHITReviewStatusError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateHITReviewStatusError::unhandled(generic)),
@@ -2787,48 +2860,44 @@ pub fn parse_update_hit_review_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::UpdateHITReviewStatusError {
-            meta: generic,
-            kind: crate::error::UpdateHITReviewStatusErrorKind::RequestError({
+        "RequestError" => crate::error::UpdateHITReviewStatusError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::UpdateHITReviewStatusError {
-            meta: generic,
-            kind: crate::error::UpdateHITReviewStatusErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::UpdateHITReviewStatusError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHITReviewStatusError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateHITReviewStatusError::generic(generic),
     })
 }
@@ -2844,6 +2913,9 @@ pub fn parse_update_hit_review_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_hit_review_status_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2855,8 +2927,11 @@ pub fn parse_update_hit_type_of_hit_error(
     crate::output::UpdateHitTypeOfHitOutput,
     crate::error::UpdateHITTypeOfHITError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateHITTypeOfHITError::unhandled(generic)),
@@ -2864,48 +2939,44 @@ pub fn parse_update_hit_type_of_hit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::UpdateHITTypeOfHITError {
-            meta: generic,
-            kind: crate::error::UpdateHITTypeOfHITErrorKind::RequestError({
+        "RequestError" => crate::error::UpdateHITTypeOfHITError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::UpdateHITTypeOfHITError {
-            meta: generic,
-            kind: crate::error::UpdateHITTypeOfHITErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::UpdateHITTypeOfHITError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateHITTypeOfHITError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateHITTypeOfHITError::generic(generic),
     })
 }
@@ -2921,6 +2992,9 @@ pub fn parse_update_hit_type_of_hit_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_hit_type_of_hit_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2932,8 +3006,11 @@ pub fn parse_update_notification_settings_error(
     crate::output::UpdateNotificationSettingsOutput,
     crate::error::UpdateNotificationSettingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2945,48 +3022,44 @@ pub fn parse_update_notification_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::UpdateNotificationSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateNotificationSettingsErrorKind::RequestError({
+        "RequestError" => crate::error::UpdateNotificationSettingsError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::UpdateNotificationSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateNotificationSettingsErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::UpdateNotificationSettingsError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateNotificationSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateNotificationSettingsError::generic(generic),
     })
 }
@@ -3002,6 +3075,9 @@ pub fn parse_update_notification_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_notification_settings_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3013,8 +3089,11 @@ pub fn parse_update_qualification_type_error(
     crate::output::UpdateQualificationTypeOutput,
     crate::error::UpdateQualificationTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3026,48 +3105,44 @@ pub fn parse_update_qualification_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RequestError" => crate::error::UpdateQualificationTypeError {
-            meta: generic,
-            kind: crate::error::UpdateQualificationTypeErrorKind::RequestError({
+        "RequestError" => crate::error::UpdateQualificationTypeError::RequestError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceFault" => crate::error::UpdateQualificationTypeError {
-            meta: generic,
-            kind: crate::error::UpdateQualificationTypeErrorKind::ServiceFault({
+                let mut output = crate::error::request_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceFault" => crate::error::UpdateQualificationTypeError::ServiceFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_fault_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateQualificationTypeError::generic(generic),
     })
 }
@@ -3088,6 +3163,9 @@ pub fn parse_update_qualification_type_response(
             output,
         )
         .map_err(crate::error::UpdateQualificationTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

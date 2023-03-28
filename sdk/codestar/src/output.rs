@@ -21,6 +21,7 @@ pub struct UpdateUserProfileOutput {
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -57,7 +58,13 @@ impl std::fmt::Debug for UpdateUserProfileOutput {
         formatter.field("ssh_public_key", &self.ssh_public_key);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateUserProfileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
@@ -73,6 +80,7 @@ pub mod update_user_profile_output {
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -147,6 +155,15 @@ pub mod update_user_profile_output {
             self.last_modified_timestamp = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateUserProfileOutput`](crate::output::UpdateUserProfileOutput).
         pub fn build(self) -> crate::output::UpdateUserProfileOutput {
             crate::output::UpdateUserProfileOutput {
@@ -156,6 +173,7 @@ pub mod update_user_profile_output {
                 ssh_public_key: self.ssh_public_key,
                 created_timestamp: self.created_timestamp,
                 last_modified_timestamp: self.last_modified_timestamp,
+                _request_id: self._request_id,
             }
         }
     }
@@ -168,6 +186,7 @@ pub mod update_user_profile_output {
             formatter.field("ssh_public_key", &self.ssh_public_key);
             formatter.field("created_timestamp", &self.created_timestamp);
             formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -192,6 +211,7 @@ pub struct UpdateTeamMemberOutput {
     /// <p>Whether a team member is allowed to remotely access project resources using the SSH public key associated with the user's profile.</p>
     #[doc(hidden)]
     pub remote_access_allowed: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl UpdateTeamMemberOutput {
     /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
@@ -207,6 +227,11 @@ impl UpdateTeamMemberOutput {
         self.remote_access_allowed
     }
 }
+impl aws_http::request_id::RequestId for UpdateTeamMemberOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
 pub mod update_team_member_output {
 
@@ -217,6 +242,7 @@ pub mod update_team_member_output {
         pub(crate) user_arn: std::option::Option<std::string::String>,
         pub(crate) project_role: std::option::Option<std::string::String>,
         pub(crate) remote_access_allowed: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user whose team membership attributes were updated.</p>
@@ -249,12 +275,22 @@ pub mod update_team_member_output {
             self.remote_access_allowed = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTeamMemberOutput`](crate::output::UpdateTeamMemberOutput).
         pub fn build(self) -> crate::output::UpdateTeamMemberOutput {
             crate::output::UpdateTeamMemberOutput {
                 user_arn: self.user_arn,
                 project_role: self.project_role,
                 remote_access_allowed: self.remote_access_allowed,
+                _request_id: self._request_id,
             }
         }
     }
@@ -269,18 +305,38 @@ impl UpdateTeamMemberOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateProjectOutput {}
+pub struct UpdateProjectOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
 pub mod update_project_output {
 
     /// A builder for [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
         pub fn build(self) -> crate::output::UpdateProjectOutput {
-            crate::output::UpdateProjectOutput {}
+            crate::output::UpdateProjectOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -294,18 +350,38 @@ impl UpdateProjectOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagProjectOutput {}
+pub struct UntagProjectOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagProjectOutput`](crate::output::UntagProjectOutput).
 pub mod untag_project_output {
 
     /// A builder for [`UntagProjectOutput`](crate::output::UntagProjectOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagProjectOutput`](crate::output::UntagProjectOutput).
         pub fn build(self) -> crate::output::UntagProjectOutput {
-            crate::output::UntagProjectOutput {}
+            crate::output::UntagProjectOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -324,6 +400,7 @@ pub struct TagProjectOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl TagProjectOutput {
     /// <p>The tags for the project.</p>
@@ -332,6 +409,11 @@ impl TagProjectOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for TagProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`TagProjectOutput`](crate::output::TagProjectOutput).
@@ -344,6 +426,7 @@ pub mod tag_project_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -371,9 +454,21 @@ pub mod tag_project_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagProjectOutput`](crate::output::TagProjectOutput).
         pub fn build(self) -> crate::output::TagProjectOutput {
-            crate::output::TagProjectOutput { tags: self.tags }
+            crate::output::TagProjectOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -394,6 +489,7 @@ pub struct ListUserProfilesOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListUserProfilesOutput {
     /// <p>All the user profiles configured in AWS CodeStar for an AWS account.</p>
@@ -403,6 +499,11 @@ impl ListUserProfilesOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListUserProfilesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
@@ -415,6 +516,7 @@ pub mod list_user_profiles_output {
         pub(crate) user_profiles:
             std::option::Option<std::vec::Vec<crate::model::UserProfileSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `user_profiles`.
@@ -446,11 +548,21 @@ pub mod list_user_profiles_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListUserProfilesOutput`](crate::output::ListUserProfilesOutput).
         pub fn build(self) -> crate::output::ListUserProfilesOutput {
             crate::output::ListUserProfilesOutput {
                 user_profiles: self.user_profiles,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -472,6 +584,7 @@ pub struct ListTeamMembersOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTeamMembersOutput {
     /// <p>A list of team member objects for the project.</p>
@@ -483,6 +596,11 @@ impl ListTeamMembersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTeamMembersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
 pub mod list_team_members_output {
 
@@ -492,6 +610,7 @@ pub mod list_team_members_output {
     pub struct Builder {
         pub(crate) team_members: std::option::Option<std::vec::Vec<crate::model::TeamMember>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `team_members`.
@@ -523,11 +642,21 @@ pub mod list_team_members_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTeamMembersOutput`](crate::output::ListTeamMembersOutput).
         pub fn build(self) -> crate::output::ListTeamMembersOutput {
             crate::output::ListTeamMembersOutput {
                 team_members: self.team_members,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -550,6 +679,7 @@ pub struct ListTagsForProjectOutput {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsForProjectOutput {
     /// <p>The tags for the project.</p>
@@ -564,6 +694,11 @@ impl ListTagsForProjectOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
 pub mod list_tags_for_project_output {
 
@@ -575,6 +710,7 @@ pub mod list_tags_for_project_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -612,11 +748,21 @@ pub mod list_tags_for_project_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForProjectOutput`](crate::output::ListTagsForProjectOutput).
         pub fn build(self) -> crate::output::ListTagsForProjectOutput {
             crate::output::ListTagsForProjectOutput {
                 tags: self.tags,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -638,6 +784,7 @@ pub struct ListResourcesOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourcesOutput {
     /// <p>An array of resources associated with the project. </p>
@@ -649,6 +796,11 @@ impl ListResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
@@ -658,6 +810,7 @@ pub mod list_resources_output {
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resources`.
@@ -689,11 +842,21 @@ pub mod list_resources_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput).
         pub fn build(self) -> crate::output::ListResourcesOutput {
             crate::output::ListResourcesOutput {
                 resources: self.resources,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -715,6 +878,7 @@ pub struct ListProjectsOutput {
     /// <p>The continuation token to use when requesting the next set of results, if there are more results to be returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListProjectsOutput {
     /// <p>A list of projects.</p>
@@ -726,6 +890,11 @@ impl ListProjectsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListProjectsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
 
@@ -735,6 +904,7 @@ pub mod list_projects_output {
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `projects`.
@@ -766,11 +936,21 @@ pub mod list_projects_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput).
         pub fn build(self) -> crate::output::ListProjectsOutput {
             crate::output::ListProjectsOutput {
                 projects: self.projects,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -785,18 +965,38 @@ impl ListProjectsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTeamMemberOutput {}
+pub struct DisassociateTeamMemberOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisassociateTeamMemberOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
 pub mod disassociate_team_member_output {
 
     /// A builder for [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateTeamMemberOutput`](crate::output::DisassociateTeamMemberOutput).
         pub fn build(self) -> crate::output::DisassociateTeamMemberOutput {
-            crate::output::DisassociateTeamMemberOutput {}
+            crate::output::DisassociateTeamMemberOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -829,6 +1029,7 @@ pub struct DescribeUserProfileOutput {
     /// <p>The date and time when the user profile was last modified, in timestamp format.</p>
     #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -865,7 +1066,13 @@ impl std::fmt::Debug for DescribeUserProfileOutput {
         formatter.field("ssh_public_key", &self.ssh_public_key);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeUserProfileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
@@ -881,6 +1088,7 @@ pub mod describe_user_profile_output {
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user.</p>
@@ -955,6 +1163,15 @@ pub mod describe_user_profile_output {
             self.last_modified_timestamp = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeUserProfileOutput`](crate::output::DescribeUserProfileOutput).
         pub fn build(self) -> crate::output::DescribeUserProfileOutput {
             crate::output::DescribeUserProfileOutput {
@@ -964,6 +1181,7 @@ pub mod describe_user_profile_output {
                 ssh_public_key: self.ssh_public_key,
                 created_timestamp: self.created_timestamp,
                 last_modified_timestamp: self.last_modified_timestamp,
+                _request_id: self._request_id,
             }
         }
     }
@@ -976,6 +1194,7 @@ pub mod describe_user_profile_output {
             formatter.field("ssh_public_key", &self.ssh_public_key);
             formatter.field("created_timestamp", &self.created_timestamp);
             formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1018,6 +1237,7 @@ pub struct DescribeProjectOutput {
     /// <p>The project creation or deletion status.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ProjectStatus>,
+    _request_id: Option<String>,
 }
 impl DescribeProjectOutput {
     /// <p>The display name for the project.</p>
@@ -1069,7 +1289,13 @@ impl std::fmt::Debug for DescribeProjectOutput {
         formatter.field("stack_id", &self.stack_id);
         formatter.field("project_template_id", &self.project_template_id);
         formatter.field("status", &self.status);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
@@ -1088,6 +1314,7 @@ pub mod describe_project_output {
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) project_template_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ProjectStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The display name for the project.</p>
@@ -1192,6 +1419,15 @@ pub mod describe_project_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
         pub fn build(self) -> crate::output::DescribeProjectOutput {
             crate::output::DescribeProjectOutput {
@@ -1204,6 +1440,7 @@ pub mod describe_project_output {
                 stack_id: self.stack_id,
                 project_template_id: self.project_template_id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1219,6 +1456,7 @@ pub mod describe_project_output {
             formatter.field("stack_id", &self.stack_id);
             formatter.field("project_template_id", &self.project_template_id);
             formatter.field("status", &self.status);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1237,11 +1475,17 @@ pub struct DeleteUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     #[doc(hidden)]
     pub user_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
     pub fn user_arn(&self) -> std::option::Option<&str> {
         self.user_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteUserProfileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
@@ -1252,6 +1496,7 @@ pub mod delete_user_profile_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) user_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
@@ -1264,10 +1509,20 @@ pub mod delete_user_profile_output {
             self.user_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteUserProfileOutput`](crate::output::DeleteUserProfileOutput).
         pub fn build(self) -> crate::output::DeleteUserProfileOutput {
             crate::output::DeleteUserProfileOutput {
                 user_arn: self.user_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1289,6 +1544,7 @@ pub struct DeleteProjectOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted project.</p>
     #[doc(hidden)]
     pub project_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteProjectOutput {
     /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
@@ -1300,6 +1556,11 @@ impl DeleteProjectOutput {
         self.project_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
 
@@ -1309,6 +1570,7 @@ pub mod delete_project_output {
     pub struct Builder {
         pub(crate) stack_id: std::option::Option<std::string::String>,
         pub(crate) project_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the primary stack in AWS CloudFormation that will be deleted as part of deleting the project and its resources.</p>
@@ -1331,11 +1593,21 @@ pub mod delete_project_output {
             self.project_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
         pub fn build(self) -> crate::output::DeleteProjectOutput {
             crate::output::DeleteProjectOutput {
                 stack_id: self.stack_id,
                 project_arn: self.project_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1369,6 +1641,7 @@ pub struct CreateUserProfileOutput {
     /// <p>The date the user profile was last modified, in timestamp format.</p>
     #[doc(hidden)]
     pub last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateUserProfileOutput {
     /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -1405,7 +1678,13 @@ impl std::fmt::Debug for CreateUserProfileOutput {
         formatter.field("ssh_public_key", &self.ssh_public_key);
         formatter.field("created_timestamp", &self.created_timestamp);
         formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for CreateUserProfileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
@@ -1421,6 +1700,7 @@ pub mod create_user_profile_output {
         pub(crate) ssh_public_key: std::option::Option<std::string::String>,
         pub(crate) created_timestamp: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
@@ -1495,6 +1775,15 @@ pub mod create_user_profile_output {
             self.last_modified_timestamp = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateUserProfileOutput`](crate::output::CreateUserProfileOutput).
         pub fn build(self) -> crate::output::CreateUserProfileOutput {
             crate::output::CreateUserProfileOutput {
@@ -1504,6 +1793,7 @@ pub mod create_user_profile_output {
                 ssh_public_key: self.ssh_public_key,
                 created_timestamp: self.created_timestamp,
                 last_modified_timestamp: self.last_modified_timestamp,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1516,6 +1806,7 @@ pub mod create_user_profile_output {
             formatter.field("ssh_public_key", &self.ssh_public_key);
             formatter.field("created_timestamp", &self.created_timestamp);
             formatter.field("last_modified_timestamp", &self.last_modified_timestamp);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1543,6 +1834,7 @@ pub struct CreateProjectOutput {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub project_template_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateProjectOutput {
     /// <p>The ID of the project.</p>
@@ -1562,6 +1854,11 @@ impl CreateProjectOutput {
         self.project_template_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
 pub mod create_project_output {
 
@@ -1573,6 +1870,7 @@ pub mod create_project_output {
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) client_request_token: std::option::Option<std::string::String>,
         pub(crate) project_template_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the project.</p>
@@ -1621,6 +1919,15 @@ pub mod create_project_output {
             self.project_template_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput).
         pub fn build(self) -> crate::output::CreateProjectOutput {
             crate::output::CreateProjectOutput {
@@ -1628,6 +1935,7 @@ pub mod create_project_output {
                 arn: self.arn,
                 client_request_token: self.client_request_token,
                 project_template_id: self.project_template_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1646,11 +1954,17 @@ pub struct AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     #[doc(hidden)]
     pub client_request_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateTeamMemberOutput {
     /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
     pub fn client_request_token(&self) -> std::option::Option<&str> {
         self.client_request_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AssociateTeamMemberOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
@@ -1661,6 +1975,7 @@ pub mod associate_team_member_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_request_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The user- or system-generated token from the initial request that can be used to repeat the request.</p>
@@ -1676,10 +1991,20 @@ pub mod associate_team_member_output {
             self.client_request_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateTeamMemberOutput`](crate::output::AssociateTeamMemberOutput).
         pub fn build(self) -> crate::output::AssociateTeamMemberOutput {
             crate::output::AssociateTeamMemberOutput {
                 client_request_token: self.client_request_token,
+                _request_id: self._request_id,
             }
         }
     }

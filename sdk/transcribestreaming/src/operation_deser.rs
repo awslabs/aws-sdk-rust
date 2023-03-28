@@ -72,6 +72,9 @@ pub fn parse_start_call_analytics_stream_transcription(
             crate::http_serde::deser_header_start_call_analytics_stream_transcription_start_call_analytics_stream_transcription_output_vocabulary_name(response.headers())
                                     .map_err(|_|crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output
             .build()
             .map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?
@@ -85,8 +88,11 @@ pub fn parse_start_call_analytics_stream_transcription_error(
     crate::output::StartCallAnalyticsStreamTranscriptionOutput,
     crate::error::StartCallAnalyticsStreamTranscriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -98,87 +104,100 @@ pub fn parse_start_call_analytics_stream_transcription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ServiceUnavailableException" => {
+            crate::error::StartCallAnalyticsStreamTranscriptionError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "BadRequestException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "BadRequestException" => {
+            crate::error::StartCallAnalyticsStreamTranscriptionError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalFailureException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::InternalFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalFailureException" => {
+            crate::error::StartCallAnalyticsStreamTranscriptionError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ConflictException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::ConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::error::StartCallAnalyticsStreamTranscriptionError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::conflict_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "LimitExceededException" => crate::error::StartCallAnalyticsStreamTranscriptionError { meta: generic, kind: crate::error::StartCallAnalyticsStreamTranscriptionErrorKind::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::StartCallAnalyticsStreamTranscriptionError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartCallAnalyticsStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::StartCallAnalyticsStreamTranscriptionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::StartCallAnalyticsStreamTranscriptionError::generic(generic),
     })
 }
 
@@ -247,6 +266,9 @@ pub fn parse_start_medical_stream_transcription(
             crate::http_serde::deser_header_start_medical_stream_transcription_start_medical_stream_transcription_output_vocabulary_name(response.headers())
                                     .map_err(|_|crate::error::StartMedicalStreamTranscriptionError::unhandled("Failed to parse VocabularyName from header `x-amzn-transcribe-vocabulary-name"))?
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output
             .build()
             .map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?
@@ -260,8 +282,11 @@ pub fn parse_start_medical_stream_transcription_error(
     crate::output::StartMedicalStreamTranscriptionOutput,
     crate::error::StartMedicalStreamTranscriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartMedicalStreamTranscriptionError::unhandled(generic)),
@@ -269,100 +294,97 @@ pub fn parse_start_medical_stream_transcription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => crate::error::StartMedicalStreamTranscriptionError {
-            meta: generic,
-            kind:
-                crate::error::StartMedicalStreamTranscriptionErrorKind::ServiceUnavailableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_unavailable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "BadRequestException" => crate::error::StartMedicalStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartMedicalStreamTranscriptionErrorKind::BadRequestException({
+        "ServiceUnavailableException" => {
+            crate::error::StartMedicalStreamTranscriptionError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "BadRequestException" => {
+            crate::error::StartMedicalStreamTranscriptionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalFailureException" => crate::error::StartMedicalStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartMedicalStreamTranscriptionErrorKind::InternalFailureException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_failure_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ConflictException" => {
-            crate::error::StartMedicalStreamTranscriptionError {
-                meta: generic,
-                kind: crate::error::StartMedicalStreamTranscriptionErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "LimitExceededException" => crate::error::StartMedicalStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartMedicalStreamTranscriptionErrorKind::LimitExceededException({
+        "InternalFailureException" => {
+            crate::error::StartMedicalStreamTranscriptionError::InternalFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::internal_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConflictException" => {
+            crate::error::StartMedicalStreamTranscriptionError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::StartMedicalStreamTranscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartMedicalStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartMedicalStreamTranscriptionError::generic(generic),
     })
 }
@@ -471,6 +493,9 @@ pub fn parse_start_stream_transcription(
             crate::http_serde::deser_header_start_stream_transcription_start_stream_transcription_output_vocabulary_names(response.headers())
                                     .map_err(|_|crate::error::StartStreamTranscriptionError::unhandled("Failed to parse VocabularyNames from header `x-amzn-transcribe-vocabulary-names"))?
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output
             .build()
             .map_err(crate::error::StartStreamTranscriptionError::unhandled)?
@@ -484,8 +509,11 @@ pub fn parse_start_stream_transcription_error(
     crate::output::StartStreamTranscriptionOutput,
     crate::error::StartStreamTranscriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -497,9 +525,8 @@ pub fn parse_start_stream_transcription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceUnavailableException" => crate::error::StartStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartStreamTranscriptionErrorKind::ServiceUnavailableException({
+        "ServiceUnavailableException" => {
+            crate::error::StartStreamTranscriptionError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -507,84 +534,86 @@ pub fn parse_start_stream_transcription_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::StartStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartStreamTranscriptionErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::StartStreamTranscriptionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalFailureException" => crate::error::StartStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartStreamTranscriptionErrorKind::InternalFailureException({
+            })
+        }
+        "InternalFailureException" => {
+            crate::error::StartStreamTranscriptionError::InternalFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::StartStreamTranscriptionError {
-                meta: generic,
-                kind: crate::error::StartStreamTranscriptionErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "LimitExceededException" => crate::error::StartStreamTranscriptionError {
-            meta: generic,
-            kind: crate::error::StartStreamTranscriptionErrorKind::LimitExceededException({
+        "ConflictException" => crate::error::StartStreamTranscriptionError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => {
+            crate::error::StartStreamTranscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartStreamTranscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartStreamTranscriptionError::generic(generic),
     })
 }

@@ -3,18 +3,38 @@
 /// <p> Response of UpdateSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateSubscriberOutput {}
+pub struct UpdateSubscriberOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateSubscriberOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
 pub mod update_subscriber_output {
 
     /// A builder for [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSubscriberOutput`](crate::output::UpdateSubscriberOutput).
         pub fn build(self) -> crate::output::UpdateSubscriberOutput {
-            crate::output::UpdateSubscriberOutput {}
+            crate::output::UpdateSubscriberOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -28,18 +48,38 @@ impl UpdateSubscriberOutput {
 /// <p> Response of UpdateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationOutput {}
+pub struct UpdateNotificationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateNotificationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
 pub mod update_notification_output {
 
     /// A builder for [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateNotificationOutput`](crate::output::UpdateNotificationOutput).
         pub fn build(self) -> crate::output::UpdateNotificationOutput {
-            crate::output::UpdateNotificationOutput {}
+            crate::output::UpdateNotificationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -66,6 +106,7 @@ pub struct UpdateBudgetActionOutput {
     /// <p> The updated action resource information. </p>
     #[doc(hidden)]
     pub new_action: std::option::Option<crate::model::Action>,
+    _request_id: Option<String>,
 }
 impl UpdateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -85,6 +126,11 @@ impl UpdateBudgetActionOutput {
         self.new_action.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBudgetActionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
 pub mod update_budget_action_output {
 
@@ -96,6 +142,7 @@ pub mod update_budget_action_output {
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) old_action: std::option::Option<crate::model::Action>,
         pub(crate) new_action: std::option::Option<crate::model::Action>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -138,6 +185,15 @@ pub mod update_budget_action_output {
             self.new_action = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBudgetActionOutput`](crate::output::UpdateBudgetActionOutput).
         pub fn build(self) -> crate::output::UpdateBudgetActionOutput {
             crate::output::UpdateBudgetActionOutput {
@@ -145,6 +201,7 @@ pub mod update_budget_action_output {
                 budget_name: self.budget_name,
                 old_action: self.old_action,
                 new_action: self.new_action,
+                _request_id: self._request_id,
             }
         }
     }
@@ -159,18 +216,38 @@ impl UpdateBudgetActionOutput {
 /// <p> Response of UpdateBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateBudgetOutput {}
+pub struct UpdateBudgetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateBudgetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
 pub mod update_budget_output {
 
     /// A builder for [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBudgetOutput`](crate::output::UpdateBudgetOutput).
         pub fn build(self) -> crate::output::UpdateBudgetOutput {
-            crate::output::UpdateBudgetOutput {}
+            crate::output::UpdateBudgetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -197,6 +274,7 @@ pub struct ExecuteBudgetActionOutput {
     /// <p> The type of execution. </p>
     #[doc(hidden)]
     pub execution_type: std::option::Option<crate::model::ExecutionType>,
+    _request_id: Option<String>,
 }
 impl ExecuteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -216,6 +294,11 @@ impl ExecuteBudgetActionOutput {
         self.execution_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ExecuteBudgetActionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
 pub mod execute_budget_action_output {
 
@@ -227,6 +310,7 @@ pub mod execute_budget_action_output {
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) action_id: std::option::Option<std::string::String>,
         pub(crate) execution_type: std::option::Option<crate::model::ExecutionType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -272,6 +356,15 @@ pub mod execute_budget_action_output {
             self.execution_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ExecuteBudgetActionOutput`](crate::output::ExecuteBudgetActionOutput).
         pub fn build(self) -> crate::output::ExecuteBudgetActionOutput {
             crate::output::ExecuteBudgetActionOutput {
@@ -279,6 +372,7 @@ pub mod execute_budget_action_output {
                 budget_name: self.budget_name,
                 action_id: self.action_id,
                 execution_type: self.execution_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -300,6 +394,7 @@ pub struct DescribeSubscribersForNotificationOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeSubscribersForNotificationOutput {
     /// <p>A list of subscribers that are associated with a notification.</p>
@@ -311,6 +406,11 @@ impl DescribeSubscribersForNotificationOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSubscribersForNotificationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
 pub mod describe_subscribers_for_notification_output {
 
@@ -320,6 +420,7 @@ pub mod describe_subscribers_for_notification_output {
     pub struct Builder {
         pub(crate) subscribers: std::option::Option<std::vec::Vec<crate::model::Subscriber>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `subscribers`.
@@ -351,11 +452,21 @@ pub mod describe_subscribers_for_notification_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSubscribersForNotificationOutput`](crate::output::DescribeSubscribersForNotificationOutput).
         pub fn build(self) -> crate::output::DescribeSubscribersForNotificationOutput {
             crate::output::DescribeSubscribersForNotificationOutput {
                 subscribers: self.subscribers,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -377,6 +488,7 @@ pub struct DescribeNotificationsForBudgetOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeNotificationsForBudgetOutput {
     /// <p>A list of notifications that are associated with a budget.</p>
@@ -388,6 +500,11 @@ impl DescribeNotificationsForBudgetOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeNotificationsForBudgetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
 pub mod describe_notifications_for_budget_output {
 
@@ -397,6 +514,7 @@ pub mod describe_notifications_for_budget_output {
     pub struct Builder {
         pub(crate) notifications: std::option::Option<std::vec::Vec<crate::model::Notification>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `notifications`.
@@ -428,11 +546,21 @@ pub mod describe_notifications_for_budget_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeNotificationsForBudgetOutput`](crate::output::DescribeNotificationsForBudgetOutput).
         pub fn build(self) -> crate::output::DescribeNotificationsForBudgetOutput {
             crate::output::DescribeNotificationsForBudgetOutput {
                 notifications: self.notifications,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -454,6 +582,7 @@ pub struct DescribeBudgetsOutput {
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetsOutput {
     /// <p>A list of budgets.</p>
@@ -465,6 +594,11 @@ impl DescribeBudgetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBudgetsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
 pub mod describe_budgets_output {
 
@@ -474,6 +608,7 @@ pub mod describe_budgets_output {
     pub struct Builder {
         pub(crate) budgets: std::option::Option<std::vec::Vec<crate::model::Budget>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `budgets`.
@@ -505,11 +640,21 @@ pub mod describe_budgets_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetsOutput`](crate::output::DescribeBudgetsOutput).
         pub fn build(self) -> crate::output::DescribeBudgetsOutput {
             crate::output::DescribeBudgetsOutput {
                 budgets: self.budgets,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -532,6 +677,7 @@ pub struct DescribeBudgetPerformanceHistoryOutput {
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetPerformanceHistoryOutput {
     /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
@@ -546,6 +692,11 @@ impl DescribeBudgetPerformanceHistoryOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBudgetPerformanceHistoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
 pub mod describe_budget_performance_history_output {
 
@@ -556,6 +707,7 @@ pub mod describe_budget_performance_history_output {
         pub(crate) budget_performance_history:
             std::option::Option<crate::model::BudgetPerformanceHistory>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The history of how often the budget has gone into an <code>ALARM</code> state.</p>
@@ -586,11 +738,21 @@ pub mod describe_budget_performance_history_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetPerformanceHistoryOutput`](crate::output::DescribeBudgetPerformanceHistoryOutput).
         pub fn build(self) -> crate::output::DescribeBudgetPerformanceHistoryOutput {
             crate::output::DescribeBudgetPerformanceHistoryOutput {
                 budget_performance_history: self.budget_performance_history,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -613,6 +775,7 @@ pub struct DescribeBudgetNotificationsForAccountOutput {
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetNotificationsForAccountOutput {
     /// <p> A list of budget names and associated notifications for an account. </p>
@@ -626,6 +789,11 @@ impl DescribeBudgetNotificationsForAccountOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBudgetNotificationsForAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
 pub mod describe_budget_notifications_for_account_output {
 
@@ -636,6 +804,7 @@ pub mod describe_budget_notifications_for_account_output {
         pub(crate) budget_notifications_for_account:
             std::option::Option<std::vec::Vec<crate::model::BudgetNotificationsForAccount>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `budget_notifications_for_account`.
@@ -670,11 +839,21 @@ pub mod describe_budget_notifications_for_account_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetNotificationsForAccountOutput`](crate::output::DescribeBudgetNotificationsForAccountOutput).
         pub fn build(self) -> crate::output::DescribeBudgetNotificationsForAccountOutput {
             crate::output::DescribeBudgetNotificationsForAccountOutput {
                 budget_notifications_for_account: self.budget_notifications_for_account,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -696,6 +875,7 @@ pub struct DescribeBudgetActionsForBudgetOutput {
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetActionsForBudgetOutput {
     /// <p> A list of the budget action resources information. </p>
@@ -707,6 +887,11 @@ impl DescribeBudgetActionsForBudgetOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBudgetActionsForBudgetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
 pub mod describe_budget_actions_for_budget_output {
 
@@ -716,6 +901,7 @@ pub mod describe_budget_actions_for_budget_output {
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `actions`.
@@ -747,11 +933,21 @@ pub mod describe_budget_actions_for_budget_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetActionsForBudgetOutput`](crate::output::DescribeBudgetActionsForBudgetOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionsForBudgetOutput {
             crate::output::DescribeBudgetActionsForBudgetOutput {
                 actions: self.actions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -773,6 +969,7 @@ pub struct DescribeBudgetActionsForAccountOutput {
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetActionsForAccountOutput {
     /// <p> A list of the budget action resources information. </p>
@@ -784,6 +981,11 @@ impl DescribeBudgetActionsForAccountOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBudgetActionsForAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
 pub mod describe_budget_actions_for_account_output {
 
@@ -793,6 +995,7 @@ pub mod describe_budget_actions_for_account_output {
     pub struct Builder {
         pub(crate) actions: std::option::Option<std::vec::Vec<crate::model::Action>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `actions`.
@@ -824,11 +1027,21 @@ pub mod describe_budget_actions_for_account_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetActionsForAccountOutput`](crate::output::DescribeBudgetActionsForAccountOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionsForAccountOutput {
             crate::output::DescribeBudgetActionsForAccountOutput {
                 actions: self.actions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -850,6 +1063,7 @@ pub struct DescribeBudgetActionHistoriesOutput {
     /// <p> A generic string.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetActionHistoriesOutput {
     /// <p> The historical record of the budget action resource. </p>
@@ -859,6 +1073,11 @@ impl DescribeBudgetActionHistoriesOutput {
     /// <p> A generic string.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeBudgetActionHistoriesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
@@ -871,6 +1090,7 @@ pub mod describe_budget_action_histories_output {
         pub(crate) action_histories:
             std::option::Option<std::vec::Vec<crate::model::ActionHistory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `action_histories`.
@@ -902,11 +1122,21 @@ pub mod describe_budget_action_histories_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetActionHistoriesOutput`](crate::output::DescribeBudgetActionHistoriesOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionHistoriesOutput {
             crate::output::DescribeBudgetActionHistoriesOutput {
                 action_histories: self.action_histories,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -931,6 +1161,7 @@ pub struct DescribeBudgetActionOutput {
     /// <p> A budget action resource. </p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -946,6 +1177,11 @@ impl DescribeBudgetActionOutput {
         self.action.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeBudgetActionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
 pub mod describe_budget_action_output {
 
@@ -956,6 +1192,7 @@ pub mod describe_budget_action_output {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::Action>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -988,12 +1225,22 @@ pub mod describe_budget_action_output {
             self.action = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetActionOutput`](crate::output::DescribeBudgetActionOutput).
         pub fn build(self) -> crate::output::DescribeBudgetActionOutput {
             crate::output::DescribeBudgetActionOutput {
                 account_id: self.account_id,
                 budget_name: self.budget_name,
                 action: self.action,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1012,11 +1259,17 @@ pub struct DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
     #[doc(hidden)]
     pub budget: std::option::Option<crate::model::Budget>,
+    _request_id: Option<String>,
 }
 impl DescribeBudgetOutput {
     /// <p>The description of the budget.</p>
     pub fn budget(&self) -> std::option::Option<&crate::model::Budget> {
         self.budget.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeBudgetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
@@ -1027,6 +1280,7 @@ pub mod describe_budget_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) budget: std::option::Option<crate::model::Budget>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The description of the budget.</p>
@@ -1039,10 +1293,20 @@ pub mod describe_budget_output {
             self.budget = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBudgetOutput`](crate::output::DescribeBudgetOutput).
         pub fn build(self) -> crate::output::DescribeBudgetOutput {
             crate::output::DescribeBudgetOutput {
                 budget: self.budget,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1057,18 +1321,38 @@ impl DescribeBudgetOutput {
 /// <p> Response of DeleteSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSubscriberOutput {}
+pub struct DeleteSubscriberOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteSubscriberOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
 pub mod delete_subscriber_output {
 
     /// A builder for [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSubscriberOutput`](crate::output::DeleteSubscriberOutput).
         pub fn build(self) -> crate::output::DeleteSubscriberOutput {
-            crate::output::DeleteSubscriberOutput {}
+            crate::output::DeleteSubscriberOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1082,18 +1366,38 @@ impl DeleteSubscriberOutput {
 /// <p> Response of DeleteNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteNotificationOutput {}
+pub struct DeleteNotificationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteNotificationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
 pub mod delete_notification_output {
 
     /// A builder for [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteNotificationOutput`](crate::output::DeleteNotificationOutput).
         pub fn build(self) -> crate::output::DeleteNotificationOutput {
-            crate::output::DeleteNotificationOutput {}
+            crate::output::DeleteNotificationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1117,6 +1421,7 @@ pub struct DeleteBudgetActionOutput {
     /// <p>A budget action resource. </p>
     #[doc(hidden)]
     pub action: std::option::Option<crate::model::Action>,
+    _request_id: Option<String>,
 }
 impl DeleteBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -1132,6 +1437,11 @@ impl DeleteBudgetActionOutput {
         self.action.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBudgetActionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
 pub mod delete_budget_action_output {
 
@@ -1142,6 +1452,7 @@ pub mod delete_budget_action_output {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) action: std::option::Option<crate::model::Action>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -1174,12 +1485,22 @@ pub mod delete_budget_action_output {
             self.action = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBudgetActionOutput`](crate::output::DeleteBudgetActionOutput).
         pub fn build(self) -> crate::output::DeleteBudgetActionOutput {
             crate::output::DeleteBudgetActionOutput {
                 account_id: self.account_id,
                 budget_name: self.budget_name,
                 action: self.action,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1194,18 +1515,38 @@ impl DeleteBudgetActionOutput {
 /// <p> Response of DeleteBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteBudgetOutput {}
+pub struct DeleteBudgetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteBudgetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
 pub mod delete_budget_output {
 
     /// A builder for [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBudgetOutput`](crate::output::DeleteBudgetOutput).
         pub fn build(self) -> crate::output::DeleteBudgetOutput {
-            crate::output::DeleteBudgetOutput {}
+            crate::output::DeleteBudgetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1219,18 +1560,38 @@ impl DeleteBudgetOutput {
 /// <p> Response of CreateSubscriber </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSubscriberOutput {}
+pub struct CreateSubscriberOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateSubscriberOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
 pub mod create_subscriber_output {
 
     /// A builder for [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSubscriberOutput`](crate::output::CreateSubscriberOutput).
         pub fn build(self) -> crate::output::CreateSubscriberOutput {
-            crate::output::CreateSubscriberOutput {}
+            crate::output::CreateSubscriberOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1244,18 +1605,38 @@ impl CreateSubscriberOutput {
 /// <p> Response of CreateNotification </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateNotificationOutput {}
+pub struct CreateNotificationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateNotificationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
 pub mod create_notification_output {
 
     /// A builder for [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateNotificationOutput`](crate::output::CreateNotificationOutput).
         pub fn build(self) -> crate::output::CreateNotificationOutput {
-            crate::output::CreateNotificationOutput {}
+            crate::output::CreateNotificationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1279,6 +1660,7 @@ pub struct CreateBudgetActionOutput {
     /// <p> A system-generated universally unique identifier (UUID) for the action. </p>
     #[doc(hidden)]
     pub action_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBudgetActionOutput {
     /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -1294,6 +1676,11 @@ impl CreateBudgetActionOutput {
         self.action_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBudgetActionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
 pub mod create_budget_action_output {
 
@@ -1304,6 +1691,7 @@ pub mod create_budget_action_output {
         pub(crate) account_id: std::option::Option<std::string::String>,
         pub(crate) budget_name: std::option::Option<std::string::String>,
         pub(crate) action_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The account ID of the user. It's a 12-digit number.</p>
@@ -1336,12 +1724,22 @@ pub mod create_budget_action_output {
             self.action_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBudgetActionOutput`](crate::output::CreateBudgetActionOutput).
         pub fn build(self) -> crate::output::CreateBudgetActionOutput {
             crate::output::CreateBudgetActionOutput {
                 account_id: self.account_id,
                 budget_name: self.budget_name,
                 action_id: self.action_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1356,18 +1754,38 @@ impl CreateBudgetActionOutput {
 /// <p> Response of CreateBudget </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBudgetOutput {}
+pub struct CreateBudgetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateBudgetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
 pub mod create_budget_output {
 
     /// A builder for [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBudgetOutput`](crate::output::CreateBudgetOutput).
         pub fn build(self) -> crate::output::CreateBudgetOutput {
-            crate::output::CreateBudgetOutput {}
+            crate::output::CreateBudgetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

@@ -6,11 +6,17 @@ pub struct QueryWhatIfForecastOutput {
     /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
     #[doc(hidden)]
     pub forecast: std::option::Option<crate::model::Forecast>,
+    _request_id: Option<String>,
 }
 impl QueryWhatIfForecastOutput {
     /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
     pub fn forecast(&self) -> std::option::Option<&crate::model::Forecast> {
         self.forecast.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for QueryWhatIfForecastOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
@@ -21,6 +27,7 @@ pub mod query_what_if_forecast_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast: std::option::Option<crate::model::Forecast>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides information about a forecast. Returned as part of the <code>QueryForecast</code> response.</p>
@@ -33,10 +40,20 @@ pub mod query_what_if_forecast_output {
             self.forecast = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryWhatIfForecastOutput`](crate::output::QueryWhatIfForecastOutput).
         pub fn build(self) -> crate::output::QueryWhatIfForecastOutput {
             crate::output::QueryWhatIfForecastOutput {
                 forecast: self.forecast,
+                _request_id: self._request_id,
             }
         }
     }
@@ -55,11 +72,17 @@ pub struct QueryForecastOutput {
     /// <p>The forecast.</p>
     #[doc(hidden)]
     pub forecast: std::option::Option<crate::model::Forecast>,
+    _request_id: Option<String>,
 }
 impl QueryForecastOutput {
     /// <p>The forecast.</p>
     pub fn forecast(&self) -> std::option::Option<&crate::model::Forecast> {
         self.forecast.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for QueryForecastOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`QueryForecastOutput`](crate::output::QueryForecastOutput).
@@ -70,6 +93,7 @@ pub mod query_forecast_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) forecast: std::option::Option<crate::model::Forecast>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The forecast.</p>
@@ -82,10 +106,20 @@ pub mod query_forecast_output {
             self.forecast = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryForecastOutput`](crate::output::QueryForecastOutput).
         pub fn build(self) -> crate::output::QueryForecastOutput {
             crate::output::QueryForecastOutput {
                 forecast: self.forecast,
+                _request_id: self._request_id,
             }
         }
     }

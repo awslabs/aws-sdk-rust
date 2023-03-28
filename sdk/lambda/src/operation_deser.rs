@@ -6,8 +6,11 @@ pub fn parse_add_layer_version_permission_error(
     crate::output::AddLayerVersionPermissionOutput,
     crate::error::AddLayerVersionPermissionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,49 +22,44 @@ pub fn parse_add_layer_version_permission_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::AddLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::AddLayerVersionPermissionErrorKind::InvalidParameterValueException(
-                {
+        "InvalidParameterValueException" => {
+            crate::error::AddLayerVersionPermissionError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "PolicyLengthExceededException" => crate::error::AddLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::AddLayerVersionPermissionErrorKind::PolicyLengthExceededException(
-                {
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PolicyLengthExceededException" => {
+            crate::error::AddLayerVersionPermissionError::PolicyLengthExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::policy_length_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "PreconditionFailedException" => crate::error::AddLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::AddLayerVersionPermissionErrorKind::PreconditionFailedException({
+                    let mut output =
+                        crate::error::policy_length_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::AddLayerVersionPermissionError::PreconditionFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -69,70 +67,70 @@ pub fn parse_add_layer_version_permission_error(
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::AddLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::AddLayerVersionPermissionErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::AddLayerVersionPermissionError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::AddLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::AddLayerVersionPermissionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::AddLayerVersionPermissionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::AddLayerVersionPermissionError {
-                meta: generic,
-                kind: crate::error::AddLayerVersionPermissionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::AddLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::AddLayerVersionPermissionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::AddLayerVersionPermissionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::AddLayerVersionPermissionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -143,14 +141,15 @@ pub fn parse_add_layer_version_permission_error(
                         crate::http_serde::deser_header_add_layer_version_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::AddLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddLayerVersionPermissionError::generic(generic),
     })
 }
@@ -171,6 +170,9 @@ pub fn parse_add_layer_version_permission_response(
             output,
         )
         .map_err(crate::error::AddLayerVersionPermissionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -179,8 +181,11 @@ pub fn parse_add_layer_version_permission_response(
 pub fn parse_add_permission_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddPermissionOutput, crate::error::AddPermissionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddPermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddPermissionError::unhandled(generic)),
@@ -188,9 +193,8 @@ pub fn parse_add_permission_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::AddPermissionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -198,17 +202,17 @@ pub fn parse_add_permission_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyLengthExceededException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::PolicyLengthExceededException({
+            })
+        }
+        "PolicyLengthExceededException" => {
+            crate::error::AddPermissionError::PolicyLengthExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -216,17 +220,17 @@ pub fn parse_add_permission_error(
                         crate::error::policy_length_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_policy_length_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PreconditionFailedException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::PreconditionFailedException({
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::AddPermissionError::PreconditionFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -234,88 +238,87 @@ pub fn parse_add_permission_error(
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::AddPermissionError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::AddPermissionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::AddPermissionError {
-                meta: generic,
-                kind: crate::error::AddPermissionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::AddPermissionError {
-            meta: generic,
-            kind: crate::error::AddPermissionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::AddPermissionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AddPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::AddPermissionError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddPermissionError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_add_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::AddPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AddPermissionError::generic(generic),
     })
 }
@@ -333,6 +336,9 @@ pub fn parse_add_permission_response(
             output,
         )
         .map_err(crate::error::AddPermissionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -341,8 +347,11 @@ pub fn parse_add_permission_response(
 pub fn parse_create_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAliasError::unhandled(generic)),
@@ -350,9 +359,8 @@ pub fn parse_create_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::CreateAliasError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -360,88 +368,83 @@ pub fn parse_create_alias_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::CreateAliasError {
-                meta: generic,
-                kind: crate::error::CreateAliasErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::TooManyRequestsException({
+        "ResourceConflictException" => crate::error::CreateAliasError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::CreateAliasError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::CreateAliasError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::CreateAliasError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_create_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateAliasError::generic(generic),
     })
 }
@@ -459,6 +462,9 @@ pub fn parse_create_alias_response(
             output,
         )
         .map_err(crate::error::CreateAliasError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -470,8 +476,11 @@ pub fn parse_create_code_signing_config_error(
     crate::output::CreateCodeSigningConfigOutput,
     crate::error::CreateCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -483,9 +492,8 @@ pub fn parse_create_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::CreateCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::CreateCodeSigningConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::CreateCodeSigningConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -493,33 +501,34 @@ pub fn parse_create_code_signing_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::CreateCodeSigningConfigError {
-                meta: generic,
-                kind: crate::error::CreateCodeSigningConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ServiceException" => crate::error::CreateCodeSigningConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateCodeSigningConfigError::generic(generic),
     })
 }
@@ -540,6 +549,9 @@ pub fn parse_create_code_signing_config_response(
             output,
         )
         .map_err(crate::error::CreateCodeSigningConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -551,8 +563,11 @@ pub fn parse_create_event_source_mapping_error(
     crate::output::CreateEventSourceMappingOutput,
     crate::error::CreateEventSourceMappingError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -564,82 +579,79 @@ pub fn parse_create_event_source_mapping_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::CreateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::CreateEventSourceMappingErrorKind::InvalidParameterValueException(
-                {
+        "InvalidParameterValueException" => {
+            crate::error::CreateEventSourceMappingError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceConflictException" => crate::error::CreateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::CreateEventSourceMappingErrorKind::ResourceConflictException({
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::CreateEventSourceMappingError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::CreateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::CreateEventSourceMappingErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::CreateEventSourceMappingError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::CreateEventSourceMappingError {
-                meta: generic,
-                kind: crate::error::CreateEventSourceMappingErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::CreateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::CreateEventSourceMappingErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::CreateEventSourceMappingError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::CreateEventSourceMappingError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -650,14 +662,15 @@ pub fn parse_create_event_source_mapping_error(
                         crate::http_serde::deser_header_create_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateEventSourceMappingError::generic(generic),
     })
 }
@@ -678,6 +691,9 @@ pub fn parse_create_event_source_mapping_response(
             output,
         )
         .map_err(crate::error::CreateEventSourceMappingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -686,8 +702,11 @@ pub fn parse_create_event_source_mapping_response(
 pub fn parse_create_function_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFunctionOutput, crate::error::CreateFunctionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateFunctionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateFunctionError::unhandled(generic)),
@@ -695,9 +714,8 @@ pub fn parse_create_function_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeSigningConfigNotFoundException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::CodeSigningConfigNotFoundException({
+        "CodeSigningConfigNotFoundException" => {
+            crate::error::CreateFunctionError::CodeSigningConfigNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -705,17 +723,17 @@ pub fn parse_create_function_error(
                         crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CodeStorageExceededException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::CodeStorageExceededException({
+            })
+        }
+        "CodeStorageExceededException" => {
+            crate::error::CreateFunctionError::CodeStorageExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -723,17 +741,17 @@ pub fn parse_create_function_error(
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CodeVerificationFailedException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::CodeVerificationFailedException({
+            })
+        }
+        "CodeVerificationFailedException" => {
+            crate::error::CreateFunctionError::CodeVerificationFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -741,17 +759,17 @@ pub fn parse_create_function_error(
                         crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidCodeSignatureException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::InvalidCodeSignatureException({
+            })
+        }
+        "InvalidCodeSignatureException" => {
+            crate::error::CreateFunctionError::InvalidCodeSignatureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -759,17 +777,17 @@ pub fn parse_create_function_error(
                         crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterValueException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::InvalidParameterValueException({
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::error::CreateFunctionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -777,70 +795,70 @@ pub fn parse_create_function_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::CreateFunctionError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::CreateFunctionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::CreateFunctionError {
-                meta: generic,
-                kind: crate::error::CreateFunctionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::CreateFunctionError {
-            meta: generic,
-            kind: crate::error::CreateFunctionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::CreateFunctionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::CreateFunctionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -851,14 +869,15 @@ pub fn parse_create_function_error(
                         crate::http_serde::deser_header_create_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateFunctionError::generic(generic),
     })
 }
@@ -876,6 +895,9 @@ pub fn parse_create_function_response(
             output,
         )
         .map_err(crate::error::CreateFunctionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -887,8 +909,11 @@ pub fn parse_create_function_url_config_error(
     crate::output::CreateFunctionUrlConfigOutput,
     crate::error::CreateFunctionUrlConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -900,9 +925,8 @@ pub fn parse_create_function_url_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::CreateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::CreateFunctionUrlConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::CreateFunctionUrlConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -910,70 +934,70 @@ pub fn parse_create_function_url_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::CreateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::CreateFunctionUrlConfigErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::CreateFunctionUrlConfigError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::CreateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::CreateFunctionUrlConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::CreateFunctionUrlConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::CreateFunctionUrlConfigError {
-                meta: generic,
-                kind: crate::error::CreateFunctionUrlConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::CreateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::CreateFunctionUrlConfigErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::CreateFunctionUrlConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::CreateFunctionUrlConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -984,14 +1008,15 @@ pub fn parse_create_function_url_config_error(
                         crate::http_serde::deser_header_create_function_url_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::CreateFunctionUrlConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateFunctionUrlConfigError::generic(generic),
     })
 }
@@ -1012,6 +1037,9 @@ pub fn parse_create_function_url_config_response(
             output,
         )
         .map_err(crate::error::CreateFunctionUrlConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1020,8 +1048,11 @@ pub fn parse_create_function_url_config_response(
 pub fn parse_delete_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAliasError::unhandled(generic)),
@@ -1029,9 +1060,8 @@ pub fn parse_delete_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::DeleteAliasError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1039,71 +1069,68 @@ pub fn parse_delete_alias_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::DeleteAliasError {
-                meta: generic,
-                kind: crate::error::DeleteAliasErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::TooManyRequestsException({
+        "ResourceConflictException" => crate::error::DeleteAliasError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::DeleteAliasError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::DeleteAliasError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_delete_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteAliasError::generic(generic),
     })
 }
@@ -1116,6 +1143,9 @@ pub fn parse_delete_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_alias_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1127,8 +1157,11 @@ pub fn parse_delete_code_signing_config_error(
     crate::output::DeleteCodeSigningConfigOutput,
     crate::error::DeleteCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1140,9 +1173,8 @@ pub fn parse_delete_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::DeleteCodeSigningConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::DeleteCodeSigningConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1150,67 +1182,68 @@ pub fn parse_delete_code_signing_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::DeleteCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::DeleteCodeSigningConfigErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::DeleteCodeSigningConfigError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::DeleteCodeSigningConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteCodeSigningConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::DeleteCodeSigningConfigError {
-                meta: generic,
-                kind: crate::error::DeleteCodeSigningConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ServiceException" => crate::error::DeleteCodeSigningConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteCodeSigningConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteCodeSigningConfigError::generic(generic),
     })
 }
@@ -1226,6 +1259,9 @@ pub fn parse_delete_code_signing_config_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_code_signing_config_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1237,8 +1273,11 @@ pub fn parse_delete_event_source_mapping_error(
     crate::output::DeleteEventSourceMappingOutput,
     crate::error::DeleteEventSourceMappingError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1250,82 +1289,79 @@ pub fn parse_delete_event_source_mapping_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::DeleteEventSourceMappingErrorKind::InvalidParameterValueException(
-                {
+        "InvalidParameterValueException" => {
+            crate::error::DeleteEventSourceMappingError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceInUseException" => crate::error::DeleteEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::DeleteEventSourceMappingErrorKind::ResourceInUseException({
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceInUseException" => {
+            crate::error::DeleteEventSourceMappingError::ResourceInUseException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::DeleteEventSourceMappingErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteEventSourceMappingError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::DeleteEventSourceMappingError {
-                meta: generic,
-                kind: crate::error::DeleteEventSourceMappingErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DeleteEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::DeleteEventSourceMappingErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::DeleteEventSourceMappingError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::DeleteEventSourceMappingError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1336,14 +1372,15 @@ pub fn parse_delete_event_source_mapping_error(
                         crate::http_serde::deser_header_delete_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteEventSourceMappingError::generic(generic),
     })
 }
@@ -1364,6 +1401,9 @@ pub fn parse_delete_event_source_mapping_response(
             output,
         )
         .map_err(crate::error::DeleteEventSourceMappingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1372,8 +1412,11 @@ pub fn parse_delete_event_source_mapping_response(
 pub fn parse_delete_function_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFunctionOutput, crate::error::DeleteFunctionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFunctionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFunctionError::unhandled(generic)),
@@ -1381,9 +1424,8 @@ pub fn parse_delete_function_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteFunctionError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::DeleteFunctionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1391,70 +1433,70 @@ pub fn parse_delete_function_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::DeleteFunctionError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::DeleteFunctionError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteFunctionError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteFunctionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::DeleteFunctionError {
-                meta: generic,
-                kind: crate::error::DeleteFunctionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DeleteFunctionError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::DeleteFunctionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::DeleteFunctionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1465,14 +1507,15 @@ pub fn parse_delete_function_error(
                         crate::http_serde::deser_header_delete_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteFunctionError::generic(generic),
     })
 }
@@ -1485,6 +1528,9 @@ pub fn parse_delete_function_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_function_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1496,8 +1542,11 @@ pub fn parse_delete_function_code_signing_config_error(
     crate::output::DeleteFunctionCodeSigningConfigOutput,
     crate::error::DeleteFunctionCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled(generic)),
@@ -1505,90 +1554,105 @@ pub fn parse_delete_function_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeSigningConfigNotFoundException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CodeSigningConfigNotFoundException" => {
+            crate::error::DeleteFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidParameterValueException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::code_signing_config_not_found_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InvalidParameterValueException" => {
+            crate::error::DeleteFunctionCodeSigningConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::DeleteFunctionCodeSigningConfigError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteFunctionCodeSigningConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::DeleteFunctionCodeSigningConfigError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::DeleteFunctionCodeSigningConfigError { meta: generic, kind: crate::error::DeleteFunctionCodeSigningConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::DeleteFunctionCodeSigningConfigError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -1597,15 +1661,16 @@ pub fn parse_delete_function_code_signing_config_error(
                         crate::http_serde::deser_header_delete_function_code_signing_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteFunctionCodeSigningConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteFunctionCodeSigningConfigError::generic(generic),
     })
 }
 
@@ -1621,6 +1686,9 @@ pub fn parse_delete_function_code_signing_config_response(
         let mut output =
             crate::output::delete_function_code_signing_config_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1632,8 +1700,11 @@ pub fn parse_delete_function_concurrency_error(
     crate::output::DeleteFunctionConcurrencyOutput,
     crate::error::DeleteFunctionConcurrencyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1645,82 +1716,79 @@ pub fn parse_delete_function_concurrency_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionConcurrencyErrorKind::InvalidParameterValueException(
-                {
+        "InvalidParameterValueException" => {
+            crate::error::DeleteFunctionConcurrencyError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceConflictException" => crate::error::DeleteFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionConcurrencyErrorKind::ResourceConflictException({
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::DeleteFunctionConcurrencyError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionConcurrencyErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteFunctionConcurrencyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::DeleteFunctionConcurrencyError {
-                meta: generic,
-                kind: crate::error::DeleteFunctionConcurrencyErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DeleteFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionConcurrencyErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::DeleteFunctionConcurrencyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteFunctionConcurrencyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::DeleteFunctionConcurrencyError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1731,14 +1799,15 @@ pub fn parse_delete_function_concurrency_error(
                         crate::http_serde::deser_header_delete_function_concurrency_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteFunctionConcurrencyError::generic(generic),
     })
 }
@@ -1754,6 +1823,9 @@ pub fn parse_delete_function_concurrency_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_function_concurrency_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1765,8 +1837,11 @@ pub fn parse_delete_function_event_invoke_config_error(
     crate::output::DeleteFunctionEventInvokeConfigOutput,
     crate::error::DeleteFunctionEventInvokeConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled(generic)),
@@ -1774,74 +1849,84 @@ pub fn parse_delete_function_event_invoke_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::DeleteFunctionEventInvokeConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::DeleteFunctionEventInvokeConfigError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteFunctionEventInvokeConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::DeleteFunctionEventInvokeConfigError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::DeleteFunctionEventInvokeConfigError { meta: generic, kind: crate::error::DeleteFunctionEventInvokeConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::DeleteFunctionEventInvokeConfigError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -1850,15 +1935,16 @@ pub fn parse_delete_function_event_invoke_config_error(
                         crate::http_serde::deser_header_delete_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteFunctionEventInvokeConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteFunctionEventInvokeConfigError::generic(generic),
     })
 }
 
@@ -1874,6 +1960,9 @@ pub fn parse_delete_function_event_invoke_config_response(
         let mut output =
             crate::output::delete_function_event_invoke_config_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1885,8 +1974,11 @@ pub fn parse_delete_function_url_config_error(
     crate::output::DeleteFunctionUrlConfigOutput,
     crate::error::DeleteFunctionUrlConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFunctionUrlConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1898,62 +1990,61 @@ pub fn parse_delete_function_url_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceConflictException" => crate::error::DeleteFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionUrlConfigErrorKind::ResourceConflictException({
+        "ResourceConflictException" => {
+            crate::error::DeleteFunctionUrlConfigError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionUrlConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteFunctionUrlConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::DeleteFunctionUrlConfigError {
-                meta: generic,
-                kind: crate::error::DeleteFunctionUrlConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFunctionUrlConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DeleteFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::DeleteFunctionUrlConfigErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::DeleteFunctionUrlConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteFunctionUrlConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::DeleteFunctionUrlConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1964,14 +2055,15 @@ pub fn parse_delete_function_url_config_error(
                         crate::http_serde::deser_header_delete_function_url_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteFunctionUrlConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteFunctionUrlConfigError::generic(generic),
     })
 }
@@ -1987,6 +2079,9 @@ pub fn parse_delete_function_url_config_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_function_url_config_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1998,8 +2093,11 @@ pub fn parse_delete_layer_version_error(
     crate::output::DeleteLayerVersionOutput,
     crate::error::DeleteLayerVersionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLayerVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLayerVersionError::unhandled(generic)),
@@ -2007,28 +2105,27 @@ pub fn parse_delete_layer_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceException" => {
-            crate::error::DeleteLayerVersionError {
-                meta: generic,
-                kind: crate::error::DeleteLayerVersionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLayerVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "ServiceException" => crate::error::DeleteLayerVersionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteLayerVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "TooManyRequestsException" => crate::error::DeleteLayerVersionError {
-            meta: generic,
-            kind: crate::error::DeleteLayerVersionErrorKind::TooManyRequestsException({
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::DeleteLayerVersionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2039,14 +2136,15 @@ pub fn parse_delete_layer_version_error(
                         crate::http_serde::deser_header_delete_layer_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteLayerVersionError::generic(generic),
     })
 }
@@ -2062,6 +2160,9 @@ pub fn parse_delete_layer_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_layer_version_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2073,8 +2174,11 @@ pub fn parse_delete_provisioned_concurrency_config_error(
     crate::output::DeleteProvisionedConcurrencyConfigOutput,
     crate::error::DeleteProvisionedConcurrencyConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2084,74 +2188,86 @@ pub fn parse_delete_provisioned_concurrency_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::DeleteProvisionedConcurrencyConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::DeleteProvisionedConcurrencyConfigError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteProvisionedConcurrencyConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::DeleteProvisionedConcurrencyConfigError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProvisionedConcurrencyConfigError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::DeleteProvisionedConcurrencyConfigError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::DeleteProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::DeleteProvisionedConcurrencyConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::DeleteProvisionedConcurrencyConfigError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -2160,15 +2276,16 @@ pub fn parse_delete_provisioned_concurrency_config_error(
                         crate::http_serde::deser_header_delete_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::DeleteProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteProvisionedConcurrencyConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteProvisionedConcurrencyConfigError::generic(generic),
     })
 }
 
@@ -2184,6 +2301,9 @@ pub fn parse_delete_provisioned_concurrency_config_response(
         let mut output =
             crate::output::delete_provisioned_concurrency_config_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2195,8 +2315,11 @@ pub fn parse_get_account_settings_error(
     crate::output::GetAccountSettingsOutput,
     crate::error::GetAccountSettingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccountSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAccountSettingsError::unhandled(generic)),
@@ -2204,28 +2327,27 @@ pub fn parse_get_account_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceException" => {
-            crate::error::GetAccountSettingsError {
-                meta: generic,
-                kind: crate::error::GetAccountSettingsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSettingsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "ServiceException" => crate::error::GetAccountSettingsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAccountSettingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "TooManyRequestsException" => crate::error::GetAccountSettingsError {
-            meta: generic,
-            kind: crate::error::GetAccountSettingsErrorKind::TooManyRequestsException({
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetAccountSettingsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2236,14 +2358,15 @@ pub fn parse_get_account_settings_error(
                         crate::http_serde::deser_header_get_account_settings_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetAccountSettingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetAccountSettingsError::generic(generic),
     })
 }
@@ -2264,6 +2387,9 @@ pub fn parse_get_account_settings_response(
             output,
         )
         .map_err(crate::error::GetAccountSettingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2272,8 +2398,11 @@ pub fn parse_get_account_settings_response(
 pub fn parse_get_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAliasOutput, crate::error::GetAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAliasError::unhandled(generic)),
@@ -2281,9 +2410,8 @@ pub fn parse_get_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetAliasError {
-            meta: generic,
-            kind: crate::error::GetAliasErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetAliasError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2291,71 +2419,68 @@ pub fn parse_get_alias_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetAliasError {
-            meta: generic,
-            kind: crate::error::GetAliasErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetAliasError {
-                meta: generic,
-                kind: crate::error::GetAliasErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetAliasError {
-            meta: generic,
-            kind: crate::error::GetAliasErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::error::GetAliasError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::GetAliasError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::GetAliasError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAliasError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetAliasError::generic(generic),
     })
 }
@@ -2373,6 +2498,9 @@ pub fn parse_get_alias_response(
             output,
         )
         .map_err(crate::error::GetAliasError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2384,8 +2512,11 @@ pub fn parse_get_code_signing_config_error(
     crate::output::GetCodeSigningConfigOutput,
     crate::error::GetCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetCodeSigningConfigError::unhandled(generic)),
@@ -2393,9 +2524,8 @@ pub fn parse_get_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::GetCodeSigningConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetCodeSigningConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2403,50 +2533,51 @@ pub fn parse_get_code_signing_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::GetCodeSigningConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetCodeSigningConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetCodeSigningConfigError {
-                meta: generic,
-                kind: crate::error::GetCodeSigningConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ServiceException" => crate::error::GetCodeSigningConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetCodeSigningConfigError::generic(generic),
     })
 }
@@ -2467,6 +2598,9 @@ pub fn parse_get_code_signing_config_response(
             output,
         )
         .map_err(crate::error::GetCodeSigningConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2478,8 +2612,11 @@ pub fn parse_get_event_source_mapping_error(
     crate::output::GetEventSourceMappingOutput,
     crate::error::GetEventSourceMappingError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetEventSourceMappingError::unhandled(generic)),
@@ -2487,9 +2624,8 @@ pub fn parse_get_event_source_mapping_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::GetEventSourceMappingErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetEventSourceMappingError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2497,53 +2633,53 @@ pub fn parse_get_event_source_mapping_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::GetEventSourceMappingErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetEventSourceMappingError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetEventSourceMappingError {
-                meta: generic,
-                kind: crate::error::GetEventSourceMappingErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::GetEventSourceMappingErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::GetEventSourceMappingError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetEventSourceMappingError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2554,14 +2690,15 @@ pub fn parse_get_event_source_mapping_error(
                         crate::http_serde::deser_header_get_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetEventSourceMappingError::generic(generic),
     })
 }
@@ -2582,6 +2719,9 @@ pub fn parse_get_event_source_mapping_response(
             output,
         )
         .map_err(crate::error::GetEventSourceMappingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2590,8 +2730,11 @@ pub fn parse_get_event_source_mapping_response(
 pub fn parse_get_function_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetFunctionOutput, crate::error::GetFunctionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFunctionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetFunctionError::unhandled(generic)),
@@ -2599,9 +2742,8 @@ pub fn parse_get_function_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetFunctionError {
-            meta: generic,
-            kind: crate::error::GetFunctionErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetFunctionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2609,71 +2751,68 @@ pub fn parse_get_function_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetFunctionError {
-            meta: generic,
-            kind: crate::error::GetFunctionErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetFunctionError {
-                meta: generic,
-                kind: crate::error::GetFunctionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetFunctionError {
-            meta: generic,
-            kind: crate::error::GetFunctionErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::error::GetFunctionError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::GetFunctionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::GetFunctionError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetFunctionError::generic(generic),
     })
 }
@@ -2691,6 +2830,9 @@ pub fn parse_get_function_response(
             output,
         )
         .map_err(crate::error::GetFunctionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2702,8 +2844,11 @@ pub fn parse_get_function_code_signing_config_error(
     crate::output::GetFunctionCodeSigningConfigOutput,
     crate::error::GetFunctionCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2715,66 +2860,62 @@ pub fn parse_get_function_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetFunctionCodeSigningConfigError {
-            meta: generic,
-            kind:
-                crate::error::GetFunctionCodeSigningConfigErrorKind::InvalidParameterValueException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_parameter_value_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ResourceNotFoundException" => crate::error::GetFunctionCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionCodeSigningConfigErrorKind::ResourceNotFoundException({
+        "InvalidParameterValueException" => {
+            crate::error::GetFunctionCodeSigningConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetFunctionCodeSigningConfigError {
-                meta: generic,
-                kind: crate::error::GetFunctionCodeSigningConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetFunctionCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionCodeSigningConfigErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => {
+            crate::error::GetFunctionCodeSigningConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::GetFunctionCodeSigningConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetFunctionCodeSigningConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2785,14 +2926,15 @@ pub fn parse_get_function_code_signing_config_error(
                         crate::http_serde::deser_header_get_function_code_signing_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetFunctionCodeSigningConfigError::generic(generic),
     })
 }
@@ -2814,6 +2956,9 @@ pub fn parse_get_function_code_signing_config_response(
                 output,
             )
             .map_err(crate::error::GetFunctionCodeSigningConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2825,8 +2970,11 @@ pub fn parse_get_function_concurrency_error(
     crate::output::GetFunctionConcurrencyOutput,
     crate::error::GetFunctionConcurrencyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2838,9 +2986,8 @@ pub fn parse_get_function_concurrency_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::GetFunctionConcurrencyErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetFunctionConcurrencyError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2848,53 +2995,53 @@ pub fn parse_get_function_concurrency_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::GetFunctionConcurrencyErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetFunctionConcurrencyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetFunctionConcurrencyError {
-                meta: generic,
-                kind: crate::error::GetFunctionConcurrencyErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::GetFunctionConcurrencyErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::GetFunctionConcurrencyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetFunctionConcurrencyError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2905,14 +3052,15 @@ pub fn parse_get_function_concurrency_error(
                         crate::http_serde::deser_header_get_function_concurrency_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetFunctionConcurrencyError::generic(generic),
     })
 }
@@ -2933,6 +3081,9 @@ pub fn parse_get_function_concurrency_response(
             output,
         )
         .map_err(crate::error::GetFunctionConcurrencyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2944,8 +3095,11 @@ pub fn parse_get_function_configuration_error(
     crate::output::GetFunctionConfigurationOutput,
     crate::error::GetFunctionConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2957,65 +3111,62 @@ pub fn parse_get_function_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetFunctionConfigurationError {
-            meta: generic,
-            kind: crate::error::GetFunctionConfigurationErrorKind::InvalidParameterValueException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceNotFoundException" => crate::error::GetFunctionConfigurationError {
-            meta: generic,
-            kind: crate::error::GetFunctionConfigurationErrorKind::ResourceNotFoundException({
+        "InvalidParameterValueException" => {
+            crate::error::GetFunctionConfigurationError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetFunctionConfigurationError {
-                meta: generic,
-                kind: crate::error::GetFunctionConfigurationErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetFunctionConfigurationError {
-            meta: generic,
-            kind: crate::error::GetFunctionConfigurationErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => {
+            crate::error::GetFunctionConfigurationError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::GetFunctionConfigurationError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetFunctionConfigurationError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3026,14 +3177,15 @@ pub fn parse_get_function_configuration_error(
                         crate::http_serde::deser_header_get_function_configuration_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetFunctionConfigurationError::generic(generic),
     })
 }
@@ -3054,6 +3206,9 @@ pub fn parse_get_function_configuration_response(
             output,
         )
         .map_err(crate::error::GetFunctionConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3065,8 +3220,11 @@ pub fn parse_get_function_event_invoke_config_error(
     crate::output::GetFunctionEventInvokeConfigOutput,
     crate::error::GetFunctionEventInvokeConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3078,66 +3236,62 @@ pub fn parse_get_function_event_invoke_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetFunctionEventInvokeConfigError {
-            meta: generic,
-            kind:
-                crate::error::GetFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_parameter_value_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ResourceNotFoundException" => crate::error::GetFunctionEventInvokeConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
+        "InvalidParameterValueException" => {
+            crate::error::GetFunctionEventInvokeConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetFunctionEventInvokeConfigError {
-                meta: generic,
-                kind: crate::error::GetFunctionEventInvokeConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetFunctionEventInvokeConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionEventInvokeConfigErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => {
+            crate::error::GetFunctionEventInvokeConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::GetFunctionEventInvokeConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetFunctionEventInvokeConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3148,14 +3302,15 @@ pub fn parse_get_function_event_invoke_config_error(
                         crate::http_serde::deser_header_get_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetFunctionEventInvokeConfigError::generic(generic),
     })
 }
@@ -3177,6 +3332,9 @@ pub fn parse_get_function_event_invoke_config_response(
                 output,
             )
             .map_err(crate::error::GetFunctionEventInvokeConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3188,8 +3346,11 @@ pub fn parse_get_function_url_config_error(
     crate::output::GetFunctionUrlConfigOutput,
     crate::error::GetFunctionUrlConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFunctionUrlConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetFunctionUrlConfigError::unhandled(generic)),
@@ -3197,9 +3358,8 @@ pub fn parse_get_function_url_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionUrlConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetFunctionUrlConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3207,53 +3367,53 @@ pub fn parse_get_function_url_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionUrlConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetFunctionUrlConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetFunctionUrlConfigError {
-                meta: generic,
-                kind: crate::error::GetFunctionUrlConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetFunctionUrlConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::GetFunctionUrlConfigErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::GetFunctionUrlConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetFunctionUrlConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetFunctionUrlConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3264,14 +3424,15 @@ pub fn parse_get_function_url_config_error(
                         crate::http_serde::deser_header_get_function_url_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetFunctionUrlConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetFunctionUrlConfigError::generic(generic),
     })
 }
@@ -3292,6 +3453,9 @@ pub fn parse_get_function_url_config_response(
             output,
         )
         .map_err(crate::error::GetFunctionUrlConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3300,8 +3464,11 @@ pub fn parse_get_function_url_config_response(
 pub fn parse_get_layer_version_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLayerVersionOutput, crate::error::GetLayerVersionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLayerVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLayerVersionError::unhandled(generic)),
@@ -3309,9 +3476,8 @@ pub fn parse_get_layer_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetLayerVersionError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetLayerVersionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3319,53 +3485,53 @@ pub fn parse_get_layer_version_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetLayerVersionError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetLayerVersionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetLayerVersionError {
-                meta: generic,
-                kind: crate::error::GetLayerVersionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetLayerVersionError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::GetLayerVersionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetLayerVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetLayerVersionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3376,14 +3542,15 @@ pub fn parse_get_layer_version_error(
                         crate::http_serde::deser_header_get_layer_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetLayerVersionError::generic(generic),
     })
 }
@@ -3401,6 +3568,9 @@ pub fn parse_get_layer_version_response(
             output,
         )
         .map_err(crate::error::GetLayerVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3412,8 +3582,11 @@ pub fn parse_get_layer_version_by_arn_error(
     crate::output::GetLayerVersionByArnOutput,
     crate::error::GetLayerVersionByArnError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLayerVersionByArnError::unhandled(generic)),
@@ -3421,9 +3594,8 @@ pub fn parse_get_layer_version_by_arn_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetLayerVersionByArnError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionByArnErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetLayerVersionByArnError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3431,53 +3603,53 @@ pub fn parse_get_layer_version_by_arn_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetLayerVersionByArnError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionByArnErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetLayerVersionByArnError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetLayerVersionByArnError {
-                meta: generic,
-                kind: crate::error::GetLayerVersionByArnErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetLayerVersionByArnError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionByArnErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::GetLayerVersionByArnError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetLayerVersionByArnError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3488,14 +3660,15 @@ pub fn parse_get_layer_version_by_arn_error(
                         crate::http_serde::deser_header_get_layer_version_by_arn_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetLayerVersionByArnError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetLayerVersionByArnError::generic(generic),
     })
 }
@@ -3516,6 +3689,9 @@ pub fn parse_get_layer_version_by_arn_response(
             output,
         )
         .map_err(crate::error::GetLayerVersionByArnError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3527,8 +3703,11 @@ pub fn parse_get_layer_version_policy_error(
     crate::output::GetLayerVersionPolicyOutput,
     crate::error::GetLayerVersionPolicyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLayerVersionPolicyError::unhandled(generic)),
@@ -3536,9 +3715,8 @@ pub fn parse_get_layer_version_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetLayerVersionPolicyError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionPolicyErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetLayerVersionPolicyError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3546,53 +3724,53 @@ pub fn parse_get_layer_version_policy_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetLayerVersionPolicyError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionPolicyErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetLayerVersionPolicyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetLayerVersionPolicyError {
-                meta: generic,
-                kind: crate::error::GetLayerVersionPolicyErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetLayerVersionPolicyError {
-            meta: generic,
-            kind: crate::error::GetLayerVersionPolicyErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::GetLayerVersionPolicyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetLayerVersionPolicyError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3603,14 +3781,15 @@ pub fn parse_get_layer_version_policy_error(
                         crate::http_serde::deser_header_get_layer_version_policy_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetLayerVersionPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetLayerVersionPolicyError::generic(generic),
     })
 }
@@ -3631,6 +3810,9 @@ pub fn parse_get_layer_version_policy_response(
             output,
         )
         .map_err(crate::error::GetLayerVersionPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3639,8 +3821,11 @@ pub fn parse_get_layer_version_policy_response(
 pub fn parse_get_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPolicyError::unhandled(generic)),
@@ -3648,9 +3833,8 @@ pub fn parse_get_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetPolicyError {
-            meta: generic,
-            kind: crate::error::GetPolicyErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::GetPolicyError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3658,71 +3842,68 @@ pub fn parse_get_policy_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetPolicyError {
-            meta: generic,
-            kind: crate::error::GetPolicyErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetPolicyError {
-                meta: generic,
-                kind: crate::error::GetPolicyErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetPolicyError {
-            meta: generic,
-            kind: crate::error::GetPolicyErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::error::GetPolicyError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::GetPolicyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::GetPolicyError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_get_policy_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetPolicyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetPolicyError::generic(generic),
     })
 }
@@ -3740,6 +3921,9 @@ pub fn parse_get_policy_response(
             output,
         )
         .map_err(crate::error::GetPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3751,8 +3935,11 @@ pub fn parse_get_provisioned_concurrency_config_error(
     crate::output::GetProvisionedConcurrencyConfigOutput,
     crate::error::GetProvisionedConcurrencyConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetProvisionedConcurrencyConfigError::unhandled(generic)),
@@ -3760,7 +3947,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => crate::error::GetProvisionedConcurrencyConfigError::InvalidParameterValueException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3768,6 +3955,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                     let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3775,8 +3963,8 @@ pub fn parse_get_provisioned_concurrency_config_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ProvisionedConcurrencyConfigNotFoundException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::ProvisionedConcurrencyConfigNotFoundException({
+        }),
+        "ProvisionedConcurrencyConfigNotFoundException" => crate::error::GetProvisionedConcurrencyConfigError::ProvisionedConcurrencyConfigNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3784,6 +3972,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                     let mut output = crate::error::provisioned_concurrency_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_provisioned_concurrency_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3791,8 +3980,8 @@ pub fn parse_get_provisioned_concurrency_config_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ResourceNotFoundException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException({
+        }),
+        "ResourceNotFoundException" => crate::error::GetProvisionedConcurrencyConfigError::ResourceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3800,6 +3989,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3807,8 +3997,8 @@ pub fn parse_get_provisioned_concurrency_config_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::ServiceException({
+        }),
+        "ServiceException" => crate::error::GetProvisionedConcurrencyConfigError::ServiceException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3816,6 +4006,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3823,8 +4014,8 @@ pub fn parse_get_provisioned_concurrency_config_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "TooManyRequestsException" => crate::error::GetProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::GetProvisionedConcurrencyConfigErrorKind::TooManyRequestsException({
+        }),
+        "TooManyRequestsException" => crate::error::GetProvisionedConcurrencyConfigError::TooManyRequestsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3836,6 +4027,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                         crate::http_serde::deser_header_get_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3843,7 +4035,7 @@ pub fn parse_get_provisioned_concurrency_config_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GetProvisionedConcurrencyConfigError::generic(generic)
     })
 }
@@ -3866,6 +4058,9 @@ pub fn parse_get_provisioned_concurrency_config_response(
                 output,
             )
             .map_err(crate::error::GetProvisionedConcurrencyConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3877,8 +4072,11 @@ pub fn parse_get_runtime_management_config_error(
     crate::output::GetRuntimeManagementConfigOutput,
     crate::error::GetRuntimeManagementConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3890,65 +4088,62 @@ pub fn parse_get_runtime_management_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::GetRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::GetRuntimeManagementConfigErrorKind::InvalidParameterValueException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceNotFoundException" => crate::error::GetRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::GetRuntimeManagementConfigErrorKind::ResourceNotFoundException({
+        "InvalidParameterValueException" => {
+            crate::error::GetRuntimeManagementConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::GetRuntimeManagementConfigError {
-                meta: generic,
-                kind: crate::error::GetRuntimeManagementConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::GetRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::GetRuntimeManagementConfigErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => {
+            crate::error::GetRuntimeManagementConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::GetRuntimeManagementConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::GetRuntimeManagementConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3959,14 +4154,15 @@ pub fn parse_get_runtime_management_config_error(
                         crate::http_serde::deser_header_get_runtime_management_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::GetRuntimeManagementConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetRuntimeManagementConfigError::generic(generic),
     })
 }
@@ -3987,6 +4183,9 @@ pub fn parse_get_runtime_management_config_response(
             output,
         )
         .map_err(crate::error::GetRuntimeManagementConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3995,8 +4194,11 @@ pub fn parse_get_runtime_management_config_response(
 pub fn parse_invoke_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InvokeOutput, crate::error::InvokeError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::InvokeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::InvokeError::unhandled(generic)),
@@ -4004,79 +4206,72 @@ pub fn parse_invoke_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EC2AccessDeniedException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::Ec2AccessDeniedException({
+        "EC2AccessDeniedException" => crate::error::InvokeError::Ec2AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::ec2_access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EC2ThrottledException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::Ec2ThrottledException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::ec2_throttled_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EC2UnexpectedException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::Ec2UnexpectedException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::ec2_unexpected_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_ec2_unexpected_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EFSIOException" => {
-            crate::error::InvokeError {
-                meta: generic,
-                kind: crate::error::InvokeErrorKind::EfsioException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::efsio_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_efsio_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::ec2_access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_ec2_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "EFSMountConnectivityException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::EfsMountConnectivityException({
+            tmp
+        }),
+        "EC2ThrottledException" => crate::error::InvokeError::Ec2ThrottledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::ec2_throttled_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_ec2_throttled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EC2UnexpectedException" => crate::error::InvokeError::Ec2UnexpectedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::ec2_unexpected_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_ec2_unexpected_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EFSIOException" => crate::error::InvokeError::EfsioException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::efsio_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_efsio_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EFSMountConnectivityException" => {
+            crate::error::InvokeError::EfsMountConnectivityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4084,68 +4279,62 @@ pub fn parse_invoke_error(
                         crate::error::efs_mount_connectivity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_efs_mount_connectivity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EFSMountFailureException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::EfsMountFailureException({
+            })
+        }
+        "EFSMountFailureException" => crate::error::InvokeError::EfsMountFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::efs_mount_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_efs_mount_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EFSMountTimeoutException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::EfsMountTimeoutException({
+                let mut output = crate::error::efs_mount_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_efs_mount_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EFSMountTimeoutException" => crate::error::InvokeError::EfsMountTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::efs_mount_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_efs_mount_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ENILimitReachedException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::EniLimitReachedException({
+                let mut output = crate::error::efs_mount_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_efs_mount_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ENILimitReachedException" => crate::error::InvokeError::EniLimitReachedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::eni_limit_reached_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_eni_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidParameterValueException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::InvalidParameterValueException({
+                let mut output = crate::error::eni_limit_reached_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_eni_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidParameterValueException" => {
+            crate::error::InvokeError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4153,17 +4342,17 @@ pub fn parse_invoke_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestContentException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::InvalidRequestContentException({
+            })
+        }
+        "InvalidRequestContentException" => {
+            crate::error::InvokeError::InvalidRequestContentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4171,34 +4360,32 @@ pub fn parse_invoke_error(
                         crate::error::invalid_request_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRuntimeException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::InvalidRuntimeException({
+            })
+        }
+        "InvalidRuntimeException" => crate::error::InvokeError::InvalidRuntimeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_runtime_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidSecurityGroupIDException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::InvalidSecurityGroupIdException({
+                let mut output = crate::error::invalid_runtime_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidSecurityGroupIDException" => {
+            crate::error::InvokeError::InvalidSecurityGroupIdException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4206,258 +4393,235 @@ pub fn parse_invoke_error(
                         crate::error::invalid_security_group_id_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_security_group_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSubnetIDException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::InvalidSubnetIdException({
+            })
+        }
+        "InvalidSubnetIDException" => crate::error::InvokeError::InvalidSubnetIdException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet_id_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_subnet_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidZipFileException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::InvalidZipFileException({
+                let mut output = crate::error::invalid_subnet_id_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_subnet_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidZipFileException" => crate::error::InvokeError::InvalidZipFileException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_zip_file_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_zip_file_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSAccessDeniedException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::KmsAccessDeniedException({
+                let mut output = crate::error::invalid_zip_file_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_zip_file_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSAccessDeniedException" => crate::error::InvokeError::KmsAccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSDisabledException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::KmsDisabledException({
+                let mut output = crate::error::kms_access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSDisabledException" => {
+            crate::error::InvokeError::KmsDisabledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::KmsInvalidStateException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSNotFoundException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::KmsNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RequestTooLargeException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::RequestTooLargeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_too_large_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotReadyException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::ResourceNotReadyException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_ready_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::InvokeError {
-                meta: generic,
-                kind: crate::error::InvokeErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "SnapStartException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::SnapStartException({
+        "KMSInvalidStateException" => crate::error::InvokeError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSNotFoundException" => crate::error::InvokeError::KmsNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::kms_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestTooLargeException" => crate::error::InvokeError::RequestTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::request_too_large_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_too_large_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceConflictException" => crate::error::InvokeError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::InvokeError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotReadyException" => crate::error::InvokeError::ResourceNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_ready_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::InvokeError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SnapStartException" => {
+            crate::error::InvokeError::SnapStartException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::snap_start_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_snap_start_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SnapStartNotReadyException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::SnapStartNotReadyException({
+            })
+        }
+        "SnapStartNotReadyException" => crate::error::InvokeError::SnapStartNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::snap_start_not_ready_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_snap_start_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "SnapStartTimeoutException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::SnapStartTimeoutException({
+                let mut output = crate::error::snap_start_not_ready_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_snap_start_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SnapStartTimeoutException" => crate::error::InvokeError::SnapStartTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::snap_start_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_snap_start_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "SubnetIPAddressLimitReachedException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::SubnetIpAddressLimitReachedException({
+                let mut output = crate::error::snap_start_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_snap_start_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SubnetIPAddressLimitReachedException" => {
+            crate::error::InvokeError::SubnetIpAddressLimitReachedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4465,38 +4629,36 @@ pub fn parse_invoke_error(
                         crate::error::subnet_ip_address_limit_reached_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_subnet_ip_address_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyRequestsException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::TooManyRequestsException({
+            })
+        }
+        "TooManyRequestsException" => crate::error::InvokeError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_invoke_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::InvokeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnsupportedMediaTypeException" => crate::error::InvokeError {
-            meta: generic,
-            kind: crate::error::InvokeErrorKind::UnsupportedMediaTypeException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedMediaTypeException" => {
+            crate::error::InvokeError::UnsupportedMediaTypeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4504,14 +4666,15 @@ pub fn parse_invoke_error(
                         crate::error::unsupported_media_type_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_media_type_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::InvokeError::generic(generic),
     })
 }
@@ -4556,6 +4719,9 @@ pub fn parse_invoke_response(
             )?,
         );
         output = output.set_status_code(Some(response.status().as_u16() as _));
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4564,8 +4730,11 @@ pub fn parse_invoke_response(
 pub fn parse_invoke_async_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InvokeAsyncOutput, crate::error::InvokeAsyncError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::InvokeAsyncError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::InvokeAsyncError::unhandled(generic)),
@@ -4573,9 +4742,8 @@ pub fn parse_invoke_async_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidRequestContentException" => crate::error::InvokeAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeAsyncErrorKind::InvalidRequestContentException({
+        "InvalidRequestContentException" => {
+            crate::error::InvokeAsyncError::InvalidRequestContentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4583,84 +4751,79 @@ pub fn parse_invoke_async_error(
                         crate::error::invalid_request_content_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_content_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRuntimeException" => crate::error::InvokeAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeAsyncErrorKind::InvalidRuntimeException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_runtime_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::InvokeAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeAsyncErrorKind::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::InvokeAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeAsyncErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::InvokeAsyncError {
-                meta: generic,
-                kind: crate::error::InvokeAsyncErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "InvalidRuntimeException" => crate::error::InvokeAsyncError::InvalidRuntimeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_runtime_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_runtime_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceConflictException" => crate::error::InvokeAsyncError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::InvokeAsyncError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::InvokeAsyncError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::InvokeAsyncError::generic(generic),
     })
 }
@@ -4674,6 +4837,9 @@ pub fn parse_invoke_async_response(
         let mut output = crate::output::invoke_async_output::Builder::default();
         let _ = response;
         output = output.set_status(Some(response.status().as_u16() as _));
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4682,8 +4848,11 @@ pub fn parse_invoke_async_response(
 pub fn parse_list_aliases_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAliasesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAliasesError::unhandled(generic)),
@@ -4691,9 +4860,8 @@ pub fn parse_list_aliases_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListAliasesError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4701,71 +4869,68 @@ pub fn parse_list_aliases_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListAliasesError {
-                meta: generic,
-                kind: crate::error::ListAliasesErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::error::ListAliasesError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::ListAliasesError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListAliasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::ListAliasesError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_aliases_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListAliasesError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListAliasesError::generic(generic),
     })
 }
@@ -4783,6 +4948,9 @@ pub fn parse_list_aliases_response(
             output,
         )
         .map_err(crate::error::ListAliasesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4794,8 +4962,11 @@ pub fn parse_list_code_signing_configs_error(
     crate::output::ListCodeSigningConfigsOutput,
     crate::error::ListCodeSigningConfigsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4807,9 +4978,8 @@ pub fn parse_list_code_signing_configs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListCodeSigningConfigsError {
-            meta: generic,
-            kind: crate::error::ListCodeSigningConfigsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListCodeSigningConfigsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4817,33 +4987,34 @@ pub fn parse_list_code_signing_configs_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListCodeSigningConfigsError {
-                meta: generic,
-                kind: crate::error::ListCodeSigningConfigsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ServiceException" => crate::error::ListCodeSigningConfigsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListCodeSigningConfigsError::generic(generic),
     })
 }
@@ -4864,6 +5035,9 @@ pub fn parse_list_code_signing_configs_response(
             output,
         )
         .map_err(crate::error::ListCodeSigningConfigsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4875,8 +5049,11 @@ pub fn parse_list_event_source_mappings_error(
     crate::output::ListEventSourceMappingsOutput,
     crate::error::ListEventSourceMappingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4888,9 +5065,8 @@ pub fn parse_list_event_source_mappings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListEventSourceMappingsError {
-            meta: generic,
-            kind: crate::error::ListEventSourceMappingsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListEventSourceMappingsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4898,53 +5074,53 @@ pub fn parse_list_event_source_mappings_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListEventSourceMappingsError {
-            meta: generic,
-            kind: crate::error::ListEventSourceMappingsErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListEventSourceMappingsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListEventSourceMappingsError {
-                meta: generic,
-                kind: crate::error::ListEventSourceMappingsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListEventSourceMappingsError {
-            meta: generic,
-            kind: crate::error::ListEventSourceMappingsErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::ListEventSourceMappingsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::ListEventSourceMappingsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4955,14 +5131,15 @@ pub fn parse_list_event_source_mappings_error(
                         crate::http_serde::deser_header_list_event_source_mappings_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListEventSourceMappingsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListEventSourceMappingsError::generic(generic),
     })
 }
@@ -4983,6 +5160,9 @@ pub fn parse_list_event_source_mappings_response(
             output,
         )
         .map_err(crate::error::ListEventSourceMappingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4994,8 +5174,11 @@ pub fn parse_list_function_event_invoke_configs_error(
     crate::output::ListFunctionEventInvokeConfigsOutput,
     crate::error::ListFunctionEventInvokeConfigsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListFunctionEventInvokeConfigsError::unhandled(generic)),
@@ -5003,58 +5186,67 @@ pub fn parse_list_function_event_invoke_configs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::ListFunctionEventInvokeConfigsError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListFunctionEventInvokeConfigsError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::ListFunctionEventInvokeConfigsError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::ListFunctionEventInvokeConfigsError { meta: generic, kind: crate::error::ListFunctionEventInvokeConfigsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::ListFunctionEventInvokeConfigsError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -5063,15 +5255,16 @@ pub fn parse_list_function_event_invoke_configs_error(
                         crate::http_serde::deser_header_list_function_event_invoke_configs_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListFunctionEventInvokeConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListFunctionEventInvokeConfigsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListFunctionEventInvokeConfigsError::generic(generic),
     })
 }
 
@@ -5093,6 +5286,9 @@ pub fn parse_list_function_event_invoke_configs_response(
                 output,
             )
             .map_err(crate::error::ListFunctionEventInvokeConfigsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5101,8 +5297,11 @@ pub fn parse_list_function_event_invoke_configs_response(
 pub fn parse_list_functions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListFunctionsOutput, crate::error::ListFunctionsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListFunctionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListFunctionsError::unhandled(generic)),
@@ -5110,9 +5309,8 @@ pub fn parse_list_functions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListFunctionsError {
-            meta: generic,
-            kind: crate::error::ListFunctionsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListFunctionsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5120,54 +5318,53 @@ pub fn parse_list_functions_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListFunctionsError {
-                meta: generic,
-                kind: crate::error::ListFunctionsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListFunctionsError {
-            meta: generic,
-            kind: crate::error::ListFunctionsErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::ListFunctionsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListFunctionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::ListFunctionsError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_functions_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListFunctionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListFunctionsError::generic(generic),
     })
 }
@@ -5185,6 +5382,9 @@ pub fn parse_list_functions_response(
             output,
         )
         .map_err(crate::error::ListFunctionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5196,8 +5396,11 @@ pub fn parse_list_functions_by_code_signing_config_error(
     crate::output::ListFunctionsByCodeSigningConfigOutput,
     crate::error::ListFunctionsByCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5207,55 +5410,64 @@ pub fn parse_list_functions_by_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListFunctionsByCodeSigningConfigError { meta: generic, kind: crate::error::ListFunctionsByCodeSigningConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::ListFunctionsByCodeSigningConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::ListFunctionsByCodeSigningConfigError { meta: generic, kind: crate::error::ListFunctionsByCodeSigningConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListFunctionsByCodeSigningConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::ListFunctionsByCodeSigningConfigError { meta: generic, kind: crate::error::ListFunctionsByCodeSigningConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::ListFunctionsByCodeSigningConfigError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListFunctionsByCodeSigningConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListFunctionsByCodeSigningConfigError::generic(generic),
     })
 }
 
@@ -5272,6 +5484,9 @@ pub fn parse_list_functions_by_code_signing_config_response(
             crate::output::list_functions_by_code_signing_config_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_functions_by_code_signing_config(response.body().as_ref(), output).map_err(crate::error::ListFunctionsByCodeSigningConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5283,8 +5498,11 @@ pub fn parse_list_function_url_configs_error(
     crate::output::ListFunctionUrlConfigsOutput,
     crate::error::ListFunctionUrlConfigsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListFunctionUrlConfigsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5296,9 +5514,8 @@ pub fn parse_list_function_url_configs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListFunctionUrlConfigsError {
-            meta: generic,
-            kind: crate::error::ListFunctionUrlConfigsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListFunctionUrlConfigsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5306,53 +5523,53 @@ pub fn parse_list_function_url_configs_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionUrlConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListFunctionUrlConfigsError {
-            meta: generic,
-            kind: crate::error::ListFunctionUrlConfigsErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListFunctionUrlConfigsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionUrlConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListFunctionUrlConfigsError {
-                meta: generic,
-                kind: crate::error::ListFunctionUrlConfigsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFunctionUrlConfigsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListFunctionUrlConfigsError {
-            meta: generic,
-            kind: crate::error::ListFunctionUrlConfigsErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::ListFunctionUrlConfigsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListFunctionUrlConfigsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::ListFunctionUrlConfigsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5363,14 +5580,15 @@ pub fn parse_list_function_url_configs_error(
                         crate::http_serde::deser_header_list_function_url_configs_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListFunctionUrlConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListFunctionUrlConfigsError::generic(generic),
     })
 }
@@ -5391,6 +5609,9 @@ pub fn parse_list_function_url_configs_response(
             output,
         )
         .map_err(crate::error::ListFunctionUrlConfigsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5399,8 +5620,11 @@ pub fn parse_list_function_url_configs_response(
 pub fn parse_list_layers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLayersOutput, crate::error::ListLayersError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListLayersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLayersError::unhandled(generic)),
@@ -5408,9 +5632,8 @@ pub fn parse_list_layers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListLayersError {
-            meta: generic,
-            kind: crate::error::ListLayersErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListLayersError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5418,54 +5641,53 @@ pub fn parse_list_layers_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListLayersError {
-                meta: generic,
-                kind: crate::error::ListLayersErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListLayersError {
-            meta: generic,
-            kind: crate::error::ListLayersErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::ListLayersError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListLayersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::ListLayersError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayersError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_layers_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListLayersError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListLayersError::generic(generic),
     })
 }
@@ -5483,6 +5705,9 @@ pub fn parse_list_layers_response(
             output,
         )
         .map_err(crate::error::ListLayersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5492,8 +5717,11 @@ pub fn parse_list_layer_versions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLayerVersionsOutput, crate::error::ListLayerVersionsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListLayerVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLayerVersionsError::unhandled(generic)),
@@ -5501,9 +5729,8 @@ pub fn parse_list_layer_versions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListLayerVersionsError {
-            meta: generic,
-            kind: crate::error::ListLayerVersionsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListLayerVersionsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5511,53 +5738,53 @@ pub fn parse_list_layer_versions_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListLayerVersionsError {
-            meta: generic,
-            kind: crate::error::ListLayerVersionsErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListLayerVersionsError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListLayerVersionsError {
-                meta: generic,
-                kind: crate::error::ListLayerVersionsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLayerVersionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListLayerVersionsError {
-            meta: generic,
-            kind: crate::error::ListLayerVersionsErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::ListLayerVersionsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListLayerVersionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::ListLayerVersionsError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5568,14 +5795,15 @@ pub fn parse_list_layer_versions_error(
                         crate::http_serde::deser_header_list_layer_versions_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListLayerVersionsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListLayerVersionsError::generic(generic),
     })
 }
@@ -5594,6 +5822,9 @@ pub fn parse_list_layer_versions_response(
             output,
         )
         .map_err(crate::error::ListLayerVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5605,8 +5836,11 @@ pub fn parse_list_provisioned_concurrency_configs_error(
     crate::output::ListProvisionedConcurrencyConfigsOutput,
     crate::error::ListProvisionedConcurrencyConfigsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5616,58 +5850,67 @@ pub fn parse_list_provisioned_concurrency_configs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::ListProvisionedConcurrencyConfigsError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListProvisionedConcurrencyConfigsError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::ListProvisionedConcurrencyConfigsError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::ListProvisionedConcurrencyConfigsError { meta: generic, kind: crate::error::ListProvisionedConcurrencyConfigsErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::ListProvisionedConcurrencyConfigsError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -5676,15 +5919,16 @@ pub fn parse_list_provisioned_concurrency_configs_error(
                         crate::http_serde::deser_header_list_provisioned_concurrency_configs_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListProvisionedConcurrencyConfigsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListProvisionedConcurrencyConfigsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListProvisionedConcurrencyConfigsError::generic(generic),
     })
 }
 
@@ -5701,6 +5945,9 @@ pub fn parse_list_provisioned_concurrency_configs_response(
             crate::output::list_provisioned_concurrency_configs_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_provisioned_concurrency_configs(response.body().as_ref(), output).map_err(crate::error::ListProvisionedConcurrencyConfigsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5709,8 +5956,11 @@ pub fn parse_list_provisioned_concurrency_configs_response(
 pub fn parse_list_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTagsOutput, crate::error::ListTagsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsError::unhandled(generic)),
@@ -5718,9 +5968,8 @@ pub fn parse_list_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListTagsError {
-            meta: generic,
-            kind: crate::error::ListTagsErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListTagsError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5728,71 +5977,68 @@ pub fn parse_list_tags_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListTagsError {
-            meta: generic,
-            kind: crate::error::ListTagsErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListTagsError {
-                meta: generic,
-                kind: crate::error::ListTagsErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListTagsError {
-            meta: generic,
-            kind: crate::error::ListTagsErrorKind::TooManyRequestsException({
+        "ResourceNotFoundException" => crate::error::ListTagsError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::ListTagsError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::ListTagsError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_list_tags_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListTagsError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListTagsError::generic(generic),
     })
 }
@@ -5810,6 +6056,9 @@ pub fn parse_list_tags_response(
             output,
         )
         .map_err(crate::error::ListTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5821,8 +6070,11 @@ pub fn parse_list_versions_by_function_error(
     crate::output::ListVersionsByFunctionOutput,
     crate::error::ListVersionsByFunctionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5834,9 +6086,8 @@ pub fn parse_list_versions_by_function_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::ListVersionsByFunctionError {
-            meta: generic,
-            kind: crate::error::ListVersionsByFunctionErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::ListVersionsByFunctionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5844,53 +6095,53 @@ pub fn parse_list_versions_by_function_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListVersionsByFunctionError {
-            meta: generic,
-            kind: crate::error::ListVersionsByFunctionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListVersionsByFunctionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::ListVersionsByFunctionError {
-                meta: generic,
-                kind: crate::error::ListVersionsByFunctionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::ListVersionsByFunctionError {
-            meta: generic,
-            kind: crate::error::ListVersionsByFunctionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::ListVersionsByFunctionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::ListVersionsByFunctionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5901,14 +6152,15 @@ pub fn parse_list_versions_by_function_error(
                         crate::http_serde::deser_header_list_versions_by_function_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::ListVersionsByFunctionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListVersionsByFunctionError::generic(generic),
     })
 }
@@ -5929,6 +6181,9 @@ pub fn parse_list_versions_by_function_response(
             output,
         )
         .map_err(crate::error::ListVersionsByFunctionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5940,8 +6195,11 @@ pub fn parse_publish_layer_version_error(
     crate::output::PublishLayerVersionOutput,
     crate::error::PublishLayerVersionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PublishLayerVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PublishLayerVersionError::unhandled(generic)),
@@ -5949,9 +6207,8 @@ pub fn parse_publish_layer_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeStorageExceededException" => crate::error::PublishLayerVersionError {
-            meta: generic,
-            kind: crate::error::PublishLayerVersionErrorKind::CodeStorageExceededException({
+        "CodeStorageExceededException" => {
+            crate::error::PublishLayerVersionError::CodeStorageExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5959,17 +6216,17 @@ pub fn parse_publish_layer_version_error(
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterValueException" => crate::error::PublishLayerVersionError {
-            meta: generic,
-            kind: crate::error::PublishLayerVersionErrorKind::InvalidParameterValueException({
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::error::PublishLayerVersionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5977,53 +6234,53 @@ pub fn parse_publish_layer_version_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::PublishLayerVersionError {
-            meta: generic,
-            kind: crate::error::PublishLayerVersionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PublishLayerVersionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::PublishLayerVersionError {
-                meta: generic,
-                kind: crate::error::PublishLayerVersionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishLayerVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::PublishLayerVersionError {
-            meta: generic,
-            kind: crate::error::PublishLayerVersionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::PublishLayerVersionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishLayerVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::PublishLayerVersionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6034,14 +6291,15 @@ pub fn parse_publish_layer_version_error(
                         crate::http_serde::deser_header_publish_layer_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PublishLayerVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PublishLayerVersionError::generic(generic),
     })
 }
@@ -6062,6 +6320,9 @@ pub fn parse_publish_layer_version_response(
             output,
         )
         .map_err(crate::error::PublishLayerVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6070,8 +6331,11 @@ pub fn parse_publish_layer_version_response(
 pub fn parse_publish_version_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PublishVersionOutput, crate::error::PublishVersionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PublishVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PublishVersionError::unhandled(generic)),
@@ -6079,9 +6343,8 @@ pub fn parse_publish_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeStorageExceededException" => crate::error::PublishVersionError {
-            meta: generic,
-            kind: crate::error::PublishVersionErrorKind::CodeStorageExceededException({
+        "CodeStorageExceededException" => {
+            crate::error::PublishVersionError::CodeStorageExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6089,17 +6352,17 @@ pub fn parse_publish_version_error(
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterValueException" => crate::error::PublishVersionError {
-            meta: generic,
-            kind: crate::error::PublishVersionErrorKind::InvalidParameterValueException({
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::error::PublishVersionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6107,17 +6370,17 @@ pub fn parse_publish_version_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PreconditionFailedException" => crate::error::PublishVersionError {
-            meta: generic,
-            kind: crate::error::PublishVersionErrorKind::PreconditionFailedException({
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::PublishVersionError::PreconditionFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6125,70 +6388,70 @@ pub fn parse_publish_version_error(
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::PublishVersionError {
-            meta: generic,
-            kind: crate::error::PublishVersionErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::PublishVersionError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::PublishVersionError {
-            meta: generic,
-            kind: crate::error::PublishVersionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PublishVersionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::PublishVersionError {
-                meta: generic,
-                kind: crate::error::PublishVersionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PublishVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::PublishVersionError {
-            meta: generic,
-            kind: crate::error::PublishVersionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::PublishVersionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PublishVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::PublishVersionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6199,14 +6462,15 @@ pub fn parse_publish_version_error(
                         crate::http_serde::deser_header_publish_version_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PublishVersionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PublishVersionError::generic(generic),
     })
 }
@@ -6224,6 +6488,9 @@ pub fn parse_publish_version_response(
             output,
         )
         .map_err(crate::error::PublishVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6235,8 +6502,11 @@ pub fn parse_put_function_code_signing_config_error(
     crate::output::PutFunctionCodeSigningConfigOutput,
     crate::error::PutFunctionCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6248,90 +6518,99 @@ pub fn parse_put_function_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeSigningConfigNotFoundException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CodeSigningConfigNotFoundException" => {
+            crate::error::PutFunctionCodeSigningConfigError::CodeSigningConfigNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidParameterValueException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::error::PutFunctionCodeSigningConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::PutFunctionCodeSigningConfigError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PutFunctionCodeSigningConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::ServiceException({
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::PutFunctionCodeSigningConfigError::ServiceException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
-        })},
-        "TooManyRequestsException" => crate::error::PutFunctionCodeSigningConfigError { meta: generic, kind: crate::error::PutFunctionCodeSigningConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        }),
+        "TooManyRequestsException" => {
+            crate::error::PutFunctionCodeSigningConfigError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -6340,15 +6619,16 @@ pub fn parse_put_function_code_signing_config_error(
                         crate::http_serde::deser_header_put_function_code_signing_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PutFunctionCodeSigningConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::PutFunctionCodeSigningConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::PutFunctionCodeSigningConfigError::generic(generic),
     })
 }
 
@@ -6369,6 +6649,9 @@ pub fn parse_put_function_code_signing_config_response(
                 output,
             )
             .map_err(crate::error::PutFunctionCodeSigningConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6380,8 +6663,11 @@ pub fn parse_put_function_concurrency_error(
     crate::output::PutFunctionConcurrencyOutput,
     crate::error::PutFunctionConcurrencyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6393,9 +6679,8 @@ pub fn parse_put_function_concurrency_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::PutFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::PutFunctionConcurrencyErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::PutFunctionConcurrencyError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6403,70 +6688,70 @@ pub fn parse_put_function_concurrency_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::PutFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::PutFunctionConcurrencyErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::PutFunctionConcurrencyError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::PutFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::PutFunctionConcurrencyErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PutFunctionConcurrencyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::PutFunctionConcurrencyError {
-                meta: generic,
-                kind: crate::error::PutFunctionConcurrencyErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::PutFunctionConcurrencyError {
-            meta: generic,
-            kind: crate::error::PutFunctionConcurrencyErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::PutFunctionConcurrencyError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::PutFunctionConcurrencyError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6477,14 +6762,15 @@ pub fn parse_put_function_concurrency_error(
                         crate::http_serde::deser_header_put_function_concurrency_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PutFunctionConcurrencyError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutFunctionConcurrencyError::generic(generic),
     })
 }
@@ -6505,6 +6791,9 @@ pub fn parse_put_function_concurrency_response(
             output,
         )
         .map_err(crate::error::PutFunctionConcurrencyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6516,8 +6805,11 @@ pub fn parse_put_function_event_invoke_config_error(
     crate::output::PutFunctionEventInvokeConfigOutput,
     crate::error::PutFunctionEventInvokeConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6529,83 +6821,79 @@ pub fn parse_put_function_event_invoke_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::PutFunctionEventInvokeConfigError {
-            meta: generic,
-            kind:
-                crate::error::PutFunctionEventInvokeConfigErrorKind::InvalidParameterValueException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_parameter_value_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ResourceConflictException" => crate::error::PutFunctionEventInvokeConfigError {
-            meta: generic,
-            kind: crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceConflictException({
+        "InvalidParameterValueException" => {
+            crate::error::PutFunctionEventInvokeConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::PutFunctionEventInvokeConfigError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::PutFunctionEventInvokeConfigError {
-            meta: generic,
-            kind: crate::error::PutFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PutFunctionEventInvokeConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::PutFunctionEventInvokeConfigError {
-                meta: generic,
-                kind: crate::error::PutFunctionEventInvokeConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::PutFunctionEventInvokeConfigError {
-            meta: generic,
-            kind: crate::error::PutFunctionEventInvokeConfigErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::PutFunctionEventInvokeConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::PutFunctionEventInvokeConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6616,14 +6904,15 @@ pub fn parse_put_function_event_invoke_config_error(
                         crate::http_serde::deser_header_put_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PutFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutFunctionEventInvokeConfigError::generic(generic),
     })
 }
@@ -6645,6 +6934,9 @@ pub fn parse_put_function_event_invoke_config_response(
                 output,
             )
             .map_err(crate::error::PutFunctionEventInvokeConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6656,8 +6948,11 @@ pub fn parse_put_provisioned_concurrency_config_error(
     crate::output::PutProvisionedConcurrencyConfigOutput,
     crate::error::PutProvisionedConcurrencyConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutProvisionedConcurrencyConfigError::unhandled(generic)),
@@ -6665,74 +6960,84 @@ pub fn parse_put_provisioned_concurrency_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::PutProvisionedConcurrencyConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::PutProvisionedConcurrencyConfigError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PutProvisionedConcurrencyConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::PutProvisionedConcurrencyConfigError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::PutProvisionedConcurrencyConfigError { meta: generic, kind: crate::error::PutProvisionedConcurrencyConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::PutProvisionedConcurrencyConfigError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -6741,15 +7046,16 @@ pub fn parse_put_provisioned_concurrency_config_error(
                         crate::http_serde::deser_header_put_provisioned_concurrency_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PutProvisionedConcurrencyConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::PutProvisionedConcurrencyConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::PutProvisionedConcurrencyConfigError::generic(generic),
     })
 }
 
@@ -6771,6 +7077,9 @@ pub fn parse_put_provisioned_concurrency_config_response(
                 output,
             )
             .map_err(crate::error::PutProvisionedConcurrencyConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6782,8 +7091,11 @@ pub fn parse_put_runtime_management_config_error(
     crate::output::PutRuntimeManagementConfigOutput,
     crate::error::PutRuntimeManagementConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6795,82 +7107,79 @@ pub fn parse_put_runtime_management_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::PutRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::PutRuntimeManagementConfigErrorKind::InvalidParameterValueException(
-                {
+        "InvalidParameterValueException" => {
+            crate::error::PutRuntimeManagementConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceConflictException" => crate::error::PutRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::PutRuntimeManagementConfigErrorKind::ResourceConflictException({
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::PutRuntimeManagementConfigError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::PutRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::PutRuntimeManagementConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PutRuntimeManagementConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::PutRuntimeManagementConfigError {
-                meta: generic,
-                kind: crate::error::PutRuntimeManagementConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::PutRuntimeManagementConfigError {
-            meta: generic,
-            kind: crate::error::PutRuntimeManagementConfigErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::PutRuntimeManagementConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::PutRuntimeManagementConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6881,14 +7190,15 @@ pub fn parse_put_runtime_management_config_error(
                         crate::http_serde::deser_header_put_runtime_management_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::PutRuntimeManagementConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutRuntimeManagementConfigError::generic(generic),
     })
 }
@@ -6909,6 +7219,9 @@ pub fn parse_put_runtime_management_config_response(
             output,
         )
         .map_err(crate::error::PutRuntimeManagementConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6920,8 +7233,11 @@ pub fn parse_remove_layer_version_permission_error(
     crate::output::RemoveLayerVersionPermissionOutput,
     crate::error::RemoveLayerVersionPermissionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6933,86 +7249,80 @@ pub fn parse_remove_layer_version_permission_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::RemoveLayerVersionPermissionError {
-            meta: generic,
-            kind:
-                crate::error::RemoveLayerVersionPermissionErrorKind::InvalidParameterValueException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_parameter_value_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "PreconditionFailedException" => crate::error::RemoveLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::RemoveLayerVersionPermissionErrorKind::PreconditionFailedException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::precondition_failed_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceNotFoundException" => crate::error::RemoveLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::RemoveLayerVersionPermissionErrorKind::ResourceNotFoundException({
+        "InvalidParameterValueException" => {
+            crate::error::RemoveLayerVersionPermissionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::RemoveLayerVersionPermissionError {
-                meta: generic,
-                kind: crate::error::RemoveLayerVersionPermissionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::RemoveLayerVersionPermissionError {
-            meta: generic,
-            kind: crate::error::RemoveLayerVersionPermissionErrorKind::TooManyRequestsException({
+        "PreconditionFailedException" => {
+            crate::error::RemoveLayerVersionPermissionError::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::RemoveLayerVersionPermissionError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::RemoveLayerVersionPermissionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RemoveLayerVersionPermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::RemoveLayerVersionPermissionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7023,14 +7333,15 @@ pub fn parse_remove_layer_version_permission_error(
                         crate::http_serde::deser_header_remove_layer_version_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::RemoveLayerVersionPermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveLayerVersionPermissionError::generic(generic),
     })
 }
@@ -7046,6 +7357,9 @@ pub fn parse_remove_layer_version_permission_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_layer_version_permission_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7055,8 +7369,11 @@ pub fn parse_remove_permission_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemovePermissionOutput, crate::error::RemovePermissionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemovePermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RemovePermissionError::unhandled(generic)),
@@ -7064,9 +7381,8 @@ pub fn parse_remove_permission_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::RemovePermissionError {
-            meta: generic,
-            kind: crate::error::RemovePermissionErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::RemovePermissionError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7074,17 +7390,17 @@ pub fn parse_remove_permission_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PreconditionFailedException" => crate::error::RemovePermissionError {
-            meta: generic,
-            kind: crate::error::RemovePermissionErrorKind::PreconditionFailedException({
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::RemovePermissionError::PreconditionFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7092,53 +7408,53 @@ pub fn parse_remove_permission_error(
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::RemovePermissionError {
-            meta: generic,
-            kind: crate::error::RemovePermissionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::RemovePermissionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::RemovePermissionError {
-                meta: generic,
-                kind: crate::error::RemovePermissionErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemovePermissionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::RemovePermissionError {
-            meta: generic,
-            kind: crate::error::RemovePermissionErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::RemovePermissionError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RemovePermissionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::RemovePermissionError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7149,14 +7465,15 @@ pub fn parse_remove_permission_error(
                         crate::http_serde::deser_header_remove_permission_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::RemovePermissionError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemovePermissionError::generic(generic),
     })
 }
@@ -7170,6 +7487,9 @@ pub fn parse_remove_permission_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_permission_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7178,8 +7498,11 @@ pub fn parse_remove_permission_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -7187,9 +7510,8 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::TagResourceError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7197,88 +7519,83 @@ pub fn parse_tag_resource_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyRequestsException({
+        "ResourceConflictException" => crate::error::TagResourceError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::TagResourceError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::TagResourceError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::TagResourceError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_tag_resource_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -7291,6 +7608,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7299,8 +7619,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -7308,9 +7631,8 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::UntagResourceError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7318,88 +7640,87 @@ pub fn parse_untag_resource_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::UntagResourceError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UntagResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::UntagResourceError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::UntagResourceError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_untag_resource_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -7412,6 +7733,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7420,8 +7744,11 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateAliasError::unhandled(generic)),
@@ -7429,9 +7756,8 @@ pub fn parse_update_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::UpdateAliasError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7439,17 +7765,17 @@ pub fn parse_update_alias_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PreconditionFailedException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::PreconditionFailedException({
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::UpdateAliasError::PreconditionFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7457,88 +7783,83 @@ pub fn parse_update_alias_error(
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::ResourceConflictException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::ResourceNotFoundException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::UpdateAliasError {
-                meta: generic,
-                kind: crate::error::UpdateAliasErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::TooManyRequestsException({
+        "ResourceConflictException" => crate::error::UpdateAliasError::ResourceConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                    output = output.set_retry_after_seconds(
+                let mut output = crate::error::resource_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::UpdateAliasError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceException" => crate::error::UpdateAliasError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::UpdateAliasError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_requests_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                output = output.set_retry_after_seconds(
                         crate::http_serde::deser_header_update_alias_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UpdateAliasError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateAliasError::generic(generic),
     })
 }
@@ -7556,6 +7877,9 @@ pub fn parse_update_alias_response(
             output,
         )
         .map_err(crate::error::UpdateAliasError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7567,8 +7891,11 @@ pub fn parse_update_code_signing_config_error(
     crate::output::UpdateCodeSigningConfigOutput,
     crate::error::UpdateCodeSigningConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7580,9 +7907,8 @@ pub fn parse_update_code_signing_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::UpdateCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::UpdateCodeSigningConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::UpdateCodeSigningConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7590,50 +7916,51 @@ pub fn parse_update_code_signing_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateCodeSigningConfigError {
-            meta: generic,
-            kind: crate::error::UpdateCodeSigningConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateCodeSigningConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::UpdateCodeSigningConfigError {
-                meta: generic,
-                kind: crate::error::UpdateCodeSigningConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ServiceException" => crate::error::UpdateCodeSigningConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateCodeSigningConfigError::generic(generic),
     })
 }
@@ -7654,6 +7981,9 @@ pub fn parse_update_code_signing_config_response(
             output,
         )
         .map_err(crate::error::UpdateCodeSigningConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7665,8 +7995,11 @@ pub fn parse_update_event_source_mapping_error(
     crate::output::UpdateEventSourceMappingOutput,
     crate::error::UpdateEventSourceMappingError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7678,99 +8011,96 @@ pub fn parse_update_event_source_mapping_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::UpdateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::UpdateEventSourceMappingErrorKind::InvalidParameterValueException(
-                {
+        "InvalidParameterValueException" => {
+            crate::error::UpdateEventSourceMappingError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_parameter_value_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ResourceConflictException" => crate::error::UpdateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::UpdateEventSourceMappingErrorKind::ResourceConflictException({
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::UpdateEventSourceMappingError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceInUseException" => crate::error::UpdateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::UpdateEventSourceMappingErrorKind::ResourceInUseException({
+            })
+        }
+        "ResourceInUseException" => {
+            crate::error::UpdateEventSourceMappingError::ResourceInUseException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::UpdateEventSourceMappingErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateEventSourceMappingError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::UpdateEventSourceMappingError {
-                meta: generic,
-                kind: crate::error::UpdateEventSourceMappingErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::UpdateEventSourceMappingError {
-            meta: generic,
-            kind: crate::error::UpdateEventSourceMappingErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::UpdateEventSourceMappingError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::UpdateEventSourceMappingError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7781,14 +8111,15 @@ pub fn parse_update_event_source_mapping_error(
                         crate::http_serde::deser_header_update_event_source_mapping_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UpdateEventSourceMappingError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateEventSourceMappingError::generic(generic),
     })
 }
@@ -7809,6 +8140,9 @@ pub fn parse_update_event_source_mapping_response(
             output,
         )
         .map_err(crate::error::UpdateEventSourceMappingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7820,8 +8154,11 @@ pub fn parse_update_function_code_error(
     crate::output::UpdateFunctionCodeOutput,
     crate::error::UpdateFunctionCodeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateFunctionCodeError::unhandled(generic)),
@@ -7829,9 +8166,8 @@ pub fn parse_update_function_code_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeSigningConfigNotFoundException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::CodeSigningConfigNotFoundException({
+        "CodeSigningConfigNotFoundException" => {
+            crate::error::UpdateFunctionCodeError::CodeSigningConfigNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7839,17 +8175,17 @@ pub fn parse_update_function_code_error(
                         crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CodeStorageExceededException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::CodeStorageExceededException({
+            })
+        }
+        "CodeStorageExceededException" => {
+            crate::error::UpdateFunctionCodeError::CodeStorageExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7857,17 +8193,17 @@ pub fn parse_update_function_code_error(
                         crate::error::code_storage_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_storage_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CodeVerificationFailedException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::CodeVerificationFailedException({
+            })
+        }
+        "CodeVerificationFailedException" => {
+            crate::error::UpdateFunctionCodeError::CodeVerificationFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7875,17 +8211,17 @@ pub fn parse_update_function_code_error(
                         crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidCodeSignatureException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::InvalidCodeSignatureException({
+            })
+        }
+        "InvalidCodeSignatureException" => {
+            crate::error::UpdateFunctionCodeError::InvalidCodeSignatureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7893,17 +8229,17 @@ pub fn parse_update_function_code_error(
                         crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterValueException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::InvalidParameterValueException({
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::error::UpdateFunctionCodeError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7911,17 +8247,17 @@ pub fn parse_update_function_code_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PreconditionFailedException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::PreconditionFailedException({
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::UpdateFunctionCodeError::PreconditionFailedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7929,70 +8265,70 @@ pub fn parse_update_function_code_error(
                         crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::UpdateFunctionCodeError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateFunctionCodeError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::UpdateFunctionCodeError {
-                meta: generic,
-                kind: crate::error::UpdateFunctionCodeErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::UpdateFunctionCodeError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionCodeErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::UpdateFunctionCodeError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::UpdateFunctionCodeError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8003,14 +8339,15 @@ pub fn parse_update_function_code_error(
                         crate::http_serde::deser_header_update_function_code_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UpdateFunctionCodeError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateFunctionCodeError::generic(generic),
     })
 }
@@ -8031,6 +8368,9 @@ pub fn parse_update_function_code_response(
             output,
         )
         .map_err(crate::error::UpdateFunctionCodeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8042,8 +8382,11 @@ pub fn parse_update_function_configuration_error(
     crate::output::UpdateFunctionConfigurationOutput,
     crate::error::UpdateFunctionConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8055,138 +8398,153 @@ pub fn parse_update_function_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeSigningConfigNotFoundException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::CodeSigningConfigNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CodeSigningConfigNotFoundException" => {
+            crate::error::UpdateFunctionConfigurationError::CodeSigningConfigNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::code_signing_config_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::code_signing_config_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_signing_config_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "CodeVerificationFailedException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::CodeVerificationFailedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "CodeVerificationFailedException" => {
+            crate::error::UpdateFunctionConfigurationError::CodeVerificationFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::code_verification_failed_exception::Builder::default();
+                    let mut output =
+                        crate::error::code_verification_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_code_verification_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidCodeSignatureException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::InvalidCodeSignatureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidCodeSignatureException" => {
+            crate::error::UpdateFunctionConfigurationError::InvalidCodeSignatureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_code_signature_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_code_signature_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_code_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidParameterValueException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidParameterValueException" => {
+            crate::error::UpdateFunctionConfigurationError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "PreconditionFailedException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::PreconditionFailedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "PreconditionFailedException" => {
+            crate::error::UpdateFunctionConfigurationError::PreconditionFailedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::precondition_failed_exception::Builder::default();
+                    let mut output =
+                        crate::error::precondition_failed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_precondition_failed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::UpdateFunctionConfigurationError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateFunctionConfigurationError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::ServiceException({
+                tmp
+            })
+        }
+        "ServiceException" => crate::error::UpdateFunctionConfigurationError::ServiceException({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
-        })},
-        "TooManyRequestsException" => crate::error::UpdateFunctionConfigurationError { meta: generic, kind: crate::error::UpdateFunctionConfigurationErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        }),
+        "TooManyRequestsException" => {
+            crate::error::UpdateFunctionConfigurationError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -8195,15 +8553,16 @@ pub fn parse_update_function_configuration_error(
                         crate::http_serde::deser_header_update_function_configuration_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UpdateFunctionConfigurationError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateFunctionConfigurationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::UpdateFunctionConfigurationError::generic(generic),
     })
 }
 
@@ -8223,6 +8582,9 @@ pub fn parse_update_function_configuration_response(
             output,
         )
         .map_err(crate::error::UpdateFunctionConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8234,8 +8596,11 @@ pub fn parse_update_function_event_invoke_config_error(
     crate::output::UpdateFunctionEventInvokeConfigOutput,
     crate::error::UpdateFunctionEventInvokeConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled(generic)),
@@ -8243,74 +8608,84 @@ pub fn parse_update_function_event_invoke_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::InvalidParameterValueException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidParameterValueException" => {
+            crate::error::UpdateFunctionEventInvokeConfigError::InvalidParameterValueException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_value_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceConflictException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceConflictException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::UpdateFunctionEventInvokeConfigError::ResourceConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ResourceNotFoundException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ResourceNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateFunctionEventInvokeConfigError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::ServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceException" => {
+            crate::error::UpdateFunctionEventInvokeConfigError::ServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyRequestsException" => crate::error::UpdateFunctionEventInvokeConfigError { meta: generic, kind: crate::error::UpdateFunctionEventInvokeConfigErrorKind::TooManyRequestsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyRequestsException" => {
+            crate::error::UpdateFunctionEventInvokeConfigError::TooManyRequestsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
@@ -8319,15 +8694,16 @@ pub fn parse_update_function_event_invoke_config_error(
                         crate::http_serde::deser_header_update_function_event_invoke_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UpdateFunctionEventInvokeConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateFunctionEventInvokeConfigError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::UpdateFunctionEventInvokeConfigError::generic(generic),
     })
 }
 
@@ -8349,6 +8725,9 @@ pub fn parse_update_function_event_invoke_config_response(
                 output,
             )
             .map_err(crate::error::UpdateFunctionEventInvokeConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8360,8 +8739,11 @@ pub fn parse_update_function_url_config_error(
     crate::output::UpdateFunctionUrlConfigOutput,
     crate::error::UpdateFunctionUrlConfigError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8373,9 +8755,8 @@ pub fn parse_update_function_url_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidParameterValueException" => crate::error::UpdateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionUrlConfigErrorKind::InvalidParameterValueException({
+        "InvalidParameterValueException" => {
+            crate::error::UpdateFunctionUrlConfigError::InvalidParameterValueException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8383,70 +8764,70 @@ pub fn parse_update_function_url_config_error(
                         crate::error::invalid_parameter_value_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_parameter_value_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceConflictException" => crate::error::UpdateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionUrlConfigErrorKind::ResourceConflictException({
+            })
+        }
+        "ResourceConflictException" => {
+            crate::error::UpdateFunctionUrlConfigError::ResourceConflictException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_conflict_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionUrlConfigErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateFunctionUrlConfigError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceException" => {
-            crate::error::UpdateFunctionUrlConfigError {
-                meta: generic,
-                kind: crate::error::UpdateFunctionUrlConfigErrorKind::ServiceException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::UpdateFunctionUrlConfigError {
-            meta: generic,
-            kind: crate::error::UpdateFunctionUrlConfigErrorKind::TooManyRequestsException({
+        "ServiceException" => crate::error::UpdateFunctionUrlConfigError::ServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::UpdateFunctionUrlConfigError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8457,14 +8838,15 @@ pub fn parse_update_function_url_config_error(
                         crate::http_serde::deser_header_update_function_url_config_too_many_requests_exception_retry_after_seconds(response.headers())
                                                 .map_err(|_|crate::error::UpdateFunctionUrlConfigError::unhandled("Failed to parse retryAfterSeconds from header `Retry-After"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateFunctionUrlConfigError::generic(generic),
     })
 }
@@ -8485,6 +8867,9 @@ pub fn parse_update_function_url_config_response(
             output,
         )
         .map_err(crate::error::UpdateFunctionUrlConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

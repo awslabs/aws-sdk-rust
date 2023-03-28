@@ -6,8 +6,11 @@ pub fn parse_create_anomaly_monitor_error(
     crate::output::CreateAnomalyMonitorOutput,
     crate::error::CreateAnomalyMonitorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAnomalyMonitorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAnomalyMonitorError::unhandled(generic)),
@@ -15,23 +18,23 @@ pub fn parse_create_anomaly_monitor_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::CreateAnomalyMonitorError {
-            meta: generic,
-            kind: crate::error::CreateAnomalyMonitorErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::CreateAnomalyMonitorError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAnomalyMonitorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateAnomalyMonitorError::generic(generic),
     })
 }
@@ -52,6 +55,9 @@ pub fn parse_create_anomaly_monitor_response(
             output,
         )
         .map_err(crate::error::CreateAnomalyMonitorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -63,8 +69,11 @@ pub fn parse_create_anomaly_subscription_error(
     crate::output::CreateAnomalySubscriptionOutput,
     crate::error::CreateAnomalySubscriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAnomalySubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -76,40 +85,40 @@ pub fn parse_create_anomaly_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::CreateAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateAnomalySubscriptionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::CreateAnomalySubscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownMonitorException" => crate::error::CreateAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateAnomalySubscriptionErrorKind::UnknownMonitorException({
+            })
+        }
+        "UnknownMonitorException" => {
+            crate::error::CreateAnomalySubscriptionError::UnknownMonitorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_monitor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_monitor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateAnomalySubscriptionError::generic(generic),
     })
 }
@@ -130,6 +139,9 @@ pub fn parse_create_anomaly_subscription_response(
             output,
         )
         .map_err(crate::error::CreateAnomalySubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -141,8 +153,11 @@ pub fn parse_create_cost_category_definition_error(
     crate::output::CreateCostCategoryDefinitionOutput,
     crate::error::CreateCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCostCategoryDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -154,44 +169,41 @@ pub fn parse_create_cost_category_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::CreateCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::CreateCostCategoryDefinitionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::CreateCostCategoryDefinitionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceQuotaExceededException" => crate::error::CreateCostCategoryDefinitionError {
-            meta: generic,
-            kind:
-                crate::error::CreateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_quota_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCostCategoryDefinitionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "ServiceQuotaExceededException" => {
+            crate::error::CreateCostCategoryDefinitionError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateCostCategoryDefinitionError::generic(generic),
     })
 }
@@ -213,6 +225,9 @@ pub fn parse_create_cost_category_definition_response(
                 output,
             )
             .map_err(crate::error::CreateCostCategoryDefinitionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -224,8 +239,11 @@ pub fn parse_delete_anomaly_monitor_error(
     crate::output::DeleteAnomalyMonitorOutput,
     crate::error::DeleteAnomalyMonitorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAnomalyMonitorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAnomalyMonitorError::unhandled(generic)),
@@ -233,40 +251,40 @@ pub fn parse_delete_anomaly_monitor_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::DeleteAnomalyMonitorError {
-            meta: generic,
-            kind: crate::error::DeleteAnomalyMonitorErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::DeleteAnomalyMonitorError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyMonitorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownMonitorException" => crate::error::DeleteAnomalyMonitorError {
-            meta: generic,
-            kind: crate::error::DeleteAnomalyMonitorErrorKind::UnknownMonitorException({
+            })
+        }
+        "UnknownMonitorException" => {
+            crate::error::DeleteAnomalyMonitorError::UnknownMonitorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_monitor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_monitor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalyMonitorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteAnomalyMonitorError::generic(generic),
     })
 }
@@ -282,6 +300,9 @@ pub fn parse_delete_anomaly_monitor_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_anomaly_monitor_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -293,8 +314,11 @@ pub fn parse_delete_anomaly_subscription_error(
     crate::output::DeleteAnomalySubscriptionOutput,
     crate::error::DeleteAnomalySubscriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAnomalySubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -306,26 +330,25 @@ pub fn parse_delete_anomaly_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::DeleteAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::DeleteAnomalySubscriptionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::DeleteAnomalySubscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownSubscriptionException" => crate::error::DeleteAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::DeleteAnomalySubscriptionErrorKind::UnknownSubscriptionException({
+            })
+        }
+        "UnknownSubscriptionException" => {
+            crate::error::DeleteAnomalySubscriptionError::UnknownSubscriptionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -333,14 +356,15 @@ pub fn parse_delete_anomaly_subscription_error(
                         crate::error::unknown_subscription_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_subscription_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteAnomalySubscriptionError::generic(generic),
     })
 }
@@ -356,6 +380,9 @@ pub fn parse_delete_anomaly_subscription_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_anomaly_subscription_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -367,8 +394,11 @@ pub fn parse_delete_cost_category_definition_error(
     crate::output::DeleteCostCategoryDefinitionOutput,
     crate::error::DeleteCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCostCategoryDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -380,40 +410,40 @@ pub fn parse_delete_cost_category_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::DeleteCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::DeleteCostCategoryDefinitionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::DeleteCostCategoryDefinitionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::DeleteCostCategoryDefinitionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DeleteCostCategoryDefinitionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteCostCategoryDefinitionError::generic(generic),
     })
 }
@@ -435,6 +465,9 @@ pub fn parse_delete_cost_category_definition_response(
                 output,
             )
             .map_err(crate::error::DeleteCostCategoryDefinitionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -446,8 +479,11 @@ pub fn parse_describe_cost_category_definition_error(
     crate::output::DescribeCostCategoryDefinitionOutput,
     crate::error::DescribeCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCostCategoryDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeCostCategoryDefinitionError::unhandled(generic)),
@@ -455,43 +491,40 @@ pub fn parse_describe_cost_category_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::DescribeCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::DescribeCostCategoryDefinitionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::DescribeCostCategoryDefinitionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DescribeCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::DescribeCostCategoryDefinitionErrorKind::ResourceNotFoundException(
-                {
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::DescribeCostCategoryDefinitionError::ResourceNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCostCategoryDefinitionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::resource_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeCostCategoryDefinitionError::generic(generic),
     })
 }
@@ -514,6 +547,9 @@ pub fn parse_describe_cost_category_definition_response(
                 output,
             )
             .map_err(crate::error::DescribeCostCategoryDefinitionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -522,8 +558,11 @@ pub fn parse_describe_cost_category_definition_response(
 pub fn parse_get_anomalies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAnomaliesOutput, crate::error::GetAnomaliesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAnomaliesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAnomaliesError::unhandled(generic)),
@@ -531,40 +570,38 @@ pub fn parse_get_anomalies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::GetAnomaliesError {
-            meta: generic,
-            kind: crate::error::GetAnomaliesErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::GetAnomaliesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomaliesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetAnomaliesError {
-            meta: generic,
-            kind: crate::error::GetAnomaliesErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::GetAnomaliesError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomaliesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomaliesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetAnomaliesError::generic(generic),
     })
 }
@@ -582,6 +619,9 @@ pub fn parse_get_anomalies_response(
             output,
         )
         .map_err(crate::error::GetAnomaliesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -593,8 +633,11 @@ pub fn parse_get_anomaly_monitors_error(
     crate::output::GetAnomalyMonitorsOutput,
     crate::error::GetAnomalyMonitorsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAnomalyMonitorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAnomalyMonitorsError::unhandled(generic)),
@@ -602,57 +645,57 @@ pub fn parse_get_anomaly_monitors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::GetAnomalyMonitorsError {
-            meta: generic,
-            kind: crate::error::GetAnomalyMonitorsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::GetAnomalyMonitorsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomalyMonitorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetAnomalyMonitorsError {
-            meta: generic,
-            kind: crate::error::GetAnomalyMonitorsErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetAnomalyMonitorsError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomalyMonitorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownMonitorException" => crate::error::GetAnomalyMonitorsError {
-            meta: generic,
-            kind: crate::error::GetAnomalyMonitorsErrorKind::UnknownMonitorException({
+            })
+        }
+        "UnknownMonitorException" => {
+            crate::error::GetAnomalyMonitorsError::UnknownMonitorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_monitor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_monitor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomalyMonitorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetAnomalyMonitorsError::generic(generic),
     })
 }
@@ -673,6 +716,9 @@ pub fn parse_get_anomaly_monitors_response(
             output,
         )
         .map_err(crate::error::GetAnomalyMonitorsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -684,8 +730,11 @@ pub fn parse_get_anomaly_subscriptions_error(
     crate::output::GetAnomalySubscriptionsOutput,
     crate::error::GetAnomalySubscriptionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAnomalySubscriptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -697,43 +746,42 @@ pub fn parse_get_anomaly_subscriptions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::GetAnomalySubscriptionsError {
-            meta: generic,
-            kind: crate::error::GetAnomalySubscriptionsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::GetAnomalySubscriptionsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomalySubscriptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetAnomalySubscriptionsError {
-            meta: generic,
-            kind: crate::error::GetAnomalySubscriptionsErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetAnomalySubscriptionsError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomalySubscriptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownSubscriptionException" => crate::error::GetAnomalySubscriptionsError {
-            meta: generic,
-            kind: crate::error::GetAnomalySubscriptionsErrorKind::UnknownSubscriptionException({
+            })
+        }
+        "UnknownSubscriptionException" => {
+            crate::error::GetAnomalySubscriptionsError::UnknownSubscriptionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -741,14 +789,15 @@ pub fn parse_get_anomaly_subscriptions_error(
                         crate::error::unknown_subscription_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_subscription_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetAnomalySubscriptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetAnomalySubscriptionsError::generic(generic),
     })
 }
@@ -769,6 +818,9 @@ pub fn parse_get_anomaly_subscriptions_response(
             output,
         )
         .map_err(crate::error::GetAnomalySubscriptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -777,8 +829,11 @@ pub fn parse_get_anomaly_subscriptions_response(
 pub fn parse_get_cost_and_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCostAndUsageOutput, crate::error::GetCostAndUsageError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCostAndUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetCostAndUsageError::unhandled(generic)),
@@ -786,91 +841,85 @@ pub fn parse_get_cost_and_usage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BillExpirationException" => crate::error::GetCostAndUsageError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageErrorKind::BillExpirationException({
+        "BillExpirationException" => crate::error::GetCostAndUsageError::BillExpirationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::bill_expiration_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DataUnavailableException" => crate::error::GetCostAndUsageError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageErrorKind::DataUnavailableException({
+                let mut output = crate::error::bill_expiration_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DataUnavailableException" => {
+            crate::error::GetCostAndUsageError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetCostAndUsageError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetCostAndUsageError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetCostAndUsageError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::GetCostAndUsageError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RequestChangedException" => crate::error::GetCostAndUsageError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageErrorKind::RequestChangedException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestChangedException" => crate::error::GetCostAndUsageError::RequestChangedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_changed_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::request_changed_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetCostAndUsageError::generic(generic),
     })
 }
@@ -888,6 +937,9 @@ pub fn parse_get_cost_and_usage_response(
             output,
         )
         .map_err(crate::error::GetCostAndUsageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -899,8 +951,11 @@ pub fn parse_get_cost_and_usage_with_resources_error(
     crate::output::GetCostAndUsageWithResourcesOutput,
     crate::error::GetCostAndUsageWithResourcesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -912,91 +967,91 @@ pub fn parse_get_cost_and_usage_with_resources_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BillExpirationException" => crate::error::GetCostAndUsageWithResourcesError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageWithResourcesErrorKind::BillExpirationException({
+        "BillExpirationException" => {
+            crate::error::GetCostAndUsageWithResourcesError::BillExpirationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bill_expiration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DataUnavailableException" => crate::error::GetCostAndUsageWithResourcesError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageWithResourcesErrorKind::DataUnavailableException({
+            })
+        }
+        "DataUnavailableException" => {
+            crate::error::GetCostAndUsageWithResourcesError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetCostAndUsageWithResourcesError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageWithResourcesErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetCostAndUsageWithResourcesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetCostAndUsageWithResourcesError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageWithResourcesErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetCostAndUsageWithResourcesError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RequestChangedException" => crate::error::GetCostAndUsageWithResourcesError {
-            meta: generic,
-            kind: crate::error::GetCostAndUsageWithResourcesErrorKind::RequestChangedException({
+            })
+        }
+        "RequestChangedException" => {
+            crate::error::GetCostAndUsageWithResourcesError::RequestChangedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_changed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetCostAndUsageWithResourcesError::generic(generic),
     })
 }
@@ -1019,6 +1074,9 @@ pub fn parse_get_cost_and_usage_with_resources_response(
                 output,
             )
             .map_err(crate::error::GetCostAndUsageWithResourcesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1028,8 +1086,11 @@ pub fn parse_get_cost_categories_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCostCategoriesOutput, crate::error::GetCostCategoriesError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCostCategoriesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetCostCategoriesError::unhandled(generic)),
@@ -1037,91 +1098,89 @@ pub fn parse_get_cost_categories_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BillExpirationException" => crate::error::GetCostCategoriesError {
-            meta: generic,
-            kind: crate::error::GetCostCategoriesErrorKind::BillExpirationException({
+        "BillExpirationException" => {
+            crate::error::GetCostCategoriesError::BillExpirationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bill_expiration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostCategoriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DataUnavailableException" => crate::error::GetCostCategoriesError {
-            meta: generic,
-            kind: crate::error::GetCostCategoriesErrorKind::DataUnavailableException({
+            })
+        }
+        "DataUnavailableException" => {
+            crate::error::GetCostCategoriesError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostCategoriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetCostCategoriesError {
-            meta: generic,
-            kind: crate::error::GetCostCategoriesErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetCostCategoriesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostCategoriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetCostCategoriesError {
-            meta: generic,
-            kind: crate::error::GetCostCategoriesErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::GetCostCategoriesError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostCategoriesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RequestChangedException" => crate::error::GetCostCategoriesError {
-            meta: generic,
-            kind: crate::error::GetCostCategoriesErrorKind::RequestChangedException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostCategoriesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestChangedException" => {
+            crate::error::GetCostCategoriesError::RequestChangedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_changed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostCategoriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetCostCategoriesError::generic(generic),
     })
 }
@@ -1140,6 +1199,9 @@ pub fn parse_get_cost_categories_response(
             output,
         )
         .map_err(crate::error::GetCostCategoriesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1148,8 +1210,11 @@ pub fn parse_get_cost_categories_response(
 pub fn parse_get_cost_forecast_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCostForecastOutput, crate::error::GetCostForecastError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCostForecastError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetCostForecastError::unhandled(generic)),
@@ -1157,40 +1222,38 @@ pub fn parse_get_cost_forecast_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetCostForecastError {
-            meta: generic,
-            kind: crate::error::GetCostForecastErrorKind::DataUnavailableException({
+        "DataUnavailableException" => {
+            crate::error::GetCostForecastError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostForecastError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetCostForecastError {
-            meta: generic,
-            kind: crate::error::GetCostForecastErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::GetCostForecastError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostForecastError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetCostForecastError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetCostForecastError::generic(generic),
     })
 }
@@ -1208,6 +1271,9 @@ pub fn parse_get_cost_forecast_response(
             output,
         )
         .map_err(crate::error::GetCostForecastError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1219,8 +1285,11 @@ pub fn parse_get_dimension_values_error(
     crate::output::GetDimensionValuesOutput,
     crate::error::GetDimensionValuesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetDimensionValuesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetDimensionValuesError::unhandled(generic)),
@@ -1228,91 +1297,91 @@ pub fn parse_get_dimension_values_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BillExpirationException" => crate::error::GetDimensionValuesError {
-            meta: generic,
-            kind: crate::error::GetDimensionValuesErrorKind::BillExpirationException({
+        "BillExpirationException" => {
+            crate::error::GetDimensionValuesError::BillExpirationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bill_expiration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionValuesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DataUnavailableException" => crate::error::GetDimensionValuesError {
-            meta: generic,
-            kind: crate::error::GetDimensionValuesErrorKind::DataUnavailableException({
+            })
+        }
+        "DataUnavailableException" => {
+            crate::error::GetDimensionValuesError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionValuesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetDimensionValuesError {
-            meta: generic,
-            kind: crate::error::GetDimensionValuesErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetDimensionValuesError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionValuesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetDimensionValuesError {
-            meta: generic,
-            kind: crate::error::GetDimensionValuesErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetDimensionValuesError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionValuesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RequestChangedException" => crate::error::GetDimensionValuesError {
-            meta: generic,
-            kind: crate::error::GetDimensionValuesErrorKind::RequestChangedException({
+            })
+        }
+        "RequestChangedException" => {
+            crate::error::GetDimensionValuesError::RequestChangedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::request_changed_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetDimensionValuesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetDimensionValuesError::generic(generic),
     })
 }
@@ -1333,6 +1402,9 @@ pub fn parse_get_dimension_values_response(
             output,
         )
         .map_err(crate::error::GetDimensionValuesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1344,8 +1416,11 @@ pub fn parse_get_reservation_coverage_error(
     crate::output::GetReservationCoverageOutput,
     crate::error::GetReservationCoverageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetReservationCoverageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1357,57 +1432,57 @@ pub fn parse_get_reservation_coverage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetReservationCoverageError {
-            meta: generic,
-            kind: crate::error::GetReservationCoverageErrorKind::DataUnavailableException({
+        "DataUnavailableException" => {
+            crate::error::GetReservationCoverageError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationCoverageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetReservationCoverageError {
-            meta: generic,
-            kind: crate::error::GetReservationCoverageErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetReservationCoverageError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationCoverageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetReservationCoverageError {
-            meta: generic,
-            kind: crate::error::GetReservationCoverageErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetReservationCoverageError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationCoverageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetReservationCoverageError::generic(generic),
     })
 }
@@ -1428,6 +1503,9 @@ pub fn parse_get_reservation_coverage_response(
             output,
         )
         .map_err(crate::error::GetReservationCoverageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1439,8 +1517,11 @@ pub fn parse_get_reservation_purchase_recommendation_error(
     crate::output::GetReservationPurchaseRecommendationOutput,
     crate::error::GetReservationPurchaseRecommendationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetReservationPurchaseRecommendationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1450,55 +1531,58 @@ pub fn parse_get_reservation_purchase_recommendation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetReservationPurchaseRecommendationError { meta: generic, kind: crate::error::GetReservationPurchaseRecommendationErrorKind::DataUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DataUnavailableException" => {
+            crate::error::GetReservationPurchaseRecommendationError::DataUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationPurchaseRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidNextTokenException" => crate::error::GetReservationPurchaseRecommendationError { meta: generic, kind: crate::error::GetReservationPurchaseRecommendationErrorKind::InvalidNextTokenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetReservationPurchaseRecommendationError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationPurchaseRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "LimitExceededException" => crate::error::GetReservationPurchaseRecommendationError { meta: generic, kind: crate::error::GetReservationPurchaseRecommendationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetReservationPurchaseRecommendationError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationPurchaseRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GetReservationPurchaseRecommendationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::GetReservationPurchaseRecommendationError::generic(generic),
     })
 }
 
@@ -1515,6 +1599,9 @@ pub fn parse_get_reservation_purchase_recommendation_response(
             crate::output::get_reservation_purchase_recommendation_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_reservation_purchase_recommendation(response.body().as_ref(), output).map_err(crate::error::GetReservationPurchaseRecommendationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1526,8 +1613,11 @@ pub fn parse_get_reservation_utilization_error(
     crate::output::GetReservationUtilizationOutput,
     crate::error::GetReservationUtilizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetReservationUtilizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1539,57 +1629,57 @@ pub fn parse_get_reservation_utilization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetReservationUtilizationError {
-            meta: generic,
-            kind: crate::error::GetReservationUtilizationErrorKind::DataUnavailableException({
+        "DataUnavailableException" => {
+            crate::error::GetReservationUtilizationError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationUtilizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetReservationUtilizationError {
-            meta: generic,
-            kind: crate::error::GetReservationUtilizationErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetReservationUtilizationError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationUtilizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetReservationUtilizationError {
-            meta: generic,
-            kind: crate::error::GetReservationUtilizationErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetReservationUtilizationError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetReservationUtilizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetReservationUtilizationError::generic(generic),
     })
 }
@@ -1610,6 +1700,9 @@ pub fn parse_get_reservation_utilization_response(
             output,
         )
         .map_err(crate::error::GetReservationUtilizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1621,8 +1714,11 @@ pub fn parse_get_rightsizing_recommendation_error(
     crate::output::GetRightsizingRecommendationOutput,
     crate::error::GetRightsizingRecommendationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRightsizingRecommendationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1634,40 +1730,40 @@ pub fn parse_get_rightsizing_recommendation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::GetRightsizingRecommendationError {
-            meta: generic,
-            kind: crate::error::GetRightsizingRecommendationErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::GetRightsizingRecommendationError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRightsizingRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetRightsizingRecommendationError {
-            meta: generic,
-            kind: crate::error::GetRightsizingRecommendationErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetRightsizingRecommendationError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRightsizingRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetRightsizingRecommendationError::generic(generic),
     })
 }
@@ -1688,6 +1784,9 @@ pub fn parse_get_rightsizing_recommendation_response(
             output,
         )
         .map_err(crate::error::GetRightsizingRecommendationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1699,8 +1798,11 @@ pub fn parse_get_savings_plans_coverage_error(
     crate::output::GetSavingsPlansCoverageOutput,
     crate::error::GetSavingsPlansCoverageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSavingsPlansCoverageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1712,57 +1814,57 @@ pub fn parse_get_savings_plans_coverage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetSavingsPlansCoverageError {
-            meta: generic,
-            kind: crate::error::GetSavingsPlansCoverageErrorKind::DataUnavailableException({
+        "DataUnavailableException" => {
+            crate::error::GetSavingsPlansCoverageError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansCoverageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetSavingsPlansCoverageError {
-            meta: generic,
-            kind: crate::error::GetSavingsPlansCoverageErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetSavingsPlansCoverageError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansCoverageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetSavingsPlansCoverageError {
-            meta: generic,
-            kind: crate::error::GetSavingsPlansCoverageErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetSavingsPlansCoverageError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansCoverageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSavingsPlansCoverageError::generic(generic),
     })
 }
@@ -1783,6 +1885,9 @@ pub fn parse_get_savings_plans_coverage_response(
             output,
         )
         .map_err(crate::error::GetSavingsPlansCoverageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1794,8 +1899,11 @@ pub fn parse_get_savings_plans_purchase_recommendation_error(
     crate::output::GetSavingsPlansPurchaseRecommendationOutput,
     crate::error::GetSavingsPlansPurchaseRecommendationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSavingsPlansPurchaseRecommendationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1807,39 +1915,41 @@ pub fn parse_get_savings_plans_purchase_recommendation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::GetSavingsPlansPurchaseRecommendationError { meta: generic, kind: crate::error::GetSavingsPlansPurchaseRecommendationErrorKind::InvalidNextTokenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidNextTokenException" => {
+            crate::error::GetSavingsPlansPurchaseRecommendationError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansPurchaseRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "LimitExceededException" => crate::error::GetSavingsPlansPurchaseRecommendationError { meta: generic, kind: crate::error::GetSavingsPlansPurchaseRecommendationErrorKind::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetSavingsPlansPurchaseRecommendationError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansPurchaseRecommendationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GetSavingsPlansPurchaseRecommendationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::GetSavingsPlansPurchaseRecommendationError::generic(generic),
     })
 }
 
@@ -1856,6 +1966,9 @@ pub fn parse_get_savings_plans_purchase_recommendation_response(
             crate::output::get_savings_plans_purchase_recommendation_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_savings_plans_purchase_recommendation(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansPurchaseRecommendationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1867,8 +1980,11 @@ pub fn parse_get_savings_plans_utilization_error(
     crate::output::GetSavingsPlansUtilizationOutput,
     crate::error::GetSavingsPlansUtilizationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSavingsPlansUtilizationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1880,40 +1996,40 @@ pub fn parse_get_savings_plans_utilization_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetSavingsPlansUtilizationError {
-            meta: generic,
-            kind: crate::error::GetSavingsPlansUtilizationErrorKind::DataUnavailableException({
+        "DataUnavailableException" => {
+            crate::error::GetSavingsPlansUtilizationError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetSavingsPlansUtilizationError {
-            meta: generic,
-            kind: crate::error::GetSavingsPlansUtilizationErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetSavingsPlansUtilizationError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSavingsPlansUtilizationError::generic(generic),
     })
 }
@@ -1934,6 +2050,9 @@ pub fn parse_get_savings_plans_utilization_response(
             output,
         )
         .map_err(crate::error::GetSavingsPlansUtilizationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1945,8 +2064,11 @@ pub fn parse_get_savings_plans_utilization_details_error(
     crate::output::GetSavingsPlansUtilizationDetailsOutput,
     crate::error::GetSavingsPlansUtilizationDetailsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1956,67 +2078,57 @@ pub fn parse_get_savings_plans_utilization_details_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetSavingsPlansUtilizationDetailsError {
-            meta: generic,
-            kind:
-                crate::error::GetSavingsPlansUtilizationDetailsErrorKind::DataUnavailableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::data_unavailable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidNextTokenException" => crate::error::GetSavingsPlansUtilizationDetailsError {
-            meta: generic,
-            kind:
-                crate::error::GetSavingsPlansUtilizationDetailsErrorKind::InvalidNextTokenException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_next_token_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "LimitExceededException" => crate::error::GetSavingsPlansUtilizationDetailsError {
-            meta: generic,
-            kind: crate::error::GetSavingsPlansUtilizationDetailsErrorKind::LimitExceededException(
-                {
+        "DataUnavailableException" => {
+            crate::error::GetSavingsPlansUtilizationDetailsError::DataUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::data_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::GetSavingsPlansUtilizationDetailsError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::GetSavingsPlansUtilizationDetailsError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetSavingsPlansUtilizationDetailsError::generic(generic),
     })
 }
@@ -2034,6 +2146,9 @@ pub fn parse_get_savings_plans_utilization_details_response(
             crate::output::get_savings_plans_utilization_details_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_savings_plans_utilization_details(response.body().as_ref(), output).map_err(crate::error::GetSavingsPlansUtilizationDetailsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2042,8 +2157,11 @@ pub fn parse_get_savings_plans_utilization_details_response(
 pub fn parse_get_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTagsOutput, crate::error::GetTagsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetTagsError::unhandled(generic)),
@@ -2051,91 +2169,81 @@ pub fn parse_get_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BillExpirationException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::BillExpirationException({
+        "BillExpirationException" => crate::error::GetTagsError::BillExpirationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::bill_expiration_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DataUnavailableException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::DataUnavailableException({
+                let mut output = crate::error::bill_expiration_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_bill_expiration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DataUnavailableException" => crate::error::GetTagsError::DataUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::data_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::InvalidNextTokenException({
+                let mut output = crate::error::data_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidNextTokenException" => crate::error::GetTagsError::InvalidNextTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::GetTagsError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RequestChangedException" => crate::error::GetTagsError {
-            meta: generic,
-            kind: crate::error::GetTagsErrorKind::RequestChangedException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RequestChangedException" => crate::error::GetTagsError::RequestChangedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::request_changed_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::request_changed_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_request_changed_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetTagsError::generic(generic),
     })
 }
@@ -2153,6 +2261,9 @@ pub fn parse_get_tags_response(
             output,
         )
         .map_err(crate::error::GetTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2162,8 +2273,11 @@ pub fn parse_get_usage_forecast_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUsageForecastOutput, crate::error::GetUsageForecastError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetUsageForecastError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetUsageForecastError::unhandled(generic)),
@@ -2171,43 +2285,40 @@ pub fn parse_get_usage_forecast_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DataUnavailableException" => crate::error::GetUsageForecastError {
-            meta: generic,
-            kind: crate::error::GetUsageForecastErrorKind::DataUnavailableException({
+        "DataUnavailableException" => {
+            crate::error::GetUsageForecastError::DataUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::data_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_data_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUsageForecastError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::GetUsageForecastError {
-            meta: generic,
-            kind: crate::error::GetUsageForecastErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::GetUsageForecastError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUsageForecastError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnresolvableUsageUnitException" => crate::error::GetUsageForecastError {
-            meta: generic,
-            kind: crate::error::GetUsageForecastErrorKind::UnresolvableUsageUnitException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUsageForecastError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnresolvableUsageUnitException" => {
+            crate::error::GetUsageForecastError::UnresolvableUsageUnitException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2215,14 +2326,15 @@ pub fn parse_get_usage_forecast_error(
                         crate::error::unresolvable_usage_unit_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unresolvable_usage_unit_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetUsageForecastError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetUsageForecastError::generic(generic),
     })
 }
@@ -2241,6 +2353,9 @@ pub fn parse_get_usage_forecast_response(
             output,
         )
         .map_err(crate::error::GetUsageForecastError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2252,8 +2367,11 @@ pub fn parse_list_cost_allocation_tags_error(
     crate::output::ListCostAllocationTagsOutput,
     crate::error::ListCostAllocationTagsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2265,40 +2383,40 @@ pub fn parse_list_cost_allocation_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListCostAllocationTagsError {
-            meta: generic,
-            kind: crate::error::ListCostAllocationTagsErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => {
+            crate::error::ListCostAllocationTagsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::ListCostAllocationTagsError {
-            meta: generic,
-            kind: crate::error::ListCostAllocationTagsErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::ListCostAllocationTagsError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListCostAllocationTagsError::generic(generic),
     })
 }
@@ -2319,6 +2437,9 @@ pub fn parse_list_cost_allocation_tags_response(
             output,
         )
         .map_err(crate::error::ListCostAllocationTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2330,8 +2451,11 @@ pub fn parse_list_cost_category_definitions_error(
     crate::output::ListCostCategoryDefinitionsOutput,
     crate::error::ListCostCategoryDefinitionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCostCategoryDefinitionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2343,23 +2467,23 @@ pub fn parse_list_cost_category_definitions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::ListCostCategoryDefinitionsError {
-            meta: generic,
-            kind: crate::error::ListCostCategoryDefinitionsErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::ListCostCategoryDefinitionsError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCostCategoryDefinitionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListCostCategoryDefinitionsError::generic(generic),
     })
 }
@@ -2380,6 +2504,9 @@ pub fn parse_list_cost_category_definitions_response(
             output,
         )
         .map_err(crate::error::ListCostCategoryDefinitionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2391,8 +2518,11 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
     crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput,
     crate::error::ListSavingsPlansPurchaseRecommendationGenerationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2406,7 +2536,7 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextTokenException" => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::InvalidNextTokenException({
+        "InvalidNextTokenException" => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::InvalidNextTokenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2414,6 +2544,7 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2421,8 +2552,8 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "LimitExceededException" => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::ListSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException({
+        }),
+        "LimitExceededException" => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2430,6 +2561,7 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2437,7 +2569,7 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::generic(generic)
     })
 }
@@ -2454,6 +2586,9 @@ pub fn parse_list_savings_plans_purchase_recommendation_generation_response(
         let mut output = crate::output::list_savings_plans_purchase_recommendation_generation_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_savings_plans_purchase_recommendation_generation(response.body().as_ref(), output).map_err(crate::error::ListSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2465,8 +2600,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -2474,40 +2612,40 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::ListTagsForResourceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListTagsForResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -2528,6 +2666,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2539,8 +2680,11 @@ pub fn parse_provide_anomaly_feedback_error(
     crate::output::ProvideAnomalyFeedbackOutput,
     crate::error::ProvideAnomalyFeedbackError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ProvideAnomalyFeedbackError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2552,23 +2696,23 @@ pub fn parse_provide_anomaly_feedback_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::ProvideAnomalyFeedbackError {
-            meta: generic,
-            kind: crate::error::ProvideAnomalyFeedbackErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::ProvideAnomalyFeedbackError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvideAnomalyFeedbackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ProvideAnomalyFeedbackError::generic(generic),
     })
 }
@@ -2589,6 +2733,9 @@ pub fn parse_provide_anomaly_feedback_response(
             output,
         )
         .map_err(crate::error::ProvideAnomalyFeedbackError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2600,8 +2747,11 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
     crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput,
     crate::error::StartSavingsPlansPurchaseRecommendationGenerationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2615,7 +2765,7 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "GenerationExistsException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::GenerationExistsException({
+        "GenerationExistsException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::GenerationExistsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2623,6 +2773,7 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
                     let mut output = crate::error::generation_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_generation_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2630,8 +2781,8 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "LimitExceededException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::LimitExceededException({
+        }),
+        "LimitExceededException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2639,6 +2790,7 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2646,8 +2798,8 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceQuotaExceededException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError { meta: generic, kind: crate::error::StartSavingsPlansPurchaseRecommendationGenerationErrorKind::ServiceQuotaExceededException({
+        }),
+        "ServiceQuotaExceededException" => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::ServiceQuotaExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2655,6 +2807,7 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
                     let mut output = crate::error::service_quota_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2662,7 +2815,7 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::generic(generic)
     })
 }
@@ -2679,6 +2832,9 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_response(
         let mut output = crate::output::start_savings_plans_purchase_recommendation_generation_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_start_savings_plans_purchase_recommendation_generation(response.body().as_ref(), output).map_err(crate::error::StartSavingsPlansPurchaseRecommendationGenerationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2687,8 +2843,11 @@ pub fn parse_start_savings_plans_purchase_recommendation_generation_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -2696,57 +2855,51 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::LimitExceededException({
+        "LimitExceededException" => crate::error::TagResourceError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::TagResourceError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyTagsException({
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTagsException" => crate::error::TagResourceError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -2759,6 +2912,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2767,8 +2923,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -2776,40 +2935,38 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::LimitExceededException({
+        "LimitExceededException" => crate::error::UntagResourceError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => {
+            crate::error::UntagResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -2822,6 +2979,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2833,8 +2993,11 @@ pub fn parse_update_anomaly_monitor_error(
     crate::output::UpdateAnomalyMonitorOutput,
     crate::error::UpdateAnomalyMonitorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAnomalyMonitorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateAnomalyMonitorError::unhandled(generic)),
@@ -2842,40 +3005,40 @@ pub fn parse_update_anomaly_monitor_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::UpdateAnomalyMonitorError {
-            meta: generic,
-            kind: crate::error::UpdateAnomalyMonitorErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::UpdateAnomalyMonitorError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAnomalyMonitorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownMonitorException" => crate::error::UpdateAnomalyMonitorError {
-            meta: generic,
-            kind: crate::error::UpdateAnomalyMonitorErrorKind::UnknownMonitorException({
+            })
+        }
+        "UnknownMonitorException" => {
+            crate::error::UpdateAnomalyMonitorError::UnknownMonitorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_monitor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_monitor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAnomalyMonitorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAnomalyMonitorError::generic(generic),
     })
 }
@@ -2896,6 +3059,9 @@ pub fn parse_update_anomaly_monitor_response(
             output,
         )
         .map_err(crate::error::UpdateAnomalyMonitorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2907,8 +3073,11 @@ pub fn parse_update_anomaly_subscription_error(
     crate::output::UpdateAnomalySubscriptionOutput,
     crate::error::UpdateAnomalySubscriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2920,43 +3089,42 @@ pub fn parse_update_anomaly_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::UpdateAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::UpdateAnomalySubscriptionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::UpdateAnomalySubscriptionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownMonitorException" => crate::error::UpdateAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::UpdateAnomalySubscriptionErrorKind::UnknownMonitorException({
+            })
+        }
+        "UnknownMonitorException" => {
+            crate::error::UpdateAnomalySubscriptionError::UnknownMonitorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_monitor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_monitor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownSubscriptionException" => crate::error::UpdateAnomalySubscriptionError {
-            meta: generic,
-            kind: crate::error::UpdateAnomalySubscriptionErrorKind::UnknownSubscriptionException({
+            })
+        }
+        "UnknownSubscriptionException" => {
+            crate::error::UpdateAnomalySubscriptionError::UnknownSubscriptionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2964,14 +3132,15 @@ pub fn parse_update_anomaly_subscription_error(
                         crate::error::unknown_subscription_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_subscription_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAnomalySubscriptionError::generic(generic),
     })
 }
@@ -2992,6 +3161,9 @@ pub fn parse_update_anomaly_subscription_response(
             output,
         )
         .map_err(crate::error::UpdateAnomalySubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3003,8 +3175,11 @@ pub fn parse_update_cost_allocation_tags_status_error(
     crate::output::UpdateCostAllocationTagsStatusOutput,
     crate::error::UpdateCostAllocationTagsStatusError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCostAllocationTagsStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateCostAllocationTagsStatusError::unhandled(generic)),
@@ -3012,23 +3187,23 @@ pub fn parse_update_cost_allocation_tags_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::UpdateCostAllocationTagsStatusError {
-            meta: generic,
-            kind: crate::error::UpdateCostAllocationTagsStatusErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::UpdateCostAllocationTagsStatusError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCostAllocationTagsStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateCostAllocationTagsStatusError::generic(generic),
     })
 }
@@ -3051,6 +3226,9 @@ pub fn parse_update_cost_allocation_tags_status_response(
                 output,
             )
             .map_err(crate::error::UpdateCostAllocationTagsStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3062,8 +3240,11 @@ pub fn parse_update_cost_category_definition_error(
     crate::output::UpdateCostCategoryDefinitionOutput,
     crate::error::UpdateCostCategoryDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3075,61 +3256,58 @@ pub fn parse_update_cost_category_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededException" => crate::error::UpdateCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::UpdateCostCategoryDefinitionErrorKind::LimitExceededException({
+        "LimitExceededException" => {
+            crate::error::UpdateCostCategoryDefinitionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateCostCategoryDefinitionError {
-            meta: generic,
-            kind: crate::error::UpdateCostCategoryDefinitionErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateCostCategoryDefinitionError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceQuotaExceededException" => crate::error::UpdateCostCategoryDefinitionError {
-            meta: generic,
-            kind:
-                crate::error::UpdateCostCategoryDefinitionErrorKind::ServiceQuotaExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_quota_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "ServiceQuotaExceededException" => {
+            crate::error::UpdateCostCategoryDefinitionError::ServiceQuotaExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_quota_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_quota_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateCostCategoryDefinitionError::generic(generic),
     })
 }
@@ -3151,6 +3329,9 @@ pub fn parse_update_cost_category_definition_response(
                 output,
             )
             .map_err(crate::error::UpdateCostCategoryDefinitionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

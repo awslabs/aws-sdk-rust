@@ -6,8 +6,11 @@ pub fn parse_accept_address_transfer_error(
     crate::output::AcceptAddressTransferOutput,
     crate::error::AcceptAddressTransferError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptAddressTransferError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptAddressTransferError::generic(generic))
 }
 
@@ -27,6 +30,9 @@ pub fn parse_accept_address_transfer_response(
             output,
         )
         .map_err(crate::error::AcceptAddressTransferError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -38,8 +44,11 @@ pub fn parse_accept_reserved_instances_exchange_quote_error(
     crate::output::AcceptReservedInstancesExchangeQuoteOutput,
     crate::error::AcceptReservedInstancesExchangeQuoteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptReservedInstancesExchangeQuoteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptReservedInstancesExchangeQuoteError::generic(generic))
 }
 
@@ -56,6 +65,9 @@ pub fn parse_accept_reserved_instances_exchange_quote_response(
             crate::output::accept_reserved_instances_exchange_quote_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_accept_reserved_instances_exchange_quote(response.body().as_ref(), output).map_err(crate::error::AcceptReservedInstancesExchangeQuoteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -67,8 +79,11 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_error(
     crate::output::AcceptTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::AcceptTransitGatewayMulticastDomainAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::generic(generic))
 }
 
@@ -84,6 +99,9 @@ pub fn parse_accept_transit_gateway_multicast_domain_associations_response(
         let mut output = crate::output::accept_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -95,8 +113,11 @@ pub fn parse_accept_transit_gateway_peering_attachment_error(
     crate::output::AcceptTransitGatewayPeeringAttachmentOutput,
     crate::error::AcceptTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptTransitGatewayPeeringAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptTransitGatewayPeeringAttachmentError::generic(generic))
 }
 
@@ -113,6 +134,9 @@ pub fn parse_accept_transit_gateway_peering_attachment_response(
             crate::output::accept_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayPeeringAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -124,8 +148,11 @@ pub fn parse_accept_transit_gateway_vpc_attachment_error(
     crate::output::AcceptTransitGatewayVpcAttachmentOutput,
     crate::error::AcceptTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptTransitGatewayVpcAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptTransitGatewayVpcAttachmentError::generic(generic))
 }
 
@@ -142,6 +169,9 @@ pub fn parse_accept_transit_gateway_vpc_attachment_response(
             crate::output::accept_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_accept_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::AcceptTransitGatewayVpcAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -153,8 +183,11 @@ pub fn parse_accept_vpc_endpoint_connections_error(
     crate::output::AcceptVpcEndpointConnectionsOutput,
     crate::error::AcceptVpcEndpointConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptVpcEndpointConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptVpcEndpointConnectionsError::generic(
         generic,
     ))
@@ -176,6 +209,9 @@ pub fn parse_accept_vpc_endpoint_connections_response(
             output,
         )
         .map_err(crate::error::AcceptVpcEndpointConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -187,8 +223,11 @@ pub fn parse_accept_vpc_peering_connection_error(
     crate::output::AcceptVpcPeeringConnectionOutput,
     crate::error::AcceptVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptVpcPeeringConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AcceptVpcPeeringConnectionError::generic(
         generic,
     ))
@@ -210,6 +249,9 @@ pub fn parse_accept_vpc_peering_connection_response(
             output,
         )
         .map_err(crate::error::AcceptVpcPeeringConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -221,8 +263,11 @@ pub fn parse_advertise_byoip_cidr_error(
     crate::output::AdvertiseByoipCidrOutput,
     crate::error::AdvertiseByoipCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AdvertiseByoipCidrError::generic(generic))
 }
 
@@ -242,6 +287,9 @@ pub fn parse_advertise_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -250,8 +298,11 @@ pub fn parse_advertise_byoip_cidr_response(
 pub fn parse_allocate_address_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AllocateAddressOutput, crate::error::AllocateAddressError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocateAddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AllocateAddressError::generic(generic))
 }
 
@@ -268,6 +319,9 @@ pub fn parse_allocate_address_response(
             output,
         )
         .map_err(crate::error::AllocateAddressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -276,8 +330,11 @@ pub fn parse_allocate_address_response(
 pub fn parse_allocate_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AllocateHostsOutput, crate::error::AllocateHostsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocateHostsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AllocateHostsError::generic(generic))
 }
 
@@ -294,6 +351,9 @@ pub fn parse_allocate_hosts_response(
             output,
         )
         .map_err(crate::error::AllocateHostsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -305,8 +365,11 @@ pub fn parse_allocate_ipam_pool_cidr_error(
     crate::output::AllocateIpamPoolCidrOutput,
     crate::error::AllocateIpamPoolCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocateIpamPoolCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AllocateIpamPoolCidrError::generic(generic))
 }
 
@@ -326,6 +389,9 @@ pub fn parse_allocate_ipam_pool_cidr_response(
             output,
         )
         .map_err(crate::error::AllocateIpamPoolCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -337,8 +403,11 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_error(
     crate::output::ApplySecurityGroupsToClientVpnTargetNetworkOutput,
     crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::generic(generic))
 }
 
@@ -354,6 +423,9 @@ pub fn parse_apply_security_groups_to_client_vpn_target_network_response(
         let mut output = crate::output::apply_security_groups_to_client_vpn_target_network_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_apply_security_groups_to_client_vpn_target_network(response.body().as_ref(), output).map_err(crate::error::ApplySecurityGroupsToClientVpnTargetNetworkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -365,8 +437,11 @@ pub fn parse_assign_ipv6_addresses_error(
     crate::output::AssignIpv6AddressesOutput,
     crate::error::AssignIpv6AddressesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssignIpv6AddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssignIpv6AddressesError::generic(generic))
 }
 
@@ -386,6 +461,9 @@ pub fn parse_assign_ipv6_addresses_response(
             output,
         )
         .map_err(crate::error::AssignIpv6AddressesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -397,8 +475,11 @@ pub fn parse_assign_private_ip_addresses_error(
     crate::output::AssignPrivateIpAddressesOutput,
     crate::error::AssignPrivateIpAddressesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssignPrivateIpAddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssignPrivateIpAddressesError::generic(
         generic,
     ))
@@ -420,6 +501,9 @@ pub fn parse_assign_private_ip_addresses_response(
             output,
         )
         .map_err(crate::error::AssignPrivateIpAddressesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -429,8 +513,11 @@ pub fn parse_associate_address_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssociateAddressOutput, crate::error::AssociateAddressError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateAddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateAddressError::generic(generic))
 }
 
@@ -448,6 +535,9 @@ pub fn parse_associate_address_response(
             output,
         )
         .map_err(crate::error::AssociateAddressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -459,8 +549,11 @@ pub fn parse_associate_client_vpn_target_network_error(
     crate::output::AssociateClientVpnTargetNetworkOutput,
     crate::error::AssociateClientVpnTargetNetworkError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateClientVpnTargetNetworkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateClientVpnTargetNetworkError::generic(
         generic,
     ))
@@ -484,6 +577,9 @@ pub fn parse_associate_client_vpn_target_network_response(
                 output,
             )
             .map_err(crate::error::AssociateClientVpnTargetNetworkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -495,8 +591,11 @@ pub fn parse_associate_dhcp_options_error(
     crate::output::AssociateDhcpOptionsOutput,
     crate::error::AssociateDhcpOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateDhcpOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateDhcpOptionsError::generic(generic))
 }
 
@@ -511,6 +610,9 @@ pub fn parse_associate_dhcp_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::associate_dhcp_options_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -522,8 +624,11 @@ pub fn parse_associate_enclave_certificate_iam_role_error(
     crate::output::AssociateEnclaveCertificateIamRoleOutput,
     crate::error::AssociateEnclaveCertificateIamRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateEnclaveCertificateIamRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateEnclaveCertificateIamRoleError::generic(generic))
 }
 
@@ -540,6 +645,9 @@ pub fn parse_associate_enclave_certificate_iam_role_response(
             crate::output::associate_enclave_certificate_iam_role_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_associate_enclave_certificate_iam_role(response.body().as_ref(), output).map_err(crate::error::AssociateEnclaveCertificateIamRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -551,8 +659,11 @@ pub fn parse_associate_iam_instance_profile_error(
     crate::output::AssociateIamInstanceProfileOutput,
     crate::error::AssociateIamInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateIamInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateIamInstanceProfileError::generic(
         generic,
     ))
@@ -574,6 +685,9 @@ pub fn parse_associate_iam_instance_profile_response(
             output,
         )
         .map_err(crate::error::AssociateIamInstanceProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -585,8 +699,11 @@ pub fn parse_associate_instance_event_window_error(
     crate::output::AssociateInstanceEventWindowOutput,
     crate::error::AssociateInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateInstanceEventWindowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateInstanceEventWindowError::generic(
         generic,
     ))
@@ -608,6 +725,9 @@ pub fn parse_associate_instance_event_window_response(
             output,
         )
         .map_err(crate::error::AssociateInstanceEventWindowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -619,8 +739,11 @@ pub fn parse_associate_route_table_error(
     crate::output::AssociateRouteTableOutput,
     crate::error::AssociateRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateRouteTableError::generic(generic))
 }
 
@@ -640,6 +763,9 @@ pub fn parse_associate_route_table_response(
             output,
         )
         .map_err(crate::error::AssociateRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -651,8 +777,11 @@ pub fn parse_associate_subnet_cidr_block_error(
     crate::output::AssociateSubnetCidrBlockOutput,
     crate::error::AssociateSubnetCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateSubnetCidrBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateSubnetCidrBlockError::generic(
         generic,
     ))
@@ -674,6 +803,9 @@ pub fn parse_associate_subnet_cidr_block_response(
             output,
         )
         .map_err(crate::error::AssociateSubnetCidrBlockError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -685,8 +817,11 @@ pub fn parse_associate_transit_gateway_multicast_domain_error(
     crate::output::AssociateTransitGatewayMulticastDomainOutput,
     crate::error::AssociateTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateTransitGatewayMulticastDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateTransitGatewayMulticastDomainError::generic(generic))
 }
 
@@ -703,6 +838,9 @@ pub fn parse_associate_transit_gateway_multicast_domain_response(
             crate::output::associate_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_associate_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::AssociateTransitGatewayMulticastDomainError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -714,8 +852,11 @@ pub fn parse_associate_transit_gateway_policy_table_error(
     crate::output::AssociateTransitGatewayPolicyTableOutput,
     crate::error::AssociateTransitGatewayPolicyTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateTransitGatewayPolicyTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateTransitGatewayPolicyTableError::generic(generic))
 }
 
@@ -732,6 +873,9 @@ pub fn parse_associate_transit_gateway_policy_table_response(
             crate::output::associate_transit_gateway_policy_table_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_associate_transit_gateway_policy_table(response.body().as_ref(), output).map_err(crate::error::AssociateTransitGatewayPolicyTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -743,8 +887,11 @@ pub fn parse_associate_transit_gateway_route_table_error(
     crate::output::AssociateTransitGatewayRouteTableOutput,
     crate::error::AssociateTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateTransitGatewayRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateTransitGatewayRouteTableError::generic(generic))
 }
 
@@ -761,6 +908,9 @@ pub fn parse_associate_transit_gateway_route_table_response(
             crate::output::associate_transit_gateway_route_table_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_associate_transit_gateway_route_table(response.body().as_ref(), output).map_err(crate::error::AssociateTransitGatewayRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -772,8 +922,11 @@ pub fn parse_associate_trunk_interface_error(
     crate::output::AssociateTrunkInterfaceOutput,
     crate::error::AssociateTrunkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateTrunkInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateTrunkInterfaceError::generic(generic))
 }
 
@@ -793,6 +946,9 @@ pub fn parse_associate_trunk_interface_response(
             output,
         )
         .map_err(crate::error::AssociateTrunkInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -804,8 +960,11 @@ pub fn parse_associate_vpc_cidr_block_error(
     crate::output::AssociateVpcCidrBlockOutput,
     crate::error::AssociateVpcCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateVpcCidrBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AssociateVpcCidrBlockError::generic(generic))
 }
 
@@ -825,6 +984,9 @@ pub fn parse_associate_vpc_cidr_block_response(
             output,
         )
         .map_err(crate::error::AssociateVpcCidrBlockError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -836,8 +998,11 @@ pub fn parse_attach_classic_link_vpc_error(
     crate::output::AttachClassicLinkVpcOutput,
     crate::error::AttachClassicLinkVpcError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachClassicLinkVpcError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AttachClassicLinkVpcError::generic(generic))
 }
 
@@ -857,6 +1022,9 @@ pub fn parse_attach_classic_link_vpc_response(
             output,
         )
         .map_err(crate::error::AttachClassicLinkVpcError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -868,8 +1036,11 @@ pub fn parse_attach_internet_gateway_error(
     crate::output::AttachInternetGatewayOutput,
     crate::error::AttachInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachInternetGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AttachInternetGatewayError::generic(generic))
 }
 
@@ -884,6 +1055,9 @@ pub fn parse_attach_internet_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_internet_gateway_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -895,8 +1069,11 @@ pub fn parse_attach_network_interface_error(
     crate::output::AttachNetworkInterfaceOutput,
     crate::error::AttachNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachNetworkInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AttachNetworkInterfaceError::generic(generic))
 }
 
@@ -916,6 +1093,9 @@ pub fn parse_attach_network_interface_response(
             output,
         )
         .map_err(crate::error::AttachNetworkInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -927,8 +1107,11 @@ pub fn parse_attach_verified_access_trust_provider_error(
     crate::output::AttachVerifiedAccessTrustProviderOutput,
     crate::error::AttachVerifiedAccessTrustProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachVerifiedAccessTrustProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AttachVerifiedAccessTrustProviderError::generic(generic))
 }
 
@@ -945,6 +1128,9 @@ pub fn parse_attach_verified_access_trust_provider_response(
             crate::output::attach_verified_access_trust_provider_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_attach_verified_access_trust_provider(response.body().as_ref(), output).map_err(crate::error::AttachVerifiedAccessTrustProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -953,8 +1139,11 @@ pub fn parse_attach_verified_access_trust_provider_response(
 pub fn parse_attach_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AttachVolumeError::generic(generic))
 }
 
@@ -971,6 +1160,9 @@ pub fn parse_attach_volume_response(
             output,
         )
         .map_err(crate::error::AttachVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -980,8 +1172,11 @@ pub fn parse_attach_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachVpnGatewayOutput, crate::error::AttachVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachVpnGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AttachVpnGatewayError::generic(generic))
 }
 
@@ -999,6 +1194,9 @@ pub fn parse_attach_vpn_gateway_response(
             output,
         )
         .map_err(crate::error::AttachVpnGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1010,8 +1208,11 @@ pub fn parse_authorize_client_vpn_ingress_error(
     crate::output::AuthorizeClientVpnIngressOutput,
     crate::error::AuthorizeClientVpnIngressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AuthorizeClientVpnIngressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AuthorizeClientVpnIngressError::generic(
         generic,
     ))
@@ -1033,6 +1234,9 @@ pub fn parse_authorize_client_vpn_ingress_response(
             output,
         )
         .map_err(crate::error::AuthorizeClientVpnIngressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1044,8 +1248,11 @@ pub fn parse_authorize_security_group_egress_error(
     crate::output::AuthorizeSecurityGroupEgressOutput,
     crate::error::AuthorizeSecurityGroupEgressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AuthorizeSecurityGroupEgressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AuthorizeSecurityGroupEgressError::generic(
         generic,
     ))
@@ -1067,6 +1274,9 @@ pub fn parse_authorize_security_group_egress_response(
             output,
         )
         .map_err(crate::error::AuthorizeSecurityGroupEgressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1078,8 +1288,11 @@ pub fn parse_authorize_security_group_ingress_error(
     crate::output::AuthorizeSecurityGroupIngressOutput,
     crate::error::AuthorizeSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AuthorizeSecurityGroupIngressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::AuthorizeSecurityGroupIngressError::generic(
         generic,
     ))
@@ -1102,6 +1315,9 @@ pub fn parse_authorize_security_group_ingress_response(
                 output,
             )
             .map_err(crate::error::AuthorizeSecurityGroupIngressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1110,8 +1326,11 @@ pub fn parse_authorize_security_group_ingress_response(
 pub fn parse_bundle_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BundleInstanceOutput, crate::error::BundleInstanceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BundleInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::BundleInstanceError::generic(generic))
 }
 
@@ -1128,6 +1347,9 @@ pub fn parse_bundle_instance_response(
             output,
         )
         .map_err(crate::error::BundleInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1137,8 +1359,11 @@ pub fn parse_cancel_bundle_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelBundleTaskOutput, crate::error::CancelBundleTaskError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelBundleTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelBundleTaskError::generic(generic))
 }
 
@@ -1156,6 +1381,9 @@ pub fn parse_cancel_bundle_task_response(
             output,
         )
         .map_err(crate::error::CancelBundleTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1167,8 +1395,11 @@ pub fn parse_cancel_capacity_reservation_error(
     crate::output::CancelCapacityReservationOutput,
     crate::error::CancelCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelCapacityReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelCapacityReservationError::generic(
         generic,
     ))
@@ -1190,6 +1421,9 @@ pub fn parse_cancel_capacity_reservation_response(
             output,
         )
         .map_err(crate::error::CancelCapacityReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1201,8 +1435,11 @@ pub fn parse_cancel_capacity_reservation_fleets_error(
     crate::output::CancelCapacityReservationFleetsOutput,
     crate::error::CancelCapacityReservationFleetsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelCapacityReservationFleetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelCapacityReservationFleetsError::generic(
         generic,
     ))
@@ -1226,6 +1463,9 @@ pub fn parse_cancel_capacity_reservation_fleets_response(
                 output,
             )
             .map_err(crate::error::CancelCapacityReservationFleetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1237,8 +1477,11 @@ pub fn parse_cancel_conversion_task_error(
     crate::output::CancelConversionTaskOutput,
     crate::error::CancelConversionTaskError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelConversionTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelConversionTaskError::generic(generic))
 }
 
@@ -1253,6 +1496,9 @@ pub fn parse_cancel_conversion_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_conversion_task_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1262,8 +1508,11 @@ pub fn parse_cancel_export_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelExportTaskOutput, crate::error::CancelExportTaskError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelExportTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelExportTaskError::generic(generic))
 }
 
@@ -1276,6 +1525,9 @@ pub fn parse_cancel_export_task_response(
         #[allow(unused_mut)]
         let mut output = crate::output::cancel_export_task_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1287,8 +1539,11 @@ pub fn parse_cancel_image_launch_permission_error(
     crate::output::CancelImageLaunchPermissionOutput,
     crate::error::CancelImageLaunchPermissionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelImageLaunchPermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelImageLaunchPermissionError::generic(
         generic,
     ))
@@ -1310,6 +1565,9 @@ pub fn parse_cancel_image_launch_permission_response(
             output,
         )
         .map_err(crate::error::CancelImageLaunchPermissionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1319,8 +1577,11 @@ pub fn parse_cancel_import_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelImportTaskOutput, crate::error::CancelImportTaskError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelImportTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelImportTaskError::generic(generic))
 }
 
@@ -1338,6 +1599,9 @@ pub fn parse_cancel_import_task_response(
             output,
         )
         .map_err(crate::error::CancelImportTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1349,8 +1613,11 @@ pub fn parse_cancel_reserved_instances_listing_error(
     crate::output::CancelReservedInstancesListingOutput,
     crate::error::CancelReservedInstancesListingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelReservedInstancesListingError::generic(
         generic,
     ))
@@ -1374,6 +1641,9 @@ pub fn parse_cancel_reserved_instances_listing_response(
                 output,
             )
             .map_err(crate::error::CancelReservedInstancesListingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1385,8 +1655,11 @@ pub fn parse_cancel_spot_fleet_requests_error(
     crate::output::CancelSpotFleetRequestsOutput,
     crate::error::CancelSpotFleetRequestsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelSpotFleetRequestsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelSpotFleetRequestsError::generic(generic))
 }
 
@@ -1406,6 +1679,9 @@ pub fn parse_cancel_spot_fleet_requests_response(
             output,
         )
         .map_err(crate::error::CancelSpotFleetRequestsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1417,8 +1693,11 @@ pub fn parse_cancel_spot_instance_requests_error(
     crate::output::CancelSpotInstanceRequestsOutput,
     crate::error::CancelSpotInstanceRequestsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelSpotInstanceRequestsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CancelSpotInstanceRequestsError::generic(
         generic,
     ))
@@ -1440,6 +1719,9 @@ pub fn parse_cancel_spot_instance_requests_response(
             output,
         )
         .map_err(crate::error::CancelSpotInstanceRequestsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1451,8 +1733,11 @@ pub fn parse_confirm_product_instance_error(
     crate::output::ConfirmProductInstanceOutput,
     crate::error::ConfirmProductInstanceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConfirmProductInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ConfirmProductInstanceError::generic(generic))
 }
 
@@ -1472,6 +1757,9 @@ pub fn parse_confirm_product_instance_response(
             output,
         )
         .map_err(crate::error::ConfirmProductInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1480,8 +1768,11 @@ pub fn parse_confirm_product_instance_response(
 pub fn parse_copy_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyFpgaImageOutput, crate::error::CopyFpgaImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopyFpgaImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CopyFpgaImageError::generic(generic))
 }
 
@@ -1498,6 +1789,9 @@ pub fn parse_copy_fpga_image_response(
             output,
         )
         .map_err(crate::error::CopyFpgaImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1506,8 +1800,11 @@ pub fn parse_copy_fpga_image_response(
 pub fn parse_copy_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyImageOutput, crate::error::CopyImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopyImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CopyImageError::generic(generic))
 }
 
@@ -1524,6 +1821,9 @@ pub fn parse_copy_image_response(
             output,
         )
         .map_err(crate::error::CopyImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1532,8 +1832,11 @@ pub fn parse_copy_image_response(
 pub fn parse_copy_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopySnapshotOutput, crate::error::CopySnapshotError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopySnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CopySnapshotError::generic(generic))
 }
 
@@ -1550,6 +1853,9 @@ pub fn parse_copy_snapshot_response(
             output,
         )
         .map_err(crate::error::CopySnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1561,8 +1867,11 @@ pub fn parse_create_capacity_reservation_error(
     crate::output::CreateCapacityReservationOutput,
     crate::error::CreateCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCapacityReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateCapacityReservationError::generic(
         generic,
     ))
@@ -1584,6 +1893,9 @@ pub fn parse_create_capacity_reservation_response(
             output,
         )
         .map_err(crate::error::CreateCapacityReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1595,8 +1907,11 @@ pub fn parse_create_capacity_reservation_fleet_error(
     crate::output::CreateCapacityReservationFleetOutput,
     crate::error::CreateCapacityReservationFleetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCapacityReservationFleetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateCapacityReservationFleetError::generic(
         generic,
     ))
@@ -1620,6 +1935,9 @@ pub fn parse_create_capacity_reservation_fleet_response(
                 output,
             )
             .map_err(crate::error::CreateCapacityReservationFleetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1631,8 +1949,11 @@ pub fn parse_create_carrier_gateway_error(
     crate::output::CreateCarrierGatewayOutput,
     crate::error::CreateCarrierGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCarrierGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateCarrierGatewayError::generic(generic))
 }
 
@@ -1652,6 +1973,9 @@ pub fn parse_create_carrier_gateway_response(
             output,
         )
         .map_err(crate::error::CreateCarrierGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1663,8 +1987,11 @@ pub fn parse_create_client_vpn_endpoint_error(
     crate::output::CreateClientVpnEndpointOutput,
     crate::error::CreateClientVpnEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateClientVpnEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateClientVpnEndpointError::generic(generic))
 }
 
@@ -1684,6 +2011,9 @@ pub fn parse_create_client_vpn_endpoint_response(
             output,
         )
         .map_err(crate::error::CreateClientVpnEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1695,8 +2025,11 @@ pub fn parse_create_client_vpn_route_error(
     crate::output::CreateClientVpnRouteOutput,
     crate::error::CreateClientVpnRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateClientVpnRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateClientVpnRouteError::generic(generic))
 }
 
@@ -1716,6 +2049,9 @@ pub fn parse_create_client_vpn_route_response(
             output,
         )
         .map_err(crate::error::CreateClientVpnRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1724,8 +2060,11 @@ pub fn parse_create_client_vpn_route_response(
 pub fn parse_create_coip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCoipCidrOutput, crate::error::CreateCoipCidrError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateCoipCidrError::generic(generic))
 }
 
@@ -1742,6 +2081,9 @@ pub fn parse_create_coip_cidr_response(
             output,
         )
         .map_err(crate::error::CreateCoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1750,8 +2092,11 @@ pub fn parse_create_coip_cidr_response(
 pub fn parse_create_coip_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateCoipPoolOutput, crate::error::CreateCoipPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCoipPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateCoipPoolError::generic(generic))
 }
 
@@ -1768,6 +2113,9 @@ pub fn parse_create_coip_pool_response(
             output,
         )
         .map_err(crate::error::CreateCoipPoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1779,8 +2127,11 @@ pub fn parse_create_customer_gateway_error(
     crate::output::CreateCustomerGatewayOutput,
     crate::error::CreateCustomerGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCustomerGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateCustomerGatewayError::generic(generic))
 }
 
@@ -1800,6 +2151,9 @@ pub fn parse_create_customer_gateway_response(
             output,
         )
         .map_err(crate::error::CreateCustomerGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1811,8 +2165,11 @@ pub fn parse_create_default_subnet_error(
     crate::output::CreateDefaultSubnetOutput,
     crate::error::CreateDefaultSubnetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDefaultSubnetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateDefaultSubnetError::generic(generic))
 }
 
@@ -1832,6 +2189,9 @@ pub fn parse_create_default_subnet_response(
             output,
         )
         .map_err(crate::error::CreateDefaultSubnetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1841,8 +2201,11 @@ pub fn parse_create_default_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDefaultVpcOutput, crate::error::CreateDefaultVpcError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDefaultVpcError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateDefaultVpcError::generic(generic))
 }
 
@@ -1860,6 +2223,9 @@ pub fn parse_create_default_vpc_response(
             output,
         )
         .map_err(crate::error::CreateDefaultVpcError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1869,8 +2235,11 @@ pub fn parse_create_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDhcpOptionsOutput, crate::error::CreateDhcpOptionsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDhcpOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateDhcpOptionsError::generic(generic))
 }
 
@@ -1888,6 +2257,9 @@ pub fn parse_create_dhcp_options_response(
             output,
         )
         .map_err(crate::error::CreateDhcpOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1899,8 +2271,11 @@ pub fn parse_create_egress_only_internet_gateway_error(
     crate::output::CreateEgressOnlyInternetGatewayOutput,
     crate::error::CreateEgressOnlyInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateEgressOnlyInternetGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateEgressOnlyInternetGatewayError::generic(
         generic,
     ))
@@ -1924,6 +2299,9 @@ pub fn parse_create_egress_only_internet_gateway_response(
                 output,
             )
             .map_err(crate::error::CreateEgressOnlyInternetGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1932,8 +2310,11 @@ pub fn parse_create_egress_only_internet_gateway_response(
 pub fn parse_create_fleet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFleetOutput, crate::error::CreateFleetError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateFleetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateFleetError::generic(generic))
 }
 
@@ -1950,6 +2331,9 @@ pub fn parse_create_fleet_response(
             output,
         )
         .map_err(crate::error::CreateFleetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1958,8 +2342,11 @@ pub fn parse_create_fleet_response(
 pub fn parse_create_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFlowLogsOutput, crate::error::CreateFlowLogsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateFlowLogsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateFlowLogsError::generic(generic))
 }
 
@@ -1976,6 +2363,9 @@ pub fn parse_create_flow_logs_response(
             output,
         )
         .map_err(crate::error::CreateFlowLogsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1984,8 +2374,11 @@ pub fn parse_create_flow_logs_response(
 pub fn parse_create_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateFpgaImageOutput, crate::error::CreateFpgaImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateFpgaImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateFpgaImageError::generic(generic))
 }
 
@@ -2002,6 +2395,9 @@ pub fn parse_create_fpga_image_response(
             output,
         )
         .map_err(crate::error::CreateFpgaImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2010,8 +2406,11 @@ pub fn parse_create_fpga_image_response(
 pub fn parse_create_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateImageOutput, crate::error::CreateImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateImageError::generic(generic))
 }
 
@@ -2028,6 +2427,9 @@ pub fn parse_create_image_response(
             output,
         )
         .map_err(crate::error::CreateImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2039,8 +2441,11 @@ pub fn parse_create_instance_event_window_error(
     crate::output::CreateInstanceEventWindowOutput,
     crate::error::CreateInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateInstanceEventWindowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateInstanceEventWindowError::generic(
         generic,
     ))
@@ -2062,6 +2467,9 @@ pub fn parse_create_instance_event_window_response(
             output,
         )
         .map_err(crate::error::CreateInstanceEventWindowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2073,8 +2481,11 @@ pub fn parse_create_instance_export_task_error(
     crate::output::CreateInstanceExportTaskOutput,
     crate::error::CreateInstanceExportTaskError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateInstanceExportTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateInstanceExportTaskError::generic(
         generic,
     ))
@@ -2096,6 +2507,9 @@ pub fn parse_create_instance_export_task_response(
             output,
         )
         .map_err(crate::error::CreateInstanceExportTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2107,8 +2521,11 @@ pub fn parse_create_internet_gateway_error(
     crate::output::CreateInternetGatewayOutput,
     crate::error::CreateInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateInternetGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateInternetGatewayError::generic(generic))
 }
 
@@ -2128,6 +2545,9 @@ pub fn parse_create_internet_gateway_response(
             output,
         )
         .map_err(crate::error::CreateInternetGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2136,8 +2556,11 @@ pub fn parse_create_internet_gateway_response(
 pub fn parse_create_ipam_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateIpamOutput, crate::error::CreateIpamError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateIpamError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateIpamError::generic(generic))
 }
 
@@ -2154,6 +2577,9 @@ pub fn parse_create_ipam_response(
             output,
         )
         .map_err(crate::error::CreateIpamError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2162,8 +2588,11 @@ pub fn parse_create_ipam_response(
 pub fn parse_create_ipam_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateIpamPoolOutput, crate::error::CreateIpamPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateIpamPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateIpamPoolError::generic(generic))
 }
 
@@ -2180,6 +2609,9 @@ pub fn parse_create_ipam_pool_response(
             output,
         )
         .map_err(crate::error::CreateIpamPoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2188,8 +2620,11 @@ pub fn parse_create_ipam_pool_response(
 pub fn parse_create_ipam_scope_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateIpamScopeOutput, crate::error::CreateIpamScopeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateIpamScopeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateIpamScopeError::generic(generic))
 }
 
@@ -2206,6 +2641,9 @@ pub fn parse_create_ipam_scope_response(
             output,
         )
         .map_err(crate::error::CreateIpamScopeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2214,8 +2652,11 @@ pub fn parse_create_ipam_scope_response(
 pub fn parse_create_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateKeyPairOutput, crate::error::CreateKeyPairError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateKeyPairError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateKeyPairError::generic(generic))
 }
 
@@ -2232,6 +2673,9 @@ pub fn parse_create_key_pair_response(
             output,
         )
         .map_err(crate::error::CreateKeyPairError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2243,8 +2687,11 @@ pub fn parse_create_launch_template_error(
     crate::output::CreateLaunchTemplateOutput,
     crate::error::CreateLaunchTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLaunchTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateLaunchTemplateError::generic(generic))
 }
 
@@ -2264,6 +2711,9 @@ pub fn parse_create_launch_template_response(
             output,
         )
         .map_err(crate::error::CreateLaunchTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2275,8 +2725,11 @@ pub fn parse_create_launch_template_version_error(
     crate::output::CreateLaunchTemplateVersionOutput,
     crate::error::CreateLaunchTemplateVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLaunchTemplateVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateLaunchTemplateVersionError::generic(
         generic,
     ))
@@ -2298,6 +2751,9 @@ pub fn parse_create_launch_template_version_response(
             output,
         )
         .map_err(crate::error::CreateLaunchTemplateVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2309,8 +2765,11 @@ pub fn parse_create_local_gateway_route_error(
     crate::output::CreateLocalGatewayRouteOutput,
     crate::error::CreateLocalGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLocalGatewayRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateLocalGatewayRouteError::generic(generic))
 }
 
@@ -2330,6 +2789,9 @@ pub fn parse_create_local_gateway_route_response(
             output,
         )
         .map_err(crate::error::CreateLocalGatewayRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2341,8 +2803,11 @@ pub fn parse_create_local_gateway_route_table_error(
     crate::output::CreateLocalGatewayRouteTableOutput,
     crate::error::CreateLocalGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLocalGatewayRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateLocalGatewayRouteTableError::generic(
         generic,
     ))
@@ -2365,6 +2830,9 @@ pub fn parse_create_local_gateway_route_table_response(
                 output,
             )
             .map_err(crate::error::CreateLocalGatewayRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2376,9 +2844,12 @@ pub fn parse_create_local_gateway_route_table_virtual_interface_group_associatio
     crate::output::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
     crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response).map_err(
         crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled,
     )?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(
         crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::generic(
             generic,
@@ -2398,6 +2869,9 @@ pub fn parse_create_local_gateway_route_table_virtual_interface_group_associatio
         let mut output = crate::output::create_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table_virtual_interface_group_association(response.body().as_ref(), output).map_err(crate::error::CreateLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2409,8 +2883,11 @@ pub fn parse_create_local_gateway_route_table_vpc_association_error(
     crate::output::CreateLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::CreateLocalGatewayRouteTableVpcAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::generic(generic))
 }
 
@@ -2426,6 +2903,9 @@ pub fn parse_create_local_gateway_route_table_vpc_association_response(
         let mut output = crate::output::create_local_gateway_route_table_vpc_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_local_gateway_route_table_vpc_association(response.body().as_ref(), output).map_err(crate::error::CreateLocalGatewayRouteTableVpcAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2437,8 +2917,11 @@ pub fn parse_create_managed_prefix_list_error(
     crate::output::CreateManagedPrefixListOutput,
     crate::error::CreateManagedPrefixListError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateManagedPrefixListError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateManagedPrefixListError::generic(generic))
 }
 
@@ -2458,6 +2941,9 @@ pub fn parse_create_managed_prefix_list_response(
             output,
         )
         .map_err(crate::error::CreateManagedPrefixListError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2467,8 +2953,11 @@ pub fn parse_create_nat_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateNatGatewayOutput, crate::error::CreateNatGatewayError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNatGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNatGatewayError::generic(generic))
 }
 
@@ -2486,6 +2975,9 @@ pub fn parse_create_nat_gateway_response(
             output,
         )
         .map_err(crate::error::CreateNatGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2495,8 +2987,11 @@ pub fn parse_create_network_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateNetworkAclOutput, crate::error::CreateNetworkAclError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNetworkAclError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNetworkAclError::generic(generic))
 }
 
@@ -2514,6 +3009,9 @@ pub fn parse_create_network_acl_response(
             output,
         )
         .map_err(crate::error::CreateNetworkAclError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2525,8 +3023,11 @@ pub fn parse_create_network_acl_entry_error(
     crate::output::CreateNetworkAclEntryOutput,
     crate::error::CreateNetworkAclEntryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNetworkAclEntryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNetworkAclEntryError::generic(generic))
 }
 
@@ -2541,6 +3042,9 @@ pub fn parse_create_network_acl_entry_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_network_acl_entry_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2552,8 +3056,11 @@ pub fn parse_create_network_insights_access_scope_error(
     crate::output::CreateNetworkInsightsAccessScopeOutput,
     crate::error::CreateNetworkInsightsAccessScopeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNetworkInsightsAccessScopeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNetworkInsightsAccessScopeError::generic(generic))
 }
 
@@ -2575,6 +3082,9 @@ pub fn parse_create_network_insights_access_scope_response(
                 output,
             )
             .map_err(crate::error::CreateNetworkInsightsAccessScopeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2586,8 +3096,11 @@ pub fn parse_create_network_insights_path_error(
     crate::output::CreateNetworkInsightsPathOutput,
     crate::error::CreateNetworkInsightsPathError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNetworkInsightsPathError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNetworkInsightsPathError::generic(
         generic,
     ))
@@ -2609,6 +3122,9 @@ pub fn parse_create_network_insights_path_response(
             output,
         )
         .map_err(crate::error::CreateNetworkInsightsPathError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2620,8 +3136,11 @@ pub fn parse_create_network_interface_error(
     crate::output::CreateNetworkInterfaceOutput,
     crate::error::CreateNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNetworkInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNetworkInterfaceError::generic(generic))
 }
 
@@ -2641,6 +3160,9 @@ pub fn parse_create_network_interface_response(
             output,
         )
         .map_err(crate::error::CreateNetworkInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2652,8 +3174,11 @@ pub fn parse_create_network_interface_permission_error(
     crate::output::CreateNetworkInterfacePermissionOutput,
     crate::error::CreateNetworkInterfacePermissionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNetworkInterfacePermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateNetworkInterfacePermissionError::generic(generic))
 }
 
@@ -2675,6 +3200,9 @@ pub fn parse_create_network_interface_permission_response(
                 output,
             )
             .map_err(crate::error::CreateNetworkInterfacePermissionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2686,8 +3214,11 @@ pub fn parse_create_placement_group_error(
     crate::output::CreatePlacementGroupOutput,
     crate::error::CreatePlacementGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePlacementGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreatePlacementGroupError::generic(generic))
 }
 
@@ -2707,6 +3238,9 @@ pub fn parse_create_placement_group_response(
             output,
         )
         .map_err(crate::error::CreatePlacementGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2718,8 +3252,11 @@ pub fn parse_create_public_ipv4_pool_error(
     crate::output::CreatePublicIpv4PoolOutput,
     crate::error::CreatePublicIpv4PoolError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePublicIpv4PoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreatePublicIpv4PoolError::generic(generic))
 }
 
@@ -2739,6 +3276,9 @@ pub fn parse_create_public_ipv4_pool_response(
             output,
         )
         .map_err(crate::error::CreatePublicIpv4PoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2750,8 +3290,11 @@ pub fn parse_create_replace_root_volume_task_error(
     crate::output::CreateReplaceRootVolumeTaskOutput,
     crate::error::CreateReplaceRootVolumeTaskError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateReplaceRootVolumeTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateReplaceRootVolumeTaskError::generic(
         generic,
     ))
@@ -2773,6 +3316,9 @@ pub fn parse_create_replace_root_volume_task_response(
             output,
         )
         .map_err(crate::error::CreateReplaceRootVolumeTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2784,8 +3330,11 @@ pub fn parse_create_reserved_instances_listing_error(
     crate::output::CreateReservedInstancesListingOutput,
     crate::error::CreateReservedInstancesListingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateReservedInstancesListingError::generic(
         generic,
     ))
@@ -2809,6 +3358,9 @@ pub fn parse_create_reserved_instances_listing_response(
                 output,
             )
             .map_err(crate::error::CreateReservedInstancesListingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2820,8 +3372,11 @@ pub fn parse_create_restore_image_task_error(
     crate::output::CreateRestoreImageTaskOutput,
     crate::error::CreateRestoreImageTaskError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRestoreImageTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateRestoreImageTaskError::generic(generic))
 }
 
@@ -2841,6 +3396,9 @@ pub fn parse_create_restore_image_task_response(
             output,
         )
         .map_err(crate::error::CreateRestoreImageTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2849,8 +3407,11 @@ pub fn parse_create_restore_image_task_response(
 pub fn parse_create_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRouteOutput, crate::error::CreateRouteError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateRouteError::generic(generic))
 }
 
@@ -2867,6 +3428,9 @@ pub fn parse_create_route_response(
             output,
         )
         .map_err(crate::error::CreateRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2876,8 +3440,11 @@ pub fn parse_create_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRouteTableOutput, crate::error::CreateRouteTableError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateRouteTableError::generic(generic))
 }
 
@@ -2895,6 +3462,9 @@ pub fn parse_create_route_table_response(
             output,
         )
         .map_err(crate::error::CreateRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2906,8 +3476,11 @@ pub fn parse_create_security_group_error(
     crate::output::CreateSecurityGroupOutput,
     crate::error::CreateSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSecurityGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateSecurityGroupError::generic(generic))
 }
 
@@ -2927,6 +3500,9 @@ pub fn parse_create_security_group_response(
             output,
         )
         .map_err(crate::error::CreateSecurityGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2935,8 +3511,11 @@ pub fn parse_create_security_group_response(
 pub fn parse_create_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateSnapshotError::generic(generic))
 }
 
@@ -2953,6 +3532,9 @@ pub fn parse_create_snapshot_response(
             output,
         )
         .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2961,8 +3543,11 @@ pub fn parse_create_snapshot_response(
 pub fn parse_create_snapshots_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSnapshotsOutput, crate::error::CreateSnapshotsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSnapshotsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateSnapshotsError::generic(generic))
 }
 
@@ -2979,6 +3564,9 @@ pub fn parse_create_snapshots_response(
             output,
         )
         .map_err(crate::error::CreateSnapshotsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2990,8 +3578,11 @@ pub fn parse_create_spot_datafeed_subscription_error(
     crate::output::CreateSpotDatafeedSubscriptionOutput,
     crate::error::CreateSpotDatafeedSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSpotDatafeedSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateSpotDatafeedSubscriptionError::generic(
         generic,
     ))
@@ -3015,6 +3606,9 @@ pub fn parse_create_spot_datafeed_subscription_response(
                 output,
             )
             .map_err(crate::error::CreateSpotDatafeedSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3026,8 +3620,11 @@ pub fn parse_create_store_image_task_error(
     crate::output::CreateStoreImageTaskOutput,
     crate::error::CreateStoreImageTaskError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateStoreImageTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateStoreImageTaskError::generic(generic))
 }
 
@@ -3047,6 +3644,9 @@ pub fn parse_create_store_image_task_response(
             output,
         )
         .map_err(crate::error::CreateStoreImageTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3055,8 +3655,11 @@ pub fn parse_create_store_image_task_response(
 pub fn parse_create_subnet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSubnetOutput, crate::error::CreateSubnetError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSubnetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateSubnetError::generic(generic))
 }
 
@@ -3073,6 +3676,9 @@ pub fn parse_create_subnet_response(
             output,
         )
         .map_err(crate::error::CreateSubnetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3084,8 +3690,11 @@ pub fn parse_create_subnet_cidr_reservation_error(
     crate::output::CreateSubnetCidrReservationOutput,
     crate::error::CreateSubnetCidrReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateSubnetCidrReservationError::generic(
         generic,
     ))
@@ -3107,6 +3716,9 @@ pub fn parse_create_subnet_cidr_reservation_response(
             output,
         )
         .map_err(crate::error::CreateSubnetCidrReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3115,8 +3727,11 @@ pub fn parse_create_subnet_cidr_reservation_response(
 pub fn parse_create_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTagsOutput, crate::error::CreateTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTagsError::generic(generic))
 }
 
@@ -3128,6 +3743,9 @@ pub fn parse_create_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_tags_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3139,8 +3757,11 @@ pub fn parse_create_traffic_mirror_filter_error(
     crate::output::CreateTrafficMirrorFilterOutput,
     crate::error::CreateTrafficMirrorFilterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTrafficMirrorFilterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTrafficMirrorFilterError::generic(
         generic,
     ))
@@ -3162,6 +3783,9 @@ pub fn parse_create_traffic_mirror_filter_response(
             output,
         )
         .map_err(crate::error::CreateTrafficMirrorFilterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3173,8 +3797,11 @@ pub fn parse_create_traffic_mirror_filter_rule_error(
     crate::output::CreateTrafficMirrorFilterRuleOutput,
     crate::error::CreateTrafficMirrorFilterRuleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTrafficMirrorFilterRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTrafficMirrorFilterRuleError::generic(
         generic,
     ))
@@ -3198,6 +3825,9 @@ pub fn parse_create_traffic_mirror_filter_rule_response(
                 output,
             )
             .map_err(crate::error::CreateTrafficMirrorFilterRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3209,8 +3839,11 @@ pub fn parse_create_traffic_mirror_session_error(
     crate::output::CreateTrafficMirrorSessionOutput,
     crate::error::CreateTrafficMirrorSessionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTrafficMirrorSessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTrafficMirrorSessionError::generic(
         generic,
     ))
@@ -3232,6 +3865,9 @@ pub fn parse_create_traffic_mirror_session_response(
             output,
         )
         .map_err(crate::error::CreateTrafficMirrorSessionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3243,8 +3879,11 @@ pub fn parse_create_traffic_mirror_target_error(
     crate::output::CreateTrafficMirrorTargetOutput,
     crate::error::CreateTrafficMirrorTargetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTrafficMirrorTargetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTrafficMirrorTargetError::generic(
         generic,
     ))
@@ -3266,6 +3905,9 @@ pub fn parse_create_traffic_mirror_target_response(
             output,
         )
         .map_err(crate::error::CreateTrafficMirrorTargetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3277,8 +3919,11 @@ pub fn parse_create_transit_gateway_error(
     crate::output::CreateTransitGatewayOutput,
     crate::error::CreateTransitGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayError::generic(generic))
 }
 
@@ -3298,6 +3943,9 @@ pub fn parse_create_transit_gateway_response(
             output,
         )
         .map_err(crate::error::CreateTransitGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3309,8 +3957,11 @@ pub fn parse_create_transit_gateway_connect_error(
     crate::output::CreateTransitGatewayConnectOutput,
     crate::error::CreateTransitGatewayConnectError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayConnectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayConnectError::generic(
         generic,
     ))
@@ -3332,6 +3983,9 @@ pub fn parse_create_transit_gateway_connect_response(
             output,
         )
         .map_err(crate::error::CreateTransitGatewayConnectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3343,8 +3997,11 @@ pub fn parse_create_transit_gateway_connect_peer_error(
     crate::output::CreateTransitGatewayConnectPeerOutput,
     crate::error::CreateTransitGatewayConnectPeerError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayConnectPeerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayConnectPeerError::generic(
         generic,
     ))
@@ -3368,6 +4025,9 @@ pub fn parse_create_transit_gateway_connect_peer_response(
                 output,
             )
             .map_err(crate::error::CreateTransitGatewayConnectPeerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3379,8 +4039,11 @@ pub fn parse_create_transit_gateway_multicast_domain_error(
     crate::output::CreateTransitGatewayMulticastDomainOutput,
     crate::error::CreateTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayMulticastDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayMulticastDomainError::generic(generic))
 }
 
@@ -3397,6 +4060,9 @@ pub fn parse_create_transit_gateway_multicast_domain_response(
             crate::output::create_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayMulticastDomainError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3408,8 +4074,11 @@ pub fn parse_create_transit_gateway_peering_attachment_error(
     crate::output::CreateTransitGatewayPeeringAttachmentOutput,
     crate::error::CreateTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayPeeringAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayPeeringAttachmentError::generic(generic))
 }
 
@@ -3426,6 +4095,9 @@ pub fn parse_create_transit_gateway_peering_attachment_response(
             crate::output::create_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayPeeringAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3437,8 +4109,11 @@ pub fn parse_create_transit_gateway_policy_table_error(
     crate::output::CreateTransitGatewayPolicyTableOutput,
     crate::error::CreateTransitGatewayPolicyTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayPolicyTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayPolicyTableError::generic(
         generic,
     ))
@@ -3462,6 +4137,9 @@ pub fn parse_create_transit_gateway_policy_table_response(
                 output,
             )
             .map_err(crate::error::CreateTransitGatewayPolicyTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3473,8 +4151,11 @@ pub fn parse_create_transit_gateway_prefix_list_reference_error(
     crate::output::CreateTransitGatewayPrefixListReferenceOutput,
     crate::error::CreateTransitGatewayPrefixListReferenceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayPrefixListReferenceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayPrefixListReferenceError::generic(generic))
 }
 
@@ -3491,6 +4172,9 @@ pub fn parse_create_transit_gateway_prefix_list_reference_response(
             crate::output::create_transit_gateway_prefix_list_reference_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_prefix_list_reference(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayPrefixListReferenceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3502,8 +4186,11 @@ pub fn parse_create_transit_gateway_route_error(
     crate::output::CreateTransitGatewayRouteOutput,
     crate::error::CreateTransitGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayRouteError::generic(
         generic,
     ))
@@ -3525,6 +4212,9 @@ pub fn parse_create_transit_gateway_route_response(
             output,
         )
         .map_err(crate::error::CreateTransitGatewayRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3536,8 +4226,11 @@ pub fn parse_create_transit_gateway_route_table_error(
     crate::output::CreateTransitGatewayRouteTableOutput,
     crate::error::CreateTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayRouteTableError::generic(
         generic,
     ))
@@ -3561,6 +4254,9 @@ pub fn parse_create_transit_gateway_route_table_response(
                 output,
             )
             .map_err(crate::error::CreateTransitGatewayRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3572,8 +4268,11 @@ pub fn parse_create_transit_gateway_route_table_announcement_error(
     crate::output::CreateTransitGatewayRouteTableAnnouncementOutput,
     crate::error::CreateTransitGatewayRouteTableAnnouncementError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayRouteTableAnnouncementError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayRouteTableAnnouncementError::generic(generic))
 }
 
@@ -3591,6 +4290,9 @@ pub fn parse_create_transit_gateway_route_table_announcement_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_route_table_announcement(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayRouteTableAnnouncementError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3602,8 +4304,11 @@ pub fn parse_create_transit_gateway_vpc_attachment_error(
     crate::output::CreateTransitGatewayVpcAttachmentOutput,
     crate::error::CreateTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitGatewayVpcAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateTransitGatewayVpcAttachmentError::generic(generic))
 }
 
@@ -3620,6 +4325,9 @@ pub fn parse_create_transit_gateway_vpc_attachment_response(
             crate::output::create_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::CreateTransitGatewayVpcAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3631,8 +4339,11 @@ pub fn parse_create_verified_access_endpoint_error(
     crate::output::CreateVerifiedAccessEndpointOutput,
     crate::error::CreateVerifiedAccessEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVerifiedAccessEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVerifiedAccessEndpointError::generic(
         generic,
     ))
@@ -3654,6 +4365,9 @@ pub fn parse_create_verified_access_endpoint_response(
             output,
         )
         .map_err(crate::error::CreateVerifiedAccessEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3665,8 +4379,11 @@ pub fn parse_create_verified_access_group_error(
     crate::output::CreateVerifiedAccessGroupOutput,
     crate::error::CreateVerifiedAccessGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVerifiedAccessGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVerifiedAccessGroupError::generic(
         generic,
     ))
@@ -3688,6 +4405,9 @@ pub fn parse_create_verified_access_group_response(
             output,
         )
         .map_err(crate::error::CreateVerifiedAccessGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3699,8 +4419,11 @@ pub fn parse_create_verified_access_instance_error(
     crate::output::CreateVerifiedAccessInstanceOutput,
     crate::error::CreateVerifiedAccessInstanceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVerifiedAccessInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVerifiedAccessInstanceError::generic(
         generic,
     ))
@@ -3722,6 +4445,9 @@ pub fn parse_create_verified_access_instance_response(
             output,
         )
         .map_err(crate::error::CreateVerifiedAccessInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3733,8 +4459,11 @@ pub fn parse_create_verified_access_trust_provider_error(
     crate::output::CreateVerifiedAccessTrustProviderOutput,
     crate::error::CreateVerifiedAccessTrustProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVerifiedAccessTrustProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVerifiedAccessTrustProviderError::generic(generic))
 }
 
@@ -3751,6 +4480,9 @@ pub fn parse_create_verified_access_trust_provider_response(
             crate::output::create_verified_access_trust_provider_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_verified_access_trust_provider(response.body().as_ref(), output).map_err(crate::error::CreateVerifiedAccessTrustProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3759,8 +4491,11 @@ pub fn parse_create_verified_access_trust_provider_response(
 pub fn parse_create_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVolumeOutput, crate::error::CreateVolumeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVolumeError::generic(generic))
 }
 
@@ -3777,6 +4512,9 @@ pub fn parse_create_volume_response(
             output,
         )
         .map_err(crate::error::CreateVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3785,8 +4523,11 @@ pub fn parse_create_volume_response(
 pub fn parse_create_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVpcOutput, crate::error::CreateVpcError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpcError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpcError::generic(generic))
 }
 
@@ -3803,6 +4544,9 @@ pub fn parse_create_vpc_response(
             output,
         )
         .map_err(crate::error::CreateVpcError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3812,8 +4556,11 @@ pub fn parse_create_vpc_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVpcEndpointOutput, crate::error::CreateVpcEndpointError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpcEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpcEndpointError::generic(generic))
 }
 
@@ -3831,6 +4578,9 @@ pub fn parse_create_vpc_endpoint_response(
             output,
         )
         .map_err(crate::error::CreateVpcEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3842,8 +4592,11 @@ pub fn parse_create_vpc_endpoint_connection_notification_error(
     crate::output::CreateVpcEndpointConnectionNotificationOutput,
     crate::error::CreateVpcEndpointConnectionNotificationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpcEndpointConnectionNotificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpcEndpointConnectionNotificationError::generic(generic))
 }
 
@@ -3860,6 +4613,9 @@ pub fn parse_create_vpc_endpoint_connection_notification_response(
             crate::output::create_vpc_endpoint_connection_notification_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_vpc_endpoint_connection_notification(response.body().as_ref(), output).map_err(crate::error::CreateVpcEndpointConnectionNotificationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3871,8 +4627,11 @@ pub fn parse_create_vpc_endpoint_service_configuration_error(
     crate::output::CreateVpcEndpointServiceConfigurationOutput,
     crate::error::CreateVpcEndpointServiceConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpcEndpointServiceConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpcEndpointServiceConfigurationError::generic(generic))
 }
 
@@ -3889,6 +4648,9 @@ pub fn parse_create_vpc_endpoint_service_configuration_response(
             crate::output::create_vpc_endpoint_service_configuration_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_vpc_endpoint_service_configuration(response.body().as_ref(), output).map_err(crate::error::CreateVpcEndpointServiceConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3900,8 +4662,11 @@ pub fn parse_create_vpc_peering_connection_error(
     crate::output::CreateVpcPeeringConnectionOutput,
     crate::error::CreateVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpcPeeringConnectionError::generic(
         generic,
     ))
@@ -3923,6 +4688,9 @@ pub fn parse_create_vpc_peering_connection_response(
             output,
         )
         .map_err(crate::error::CreateVpcPeeringConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3934,8 +4702,11 @@ pub fn parse_create_vpn_connection_error(
     crate::output::CreateVpnConnectionOutput,
     crate::error::CreateVpnConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpnConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpnConnectionError::generic(generic))
 }
 
@@ -3955,6 +4726,9 @@ pub fn parse_create_vpn_connection_response(
             output,
         )
         .map_err(crate::error::CreateVpnConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3966,8 +4740,11 @@ pub fn parse_create_vpn_connection_route_error(
     crate::output::CreateVpnConnectionRouteOutput,
     crate::error::CreateVpnConnectionRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpnConnectionRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpnConnectionRouteError::generic(
         generic,
     ))
@@ -3984,6 +4761,9 @@ pub fn parse_create_vpn_connection_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_vpn_connection_route_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3993,8 +4773,11 @@ pub fn parse_create_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateVpnGatewayOutput, crate::error::CreateVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVpnGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateVpnGatewayError::generic(generic))
 }
 
@@ -4012,6 +4795,9 @@ pub fn parse_create_vpn_gateway_response(
             output,
         )
         .map_err(crate::error::CreateVpnGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4023,8 +4809,11 @@ pub fn parse_delete_carrier_gateway_error(
     crate::output::DeleteCarrierGatewayOutput,
     crate::error::DeleteCarrierGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCarrierGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteCarrierGatewayError::generic(generic))
 }
 
@@ -4044,6 +4833,9 @@ pub fn parse_delete_carrier_gateway_response(
             output,
         )
         .map_err(crate::error::DeleteCarrierGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4055,8 +4847,11 @@ pub fn parse_delete_client_vpn_endpoint_error(
     crate::output::DeleteClientVpnEndpointOutput,
     crate::error::DeleteClientVpnEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteClientVpnEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteClientVpnEndpointError::generic(generic))
 }
 
@@ -4076,6 +4871,9 @@ pub fn parse_delete_client_vpn_endpoint_response(
             output,
         )
         .map_err(crate::error::DeleteClientVpnEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4087,8 +4885,11 @@ pub fn parse_delete_client_vpn_route_error(
     crate::output::DeleteClientVpnRouteOutput,
     crate::error::DeleteClientVpnRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteClientVpnRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteClientVpnRouteError::generic(generic))
 }
 
@@ -4108,6 +4909,9 @@ pub fn parse_delete_client_vpn_route_response(
             output,
         )
         .map_err(crate::error::DeleteClientVpnRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4116,8 +4920,11 @@ pub fn parse_delete_client_vpn_route_response(
 pub fn parse_delete_coip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteCoipCidrOutput, crate::error::DeleteCoipCidrError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteCoipCidrError::generic(generic))
 }
 
@@ -4134,6 +4941,9 @@ pub fn parse_delete_coip_cidr_response(
             output,
         )
         .map_err(crate::error::DeleteCoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4142,8 +4952,11 @@ pub fn parse_delete_coip_cidr_response(
 pub fn parse_delete_coip_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteCoipPoolOutput, crate::error::DeleteCoipPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCoipPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteCoipPoolError::generic(generic))
 }
 
@@ -4160,6 +4973,9 @@ pub fn parse_delete_coip_pool_response(
             output,
         )
         .map_err(crate::error::DeleteCoipPoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4171,8 +4987,11 @@ pub fn parse_delete_customer_gateway_error(
     crate::output::DeleteCustomerGatewayOutput,
     crate::error::DeleteCustomerGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCustomerGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteCustomerGatewayError::generic(generic))
 }
 
@@ -4187,6 +5006,9 @@ pub fn parse_delete_customer_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_customer_gateway_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4196,8 +5018,11 @@ pub fn parse_delete_dhcp_options_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDhcpOptionsOutput, crate::error::DeleteDhcpOptionsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDhcpOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteDhcpOptionsError::generic(generic))
 }
 
@@ -4210,6 +5035,9 @@ pub fn parse_delete_dhcp_options_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_dhcp_options_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4221,8 +5049,11 @@ pub fn parse_delete_egress_only_internet_gateway_error(
     crate::output::DeleteEgressOnlyInternetGatewayOutput,
     crate::error::DeleteEgressOnlyInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteEgressOnlyInternetGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteEgressOnlyInternetGatewayError::generic(
         generic,
     ))
@@ -4246,6 +5077,9 @@ pub fn parse_delete_egress_only_internet_gateway_response(
                 output,
             )
             .map_err(crate::error::DeleteEgressOnlyInternetGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4254,8 +5088,11 @@ pub fn parse_delete_egress_only_internet_gateway_response(
 pub fn parse_delete_fleets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFleetsOutput, crate::error::DeleteFleetsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFleetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteFleetsError::generic(generic))
 }
 
@@ -4272,6 +5109,9 @@ pub fn parse_delete_fleets_response(
             output,
         )
         .map_err(crate::error::DeleteFleetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4280,8 +5120,11 @@ pub fn parse_delete_fleets_response(
 pub fn parse_delete_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFlowLogsOutput, crate::error::DeleteFlowLogsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFlowLogsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteFlowLogsError::generic(generic))
 }
 
@@ -4298,6 +5141,9 @@ pub fn parse_delete_flow_logs_response(
             output,
         )
         .map_err(crate::error::DeleteFlowLogsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4306,8 +5152,11 @@ pub fn parse_delete_flow_logs_response(
 pub fn parse_delete_fpga_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFpgaImageOutput, crate::error::DeleteFpgaImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFpgaImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteFpgaImageError::generic(generic))
 }
 
@@ -4324,6 +5173,9 @@ pub fn parse_delete_fpga_image_response(
             output,
         )
         .map_err(crate::error::DeleteFpgaImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4335,8 +5187,11 @@ pub fn parse_delete_instance_event_window_error(
     crate::output::DeleteInstanceEventWindowOutput,
     crate::error::DeleteInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteInstanceEventWindowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteInstanceEventWindowError::generic(
         generic,
     ))
@@ -4358,6 +5213,9 @@ pub fn parse_delete_instance_event_window_response(
             output,
         )
         .map_err(crate::error::DeleteInstanceEventWindowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4369,8 +5227,11 @@ pub fn parse_delete_internet_gateway_error(
     crate::output::DeleteInternetGatewayOutput,
     crate::error::DeleteInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteInternetGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteInternetGatewayError::generic(generic))
 }
 
@@ -4385,6 +5246,9 @@ pub fn parse_delete_internet_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_internet_gateway_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4393,8 +5257,11 @@ pub fn parse_delete_internet_gateway_response(
 pub fn parse_delete_ipam_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteIpamOutput, crate::error::DeleteIpamError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteIpamError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteIpamError::generic(generic))
 }
 
@@ -4411,6 +5278,9 @@ pub fn parse_delete_ipam_response(
             output,
         )
         .map_err(crate::error::DeleteIpamError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4419,8 +5289,11 @@ pub fn parse_delete_ipam_response(
 pub fn parse_delete_ipam_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteIpamPoolOutput, crate::error::DeleteIpamPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteIpamPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteIpamPoolError::generic(generic))
 }
 
@@ -4437,6 +5310,9 @@ pub fn parse_delete_ipam_pool_response(
             output,
         )
         .map_err(crate::error::DeleteIpamPoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4445,8 +5321,11 @@ pub fn parse_delete_ipam_pool_response(
 pub fn parse_delete_ipam_scope_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteIpamScopeOutput, crate::error::DeleteIpamScopeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteIpamScopeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteIpamScopeError::generic(generic))
 }
 
@@ -4463,6 +5342,9 @@ pub fn parse_delete_ipam_scope_response(
             output,
         )
         .map_err(crate::error::DeleteIpamScopeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4471,8 +5353,11 @@ pub fn parse_delete_ipam_scope_response(
 pub fn parse_delete_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteKeyPairOutput, crate::error::DeleteKeyPairError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteKeyPairError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteKeyPairError::generic(generic))
 }
 
@@ -4484,6 +5369,9 @@ pub fn parse_delete_key_pair_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_key_pair_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4495,8 +5383,11 @@ pub fn parse_delete_launch_template_error(
     crate::output::DeleteLaunchTemplateOutput,
     crate::error::DeleteLaunchTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLaunchTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteLaunchTemplateError::generic(generic))
 }
 
@@ -4516,6 +5407,9 @@ pub fn parse_delete_launch_template_response(
             output,
         )
         .map_err(crate::error::DeleteLaunchTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4527,8 +5421,11 @@ pub fn parse_delete_launch_template_versions_error(
     crate::output::DeleteLaunchTemplateVersionsOutput,
     crate::error::DeleteLaunchTemplateVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLaunchTemplateVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteLaunchTemplateVersionsError::generic(
         generic,
     ))
@@ -4550,6 +5447,9 @@ pub fn parse_delete_launch_template_versions_response(
             output,
         )
         .map_err(crate::error::DeleteLaunchTemplateVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4561,8 +5461,11 @@ pub fn parse_delete_local_gateway_route_error(
     crate::output::DeleteLocalGatewayRouteOutput,
     crate::error::DeleteLocalGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLocalGatewayRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteLocalGatewayRouteError::generic(generic))
 }
 
@@ -4582,6 +5485,9 @@ pub fn parse_delete_local_gateway_route_response(
             output,
         )
         .map_err(crate::error::DeleteLocalGatewayRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4593,8 +5499,11 @@ pub fn parse_delete_local_gateway_route_table_error(
     crate::output::DeleteLocalGatewayRouteTableOutput,
     crate::error::DeleteLocalGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLocalGatewayRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteLocalGatewayRouteTableError::generic(
         generic,
     ))
@@ -4617,6 +5526,9 @@ pub fn parse_delete_local_gateway_route_table_response(
                 output,
             )
             .map_err(crate::error::DeleteLocalGatewayRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4628,9 +5540,12 @@ pub fn parse_delete_local_gateway_route_table_virtual_interface_group_associatio
     crate::output::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput,
     crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response).map_err(
         crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled,
     )?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(
         crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::generic(
             generic,
@@ -4650,6 +5565,9 @@ pub fn parse_delete_local_gateway_route_table_virtual_interface_group_associatio
         let mut output = crate::output::delete_local_gateway_route_table_virtual_interface_group_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table_virtual_interface_group_association(response.body().as_ref(), output).map_err(crate::error::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4661,8 +5579,11 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_error(
     crate::output::DeleteLocalGatewayRouteTableVpcAssociationOutput,
     crate::error::DeleteLocalGatewayRouteTableVpcAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::generic(generic))
 }
 
@@ -4678,6 +5599,9 @@ pub fn parse_delete_local_gateway_route_table_vpc_association_response(
         let mut output = crate::output::delete_local_gateway_route_table_vpc_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_local_gateway_route_table_vpc_association(response.body().as_ref(), output).map_err(crate::error::DeleteLocalGatewayRouteTableVpcAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4689,8 +5613,11 @@ pub fn parse_delete_managed_prefix_list_error(
     crate::output::DeleteManagedPrefixListOutput,
     crate::error::DeleteManagedPrefixListError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteManagedPrefixListError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteManagedPrefixListError::generic(generic))
 }
 
@@ -4710,6 +5637,9 @@ pub fn parse_delete_managed_prefix_list_response(
             output,
         )
         .map_err(crate::error::DeleteManagedPrefixListError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4719,8 +5649,11 @@ pub fn parse_delete_nat_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteNatGatewayOutput, crate::error::DeleteNatGatewayError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNatGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNatGatewayError::generic(generic))
 }
 
@@ -4738,6 +5671,9 @@ pub fn parse_delete_nat_gateway_response(
             output,
         )
         .map_err(crate::error::DeleteNatGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4747,8 +5683,11 @@ pub fn parse_delete_network_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteNetworkAclOutput, crate::error::DeleteNetworkAclError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkAclError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkAclError::generic(generic))
 }
 
@@ -4761,6 +5700,9 @@ pub fn parse_delete_network_acl_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_acl_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4772,8 +5714,11 @@ pub fn parse_delete_network_acl_entry_error(
     crate::output::DeleteNetworkAclEntryOutput,
     crate::error::DeleteNetworkAclEntryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkAclEntryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkAclEntryError::generic(generic))
 }
 
@@ -4788,6 +5733,9 @@ pub fn parse_delete_network_acl_entry_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_acl_entry_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4799,8 +5747,11 @@ pub fn parse_delete_network_insights_access_scope_error(
     crate::output::DeleteNetworkInsightsAccessScopeOutput,
     crate::error::DeleteNetworkInsightsAccessScopeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkInsightsAccessScopeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkInsightsAccessScopeError::generic(generic))
 }
 
@@ -4822,6 +5773,9 @@ pub fn parse_delete_network_insights_access_scope_response(
                 output,
             )
             .map_err(crate::error::DeleteNetworkInsightsAccessScopeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4833,8 +5787,11 @@ pub fn parse_delete_network_insights_access_scope_analysis_error(
     crate::output::DeleteNetworkInsightsAccessScopeAnalysisOutput,
     crate::error::DeleteNetworkInsightsAccessScopeAnalysisError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkInsightsAccessScopeAnalysisError::generic(generic))
 }
 
@@ -4851,6 +5808,9 @@ pub fn parse_delete_network_insights_access_scope_analysis_response(
             crate::output::delete_network_insights_access_scope_analysis_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_network_insights_access_scope_analysis(response.body().as_ref(), output).map_err(crate::error::DeleteNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4862,8 +5822,11 @@ pub fn parse_delete_network_insights_analysis_error(
     crate::output::DeleteNetworkInsightsAnalysisOutput,
     crate::error::DeleteNetworkInsightsAnalysisError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkInsightsAnalysisError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkInsightsAnalysisError::generic(
         generic,
     ))
@@ -4886,6 +5849,9 @@ pub fn parse_delete_network_insights_analysis_response(
                 output,
             )
             .map_err(crate::error::DeleteNetworkInsightsAnalysisError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4897,8 +5863,11 @@ pub fn parse_delete_network_insights_path_error(
     crate::output::DeleteNetworkInsightsPathOutput,
     crate::error::DeleteNetworkInsightsPathError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkInsightsPathError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkInsightsPathError::generic(
         generic,
     ))
@@ -4920,6 +5889,9 @@ pub fn parse_delete_network_insights_path_response(
             output,
         )
         .map_err(crate::error::DeleteNetworkInsightsPathError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4931,8 +5903,11 @@ pub fn parse_delete_network_interface_error(
     crate::output::DeleteNetworkInterfaceOutput,
     crate::error::DeleteNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkInterfaceError::generic(generic))
 }
 
@@ -4947,6 +5922,9 @@ pub fn parse_delete_network_interface_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_network_interface_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4958,8 +5936,11 @@ pub fn parse_delete_network_interface_permission_error(
     crate::output::DeleteNetworkInterfacePermissionOutput,
     crate::error::DeleteNetworkInterfacePermissionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNetworkInterfacePermissionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteNetworkInterfacePermissionError::generic(generic))
 }
 
@@ -4981,6 +5962,9 @@ pub fn parse_delete_network_interface_permission_response(
                 output,
             )
             .map_err(crate::error::DeleteNetworkInterfacePermissionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4992,8 +5976,11 @@ pub fn parse_delete_placement_group_error(
     crate::output::DeletePlacementGroupOutput,
     crate::error::DeletePlacementGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePlacementGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeletePlacementGroupError::generic(generic))
 }
 
@@ -5008,6 +5995,9 @@ pub fn parse_delete_placement_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_placement_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5019,8 +6009,11 @@ pub fn parse_delete_public_ipv4_pool_error(
     crate::output::DeletePublicIpv4PoolOutput,
     crate::error::DeletePublicIpv4PoolError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePublicIpv4PoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeletePublicIpv4PoolError::generic(generic))
 }
 
@@ -5040,6 +6033,9 @@ pub fn parse_delete_public_ipv4_pool_response(
             output,
         )
         .map_err(crate::error::DeletePublicIpv4PoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5051,8 +6047,11 @@ pub fn parse_delete_queued_reserved_instances_error(
     crate::output::DeleteQueuedReservedInstancesOutput,
     crate::error::DeleteQueuedReservedInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteQueuedReservedInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteQueuedReservedInstancesError::generic(
         generic,
     ))
@@ -5075,6 +6074,9 @@ pub fn parse_delete_queued_reserved_instances_response(
                 output,
             )
             .map_err(crate::error::DeleteQueuedReservedInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5083,8 +6085,11 @@ pub fn parse_delete_queued_reserved_instances_response(
 pub fn parse_delete_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRouteOutput, crate::error::DeleteRouteError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteRouteError::generic(generic))
 }
 
@@ -5096,6 +6101,9 @@ pub fn parse_delete_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_route_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5105,8 +6113,11 @@ pub fn parse_delete_route_table_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRouteTableOutput, crate::error::DeleteRouteTableError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteRouteTableError::generic(generic))
 }
 
@@ -5119,6 +6130,9 @@ pub fn parse_delete_route_table_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_route_table_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5130,8 +6144,11 @@ pub fn parse_delete_security_group_error(
     crate::output::DeleteSecurityGroupOutput,
     crate::error::DeleteSecurityGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSecurityGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteSecurityGroupError::generic(generic))
 }
 
@@ -5146,6 +6163,9 @@ pub fn parse_delete_security_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_security_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5154,8 +6174,11 @@ pub fn parse_delete_security_group_response(
 pub fn parse_delete_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSnapshotOutput, crate::error::DeleteSnapshotError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteSnapshotError::generic(generic))
 }
 
@@ -5167,6 +6190,9 @@ pub fn parse_delete_snapshot_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_snapshot_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5178,8 +6204,11 @@ pub fn parse_delete_spot_datafeed_subscription_error(
     crate::output::DeleteSpotDatafeedSubscriptionOutput,
     crate::error::DeleteSpotDatafeedSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSpotDatafeedSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteSpotDatafeedSubscriptionError::generic(
         generic,
     ))
@@ -5197,6 +6226,9 @@ pub fn parse_delete_spot_datafeed_subscription_response(
         let mut output =
             crate::output::delete_spot_datafeed_subscription_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5205,8 +6237,11 @@ pub fn parse_delete_spot_datafeed_subscription_response(
 pub fn parse_delete_subnet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSubnetOutput, crate::error::DeleteSubnetError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSubnetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteSubnetError::generic(generic))
 }
 
@@ -5218,6 +6253,9 @@ pub fn parse_delete_subnet_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_subnet_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5229,8 +6267,11 @@ pub fn parse_delete_subnet_cidr_reservation_error(
     crate::output::DeleteSubnetCidrReservationOutput,
     crate::error::DeleteSubnetCidrReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSubnetCidrReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteSubnetCidrReservationError::generic(
         generic,
     ))
@@ -5252,6 +6293,9 @@ pub fn parse_delete_subnet_cidr_reservation_response(
             output,
         )
         .map_err(crate::error::DeleteSubnetCidrReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5260,8 +6304,11 @@ pub fn parse_delete_subnet_cidr_reservation_response(
 pub fn parse_delete_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTagsError::generic(generic))
 }
 
@@ -5273,6 +6320,9 @@ pub fn parse_delete_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_tags_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5284,8 +6334,11 @@ pub fn parse_delete_traffic_mirror_filter_error(
     crate::output::DeleteTrafficMirrorFilterOutput,
     crate::error::DeleteTrafficMirrorFilterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTrafficMirrorFilterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTrafficMirrorFilterError::generic(
         generic,
     ))
@@ -5307,6 +6360,9 @@ pub fn parse_delete_traffic_mirror_filter_response(
             output,
         )
         .map_err(crate::error::DeleteTrafficMirrorFilterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5318,8 +6374,11 @@ pub fn parse_delete_traffic_mirror_filter_rule_error(
     crate::output::DeleteTrafficMirrorFilterRuleOutput,
     crate::error::DeleteTrafficMirrorFilterRuleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTrafficMirrorFilterRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTrafficMirrorFilterRuleError::generic(
         generic,
     ))
@@ -5343,6 +6402,9 @@ pub fn parse_delete_traffic_mirror_filter_rule_response(
                 output,
             )
             .map_err(crate::error::DeleteTrafficMirrorFilterRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5354,8 +6416,11 @@ pub fn parse_delete_traffic_mirror_session_error(
     crate::output::DeleteTrafficMirrorSessionOutput,
     crate::error::DeleteTrafficMirrorSessionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTrafficMirrorSessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTrafficMirrorSessionError::generic(
         generic,
     ))
@@ -5377,6 +6442,9 @@ pub fn parse_delete_traffic_mirror_session_response(
             output,
         )
         .map_err(crate::error::DeleteTrafficMirrorSessionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5388,8 +6456,11 @@ pub fn parse_delete_traffic_mirror_target_error(
     crate::output::DeleteTrafficMirrorTargetOutput,
     crate::error::DeleteTrafficMirrorTargetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTrafficMirrorTargetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTrafficMirrorTargetError::generic(
         generic,
     ))
@@ -5411,6 +6482,9 @@ pub fn parse_delete_traffic_mirror_target_response(
             output,
         )
         .map_err(crate::error::DeleteTrafficMirrorTargetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5422,8 +6496,11 @@ pub fn parse_delete_transit_gateway_error(
     crate::output::DeleteTransitGatewayOutput,
     crate::error::DeleteTransitGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayError::generic(generic))
 }
 
@@ -5443,6 +6520,9 @@ pub fn parse_delete_transit_gateway_response(
             output,
         )
         .map_err(crate::error::DeleteTransitGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5454,8 +6534,11 @@ pub fn parse_delete_transit_gateway_connect_error(
     crate::output::DeleteTransitGatewayConnectOutput,
     crate::error::DeleteTransitGatewayConnectError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayConnectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayConnectError::generic(
         generic,
     ))
@@ -5477,6 +6560,9 @@ pub fn parse_delete_transit_gateway_connect_response(
             output,
         )
         .map_err(crate::error::DeleteTransitGatewayConnectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5488,8 +6574,11 @@ pub fn parse_delete_transit_gateway_connect_peer_error(
     crate::output::DeleteTransitGatewayConnectPeerOutput,
     crate::error::DeleteTransitGatewayConnectPeerError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayConnectPeerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayConnectPeerError::generic(
         generic,
     ))
@@ -5513,6 +6602,9 @@ pub fn parse_delete_transit_gateway_connect_peer_response(
                 output,
             )
             .map_err(crate::error::DeleteTransitGatewayConnectPeerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5524,8 +6616,11 @@ pub fn parse_delete_transit_gateway_multicast_domain_error(
     crate::output::DeleteTransitGatewayMulticastDomainOutput,
     crate::error::DeleteTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayMulticastDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayMulticastDomainError::generic(generic))
 }
 
@@ -5542,6 +6637,9 @@ pub fn parse_delete_transit_gateway_multicast_domain_response(
             crate::output::delete_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayMulticastDomainError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5553,8 +6651,11 @@ pub fn parse_delete_transit_gateway_peering_attachment_error(
     crate::output::DeleteTransitGatewayPeeringAttachmentOutput,
     crate::error::DeleteTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayPeeringAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayPeeringAttachmentError::generic(generic))
 }
 
@@ -5571,6 +6672,9 @@ pub fn parse_delete_transit_gateway_peering_attachment_response(
             crate::output::delete_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayPeeringAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5582,8 +6686,11 @@ pub fn parse_delete_transit_gateway_policy_table_error(
     crate::output::DeleteTransitGatewayPolicyTableOutput,
     crate::error::DeleteTransitGatewayPolicyTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayPolicyTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayPolicyTableError::generic(
         generic,
     ))
@@ -5607,6 +6714,9 @@ pub fn parse_delete_transit_gateway_policy_table_response(
                 output,
             )
             .map_err(crate::error::DeleteTransitGatewayPolicyTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5618,8 +6728,11 @@ pub fn parse_delete_transit_gateway_prefix_list_reference_error(
     crate::output::DeleteTransitGatewayPrefixListReferenceOutput,
     crate::error::DeleteTransitGatewayPrefixListReferenceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayPrefixListReferenceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayPrefixListReferenceError::generic(generic))
 }
 
@@ -5636,6 +6749,9 @@ pub fn parse_delete_transit_gateway_prefix_list_reference_response(
             crate::output::delete_transit_gateway_prefix_list_reference_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_prefix_list_reference(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayPrefixListReferenceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5647,8 +6763,11 @@ pub fn parse_delete_transit_gateway_route_error(
     crate::output::DeleteTransitGatewayRouteOutput,
     crate::error::DeleteTransitGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayRouteError::generic(
         generic,
     ))
@@ -5670,6 +6789,9 @@ pub fn parse_delete_transit_gateway_route_response(
             output,
         )
         .map_err(crate::error::DeleteTransitGatewayRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5681,8 +6803,11 @@ pub fn parse_delete_transit_gateway_route_table_error(
     crate::output::DeleteTransitGatewayRouteTableOutput,
     crate::error::DeleteTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayRouteTableError::generic(
         generic,
     ))
@@ -5706,6 +6831,9 @@ pub fn parse_delete_transit_gateway_route_table_response(
                 output,
             )
             .map_err(crate::error::DeleteTransitGatewayRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5717,8 +6845,11 @@ pub fn parse_delete_transit_gateway_route_table_announcement_error(
     crate::output::DeleteTransitGatewayRouteTableAnnouncementOutput,
     crate::error::DeleteTransitGatewayRouteTableAnnouncementError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayRouteTableAnnouncementError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayRouteTableAnnouncementError::generic(generic))
 }
 
@@ -5736,6 +6867,9 @@ pub fn parse_delete_transit_gateway_route_table_announcement_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_route_table_announcement(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayRouteTableAnnouncementError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5747,8 +6881,11 @@ pub fn parse_delete_transit_gateway_vpc_attachment_error(
     crate::output::DeleteTransitGatewayVpcAttachmentOutput,
     crate::error::DeleteTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTransitGatewayVpcAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTransitGatewayVpcAttachmentError::generic(generic))
 }
 
@@ -5765,6 +6902,9 @@ pub fn parse_delete_transit_gateway_vpc_attachment_response(
             crate::output::delete_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::DeleteTransitGatewayVpcAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5776,8 +6916,11 @@ pub fn parse_delete_verified_access_endpoint_error(
     crate::output::DeleteVerifiedAccessEndpointOutput,
     crate::error::DeleteVerifiedAccessEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVerifiedAccessEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVerifiedAccessEndpointError::generic(
         generic,
     ))
@@ -5799,6 +6942,9 @@ pub fn parse_delete_verified_access_endpoint_response(
             output,
         )
         .map_err(crate::error::DeleteVerifiedAccessEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5810,8 +6956,11 @@ pub fn parse_delete_verified_access_group_error(
     crate::output::DeleteVerifiedAccessGroupOutput,
     crate::error::DeleteVerifiedAccessGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVerifiedAccessGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVerifiedAccessGroupError::generic(
         generic,
     ))
@@ -5833,6 +6982,9 @@ pub fn parse_delete_verified_access_group_response(
             output,
         )
         .map_err(crate::error::DeleteVerifiedAccessGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5844,8 +6996,11 @@ pub fn parse_delete_verified_access_instance_error(
     crate::output::DeleteVerifiedAccessInstanceOutput,
     crate::error::DeleteVerifiedAccessInstanceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVerifiedAccessInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVerifiedAccessInstanceError::generic(
         generic,
     ))
@@ -5867,6 +7022,9 @@ pub fn parse_delete_verified_access_instance_response(
             output,
         )
         .map_err(crate::error::DeleteVerifiedAccessInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5878,8 +7036,11 @@ pub fn parse_delete_verified_access_trust_provider_error(
     crate::output::DeleteVerifiedAccessTrustProviderOutput,
     crate::error::DeleteVerifiedAccessTrustProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVerifiedAccessTrustProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVerifiedAccessTrustProviderError::generic(generic))
 }
 
@@ -5896,6 +7057,9 @@ pub fn parse_delete_verified_access_trust_provider_response(
             crate::output::delete_verified_access_trust_provider_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_verified_access_trust_provider(response.body().as_ref(), output).map_err(crate::error::DeleteVerifiedAccessTrustProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5904,8 +7068,11 @@ pub fn parse_delete_verified_access_trust_provider_response(
 pub fn parse_delete_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVolumeError::generic(generic))
 }
 
@@ -5917,6 +7084,9 @@ pub fn parse_delete_volume_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_volume_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5925,8 +7095,11 @@ pub fn parse_delete_volume_response(
 pub fn parse_delete_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVpcOutput, crate::error::DeleteVpcError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpcError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpcError::generic(generic))
 }
 
@@ -5938,6 +7111,9 @@ pub fn parse_delete_vpc_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpc_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5949,8 +7125,11 @@ pub fn parse_delete_vpc_endpoint_connection_notifications_error(
     crate::output::DeleteVpcEndpointConnectionNotificationsOutput,
     crate::error::DeleteVpcEndpointConnectionNotificationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpcEndpointConnectionNotificationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpcEndpointConnectionNotificationsError::generic(generic))
 }
 
@@ -5967,6 +7146,9 @@ pub fn parse_delete_vpc_endpoint_connection_notifications_response(
             crate::output::delete_vpc_endpoint_connection_notifications_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_vpc_endpoint_connection_notifications(response.body().as_ref(), output).map_err(crate::error::DeleteVpcEndpointConnectionNotificationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5978,8 +7160,11 @@ pub fn parse_delete_vpc_endpoints_error(
     crate::output::DeleteVpcEndpointsOutput,
     crate::error::DeleteVpcEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpcEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpcEndpointsError::generic(generic))
 }
 
@@ -5999,6 +7184,9 @@ pub fn parse_delete_vpc_endpoints_response(
             output,
         )
         .map_err(crate::error::DeleteVpcEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6010,8 +7198,11 @@ pub fn parse_delete_vpc_endpoint_service_configurations_error(
     crate::output::DeleteVpcEndpointServiceConfigurationsOutput,
     crate::error::DeleteVpcEndpointServiceConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpcEndpointServiceConfigurationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpcEndpointServiceConfigurationsError::generic(generic))
 }
 
@@ -6028,6 +7219,9 @@ pub fn parse_delete_vpc_endpoint_service_configurations_response(
             crate::output::delete_vpc_endpoint_service_configurations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_delete_vpc_endpoint_service_configurations(response.body().as_ref(), output).map_err(crate::error::DeleteVpcEndpointServiceConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6039,8 +7233,11 @@ pub fn parse_delete_vpc_peering_connection_error(
     crate::output::DeleteVpcPeeringConnectionOutput,
     crate::error::DeleteVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpcPeeringConnectionError::generic(
         generic,
     ))
@@ -6062,6 +7259,9 @@ pub fn parse_delete_vpc_peering_connection_response(
             output,
         )
         .map_err(crate::error::DeleteVpcPeeringConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6073,8 +7273,11 @@ pub fn parse_delete_vpn_connection_error(
     crate::output::DeleteVpnConnectionOutput,
     crate::error::DeleteVpnConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpnConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpnConnectionError::generic(generic))
 }
 
@@ -6089,6 +7292,9 @@ pub fn parse_delete_vpn_connection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpn_connection_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6100,8 +7306,11 @@ pub fn parse_delete_vpn_connection_route_error(
     crate::output::DeleteVpnConnectionRouteOutput,
     crate::error::DeleteVpnConnectionRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpnConnectionRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpnConnectionRouteError::generic(
         generic,
     ))
@@ -6118,6 +7327,9 @@ pub fn parse_delete_vpn_connection_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpn_connection_route_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6127,8 +7339,11 @@ pub fn parse_delete_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVpnGatewayOutput, crate::error::DeleteVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVpnGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVpnGatewayError::generic(generic))
 }
 
@@ -6141,6 +7356,9 @@ pub fn parse_delete_vpn_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_vpn_gateway_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6152,8 +7370,11 @@ pub fn parse_deprovision_byoip_cidr_error(
     crate::output::DeprovisionByoipCidrOutput,
     crate::error::DeprovisionByoipCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeprovisionByoipCidrError::generic(generic))
 }
 
@@ -6173,6 +7394,9 @@ pub fn parse_deprovision_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6184,8 +7408,11 @@ pub fn parse_deprovision_ipam_pool_cidr_error(
     crate::output::DeprovisionIpamPoolCidrOutput,
     crate::error::DeprovisionIpamPoolCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprovisionIpamPoolCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeprovisionIpamPoolCidrError::generic(generic))
 }
 
@@ -6205,6 +7432,9 @@ pub fn parse_deprovision_ipam_pool_cidr_response(
             output,
         )
         .map_err(crate::error::DeprovisionIpamPoolCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6216,8 +7446,11 @@ pub fn parse_deprovision_public_ipv4_pool_cidr_error(
     crate::output::DeprovisionPublicIpv4PoolCidrOutput,
     crate::error::DeprovisionPublicIpv4PoolCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprovisionPublicIpv4PoolCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeprovisionPublicIpv4PoolCidrError::generic(
         generic,
     ))
@@ -6241,6 +7474,9 @@ pub fn parse_deprovision_public_ipv4_pool_cidr_response(
                 output,
             )
             .map_err(crate::error::DeprovisionPublicIpv4PoolCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6249,8 +7485,11 @@ pub fn parse_deprovision_public_ipv4_pool_cidr_response(
 pub fn parse_deregister_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeregisterImageOutput, crate::error::DeregisterImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeregisterImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeregisterImageError::generic(generic))
 }
 
@@ -6262,6 +7501,9 @@ pub fn parse_deregister_image_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deregister_image_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6273,8 +7515,11 @@ pub fn parse_deregister_instance_event_notification_attributes_error(
     crate::output::DeregisterInstanceEventNotificationAttributesOutput,
     crate::error::DeregisterInstanceEventNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeregisterInstanceEventNotificationAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeregisterInstanceEventNotificationAttributesError::generic(generic))
 }
 
@@ -6290,6 +7535,9 @@ pub fn parse_deregister_instance_event_notification_attributes_response(
         let mut output = crate::output::deregister_instance_event_notification_attributes_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_deregister_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::DeregisterInstanceEventNotificationAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6301,8 +7549,11 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_error(
     crate::output::DeregisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupMembersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::generic(generic))
 }
 
@@ -6318,6 +7569,9 @@ pub fn parse_deregister_transit_gateway_multicast_group_members_response(
         let mut output = crate::output::deregister_transit_gateway_multicast_group_members_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_deregister_transit_gateway_multicast_group_members(response.body().as_ref(), output).map_err(crate::error::DeregisterTransitGatewayMulticastGroupMembersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6329,8 +7583,11 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_error(
     crate::output::DeregisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::DeregisterTransitGatewayMulticastGroupSourcesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::generic(generic))
 }
 
@@ -6346,6 +7603,9 @@ pub fn parse_deregister_transit_gateway_multicast_group_sources_response(
         let mut output = crate::output::deregister_transit_gateway_multicast_group_sources_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_deregister_transit_gateway_multicast_group_sources(response.body().as_ref(), output).map_err(crate::error::DeregisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6357,8 +7617,11 @@ pub fn parse_describe_account_attributes_error(
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAccountAttributesError::generic(
         generic,
     ))
@@ -6380,6 +7643,9 @@ pub fn parse_describe_account_attributes_response(
             output,
         )
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6389,8 +7655,11 @@ pub fn parse_describe_addresses_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeAddressesOutput, crate::error::DescribeAddressesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAddressesError::generic(generic))
 }
 
@@ -6408,6 +7677,9 @@ pub fn parse_describe_addresses_response(
             output,
         )
         .map_err(crate::error::DescribeAddressesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6419,8 +7691,11 @@ pub fn parse_describe_addresses_attribute_error(
     crate::output::DescribeAddressesAttributeOutput,
     crate::error::DescribeAddressesAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAddressesAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAddressesAttributeError::generic(
         generic,
     ))
@@ -6442,6 +7717,9 @@ pub fn parse_describe_addresses_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeAddressesAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6453,8 +7731,11 @@ pub fn parse_describe_address_transfers_error(
     crate::output::DescribeAddressTransfersOutput,
     crate::error::DescribeAddressTransfersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAddressTransfersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAddressTransfersError::generic(
         generic,
     ))
@@ -6476,6 +7757,9 @@ pub fn parse_describe_address_transfers_response(
             output,
         )
         .map_err(crate::error::DescribeAddressTransfersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6487,8 +7771,11 @@ pub fn parse_describe_aggregate_id_format_error(
     crate::output::DescribeAggregateIdFormatOutput,
     crate::error::DescribeAggregateIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAggregateIdFormatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAggregateIdFormatError::generic(
         generic,
     ))
@@ -6510,6 +7797,9 @@ pub fn parse_describe_aggregate_id_format_response(
             output,
         )
         .map_err(crate::error::DescribeAggregateIdFormatError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6521,8 +7811,11 @@ pub fn parse_describe_availability_zones_error(
     crate::output::DescribeAvailabilityZonesOutput,
     crate::error::DescribeAvailabilityZonesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAvailabilityZonesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAvailabilityZonesError::generic(
         generic,
     ))
@@ -6544,6 +7837,9 @@ pub fn parse_describe_availability_zones_response(
             output,
         )
         .map_err(crate::error::DescribeAvailabilityZonesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6555,8 +7851,11 @@ pub fn parse_describe_aws_network_performance_metric_subscriptions_error(
     crate::output::DescribeAwsNetworkPerformanceMetricSubscriptionsOutput,
     crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError::generic(generic))
 }
 
@@ -6572,6 +7871,9 @@ pub fn parse_describe_aws_network_performance_metric_subscriptions_response(
         let mut output = crate::output::describe_aws_network_performance_metric_subscriptions_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_aws_network_performance_metric_subscriptions(response.body().as_ref(), output).map_err(crate::error::DescribeAwsNetworkPerformanceMetricSubscriptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6583,8 +7885,11 @@ pub fn parse_describe_bundle_tasks_error(
     crate::output::DescribeBundleTasksOutput,
     crate::error::DescribeBundleTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeBundleTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeBundleTasksError::generic(generic))
 }
 
@@ -6604,6 +7909,9 @@ pub fn parse_describe_bundle_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeBundleTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6615,8 +7923,11 @@ pub fn parse_describe_byoip_cidrs_error(
     crate::output::DescribeByoipCidrsOutput,
     crate::error::DescribeByoipCidrsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeByoipCidrsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeByoipCidrsError::generic(generic))
 }
 
@@ -6636,6 +7947,9 @@ pub fn parse_describe_byoip_cidrs_response(
             output,
         )
         .map_err(crate::error::DescribeByoipCidrsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6647,8 +7961,11 @@ pub fn parse_describe_capacity_reservation_fleets_error(
     crate::output::DescribeCapacityReservationFleetsOutput,
     crate::error::DescribeCapacityReservationFleetsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCapacityReservationFleetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeCapacityReservationFleetsError::generic(generic))
 }
 
@@ -6670,6 +7987,9 @@ pub fn parse_describe_capacity_reservation_fleets_response(
                 output,
             )
             .map_err(crate::error::DescribeCapacityReservationFleetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6681,8 +8001,11 @@ pub fn parse_describe_capacity_reservations_error(
     crate::output::DescribeCapacityReservationsOutput,
     crate::error::DescribeCapacityReservationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCapacityReservationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeCapacityReservationsError::generic(
         generic,
     ))
@@ -6704,6 +8027,9 @@ pub fn parse_describe_capacity_reservations_response(
             output,
         )
         .map_err(crate::error::DescribeCapacityReservationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6715,8 +8041,11 @@ pub fn parse_describe_carrier_gateways_error(
     crate::output::DescribeCarrierGatewaysOutput,
     crate::error::DescribeCarrierGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCarrierGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeCarrierGatewaysError::generic(generic))
 }
 
@@ -6736,6 +8065,9 @@ pub fn parse_describe_carrier_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeCarrierGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6747,8 +8079,11 @@ pub fn parse_describe_classic_link_instances_error(
     crate::output::DescribeClassicLinkInstancesOutput,
     crate::error::DescribeClassicLinkInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeClassicLinkInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeClassicLinkInstancesError::generic(
         generic,
     ))
@@ -6770,6 +8105,9 @@ pub fn parse_describe_classic_link_instances_response(
             output,
         )
         .map_err(crate::error::DescribeClassicLinkInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6781,8 +8119,11 @@ pub fn parse_describe_client_vpn_authorization_rules_error(
     crate::output::DescribeClientVpnAuthorizationRulesOutput,
     crate::error::DescribeClientVpnAuthorizationRulesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeClientVpnAuthorizationRulesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeClientVpnAuthorizationRulesError::generic(generic))
 }
 
@@ -6799,6 +8140,9 @@ pub fn parse_describe_client_vpn_authorization_rules_response(
             crate::output::describe_client_vpn_authorization_rules_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_client_vpn_authorization_rules(response.body().as_ref(), output).map_err(crate::error::DescribeClientVpnAuthorizationRulesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6810,8 +8154,11 @@ pub fn parse_describe_client_vpn_connections_error(
     crate::output::DescribeClientVpnConnectionsOutput,
     crate::error::DescribeClientVpnConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeClientVpnConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeClientVpnConnectionsError::generic(
         generic,
     ))
@@ -6833,6 +8180,9 @@ pub fn parse_describe_client_vpn_connections_response(
             output,
         )
         .map_err(crate::error::DescribeClientVpnConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6844,8 +8194,11 @@ pub fn parse_describe_client_vpn_endpoints_error(
     crate::output::DescribeClientVpnEndpointsOutput,
     crate::error::DescribeClientVpnEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeClientVpnEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeClientVpnEndpointsError::generic(
         generic,
     ))
@@ -6867,6 +8220,9 @@ pub fn parse_describe_client_vpn_endpoints_response(
             output,
         )
         .map_err(crate::error::DescribeClientVpnEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6878,8 +8234,11 @@ pub fn parse_describe_client_vpn_routes_error(
     crate::output::DescribeClientVpnRoutesOutput,
     crate::error::DescribeClientVpnRoutesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeClientVpnRoutesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeClientVpnRoutesError::generic(generic))
 }
 
@@ -6899,6 +8258,9 @@ pub fn parse_describe_client_vpn_routes_response(
             output,
         )
         .map_err(crate::error::DescribeClientVpnRoutesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6910,8 +8272,11 @@ pub fn parse_describe_client_vpn_target_networks_error(
     crate::output::DescribeClientVpnTargetNetworksOutput,
     crate::error::DescribeClientVpnTargetNetworksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeClientVpnTargetNetworksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeClientVpnTargetNetworksError::generic(
         generic,
     ))
@@ -6935,6 +8300,9 @@ pub fn parse_describe_client_vpn_target_networks_response(
                 output,
             )
             .map_err(crate::error::DescribeClientVpnTargetNetworksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6944,8 +8312,11 @@ pub fn parse_describe_coip_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeCoipPoolsOutput, crate::error::DescribeCoipPoolsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCoipPoolsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeCoipPoolsError::generic(generic))
 }
 
@@ -6963,6 +8334,9 @@ pub fn parse_describe_coip_pools_response(
             output,
         )
         .map_err(crate::error::DescribeCoipPoolsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6974,8 +8348,11 @@ pub fn parse_describe_conversion_tasks_error(
     crate::output::DescribeConversionTasksOutput,
     crate::error::DescribeConversionTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConversionTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeConversionTasksError::generic(generic))
 }
 
@@ -6995,6 +8372,9 @@ pub fn parse_describe_conversion_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeConversionTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7006,8 +8386,11 @@ pub fn parse_describe_customer_gateways_error(
     crate::output::DescribeCustomerGatewaysOutput,
     crate::error::DescribeCustomerGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomerGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeCustomerGatewaysError::generic(
         generic,
     ))
@@ -7029,6 +8412,9 @@ pub fn parse_describe_customer_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeCustomerGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7040,8 +8426,11 @@ pub fn parse_describe_dhcp_options_error(
     crate::output::DescribeDhcpOptionsOutput,
     crate::error::DescribeDhcpOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDhcpOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeDhcpOptionsError::generic(generic))
 }
 
@@ -7061,6 +8450,9 @@ pub fn parse_describe_dhcp_options_response(
             output,
         )
         .map_err(crate::error::DescribeDhcpOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7072,8 +8464,11 @@ pub fn parse_describe_egress_only_internet_gateways_error(
     crate::output::DescribeEgressOnlyInternetGatewaysOutput,
     crate::error::DescribeEgressOnlyInternetGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEgressOnlyInternetGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEgressOnlyInternetGatewaysError::generic(generic))
 }
 
@@ -7090,6 +8485,9 @@ pub fn parse_describe_egress_only_internet_gateways_response(
             crate::output::describe_egress_only_internet_gateways_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_egress_only_internet_gateways(response.body().as_ref(), output).map_err(crate::error::DescribeEgressOnlyInternetGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7101,8 +8499,11 @@ pub fn parse_describe_elastic_gpus_error(
     crate::output::DescribeElasticGpusOutput,
     crate::error::DescribeElasticGpusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeElasticGpusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeElasticGpusError::generic(generic))
 }
 
@@ -7122,6 +8523,9 @@ pub fn parse_describe_elastic_gpus_response(
             output,
         )
         .map_err(crate::error::DescribeElasticGpusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7133,8 +8537,11 @@ pub fn parse_describe_export_image_tasks_error(
     crate::output::DescribeExportImageTasksOutput,
     crate::error::DescribeExportImageTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeExportImageTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeExportImageTasksError::generic(
         generic,
     ))
@@ -7156,6 +8563,9 @@ pub fn parse_describe_export_image_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeExportImageTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7167,8 +8577,11 @@ pub fn parse_describe_export_tasks_error(
     crate::output::DescribeExportTasksOutput,
     crate::error::DescribeExportTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeExportTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeExportTasksError::generic(generic))
 }
 
@@ -7188,6 +8601,9 @@ pub fn parse_describe_export_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeExportTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7199,8 +8615,11 @@ pub fn parse_describe_fast_launch_images_error(
     crate::output::DescribeFastLaunchImagesOutput,
     crate::error::DescribeFastLaunchImagesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFastLaunchImagesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFastLaunchImagesError::generic(
         generic,
     ))
@@ -7222,6 +8641,9 @@ pub fn parse_describe_fast_launch_images_response(
             output,
         )
         .map_err(crate::error::DescribeFastLaunchImagesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7233,8 +8655,11 @@ pub fn parse_describe_fast_snapshot_restores_error(
     crate::output::DescribeFastSnapshotRestoresOutput,
     crate::error::DescribeFastSnapshotRestoresError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFastSnapshotRestoresError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFastSnapshotRestoresError::generic(
         generic,
     ))
@@ -7256,6 +8681,9 @@ pub fn parse_describe_fast_snapshot_restores_response(
             output,
         )
         .map_err(crate::error::DescribeFastSnapshotRestoresError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7267,8 +8695,11 @@ pub fn parse_describe_fleet_history_error(
     crate::output::DescribeFleetHistoryOutput,
     crate::error::DescribeFleetHistoryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFleetHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFleetHistoryError::generic(generic))
 }
 
@@ -7288,6 +8719,9 @@ pub fn parse_describe_fleet_history_response(
             output,
         )
         .map_err(crate::error::DescribeFleetHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7299,8 +8733,11 @@ pub fn parse_describe_fleet_instances_error(
     crate::output::DescribeFleetInstancesOutput,
     crate::error::DescribeFleetInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFleetInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFleetInstancesError::generic(generic))
 }
 
@@ -7320,6 +8757,9 @@ pub fn parse_describe_fleet_instances_response(
             output,
         )
         .map_err(crate::error::DescribeFleetInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7328,8 +8768,11 @@ pub fn parse_describe_fleet_instances_response(
 pub fn parse_describe_fleets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeFleetsOutput, crate::error::DescribeFleetsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFleetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFleetsError::generic(generic))
 }
 
@@ -7346,6 +8789,9 @@ pub fn parse_describe_fleets_response(
             output,
         )
         .map_err(crate::error::DescribeFleetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7355,8 +8801,11 @@ pub fn parse_describe_flow_logs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeFlowLogsOutput, crate::error::DescribeFlowLogsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFlowLogsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFlowLogsError::generic(generic))
 }
 
@@ -7374,6 +8823,9 @@ pub fn parse_describe_flow_logs_response(
             output,
         )
         .map_err(crate::error::DescribeFlowLogsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7385,8 +8837,11 @@ pub fn parse_describe_fpga_image_attribute_error(
     crate::output::DescribeFpgaImageAttributeOutput,
     crate::error::DescribeFpgaImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFpgaImageAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFpgaImageAttributeError::generic(
         generic,
     ))
@@ -7408,6 +8863,9 @@ pub fn parse_describe_fpga_image_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeFpgaImageAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7419,8 +8877,11 @@ pub fn parse_describe_fpga_images_error(
     crate::output::DescribeFpgaImagesOutput,
     crate::error::DescribeFpgaImagesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFpgaImagesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeFpgaImagesError::generic(generic))
 }
 
@@ -7440,6 +8901,9 @@ pub fn parse_describe_fpga_images_response(
             output,
         )
         .map_err(crate::error::DescribeFpgaImagesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7451,8 +8915,11 @@ pub fn parse_describe_host_reservation_offerings_error(
     crate::output::DescribeHostReservationOfferingsOutput,
     crate::error::DescribeHostReservationOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHostReservationOfferingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeHostReservationOfferingsError::generic(generic))
 }
 
@@ -7474,6 +8941,9 @@ pub fn parse_describe_host_reservation_offerings_response(
                 output,
             )
             .map_err(crate::error::DescribeHostReservationOfferingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7485,8 +8955,11 @@ pub fn parse_describe_host_reservations_error(
     crate::output::DescribeHostReservationsOutput,
     crate::error::DescribeHostReservationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHostReservationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeHostReservationsError::generic(
         generic,
     ))
@@ -7508,6 +8981,9 @@ pub fn parse_describe_host_reservations_response(
             output,
         )
         .map_err(crate::error::DescribeHostReservationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7516,8 +8992,11 @@ pub fn parse_describe_host_reservations_response(
 pub fn parse_describe_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHostsOutput, crate::error::DescribeHostsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHostsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeHostsError::generic(generic))
 }
 
@@ -7534,6 +9013,9 @@ pub fn parse_describe_hosts_response(
             output,
         )
         .map_err(crate::error::DescribeHostsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7545,8 +9027,11 @@ pub fn parse_describe_iam_instance_profile_associations_error(
     crate::output::DescribeIamInstanceProfileAssociationsOutput,
     crate::error::DescribeIamInstanceProfileAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIamInstanceProfileAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIamInstanceProfileAssociationsError::generic(generic))
 }
 
@@ -7563,6 +9048,9 @@ pub fn parse_describe_iam_instance_profile_associations_response(
             crate::output::describe_iam_instance_profile_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_iam_instance_profile_associations(response.body().as_ref(), output).map_err(crate::error::DescribeIamInstanceProfileAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7574,8 +9062,11 @@ pub fn parse_describe_identity_id_format_error(
     crate::output::DescribeIdentityIdFormatOutput,
     crate::error::DescribeIdentityIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIdentityIdFormatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIdentityIdFormatError::generic(
         generic,
     ))
@@ -7597,6 +9088,9 @@ pub fn parse_describe_identity_id_format_response(
             output,
         )
         .map_err(crate::error::DescribeIdentityIdFormatError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7606,8 +9100,11 @@ pub fn parse_describe_id_format_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIdFormatOutput, crate::error::DescribeIdFormatError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIdFormatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIdFormatError::generic(generic))
 }
 
@@ -7625,6 +9122,9 @@ pub fn parse_describe_id_format_response(
             output,
         )
         .map_err(crate::error::DescribeIdFormatError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7636,8 +9136,11 @@ pub fn parse_describe_image_attribute_error(
     crate::output::DescribeImageAttributeOutput,
     crate::error::DescribeImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeImageAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeImageAttributeError::generic(generic))
 }
 
@@ -7657,6 +9160,9 @@ pub fn parse_describe_image_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeImageAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7665,8 +9171,11 @@ pub fn parse_describe_image_attribute_response(
 pub fn parse_describe_images_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeImagesOutput, crate::error::DescribeImagesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeImagesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeImagesError::generic(generic))
 }
 
@@ -7683,6 +9192,9 @@ pub fn parse_describe_images_response(
             output,
         )
         .map_err(crate::error::DescribeImagesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7694,8 +9206,11 @@ pub fn parse_describe_import_image_tasks_error(
     crate::output::DescribeImportImageTasksOutput,
     crate::error::DescribeImportImageTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeImportImageTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeImportImageTasksError::generic(
         generic,
     ))
@@ -7717,6 +9232,9 @@ pub fn parse_describe_import_image_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeImportImageTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7728,8 +9246,11 @@ pub fn parse_describe_import_snapshot_tasks_error(
     crate::output::DescribeImportSnapshotTasksOutput,
     crate::error::DescribeImportSnapshotTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeImportSnapshotTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeImportSnapshotTasksError::generic(
         generic,
     ))
@@ -7751,6 +9272,9 @@ pub fn parse_describe_import_snapshot_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeImportSnapshotTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7762,8 +9286,11 @@ pub fn parse_describe_instance_attribute_error(
     crate::output::DescribeInstanceAttributeOutput,
     crate::error::DescribeInstanceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceAttributeError::generic(
         generic,
     ))
@@ -7785,6 +9312,9 @@ pub fn parse_describe_instance_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeInstanceAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7796,8 +9326,11 @@ pub fn parse_describe_instance_credit_specifications_error(
     crate::output::DescribeInstanceCreditSpecificationsOutput,
     crate::error::DescribeInstanceCreditSpecificationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceCreditSpecificationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceCreditSpecificationsError::generic(generic))
 }
 
@@ -7814,6 +9347,9 @@ pub fn parse_describe_instance_credit_specifications_response(
             crate::output::describe_instance_credit_specifications_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_instance_credit_specifications(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceCreditSpecificationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7825,8 +9361,11 @@ pub fn parse_describe_instance_event_notification_attributes_error(
     crate::output::DescribeInstanceEventNotificationAttributesOutput,
     crate::error::DescribeInstanceEventNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceEventNotificationAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceEventNotificationAttributesError::generic(generic))
 }
 
@@ -7844,6 +9383,9 @@ pub fn parse_describe_instance_event_notification_attributes_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceEventNotificationAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7855,8 +9397,11 @@ pub fn parse_describe_instance_event_windows_error(
     crate::output::DescribeInstanceEventWindowsOutput,
     crate::error::DescribeInstanceEventWindowsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceEventWindowsError::generic(
         generic,
     ))
@@ -7878,6 +9423,9 @@ pub fn parse_describe_instance_event_windows_response(
             output,
         )
         .map_err(crate::error::DescribeInstanceEventWindowsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7887,8 +9435,11 @@ pub fn parse_describe_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeInstancesOutput, crate::error::DescribeInstancesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstancesError::generic(generic))
 }
 
@@ -7906,6 +9457,9 @@ pub fn parse_describe_instances_response(
             output,
         )
         .map_err(crate::error::DescribeInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7917,8 +9471,11 @@ pub fn parse_describe_instance_status_error(
     crate::output::DescribeInstanceStatusOutput,
     crate::error::DescribeInstanceStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceStatusError::generic(generic))
 }
 
@@ -7938,6 +9495,9 @@ pub fn parse_describe_instance_status_response(
             output,
         )
         .map_err(crate::error::DescribeInstanceStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7949,8 +9509,11 @@ pub fn parse_describe_instance_type_offerings_error(
     crate::output::DescribeInstanceTypeOfferingsOutput,
     crate::error::DescribeInstanceTypeOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceTypeOfferingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceTypeOfferingsError::generic(
         generic,
     ))
@@ -7973,6 +9536,9 @@ pub fn parse_describe_instance_type_offerings_response(
                 output,
             )
             .map_err(crate::error::DescribeInstanceTypeOfferingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7984,8 +9550,11 @@ pub fn parse_describe_instance_types_error(
     crate::output::DescribeInstanceTypesOutput,
     crate::error::DescribeInstanceTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInstanceTypesError::generic(generic))
 }
 
@@ -8005,6 +9574,9 @@ pub fn parse_describe_instance_types_response(
             output,
         )
         .map_err(crate::error::DescribeInstanceTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8016,8 +9588,11 @@ pub fn parse_describe_internet_gateways_error(
     crate::output::DescribeInternetGatewaysOutput,
     crate::error::DescribeInternetGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInternetGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeInternetGatewaysError::generic(
         generic,
     ))
@@ -8039,6 +9614,9 @@ pub fn parse_describe_internet_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeInternetGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8048,8 +9626,11 @@ pub fn parse_describe_ipam_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIpamPoolsOutput, crate::error::DescribeIpamPoolsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIpamPoolsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIpamPoolsError::generic(generic))
 }
 
@@ -8067,6 +9648,9 @@ pub fn parse_describe_ipam_pools_response(
             output,
         )
         .map_err(crate::error::DescribeIpamPoolsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8075,8 +9659,11 @@ pub fn parse_describe_ipam_pools_response(
 pub fn parse_describe_ipams_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIpamsOutput, crate::error::DescribeIpamsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIpamsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIpamsError::generic(generic))
 }
 
@@ -8093,6 +9680,9 @@ pub fn parse_describe_ipams_response(
             output,
         )
         .map_err(crate::error::DescribeIpamsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8104,8 +9694,11 @@ pub fn parse_describe_ipam_scopes_error(
     crate::output::DescribeIpamScopesOutput,
     crate::error::DescribeIpamScopesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIpamScopesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIpamScopesError::generic(generic))
 }
 
@@ -8125,6 +9718,9 @@ pub fn parse_describe_ipam_scopes_response(
             output,
         )
         .map_err(crate::error::DescribeIpamScopesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8134,8 +9730,11 @@ pub fn parse_describe_ipv6_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeIpv6PoolsOutput, crate::error::DescribeIpv6PoolsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeIpv6PoolsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeIpv6PoolsError::generic(generic))
 }
 
@@ -8153,6 +9752,9 @@ pub fn parse_describe_ipv6_pools_response(
             output,
         )
         .map_err(crate::error::DescribeIpv6PoolsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8162,8 +9764,11 @@ pub fn parse_describe_key_pairs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeKeyPairsOutput, crate::error::DescribeKeyPairsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeKeyPairsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeKeyPairsError::generic(generic))
 }
 
@@ -8181,6 +9786,9 @@ pub fn parse_describe_key_pairs_response(
             output,
         )
         .map_err(crate::error::DescribeKeyPairsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8192,8 +9800,11 @@ pub fn parse_describe_launch_templates_error(
     crate::output::DescribeLaunchTemplatesOutput,
     crate::error::DescribeLaunchTemplatesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLaunchTemplatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLaunchTemplatesError::generic(generic))
 }
 
@@ -8213,6 +9824,9 @@ pub fn parse_describe_launch_templates_response(
             output,
         )
         .map_err(crate::error::DescribeLaunchTemplatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8224,8 +9838,11 @@ pub fn parse_describe_launch_template_versions_error(
     crate::output::DescribeLaunchTemplateVersionsOutput,
     crate::error::DescribeLaunchTemplateVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLaunchTemplateVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLaunchTemplateVersionsError::generic(
         generic,
     ))
@@ -8249,6 +9866,9 @@ pub fn parse_describe_launch_template_versions_response(
                 output,
             )
             .map_err(crate::error::DescribeLaunchTemplateVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8260,8 +9880,11 @@ pub fn parse_describe_local_gateway_route_tables_error(
     crate::output::DescribeLocalGatewayRouteTablesOutput,
     crate::error::DescribeLocalGatewayRouteTablesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLocalGatewayRouteTablesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLocalGatewayRouteTablesError::generic(
         generic,
     ))
@@ -8285,6 +9908,9 @@ pub fn parse_describe_local_gateway_route_tables_response(
                 output,
             )
             .map_err(crate::error::DescribeLocalGatewayRouteTablesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8296,7 +9922,10 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
     crate::output::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(
         crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::generic(
             generic,
@@ -8316,6 +9945,9 @@ pub fn parse_describe_local_gateway_route_table_virtual_interface_group_associat
         let mut output = crate::output::describe_local_gateway_route_table_virtual_interface_group_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_table_virtual_interface_group_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8327,8 +9959,11 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_error(
     crate::output::DescribeLocalGatewayRouteTableVpcAssociationsOutput,
     crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::generic(generic))
 }
 
@@ -8344,6 +9979,9 @@ pub fn parse_describe_local_gateway_route_table_vpc_associations_response(
         let mut output = crate::output::describe_local_gateway_route_table_vpc_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_route_table_vpc_associations(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayRouteTableVpcAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8355,8 +9993,11 @@ pub fn parse_describe_local_gateways_error(
     crate::output::DescribeLocalGatewaysOutput,
     crate::error::DescribeLocalGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLocalGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLocalGatewaysError::generic(generic))
 }
 
@@ -8376,6 +10017,9 @@ pub fn parse_describe_local_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeLocalGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8387,8 +10031,11 @@ pub fn parse_describe_local_gateway_virtual_interface_groups_error(
     crate::output::DescribeLocalGatewayVirtualInterfaceGroupsOutput,
     crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::generic(generic))
 }
 
@@ -8406,6 +10053,9 @@ pub fn parse_describe_local_gateway_virtual_interface_groups_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_virtual_interface_groups(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayVirtualInterfaceGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8417,8 +10067,11 @@ pub fn parse_describe_local_gateway_virtual_interfaces_error(
     crate::output::DescribeLocalGatewayVirtualInterfacesOutput,
     crate::error::DescribeLocalGatewayVirtualInterfacesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLocalGatewayVirtualInterfacesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeLocalGatewayVirtualInterfacesError::generic(generic))
 }
 
@@ -8435,6 +10088,9 @@ pub fn parse_describe_local_gateway_virtual_interfaces_response(
             crate::output::describe_local_gateway_virtual_interfaces_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_local_gateway_virtual_interfaces(response.body().as_ref(), output).map_err(crate::error::DescribeLocalGatewayVirtualInterfacesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8446,8 +10102,11 @@ pub fn parse_describe_managed_prefix_lists_error(
     crate::output::DescribeManagedPrefixListsOutput,
     crate::error::DescribeManagedPrefixListsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeManagedPrefixListsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeManagedPrefixListsError::generic(
         generic,
     ))
@@ -8469,6 +10128,9 @@ pub fn parse_describe_managed_prefix_lists_response(
             output,
         )
         .map_err(crate::error::DescribeManagedPrefixListsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8480,8 +10142,11 @@ pub fn parse_describe_moving_addresses_error(
     crate::output::DescribeMovingAddressesOutput,
     crate::error::DescribeMovingAddressesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeMovingAddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeMovingAddressesError::generic(generic))
 }
 
@@ -8501,6 +10166,9 @@ pub fn parse_describe_moving_addresses_response(
             output,
         )
         .map_err(crate::error::DescribeMovingAddressesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8512,8 +10180,11 @@ pub fn parse_describe_nat_gateways_error(
     crate::output::DescribeNatGatewaysOutput,
     crate::error::DescribeNatGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNatGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNatGatewaysError::generic(generic))
 }
 
@@ -8533,6 +10204,9 @@ pub fn parse_describe_nat_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeNatGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8544,8 +10218,11 @@ pub fn parse_describe_network_acls_error(
     crate::output::DescribeNetworkAclsOutput,
     crate::error::DescribeNetworkAclsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkAclsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkAclsError::generic(generic))
 }
 
@@ -8565,6 +10242,9 @@ pub fn parse_describe_network_acls_response(
             output,
         )
         .map_err(crate::error::DescribeNetworkAclsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8576,8 +10256,11 @@ pub fn parse_describe_network_insights_access_scope_analyses_error(
     crate::output::DescribeNetworkInsightsAccessScopeAnalysesOutput,
     crate::error::DescribeNetworkInsightsAccessScopeAnalysesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInsightsAccessScopeAnalysesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInsightsAccessScopeAnalysesError::generic(generic))
 }
 
@@ -8595,6 +10278,9 @@ pub fn parse_describe_network_insights_access_scope_analyses_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_network_insights_access_scope_analyses(response.body().as_ref(), output).map_err(crate::error::DescribeNetworkInsightsAccessScopeAnalysesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8606,8 +10292,11 @@ pub fn parse_describe_network_insights_access_scopes_error(
     crate::output::DescribeNetworkInsightsAccessScopesOutput,
     crate::error::DescribeNetworkInsightsAccessScopesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInsightsAccessScopesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInsightsAccessScopesError::generic(generic))
 }
 
@@ -8624,6 +10313,9 @@ pub fn parse_describe_network_insights_access_scopes_response(
             crate::output::describe_network_insights_access_scopes_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_network_insights_access_scopes(response.body().as_ref(), output).map_err(crate::error::DescribeNetworkInsightsAccessScopesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8635,8 +10327,11 @@ pub fn parse_describe_network_insights_analyses_error(
     crate::output::DescribeNetworkInsightsAnalysesOutput,
     crate::error::DescribeNetworkInsightsAnalysesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInsightsAnalysesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInsightsAnalysesError::generic(
         generic,
     ))
@@ -8660,6 +10355,9 @@ pub fn parse_describe_network_insights_analyses_response(
                 output,
             )
             .map_err(crate::error::DescribeNetworkInsightsAnalysesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8671,8 +10369,11 @@ pub fn parse_describe_network_insights_paths_error(
     crate::output::DescribeNetworkInsightsPathsOutput,
     crate::error::DescribeNetworkInsightsPathsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInsightsPathsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInsightsPathsError::generic(
         generic,
     ))
@@ -8694,6 +10395,9 @@ pub fn parse_describe_network_insights_paths_response(
             output,
         )
         .map_err(crate::error::DescribeNetworkInsightsPathsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8705,8 +10409,11 @@ pub fn parse_describe_network_interface_attribute_error(
     crate::output::DescribeNetworkInterfaceAttributeOutput,
     crate::error::DescribeNetworkInterfaceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInterfaceAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInterfaceAttributeError::generic(generic))
 }
 
@@ -8728,6 +10435,9 @@ pub fn parse_describe_network_interface_attribute_response(
                 output,
             )
             .map_err(crate::error::DescribeNetworkInterfaceAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8739,8 +10449,11 @@ pub fn parse_describe_network_interface_permissions_error(
     crate::output::DescribeNetworkInterfacePermissionsOutput,
     crate::error::DescribeNetworkInterfacePermissionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInterfacePermissionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInterfacePermissionsError::generic(generic))
 }
 
@@ -8757,6 +10470,9 @@ pub fn parse_describe_network_interface_permissions_response(
             crate::output::describe_network_interface_permissions_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_network_interface_permissions(response.body().as_ref(), output).map_err(crate::error::DescribeNetworkInterfacePermissionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8768,8 +10484,11 @@ pub fn parse_describe_network_interfaces_error(
     crate::output::DescribeNetworkInterfacesOutput,
     crate::error::DescribeNetworkInterfacesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNetworkInterfacesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeNetworkInterfacesError::generic(
         generic,
     ))
@@ -8791,6 +10510,9 @@ pub fn parse_describe_network_interfaces_response(
             output,
         )
         .map_err(crate::error::DescribeNetworkInterfacesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8802,8 +10524,11 @@ pub fn parse_describe_placement_groups_error(
     crate::output::DescribePlacementGroupsOutput,
     crate::error::DescribePlacementGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePlacementGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribePlacementGroupsError::generic(generic))
 }
 
@@ -8823,6 +10548,9 @@ pub fn parse_describe_placement_groups_response(
             output,
         )
         .map_err(crate::error::DescribePlacementGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8834,8 +10562,11 @@ pub fn parse_describe_prefix_lists_error(
     crate::output::DescribePrefixListsOutput,
     crate::error::DescribePrefixListsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePrefixListsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribePrefixListsError::generic(generic))
 }
 
@@ -8855,6 +10586,9 @@ pub fn parse_describe_prefix_lists_response(
             output,
         )
         .map_err(crate::error::DescribePrefixListsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8866,8 +10600,11 @@ pub fn parse_describe_principal_id_format_error(
     crate::output::DescribePrincipalIdFormatOutput,
     crate::error::DescribePrincipalIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePrincipalIdFormatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribePrincipalIdFormatError::generic(
         generic,
     ))
@@ -8889,6 +10626,9 @@ pub fn parse_describe_principal_id_format_response(
             output,
         )
         .map_err(crate::error::DescribePrincipalIdFormatError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8900,8 +10640,11 @@ pub fn parse_describe_public_ipv4_pools_error(
     crate::output::DescribePublicIpv4PoolsOutput,
     crate::error::DescribePublicIpv4PoolsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePublicIpv4PoolsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribePublicIpv4PoolsError::generic(generic))
 }
 
@@ -8921,6 +10664,9 @@ pub fn parse_describe_public_ipv4_pools_response(
             output,
         )
         .map_err(crate::error::DescribePublicIpv4PoolsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8929,8 +10675,11 @@ pub fn parse_describe_public_ipv4_pools_response(
 pub fn parse_describe_regions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeRegionsOutput, crate::error::DescribeRegionsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeRegionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeRegionsError::generic(generic))
 }
 
@@ -8947,6 +10696,9 @@ pub fn parse_describe_regions_response(
             output,
         )
         .map_err(crate::error::DescribeRegionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8958,8 +10710,11 @@ pub fn parse_describe_replace_root_volume_tasks_error(
     crate::output::DescribeReplaceRootVolumeTasksOutput,
     crate::error::DescribeReplaceRootVolumeTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReplaceRootVolumeTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeReplaceRootVolumeTasksError::generic(
         generic,
     ))
@@ -8983,6 +10738,9 @@ pub fn parse_describe_replace_root_volume_tasks_response(
                 output,
             )
             .map_err(crate::error::DescribeReplaceRootVolumeTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8994,8 +10752,11 @@ pub fn parse_describe_reserved_instances_error(
     crate::output::DescribeReservedInstancesOutput,
     crate::error::DescribeReservedInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReservedInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeReservedInstancesError::generic(
         generic,
     ))
@@ -9017,6 +10778,9 @@ pub fn parse_describe_reserved_instances_response(
             output,
         )
         .map_err(crate::error::DescribeReservedInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9028,8 +10792,11 @@ pub fn parse_describe_reserved_instances_listings_error(
     crate::output::DescribeReservedInstancesListingsOutput,
     crate::error::DescribeReservedInstancesListingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReservedInstancesListingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeReservedInstancesListingsError::generic(generic))
 }
 
@@ -9051,6 +10818,9 @@ pub fn parse_describe_reserved_instances_listings_response(
                 output,
             )
             .map_err(crate::error::DescribeReservedInstancesListingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9062,8 +10832,11 @@ pub fn parse_describe_reserved_instances_modifications_error(
     crate::output::DescribeReservedInstancesModificationsOutput,
     crate::error::DescribeReservedInstancesModificationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReservedInstancesModificationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeReservedInstancesModificationsError::generic(generic))
 }
 
@@ -9080,6 +10853,9 @@ pub fn parse_describe_reserved_instances_modifications_response(
             crate::output::describe_reserved_instances_modifications_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_instances_modifications(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstancesModificationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9091,8 +10867,11 @@ pub fn parse_describe_reserved_instances_offerings_error(
     crate::output::DescribeReservedInstancesOfferingsOutput,
     crate::error::DescribeReservedInstancesOfferingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReservedInstancesOfferingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeReservedInstancesOfferingsError::generic(generic))
 }
 
@@ -9109,6 +10888,9 @@ pub fn parse_describe_reserved_instances_offerings_response(
             crate::output::describe_reserved_instances_offerings_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_reserved_instances_offerings(response.body().as_ref(), output).map_err(crate::error::DescribeReservedInstancesOfferingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9120,8 +10902,11 @@ pub fn parse_describe_route_tables_error(
     crate::output::DescribeRouteTablesOutput,
     crate::error::DescribeRouteTablesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeRouteTablesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeRouteTablesError::generic(generic))
 }
 
@@ -9141,6 +10926,9 @@ pub fn parse_describe_route_tables_response(
             output,
         )
         .map_err(crate::error::DescribeRouteTablesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9152,8 +10940,11 @@ pub fn parse_describe_scheduled_instance_availability_error(
     crate::output::DescribeScheduledInstanceAvailabilityOutput,
     crate::error::DescribeScheduledInstanceAvailabilityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeScheduledInstanceAvailabilityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeScheduledInstanceAvailabilityError::generic(generic))
 }
 
@@ -9170,6 +10961,9 @@ pub fn parse_describe_scheduled_instance_availability_response(
             crate::output::describe_scheduled_instance_availability_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_scheduled_instance_availability(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledInstanceAvailabilityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9181,8 +10975,11 @@ pub fn parse_describe_scheduled_instances_error(
     crate::output::DescribeScheduledInstancesOutput,
     crate::error::DescribeScheduledInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeScheduledInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeScheduledInstancesError::generic(
         generic,
     ))
@@ -9204,6 +11001,9 @@ pub fn parse_describe_scheduled_instances_response(
             output,
         )
         .map_err(crate::error::DescribeScheduledInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9215,8 +11015,11 @@ pub fn parse_describe_security_group_references_error(
     crate::output::DescribeSecurityGroupReferencesOutput,
     crate::error::DescribeSecurityGroupReferencesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSecurityGroupReferencesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSecurityGroupReferencesError::generic(
         generic,
     ))
@@ -9240,6 +11043,9 @@ pub fn parse_describe_security_group_references_response(
                 output,
             )
             .map_err(crate::error::DescribeSecurityGroupReferencesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9251,8 +11057,11 @@ pub fn parse_describe_security_group_rules_error(
     crate::output::DescribeSecurityGroupRulesOutput,
     crate::error::DescribeSecurityGroupRulesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSecurityGroupRulesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSecurityGroupRulesError::generic(
         generic,
     ))
@@ -9274,6 +11083,9 @@ pub fn parse_describe_security_group_rules_response(
             output,
         )
         .map_err(crate::error::DescribeSecurityGroupRulesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9285,8 +11097,11 @@ pub fn parse_describe_security_groups_error(
     crate::output::DescribeSecurityGroupsOutput,
     crate::error::DescribeSecurityGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSecurityGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSecurityGroupsError::generic(generic))
 }
 
@@ -9306,6 +11121,9 @@ pub fn parse_describe_security_groups_response(
             output,
         )
         .map_err(crate::error::DescribeSecurityGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9317,8 +11135,11 @@ pub fn parse_describe_snapshot_attribute_error(
     crate::output::DescribeSnapshotAttributeOutput,
     crate::error::DescribeSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSnapshotAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSnapshotAttributeError::generic(
         generic,
     ))
@@ -9340,6 +11161,9 @@ pub fn parse_describe_snapshot_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeSnapshotAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9349,8 +11173,11 @@ pub fn parse_describe_snapshots_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeSnapshotsOutput, crate::error::DescribeSnapshotsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSnapshotsError::generic(generic))
 }
 
@@ -9368,6 +11195,9 @@ pub fn parse_describe_snapshots_response(
             output,
         )
         .map_err(crate::error::DescribeSnapshotsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9379,8 +11209,11 @@ pub fn parse_describe_snapshot_tier_status_error(
     crate::output::DescribeSnapshotTierStatusOutput,
     crate::error::DescribeSnapshotTierStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSnapshotTierStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSnapshotTierStatusError::generic(
         generic,
     ))
@@ -9402,6 +11235,9 @@ pub fn parse_describe_snapshot_tier_status_response(
             output,
         )
         .map_err(crate::error::DescribeSnapshotTierStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9413,8 +11249,11 @@ pub fn parse_describe_spot_datafeed_subscription_error(
     crate::output::DescribeSpotDatafeedSubscriptionOutput,
     crate::error::DescribeSpotDatafeedSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSpotDatafeedSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSpotDatafeedSubscriptionError::generic(generic))
 }
 
@@ -9436,6 +11275,9 @@ pub fn parse_describe_spot_datafeed_subscription_response(
                 output,
             )
             .map_err(crate::error::DescribeSpotDatafeedSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9447,8 +11289,11 @@ pub fn parse_describe_spot_fleet_instances_error(
     crate::output::DescribeSpotFleetInstancesOutput,
     crate::error::DescribeSpotFleetInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSpotFleetInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSpotFleetInstancesError::generic(
         generic,
     ))
@@ -9470,6 +11315,9 @@ pub fn parse_describe_spot_fleet_instances_response(
             output,
         )
         .map_err(crate::error::DescribeSpotFleetInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9481,8 +11329,11 @@ pub fn parse_describe_spot_fleet_request_history_error(
     crate::output::DescribeSpotFleetRequestHistoryOutput,
     crate::error::DescribeSpotFleetRequestHistoryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSpotFleetRequestHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSpotFleetRequestHistoryError::generic(
         generic,
     ))
@@ -9506,6 +11357,9 @@ pub fn parse_describe_spot_fleet_request_history_response(
                 output,
             )
             .map_err(crate::error::DescribeSpotFleetRequestHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9517,8 +11371,11 @@ pub fn parse_describe_spot_fleet_requests_error(
     crate::output::DescribeSpotFleetRequestsOutput,
     crate::error::DescribeSpotFleetRequestsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSpotFleetRequestsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSpotFleetRequestsError::generic(
         generic,
     ))
@@ -9540,6 +11397,9 @@ pub fn parse_describe_spot_fleet_requests_response(
             output,
         )
         .map_err(crate::error::DescribeSpotFleetRequestsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9551,8 +11411,11 @@ pub fn parse_describe_spot_instance_requests_error(
     crate::output::DescribeSpotInstanceRequestsOutput,
     crate::error::DescribeSpotInstanceRequestsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSpotInstanceRequestsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSpotInstanceRequestsError::generic(
         generic,
     ))
@@ -9574,6 +11437,9 @@ pub fn parse_describe_spot_instance_requests_response(
             output,
         )
         .map_err(crate::error::DescribeSpotInstanceRequestsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9585,8 +11451,11 @@ pub fn parse_describe_spot_price_history_error(
     crate::output::DescribeSpotPriceHistoryOutput,
     crate::error::DescribeSpotPriceHistoryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSpotPriceHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSpotPriceHistoryError::generic(
         generic,
     ))
@@ -9608,6 +11477,9 @@ pub fn parse_describe_spot_price_history_response(
             output,
         )
         .map_err(crate::error::DescribeSpotPriceHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9619,8 +11491,11 @@ pub fn parse_describe_stale_security_groups_error(
     crate::output::DescribeStaleSecurityGroupsOutput,
     crate::error::DescribeStaleSecurityGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeStaleSecurityGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeStaleSecurityGroupsError::generic(
         generic,
     ))
@@ -9642,6 +11517,9 @@ pub fn parse_describe_stale_security_groups_response(
             output,
         )
         .map_err(crate::error::DescribeStaleSecurityGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9653,8 +11531,11 @@ pub fn parse_describe_store_image_tasks_error(
     crate::output::DescribeStoreImageTasksOutput,
     crate::error::DescribeStoreImageTasksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeStoreImageTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeStoreImageTasksError::generic(generic))
 }
 
@@ -9674,6 +11555,9 @@ pub fn parse_describe_store_image_tasks_response(
             output,
         )
         .map_err(crate::error::DescribeStoreImageTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9682,8 +11566,11 @@ pub fn parse_describe_store_image_tasks_response(
 pub fn parse_describe_subnets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeSubnetsOutput, crate::error::DescribeSubnetsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSubnetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeSubnetsError::generic(generic))
 }
 
@@ -9700,6 +11587,9 @@ pub fn parse_describe_subnets_response(
             output,
         )
         .map_err(crate::error::DescribeSubnetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9708,8 +11598,11 @@ pub fn parse_describe_subnets_response(
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTagsError::generic(generic))
 }
 
@@ -9726,6 +11619,9 @@ pub fn parse_describe_tags_response(
             output,
         )
         .map_err(crate::error::DescribeTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9737,8 +11633,11 @@ pub fn parse_describe_traffic_mirror_filters_error(
     crate::output::DescribeTrafficMirrorFiltersOutput,
     crate::error::DescribeTrafficMirrorFiltersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTrafficMirrorFiltersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTrafficMirrorFiltersError::generic(
         generic,
     ))
@@ -9760,6 +11659,9 @@ pub fn parse_describe_traffic_mirror_filters_response(
             output,
         )
         .map_err(crate::error::DescribeTrafficMirrorFiltersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9771,8 +11673,11 @@ pub fn parse_describe_traffic_mirror_sessions_error(
     crate::output::DescribeTrafficMirrorSessionsOutput,
     crate::error::DescribeTrafficMirrorSessionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTrafficMirrorSessionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTrafficMirrorSessionsError::generic(
         generic,
     ))
@@ -9795,6 +11700,9 @@ pub fn parse_describe_traffic_mirror_sessions_response(
                 output,
             )
             .map_err(crate::error::DescribeTrafficMirrorSessionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9806,8 +11714,11 @@ pub fn parse_describe_traffic_mirror_targets_error(
     crate::output::DescribeTrafficMirrorTargetsOutput,
     crate::error::DescribeTrafficMirrorTargetsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTrafficMirrorTargetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTrafficMirrorTargetsError::generic(
         generic,
     ))
@@ -9829,6 +11740,9 @@ pub fn parse_describe_traffic_mirror_targets_response(
             output,
         )
         .map_err(crate::error::DescribeTrafficMirrorTargetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9840,8 +11754,11 @@ pub fn parse_describe_transit_gateway_attachments_error(
     crate::output::DescribeTransitGatewayAttachmentsOutput,
     crate::error::DescribeTransitGatewayAttachmentsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayAttachmentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayAttachmentsError::generic(generic))
 }
 
@@ -9863,6 +11780,9 @@ pub fn parse_describe_transit_gateway_attachments_response(
                 output,
             )
             .map_err(crate::error::DescribeTransitGatewayAttachmentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9874,8 +11794,11 @@ pub fn parse_describe_transit_gateway_connect_peers_error(
     crate::output::DescribeTransitGatewayConnectPeersOutput,
     crate::error::DescribeTransitGatewayConnectPeersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayConnectPeersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayConnectPeersError::generic(generic))
 }
 
@@ -9892,6 +11815,9 @@ pub fn parse_describe_transit_gateway_connect_peers_response(
             crate::output::describe_transit_gateway_connect_peers_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_connect_peers(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayConnectPeersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9903,8 +11829,11 @@ pub fn parse_describe_transit_gateway_connects_error(
     crate::output::DescribeTransitGatewayConnectsOutput,
     crate::error::DescribeTransitGatewayConnectsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayConnectsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayConnectsError::generic(
         generic,
     ))
@@ -9928,6 +11857,9 @@ pub fn parse_describe_transit_gateway_connects_response(
                 output,
             )
             .map_err(crate::error::DescribeTransitGatewayConnectsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9939,8 +11871,11 @@ pub fn parse_describe_transit_gateway_multicast_domains_error(
     crate::output::DescribeTransitGatewayMulticastDomainsOutput,
     crate::error::DescribeTransitGatewayMulticastDomainsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayMulticastDomainsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayMulticastDomainsError::generic(generic))
 }
 
@@ -9957,6 +11892,9 @@ pub fn parse_describe_transit_gateway_multicast_domains_response(
             crate::output::describe_transit_gateway_multicast_domains_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_multicast_domains(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayMulticastDomainsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9968,8 +11906,11 @@ pub fn parse_describe_transit_gateway_peering_attachments_error(
     crate::output::DescribeTransitGatewayPeeringAttachmentsOutput,
     crate::error::DescribeTransitGatewayPeeringAttachmentsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::generic(generic))
 }
 
@@ -9986,6 +11927,9 @@ pub fn parse_describe_transit_gateway_peering_attachments_response(
             crate::output::describe_transit_gateway_peering_attachments_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_peering_attachments(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayPeeringAttachmentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9997,8 +11941,11 @@ pub fn parse_describe_transit_gateway_policy_tables_error(
     crate::output::DescribeTransitGatewayPolicyTablesOutput,
     crate::error::DescribeTransitGatewayPolicyTablesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayPolicyTablesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayPolicyTablesError::generic(generic))
 }
 
@@ -10015,6 +11962,9 @@ pub fn parse_describe_transit_gateway_policy_tables_response(
             crate::output::describe_transit_gateway_policy_tables_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_policy_tables(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayPolicyTablesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10026,8 +11976,11 @@ pub fn parse_describe_transit_gateway_route_table_announcements_error(
     crate::output::DescribeTransitGatewayRouteTableAnnouncementsOutput,
     crate::error::DescribeTransitGatewayRouteTableAnnouncementsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::generic(generic))
 }
 
@@ -10043,6 +11996,9 @@ pub fn parse_describe_transit_gateway_route_table_announcements_response(
         let mut output = crate::output::describe_transit_gateway_route_table_announcements_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_route_table_announcements(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayRouteTableAnnouncementsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10054,8 +12010,11 @@ pub fn parse_describe_transit_gateway_route_tables_error(
     crate::output::DescribeTransitGatewayRouteTablesOutput,
     crate::error::DescribeTransitGatewayRouteTablesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayRouteTablesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayRouteTablesError::generic(generic))
 }
 
@@ -10072,6 +12031,9 @@ pub fn parse_describe_transit_gateway_route_tables_response(
             crate::output::describe_transit_gateway_route_tables_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_route_tables(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayRouteTablesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10083,8 +12045,11 @@ pub fn parse_describe_transit_gateways_error(
     crate::output::DescribeTransitGatewaysOutput,
     crate::error::DescribeTransitGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewaysError::generic(generic))
 }
 
@@ -10104,6 +12069,9 @@ pub fn parse_describe_transit_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeTransitGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10115,8 +12083,11 @@ pub fn parse_describe_transit_gateway_vpc_attachments_error(
     crate::output::DescribeTransitGatewayVpcAttachmentsOutput,
     crate::error::DescribeTransitGatewayVpcAttachmentsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTransitGatewayVpcAttachmentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTransitGatewayVpcAttachmentsError::generic(generic))
 }
 
@@ -10133,6 +12104,9 @@ pub fn parse_describe_transit_gateway_vpc_attachments_response(
             crate::output::describe_transit_gateway_vpc_attachments_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_transit_gateway_vpc_attachments(response.body().as_ref(), output).map_err(crate::error::DescribeTransitGatewayVpcAttachmentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10144,8 +12118,11 @@ pub fn parse_describe_trunk_interface_associations_error(
     crate::output::DescribeTrunkInterfaceAssociationsOutput,
     crate::error::DescribeTrunkInterfaceAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeTrunkInterfaceAssociationsError::generic(generic))
 }
 
@@ -10162,6 +12139,9 @@ pub fn parse_describe_trunk_interface_associations_response(
             crate::output::describe_trunk_interface_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_trunk_interface_associations(response.body().as_ref(), output).map_err(crate::error::DescribeTrunkInterfaceAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10173,8 +12153,11 @@ pub fn parse_describe_verified_access_endpoints_error(
     crate::output::DescribeVerifiedAccessEndpointsOutput,
     crate::error::DescribeVerifiedAccessEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVerifiedAccessEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVerifiedAccessEndpointsError::generic(
         generic,
     ))
@@ -10198,6 +12181,9 @@ pub fn parse_describe_verified_access_endpoints_response(
                 output,
             )
             .map_err(crate::error::DescribeVerifiedAccessEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10209,8 +12195,11 @@ pub fn parse_describe_verified_access_groups_error(
     crate::output::DescribeVerifiedAccessGroupsOutput,
     crate::error::DescribeVerifiedAccessGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVerifiedAccessGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVerifiedAccessGroupsError::generic(
         generic,
     ))
@@ -10232,6 +12221,9 @@ pub fn parse_describe_verified_access_groups_response(
             output,
         )
         .map_err(crate::error::DescribeVerifiedAccessGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10243,9 +12235,12 @@ pub fn parse_describe_verified_access_instance_logging_configurations_error(
     crate::output::DescribeVerifiedAccessInstanceLoggingConfigurationsOutput,
     crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response).map_err(
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response).map_err(
         crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError::unhandled,
     )?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError::generic(generic))
 }
 
@@ -10261,6 +12256,9 @@ pub fn parse_describe_verified_access_instance_logging_configurations_response(
         let mut output = crate::output::describe_verified_access_instance_logging_configurations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_verified_access_instance_logging_configurations(response.body().as_ref(), output).map_err(crate::error::DescribeVerifiedAccessInstanceLoggingConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10272,8 +12270,11 @@ pub fn parse_describe_verified_access_instances_error(
     crate::output::DescribeVerifiedAccessInstancesOutput,
     crate::error::DescribeVerifiedAccessInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVerifiedAccessInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVerifiedAccessInstancesError::generic(
         generic,
     ))
@@ -10297,6 +12298,9 @@ pub fn parse_describe_verified_access_instances_response(
                 output,
             )
             .map_err(crate::error::DescribeVerifiedAccessInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10308,8 +12312,11 @@ pub fn parse_describe_verified_access_trust_providers_error(
     crate::output::DescribeVerifiedAccessTrustProvidersOutput,
     crate::error::DescribeVerifiedAccessTrustProvidersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVerifiedAccessTrustProvidersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVerifiedAccessTrustProvidersError::generic(generic))
 }
 
@@ -10326,6 +12333,9 @@ pub fn parse_describe_verified_access_trust_providers_response(
             crate::output::describe_verified_access_trust_providers_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_verified_access_trust_providers(response.body().as_ref(), output).map_err(crate::error::DescribeVerifiedAccessTrustProvidersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10337,8 +12347,11 @@ pub fn parse_describe_volume_attribute_error(
     crate::output::DescribeVolumeAttributeOutput,
     crate::error::DescribeVolumeAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVolumeAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVolumeAttributeError::generic(generic))
 }
 
@@ -10358,6 +12371,9 @@ pub fn parse_describe_volume_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeVolumeAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10366,8 +12382,11 @@ pub fn parse_describe_volume_attribute_response(
 pub fn parse_describe_volumes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeVolumesOutput, crate::error::DescribeVolumesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVolumesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVolumesError::generic(generic))
 }
 
@@ -10384,6 +12403,9 @@ pub fn parse_describe_volumes_response(
             output,
         )
         .map_err(crate::error::DescribeVolumesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10395,8 +12417,11 @@ pub fn parse_describe_volumes_modifications_error(
     crate::output::DescribeVolumesModificationsOutput,
     crate::error::DescribeVolumesModificationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVolumesModificationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVolumesModificationsError::generic(
         generic,
     ))
@@ -10418,6 +12443,9 @@ pub fn parse_describe_volumes_modifications_response(
             output,
         )
         .map_err(crate::error::DescribeVolumesModificationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10429,8 +12457,11 @@ pub fn parse_describe_volume_status_error(
     crate::output::DescribeVolumeStatusOutput,
     crate::error::DescribeVolumeStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVolumeStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVolumeStatusError::generic(generic))
 }
 
@@ -10450,6 +12481,9 @@ pub fn parse_describe_volume_status_response(
             output,
         )
         .map_err(crate::error::DescribeVolumeStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10461,8 +12495,11 @@ pub fn parse_describe_vpc_attribute_error(
     crate::output::DescribeVpcAttributeOutput,
     crate::error::DescribeVpcAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcAttributeError::generic(generic))
 }
 
@@ -10482,6 +12519,9 @@ pub fn parse_describe_vpc_attribute_response(
             output,
         )
         .map_err(crate::error::DescribeVpcAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10493,8 +12533,11 @@ pub fn parse_describe_vpc_classic_link_error(
     crate::output::DescribeVpcClassicLinkOutput,
     crate::error::DescribeVpcClassicLinkError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcClassicLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcClassicLinkError::generic(generic))
 }
 
@@ -10514,6 +12557,9 @@ pub fn parse_describe_vpc_classic_link_response(
             output,
         )
         .map_err(crate::error::DescribeVpcClassicLinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10525,8 +12571,11 @@ pub fn parse_describe_vpc_classic_link_dns_support_error(
     crate::output::DescribeVpcClassicLinkDnsSupportOutput,
     crate::error::DescribeVpcClassicLinkDnsSupportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcClassicLinkDnsSupportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcClassicLinkDnsSupportError::generic(generic))
 }
 
@@ -10543,6 +12592,9 @@ pub fn parse_describe_vpc_classic_link_dns_support_response(
             crate::output::describe_vpc_classic_link_dns_support_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_classic_link_dns_support(response.body().as_ref(), output).map_err(crate::error::DescribeVpcClassicLinkDnsSupportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10554,8 +12606,11 @@ pub fn parse_describe_vpc_endpoint_connection_notifications_error(
     crate::output::DescribeVpcEndpointConnectionNotificationsOutput,
     crate::error::DescribeVpcEndpointConnectionNotificationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcEndpointConnectionNotificationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcEndpointConnectionNotificationsError::generic(generic))
 }
 
@@ -10573,6 +12628,9 @@ pub fn parse_describe_vpc_endpoint_connection_notifications_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_connection_notifications(response.body().as_ref(), output).map_err(crate::error::DescribeVpcEndpointConnectionNotificationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10584,8 +12642,11 @@ pub fn parse_describe_vpc_endpoint_connections_error(
     crate::output::DescribeVpcEndpointConnectionsOutput,
     crate::error::DescribeVpcEndpointConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcEndpointConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcEndpointConnectionsError::generic(
         generic,
     ))
@@ -10609,6 +12670,9 @@ pub fn parse_describe_vpc_endpoint_connections_response(
                 output,
             )
             .map_err(crate::error::DescribeVpcEndpointConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10620,8 +12684,11 @@ pub fn parse_describe_vpc_endpoints_error(
     crate::output::DescribeVpcEndpointsOutput,
     crate::error::DescribeVpcEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcEndpointsError::generic(generic))
 }
 
@@ -10641,6 +12708,9 @@ pub fn parse_describe_vpc_endpoints_response(
             output,
         )
         .map_err(crate::error::DescribeVpcEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10652,8 +12722,11 @@ pub fn parse_describe_vpc_endpoint_service_configurations_error(
     crate::output::DescribeVpcEndpointServiceConfigurationsOutput,
     crate::error::DescribeVpcEndpointServiceConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcEndpointServiceConfigurationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcEndpointServiceConfigurationsError::generic(generic))
 }
 
@@ -10670,6 +12743,9 @@ pub fn parse_describe_vpc_endpoint_service_configurations_response(
             crate::output::describe_vpc_endpoint_service_configurations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_service_configurations(response.body().as_ref(), output).map_err(crate::error::DescribeVpcEndpointServiceConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10681,8 +12757,11 @@ pub fn parse_describe_vpc_endpoint_service_permissions_error(
     crate::output::DescribeVpcEndpointServicePermissionsOutput,
     crate::error::DescribeVpcEndpointServicePermissionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcEndpointServicePermissionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcEndpointServicePermissionsError::generic(generic))
 }
 
@@ -10699,6 +12778,9 @@ pub fn parse_describe_vpc_endpoint_service_permissions_response(
             crate::output::describe_vpc_endpoint_service_permissions_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_vpc_endpoint_service_permissions(response.body().as_ref(), output).map_err(crate::error::DescribeVpcEndpointServicePermissionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10710,8 +12792,11 @@ pub fn parse_describe_vpc_endpoint_services_error(
     crate::output::DescribeVpcEndpointServicesOutput,
     crate::error::DescribeVpcEndpointServicesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcEndpointServicesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcEndpointServicesError::generic(
         generic,
     ))
@@ -10733,6 +12818,9 @@ pub fn parse_describe_vpc_endpoint_services_response(
             output,
         )
         .map_err(crate::error::DescribeVpcEndpointServicesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10744,8 +12832,11 @@ pub fn parse_describe_vpc_peering_connections_error(
     crate::output::DescribeVpcPeeringConnectionsOutput,
     crate::error::DescribeVpcPeeringConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcPeeringConnectionsError::generic(
         generic,
     ))
@@ -10768,6 +12859,9 @@ pub fn parse_describe_vpc_peering_connections_response(
                 output,
             )
             .map_err(crate::error::DescribeVpcPeeringConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10776,8 +12870,11 @@ pub fn parse_describe_vpc_peering_connections_response(
 pub fn parse_describe_vpcs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeVpcsOutput, crate::error::DescribeVpcsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpcsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpcsError::generic(generic))
 }
 
@@ -10794,6 +12891,9 @@ pub fn parse_describe_vpcs_response(
             output,
         )
         .map_err(crate::error::DescribeVpcsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10805,8 +12905,11 @@ pub fn parse_describe_vpn_connections_error(
     crate::output::DescribeVpnConnectionsOutput,
     crate::error::DescribeVpnConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpnConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpnConnectionsError::generic(generic))
 }
 
@@ -10826,6 +12929,9 @@ pub fn parse_describe_vpn_connections_response(
             output,
         )
         .map_err(crate::error::DescribeVpnConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10837,8 +12943,11 @@ pub fn parse_describe_vpn_gateways_error(
     crate::output::DescribeVpnGatewaysOutput,
     crate::error::DescribeVpnGatewaysError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVpnGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeVpnGatewaysError::generic(generic))
 }
 
@@ -10858,6 +12967,9 @@ pub fn parse_describe_vpn_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeVpnGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10869,8 +12981,11 @@ pub fn parse_detach_classic_link_vpc_error(
     crate::output::DetachClassicLinkVpcOutput,
     crate::error::DetachClassicLinkVpcError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachClassicLinkVpcError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DetachClassicLinkVpcError::generic(generic))
 }
 
@@ -10890,6 +13005,9 @@ pub fn parse_detach_classic_link_vpc_response(
             output,
         )
         .map_err(crate::error::DetachClassicLinkVpcError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10901,8 +13019,11 @@ pub fn parse_detach_internet_gateway_error(
     crate::output::DetachInternetGatewayOutput,
     crate::error::DetachInternetGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachInternetGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DetachInternetGatewayError::generic(generic))
 }
 
@@ -10917,6 +13038,9 @@ pub fn parse_detach_internet_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_internet_gateway_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10928,8 +13052,11 @@ pub fn parse_detach_network_interface_error(
     crate::output::DetachNetworkInterfaceOutput,
     crate::error::DetachNetworkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachNetworkInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DetachNetworkInterfaceError::generic(generic))
 }
 
@@ -10944,6 +13071,9 @@ pub fn parse_detach_network_interface_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_network_interface_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10955,8 +13085,11 @@ pub fn parse_detach_verified_access_trust_provider_error(
     crate::output::DetachVerifiedAccessTrustProviderOutput,
     crate::error::DetachVerifiedAccessTrustProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachVerifiedAccessTrustProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DetachVerifiedAccessTrustProviderError::generic(generic))
 }
 
@@ -10973,6 +13106,9 @@ pub fn parse_detach_verified_access_trust_provider_response(
             crate::output::detach_verified_access_trust_provider_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_detach_verified_access_trust_provider(response.body().as_ref(), output).map_err(crate::error::DetachVerifiedAccessTrustProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10981,8 +13117,11 @@ pub fn parse_detach_verified_access_trust_provider_response(
 pub fn parse_detach_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DetachVolumeError::generic(generic))
 }
 
@@ -10999,6 +13138,9 @@ pub fn parse_detach_volume_response(
             output,
         )
         .map_err(crate::error::DetachVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11008,8 +13150,11 @@ pub fn parse_detach_vpn_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachVpnGatewayOutput, crate::error::DetachVpnGatewayError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachVpnGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DetachVpnGatewayError::generic(generic))
 }
 
@@ -11022,6 +13167,9 @@ pub fn parse_detach_vpn_gateway_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_vpn_gateway_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11033,8 +13181,11 @@ pub fn parse_disable_address_transfer_error(
     crate::output::DisableAddressTransferOutput,
     crate::error::DisableAddressTransferError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableAddressTransferError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableAddressTransferError::generic(generic))
 }
 
@@ -11054,6 +13205,9 @@ pub fn parse_disable_address_transfer_response(
             output,
         )
         .map_err(crate::error::DisableAddressTransferError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11065,8 +13219,11 @@ pub fn parse_disable_aws_network_performance_metric_subscription_error(
     crate::output::DisableAwsNetworkPerformanceMetricSubscriptionOutput,
     crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError::generic(generic))
 }
 
@@ -11082,6 +13239,9 @@ pub fn parse_disable_aws_network_performance_metric_subscription_response(
         let mut output = crate::output::disable_aws_network_performance_metric_subscription_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disable_aws_network_performance_metric_subscription(response.body().as_ref(), output).map_err(crate::error::DisableAwsNetworkPerformanceMetricSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11093,8 +13253,11 @@ pub fn parse_disable_ebs_encryption_by_default_error(
     crate::output::DisableEbsEncryptionByDefaultOutput,
     crate::error::DisableEbsEncryptionByDefaultError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableEbsEncryptionByDefaultError::generic(
         generic,
     ))
@@ -11118,6 +13281,9 @@ pub fn parse_disable_ebs_encryption_by_default_response(
                 output,
             )
             .map_err(crate::error::DisableEbsEncryptionByDefaultError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11127,8 +13293,11 @@ pub fn parse_disable_fast_launch_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DisableFastLaunchOutput, crate::error::DisableFastLaunchError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableFastLaunchError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableFastLaunchError::generic(generic))
 }
 
@@ -11146,6 +13315,9 @@ pub fn parse_disable_fast_launch_response(
             output,
         )
         .map_err(crate::error::DisableFastLaunchError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11157,8 +13329,11 @@ pub fn parse_disable_fast_snapshot_restores_error(
     crate::output::DisableFastSnapshotRestoresOutput,
     crate::error::DisableFastSnapshotRestoresError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableFastSnapshotRestoresError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableFastSnapshotRestoresError::generic(
         generic,
     ))
@@ -11180,6 +13355,9 @@ pub fn parse_disable_fast_snapshot_restores_response(
             output,
         )
         .map_err(crate::error::DisableFastSnapshotRestoresError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11191,8 +13369,11 @@ pub fn parse_disable_image_deprecation_error(
     crate::output::DisableImageDeprecationOutput,
     crate::error::DisableImageDeprecationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableImageDeprecationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableImageDeprecationError::generic(generic))
 }
 
@@ -11212,6 +13393,9 @@ pub fn parse_disable_image_deprecation_response(
             output,
         )
         .map_err(crate::error::DisableImageDeprecationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11223,8 +13407,11 @@ pub fn parse_disable_ipam_organization_admin_account_error(
     crate::output::DisableIpamOrganizationAdminAccountOutput,
     crate::error::DisableIpamOrganizationAdminAccountError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableIpamOrganizationAdminAccountError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableIpamOrganizationAdminAccountError::generic(generic))
 }
 
@@ -11241,6 +13428,9 @@ pub fn parse_disable_ipam_organization_admin_account_response(
             crate::output::disable_ipam_organization_admin_account_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disable_ipam_organization_admin_account(response.body().as_ref(), output).map_err(crate::error::DisableIpamOrganizationAdminAccountError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11252,8 +13442,11 @@ pub fn parse_disable_serial_console_access_error(
     crate::output::DisableSerialConsoleAccessOutput,
     crate::error::DisableSerialConsoleAccessError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableSerialConsoleAccessError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableSerialConsoleAccessError::generic(
         generic,
     ))
@@ -11275,6 +13468,9 @@ pub fn parse_disable_serial_console_access_response(
             output,
         )
         .map_err(crate::error::DisableSerialConsoleAccessError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11286,8 +13482,11 @@ pub fn parse_disable_transit_gateway_route_table_propagation_error(
     crate::output::DisableTransitGatewayRouteTablePropagationOutput,
     crate::error::DisableTransitGatewayRouteTablePropagationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableTransitGatewayRouteTablePropagationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableTransitGatewayRouteTablePropagationError::generic(generic))
 }
 
@@ -11305,6 +13504,9 @@ pub fn parse_disable_transit_gateway_route_table_propagation_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disable_transit_gateway_route_table_propagation(response.body().as_ref(), output).map_err(crate::error::DisableTransitGatewayRouteTablePropagationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11316,8 +13518,11 @@ pub fn parse_disable_vgw_route_propagation_error(
     crate::output::DisableVgwRoutePropagationOutput,
     crate::error::DisableVgwRoutePropagationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableVgwRoutePropagationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableVgwRoutePropagationError::generic(
         generic,
     ))
@@ -11334,6 +13539,9 @@ pub fn parse_disable_vgw_route_propagation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_vgw_route_propagation_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11345,8 +13553,11 @@ pub fn parse_disable_vpc_classic_link_error(
     crate::output::DisableVpcClassicLinkOutput,
     crate::error::DisableVpcClassicLinkError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableVpcClassicLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableVpcClassicLinkError::generic(generic))
 }
 
@@ -11366,6 +13577,9 @@ pub fn parse_disable_vpc_classic_link_response(
             output,
         )
         .map_err(crate::error::DisableVpcClassicLinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11377,8 +13591,11 @@ pub fn parse_disable_vpc_classic_link_dns_support_error(
     crate::output::DisableVpcClassicLinkDnsSupportOutput,
     crate::error::DisableVpcClassicLinkDnsSupportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableVpcClassicLinkDnsSupportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisableVpcClassicLinkDnsSupportError::generic(
         generic,
     ))
@@ -11402,6 +13619,9 @@ pub fn parse_disable_vpc_classic_link_dns_support_response(
                 output,
             )
             .map_err(crate::error::DisableVpcClassicLinkDnsSupportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11413,8 +13633,11 @@ pub fn parse_disassociate_address_error(
     crate::output::DisassociateAddressOutput,
     crate::error::DisassociateAddressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateAddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateAddressError::generic(generic))
 }
 
@@ -11429,6 +13652,9 @@ pub fn parse_disassociate_address_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_address_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11440,8 +13666,11 @@ pub fn parse_disassociate_client_vpn_target_network_error(
     crate::output::DisassociateClientVpnTargetNetworkOutput,
     crate::error::DisassociateClientVpnTargetNetworkError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateClientVpnTargetNetworkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateClientVpnTargetNetworkError::generic(generic))
 }
 
@@ -11458,6 +13687,9 @@ pub fn parse_disassociate_client_vpn_target_network_response(
             crate::output::disassociate_client_vpn_target_network_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disassociate_client_vpn_target_network(response.body().as_ref(), output).map_err(crate::error::DisassociateClientVpnTargetNetworkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11469,8 +13701,11 @@ pub fn parse_disassociate_enclave_certificate_iam_role_error(
     crate::output::DisassociateEnclaveCertificateIamRoleOutput,
     crate::error::DisassociateEnclaveCertificateIamRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateEnclaveCertificateIamRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateEnclaveCertificateIamRoleError::generic(generic))
 }
 
@@ -11487,6 +13722,9 @@ pub fn parse_disassociate_enclave_certificate_iam_role_response(
             crate::output::disassociate_enclave_certificate_iam_role_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disassociate_enclave_certificate_iam_role(response.body().as_ref(), output).map_err(crate::error::DisassociateEnclaveCertificateIamRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11498,8 +13736,11 @@ pub fn parse_disassociate_iam_instance_profile_error(
     crate::output::DisassociateIamInstanceProfileOutput,
     crate::error::DisassociateIamInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateIamInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateIamInstanceProfileError::generic(
         generic,
     ))
@@ -11523,6 +13764,9 @@ pub fn parse_disassociate_iam_instance_profile_response(
                 output,
             )
             .map_err(crate::error::DisassociateIamInstanceProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11534,8 +13778,11 @@ pub fn parse_disassociate_instance_event_window_error(
     crate::output::DisassociateInstanceEventWindowOutput,
     crate::error::DisassociateInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateInstanceEventWindowError::generic(
         generic,
     ))
@@ -11559,6 +13806,9 @@ pub fn parse_disassociate_instance_event_window_response(
                 output,
             )
             .map_err(crate::error::DisassociateInstanceEventWindowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11570,8 +13820,11 @@ pub fn parse_disassociate_route_table_error(
     crate::output::DisassociateRouteTableOutput,
     crate::error::DisassociateRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateRouteTableError::generic(generic))
 }
 
@@ -11586,6 +13839,9 @@ pub fn parse_disassociate_route_table_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disassociate_route_table_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11597,8 +13853,11 @@ pub fn parse_disassociate_subnet_cidr_block_error(
     crate::output::DisassociateSubnetCidrBlockOutput,
     crate::error::DisassociateSubnetCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateSubnetCidrBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateSubnetCidrBlockError::generic(
         generic,
     ))
@@ -11620,6 +13879,9 @@ pub fn parse_disassociate_subnet_cidr_block_response(
             output,
         )
         .map_err(crate::error::DisassociateSubnetCidrBlockError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11631,8 +13893,11 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_error(
     crate::output::DisassociateTransitGatewayMulticastDomainOutput,
     crate::error::DisassociateTransitGatewayMulticastDomainError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateTransitGatewayMulticastDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateTransitGatewayMulticastDomainError::generic(generic))
 }
 
@@ -11649,6 +13914,9 @@ pub fn parse_disassociate_transit_gateway_multicast_domain_response(
             crate::output::disassociate_transit_gateway_multicast_domain_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_multicast_domain(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayMulticastDomainError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11660,8 +13928,11 @@ pub fn parse_disassociate_transit_gateway_policy_table_error(
     crate::output::DisassociateTransitGatewayPolicyTableOutput,
     crate::error::DisassociateTransitGatewayPolicyTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateTransitGatewayPolicyTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateTransitGatewayPolicyTableError::generic(generic))
 }
 
@@ -11678,6 +13949,9 @@ pub fn parse_disassociate_transit_gateway_policy_table_response(
             crate::output::disassociate_transit_gateway_policy_table_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_policy_table(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayPolicyTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11689,8 +13963,11 @@ pub fn parse_disassociate_transit_gateway_route_table_error(
     crate::output::DisassociateTransitGatewayRouteTableOutput,
     crate::error::DisassociateTransitGatewayRouteTableError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateTransitGatewayRouteTableError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateTransitGatewayRouteTableError::generic(generic))
 }
 
@@ -11707,6 +13984,9 @@ pub fn parse_disassociate_transit_gateway_route_table_response(
             crate::output::disassociate_transit_gateway_route_table_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_disassociate_transit_gateway_route_table(response.body().as_ref(), output).map_err(crate::error::DisassociateTransitGatewayRouteTableError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11718,8 +13998,11 @@ pub fn parse_disassociate_trunk_interface_error(
     crate::output::DisassociateTrunkInterfaceOutput,
     crate::error::DisassociateTrunkInterfaceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateTrunkInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateTrunkInterfaceError::generic(
         generic,
     ))
@@ -11741,6 +14024,9 @@ pub fn parse_disassociate_trunk_interface_response(
             output,
         )
         .map_err(crate::error::DisassociateTrunkInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11752,8 +14038,11 @@ pub fn parse_disassociate_vpc_cidr_block_error(
     crate::output::DisassociateVpcCidrBlockOutput,
     crate::error::DisassociateVpcCidrBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateVpcCidrBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DisassociateVpcCidrBlockError::generic(
         generic,
     ))
@@ -11775,6 +14064,9 @@ pub fn parse_disassociate_vpc_cidr_block_response(
             output,
         )
         .map_err(crate::error::DisassociateVpcCidrBlockError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11786,8 +14078,11 @@ pub fn parse_enable_address_transfer_error(
     crate::output::EnableAddressTransferOutput,
     crate::error::EnableAddressTransferError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableAddressTransferError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableAddressTransferError::generic(generic))
 }
 
@@ -11807,6 +14102,9 @@ pub fn parse_enable_address_transfer_response(
             output,
         )
         .map_err(crate::error::EnableAddressTransferError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11818,8 +14116,11 @@ pub fn parse_enable_aws_network_performance_metric_subscription_error(
     crate::output::EnableAwsNetworkPerformanceMetricSubscriptionOutput,
     crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError::generic(generic))
 }
 
@@ -11835,6 +14136,9 @@ pub fn parse_enable_aws_network_performance_metric_subscription_response(
         let mut output = crate::output::enable_aws_network_performance_metric_subscription_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_enable_aws_network_performance_metric_subscription(response.body().as_ref(), output).map_err(crate::error::EnableAwsNetworkPerformanceMetricSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11846,8 +14150,11 @@ pub fn parse_enable_ebs_encryption_by_default_error(
     crate::output::EnableEbsEncryptionByDefaultOutput,
     crate::error::EnableEbsEncryptionByDefaultError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableEbsEncryptionByDefaultError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableEbsEncryptionByDefaultError::generic(
         generic,
     ))
@@ -11870,6 +14177,9 @@ pub fn parse_enable_ebs_encryption_by_default_response(
                 output,
             )
             .map_err(crate::error::EnableEbsEncryptionByDefaultError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11879,8 +14189,11 @@ pub fn parse_enable_fast_launch_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableFastLaunchOutput, crate::error::EnableFastLaunchError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableFastLaunchError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableFastLaunchError::generic(generic))
 }
 
@@ -11898,6 +14211,9 @@ pub fn parse_enable_fast_launch_response(
             output,
         )
         .map_err(crate::error::EnableFastLaunchError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11909,8 +14225,11 @@ pub fn parse_enable_fast_snapshot_restores_error(
     crate::output::EnableFastSnapshotRestoresOutput,
     crate::error::EnableFastSnapshotRestoresError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableFastSnapshotRestoresError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableFastSnapshotRestoresError::generic(
         generic,
     ))
@@ -11932,6 +14251,9 @@ pub fn parse_enable_fast_snapshot_restores_response(
             output,
         )
         .map_err(crate::error::EnableFastSnapshotRestoresError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11943,8 +14265,11 @@ pub fn parse_enable_image_deprecation_error(
     crate::output::EnableImageDeprecationOutput,
     crate::error::EnableImageDeprecationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableImageDeprecationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableImageDeprecationError::generic(generic))
 }
 
@@ -11964,6 +14289,9 @@ pub fn parse_enable_image_deprecation_response(
             output,
         )
         .map_err(crate::error::EnableImageDeprecationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11975,8 +14303,11 @@ pub fn parse_enable_ipam_organization_admin_account_error(
     crate::output::EnableIpamOrganizationAdminAccountOutput,
     crate::error::EnableIpamOrganizationAdminAccountError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableIpamOrganizationAdminAccountError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableIpamOrganizationAdminAccountError::generic(generic))
 }
 
@@ -11993,6 +14324,9 @@ pub fn parse_enable_ipam_organization_admin_account_response(
             crate::output::enable_ipam_organization_admin_account_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_enable_ipam_organization_admin_account(response.body().as_ref(), output).map_err(crate::error::EnableIpamOrganizationAdminAccountError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12004,8 +14338,11 @@ pub fn parse_enable_reachability_analyzer_organization_sharing_error(
     crate::output::EnableReachabilityAnalyzerOrganizationSharingOutput,
     crate::error::EnableReachabilityAnalyzerOrganizationSharingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableReachabilityAnalyzerOrganizationSharingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableReachabilityAnalyzerOrganizationSharingError::generic(generic))
 }
 
@@ -12021,6 +14358,9 @@ pub fn parse_enable_reachability_analyzer_organization_sharing_response(
         let mut output = crate::output::enable_reachability_analyzer_organization_sharing_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_enable_reachability_analyzer_organization_sharing(response.body().as_ref(), output).map_err(crate::error::EnableReachabilityAnalyzerOrganizationSharingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12032,8 +14372,11 @@ pub fn parse_enable_serial_console_access_error(
     crate::output::EnableSerialConsoleAccessOutput,
     crate::error::EnableSerialConsoleAccessError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableSerialConsoleAccessError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableSerialConsoleAccessError::generic(
         generic,
     ))
@@ -12055,6 +14398,9 @@ pub fn parse_enable_serial_console_access_response(
             output,
         )
         .map_err(crate::error::EnableSerialConsoleAccessError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12066,8 +14412,11 @@ pub fn parse_enable_transit_gateway_route_table_propagation_error(
     crate::output::EnableTransitGatewayRouteTablePropagationOutput,
     crate::error::EnableTransitGatewayRouteTablePropagationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableTransitGatewayRouteTablePropagationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableTransitGatewayRouteTablePropagationError::generic(generic))
 }
 
@@ -12085,6 +14434,9 @@ pub fn parse_enable_transit_gateway_route_table_propagation_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_enable_transit_gateway_route_table_propagation(response.body().as_ref(), output).map_err(crate::error::EnableTransitGatewayRouteTablePropagationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12096,8 +14448,11 @@ pub fn parse_enable_vgw_route_propagation_error(
     crate::output::EnableVgwRoutePropagationOutput,
     crate::error::EnableVgwRoutePropagationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableVgwRoutePropagationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableVgwRoutePropagationError::generic(
         generic,
     ))
@@ -12114,6 +14469,9 @@ pub fn parse_enable_vgw_route_propagation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_vgw_route_propagation_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12122,8 +14480,11 @@ pub fn parse_enable_vgw_route_propagation_response(
 pub fn parse_enable_volume_io_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableVolumeIoOutput, crate::error::EnableVolumeIOError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableVolumeIOError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableVolumeIOError::generic(generic))
 }
 
@@ -12135,6 +14496,9 @@ pub fn parse_enable_volume_io_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_volume_io_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12146,8 +14510,11 @@ pub fn parse_enable_vpc_classic_link_error(
     crate::output::EnableVpcClassicLinkOutput,
     crate::error::EnableVpcClassicLinkError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableVpcClassicLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableVpcClassicLinkError::generic(generic))
 }
 
@@ -12167,6 +14534,9 @@ pub fn parse_enable_vpc_classic_link_response(
             output,
         )
         .map_err(crate::error::EnableVpcClassicLinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12178,8 +14548,11 @@ pub fn parse_enable_vpc_classic_link_dns_support_error(
     crate::output::EnableVpcClassicLinkDnsSupportOutput,
     crate::error::EnableVpcClassicLinkDnsSupportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::EnableVpcClassicLinkDnsSupportError::generic(
         generic,
     ))
@@ -12203,6 +14576,9 @@ pub fn parse_enable_vpc_classic_link_dns_support_response(
                 output,
             )
             .map_err(crate::error::EnableVpcClassicLinkDnsSupportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12214,8 +14590,11 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_error(
     crate::output::ExportClientVpnClientCertificateRevocationListOutput,
     crate::error::ExportClientVpnClientCertificateRevocationListError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ExportClientVpnClientCertificateRevocationListError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ExportClientVpnClientCertificateRevocationListError::generic(generic))
 }
 
@@ -12231,6 +14610,9 @@ pub fn parse_export_client_vpn_client_certificate_revocation_list_response(
         let mut output = crate::output::export_client_vpn_client_certificate_revocation_list_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_export_client_vpn_client_certificate_revocation_list(response.body().as_ref(), output).map_err(crate::error::ExportClientVpnClientCertificateRevocationListError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12242,8 +14624,11 @@ pub fn parse_export_client_vpn_client_configuration_error(
     crate::output::ExportClientVpnClientConfigurationOutput,
     crate::error::ExportClientVpnClientConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ExportClientVpnClientConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ExportClientVpnClientConfigurationError::generic(generic))
 }
 
@@ -12260,6 +14645,9 @@ pub fn parse_export_client_vpn_client_configuration_response(
             crate::output::export_client_vpn_client_configuration_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_export_client_vpn_client_configuration(response.body().as_ref(), output).map_err(crate::error::ExportClientVpnClientConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12268,8 +14656,11 @@ pub fn parse_export_client_vpn_client_configuration_response(
 pub fn parse_export_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExportImageOutput, crate::error::ExportImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ExportImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ExportImageError::generic(generic))
 }
 
@@ -12286,6 +14677,9 @@ pub fn parse_export_image_response(
             output,
         )
         .map_err(crate::error::ExportImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12297,8 +14691,11 @@ pub fn parse_export_transit_gateway_routes_error(
     crate::output::ExportTransitGatewayRoutesOutput,
     crate::error::ExportTransitGatewayRoutesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ExportTransitGatewayRoutesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ExportTransitGatewayRoutesError::generic(
         generic,
     ))
@@ -12320,6 +14717,9 @@ pub fn parse_export_transit_gateway_routes_response(
             output,
         )
         .map_err(crate::error::ExportTransitGatewayRoutesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12331,8 +14731,11 @@ pub fn parse_get_associated_enclave_certificate_iam_roles_error(
     crate::output::GetAssociatedEnclaveCertificateIamRolesOutput,
     crate::error::GetAssociatedEnclaveCertificateIamRolesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::generic(generic))
 }
 
@@ -12349,6 +14752,9 @@ pub fn parse_get_associated_enclave_certificate_iam_roles_response(
             crate::output::get_associated_enclave_certificate_iam_roles_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_associated_enclave_certificate_iam_roles(response.body().as_ref(), output).map_err(crate::error::GetAssociatedEnclaveCertificateIamRolesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12360,8 +14766,11 @@ pub fn parse_get_associated_ipv6_pool_cidrs_error(
     crate::output::GetAssociatedIpv6PoolCidrsOutput,
     crate::error::GetAssociatedIpv6PoolCidrsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAssociatedIpv6PoolCidrsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAssociatedIpv6PoolCidrsError::generic(
         generic,
     ))
@@ -12383,6 +14792,9 @@ pub fn parse_get_associated_ipv6_pool_cidrs_response(
             output,
         )
         .map_err(crate::error::GetAssociatedIpv6PoolCidrsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12394,8 +14806,11 @@ pub fn parse_get_aws_network_performance_data_error(
     crate::output::GetAwsNetworkPerformanceDataOutput,
     crate::error::GetAwsNetworkPerformanceDataError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAwsNetworkPerformanceDataError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAwsNetworkPerformanceDataError::generic(
         generic,
     ))
@@ -12418,6 +14833,9 @@ pub fn parse_get_aws_network_performance_data_response(
                 output,
             )
             .map_err(crate::error::GetAwsNetworkPerformanceDataError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12429,8 +14847,11 @@ pub fn parse_get_capacity_reservation_usage_error(
     crate::output::GetCapacityReservationUsageOutput,
     crate::error::GetCapacityReservationUsageError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCapacityReservationUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetCapacityReservationUsageError::generic(
         generic,
     ))
@@ -12452,6 +14873,9 @@ pub fn parse_get_capacity_reservation_usage_response(
             output,
         )
         .map_err(crate::error::GetCapacityReservationUsageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12461,8 +14885,11 @@ pub fn parse_get_coip_pool_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCoipPoolUsageOutput, crate::error::GetCoipPoolUsageError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCoipPoolUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetCoipPoolUsageError::generic(generic))
 }
 
@@ -12480,6 +14907,9 @@ pub fn parse_get_coip_pool_usage_response(
             output,
         )
         .map_err(crate::error::GetCoipPoolUsageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12489,8 +14919,11 @@ pub fn parse_get_console_output_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetConsoleOutputOutput, crate::error::GetConsoleOutputError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetConsoleOutputError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetConsoleOutputError::generic(generic))
 }
 
@@ -12508,6 +14941,9 @@ pub fn parse_get_console_output_response(
             output,
         )
         .map_err(crate::error::GetConsoleOutputError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12519,8 +14955,11 @@ pub fn parse_get_console_screenshot_error(
     crate::output::GetConsoleScreenshotOutput,
     crate::error::GetConsoleScreenshotError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetConsoleScreenshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetConsoleScreenshotError::generic(generic))
 }
 
@@ -12540,6 +14979,9 @@ pub fn parse_get_console_screenshot_response(
             output,
         )
         .map_err(crate::error::GetConsoleScreenshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12551,8 +14993,11 @@ pub fn parse_get_default_credit_specification_error(
     crate::output::GetDefaultCreditSpecificationOutput,
     crate::error::GetDefaultCreditSpecificationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetDefaultCreditSpecificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetDefaultCreditSpecificationError::generic(
         generic,
     ))
@@ -12575,6 +15020,9 @@ pub fn parse_get_default_credit_specification_response(
                 output,
             )
             .map_err(crate::error::GetDefaultCreditSpecificationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12586,8 +15034,11 @@ pub fn parse_get_ebs_default_kms_key_id_error(
     crate::output::GetEbsDefaultKmsKeyIdOutput,
     crate::error::GetEbsDefaultKmsKeyIdError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetEbsDefaultKmsKeyIdError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetEbsDefaultKmsKeyIdError::generic(generic))
 }
 
@@ -12607,6 +15058,9 @@ pub fn parse_get_ebs_default_kms_key_id_response(
             output,
         )
         .map_err(crate::error::GetEbsDefaultKmsKeyIdError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12618,8 +15072,11 @@ pub fn parse_get_ebs_encryption_by_default_error(
     crate::output::GetEbsEncryptionByDefaultOutput,
     crate::error::GetEbsEncryptionByDefaultError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetEbsEncryptionByDefaultError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetEbsEncryptionByDefaultError::generic(
         generic,
     ))
@@ -12641,6 +15098,9 @@ pub fn parse_get_ebs_encryption_by_default_response(
             output,
         )
         .map_err(crate::error::GetEbsEncryptionByDefaultError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12652,8 +15112,11 @@ pub fn parse_get_flow_logs_integration_template_error(
     crate::output::GetFlowLogsIntegrationTemplateOutput,
     crate::error::GetFlowLogsIntegrationTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFlowLogsIntegrationTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetFlowLogsIntegrationTemplateError::generic(
         generic,
     ))
@@ -12677,6 +15140,9 @@ pub fn parse_get_flow_logs_integration_template_response(
                 output,
             )
             .map_err(crate::error::GetFlowLogsIntegrationTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12688,8 +15154,11 @@ pub fn parse_get_groups_for_capacity_reservation_error(
     crate::output::GetGroupsForCapacityReservationOutput,
     crate::error::GetGroupsForCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetGroupsForCapacityReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetGroupsForCapacityReservationError::generic(
         generic,
     ))
@@ -12713,6 +15182,9 @@ pub fn parse_get_groups_for_capacity_reservation_response(
                 output,
             )
             .map_err(crate::error::GetGroupsForCapacityReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12724,8 +15196,11 @@ pub fn parse_get_host_reservation_purchase_preview_error(
     crate::output::GetHostReservationPurchasePreviewOutput,
     crate::error::GetHostReservationPurchasePreviewError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetHostReservationPurchasePreviewError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetHostReservationPurchasePreviewError::generic(generic))
 }
 
@@ -12742,6 +15217,9 @@ pub fn parse_get_host_reservation_purchase_preview_response(
             crate::output::get_host_reservation_purchase_preview_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_host_reservation_purchase_preview(response.body().as_ref(), output).map_err(crate::error::GetHostReservationPurchasePreviewError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12753,8 +15231,11 @@ pub fn parse_get_instance_types_from_instance_requirements_error(
     crate::output::GetInstanceTypesFromInstanceRequirementsOutput,
     crate::error::GetInstanceTypesFromInstanceRequirementsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetInstanceTypesFromInstanceRequirementsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetInstanceTypesFromInstanceRequirementsError::generic(generic))
 }
 
@@ -12771,6 +15252,9 @@ pub fn parse_get_instance_types_from_instance_requirements_response(
             crate::output::get_instance_types_from_instance_requirements_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_instance_types_from_instance_requirements(response.body().as_ref(), output).map_err(crate::error::GetInstanceTypesFromInstanceRequirementsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12782,8 +15266,11 @@ pub fn parse_get_instance_uefi_data_error(
     crate::output::GetInstanceUefiDataOutput,
     crate::error::GetInstanceUefiDataError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetInstanceUefiDataError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetInstanceUefiDataError::generic(generic))
 }
 
@@ -12803,6 +15290,9 @@ pub fn parse_get_instance_uefi_data_response(
             output,
         )
         .map_err(crate::error::GetInstanceUefiDataError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12814,8 +15304,11 @@ pub fn parse_get_ipam_address_history_error(
     crate::output::GetIpamAddressHistoryOutput,
     crate::error::GetIpamAddressHistoryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIpamAddressHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIpamAddressHistoryError::generic(generic))
 }
 
@@ -12835,6 +15328,9 @@ pub fn parse_get_ipam_address_history_response(
             output,
         )
         .map_err(crate::error::GetIpamAddressHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12846,8 +15342,11 @@ pub fn parse_get_ipam_pool_allocations_error(
     crate::output::GetIpamPoolAllocationsOutput,
     crate::error::GetIpamPoolAllocationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIpamPoolAllocationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIpamPoolAllocationsError::generic(generic))
 }
 
@@ -12867,6 +15366,9 @@ pub fn parse_get_ipam_pool_allocations_response(
             output,
         )
         .map_err(crate::error::GetIpamPoolAllocationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12876,8 +15378,11 @@ pub fn parse_get_ipam_pool_cidrs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetIpamPoolCidrsOutput, crate::error::GetIpamPoolCidrsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIpamPoolCidrsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIpamPoolCidrsError::generic(generic))
 }
 
@@ -12895,6 +15400,9 @@ pub fn parse_get_ipam_pool_cidrs_response(
             output,
         )
         .map_err(crate::error::GetIpamPoolCidrsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12906,8 +15414,11 @@ pub fn parse_get_ipam_resource_cidrs_error(
     crate::output::GetIpamResourceCidrsOutput,
     crate::error::GetIpamResourceCidrsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIpamResourceCidrsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIpamResourceCidrsError::generic(generic))
 }
 
@@ -12927,6 +15438,9 @@ pub fn parse_get_ipam_resource_cidrs_response(
             output,
         )
         .map_err(crate::error::GetIpamResourceCidrsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12938,8 +15452,11 @@ pub fn parse_get_launch_template_data_error(
     crate::output::GetLaunchTemplateDataOutput,
     crate::error::GetLaunchTemplateDataError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLaunchTemplateDataError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetLaunchTemplateDataError::generic(generic))
 }
 
@@ -12959,6 +15476,9 @@ pub fn parse_get_launch_template_data_response(
             output,
         )
         .map_err(crate::error::GetLaunchTemplateDataError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12970,8 +15490,11 @@ pub fn parse_get_managed_prefix_list_associations_error(
     crate::output::GetManagedPrefixListAssociationsOutput,
     crate::error::GetManagedPrefixListAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetManagedPrefixListAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetManagedPrefixListAssociationsError::generic(generic))
 }
 
@@ -12993,6 +15516,9 @@ pub fn parse_get_managed_prefix_list_associations_response(
                 output,
             )
             .map_err(crate::error::GetManagedPrefixListAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13004,8 +15530,11 @@ pub fn parse_get_managed_prefix_list_entries_error(
     crate::output::GetManagedPrefixListEntriesOutput,
     crate::error::GetManagedPrefixListEntriesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetManagedPrefixListEntriesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetManagedPrefixListEntriesError::generic(
         generic,
     ))
@@ -13027,6 +15556,9 @@ pub fn parse_get_managed_prefix_list_entries_response(
             output,
         )
         .map_err(crate::error::GetManagedPrefixListEntriesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13038,8 +15570,11 @@ pub fn parse_get_network_insights_access_scope_analysis_findings_error(
     crate::output::GetNetworkInsightsAccessScopeAnalysisFindingsOutput,
     crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::generic(generic))
 }
 
@@ -13055,6 +15590,9 @@ pub fn parse_get_network_insights_access_scope_analysis_findings_response(
         let mut output = crate::output::get_network_insights_access_scope_analysis_findings_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_network_insights_access_scope_analysis_findings(response.body().as_ref(), output).map_err(crate::error::GetNetworkInsightsAccessScopeAnalysisFindingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13066,8 +15604,11 @@ pub fn parse_get_network_insights_access_scope_content_error(
     crate::output::GetNetworkInsightsAccessScopeContentOutput,
     crate::error::GetNetworkInsightsAccessScopeContentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetNetworkInsightsAccessScopeContentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetNetworkInsightsAccessScopeContentError::generic(generic))
 }
 
@@ -13084,6 +15625,9 @@ pub fn parse_get_network_insights_access_scope_content_response(
             crate::output::get_network_insights_access_scope_content_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_network_insights_access_scope_content(response.body().as_ref(), output).map_err(crate::error::GetNetworkInsightsAccessScopeContentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13092,8 +15636,11 @@ pub fn parse_get_network_insights_access_scope_content_response(
 pub fn parse_get_password_data_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPasswordDataOutput, crate::error::GetPasswordDataError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPasswordDataError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetPasswordDataError::generic(generic))
 }
 
@@ -13110,6 +15657,9 @@ pub fn parse_get_password_data_response(
             output,
         )
         .map_err(crate::error::GetPasswordDataError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13121,8 +15671,11 @@ pub fn parse_get_reserved_instances_exchange_quote_error(
     crate::output::GetReservedInstancesExchangeQuoteOutput,
     crate::error::GetReservedInstancesExchangeQuoteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetReservedInstancesExchangeQuoteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetReservedInstancesExchangeQuoteError::generic(generic))
 }
 
@@ -13139,6 +15692,9 @@ pub fn parse_get_reserved_instances_exchange_quote_response(
             crate::output::get_reserved_instances_exchange_quote_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_reserved_instances_exchange_quote(response.body().as_ref(), output).map_err(crate::error::GetReservedInstancesExchangeQuoteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13150,8 +15706,11 @@ pub fn parse_get_serial_console_access_status_error(
     crate::output::GetSerialConsoleAccessStatusOutput,
     crate::error::GetSerialConsoleAccessStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSerialConsoleAccessStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetSerialConsoleAccessStatusError::generic(
         generic,
     ))
@@ -13174,6 +15733,9 @@ pub fn parse_get_serial_console_access_status_response(
                 output,
             )
             .map_err(crate::error::GetSerialConsoleAccessStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13185,8 +15747,11 @@ pub fn parse_get_spot_placement_scores_error(
     crate::output::GetSpotPlacementScoresOutput,
     crate::error::GetSpotPlacementScoresError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSpotPlacementScoresError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetSpotPlacementScoresError::generic(generic))
 }
 
@@ -13206,6 +15771,9 @@ pub fn parse_get_spot_placement_scores_response(
             output,
         )
         .map_err(crate::error::GetSpotPlacementScoresError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13217,8 +15785,11 @@ pub fn parse_get_subnet_cidr_reservations_error(
     crate::output::GetSubnetCidrReservationsOutput,
     crate::error::GetSubnetCidrReservationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSubnetCidrReservationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetSubnetCidrReservationsError::generic(
         generic,
     ))
@@ -13240,6 +15811,9 @@ pub fn parse_get_subnet_cidr_reservations_response(
             output,
         )
         .map_err(crate::error::GetSubnetCidrReservationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13251,8 +15825,11 @@ pub fn parse_get_transit_gateway_attachment_propagations_error(
     crate::output::GetTransitGatewayAttachmentPropagationsOutput,
     crate::error::GetTransitGatewayAttachmentPropagationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayAttachmentPropagationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayAttachmentPropagationsError::generic(generic))
 }
 
@@ -13269,6 +15846,9 @@ pub fn parse_get_transit_gateway_attachment_propagations_response(
             crate::output::get_transit_gateway_attachment_propagations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_attachment_propagations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayAttachmentPropagationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13280,8 +15860,11 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_error(
     crate::output::GetTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::GetTransitGatewayMulticastDomainAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::generic(generic))
 }
 
@@ -13297,6 +15880,9 @@ pub fn parse_get_transit_gateway_multicast_domain_associations_response(
         let mut output = crate::output::get_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13308,8 +15894,11 @@ pub fn parse_get_transit_gateway_policy_table_associations_error(
     crate::output::GetTransitGatewayPolicyTableAssociationsOutput,
     crate::error::GetTransitGatewayPolicyTableAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayPolicyTableAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayPolicyTableAssociationsError::generic(generic))
 }
 
@@ -13326,6 +15915,9 @@ pub fn parse_get_transit_gateway_policy_table_associations_response(
             crate::output::get_transit_gateway_policy_table_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_policy_table_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayPolicyTableAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13337,8 +15929,11 @@ pub fn parse_get_transit_gateway_policy_table_entries_error(
     crate::output::GetTransitGatewayPolicyTableEntriesOutput,
     crate::error::GetTransitGatewayPolicyTableEntriesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayPolicyTableEntriesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayPolicyTableEntriesError::generic(generic))
 }
 
@@ -13355,6 +15950,9 @@ pub fn parse_get_transit_gateway_policy_table_entries_response(
             crate::output::get_transit_gateway_policy_table_entries_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_policy_table_entries(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayPolicyTableEntriesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13366,8 +15964,11 @@ pub fn parse_get_transit_gateway_prefix_list_references_error(
     crate::output::GetTransitGatewayPrefixListReferencesOutput,
     crate::error::GetTransitGatewayPrefixListReferencesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayPrefixListReferencesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayPrefixListReferencesError::generic(generic))
 }
 
@@ -13384,6 +15985,9 @@ pub fn parse_get_transit_gateway_prefix_list_references_response(
             crate::output::get_transit_gateway_prefix_list_references_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_prefix_list_references(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayPrefixListReferencesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13395,8 +15999,11 @@ pub fn parse_get_transit_gateway_route_table_associations_error(
     crate::output::GetTransitGatewayRouteTableAssociationsOutput,
     crate::error::GetTransitGatewayRouteTableAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayRouteTableAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayRouteTableAssociationsError::generic(generic))
 }
 
@@ -13413,6 +16020,9 @@ pub fn parse_get_transit_gateway_route_table_associations_response(
             crate::output::get_transit_gateway_route_table_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_route_table_associations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayRouteTableAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13424,8 +16034,11 @@ pub fn parse_get_transit_gateway_route_table_propagations_error(
     crate::output::GetTransitGatewayRouteTablePropagationsOutput,
     crate::error::GetTransitGatewayRouteTablePropagationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTransitGatewayRouteTablePropagationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetTransitGatewayRouteTablePropagationsError::generic(generic))
 }
 
@@ -13442,6 +16055,9 @@ pub fn parse_get_transit_gateway_route_table_propagations_response(
             crate::output::get_transit_gateway_route_table_propagations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_transit_gateway_route_table_propagations(response.body().as_ref(), output).map_err(crate::error::GetTransitGatewayRouteTablePropagationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13453,8 +16069,11 @@ pub fn parse_get_verified_access_endpoint_policy_error(
     crate::output::GetVerifiedAccessEndpointPolicyOutput,
     crate::error::GetVerifiedAccessEndpointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVerifiedAccessEndpointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetVerifiedAccessEndpointPolicyError::generic(
         generic,
     ))
@@ -13478,6 +16097,9 @@ pub fn parse_get_verified_access_endpoint_policy_response(
                 output,
             )
             .map_err(crate::error::GetVerifiedAccessEndpointPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13489,8 +16111,11 @@ pub fn parse_get_verified_access_group_policy_error(
     crate::output::GetVerifiedAccessGroupPolicyOutput,
     crate::error::GetVerifiedAccessGroupPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVerifiedAccessGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetVerifiedAccessGroupPolicyError::generic(
         generic,
     ))
@@ -13513,6 +16138,9 @@ pub fn parse_get_verified_access_group_policy_response(
                 output,
             )
             .map_err(crate::error::GetVerifiedAccessGroupPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13524,8 +16152,11 @@ pub fn parse_get_vpn_connection_device_sample_configuration_error(
     crate::output::GetVpnConnectionDeviceSampleConfigurationOutput,
     crate::error::GetVpnConnectionDeviceSampleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVpnConnectionDeviceSampleConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetVpnConnectionDeviceSampleConfigurationError::generic(generic))
 }
 
@@ -13543,6 +16174,9 @@ pub fn parse_get_vpn_connection_device_sample_configuration_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_vpn_connection_device_sample_configuration(response.body().as_ref(), output).map_err(crate::error::GetVpnConnectionDeviceSampleConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13554,8 +16188,11 @@ pub fn parse_get_vpn_connection_device_types_error(
     crate::output::GetVpnConnectionDeviceTypesOutput,
     crate::error::GetVpnConnectionDeviceTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVpnConnectionDeviceTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetVpnConnectionDeviceTypesError::generic(
         generic,
     ))
@@ -13577,6 +16214,9 @@ pub fn parse_get_vpn_connection_device_types_response(
             output,
         )
         .map_err(crate::error::GetVpnConnectionDeviceTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13588,8 +16228,11 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_error(
     crate::output::ImportClientVpnClientCertificateRevocationListOutput,
     crate::error::ImportClientVpnClientCertificateRevocationListError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportClientVpnClientCertificateRevocationListError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ImportClientVpnClientCertificateRevocationListError::generic(generic))
 }
 
@@ -13605,6 +16248,9 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
         let mut output = crate::output::import_client_vpn_client_certificate_revocation_list_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_import_client_vpn_client_certificate_revocation_list(response.body().as_ref(), output).map_err(crate::error::ImportClientVpnClientCertificateRevocationListError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13613,8 +16259,11 @@ pub fn parse_import_client_vpn_client_certificate_revocation_list_response(
 pub fn parse_import_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportImageOutput, crate::error::ImportImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ImportImageError::generic(generic))
 }
 
@@ -13631,6 +16280,9 @@ pub fn parse_import_image_response(
             output,
         )
         .map_err(crate::error::ImportImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13639,8 +16291,11 @@ pub fn parse_import_image_response(
 pub fn parse_import_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportInstanceOutput, crate::error::ImportInstanceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ImportInstanceError::generic(generic))
 }
 
@@ -13657,6 +16312,9 @@ pub fn parse_import_instance_response(
             output,
         )
         .map_err(crate::error::ImportInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13665,8 +16323,11 @@ pub fn parse_import_instance_response(
 pub fn parse_import_key_pair_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportKeyPairOutput, crate::error::ImportKeyPairError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportKeyPairError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ImportKeyPairError::generic(generic))
 }
 
@@ -13683,6 +16344,9 @@ pub fn parse_import_key_pair_response(
             output,
         )
         .map_err(crate::error::ImportKeyPairError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13691,8 +16355,11 @@ pub fn parse_import_key_pair_response(
 pub fn parse_import_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportSnapshotOutput, crate::error::ImportSnapshotError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ImportSnapshotError::generic(generic))
 }
 
@@ -13709,6 +16376,9 @@ pub fn parse_import_snapshot_response(
             output,
         )
         .map_err(crate::error::ImportSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13717,8 +16387,11 @@ pub fn parse_import_snapshot_response(
 pub fn parse_import_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportVolumeOutput, crate::error::ImportVolumeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ImportVolumeError::generic(generic))
 }
 
@@ -13735,6 +16408,9 @@ pub fn parse_import_volume_response(
             output,
         )
         .map_err(crate::error::ImportVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13746,8 +16422,11 @@ pub fn parse_list_images_in_recycle_bin_error(
     crate::output::ListImagesInRecycleBinOutput,
     crate::error::ListImagesInRecycleBinError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListImagesInRecycleBinError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListImagesInRecycleBinError::generic(generic))
 }
 
@@ -13767,6 +16446,9 @@ pub fn parse_list_images_in_recycle_bin_response(
             output,
         )
         .map_err(crate::error::ListImagesInRecycleBinError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13778,8 +16460,11 @@ pub fn parse_list_snapshots_in_recycle_bin_error(
     crate::output::ListSnapshotsInRecycleBinOutput,
     crate::error::ListSnapshotsInRecycleBinError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSnapshotsInRecycleBinError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListSnapshotsInRecycleBinError::generic(
         generic,
     ))
@@ -13801,6 +16486,9 @@ pub fn parse_list_snapshots_in_recycle_bin_response(
             output,
         )
         .map_err(crate::error::ListSnapshotsInRecycleBinError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13812,8 +16500,11 @@ pub fn parse_modify_address_attribute_error(
     crate::output::ModifyAddressAttributeOutput,
     crate::error::ModifyAddressAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyAddressAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyAddressAttributeError::generic(generic))
 }
 
@@ -13833,6 +16524,9 @@ pub fn parse_modify_address_attribute_response(
             output,
         )
         .map_err(crate::error::ModifyAddressAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13844,8 +16538,11 @@ pub fn parse_modify_availability_zone_group_error(
     crate::output::ModifyAvailabilityZoneGroupOutput,
     crate::error::ModifyAvailabilityZoneGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyAvailabilityZoneGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyAvailabilityZoneGroupError::generic(
         generic,
     ))
@@ -13867,6 +16564,9 @@ pub fn parse_modify_availability_zone_group_response(
             output,
         )
         .map_err(crate::error::ModifyAvailabilityZoneGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13878,8 +16578,11 @@ pub fn parse_modify_capacity_reservation_error(
     crate::output::ModifyCapacityReservationOutput,
     crate::error::ModifyCapacityReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyCapacityReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyCapacityReservationError::generic(
         generic,
     ))
@@ -13901,6 +16604,9 @@ pub fn parse_modify_capacity_reservation_response(
             output,
         )
         .map_err(crate::error::ModifyCapacityReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13912,8 +16618,11 @@ pub fn parse_modify_capacity_reservation_fleet_error(
     crate::output::ModifyCapacityReservationFleetOutput,
     crate::error::ModifyCapacityReservationFleetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyCapacityReservationFleetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyCapacityReservationFleetError::generic(
         generic,
     ))
@@ -13937,6 +16646,9 @@ pub fn parse_modify_capacity_reservation_fleet_response(
                 output,
             )
             .map_err(crate::error::ModifyCapacityReservationFleetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13948,8 +16660,11 @@ pub fn parse_modify_client_vpn_endpoint_error(
     crate::output::ModifyClientVpnEndpointOutput,
     crate::error::ModifyClientVpnEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyClientVpnEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyClientVpnEndpointError::generic(generic))
 }
 
@@ -13969,6 +16684,9 @@ pub fn parse_modify_client_vpn_endpoint_response(
             output,
         )
         .map_err(crate::error::ModifyClientVpnEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13980,8 +16698,11 @@ pub fn parse_modify_default_credit_specification_error(
     crate::output::ModifyDefaultCreditSpecificationOutput,
     crate::error::ModifyDefaultCreditSpecificationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDefaultCreditSpecificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyDefaultCreditSpecificationError::generic(generic))
 }
 
@@ -14003,6 +16724,9 @@ pub fn parse_modify_default_credit_specification_response(
                 output,
             )
             .map_err(crate::error::ModifyDefaultCreditSpecificationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14014,8 +16738,11 @@ pub fn parse_modify_ebs_default_kms_key_id_error(
     crate::output::ModifyEbsDefaultKmsKeyIdOutput,
     crate::error::ModifyEbsDefaultKmsKeyIdError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyEbsDefaultKmsKeyIdError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyEbsDefaultKmsKeyIdError::generic(
         generic,
     ))
@@ -14037,6 +16764,9 @@ pub fn parse_modify_ebs_default_kms_key_id_response(
             output,
         )
         .map_err(crate::error::ModifyEbsDefaultKmsKeyIdError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14045,8 +16775,11 @@ pub fn parse_modify_ebs_default_kms_key_id_response(
 pub fn parse_modify_fleet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyFleetOutput, crate::error::ModifyFleetError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyFleetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyFleetError::generic(generic))
 }
 
@@ -14063,6 +16796,9 @@ pub fn parse_modify_fleet_response(
             output,
         )
         .map_err(crate::error::ModifyFleetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14074,8 +16810,11 @@ pub fn parse_modify_fpga_image_attribute_error(
     crate::output::ModifyFpgaImageAttributeOutput,
     crate::error::ModifyFpgaImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyFpgaImageAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyFpgaImageAttributeError::generic(
         generic,
     ))
@@ -14097,6 +16836,9 @@ pub fn parse_modify_fpga_image_attribute_response(
             output,
         )
         .map_err(crate::error::ModifyFpgaImageAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14105,8 +16847,11 @@ pub fn parse_modify_fpga_image_attribute_response(
 pub fn parse_modify_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyHostsOutput, crate::error::ModifyHostsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyHostsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyHostsError::generic(generic))
 }
 
@@ -14123,6 +16868,9 @@ pub fn parse_modify_hosts_response(
             output,
         )
         .map_err(crate::error::ModifyHostsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14134,8 +16882,11 @@ pub fn parse_modify_identity_id_format_error(
     crate::output::ModifyIdentityIdFormatOutput,
     crate::error::ModifyIdentityIdFormatError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyIdentityIdFormatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyIdentityIdFormatError::generic(generic))
 }
 
@@ -14150,6 +16901,9 @@ pub fn parse_modify_identity_id_format_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_identity_id_format_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14158,8 +16912,11 @@ pub fn parse_modify_identity_id_format_response(
 pub fn parse_modify_id_format_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyIdFormatOutput, crate::error::ModifyIdFormatError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyIdFormatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyIdFormatError::generic(generic))
 }
 
@@ -14171,6 +16928,9 @@ pub fn parse_modify_id_format_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_id_format_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14182,8 +16942,11 @@ pub fn parse_modify_image_attribute_error(
     crate::output::ModifyImageAttributeOutput,
     crate::error::ModifyImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyImageAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyImageAttributeError::generic(generic))
 }
 
@@ -14198,6 +16961,9 @@ pub fn parse_modify_image_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_image_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14209,8 +16975,11 @@ pub fn parse_modify_instance_attribute_error(
     crate::output::ModifyInstanceAttributeOutput,
     crate::error::ModifyInstanceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceAttributeError::generic(generic))
 }
 
@@ -14225,6 +16994,9 @@ pub fn parse_modify_instance_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_instance_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14236,8 +17008,11 @@ pub fn parse_modify_instance_capacity_reservation_attributes_error(
     crate::output::ModifyInstanceCapacityReservationAttributesOutput,
     crate::error::ModifyInstanceCapacityReservationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceCapacityReservationAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceCapacityReservationAttributesError::generic(generic))
 }
 
@@ -14255,6 +17030,9 @@ pub fn parse_modify_instance_capacity_reservation_attributes_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_instance_capacity_reservation_attributes(response.body().as_ref(), output).map_err(crate::error::ModifyInstanceCapacityReservationAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14266,8 +17044,11 @@ pub fn parse_modify_instance_credit_specification_error(
     crate::output::ModifyInstanceCreditSpecificationOutput,
     crate::error::ModifyInstanceCreditSpecificationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceCreditSpecificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceCreditSpecificationError::generic(generic))
 }
 
@@ -14289,6 +17070,9 @@ pub fn parse_modify_instance_credit_specification_response(
                 output,
             )
             .map_err(crate::error::ModifyInstanceCreditSpecificationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14300,8 +17084,11 @@ pub fn parse_modify_instance_event_start_time_error(
     crate::output::ModifyInstanceEventStartTimeOutput,
     crate::error::ModifyInstanceEventStartTimeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceEventStartTimeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceEventStartTimeError::generic(
         generic,
     ))
@@ -14324,6 +17111,9 @@ pub fn parse_modify_instance_event_start_time_response(
                 output,
             )
             .map_err(crate::error::ModifyInstanceEventStartTimeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14335,8 +17125,11 @@ pub fn parse_modify_instance_event_window_error(
     crate::output::ModifyInstanceEventWindowOutput,
     crate::error::ModifyInstanceEventWindowError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceEventWindowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceEventWindowError::generic(
         generic,
     ))
@@ -14358,6 +17151,9 @@ pub fn parse_modify_instance_event_window_response(
             output,
         )
         .map_err(crate::error::ModifyInstanceEventWindowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14369,8 +17165,11 @@ pub fn parse_modify_instance_maintenance_options_error(
     crate::output::ModifyInstanceMaintenanceOptionsOutput,
     crate::error::ModifyInstanceMaintenanceOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceMaintenanceOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceMaintenanceOptionsError::generic(generic))
 }
 
@@ -14392,6 +17191,9 @@ pub fn parse_modify_instance_maintenance_options_response(
                 output,
             )
             .map_err(crate::error::ModifyInstanceMaintenanceOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14403,8 +17205,11 @@ pub fn parse_modify_instance_metadata_options_error(
     crate::output::ModifyInstanceMetadataOptionsOutput,
     crate::error::ModifyInstanceMetadataOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstanceMetadataOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstanceMetadataOptionsError::generic(
         generic,
     ))
@@ -14427,6 +17232,9 @@ pub fn parse_modify_instance_metadata_options_response(
                 output,
             )
             .map_err(crate::error::ModifyInstanceMetadataOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14438,8 +17246,11 @@ pub fn parse_modify_instance_placement_error(
     crate::output::ModifyInstancePlacementOutput,
     crate::error::ModifyInstancePlacementError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyInstancePlacementError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyInstancePlacementError::generic(generic))
 }
 
@@ -14459,6 +17270,9 @@ pub fn parse_modify_instance_placement_response(
             output,
         )
         .map_err(crate::error::ModifyInstancePlacementError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14467,8 +17281,11 @@ pub fn parse_modify_instance_placement_response(
 pub fn parse_modify_ipam_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyIpamOutput, crate::error::ModifyIpamError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyIpamError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyIpamError::generic(generic))
 }
 
@@ -14485,6 +17302,9 @@ pub fn parse_modify_ipam_response(
             output,
         )
         .map_err(crate::error::ModifyIpamError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14493,8 +17313,11 @@ pub fn parse_modify_ipam_response(
 pub fn parse_modify_ipam_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyIpamPoolOutput, crate::error::ModifyIpamPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyIpamPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyIpamPoolError::generic(generic))
 }
 
@@ -14511,6 +17334,9 @@ pub fn parse_modify_ipam_pool_response(
             output,
         )
         .map_err(crate::error::ModifyIpamPoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14522,8 +17348,11 @@ pub fn parse_modify_ipam_resource_cidr_error(
     crate::output::ModifyIpamResourceCidrOutput,
     crate::error::ModifyIpamResourceCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyIpamResourceCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyIpamResourceCidrError::generic(generic))
 }
 
@@ -14543,6 +17372,9 @@ pub fn parse_modify_ipam_resource_cidr_response(
             output,
         )
         .map_err(crate::error::ModifyIpamResourceCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14551,8 +17383,11 @@ pub fn parse_modify_ipam_resource_cidr_response(
 pub fn parse_modify_ipam_scope_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyIpamScopeOutput, crate::error::ModifyIpamScopeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyIpamScopeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyIpamScopeError::generic(generic))
 }
 
@@ -14569,6 +17404,9 @@ pub fn parse_modify_ipam_scope_response(
             output,
         )
         .map_err(crate::error::ModifyIpamScopeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14580,8 +17418,11 @@ pub fn parse_modify_launch_template_error(
     crate::output::ModifyLaunchTemplateOutput,
     crate::error::ModifyLaunchTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyLaunchTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyLaunchTemplateError::generic(generic))
 }
 
@@ -14601,6 +17442,9 @@ pub fn parse_modify_launch_template_response(
             output,
         )
         .map_err(crate::error::ModifyLaunchTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14612,8 +17456,11 @@ pub fn parse_modify_local_gateway_route_error(
     crate::output::ModifyLocalGatewayRouteOutput,
     crate::error::ModifyLocalGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyLocalGatewayRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyLocalGatewayRouteError::generic(generic))
 }
 
@@ -14633,6 +17480,9 @@ pub fn parse_modify_local_gateway_route_response(
             output,
         )
         .map_err(crate::error::ModifyLocalGatewayRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14644,8 +17494,11 @@ pub fn parse_modify_managed_prefix_list_error(
     crate::output::ModifyManagedPrefixListOutput,
     crate::error::ModifyManagedPrefixListError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyManagedPrefixListError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyManagedPrefixListError::generic(generic))
 }
 
@@ -14665,6 +17518,9 @@ pub fn parse_modify_managed_prefix_list_response(
             output,
         )
         .map_err(crate::error::ModifyManagedPrefixListError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14676,8 +17532,11 @@ pub fn parse_modify_network_interface_attribute_error(
     crate::output::ModifyNetworkInterfaceAttributeOutput,
     crate::error::ModifyNetworkInterfaceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyNetworkInterfaceAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyNetworkInterfaceAttributeError::generic(
         generic,
     ))
@@ -14695,6 +17554,9 @@ pub fn parse_modify_network_interface_attribute_response(
         let mut output =
             crate::output::modify_network_interface_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14706,8 +17568,11 @@ pub fn parse_modify_private_dns_name_options_error(
     crate::output::ModifyPrivateDnsNameOptionsOutput,
     crate::error::ModifyPrivateDnsNameOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyPrivateDnsNameOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyPrivateDnsNameOptionsError::generic(
         generic,
     ))
@@ -14729,6 +17594,9 @@ pub fn parse_modify_private_dns_name_options_response(
             output,
         )
         .map_err(crate::error::ModifyPrivateDnsNameOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14740,8 +17608,11 @@ pub fn parse_modify_reserved_instances_error(
     crate::output::ModifyReservedInstancesOutput,
     crate::error::ModifyReservedInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyReservedInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyReservedInstancesError::generic(generic))
 }
 
@@ -14761,6 +17632,9 @@ pub fn parse_modify_reserved_instances_response(
             output,
         )
         .map_err(crate::error::ModifyReservedInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14772,8 +17646,11 @@ pub fn parse_modify_security_group_rules_error(
     crate::output::ModifySecurityGroupRulesOutput,
     crate::error::ModifySecurityGroupRulesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifySecurityGroupRulesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifySecurityGroupRulesError::generic(
         generic,
     ))
@@ -14795,6 +17672,9 @@ pub fn parse_modify_security_group_rules_response(
             output,
         )
         .map_err(crate::error::ModifySecurityGroupRulesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14806,8 +17686,11 @@ pub fn parse_modify_snapshot_attribute_error(
     crate::output::ModifySnapshotAttributeOutput,
     crate::error::ModifySnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifySnapshotAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifySnapshotAttributeError::generic(generic))
 }
 
@@ -14822,6 +17705,9 @@ pub fn parse_modify_snapshot_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_snapshot_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14833,8 +17719,11 @@ pub fn parse_modify_snapshot_tier_error(
     crate::output::ModifySnapshotTierOutput,
     crate::error::ModifySnapshotTierError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifySnapshotTierError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifySnapshotTierError::generic(generic))
 }
 
@@ -14854,6 +17743,9 @@ pub fn parse_modify_snapshot_tier_response(
             output,
         )
         .map_err(crate::error::ModifySnapshotTierError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14865,8 +17757,11 @@ pub fn parse_modify_spot_fleet_request_error(
     crate::output::ModifySpotFleetRequestOutput,
     crate::error::ModifySpotFleetRequestError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifySpotFleetRequestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifySpotFleetRequestError::generic(generic))
 }
 
@@ -14886,6 +17781,9 @@ pub fn parse_modify_spot_fleet_request_response(
             output,
         )
         .map_err(crate::error::ModifySpotFleetRequestError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14897,8 +17795,11 @@ pub fn parse_modify_subnet_attribute_error(
     crate::output::ModifySubnetAttributeOutput,
     crate::error::ModifySubnetAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifySubnetAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifySubnetAttributeError::generic(generic))
 }
 
@@ -14913,6 +17814,9 @@ pub fn parse_modify_subnet_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_subnet_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14924,8 +17828,11 @@ pub fn parse_modify_traffic_mirror_filter_network_services_error(
     crate::output::ModifyTrafficMirrorFilterNetworkServicesOutput,
     crate::error::ModifyTrafficMirrorFilterNetworkServicesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::generic(generic))
 }
 
@@ -14942,6 +17849,9 @@ pub fn parse_modify_traffic_mirror_filter_network_services_response(
             crate::output::modify_traffic_mirror_filter_network_services_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_traffic_mirror_filter_network_services(response.body().as_ref(), output).map_err(crate::error::ModifyTrafficMirrorFilterNetworkServicesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14953,8 +17863,11 @@ pub fn parse_modify_traffic_mirror_filter_rule_error(
     crate::output::ModifyTrafficMirrorFilterRuleOutput,
     crate::error::ModifyTrafficMirrorFilterRuleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyTrafficMirrorFilterRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyTrafficMirrorFilterRuleError::generic(
         generic,
     ))
@@ -14978,6 +17891,9 @@ pub fn parse_modify_traffic_mirror_filter_rule_response(
                 output,
             )
             .map_err(crate::error::ModifyTrafficMirrorFilterRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14989,8 +17905,11 @@ pub fn parse_modify_traffic_mirror_session_error(
     crate::output::ModifyTrafficMirrorSessionOutput,
     crate::error::ModifyTrafficMirrorSessionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyTrafficMirrorSessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyTrafficMirrorSessionError::generic(
         generic,
     ))
@@ -15012,6 +17931,9 @@ pub fn parse_modify_traffic_mirror_session_response(
             output,
         )
         .map_err(crate::error::ModifyTrafficMirrorSessionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15023,8 +17945,11 @@ pub fn parse_modify_transit_gateway_error(
     crate::output::ModifyTransitGatewayOutput,
     crate::error::ModifyTransitGatewayError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyTransitGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyTransitGatewayError::generic(generic))
 }
 
@@ -15044,6 +17969,9 @@ pub fn parse_modify_transit_gateway_response(
             output,
         )
         .map_err(crate::error::ModifyTransitGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15055,8 +17983,11 @@ pub fn parse_modify_transit_gateway_prefix_list_reference_error(
     crate::output::ModifyTransitGatewayPrefixListReferenceOutput,
     crate::error::ModifyTransitGatewayPrefixListReferenceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyTransitGatewayPrefixListReferenceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyTransitGatewayPrefixListReferenceError::generic(generic))
 }
 
@@ -15073,6 +18004,9 @@ pub fn parse_modify_transit_gateway_prefix_list_reference_response(
             crate::output::modify_transit_gateway_prefix_list_reference_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_transit_gateway_prefix_list_reference(response.body().as_ref(), output).map_err(crate::error::ModifyTransitGatewayPrefixListReferenceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15084,8 +18018,11 @@ pub fn parse_modify_transit_gateway_vpc_attachment_error(
     crate::output::ModifyTransitGatewayVpcAttachmentOutput,
     crate::error::ModifyTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyTransitGatewayVpcAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyTransitGatewayVpcAttachmentError::generic(generic))
 }
 
@@ -15102,6 +18039,9 @@ pub fn parse_modify_transit_gateway_vpc_attachment_response(
             crate::output::modify_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::ModifyTransitGatewayVpcAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15113,8 +18053,11 @@ pub fn parse_modify_verified_access_endpoint_error(
     crate::output::ModifyVerifiedAccessEndpointOutput,
     crate::error::ModifyVerifiedAccessEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessEndpointError::generic(
         generic,
     ))
@@ -15136,6 +18079,9 @@ pub fn parse_modify_verified_access_endpoint_response(
             output,
         )
         .map_err(crate::error::ModifyVerifiedAccessEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15147,8 +18093,11 @@ pub fn parse_modify_verified_access_endpoint_policy_error(
     crate::output::ModifyVerifiedAccessEndpointPolicyOutput,
     crate::error::ModifyVerifiedAccessEndpointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessEndpointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessEndpointPolicyError::generic(generic))
 }
 
@@ -15165,6 +18114,9 @@ pub fn parse_modify_verified_access_endpoint_policy_response(
             crate::output::modify_verified_access_endpoint_policy_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_verified_access_endpoint_policy(response.body().as_ref(), output).map_err(crate::error::ModifyVerifiedAccessEndpointPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15176,8 +18128,11 @@ pub fn parse_modify_verified_access_group_error(
     crate::output::ModifyVerifiedAccessGroupOutput,
     crate::error::ModifyVerifiedAccessGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessGroupError::generic(
         generic,
     ))
@@ -15199,6 +18154,9 @@ pub fn parse_modify_verified_access_group_response(
             output,
         )
         .map_err(crate::error::ModifyVerifiedAccessGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15210,8 +18168,11 @@ pub fn parse_modify_verified_access_group_policy_error(
     crate::output::ModifyVerifiedAccessGroupPolicyOutput,
     crate::error::ModifyVerifiedAccessGroupPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessGroupPolicyError::generic(
         generic,
     ))
@@ -15235,6 +18196,9 @@ pub fn parse_modify_verified_access_group_policy_response(
                 output,
             )
             .map_err(crate::error::ModifyVerifiedAccessGroupPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15246,8 +18210,11 @@ pub fn parse_modify_verified_access_instance_error(
     crate::output::ModifyVerifiedAccessInstanceOutput,
     crate::error::ModifyVerifiedAccessInstanceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessInstanceError::generic(
         generic,
     ))
@@ -15269,6 +18236,9 @@ pub fn parse_modify_verified_access_instance_response(
             output,
         )
         .map_err(crate::error::ModifyVerifiedAccessInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15280,8 +18250,11 @@ pub fn parse_modify_verified_access_instance_logging_configuration_error(
     crate::output::ModifyVerifiedAccessInstanceLoggingConfigurationOutput,
     crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError::generic(generic))
 }
 
@@ -15297,6 +18270,9 @@ pub fn parse_modify_verified_access_instance_logging_configuration_response(
         let mut output = crate::output::modify_verified_access_instance_logging_configuration_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_verified_access_instance_logging_configuration(response.body().as_ref(), output).map_err(crate::error::ModifyVerifiedAccessInstanceLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15308,8 +18284,11 @@ pub fn parse_modify_verified_access_trust_provider_error(
     crate::output::ModifyVerifiedAccessTrustProviderOutput,
     crate::error::ModifyVerifiedAccessTrustProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVerifiedAccessTrustProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVerifiedAccessTrustProviderError::generic(generic))
 }
 
@@ -15326,6 +18305,9 @@ pub fn parse_modify_verified_access_trust_provider_response(
             crate::output::modify_verified_access_trust_provider_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_verified_access_trust_provider(response.body().as_ref(), output).map_err(crate::error::ModifyVerifiedAccessTrustProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15334,8 +18316,11 @@ pub fn parse_modify_verified_access_trust_provider_response(
 pub fn parse_modify_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyVolumeOutput, crate::error::ModifyVolumeError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVolumeError::generic(generic))
 }
 
@@ -15352,6 +18337,9 @@ pub fn parse_modify_volume_response(
             output,
         )
         .map_err(crate::error::ModifyVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15363,8 +18351,11 @@ pub fn parse_modify_volume_attribute_error(
     crate::output::ModifyVolumeAttributeOutput,
     crate::error::ModifyVolumeAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVolumeAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVolumeAttributeError::generic(generic))
 }
 
@@ -15379,6 +18370,9 @@ pub fn parse_modify_volume_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_volume_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15390,8 +18384,11 @@ pub fn parse_modify_vpc_attribute_error(
     crate::output::ModifyVpcAttributeOutput,
     crate::error::ModifyVpcAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcAttributeError::generic(generic))
 }
 
@@ -15406,6 +18403,9 @@ pub fn parse_modify_vpc_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_vpc_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15415,8 +18415,11 @@ pub fn parse_modify_vpc_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyVpcEndpointOutput, crate::error::ModifyVpcEndpointError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcEndpointError::generic(generic))
 }
 
@@ -15434,6 +18437,9 @@ pub fn parse_modify_vpc_endpoint_response(
             output,
         )
         .map_err(crate::error::ModifyVpcEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15445,8 +18451,11 @@ pub fn parse_modify_vpc_endpoint_connection_notification_error(
     crate::output::ModifyVpcEndpointConnectionNotificationOutput,
     crate::error::ModifyVpcEndpointConnectionNotificationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcEndpointConnectionNotificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcEndpointConnectionNotificationError::generic(generic))
 }
 
@@ -15463,6 +18472,9 @@ pub fn parse_modify_vpc_endpoint_connection_notification_response(
             crate::output::modify_vpc_endpoint_connection_notification_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_connection_notification(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointConnectionNotificationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15474,8 +18486,11 @@ pub fn parse_modify_vpc_endpoint_service_configuration_error(
     crate::output::ModifyVpcEndpointServiceConfigurationOutput,
     crate::error::ModifyVpcEndpointServiceConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcEndpointServiceConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcEndpointServiceConfigurationError::generic(generic))
 }
 
@@ -15492,6 +18507,9 @@ pub fn parse_modify_vpc_endpoint_service_configuration_response(
             crate::output::modify_vpc_endpoint_service_configuration_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_configuration(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServiceConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15503,8 +18521,11 @@ pub fn parse_modify_vpc_endpoint_service_payer_responsibility_error(
     crate::output::ModifyVpcEndpointServicePayerResponsibilityOutput,
     crate::error::ModifyVpcEndpointServicePayerResponsibilityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::generic(generic))
 }
 
@@ -15520,6 +18541,9 @@ pub fn parse_modify_vpc_endpoint_service_payer_responsibility_response(
         let mut output = crate::output::modify_vpc_endpoint_service_payer_responsibility_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_payer_responsibility(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServicePayerResponsibilityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15531,8 +18555,11 @@ pub fn parse_modify_vpc_endpoint_service_permissions_error(
     crate::output::ModifyVpcEndpointServicePermissionsOutput,
     crate::error::ModifyVpcEndpointServicePermissionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcEndpointServicePermissionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcEndpointServicePermissionsError::generic(generic))
 }
 
@@ -15549,6 +18576,9 @@ pub fn parse_modify_vpc_endpoint_service_permissions_response(
             crate::output::modify_vpc_endpoint_service_permissions_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_endpoint_service_permissions(response.body().as_ref(), output).map_err(crate::error::ModifyVpcEndpointServicePermissionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15560,8 +18590,11 @@ pub fn parse_modify_vpc_peering_connection_options_error(
     crate::output::ModifyVpcPeeringConnectionOptionsOutput,
     crate::error::ModifyVpcPeeringConnectionOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcPeeringConnectionOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcPeeringConnectionOptionsError::generic(generic))
 }
 
@@ -15578,6 +18611,9 @@ pub fn parse_modify_vpc_peering_connection_options_response(
             crate::output::modify_vpc_peering_connection_options_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_modify_vpc_peering_connection_options(response.body().as_ref(), output).map_err(crate::error::ModifyVpcPeeringConnectionOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15587,8 +18623,11 @@ pub fn parse_modify_vpc_tenancy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyVpcTenancyOutput, crate::error::ModifyVpcTenancyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpcTenancyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpcTenancyError::generic(generic))
 }
 
@@ -15606,6 +18645,9 @@ pub fn parse_modify_vpc_tenancy_response(
             output,
         )
         .map_err(crate::error::ModifyVpcTenancyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15617,8 +18659,11 @@ pub fn parse_modify_vpn_connection_error(
     crate::output::ModifyVpnConnectionOutput,
     crate::error::ModifyVpnConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpnConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpnConnectionError::generic(generic))
 }
 
@@ -15638,6 +18683,9 @@ pub fn parse_modify_vpn_connection_response(
             output,
         )
         .map_err(crate::error::ModifyVpnConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15649,8 +18697,11 @@ pub fn parse_modify_vpn_connection_options_error(
     crate::output::ModifyVpnConnectionOptionsOutput,
     crate::error::ModifyVpnConnectionOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpnConnectionOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpnConnectionOptionsError::generic(
         generic,
     ))
@@ -15672,6 +18723,9 @@ pub fn parse_modify_vpn_connection_options_response(
             output,
         )
         .map_err(crate::error::ModifyVpnConnectionOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15683,8 +18737,11 @@ pub fn parse_modify_vpn_tunnel_certificate_error(
     crate::output::ModifyVpnTunnelCertificateOutput,
     crate::error::ModifyVpnTunnelCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpnTunnelCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpnTunnelCertificateError::generic(
         generic,
     ))
@@ -15706,6 +18763,9 @@ pub fn parse_modify_vpn_tunnel_certificate_response(
             output,
         )
         .map_err(crate::error::ModifyVpnTunnelCertificateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15717,8 +18777,11 @@ pub fn parse_modify_vpn_tunnel_options_error(
     crate::output::ModifyVpnTunnelOptionsOutput,
     crate::error::ModifyVpnTunnelOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyVpnTunnelOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ModifyVpnTunnelOptionsError::generic(generic))
 }
 
@@ -15738,6 +18801,9 @@ pub fn parse_modify_vpn_tunnel_options_response(
             output,
         )
         .map_err(crate::error::ModifyVpnTunnelOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15747,8 +18813,11 @@ pub fn parse_monitor_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::MonitorInstancesOutput, crate::error::MonitorInstancesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::MonitorInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::MonitorInstancesError::generic(generic))
 }
 
@@ -15766,6 +18835,9 @@ pub fn parse_monitor_instances_response(
             output,
         )
         .map_err(crate::error::MonitorInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15775,8 +18847,11 @@ pub fn parse_move_address_to_vpc_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::MoveAddressToVpcOutput, crate::error::MoveAddressToVpcError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::MoveAddressToVpcError::generic(generic))
 }
 
@@ -15794,6 +18869,9 @@ pub fn parse_move_address_to_vpc_response(
             output,
         )
         .map_err(crate::error::MoveAddressToVpcError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15805,8 +18883,11 @@ pub fn parse_move_byoip_cidr_to_ipam_error(
     crate::output::MoveByoipCidrToIpamOutput,
     crate::error::MoveByoipCidrToIpamError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::MoveByoipCidrToIpamError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::MoveByoipCidrToIpamError::generic(generic))
 }
 
@@ -15826,6 +18907,9 @@ pub fn parse_move_byoip_cidr_to_ipam_response(
             output,
         )
         .map_err(crate::error::MoveByoipCidrToIpamError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15837,8 +18921,11 @@ pub fn parse_provision_byoip_cidr_error(
     crate::output::ProvisionByoipCidrOutput,
     crate::error::ProvisionByoipCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ProvisionByoipCidrError::generic(generic))
 }
 
@@ -15858,6 +18945,9 @@ pub fn parse_provision_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15869,8 +18959,11 @@ pub fn parse_provision_ipam_pool_cidr_error(
     crate::output::ProvisionIpamPoolCidrOutput,
     crate::error::ProvisionIpamPoolCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ProvisionIpamPoolCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ProvisionIpamPoolCidrError::generic(generic))
 }
 
@@ -15890,6 +18983,9 @@ pub fn parse_provision_ipam_pool_cidr_response(
             output,
         )
         .map_err(crate::error::ProvisionIpamPoolCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15901,8 +18997,11 @@ pub fn parse_provision_public_ipv4_pool_cidr_error(
     crate::output::ProvisionPublicIpv4PoolCidrOutput,
     crate::error::ProvisionPublicIpv4PoolCidrError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ProvisionPublicIpv4PoolCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ProvisionPublicIpv4PoolCidrError::generic(
         generic,
     ))
@@ -15924,6 +19023,9 @@ pub fn parse_provision_public_ipv4_pool_cidr_response(
             output,
         )
         .map_err(crate::error::ProvisionPublicIpv4PoolCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15935,8 +19037,11 @@ pub fn parse_purchase_host_reservation_error(
     crate::output::PurchaseHostReservationOutput,
     crate::error::PurchaseHostReservationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PurchaseHostReservationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PurchaseHostReservationError::generic(generic))
 }
 
@@ -15956,6 +19061,9 @@ pub fn parse_purchase_host_reservation_response(
             output,
         )
         .map_err(crate::error::PurchaseHostReservationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -15967,8 +19075,11 @@ pub fn parse_purchase_reserved_instances_offering_error(
     crate::output::PurchaseReservedInstancesOfferingOutput,
     crate::error::PurchaseReservedInstancesOfferingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PurchaseReservedInstancesOfferingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PurchaseReservedInstancesOfferingError::generic(generic))
 }
 
@@ -15990,6 +19101,9 @@ pub fn parse_purchase_reserved_instances_offering_response(
                 output,
             )
             .map_err(crate::error::PurchaseReservedInstancesOfferingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16001,8 +19115,11 @@ pub fn parse_purchase_scheduled_instances_error(
     crate::output::PurchaseScheduledInstancesOutput,
     crate::error::PurchaseScheduledInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PurchaseScheduledInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PurchaseScheduledInstancesError::generic(
         generic,
     ))
@@ -16024,6 +19141,9 @@ pub fn parse_purchase_scheduled_instances_response(
             output,
         )
         .map_err(crate::error::PurchaseScheduledInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16032,8 +19152,11 @@ pub fn parse_purchase_scheduled_instances_response(
 pub fn parse_reboot_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RebootInstancesOutput, crate::error::RebootInstancesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RebootInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RebootInstancesError::generic(generic))
 }
 
@@ -16045,6 +19168,9 @@ pub fn parse_reboot_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reboot_instances_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16053,8 +19179,11 @@ pub fn parse_reboot_instances_response(
 pub fn parse_register_image_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterImageOutput, crate::error::RegisterImageError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterImageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RegisterImageError::generic(generic))
 }
 
@@ -16071,6 +19200,9 @@ pub fn parse_register_image_response(
             output,
         )
         .map_err(crate::error::RegisterImageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16082,8 +19214,11 @@ pub fn parse_register_instance_event_notification_attributes_error(
     crate::output::RegisterInstanceEventNotificationAttributesOutput,
     crate::error::RegisterInstanceEventNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterInstanceEventNotificationAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RegisterInstanceEventNotificationAttributesError::generic(generic))
 }
 
@@ -16101,6 +19236,9 @@ pub fn parse_register_instance_event_notification_attributes_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_register_instance_event_notification_attributes(response.body().as_ref(), output).map_err(crate::error::RegisterInstanceEventNotificationAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16112,8 +19250,11 @@ pub fn parse_register_transit_gateway_multicast_group_members_error(
     crate::output::RegisterTransitGatewayMulticastGroupMembersOutput,
     crate::error::RegisterTransitGatewayMulticastGroupMembersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::generic(generic))
 }
 
@@ -16129,6 +19270,9 @@ pub fn parse_register_transit_gateway_multicast_group_members_response(
         let mut output = crate::output::register_transit_gateway_multicast_group_members_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_register_transit_gateway_multicast_group_members(response.body().as_ref(), output).map_err(crate::error::RegisterTransitGatewayMulticastGroupMembersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16140,8 +19284,11 @@ pub fn parse_register_transit_gateway_multicast_group_sources_error(
     crate::output::RegisterTransitGatewayMulticastGroupSourcesOutput,
     crate::error::RegisterTransitGatewayMulticastGroupSourcesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::generic(generic))
 }
 
@@ -16157,6 +19304,9 @@ pub fn parse_register_transit_gateway_multicast_group_sources_response(
         let mut output = crate::output::register_transit_gateway_multicast_group_sources_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_register_transit_gateway_multicast_group_sources(response.body().as_ref(), output).map_err(crate::error::RegisterTransitGatewayMulticastGroupSourcesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16168,8 +19318,11 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_error(
     crate::output::RejectTransitGatewayMulticastDomainAssociationsOutput,
     crate::error::RejectTransitGatewayMulticastDomainAssociationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::generic(generic))
 }
 
@@ -16185,6 +19338,9 @@ pub fn parse_reject_transit_gateway_multicast_domain_associations_response(
         let mut output = crate::output::reject_transit_gateway_multicast_domain_associations_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_multicast_domain_associations(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayMulticastDomainAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16196,8 +19352,11 @@ pub fn parse_reject_transit_gateway_peering_attachment_error(
     crate::output::RejectTransitGatewayPeeringAttachmentOutput,
     crate::error::RejectTransitGatewayPeeringAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectTransitGatewayPeeringAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RejectTransitGatewayPeeringAttachmentError::generic(generic))
 }
 
@@ -16214,6 +19373,9 @@ pub fn parse_reject_transit_gateway_peering_attachment_response(
             crate::output::reject_transit_gateway_peering_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_peering_attachment(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayPeeringAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16225,8 +19387,11 @@ pub fn parse_reject_transit_gateway_vpc_attachment_error(
     crate::output::RejectTransitGatewayVpcAttachmentOutput,
     crate::error::RejectTransitGatewayVpcAttachmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectTransitGatewayVpcAttachmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RejectTransitGatewayVpcAttachmentError::generic(generic))
 }
 
@@ -16243,6 +19408,9 @@ pub fn parse_reject_transit_gateway_vpc_attachment_response(
             crate::output::reject_transit_gateway_vpc_attachment_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_reject_transit_gateway_vpc_attachment(response.body().as_ref(), output).map_err(crate::error::RejectTransitGatewayVpcAttachmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16254,8 +19422,11 @@ pub fn parse_reject_vpc_endpoint_connections_error(
     crate::output::RejectVpcEndpointConnectionsOutput,
     crate::error::RejectVpcEndpointConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectVpcEndpointConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RejectVpcEndpointConnectionsError::generic(
         generic,
     ))
@@ -16277,6 +19448,9 @@ pub fn parse_reject_vpc_endpoint_connections_response(
             output,
         )
         .map_err(crate::error::RejectVpcEndpointConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16288,8 +19462,11 @@ pub fn parse_reject_vpc_peering_connection_error(
     crate::output::RejectVpcPeeringConnectionOutput,
     crate::error::RejectVpcPeeringConnectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RejectVpcPeeringConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RejectVpcPeeringConnectionError::generic(
         generic,
     ))
@@ -16311,6 +19488,9 @@ pub fn parse_reject_vpc_peering_connection_response(
             output,
         )
         .map_err(crate::error::RejectVpcPeeringConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16319,8 +19499,11 @@ pub fn parse_reject_vpc_peering_connection_response(
 pub fn parse_release_address_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReleaseAddressOutput, crate::error::ReleaseAddressError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReleaseAddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReleaseAddressError::generic(generic))
 }
 
@@ -16332,6 +19515,9 @@ pub fn parse_release_address_response(
         #[allow(unused_mut)]
         let mut output = crate::output::release_address_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16340,8 +19526,11 @@ pub fn parse_release_address_response(
 pub fn parse_release_hosts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReleaseHostsOutput, crate::error::ReleaseHostsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReleaseHostsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReleaseHostsError::generic(generic))
 }
 
@@ -16358,6 +19547,9 @@ pub fn parse_release_hosts_response(
             output,
         )
         .map_err(crate::error::ReleaseHostsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16369,8 +19561,11 @@ pub fn parse_release_ipam_pool_allocation_error(
     crate::output::ReleaseIpamPoolAllocationOutput,
     crate::error::ReleaseIpamPoolAllocationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReleaseIpamPoolAllocationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReleaseIpamPoolAllocationError::generic(
         generic,
     ))
@@ -16392,6 +19587,9 @@ pub fn parse_release_ipam_pool_allocation_response(
             output,
         )
         .map_err(crate::error::ReleaseIpamPoolAllocationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16403,8 +19601,11 @@ pub fn parse_replace_iam_instance_profile_association_error(
     crate::output::ReplaceIamInstanceProfileAssociationOutput,
     crate::error::ReplaceIamInstanceProfileAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplaceIamInstanceProfileAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReplaceIamInstanceProfileAssociationError::generic(generic))
 }
 
@@ -16421,6 +19622,9 @@ pub fn parse_replace_iam_instance_profile_association_response(
             crate::output::replace_iam_instance_profile_association_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_replace_iam_instance_profile_association(response.body().as_ref(), output).map_err(crate::error::ReplaceIamInstanceProfileAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16432,8 +19636,11 @@ pub fn parse_replace_network_acl_association_error(
     crate::output::ReplaceNetworkAclAssociationOutput,
     crate::error::ReplaceNetworkAclAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplaceNetworkAclAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReplaceNetworkAclAssociationError::generic(
         generic,
     ))
@@ -16455,6 +19662,9 @@ pub fn parse_replace_network_acl_association_response(
             output,
         )
         .map_err(crate::error::ReplaceNetworkAclAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16466,8 +19676,11 @@ pub fn parse_replace_network_acl_entry_error(
     crate::output::ReplaceNetworkAclEntryOutput,
     crate::error::ReplaceNetworkAclEntryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplaceNetworkAclEntryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReplaceNetworkAclEntryError::generic(generic))
 }
 
@@ -16482,6 +19695,9 @@ pub fn parse_replace_network_acl_entry_response(
         #[allow(unused_mut)]
         let mut output = crate::output::replace_network_acl_entry_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16490,8 +19706,11 @@ pub fn parse_replace_network_acl_entry_response(
 pub fn parse_replace_route_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReplaceRouteOutput, crate::error::ReplaceRouteError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplaceRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReplaceRouteError::generic(generic))
 }
 
@@ -16503,6 +19722,9 @@ pub fn parse_replace_route_response(
         #[allow(unused_mut)]
         let mut output = crate::output::replace_route_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16514,8 +19736,11 @@ pub fn parse_replace_route_table_association_error(
     crate::output::ReplaceRouteTableAssociationOutput,
     crate::error::ReplaceRouteTableAssociationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplaceRouteTableAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReplaceRouteTableAssociationError::generic(
         generic,
     ))
@@ -16537,6 +19762,9 @@ pub fn parse_replace_route_table_association_response(
             output,
         )
         .map_err(crate::error::ReplaceRouteTableAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16548,8 +19776,11 @@ pub fn parse_replace_transit_gateway_route_error(
     crate::output::ReplaceTransitGatewayRouteOutput,
     crate::error::ReplaceTransitGatewayRouteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplaceTransitGatewayRouteError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReplaceTransitGatewayRouteError::generic(
         generic,
     ))
@@ -16571,6 +19802,9 @@ pub fn parse_replace_transit_gateway_route_response(
             output,
         )
         .map_err(crate::error::ReplaceTransitGatewayRouteError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16582,8 +19816,11 @@ pub fn parse_report_instance_status_error(
     crate::output::ReportInstanceStatusOutput,
     crate::error::ReportInstanceStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReportInstanceStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ReportInstanceStatusError::generic(generic))
 }
 
@@ -16598,6 +19835,9 @@ pub fn parse_report_instance_status_response(
         #[allow(unused_mut)]
         let mut output = crate::output::report_instance_status_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16607,8 +19847,11 @@ pub fn parse_request_spot_fleet_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RequestSpotFleetOutput, crate::error::RequestSpotFleetError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RequestSpotFleetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RequestSpotFleetError::generic(generic))
 }
 
@@ -16626,6 +19869,9 @@ pub fn parse_request_spot_fleet_response(
             output,
         )
         .map_err(crate::error::RequestSpotFleetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16637,8 +19883,11 @@ pub fn parse_request_spot_instances_error(
     crate::output::RequestSpotInstancesOutput,
     crate::error::RequestSpotInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RequestSpotInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RequestSpotInstancesError::generic(generic))
 }
 
@@ -16658,6 +19907,9 @@ pub fn parse_request_spot_instances_response(
             output,
         )
         .map_err(crate::error::RequestSpotInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16669,8 +19921,11 @@ pub fn parse_reset_address_attribute_error(
     crate::output::ResetAddressAttributeOutput,
     crate::error::ResetAddressAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetAddressAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetAddressAttributeError::generic(generic))
 }
 
@@ -16690,6 +19945,9 @@ pub fn parse_reset_address_attribute_response(
             output,
         )
         .map_err(crate::error::ResetAddressAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16701,8 +19959,11 @@ pub fn parse_reset_ebs_default_kms_key_id_error(
     crate::output::ResetEbsDefaultKmsKeyIdOutput,
     crate::error::ResetEbsDefaultKmsKeyIdError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetEbsDefaultKmsKeyIdError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetEbsDefaultKmsKeyIdError::generic(generic))
 }
 
@@ -16722,6 +19983,9 @@ pub fn parse_reset_ebs_default_kms_key_id_response(
             output,
         )
         .map_err(crate::error::ResetEbsDefaultKmsKeyIdError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16733,8 +19997,11 @@ pub fn parse_reset_fpga_image_attribute_error(
     crate::output::ResetFpgaImageAttributeOutput,
     crate::error::ResetFpgaImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetFpgaImageAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetFpgaImageAttributeError::generic(generic))
 }
 
@@ -16754,6 +20021,9 @@ pub fn parse_reset_fpga_image_attribute_response(
             output,
         )
         .map_err(crate::error::ResetFpgaImageAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16765,8 +20035,11 @@ pub fn parse_reset_image_attribute_error(
     crate::output::ResetImageAttributeOutput,
     crate::error::ResetImageAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetImageAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetImageAttributeError::generic(generic))
 }
 
@@ -16781,6 +20054,9 @@ pub fn parse_reset_image_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_image_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16792,8 +20068,11 @@ pub fn parse_reset_instance_attribute_error(
     crate::output::ResetInstanceAttributeOutput,
     crate::error::ResetInstanceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetInstanceAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetInstanceAttributeError::generic(generic))
 }
 
@@ -16808,6 +20087,9 @@ pub fn parse_reset_instance_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_instance_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16819,8 +20101,11 @@ pub fn parse_reset_network_interface_attribute_error(
     crate::output::ResetNetworkInterfaceAttributeOutput,
     crate::error::ResetNetworkInterfaceAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetNetworkInterfaceAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetNetworkInterfaceAttributeError::generic(
         generic,
     ))
@@ -16838,6 +20123,9 @@ pub fn parse_reset_network_interface_attribute_response(
         let mut output =
             crate::output::reset_network_interface_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16849,8 +20137,11 @@ pub fn parse_reset_snapshot_attribute_error(
     crate::output::ResetSnapshotAttributeOutput,
     crate::error::ResetSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetSnapshotAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ResetSnapshotAttributeError::generic(generic))
 }
 
@@ -16865,6 +20156,9 @@ pub fn parse_reset_snapshot_attribute_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reset_snapshot_attribute_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16876,8 +20170,11 @@ pub fn parse_restore_address_to_classic_error(
     crate::output::RestoreAddressToClassicOutput,
     crate::error::RestoreAddressToClassicError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreAddressToClassicError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RestoreAddressToClassicError::generic(generic))
 }
 
@@ -16897,6 +20194,9 @@ pub fn parse_restore_address_to_classic_response(
             output,
         )
         .map_err(crate::error::RestoreAddressToClassicError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16908,8 +20208,11 @@ pub fn parse_restore_image_from_recycle_bin_error(
     crate::output::RestoreImageFromRecycleBinOutput,
     crate::error::RestoreImageFromRecycleBinError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreImageFromRecycleBinError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RestoreImageFromRecycleBinError::generic(
         generic,
     ))
@@ -16931,6 +20234,9 @@ pub fn parse_restore_image_from_recycle_bin_response(
             output,
         )
         .map_err(crate::error::RestoreImageFromRecycleBinError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16942,8 +20248,11 @@ pub fn parse_restore_managed_prefix_list_version_error(
     crate::output::RestoreManagedPrefixListVersionOutput,
     crate::error::RestoreManagedPrefixListVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreManagedPrefixListVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RestoreManagedPrefixListVersionError::generic(
         generic,
     ))
@@ -16967,6 +20276,9 @@ pub fn parse_restore_managed_prefix_list_version_response(
                 output,
             )
             .map_err(crate::error::RestoreManagedPrefixListVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -16978,8 +20290,11 @@ pub fn parse_restore_snapshot_from_recycle_bin_error(
     crate::output::RestoreSnapshotFromRecycleBinOutput,
     crate::error::RestoreSnapshotFromRecycleBinError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreSnapshotFromRecycleBinError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RestoreSnapshotFromRecycleBinError::generic(
         generic,
     ))
@@ -17003,6 +20318,9 @@ pub fn parse_restore_snapshot_from_recycle_bin_response(
                 output,
             )
             .map_err(crate::error::RestoreSnapshotFromRecycleBinError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17014,8 +20332,11 @@ pub fn parse_restore_snapshot_tier_error(
     crate::output::RestoreSnapshotTierOutput,
     crate::error::RestoreSnapshotTierError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreSnapshotTierError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RestoreSnapshotTierError::generic(generic))
 }
 
@@ -17035,6 +20356,9 @@ pub fn parse_restore_snapshot_tier_response(
             output,
         )
         .map_err(crate::error::RestoreSnapshotTierError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17046,8 +20370,11 @@ pub fn parse_revoke_client_vpn_ingress_error(
     crate::output::RevokeClientVpnIngressOutput,
     crate::error::RevokeClientVpnIngressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RevokeClientVpnIngressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RevokeClientVpnIngressError::generic(generic))
 }
 
@@ -17067,6 +20394,9 @@ pub fn parse_revoke_client_vpn_ingress_response(
             output,
         )
         .map_err(crate::error::RevokeClientVpnIngressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17078,8 +20408,11 @@ pub fn parse_revoke_security_group_egress_error(
     crate::output::RevokeSecurityGroupEgressOutput,
     crate::error::RevokeSecurityGroupEgressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RevokeSecurityGroupEgressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RevokeSecurityGroupEgressError::generic(
         generic,
     ))
@@ -17101,6 +20434,9 @@ pub fn parse_revoke_security_group_egress_response(
             output,
         )
         .map_err(crate::error::RevokeSecurityGroupEgressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17112,8 +20448,11 @@ pub fn parse_revoke_security_group_ingress_error(
     crate::output::RevokeSecurityGroupIngressOutput,
     crate::error::RevokeSecurityGroupIngressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RevokeSecurityGroupIngressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RevokeSecurityGroupIngressError::generic(
         generic,
     ))
@@ -17135,6 +20474,9 @@ pub fn parse_revoke_security_group_ingress_response(
             output,
         )
         .map_err(crate::error::RevokeSecurityGroupIngressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17143,8 +20485,11 @@ pub fn parse_revoke_security_group_ingress_response(
 pub fn parse_run_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RunInstancesOutput, crate::error::RunInstancesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RunInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RunInstancesError::generic(generic))
 }
 
@@ -17161,6 +20506,9 @@ pub fn parse_run_instances_response(
             output,
         )
         .map_err(crate::error::RunInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17172,8 +20520,11 @@ pub fn parse_run_scheduled_instances_error(
     crate::output::RunScheduledInstancesOutput,
     crate::error::RunScheduledInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RunScheduledInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RunScheduledInstancesError::generic(generic))
 }
 
@@ -17193,6 +20544,9 @@ pub fn parse_run_scheduled_instances_response(
             output,
         )
         .map_err(crate::error::RunScheduledInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17204,8 +20558,11 @@ pub fn parse_search_local_gateway_routes_error(
     crate::output::SearchLocalGatewayRoutesOutput,
     crate::error::SearchLocalGatewayRoutesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SearchLocalGatewayRoutesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SearchLocalGatewayRoutesError::generic(
         generic,
     ))
@@ -17227,6 +20584,9 @@ pub fn parse_search_local_gateway_routes_response(
             output,
         )
         .map_err(crate::error::SearchLocalGatewayRoutesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17238,8 +20598,11 @@ pub fn parse_search_transit_gateway_multicast_groups_error(
     crate::output::SearchTransitGatewayMulticastGroupsOutput,
     crate::error::SearchTransitGatewayMulticastGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SearchTransitGatewayMulticastGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SearchTransitGatewayMulticastGroupsError::generic(generic))
 }
 
@@ -17256,6 +20619,9 @@ pub fn parse_search_transit_gateway_multicast_groups_response(
             crate::output::search_transit_gateway_multicast_groups_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_search_transit_gateway_multicast_groups(response.body().as_ref(), output).map_err(crate::error::SearchTransitGatewayMulticastGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17267,8 +20633,11 @@ pub fn parse_search_transit_gateway_routes_error(
     crate::output::SearchTransitGatewayRoutesOutput,
     crate::error::SearchTransitGatewayRoutesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SearchTransitGatewayRoutesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SearchTransitGatewayRoutesError::generic(
         generic,
     ))
@@ -17290,6 +20659,9 @@ pub fn parse_search_transit_gateway_routes_response(
             output,
         )
         .map_err(crate::error::SearchTransitGatewayRoutesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17301,8 +20673,11 @@ pub fn parse_send_diagnostic_interrupt_error(
     crate::output::SendDiagnosticInterruptOutput,
     crate::error::SendDiagnosticInterruptError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendDiagnosticInterruptError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SendDiagnosticInterruptError::generic(generic))
 }
 
@@ -17317,6 +20692,9 @@ pub fn parse_send_diagnostic_interrupt_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_diagnostic_interrupt_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17325,8 +20703,11 @@ pub fn parse_send_diagnostic_interrupt_response(
 pub fn parse_start_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartInstancesOutput, crate::error::StartInstancesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::StartInstancesError::generic(generic))
 }
 
@@ -17343,6 +20724,9 @@ pub fn parse_start_instances_response(
             output,
         )
         .map_err(crate::error::StartInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17354,8 +20738,11 @@ pub fn parse_start_network_insights_access_scope_analysis_error(
     crate::output::StartNetworkInsightsAccessScopeAnalysisOutput,
     crate::error::StartNetworkInsightsAccessScopeAnalysisError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::StartNetworkInsightsAccessScopeAnalysisError::generic(generic))
 }
 
@@ -17372,6 +20759,9 @@ pub fn parse_start_network_insights_access_scope_analysis_response(
             crate::output::start_network_insights_access_scope_analysis_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_start_network_insights_access_scope_analysis(response.body().as_ref(), output).map_err(crate::error::StartNetworkInsightsAccessScopeAnalysisError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17383,8 +20773,11 @@ pub fn parse_start_network_insights_analysis_error(
     crate::output::StartNetworkInsightsAnalysisOutput,
     crate::error::StartNetworkInsightsAnalysisError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartNetworkInsightsAnalysisError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::StartNetworkInsightsAnalysisError::generic(
         generic,
     ))
@@ -17406,6 +20799,9 @@ pub fn parse_start_network_insights_analysis_response(
             output,
         )
         .map_err(crate::error::StartNetworkInsightsAnalysisError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17417,8 +20813,11 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_error(
     crate::output::StartVpcEndpointServicePrivateDnsVerificationOutput,
     crate::error::StartVpcEndpointServicePrivateDnsVerificationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::generic(generic))
 }
 
@@ -17434,6 +20833,9 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
         let mut output = crate::output::start_vpc_endpoint_service_private_dns_verification_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_start_vpc_endpoint_service_private_dns_verification(response.body().as_ref(), output).map_err(crate::error::StartVpcEndpointServicePrivateDnsVerificationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17442,8 +20844,11 @@ pub fn parse_start_vpc_endpoint_service_private_dns_verification_response(
 pub fn parse_stop_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopInstancesOutput, crate::error::StopInstancesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StopInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::StopInstancesError::generic(generic))
 }
 
@@ -17460,6 +20865,9 @@ pub fn parse_stop_instances_response(
             output,
         )
         .map_err(crate::error::StopInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17471,8 +20879,11 @@ pub fn parse_terminate_client_vpn_connections_error(
     crate::output::TerminateClientVpnConnectionsOutput,
     crate::error::TerminateClientVpnConnectionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TerminateClientVpnConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::TerminateClientVpnConnectionsError::generic(
         generic,
     ))
@@ -17495,6 +20906,9 @@ pub fn parse_terminate_client_vpn_connections_response(
                 output,
             )
             .map_err(crate::error::TerminateClientVpnConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17506,8 +20920,11 @@ pub fn parse_terminate_instances_error(
     crate::output::TerminateInstancesOutput,
     crate::error::TerminateInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TerminateInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::TerminateInstancesError::generic(generic))
 }
 
@@ -17527,6 +20944,9 @@ pub fn parse_terminate_instances_response(
             output,
         )
         .map_err(crate::error::TerminateInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17538,8 +20958,11 @@ pub fn parse_unassign_ipv6_addresses_error(
     crate::output::UnassignIpv6AddressesOutput,
     crate::error::UnassignIpv6AddressesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UnassignIpv6AddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UnassignIpv6AddressesError::generic(generic))
 }
 
@@ -17559,6 +20982,9 @@ pub fn parse_unassign_ipv6_addresses_response(
             output,
         )
         .map_err(crate::error::UnassignIpv6AddressesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17570,8 +20996,11 @@ pub fn parse_unassign_private_ip_addresses_error(
     crate::output::UnassignPrivateIpAddressesOutput,
     crate::error::UnassignPrivateIpAddressesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UnassignPrivateIpAddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UnassignPrivateIpAddressesError::generic(
         generic,
     ))
@@ -17588,6 +21017,9 @@ pub fn parse_unassign_private_ip_addresses_response(
         #[allow(unused_mut)]
         let mut output = crate::output::unassign_private_ip_addresses_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17599,8 +21031,11 @@ pub fn parse_unmonitor_instances_error(
     crate::output::UnmonitorInstancesOutput,
     crate::error::UnmonitorInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UnmonitorInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UnmonitorInstancesError::generic(generic))
 }
 
@@ -17620,6 +21055,9 @@ pub fn parse_unmonitor_instances_response(
             output,
         )
         .map_err(crate::error::UnmonitorInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17631,8 +21069,11 @@ pub fn parse_update_security_group_rule_descriptions_egress_error(
     crate::output::UpdateSecurityGroupRuleDescriptionsEgressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsEgressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::generic(generic))
 }
 
@@ -17650,6 +21091,9 @@ pub fn parse_update_security_group_rule_descriptions_egress_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_update_security_group_rule_descriptions_egress(response.body().as_ref(), output).map_err(crate::error::UpdateSecurityGroupRuleDescriptionsEgressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17661,8 +21105,11 @@ pub fn parse_update_security_group_rule_descriptions_ingress_error(
     crate::output::UpdateSecurityGroupRuleDescriptionsIngressOutput,
     crate::error::UpdateSecurityGroupRuleDescriptionsIngressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::generic(generic))
 }
 
@@ -17680,6 +21127,9 @@ pub fn parse_update_security_group_rule_descriptions_ingress_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_update_security_group_rule_descriptions_ingress(response.body().as_ref(), output).map_err(crate::error::UpdateSecurityGroupRuleDescriptionsIngressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -17689,8 +21139,11 @@ pub fn parse_withdraw_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::WithdrawByoipCidrError::generic(generic))
 }
 
@@ -17708,6 +21161,9 @@ pub fn parse_withdraw_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

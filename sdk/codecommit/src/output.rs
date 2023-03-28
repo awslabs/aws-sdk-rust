@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRepositoryNameOutput {}
+pub struct UpdateRepositoryNameOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateRepositoryNameOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput).
 pub mod update_repository_name_output {
 
     /// A builder for [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRepositoryNameOutput`](crate::output::UpdateRepositoryNameOutput).
         pub fn build(self) -> crate::output::UpdateRepositoryNameOutput {
-            crate::output::UpdateRepositoryNameOutput {}
+            crate::output::UpdateRepositoryNameOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UpdateRepositoryNameOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRepositoryDescriptionOutput {}
+pub struct UpdateRepositoryDescriptionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateRepositoryDescriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput).
 pub mod update_repository_description_output {
 
     /// A builder for [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRepositoryDescriptionOutput`](crate::output::UpdateRepositoryDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateRepositoryDescriptionOutput {
-            crate::output::UpdateRepositoryDescriptionOutput {}
+            crate::output::UpdateRepositoryDescriptionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -56,11 +96,17 @@ pub struct UpdatePullRequestTitleOutput {
     /// <p>Information about the updated pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl UpdatePullRequestTitleOutput {
     /// <p>Information about the updated pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdatePullRequestTitleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput).
@@ -71,6 +117,7 @@ pub mod update_pull_request_title_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the updated pull request.</p>
@@ -86,10 +133,20 @@ pub mod update_pull_request_title_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePullRequestTitleOutput`](crate::output::UpdatePullRequestTitleOutput).
         pub fn build(self) -> crate::output::UpdatePullRequestTitleOutput {
             crate::output::UpdatePullRequestTitleOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,11 +165,17 @@ pub struct UpdatePullRequestStatusOutput {
     /// <p>Information about the pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl UpdatePullRequestStatusOutput {
     /// <p>Information about the pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdatePullRequestStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput).
@@ -123,6 +186,7 @@ pub mod update_pull_request_status_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the pull request.</p>
@@ -138,10 +202,20 @@ pub mod update_pull_request_status_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePullRequestStatusOutput`](crate::output::UpdatePullRequestStatusOutput).
         pub fn build(self) -> crate::output::UpdatePullRequestStatusOutput {
             crate::output::UpdatePullRequestStatusOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -160,11 +234,17 @@ pub struct UpdatePullRequestDescriptionOutput {
     /// <p>Information about the updated pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl UpdatePullRequestDescriptionOutput {
     /// <p>Information about the updated pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdatePullRequestDescriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput).
@@ -175,6 +255,7 @@ pub mod update_pull_request_description_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the updated pull request.</p>
@@ -190,10 +271,20 @@ pub mod update_pull_request_description_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePullRequestDescriptionOutput`](crate::output::UpdatePullRequestDescriptionOutput).
         pub fn build(self) -> crate::output::UpdatePullRequestDescriptionOutput {
             crate::output::UpdatePullRequestDescriptionOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -208,18 +299,38 @@ impl UpdatePullRequestDescriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePullRequestApprovalStateOutput {}
+pub struct UpdatePullRequestApprovalStateOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdatePullRequestApprovalStateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput).
 pub mod update_pull_request_approval_state_output {
 
     /// A builder for [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePullRequestApprovalStateOutput`](crate::output::UpdatePullRequestApprovalStateOutput).
         pub fn build(self) -> crate::output::UpdatePullRequestApprovalStateOutput {
-            crate::output::UpdatePullRequestApprovalStateOutput {}
+            crate::output::UpdatePullRequestApprovalStateOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -237,11 +348,17 @@ pub struct UpdatePullRequestApprovalRuleContentOutput {
     /// <p>Information about the updated approval rule.</p>
     #[doc(hidden)]
     pub approval_rule: std::option::Option<crate::model::ApprovalRule>,
+    _request_id: Option<String>,
 }
 impl UpdatePullRequestApprovalRuleContentOutput {
     /// <p>Information about the updated approval rule.</p>
     pub fn approval_rule(&self) -> std::option::Option<&crate::model::ApprovalRule> {
         self.approval_rule.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdatePullRequestApprovalRuleContentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput).
@@ -252,6 +369,7 @@ pub mod update_pull_request_approval_rule_content_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule: std::option::Option<crate::model::ApprovalRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the updated approval rule.</p>
@@ -267,10 +385,20 @@ pub mod update_pull_request_approval_rule_content_output {
             self.approval_rule = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePullRequestApprovalRuleContentOutput`](crate::output::UpdatePullRequestApprovalRuleContentOutput).
         pub fn build(self) -> crate::output::UpdatePullRequestApprovalRuleContentOutput {
             crate::output::UpdatePullRequestApprovalRuleContentOutput {
                 approval_rule: self.approval_rule,
+                _request_id: self._request_id,
             }
         }
     }
@@ -285,18 +413,38 @@ impl UpdatePullRequestApprovalRuleContentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateDefaultBranchOutput {}
+pub struct UpdateDefaultBranchOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateDefaultBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput).
 pub mod update_default_branch_output {
 
     /// A builder for [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDefaultBranchOutput`](crate::output::UpdateDefaultBranchOutput).
         pub fn build(self) -> crate::output::UpdateDefaultBranchOutput {
-            crate::output::UpdateDefaultBranchOutput {}
+            crate::output::UpdateDefaultBranchOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -314,11 +462,17 @@ pub struct UpdateCommentOutput {
     /// <p>Information about the updated comment.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl UpdateCommentOutput {
     /// <p>Information about the updated comment.</p>
     pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
         self.comment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateCommentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateCommentOutput`](crate::output::UpdateCommentOutput).
@@ -329,6 +483,7 @@ pub mod update_comment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the updated comment.</p>
@@ -341,10 +496,20 @@ pub mod update_comment_output {
             self.comment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateCommentOutput`](crate::output::UpdateCommentOutput).
         pub fn build(self) -> crate::output::UpdateCommentOutput {
             crate::output::UpdateCommentOutput {
                 comment: self.comment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -363,6 +528,7 @@ pub struct UpdateApprovalRuleTemplateNameOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
     #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+    _request_id: Option<String>,
 }
 impl UpdateApprovalRuleTemplateNameOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
@@ -370,6 +536,11 @@ impl UpdateApprovalRuleTemplateNameOutput {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateApprovalRuleTemplateNameOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput).
@@ -380,6 +551,7 @@ pub mod update_approval_rule_template_name_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The structure and content of the updated approval rule template.</p>
@@ -395,10 +567,20 @@ pub mod update_approval_rule_template_name_output {
             self.approval_rule_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateNameOutput`](crate::output::UpdateApprovalRuleTemplateNameOutput).
         pub fn build(self) -> crate::output::UpdateApprovalRuleTemplateNameOutput {
             crate::output::UpdateApprovalRuleTemplateNameOutput {
                 approval_rule_template: self.approval_rule_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -417,6 +599,7 @@ pub struct UpdateApprovalRuleTemplateDescriptionOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
     #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+    _request_id: Option<String>,
 }
 impl UpdateApprovalRuleTemplateDescriptionOutput {
     /// <p>The structure and content of the updated approval rule template.</p>
@@ -424,6 +607,11 @@ impl UpdateApprovalRuleTemplateDescriptionOutput {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateApprovalRuleTemplateDescriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput).
@@ -434,6 +622,7 @@ pub mod update_approval_rule_template_description_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The structure and content of the updated approval rule template.</p>
@@ -449,10 +638,20 @@ pub mod update_approval_rule_template_description_output {
             self.approval_rule_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateDescriptionOutput`](crate::output::UpdateApprovalRuleTemplateDescriptionOutput).
         pub fn build(self) -> crate::output::UpdateApprovalRuleTemplateDescriptionOutput {
             crate::output::UpdateApprovalRuleTemplateDescriptionOutput {
                 approval_rule_template: self.approval_rule_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -471,6 +670,7 @@ pub struct UpdateApprovalRuleTemplateContentOutput {
     /// <p>Returns information about an approval rule template.</p>
     #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+    _request_id: Option<String>,
 }
 impl UpdateApprovalRuleTemplateContentOutput {
     /// <p>Returns information about an approval rule template.</p>
@@ -478,6 +678,11 @@ impl UpdateApprovalRuleTemplateContentOutput {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateApprovalRuleTemplateContentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput).
@@ -488,6 +693,7 @@ pub mod update_approval_rule_template_content_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about an approval rule template.</p>
@@ -503,10 +709,20 @@ pub mod update_approval_rule_template_content_output {
             self.approval_rule_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateApprovalRuleTemplateContentOutput`](crate::output::UpdateApprovalRuleTemplateContentOutput).
         pub fn build(self) -> crate::output::UpdateApprovalRuleTemplateContentOutput {
             crate::output::UpdateApprovalRuleTemplateContentOutput {
                 approval_rule_template: self.approval_rule_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -521,18 +737,38 @@ impl UpdateApprovalRuleTemplateContentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -554,6 +790,7 @@ pub struct TestRepositoryTriggersOutput {
     #[doc(hidden)]
     pub failed_executions:
         std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerExecutionFailure>>,
+    _request_id: Option<String>,
 }
 impl TestRepositoryTriggersOutput {
     /// <p>The list of triggers that were successfully tested. This list provides the names of the triggers that were successfully tested, separated by commas.</p>
@@ -567,6 +804,11 @@ impl TestRepositoryTriggersOutput {
         self.failed_executions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for TestRepositoryTriggersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput).
 pub mod test_repository_triggers_output {
 
@@ -577,6 +819,7 @@ pub mod test_repository_triggers_output {
         pub(crate) successful_executions: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) failed_executions:
             std::option::Option<std::vec::Vec<crate::model::RepositoryTriggerExecutionFailure>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `successful_executions`.
@@ -622,11 +865,21 @@ pub mod test_repository_triggers_output {
             self.failed_executions = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TestRepositoryTriggersOutput`](crate::output::TestRepositoryTriggersOutput).
         pub fn build(self) -> crate::output::TestRepositoryTriggersOutput {
             crate::output::TestRepositoryTriggersOutput {
                 successful_executions: self.successful_executions,
                 failed_executions: self.failed_executions,
+                _request_id: self._request_id,
             }
         }
     }
@@ -641,18 +894,38 @@ impl TestRepositoryTriggersOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -670,11 +943,17 @@ pub struct PutRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the create or update operation.</p>
     #[doc(hidden)]
     pub configuration_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the create or update operation.</p>
     pub fn configuration_id(&self) -> std::option::Option<&str> {
         self.configuration_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for PutRepositoryTriggersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput).
@@ -685,6 +964,7 @@ pub mod put_repository_triggers_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The system-generated unique ID for the create or update operation.</p>
@@ -700,10 +980,20 @@ pub mod put_repository_triggers_output {
             self.configuration_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRepositoryTriggersOutput`](crate::output::PutRepositoryTriggersOutput).
         pub fn build(self) -> crate::output::PutRepositoryTriggersOutput {
             crate::output::PutRepositoryTriggersOutput {
                 configuration_id: self.configuration_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -728,6 +1018,7 @@ pub struct PutFileOutput {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains this file change.</p>
     #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutFileOutput {
     /// <p>The full SHA ID of the commit that contains this file change.</p>
@@ -743,6 +1034,11 @@ impl PutFileOutput {
         self.tree_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutFileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutFileOutput`](crate::output::PutFileOutput).
 pub mod put_file_output {
 
@@ -753,6 +1049,7 @@ pub mod put_file_output {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full SHA ID of the commit that contains this file change.</p>
@@ -785,12 +1082,22 @@ pub mod put_file_output {
             self.tree_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutFileOutput`](crate::output::PutFileOutput).
         pub fn build(self) -> crate::output::PutFileOutput {
             crate::output::PutFileOutput {
                 commit_id: self.commit_id,
                 blob_id: self.blob_id,
                 tree_id: self.tree_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -805,18 +1112,38 @@ impl PutFileOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutCommentReactionOutput {}
+pub struct PutCommentReactionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutCommentReactionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput).
 pub mod put_comment_reaction_output {
 
     /// A builder for [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutCommentReactionOutput`](crate::output::PutCommentReactionOutput).
         pub fn build(self) -> crate::output::PutCommentReactionOutput {
-            crate::output::PutCommentReactionOutput {}
+            crate::output::PutCommentReactionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -834,11 +1161,17 @@ pub struct PostCommentReplyOutput {
     /// <p>Information about the reply to a comment.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl PostCommentReplyOutput {
     /// <p>Information about the reply to a comment.</p>
     pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
         self.comment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for PostCommentReplyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput).
@@ -849,6 +1182,7 @@ pub mod post_comment_reply_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the reply to a comment.</p>
@@ -861,10 +1195,20 @@ pub mod post_comment_reply_output {
             self.comment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PostCommentReplyOutput`](crate::output::PostCommentReplyOutput).
         pub fn build(self) -> crate::output::PostCommentReplyOutput {
             crate::output::PostCommentReplyOutput {
                 comment: self.comment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -904,6 +1248,7 @@ pub struct PostCommentForPullRequestOutput {
     /// <p>The content of the comment you posted.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl PostCommentForPullRequestOutput {
     /// <p>The name of the repository where you posted a comment on a pull request.</p>
@@ -939,6 +1284,11 @@ impl PostCommentForPullRequestOutput {
         self.comment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PostCommentForPullRequestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput).
 pub mod post_comment_for_pull_request_output {
 
@@ -954,6 +1304,7 @@ pub mod post_comment_for_pull_request_output {
         pub(crate) after_blob_id: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::Location>,
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the repository where you posted a comment on a pull request.</p>
@@ -1054,6 +1405,15 @@ pub mod post_comment_for_pull_request_output {
             self.comment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PostCommentForPullRequestOutput`](crate::output::PostCommentForPullRequestOutput).
         pub fn build(self) -> crate::output::PostCommentForPullRequestOutput {
             crate::output::PostCommentForPullRequestOutput {
@@ -1065,6 +1425,7 @@ pub mod post_comment_for_pull_request_output {
                 after_blob_id: self.after_blob_id,
                 location: self.location,
                 comment: self.comment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1101,6 +1462,7 @@ pub struct PostCommentForComparedCommitOutput {
     /// <p>The content of the comment you posted.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl PostCommentForComparedCommitOutput {
     /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
@@ -1132,6 +1494,11 @@ impl PostCommentForComparedCommitOutput {
         self.comment.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PostCommentForComparedCommitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput).
 pub mod post_comment_for_compared_commit_output {
 
@@ -1146,6 +1513,7 @@ pub mod post_comment_for_compared_commit_output {
         pub(crate) after_blob_id: std::option::Option<std::string::String>,
         pub(crate) location: std::option::Option<crate::model::Location>,
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the repository where you posted a comment on the comparison between commits.</p>
@@ -1233,6 +1601,15 @@ pub mod post_comment_for_compared_commit_output {
             self.comment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PostCommentForComparedCommitOutput`](crate::output::PostCommentForComparedCommitOutput).
         pub fn build(self) -> crate::output::PostCommentForComparedCommitOutput {
             crate::output::PostCommentForComparedCommitOutput {
@@ -1243,6 +1620,7 @@ pub mod post_comment_for_compared_commit_output {
                 after_blob_id: self.after_blob_id,
                 location: self.location,
                 comment: self.comment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1257,18 +1635,38 @@ impl PostCommentForComparedCommitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct OverridePullRequestApprovalRulesOutput {}
+pub struct OverridePullRequestApprovalRulesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for OverridePullRequestApprovalRulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput).
 pub mod override_pull_request_approval_rules_output {
 
     /// A builder for [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`OverridePullRequestApprovalRulesOutput`](crate::output::OverridePullRequestApprovalRulesOutput).
         pub fn build(self) -> crate::output::OverridePullRequestApprovalRulesOutput {
-            crate::output::OverridePullRequestApprovalRulesOutput {}
+            crate::output::OverridePullRequestApprovalRulesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1286,11 +1684,17 @@ pub struct MergePullRequestByThreeWayOutput {
     /// <p>Returns information about a pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl MergePullRequestByThreeWayOutput {
     /// <p>Returns information about a pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for MergePullRequestByThreeWayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput).
@@ -1301,6 +1705,7 @@ pub mod merge_pull_request_by_three_way_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about a pull request.</p>
@@ -1316,10 +1721,20 @@ pub mod merge_pull_request_by_three_way_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergePullRequestByThreeWayOutput`](crate::output::MergePullRequestByThreeWayOutput).
         pub fn build(self) -> crate::output::MergePullRequestByThreeWayOutput {
             crate::output::MergePullRequestByThreeWayOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1338,11 +1753,17 @@ pub struct MergePullRequestBySquashOutput {
     /// <p>Returns information about a pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl MergePullRequestBySquashOutput {
     /// <p>Returns information about a pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for MergePullRequestBySquashOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput).
@@ -1353,6 +1774,7 @@ pub mod merge_pull_request_by_squash_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about a pull request.</p>
@@ -1368,10 +1790,20 @@ pub mod merge_pull_request_by_squash_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergePullRequestBySquashOutput`](crate::output::MergePullRequestBySquashOutput).
         pub fn build(self) -> crate::output::MergePullRequestBySquashOutput {
             crate::output::MergePullRequestBySquashOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1390,11 +1822,17 @@ pub struct MergePullRequestByFastForwardOutput {
     /// <p>Information about the specified pull request, including the merge.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl MergePullRequestByFastForwardOutput {
     /// <p>Information about the specified pull request, including the merge.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for MergePullRequestByFastForwardOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput).
@@ -1405,6 +1843,7 @@ pub mod merge_pull_request_by_fast_forward_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the specified pull request, including the merge.</p>
@@ -1420,10 +1859,20 @@ pub mod merge_pull_request_by_fast_forward_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergePullRequestByFastForwardOutput`](crate::output::MergePullRequestByFastForwardOutput).
         pub fn build(self) -> crate::output::MergePullRequestByFastForwardOutput {
             crate::output::MergePullRequestByFastForwardOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1445,6 +1894,7 @@ pub struct MergeBranchesByThreeWayOutput {
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl MergeBranchesByThreeWayOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
@@ -1456,6 +1906,11 @@ impl MergeBranchesByThreeWayOutput {
         self.tree_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for MergeBranchesByThreeWayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput).
 pub mod merge_branches_by_three_way_output {
 
@@ -1465,6 +1920,7 @@ pub mod merge_branches_by_three_way_output {
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The commit ID of the merge in the destination or target branch.</p>
@@ -1487,11 +1943,21 @@ pub mod merge_branches_by_three_way_output {
             self.tree_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergeBranchesByThreeWayOutput`](crate::output::MergeBranchesByThreeWayOutput).
         pub fn build(self) -> crate::output::MergeBranchesByThreeWayOutput {
             crate::output::MergeBranchesByThreeWayOutput {
                 commit_id: self.commit_id,
                 tree_id: self.tree_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1513,6 +1979,7 @@ pub struct MergeBranchesBySquashOutput {
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl MergeBranchesBySquashOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
@@ -1524,6 +1991,11 @@ impl MergeBranchesBySquashOutput {
         self.tree_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for MergeBranchesBySquashOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput).
 pub mod merge_branches_by_squash_output {
 
@@ -1533,6 +2005,7 @@ pub mod merge_branches_by_squash_output {
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The commit ID of the merge in the destination or target branch.</p>
@@ -1555,11 +2028,21 @@ pub mod merge_branches_by_squash_output {
             self.tree_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergeBranchesBySquashOutput`](crate::output::MergeBranchesBySquashOutput).
         pub fn build(self) -> crate::output::MergeBranchesBySquashOutput {
             crate::output::MergeBranchesBySquashOutput {
                 commit_id: self.commit_id,
                 tree_id: self.tree_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1581,6 +2064,7 @@ pub struct MergeBranchesByFastForwardOutput {
     /// <p>The tree ID of the merge in the destination or target branch.</p>
     #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl MergeBranchesByFastForwardOutput {
     /// <p>The commit ID of the merge in the destination or target branch.</p>
@@ -1592,6 +2076,11 @@ impl MergeBranchesByFastForwardOutput {
         self.tree_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for MergeBranchesByFastForwardOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput).
 pub mod merge_branches_by_fast_forward_output {
 
@@ -1601,6 +2090,7 @@ pub mod merge_branches_by_fast_forward_output {
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The commit ID of the merge in the destination or target branch.</p>
@@ -1623,11 +2113,21 @@ pub mod merge_branches_by_fast_forward_output {
             self.tree_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergeBranchesByFastForwardOutput`](crate::output::MergeBranchesByFastForwardOutput).
         pub fn build(self) -> crate::output::MergeBranchesByFastForwardOutput {
             crate::output::MergeBranchesByFastForwardOutput {
                 commit_id: self.commit_id,
                 tree_id: self.tree_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1650,6 +2150,7 @@ pub struct ListTagsForResourceOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key and value pairs associated with the specified resource.</p>
@@ -1664,6 +2165,11 @@ impl ListTagsForResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1675,6 +2181,7 @@ pub mod list_tags_for_resource_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1712,11 +2219,21 @@ pub mod list_tags_for_resource_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1738,6 +2255,7 @@ pub struct ListRepositoriesForApprovalRuleTemplateOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRepositoriesForApprovalRuleTemplateOutput {
     /// <p>A list of repository names that are associated with the specified approval rule template.</p>
@@ -1749,6 +2267,11 @@ impl ListRepositoriesForApprovalRuleTemplateOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRepositoriesForApprovalRuleTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput).
 pub mod list_repositories_for_approval_rule_template_output {
 
@@ -1758,6 +2281,7 @@ pub mod list_repositories_for_approval_rule_template_output {
     pub struct Builder {
         pub(crate) repository_names: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `repository_names`.
@@ -1789,11 +2313,21 @@ pub mod list_repositories_for_approval_rule_template_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRepositoriesForApprovalRuleTemplateOutput`](crate::output::ListRepositoriesForApprovalRuleTemplateOutput).
         pub fn build(self) -> crate::output::ListRepositoriesForApprovalRuleTemplateOutput {
             crate::output::ListRepositoriesForApprovalRuleTemplateOutput {
                 repository_names: self.repository_names,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1816,6 +2350,7 @@ pub struct ListRepositoriesOutput {
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRepositoriesOutput {
     /// <p>Lists the repositories called by the list repositories operation.</p>
@@ -1825,6 +2360,11 @@ impl ListRepositoriesOutput {
     /// <p>An enumeration token that allows the operation to batch the results of the operation. Batch sizes are 1,000 for list repository operations. When the client sends the token back to AWS CodeCommit, another page of 1,000 records is retrieved.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListRepositoriesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput).
@@ -1837,6 +2377,7 @@ pub mod list_repositories_output {
         pub(crate) repositories:
             std::option::Option<std::vec::Vec<crate::model::RepositoryNameIdPair>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `repositories`.
@@ -1868,11 +2409,21 @@ pub mod list_repositories_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRepositoriesOutput`](crate::output::ListRepositoriesOutput).
         pub fn build(self) -> crate::output::ListRepositoriesOutput {
             crate::output::ListRepositoriesOutput {
                 repositories: self.repositories,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1894,6 +2445,7 @@ pub struct ListPullRequestsOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPullRequestsOutput {
     /// <p>The system-generated IDs of the pull requests.</p>
@@ -1905,6 +2457,11 @@ impl ListPullRequestsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPullRequestsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput).
 pub mod list_pull_requests_output {
 
@@ -1914,6 +2471,7 @@ pub mod list_pull_requests_output {
     pub struct Builder {
         pub(crate) pull_request_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pull_request_ids`.
@@ -1945,11 +2503,21 @@ pub mod list_pull_requests_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPullRequestsOutput`](crate::output::ListPullRequestsOutput).
         pub fn build(self) -> crate::output::ListPullRequestsOutput {
             crate::output::ListPullRequestsOutput {
                 pull_request_ids: self.pull_request_ids,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1971,6 +2539,7 @@ pub struct ListBranchesOutput {
     /// <p>An enumeration token that returns the batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBranchesOutput {
     /// <p>The list of branch names.</p>
@@ -1982,6 +2551,11 @@ impl ListBranchesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBranchesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListBranchesOutput`](crate::output::ListBranchesOutput).
 pub mod list_branches_output {
 
@@ -1991,6 +2565,7 @@ pub mod list_branches_output {
     pub struct Builder {
         pub(crate) branches: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `branches`.
@@ -2022,11 +2597,21 @@ pub mod list_branches_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBranchesOutput`](crate::output::ListBranchesOutput).
         pub fn build(self) -> crate::output::ListBranchesOutput {
             crate::output::ListBranchesOutput {
                 branches: self.branches,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2048,6 +2633,7 @@ pub struct ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     /// <p>The names of all approval rule templates associated with the repository.</p>
@@ -2057,6 +2643,11 @@ impl ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
@@ -2069,6 +2660,7 @@ pub mod list_associated_approval_rule_templates_for_repository_output {
         pub(crate) approval_rule_template_names:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `approval_rule_template_names`.
@@ -2103,6 +2695,15 @@ pub mod list_associated_approval_rule_templates_for_repository_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAssociatedApprovalRuleTemplatesForRepositoryOutput`](crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput).
         pub fn build(
             self,
@@ -2110,6 +2711,7 @@ pub mod list_associated_approval_rule_templates_for_repository_output {
             crate::output::ListAssociatedApprovalRuleTemplatesForRepositoryOutput {
                 approval_rule_template_names: self.approval_rule_template_names,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2132,6 +2734,7 @@ pub struct ListApprovalRuleTemplatesOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListApprovalRuleTemplatesOutput {
     /// <p>The names of all the approval rule templates found in the AWS Region for your AWS account.</p>
@@ -2141,6 +2744,11 @@ impl ListApprovalRuleTemplatesOutput {
     /// <p>An enumeration token that allows the operation to batch the next results of the operation.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListApprovalRuleTemplatesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput).
@@ -2153,6 +2761,7 @@ pub mod list_approval_rule_templates_output {
         pub(crate) approval_rule_template_names:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `approval_rule_template_names`.
@@ -2187,11 +2796,21 @@ pub mod list_approval_rule_templates_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListApprovalRuleTemplatesOutput`](crate::output::ListApprovalRuleTemplatesOutput).
         pub fn build(self) -> crate::output::ListApprovalRuleTemplatesOutput {
             crate::output::ListApprovalRuleTemplatesOutput {
                 approval_rule_template_names: self.approval_rule_template_names,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2213,6 +2832,7 @@ pub struct GetRepositoryTriggersOutput {
     /// <p>The JSON block of configuration information for each trigger.</p>
     #[doc(hidden)]
     pub triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
+    _request_id: Option<String>,
 }
 impl GetRepositoryTriggersOutput {
     /// <p>The system-generated unique ID for the trigger.</p>
@@ -2224,6 +2844,11 @@ impl GetRepositoryTriggersOutput {
         self.triggers.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRepositoryTriggersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput).
 pub mod get_repository_triggers_output {
 
@@ -2233,6 +2858,7 @@ pub mod get_repository_triggers_output {
     pub struct Builder {
         pub(crate) configuration_id: std::option::Option<std::string::String>,
         pub(crate) triggers: std::option::Option<std::vec::Vec<crate::model::RepositoryTrigger>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The system-generated unique ID for the trigger.</p>
@@ -2267,11 +2893,21 @@ pub mod get_repository_triggers_output {
             self.triggers = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRepositoryTriggersOutput`](crate::output::GetRepositoryTriggersOutput).
         pub fn build(self) -> crate::output::GetRepositoryTriggersOutput {
             crate::output::GetRepositoryTriggersOutput {
                 configuration_id: self.configuration_id,
                 triggers: self.triggers,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2290,11 +2926,17 @@ pub struct GetRepositoryOutput {
     /// <p>Information about the repository.</p>
     #[doc(hidden)]
     pub repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
+    _request_id: Option<String>,
 }
 impl GetRepositoryOutput {
     /// <p>Information about the repository.</p>
     pub fn repository_metadata(&self) -> std::option::Option<&crate::model::RepositoryMetadata> {
         self.repository_metadata.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetRepositoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetRepositoryOutput`](crate::output::GetRepositoryOutput).
@@ -2305,6 +2947,7 @@ pub mod get_repository_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the repository.</p>
@@ -2320,10 +2963,20 @@ pub mod get_repository_output {
             self.repository_metadata = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRepositoryOutput`](crate::output::GetRepositoryOutput).
         pub fn build(self) -> crate::output::GetRepositoryOutput {
             crate::output::GetRepositoryOutput {
                 repository_metadata: self.repository_metadata,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2345,6 +2998,7 @@ pub struct GetPullRequestOverrideStateOutput {
     /// <p>The Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>
     #[doc(hidden)]
     pub overrider: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetPullRequestOverrideStateOutput {
     /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
@@ -2356,6 +3010,11 @@ impl GetPullRequestOverrideStateOutput {
         self.overrider.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPullRequestOverrideStateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput).
 pub mod get_pull_request_override_state_output {
 
@@ -2365,6 +3024,7 @@ pub mod get_pull_request_override_state_output {
     pub struct Builder {
         pub(crate) overridden: std::option::Option<bool>,
         pub(crate) overrider: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A Boolean value that indicates whether a pull request has had its rules set aside (TRUE) or whether all approval rules still apply (FALSE).</p>
@@ -2387,11 +3047,21 @@ pub mod get_pull_request_override_state_output {
             self.overrider = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPullRequestOverrideStateOutput`](crate::output::GetPullRequestOverrideStateOutput).
         pub fn build(self) -> crate::output::GetPullRequestOverrideStateOutput {
             crate::output::GetPullRequestOverrideStateOutput {
                 overridden: self.overridden.unwrap_or_default(),
                 overrider: self.overrider,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2410,11 +3080,17 @@ pub struct GetPullRequestApprovalStatesOutput {
     /// <p>Information about users who have approved the pull request.</p>
     #[doc(hidden)]
     pub approvals: std::option::Option<std::vec::Vec<crate::model::Approval>>,
+    _request_id: Option<String>,
 }
 impl GetPullRequestApprovalStatesOutput {
     /// <p>Information about users who have approved the pull request.</p>
     pub fn approvals(&self) -> std::option::Option<&[crate::model::Approval]> {
         self.approvals.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetPullRequestApprovalStatesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput).
@@ -2425,6 +3101,7 @@ pub mod get_pull_request_approval_states_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approvals: std::option::Option<std::vec::Vec<crate::model::Approval>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `approvals`.
@@ -2446,10 +3123,20 @@ pub mod get_pull_request_approval_states_output {
             self.approvals = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPullRequestApprovalStatesOutput`](crate::output::GetPullRequestApprovalStatesOutput).
         pub fn build(self) -> crate::output::GetPullRequestApprovalStatesOutput {
             crate::output::GetPullRequestApprovalStatesOutput {
                 approvals: self.approvals,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2468,11 +3155,17 @@ pub struct GetPullRequestOutput {
     /// <p>Information about the specified pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl GetPullRequestOutput {
     /// <p>Information about the specified pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetPullRequestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetPullRequestOutput`](crate::output::GetPullRequestOutput).
@@ -2483,6 +3176,7 @@ pub mod get_pull_request_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the specified pull request.</p>
@@ -2498,10 +3192,20 @@ pub mod get_pull_request_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPullRequestOutput`](crate::output::GetPullRequestOutput).
         pub fn build(self) -> crate::output::GetPullRequestOutput {
             crate::output::GetPullRequestOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2529,6 +3233,7 @@ pub struct GetMergeOptionsOutput {
     /// <p>The commit ID of the merge base.</p>
     #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMergeOptionsOutput {
     /// <p>The merge option or strategy used to merge the code.</p>
@@ -2548,6 +3253,11 @@ impl GetMergeOptionsOutput {
         self.base_commit_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMergeOptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput).
 pub mod get_merge_options_output {
 
@@ -2560,6 +3270,7 @@ pub mod get_merge_options_output {
         pub(crate) source_commit_id: std::option::Option<std::string::String>,
         pub(crate) destination_commit_id: std::option::Option<std::string::String>,
         pub(crate) base_commit_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `merge_options`.
@@ -2620,6 +3331,15 @@ pub mod get_merge_options_output {
             self.base_commit_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMergeOptionsOutput`](crate::output::GetMergeOptionsOutput).
         pub fn build(self) -> crate::output::GetMergeOptionsOutput {
             crate::output::GetMergeOptionsOutput {
@@ -2627,6 +3347,7 @@ pub mod get_merge_options_output {
                 source_commit_id: self.source_commit_id,
                 destination_commit_id: self.destination_commit_id,
                 base_commit_id: self.base_commit_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2660,6 +3381,7 @@ pub struct GetMergeConflictsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMergeConflictsOutput {
     /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
@@ -2687,6 +3409,11 @@ impl GetMergeConflictsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMergeConflictsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput).
 pub mod get_merge_conflicts_output {
 
@@ -2701,6 +3428,7 @@ pub mod get_merge_conflicts_output {
         pub(crate) conflict_metadata_list:
             std::option::Option<std::vec::Vec<crate::model::ConflictMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A Boolean value that indicates whether the code is mergeable by the specified merge option.</p>
@@ -2781,6 +3509,15 @@ pub mod get_merge_conflicts_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMergeConflictsOutput`](crate::output::GetMergeConflictsOutput).
         pub fn build(self) -> crate::output::GetMergeConflictsOutput {
             crate::output::GetMergeConflictsOutput {
@@ -2790,6 +3527,7 @@ pub mod get_merge_conflicts_output {
                 base_commit_id: self.base_commit_id,
                 conflict_metadata_list: self.conflict_metadata_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2817,6 +3555,7 @@ pub struct GetMergeCommitOutput {
     /// <p>The commit ID for the merge commit created when the source branch was merged into the destination branch. If the fast-forward merge strategy was used, there is no merge commit.</p>
     #[doc(hidden)]
     pub merged_commit_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMergeCommitOutput {
     /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
@@ -2836,6 +3575,11 @@ impl GetMergeCommitOutput {
         self.merged_commit_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMergeCommitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput).
 pub mod get_merge_commit_output {
 
@@ -2847,6 +3591,7 @@ pub mod get_merge_commit_output {
         pub(crate) destination_commit_id: std::option::Option<std::string::String>,
         pub(crate) base_commit_id: std::option::Option<std::string::String>,
         pub(crate) merged_commit_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The commit ID of the source commit specifier that was used in the merge evaluation.</p>
@@ -2901,6 +3646,15 @@ pub mod get_merge_commit_output {
             self.merged_commit_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMergeCommitOutput`](crate::output::GetMergeCommitOutput).
         pub fn build(self) -> crate::output::GetMergeCommitOutput {
             crate::output::GetMergeCommitOutput {
@@ -2908,6 +3662,7 @@ pub mod get_merge_commit_output {
                 destination_commit_id: self.destination_commit_id,
                 base_commit_id: self.base_commit_id,
                 merged_commit_id: self.merged_commit_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2944,6 +3699,7 @@ pub struct GetFolderOutput {
     /// <p>The list of submodules in the specified folder, if any.</p>
     #[doc(hidden)]
     pub sub_modules: std::option::Option<std::vec::Vec<crate::model::SubModule>>,
+    _request_id: Option<String>,
 }
 impl GetFolderOutput {
     /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
@@ -2975,6 +3731,11 @@ impl GetFolderOutput {
         self.sub_modules.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetFolderOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetFolderOutput`](crate::output::GetFolderOutput).
 pub mod get_folder_output {
 
@@ -2989,6 +3750,7 @@ pub mod get_folder_output {
         pub(crate) files: std::option::Option<std::vec::Vec<crate::model::File>>,
         pub(crate) symbolic_links: std::option::Option<std::vec::Vec<crate::model::SymbolicLink>>,
         pub(crate) sub_modules: std::option::Option<std::vec::Vec<crate::model::SubModule>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full commit ID used as a reference for the returned version of the folder content.</p>
@@ -3097,6 +3859,15 @@ pub mod get_folder_output {
             self.sub_modules = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFolderOutput`](crate::output::GetFolderOutput).
         pub fn build(self) -> crate::output::GetFolderOutput {
             crate::output::GetFolderOutput {
@@ -3107,6 +3878,7 @@ pub mod get_folder_output {
                 files: self.files,
                 symbolic_links: self.symbolic_links,
                 sub_modules: self.sub_modules,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3142,6 +3914,7 @@ pub struct GetFileOutput {
     /// <p>The base-64 encoded binary data object that represents the content of the file.</p>
     #[doc(hidden)]
     pub file_content: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl GetFileOutput {
     /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
@@ -3171,6 +3944,11 @@ impl GetFileOutput {
         self.file_content.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetFileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetFileOutput`](crate::output::GetFileOutput).
 pub mod get_file_output {
 
@@ -3184,6 +3962,7 @@ pub mod get_file_output {
         pub(crate) file_mode: std::option::Option<crate::model::FileModeTypeEnum>,
         pub(crate) file_size: std::option::Option<i64>,
         pub(crate) file_content: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full commit ID of the commit that contains the content returned by GetFile.</p>
@@ -3256,6 +4035,15 @@ pub mod get_file_output {
             self.file_content = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFileOutput`](crate::output::GetFileOutput).
         pub fn build(self) -> crate::output::GetFileOutput {
             crate::output::GetFileOutput {
@@ -3265,6 +4053,7 @@ pub mod get_file_output {
                 file_mode: self.file_mode,
                 file_size: self.file_size.unwrap_or_default(),
                 file_content: self.file_content,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3286,6 +4075,7 @@ pub struct GetDifferencesOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDifferencesOutput {
     /// <p>A data type object that contains information about the differences, including whether the difference is added, modified, or deleted (A, D, M).</p>
@@ -3297,6 +4087,11 @@ impl GetDifferencesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDifferencesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDifferencesOutput`](crate::output::GetDifferencesOutput).
 pub mod get_differences_output {
 
@@ -3306,6 +4101,7 @@ pub mod get_differences_output {
     pub struct Builder {
         pub(crate) differences: std::option::Option<std::vec::Vec<crate::model::Difference>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `differences`.
@@ -3337,11 +4133,21 @@ pub mod get_differences_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDifferencesOutput`](crate::output::GetDifferencesOutput).
         pub fn build(self) -> crate::output::GetDifferencesOutput {
             crate::output::GetDifferencesOutput {
                 differences: self.differences,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3360,11 +4166,17 @@ pub struct GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
     #[doc(hidden)]
     pub commit: std::option::Option<crate::model::Commit>,
+    _request_id: Option<String>,
 }
 impl GetCommitOutput {
     /// <p>A commit data type object that contains information about the specified commit.</p>
     pub fn commit(&self) -> std::option::Option<&crate::model::Commit> {
         self.commit.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetCommitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetCommitOutput`](crate::output::GetCommitOutput).
@@ -3375,6 +4187,7 @@ pub mod get_commit_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) commit: std::option::Option<crate::model::Commit>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A commit data type object that contains information about the specified commit.</p>
@@ -3387,10 +4200,20 @@ pub mod get_commit_output {
             self.commit = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCommitOutput`](crate::output::GetCommitOutput).
         pub fn build(self) -> crate::output::GetCommitOutput {
             crate::output::GetCommitOutput {
                 commit: self.commit,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3413,6 +4236,7 @@ pub struct GetCommentsForPullRequestOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetCommentsForPullRequestOutput {
     /// <p>An array of comment objects on the pull request.</p>
@@ -3426,6 +4250,11 @@ impl GetCommentsForPullRequestOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCommentsForPullRequestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput).
 pub mod get_comments_for_pull_request_output {
 
@@ -3436,6 +4265,7 @@ pub mod get_comments_for_pull_request_output {
         pub(crate) comments_for_pull_request_data:
             std::option::Option<std::vec::Vec<crate::model::CommentsForPullRequest>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comments_for_pull_request_data`.
@@ -3470,11 +4300,21 @@ pub mod get_comments_for_pull_request_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCommentsForPullRequestOutput`](crate::output::GetCommentsForPullRequestOutput).
         pub fn build(self) -> crate::output::GetCommentsForPullRequestOutput {
             crate::output::GetCommentsForPullRequestOutput {
                 comments_for_pull_request_data: self.comments_for_pull_request_data,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3497,6 +4337,7 @@ pub struct GetCommentsForComparedCommitOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetCommentsForComparedCommitOutput {
     /// <p>A list of comment objects on the compared commit.</p>
@@ -3510,6 +4351,11 @@ impl GetCommentsForComparedCommitOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCommentsForComparedCommitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput).
 pub mod get_comments_for_compared_commit_output {
 
@@ -3520,6 +4366,7 @@ pub mod get_comments_for_compared_commit_output {
         pub(crate) comments_for_compared_commit_data:
             std::option::Option<std::vec::Vec<crate::model::CommentsForComparedCommit>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `comments_for_compared_commit_data`.
@@ -3554,11 +4401,21 @@ pub mod get_comments_for_compared_commit_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCommentsForComparedCommitOutput`](crate::output::GetCommentsForComparedCommitOutput).
         pub fn build(self) -> crate::output::GetCommentsForComparedCommitOutput {
             crate::output::GetCommentsForComparedCommitOutput {
                 comments_for_compared_commit_data: self.comments_for_compared_commit_data,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3580,6 +4437,7 @@ pub struct GetCommentReactionsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetCommentReactionsOutput {
     /// <p>An array of reactions to the specified comment.</p>
@@ -3593,6 +4451,11 @@ impl GetCommentReactionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCommentReactionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput).
 pub mod get_comment_reactions_output {
 
@@ -3603,6 +4466,7 @@ pub mod get_comment_reactions_output {
         pub(crate) reactions_for_comment:
             std::option::Option<std::vec::Vec<crate::model::ReactionForComment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `reactions_for_comment`.
@@ -3634,11 +4498,21 @@ pub mod get_comment_reactions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCommentReactionsOutput`](crate::output::GetCommentReactionsOutput).
         pub fn build(self) -> crate::output::GetCommentReactionsOutput {
             crate::output::GetCommentReactionsOutput {
                 reactions_for_comment: self.reactions_for_comment,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3657,11 +4531,17 @@ pub struct GetCommentOutput {
     /// <p>The contents of the comment.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl GetCommentOutput {
     /// <p>The contents of the comment.</p>
     pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
         self.comment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetCommentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetCommentOutput`](crate::output::GetCommentOutput).
@@ -3672,6 +4552,7 @@ pub mod get_comment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The contents of the comment.</p>
@@ -3684,10 +4565,20 @@ pub mod get_comment_output {
             self.comment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCommentOutput`](crate::output::GetCommentOutput).
         pub fn build(self) -> crate::output::GetCommentOutput {
             crate::output::GetCommentOutput {
                 comment: self.comment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3706,11 +4597,17 @@ pub struct GetBranchOutput {
     /// <p>The name of the branch.</p>
     #[doc(hidden)]
     pub branch: std::option::Option<crate::model::BranchInfo>,
+    _request_id: Option<String>,
 }
 impl GetBranchOutput {
     /// <p>The name of the branch.</p>
     pub fn branch(&self) -> std::option::Option<&crate::model::BranchInfo> {
         self.branch.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetBranchOutput`](crate::output::GetBranchOutput).
@@ -3721,6 +4618,7 @@ pub mod get_branch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::BranchInfo>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the branch.</p>
@@ -3733,10 +4631,20 @@ pub mod get_branch_output {
             self.branch = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBranchOutput`](crate::output::GetBranchOutput).
         pub fn build(self) -> crate::output::GetBranchOutput {
             crate::output::GetBranchOutput {
                 branch: self.branch,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3755,11 +4663,17 @@ pub struct GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
     #[doc(hidden)]
     pub content: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl GetBlobOutput {
     /// <p>The content of the blob, usually a file.</p>
     pub fn content(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.content.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetBlobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetBlobOutput`](crate::output::GetBlobOutput).
@@ -3770,6 +4684,7 @@ pub mod get_blob_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) content: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The content of the blob, usually a file.</p>
@@ -3782,10 +4697,20 @@ pub mod get_blob_output {
             self.content = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBlobOutput`](crate::output::GetBlobOutput).
         pub fn build(self) -> crate::output::GetBlobOutput {
             crate::output::GetBlobOutput {
                 content: self.content,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3804,6 +4729,7 @@ pub struct GetApprovalRuleTemplateOutput {
     /// <p>The content and structure of the approval rule template.</p>
     #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+    _request_id: Option<String>,
 }
 impl GetApprovalRuleTemplateOutput {
     /// <p>The content and structure of the approval rule template.</p>
@@ -3811,6 +4737,11 @@ impl GetApprovalRuleTemplateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetApprovalRuleTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput).
@@ -3821,6 +4752,7 @@ pub mod get_approval_rule_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The content and structure of the approval rule template.</p>
@@ -3836,10 +4768,20 @@ pub mod get_approval_rule_template_output {
             self.approval_rule_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetApprovalRuleTemplateOutput`](crate::output::GetApprovalRuleTemplateOutput).
         pub fn build(self) -> crate::output::GetApprovalRuleTemplateOutput {
             crate::output::GetApprovalRuleTemplateOutput {
                 approval_rule_template: self.approval_rule_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3858,11 +4800,17 @@ pub struct EvaluatePullRequestApprovalRulesOutput {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     #[doc(hidden)]
     pub evaluation: std::option::Option<crate::model::Evaluation>,
+    _request_id: Option<String>,
 }
 impl EvaluatePullRequestApprovalRulesOutput {
     /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
     pub fn evaluation(&self) -> std::option::Option<&crate::model::Evaluation> {
         self.evaluation.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for EvaluatePullRequestApprovalRulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput).
@@ -3873,6 +4821,7 @@ pub mod evaluate_pull_request_approval_rules_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) evaluation: std::option::Option<crate::model::Evaluation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The result of the evaluation, including the names of the rules whose conditions have been met (if any), the names of the rules whose conditions have not been met (if any), whether the pull request is in the approved state, and whether the pull request approval rule has been set aside by an override. </p>
@@ -3888,10 +4837,20 @@ pub mod evaluate_pull_request_approval_rules_output {
             self.evaluation = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`EvaluatePullRequestApprovalRulesOutput`](crate::output::EvaluatePullRequestApprovalRulesOutput).
         pub fn build(self) -> crate::output::EvaluatePullRequestApprovalRulesOutput {
             crate::output::EvaluatePullRequestApprovalRulesOutput {
                 evaluation: self.evaluation,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3906,18 +4865,38 @@ impl EvaluatePullRequestApprovalRulesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateApprovalRuleTemplateFromRepositoryOutput {}
+pub struct DisassociateApprovalRuleTemplateFromRepositoryOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisassociateApprovalRuleTemplateFromRepositoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput).
 pub mod disassociate_approval_rule_template_from_repository_output {
 
     /// A builder for [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateApprovalRuleTemplateFromRepositoryOutput`](crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput).
         pub fn build(self) -> crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput {
-            crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput {}
+            crate::output::DisassociateApprovalRuleTemplateFromRepositoryOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3940,6 +4919,7 @@ pub struct DescribePullRequestEventsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribePullRequestEventsOutput {
     /// <p>Information about the pull request events.</p>
@@ -3949,6 +4929,11 @@ impl DescribePullRequestEventsOutput {
     /// <p>An enumeration token that can be used in a request to return the next batch of the results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribePullRequestEventsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput).
@@ -3961,6 +4946,7 @@ pub mod describe_pull_request_events_output {
         pub(crate) pull_request_events:
             std::option::Option<std::vec::Vec<crate::model::PullRequestEvent>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `pull_request_events`.
@@ -3992,11 +4978,21 @@ pub mod describe_pull_request_events_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribePullRequestEventsOutput`](crate::output::DescribePullRequestEventsOutput).
         pub fn build(self) -> crate::output::DescribePullRequestEventsOutput {
             crate::output::DescribePullRequestEventsOutput {
                 pull_request_events: self.pull_request_events,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4030,6 +5026,7 @@ pub struct DescribeMergeConflictsOutput {
     /// <p>The commit ID of the merge base.</p>
     #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeMergeConflictsOutput {
     /// <p>Contains metadata about the conflicts found in the merge.</p>
@@ -4057,6 +5054,11 @@ impl DescribeMergeConflictsOutput {
         self.base_commit_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeMergeConflictsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput).
 pub mod describe_merge_conflicts_output {
 
@@ -4070,6 +5072,7 @@ pub mod describe_merge_conflicts_output {
         pub(crate) destination_commit_id: std::option::Option<std::string::String>,
         pub(crate) source_commit_id: std::option::Option<std::string::String>,
         pub(crate) base_commit_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains metadata about the conflicts found in the merge.</p>
@@ -4153,6 +5156,15 @@ pub mod describe_merge_conflicts_output {
             self.base_commit_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeMergeConflictsOutput`](crate::output::DescribeMergeConflictsOutput).
         pub fn build(self) -> crate::output::DescribeMergeConflictsOutput {
             crate::output::DescribeMergeConflictsOutput {
@@ -4162,6 +5174,7 @@ pub mod describe_merge_conflicts_output {
                 destination_commit_id: self.destination_commit_id,
                 source_commit_id: self.source_commit_id,
                 base_commit_id: self.base_commit_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4180,11 +5193,17 @@ pub struct DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
     #[doc(hidden)]
     pub repository_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteRepositoryOutput {
     /// <p>The ID of the repository that was deleted.</p>
     pub fn repository_id(&self) -> std::option::Option<&str> {
         self.repository_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteRepositoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
@@ -4195,6 +5214,7 @@ pub mod delete_repository_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the repository that was deleted.</p>
@@ -4210,10 +5230,20 @@ pub mod delete_repository_output {
             self.repository_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRepositoryOutput`](crate::output::DeleteRepositoryOutput).
         pub fn build(self) -> crate::output::DeleteRepositoryOutput {
             crate::output::DeleteRepositoryOutput {
                 repository_id: self.repository_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4234,6 +5264,7 @@ pub struct DeletePullRequestApprovalRuleOutput {
     /// </note>
     #[doc(hidden)]
     pub approval_rule_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeletePullRequestApprovalRuleOutput {
     /// <p>The ID of the deleted approval rule. </p> <note>
@@ -4241,6 +5272,11 @@ impl DeletePullRequestApprovalRuleOutput {
     /// </note>
     pub fn approval_rule_id(&self) -> std::option::Option<&str> {
         self.approval_rule_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeletePullRequestApprovalRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput).
@@ -4251,6 +5287,7 @@ pub mod delete_pull_request_approval_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the deleted approval rule. </p> <note>
@@ -4270,10 +5307,20 @@ pub mod delete_pull_request_approval_rule_output {
             self.approval_rule_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePullRequestApprovalRuleOutput`](crate::output::DeletePullRequestApprovalRuleOutput).
         pub fn build(self) -> crate::output::DeletePullRequestApprovalRuleOutput {
             crate::output::DeletePullRequestApprovalRuleOutput {
                 approval_rule_id: self.approval_rule_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4301,6 +5348,7 @@ pub struct DeleteFileOutput {
     /// <p>The fully qualified path to the file to be deleted, including the full name and extension of that file.</p>
     #[doc(hidden)]
     pub file_path: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteFileOutput {
     /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
@@ -4320,6 +5368,11 @@ impl DeleteFileOutput {
         self.file_path.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteFileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteFileOutput`](crate::output::DeleteFileOutput).
 pub mod delete_file_output {
 
@@ -4331,6 +5384,7 @@ pub mod delete_file_output {
         pub(crate) blob_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
         pub(crate) file_path: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full commit ID of the commit that contains the change that deletes the file.</p>
@@ -4373,6 +5427,15 @@ pub mod delete_file_output {
             self.file_path = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteFileOutput`](crate::output::DeleteFileOutput).
         pub fn build(self) -> crate::output::DeleteFileOutput {
             crate::output::DeleteFileOutput {
@@ -4380,6 +5443,7 @@ pub mod delete_file_output {
                 blob_id: self.blob_id,
                 tree_id: self.tree_id,
                 file_path: self.file_path,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4398,11 +5462,17 @@ pub struct DeleteCommentContentOutput {
     /// <p>Information about the comment you just deleted.</p>
     #[doc(hidden)]
     pub comment: std::option::Option<crate::model::Comment>,
+    _request_id: Option<String>,
 }
 impl DeleteCommentContentOutput {
     /// <p>Information about the comment you just deleted.</p>
     pub fn comment(&self) -> std::option::Option<&crate::model::Comment> {
         self.comment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteCommentContentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput).
@@ -4413,6 +5483,7 @@ pub mod delete_comment_content_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) comment: std::option::Option<crate::model::Comment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the comment you just deleted.</p>
@@ -4425,10 +5496,20 @@ pub mod delete_comment_content_output {
             self.comment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteCommentContentOutput`](crate::output::DeleteCommentContentOutput).
         pub fn build(self) -> crate::output::DeleteCommentContentOutput {
             crate::output::DeleteCommentContentOutput {
                 comment: self.comment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4447,11 +5528,17 @@ pub struct DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     #[doc(hidden)]
     pub deleted_branch: std::option::Option<crate::model::BranchInfo>,
+    _request_id: Option<String>,
 }
 impl DeleteBranchOutput {
     /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
     pub fn deleted_branch(&self) -> std::option::Option<&crate::model::BranchInfo> {
         self.deleted_branch.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
@@ -4462,6 +5549,7 @@ pub mod delete_branch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) deleted_branch: std::option::Option<crate::model::BranchInfo>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the branch deleted by the operation, including the branch name and the commit ID that was the tip of the branch.</p>
@@ -4477,10 +5565,20 @@ pub mod delete_branch_output {
             self.deleted_branch = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
         pub fn build(self) -> crate::output::DeleteBranchOutput {
             crate::output::DeleteBranchOutput {
                 deleted_branch: self.deleted_branch,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4499,11 +5597,17 @@ pub struct DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
     #[doc(hidden)]
     pub approval_rule_template_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteApprovalRuleTemplateOutput {
     /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
     pub fn approval_rule_template_id(&self) -> std::option::Option<&str> {
         self.approval_rule_template_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteApprovalRuleTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput).
@@ -4514,6 +5618,7 @@ pub mod delete_approval_rule_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The system-generated ID of the deleted approval rule template. If the template has been previously deleted, the only response is a 200 OK.</p>
@@ -4529,10 +5634,20 @@ pub mod delete_approval_rule_template_output {
             self.approval_rule_template_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteApprovalRuleTemplateOutput`](crate::output::DeleteApprovalRuleTemplateOutput).
         pub fn build(self) -> crate::output::DeleteApprovalRuleTemplateOutput {
             crate::output::DeleteApprovalRuleTemplateOutput {
                 approval_rule_template_id: self.approval_rule_template_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4554,6 +5669,7 @@ pub struct CreateUnreferencedMergeCommitOutput {
     /// <p>The full SHA-1 pointer of the tree information for the commit that contains the merge results.</p>
     #[doc(hidden)]
     pub tree_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateUnreferencedMergeCommitOutput {
     /// <p>The full commit ID of the commit that contains your merge results.</p>
@@ -4565,6 +5681,11 @@ impl CreateUnreferencedMergeCommitOutput {
         self.tree_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateUnreferencedMergeCommitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput).
 pub mod create_unreferenced_merge_commit_output {
 
@@ -4574,6 +5695,7 @@ pub mod create_unreferenced_merge_commit_output {
     pub struct Builder {
         pub(crate) commit_id: std::option::Option<std::string::String>,
         pub(crate) tree_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full commit ID of the commit that contains your merge results.</p>
@@ -4596,11 +5718,21 @@ pub mod create_unreferenced_merge_commit_output {
             self.tree_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateUnreferencedMergeCommitOutput`](crate::output::CreateUnreferencedMergeCommitOutput).
         pub fn build(self) -> crate::output::CreateUnreferencedMergeCommitOutput {
             crate::output::CreateUnreferencedMergeCommitOutput {
                 commit_id: self.commit_id,
                 tree_id: self.tree_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4619,11 +5751,17 @@ pub struct CreateRepositoryOutput {
     /// <p>Information about the newly created repository.</p>
     #[doc(hidden)]
     pub repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
+    _request_id: Option<String>,
 }
 impl CreateRepositoryOutput {
     /// <p>Information about the newly created repository.</p>
     pub fn repository_metadata(&self) -> std::option::Option<&crate::model::RepositoryMetadata> {
         self.repository_metadata.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateRepositoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
@@ -4634,6 +5772,7 @@ pub mod create_repository_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) repository_metadata: std::option::Option<crate::model::RepositoryMetadata>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the newly created repository.</p>
@@ -4649,10 +5788,20 @@ pub mod create_repository_output {
             self.repository_metadata = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRepositoryOutput`](crate::output::CreateRepositoryOutput).
         pub fn build(self) -> crate::output::CreateRepositoryOutput {
             crate::output::CreateRepositoryOutput {
                 repository_metadata: self.repository_metadata,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4671,11 +5820,17 @@ pub struct CreatePullRequestApprovalRuleOutput {
     /// <p>Information about the created approval rule.</p>
     #[doc(hidden)]
     pub approval_rule: std::option::Option<crate::model::ApprovalRule>,
+    _request_id: Option<String>,
 }
 impl CreatePullRequestApprovalRuleOutput {
     /// <p>Information about the created approval rule.</p>
     pub fn approval_rule(&self) -> std::option::Option<&crate::model::ApprovalRule> {
         self.approval_rule.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreatePullRequestApprovalRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput).
@@ -4686,6 +5841,7 @@ pub mod create_pull_request_approval_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule: std::option::Option<crate::model::ApprovalRule>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the created approval rule.</p>
@@ -4701,10 +5857,20 @@ pub mod create_pull_request_approval_rule_output {
             self.approval_rule = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePullRequestApprovalRuleOutput`](crate::output::CreatePullRequestApprovalRuleOutput).
         pub fn build(self) -> crate::output::CreatePullRequestApprovalRuleOutput {
             crate::output::CreatePullRequestApprovalRuleOutput {
                 approval_rule: self.approval_rule,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4723,11 +5889,17 @@ pub struct CreatePullRequestOutput {
     /// <p>Information about the newly created pull request.</p>
     #[doc(hidden)]
     pub pull_request: std::option::Option<crate::model::PullRequest>,
+    _request_id: Option<String>,
 }
 impl CreatePullRequestOutput {
     /// <p>Information about the newly created pull request.</p>
     pub fn pull_request(&self) -> std::option::Option<&crate::model::PullRequest> {
         self.pull_request.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreatePullRequestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput).
@@ -4738,6 +5910,7 @@ pub mod create_pull_request_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) pull_request: std::option::Option<crate::model::PullRequest>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the newly created pull request.</p>
@@ -4753,10 +5926,20 @@ pub mod create_pull_request_output {
             self.pull_request = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePullRequestOutput`](crate::output::CreatePullRequestOutput).
         pub fn build(self) -> crate::output::CreatePullRequestOutput {
             crate::output::CreatePullRequestOutput {
                 pull_request: self.pull_request,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4787,6 +5970,7 @@ pub struct CreateCommitOutput {
     /// <p>The files deleted as part of the committed file changes.</p>
     #[doc(hidden)]
     pub files_deleted: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
+    _request_id: Option<String>,
 }
 impl CreateCommitOutput {
     /// <p>The full commit ID of the commit that contains your committed file changes.</p>
@@ -4810,6 +5994,11 @@ impl CreateCommitOutput {
         self.files_deleted.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCommitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateCommitOutput`](crate::output::CreateCommitOutput).
 pub mod create_commit_output {
 
@@ -4822,6 +6011,7 @@ pub mod create_commit_output {
         pub(crate) files_added: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
         pub(crate) files_updated: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
         pub(crate) files_deleted: std::option::Option<std::vec::Vec<crate::model::FileMetadata>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full commit ID of the commit that contains your committed file changes.</p>
@@ -4901,6 +6091,15 @@ pub mod create_commit_output {
             self.files_deleted = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCommitOutput`](crate::output::CreateCommitOutput).
         pub fn build(self) -> crate::output::CreateCommitOutput {
             crate::output::CreateCommitOutput {
@@ -4909,6 +6108,7 @@ pub mod create_commit_output {
                 files_added: self.files_added,
                 files_updated: self.files_updated,
                 files_deleted: self.files_deleted,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4923,18 +6123,38 @@ impl CreateCommitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateBranchOutput {}
+pub struct CreateBranchOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBranchOutput`](crate::output::CreateBranchOutput).
 pub mod create_branch_output {
 
     /// A builder for [`CreateBranchOutput`](crate::output::CreateBranchOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBranchOutput`](crate::output::CreateBranchOutput).
         pub fn build(self) -> crate::output::CreateBranchOutput {
-            crate::output::CreateBranchOutput {}
+            crate::output::CreateBranchOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -4952,6 +6172,7 @@ pub struct CreateApprovalRuleTemplateOutput {
     /// <p>The content and structure of the created approval rule template.</p>
     #[doc(hidden)]
     pub approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+    _request_id: Option<String>,
 }
 impl CreateApprovalRuleTemplateOutput {
     /// <p>The content and structure of the created approval rule template.</p>
@@ -4959,6 +6180,11 @@ impl CreateApprovalRuleTemplateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ApprovalRuleTemplate> {
         self.approval_rule_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateApprovalRuleTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput).
@@ -4969,6 +6195,7 @@ pub mod create_approval_rule_template_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) approval_rule_template: std::option::Option<crate::model::ApprovalRuleTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The content and structure of the created approval rule template.</p>
@@ -4984,10 +6211,20 @@ pub mod create_approval_rule_template_output {
             self.approval_rule_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateApprovalRuleTemplateOutput`](crate::output::CreateApprovalRuleTemplateOutput).
         pub fn build(self) -> crate::output::CreateApprovalRuleTemplateOutput {
             crate::output::CreateApprovalRuleTemplateOutput {
                 approval_rule_template: self.approval_rule_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5009,6 +6246,7 @@ pub struct BatchGetRepositoriesOutput {
     /// <p>Returns a list of repository names for which information could not be found.</p>
     #[doc(hidden)]
     pub repositories_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl BatchGetRepositoriesOutput {
     /// <p>A list of repositories returned by the batch get repositories operation.</p>
@@ -5018,6 +6256,11 @@ impl BatchGetRepositoriesOutput {
     /// <p>Returns a list of repository names for which information could not be found.</p>
     pub fn repositories_not_found(&self) -> std::option::Option<&[std::string::String]> {
         self.repositories_not_found.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchGetRepositoriesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput).
@@ -5030,6 +6273,7 @@ pub mod batch_get_repositories_output {
         pub(crate) repositories:
             std::option::Option<std::vec::Vec<crate::model::RepositoryMetadata>>,
         pub(crate) repositories_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `repositories`.
@@ -5070,11 +6314,21 @@ pub mod batch_get_repositories_output {
             self.repositories_not_found = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchGetRepositoriesOutput`](crate::output::BatchGetRepositoriesOutput).
         pub fn build(self) -> crate::output::BatchGetRepositoriesOutput {
             crate::output::BatchGetRepositoriesOutput {
                 repositories: self.repositories,
                 repositories_not_found: self.repositories_not_found,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5096,6 +6350,7 @@ pub struct BatchGetCommitsOutput {
     /// <p>Returns any commit IDs for which information could not be found. For example, if one of the commit IDs was a shortened SHA ID or that commit was not found in the specified repository, the ID returns an error object with more information.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
+    _request_id: Option<String>,
 }
 impl BatchGetCommitsOutput {
     /// <p>An array of commit data type objects, each of which contains information about a specified commit.</p>
@@ -5107,6 +6362,11 @@ impl BatchGetCommitsOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchGetCommitsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput).
 pub mod batch_get_commits_output {
 
@@ -5116,6 +6376,7 @@ pub mod batch_get_commits_output {
     pub struct Builder {
         pub(crate) commits: std::option::Option<std::vec::Vec<crate::model::Commit>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchGetCommitsError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `commits`.
@@ -5156,11 +6417,21 @@ pub mod batch_get_commits_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchGetCommitsOutput`](crate::output::BatchGetCommitsOutput).
         pub fn build(self) -> crate::output::BatchGetCommitsOutput {
             crate::output::BatchGetCommitsOutput {
                 commits: self.commits,
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5184,6 +6455,7 @@ pub struct BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
     >,
+    _request_id: Option<String>,
 }
 impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
     /// <p>A list of repository names that have had their association with the template removed.</p>
@@ -5199,6 +6471,13 @@ impl BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId
+    for BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput
+{
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
 pub mod batch_disassociate_approval_rule_template_from_repositories_output {
 
@@ -5211,6 +6490,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
         pub(crate) errors: std::option::Option<
             std::vec::Vec<crate::model::BatchDisassociateApprovalRuleTemplateFromRepositoriesError>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `disassociated_repository_names`.
@@ -5261,6 +6541,15 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput`](crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput).
         pub fn build(
             self,
@@ -5268,6 +6557,7 @@ pub mod batch_disassociate_approval_rule_template_from_repositories_output {
             crate::output::BatchDisassociateApprovalRuleTemplateFromRepositoriesOutput {
                 disassociated_repository_names: self.disassociated_repository_names,
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5303,6 +6593,7 @@ pub struct BatchDescribeMergeConflictsOutput {
     /// <p>The commit ID of the merge base.</p>
     #[doc(hidden)]
     pub base_commit_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl BatchDescribeMergeConflictsOutput {
     /// <p>A list of conflicts for each file, including the conflict metadata and the hunks of the differences between the files.</p>
@@ -5330,6 +6621,11 @@ impl BatchDescribeMergeConflictsOutput {
         self.base_commit_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchDescribeMergeConflictsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput).
 pub mod batch_describe_merge_conflicts_output {
 
@@ -5344,6 +6640,7 @@ pub mod batch_describe_merge_conflicts_output {
         pub(crate) destination_commit_id: std::option::Option<std::string::String>,
         pub(crate) source_commit_id: std::option::Option<std::string::String>,
         pub(crate) base_commit_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `conflicts`.
@@ -5435,6 +6732,15 @@ pub mod batch_describe_merge_conflicts_output {
             self.base_commit_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDescribeMergeConflictsOutput`](crate::output::BatchDescribeMergeConflictsOutput).
         pub fn build(self) -> crate::output::BatchDescribeMergeConflictsOutput {
             crate::output::BatchDescribeMergeConflictsOutput {
@@ -5444,6 +6750,7 @@ pub mod batch_describe_merge_conflicts_output {
                 destination_commit_id: self.destination_commit_id,
                 source_commit_id: self.source_commit_id,
                 base_commit_id: self.base_commit_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5467,6 +6774,7 @@ pub struct BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     pub errors: std::option::Option<
         std::vec::Vec<crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
     >,
+    _request_id: Option<String>,
 }
 impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
     /// <p>A list of names of the repositories that have been associated with the template.</p>
@@ -5481,6 +6789,11 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
 pub mod batch_associate_approval_rule_template_with_repositories_output {
 
@@ -5493,6 +6806,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_output {
         pub(crate) errors: std::option::Option<
             std::vec::Vec<crate::model::BatchAssociateApprovalRuleTemplateWithRepositoriesError>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `associated_repository_names`.
@@ -5543,6 +6857,15 @@ pub mod batch_associate_approval_rule_template_with_repositories_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchAssociateApprovalRuleTemplateWithRepositoriesOutput`](crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput).
         pub fn build(
             self,
@@ -5550,6 +6873,7 @@ pub mod batch_associate_approval_rule_template_with_repositories_output {
             crate::output::BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
                 associated_repository_names: self.associated_repository_names,
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5566,18 +6890,38 @@ impl BatchAssociateApprovalRuleTemplateWithRepositoriesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateApprovalRuleTemplateWithRepositoryOutput {}
+pub struct AssociateApprovalRuleTemplateWithRepositoryOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AssociateApprovalRuleTemplateWithRepositoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput).
 pub mod associate_approval_rule_template_with_repository_output {
 
     /// A builder for [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateApprovalRuleTemplateWithRepositoryOutput`](crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput).
         pub fn build(self) -> crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput {
-            crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput {}
+            crate::output::AssociateApprovalRuleTemplateWithRepositoryOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

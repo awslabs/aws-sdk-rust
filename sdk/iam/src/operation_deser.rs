@@ -6,8 +6,11 @@ pub fn parse_add_client_id_to_open_id_connect_provider_error(
     crate::output::AddClientIdToOpenIdConnectProviderOutput,
     crate::error::AddClientIDToOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -17,84 +20,74 @@ pub fn parse_add_client_id_to_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::AddClientIDToOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::AddClientIDToOpenIDConnectProviderErrorKind::InvalidInputException(
-                {
+        "InvalidInput" => {
+            crate::error::AddClientIDToOpenIDConnectProviderError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_input_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "LimitExceeded" => crate::error::AddClientIDToOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::AddClientIDToOpenIDConnectProviderErrorKind::LimitExceededException(
-                {
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::AddClientIDToOpenIDConnectProviderError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "NoSuchEntity" => crate::error::AddClientIDToOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::AddClientIDToOpenIDConnectProviderErrorKind::NoSuchEntityException(
-                {
+                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::AddClientIDToOpenIDConnectProviderError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::no_such_entity_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceFailure" => crate::error::AddClientIDToOpenIDConnectProviderError {
-            meta: generic,
-            kind:
-                crate::error::AddClientIDToOpenIDConnectProviderErrorKind::ServiceFailureException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_failure_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::AddClientIDToOpenIDConnectProviderError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddClientIDToOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AddClientIDToOpenIDConnectProviderError::generic(generic),
     })
 }
@@ -111,6 +104,9 @@ pub fn parse_add_client_id_to_open_id_connect_provider_response(
         let mut output =
             crate::output::add_client_id_to_open_id_connect_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -122,8 +118,11 @@ pub fn parse_add_role_to_instance_profile_error(
     crate::output::AddRoleToInstanceProfileOutput,
     crate::error::AddRoleToInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -135,9 +134,8 @@ pub fn parse_add_role_to_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::AddRoleToInstanceProfileError {
-            meta: generic,
-            kind: crate::error::AddRoleToInstanceProfileErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => {
+            crate::error::AddRoleToInstanceProfileError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -145,68 +143,66 @@ pub fn parse_add_role_to_instance_profile_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::AddRoleToInstanceProfileError {
-            meta: generic,
-            kind: crate::error::AddRoleToInstanceProfileErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::AddRoleToInstanceProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::AddRoleToInstanceProfileError {
-            meta: generic,
-            kind: crate::error::AddRoleToInstanceProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::AddRoleToInstanceProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::AddRoleToInstanceProfileError {
-            meta: generic,
-            kind: crate::error::AddRoleToInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::AddRoleToInstanceProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::AddRoleToInstanceProfileError {
-            meta: generic,
-            kind: crate::error::AddRoleToInstanceProfileErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => {
+            crate::error::AddRoleToInstanceProfileError::UnmodifiableEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -214,14 +210,15 @@ pub fn parse_add_role_to_instance_profile_error(
                         crate::error::unmodifiable_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddRoleToInstanceProfileError::generic(generic),
     })
 }
@@ -237,6 +234,9 @@ pub fn parse_add_role_to_instance_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_role_to_instance_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -245,8 +245,11 @@ pub fn parse_add_role_to_instance_profile_response(
 pub fn parse_add_user_to_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddUserToGroupOutput, crate::error::AddUserToGroupError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddUserToGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddUserToGroupError::unhandled(generic)),
@@ -254,57 +257,55 @@ pub fn parse_add_user_to_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::AddUserToGroupError {
-            meta: generic,
-            kind: crate::error::AddUserToGroupErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::AddUserToGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddUserToGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::AddUserToGroupError {
-            meta: generic,
-            kind: crate::error::AddUserToGroupErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::AddUserToGroupError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddUserToGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::AddUserToGroupError {
-            meta: generic,
-            kind: crate::error::AddUserToGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::AddUserToGroupError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddUserToGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AddUserToGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AddUserToGroupError::generic(generic),
     })
 }
@@ -317,6 +318,9 @@ pub fn parse_add_user_to_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_user_to_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -326,8 +330,11 @@ pub fn parse_attach_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachGroupPolicyOutput, crate::error::AttachGroupPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachGroupPolicyError::unhandled(generic)),
@@ -335,60 +342,59 @@ pub fn parse_attach_group_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::AttachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::AttachGroupPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::AttachGroupPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::AttachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::AttachGroupPolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::AttachGroupPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::AttachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::AttachGroupPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::AttachGroupPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyNotAttachable" => crate::error::AttachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::AttachGroupPolicyErrorKind::PolicyNotAttachableException({
+            })
+        }
+        "PolicyNotAttachable" => {
+            crate::error::AttachGroupPolicyError::PolicyNotAttachableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -396,31 +402,30 @@ pub fn parse_attach_group_policy_error(
                         crate::error::policy_not_attachable_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::AttachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::AttachGroupPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::AttachGroupPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachGroupPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AttachGroupPolicyError::generic(generic),
     })
 }
@@ -434,6 +439,9 @@ pub fn parse_attach_group_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_group_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -443,8 +451,11 @@ pub fn parse_attach_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachRolePolicyOutput, crate::error::AttachRolePolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachRolePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachRolePolicyError::unhandled(generic)),
@@ -452,60 +463,59 @@ pub fn parse_attach_role_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::AttachRolePolicyError {
-            meta: generic,
-            kind: crate::error::AttachRolePolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::AttachRolePolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::AttachRolePolicyError {
-            meta: generic,
-            kind: crate::error::AttachRolePolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::AttachRolePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::AttachRolePolicyError {
-            meta: generic,
-            kind: crate::error::AttachRolePolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::AttachRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyNotAttachable" => crate::error::AttachRolePolicyError {
-            meta: generic,
-            kind: crate::error::AttachRolePolicyErrorKind::PolicyNotAttachableException({
+            })
+        }
+        "PolicyNotAttachable" => {
+            crate::error::AttachRolePolicyError::PolicyNotAttachableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -513,49 +523,45 @@ pub fn parse_attach_role_policy_error(
                         crate::error::policy_not_attachable_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::AttachRolePolicyError {
-            meta: generic,
-            kind: crate::error::AttachRolePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::AttachRolePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::AttachRolePolicyError {
-            meta: generic,
-            kind: crate::error::AttachRolePolicyErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::error::AttachRolePolicyError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AttachRolePolicyError::generic(generic),
     })
 }
@@ -569,6 +575,9 @@ pub fn parse_attach_role_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_role_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -578,8 +587,11 @@ pub fn parse_attach_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachUserPolicyOutput, crate::error::AttachUserPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachUserPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachUserPolicyError::unhandled(generic)),
@@ -587,60 +599,59 @@ pub fn parse_attach_user_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::AttachUserPolicyError {
-            meta: generic,
-            kind: crate::error::AttachUserPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::AttachUserPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::AttachUserPolicyError {
-            meta: generic,
-            kind: crate::error::AttachUserPolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::AttachUserPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::AttachUserPolicyError {
-            meta: generic,
-            kind: crate::error::AttachUserPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::AttachUserPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyNotAttachable" => crate::error::AttachUserPolicyError {
-            meta: generic,
-            kind: crate::error::AttachUserPolicyErrorKind::PolicyNotAttachableException({
+            })
+        }
+        "PolicyNotAttachable" => {
+            crate::error::AttachUserPolicyError::PolicyNotAttachableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -648,31 +659,30 @@ pub fn parse_attach_user_policy_error(
                         crate::error::policy_not_attachable_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::AttachUserPolicyError {
-            meta: generic,
-            kind: crate::error::AttachUserPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::AttachUserPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachUserPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachUserPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AttachUserPolicyError::generic(generic),
     })
 }
@@ -686,6 +696,9 @@ pub fn parse_attach_user_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_user_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -694,8 +707,11 @@ pub fn parse_attach_user_policy_response(
 pub fn parse_change_password_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ChangePasswordOutput, crate::error::ChangePasswordError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ChangePasswordError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ChangePasswordError::unhandled(generic)),
@@ -703,9 +719,8 @@ pub fn parse_change_password_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityTemporarilyUnmodifiable" => crate::error::ChangePasswordError {
-            meta: generic,
-            kind: crate::error::ChangePasswordErrorKind::EntityTemporarilyUnmodifiableException({
+        "EntityTemporarilyUnmodifiable" => {
+            crate::error::ChangePasswordError::EntityTemporarilyUnmodifiableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -713,68 +728,66 @@ pub fn parse_change_password_error(
                         crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidUserType" => crate::error::ChangePasswordError {
-            meta: generic,
-            kind: crate::error::ChangePasswordErrorKind::InvalidUserTypeException({
+            })
+        }
+        "InvalidUserType" => crate::error::ChangePasswordError::InvalidUserTypeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_user_type_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_user_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::ChangePasswordError {
-            meta: generic,
-            kind: crate::error::ChangePasswordErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_user_type_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_user_type_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::ChangePasswordError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ChangePasswordError {
-            meta: generic,
-            kind: crate::error::ChangePasswordErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ChangePasswordError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PasswordPolicyViolation" => crate::error::ChangePasswordError {
-            meta: generic,
-            kind: crate::error::ChangePasswordErrorKind::PasswordPolicyViolationException({
+            })
+        }
+        "PasswordPolicyViolation" => {
+            crate::error::ChangePasswordError::PasswordPolicyViolationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -782,31 +795,30 @@ pub fn parse_change_password_error(
                         crate::error::password_policy_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_password_policy_violation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ChangePasswordError {
-            meta: generic,
-            kind: crate::error::ChangePasswordErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ChangePasswordError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ChangePasswordError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ChangePasswordError::generic(generic),
     })
 }
@@ -819,6 +831,9 @@ pub fn parse_change_password_response(
         #[allow(unused_mut)]
         let mut output = crate::output::change_password_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -827,8 +842,11 @@ pub fn parse_change_password_response(
 pub fn parse_create_access_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAccessKeyOutput, crate::error::CreateAccessKeyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAccessKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAccessKeyError::unhandled(generic)),
@@ -836,57 +854,55 @@ pub fn parse_create_access_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::CreateAccessKeyError {
-            meta: generic,
-            kind: crate::error::CreateAccessKeyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::CreateAccessKeyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreateAccessKeyError {
-            meta: generic,
-            kind: crate::error::CreateAccessKeyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreateAccessKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateAccessKeyError {
-            meta: generic,
-            kind: crate::error::CreateAccessKeyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateAccessKeyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccessKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateAccessKeyError::generic(generic),
     })
 }
@@ -904,6 +920,9 @@ pub fn parse_create_access_key_response(
             output,
         )
         .map_err(crate::error::CreateAccessKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -915,8 +934,11 @@ pub fn parse_create_account_alias_error(
     crate::output::CreateAccountAliasOutput,
     crate::error::CreateAccountAliasError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAccountAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAccountAliasError::unhandled(generic)),
@@ -924,9 +946,8 @@ pub fn parse_create_account_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::CreateAccountAliasError {
-            meta: generic,
-            kind: crate::error::CreateAccountAliasErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => {
+            crate::error::CreateAccountAliasError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -934,48 +955,47 @@ pub fn parse_create_account_alias_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateAccountAliasError {
-            meta: generic,
-            kind: crate::error::CreateAccountAliasErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateAccountAliasError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateAccountAliasError {
-            meta: generic,
-            kind: crate::error::CreateAccountAliasErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateAccountAliasError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccountAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAccountAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateAccountAliasError::generic(generic),
     })
 }
@@ -991,6 +1011,9 @@ pub fn parse_create_account_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_account_alias_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -999,8 +1022,11 @@ pub fn parse_create_account_alias_response(
 pub fn parse_create_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateGroupError::unhandled(generic)),
@@ -1008,75 +1034,70 @@ pub fn parse_create_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::CreateGroupError {
-            meta: generic,
-            kind: crate::error::CreateGroupErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => crate::error::CreateGroupError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateGroupError {
-            meta: generic,
-            kind: crate::error::CreateGroupErrorKind::LimitExceededException({
+                let mut output = crate::error::entity_already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::CreateGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreateGroupError {
-            meta: generic,
-            kind: crate::error::CreateGroupErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreateGroupError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateGroupError {
-            meta: generic,
-            kind: crate::error::CreateGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateGroupError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateGroupError::generic(generic),
     })
 }
@@ -1094,6 +1115,9 @@ pub fn parse_create_group_response(
             output,
         )
         .map_err(crate::error::CreateGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1105,8 +1129,11 @@ pub fn parse_create_instance_profile_error(
     crate::output::CreateInstanceProfileOutput,
     crate::error::CreateInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateInstanceProfileError::unhandled(generic)),
@@ -1114,9 +1141,8 @@ pub fn parse_create_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreateInstanceProfileError {
-            meta: generic,
-            kind: crate::error::CreateInstanceProfileErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::CreateInstanceProfileError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1124,17 +1150,17 @@ pub fn parse_create_instance_profile_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::CreateInstanceProfileError {
-            meta: generic,
-            kind: crate::error::CreateInstanceProfileErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => {
+            crate::error::CreateInstanceProfileError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1142,65 +1168,64 @@ pub fn parse_create_instance_profile_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::CreateInstanceProfileError {
-            meta: generic,
-            kind: crate::error::CreateInstanceProfileErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::CreateInstanceProfileError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateInstanceProfileError {
-            meta: generic,
-            kind: crate::error::CreateInstanceProfileErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateInstanceProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateInstanceProfileError {
-            meta: generic,
-            kind: crate::error::CreateInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateInstanceProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateInstanceProfileError::generic(generic),
     })
 }
@@ -1221,6 +1246,9 @@ pub fn parse_create_instance_profile_response(
             output,
         )
         .map_err(crate::error::CreateInstanceProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1232,8 +1260,11 @@ pub fn parse_create_login_profile_error(
     crate::output::CreateLoginProfileOutput,
     crate::error::CreateLoginProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLoginProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateLoginProfileError::unhandled(generic)),
@@ -1241,9 +1272,8 @@ pub fn parse_create_login_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::CreateLoginProfileError {
-            meta: generic,
-            kind: crate::error::CreateLoginProfileErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => {
+            crate::error::CreateLoginProfileError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1251,51 +1281,51 @@ pub fn parse_create_login_profile_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateLoginProfileError {
-            meta: generic,
-            kind: crate::error::CreateLoginProfileErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateLoginProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreateLoginProfileError {
-            meta: generic,
-            kind: crate::error::CreateLoginProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreateLoginProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PasswordPolicyViolation" => crate::error::CreateLoginProfileError {
-            meta: generic,
-            kind: crate::error::CreateLoginProfileErrorKind::PasswordPolicyViolationException({
+            })
+        }
+        "PasswordPolicyViolation" => {
+            crate::error::CreateLoginProfileError::PasswordPolicyViolationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1303,31 +1333,30 @@ pub fn parse_create_login_profile_error(
                         crate::error::password_policy_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_password_policy_violation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateLoginProfileError {
-            meta: generic,
-            kind: crate::error::CreateLoginProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLoginProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateLoginProfileError::generic(generic),
     })
 }
@@ -1348,6 +1377,9 @@ pub fn parse_create_login_profile_response(
             output,
         )
         .map_err(crate::error::CreateLoginProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1359,8 +1391,11 @@ pub fn parse_create_open_id_connect_provider_error(
     crate::output::CreateOpenIdConnectProviderOutput,
     crate::error::CreateOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1372,98 +1407,93 @@ pub fn parse_create_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreateOpenIDConnectProviderError {
-            meta: generic,
-            kind:
-                crate::error::CreateOpenIDConnectProviderErrorKind::ConcurrentModificationException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::concurrent_modification_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "EntityAlreadyExists" => crate::error::CreateOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::CreateOpenIDConnectProviderErrorKind::EntityAlreadyExistsException(
-                {
+        "ConcurrentModification" => {
+            crate::error::CreateOpenIDConnectProviderError::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::entity_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidInput" => crate::error::CreateOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::CreateOpenIDConnectProviderErrorKind::InvalidInputException({
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "EntityAlreadyExists" => {
+            crate::error::CreateOpenIDConnectProviderError::EntityAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::entity_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInput" => {
+            crate::error::CreateOpenIDConnectProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::CreateOpenIDConnectProviderErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateOpenIDConnectProviderError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::CreateOpenIDConnectProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::CreateOpenIDConnectProviderError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateOpenIDConnectProviderError::generic(generic),
     })
 }
@@ -1484,6 +1514,9 @@ pub fn parse_create_open_id_connect_provider_response(
             output,
         )
         .map_err(crate::error::CreateOpenIDConnectProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1492,8 +1525,11 @@ pub fn parse_create_open_id_connect_provider_response(
 pub fn parse_create_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreatePolicyOutput, crate::error::CreatePolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreatePolicyError::unhandled(generic)),
@@ -1501,9 +1537,8 @@ pub fn parse_create_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreatePolicyError {
-            meta: generic,
-            kind: crate::error::CreatePolicyErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::CreatePolicyError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1511,69 +1546,66 @@ pub fn parse_create_policy_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::CreatePolicyError {
-            meta: generic,
-            kind: crate::error::CreatePolicyErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => crate::error::CreatePolicyError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::CreatePolicyError {
-            meta: generic,
-            kind: crate::error::CreatePolicyErrorKind::InvalidInputException({
+                let mut output = crate::error::entity_already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::CreatePolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreatePolicyError {
-            meta: generic,
-            kind: crate::error::CreatePolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreatePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::CreatePolicyError {
-            meta: generic,
-            kind: crate::error::CreatePolicyErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::CreatePolicyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1581,31 +1613,30 @@ pub fn parse_create_policy_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreatePolicyError {
-            meta: generic,
-            kind: crate::error::CreatePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreatePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreatePolicyError::generic(generic),
     })
 }
@@ -1623,6 +1654,9 @@ pub fn parse_create_policy_response(
             output,
         )
         .map_err(crate::error::CreatePolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1634,8 +1668,11 @@ pub fn parse_create_policy_version_error(
     crate::output::CreatePolicyVersionOutput,
     crate::error::CreatePolicyVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreatePolicyVersionError::unhandled(generic)),
@@ -1643,43 +1680,42 @@ pub fn parse_create_policy_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::CreatePolicyVersionError {
-            meta: generic,
-            kind: crate::error::CreatePolicyVersionErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::CreatePolicyVersionError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreatePolicyVersionError {
-            meta: generic,
-            kind: crate::error::CreatePolicyVersionErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreatePolicyVersionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::CreatePolicyVersionError {
-            meta: generic,
-            kind: crate::error::CreatePolicyVersionErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::CreatePolicyVersionError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1687,48 +1723,47 @@ pub fn parse_create_policy_version_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreatePolicyVersionError {
-            meta: generic,
-            kind: crate::error::CreatePolicyVersionErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreatePolicyVersionError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreatePolicyVersionError {
-            meta: generic,
-            kind: crate::error::CreatePolicyVersionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreatePolicyVersionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyVersionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreatePolicyVersionError::generic(generic),
     })
 }
@@ -1749,6 +1784,9 @@ pub fn parse_create_policy_version_response(
             output,
         )
         .map_err(crate::error::CreatePolicyVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1757,8 +1795,11 @@ pub fn parse_create_policy_version_response(
 pub fn parse_create_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRoleOutput, crate::error::CreateRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateRoleError::unhandled(generic)),
@@ -1766,9 +1807,8 @@ pub fn parse_create_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreateRoleError {
-            meta: generic,
-            kind: crate::error::CreateRoleErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::CreateRoleError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1776,69 +1816,66 @@ pub fn parse_create_role_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::CreateRoleError {
-            meta: generic,
-            kind: crate::error::CreateRoleErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => crate::error::CreateRoleError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::CreateRoleError {
-            meta: generic,
-            kind: crate::error::CreateRoleErrorKind::InvalidInputException({
+                let mut output = crate::error::entity_already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::CreateRoleError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateRoleError {
-            meta: generic,
-            kind: crate::error::CreateRoleErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateRoleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::CreateRoleError {
-            meta: generic,
-            kind: crate::error::CreateRoleErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::CreateRoleError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1846,31 +1883,30 @@ pub fn parse_create_role_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateRoleError {
-            meta: generic,
-            kind: crate::error::CreateRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateRoleError::generic(generic),
     })
 }
@@ -1888,6 +1924,9 @@ pub fn parse_create_role_response(
             output,
         )
         .map_err(crate::error::CreateRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1899,8 +1938,11 @@ pub fn parse_create_saml_provider_error(
     crate::output::CreateSamlProviderOutput,
     crate::error::CreateSAMLProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateSAMLProviderError::unhandled(generic)),
@@ -1908,9 +1950,8 @@ pub fn parse_create_saml_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::CreateSAMLProviderErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::CreateSAMLProviderError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1918,17 +1959,17 @@ pub fn parse_create_saml_provider_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::CreateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::CreateSAMLProviderErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => {
+            crate::error::CreateSAMLProviderError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1936,65 +1977,64 @@ pub fn parse_create_saml_provider_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::CreateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::CreateSAMLProviderErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::CreateSAMLProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::CreateSAMLProviderErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateSAMLProviderError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::CreateSAMLProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateSAMLProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSAMLProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateSAMLProviderError::generic(generic),
     })
 }
@@ -2015,6 +2055,9 @@ pub fn parse_create_saml_provider_response(
             output,
         )
         .map_err(crate::error::CreateSAMLProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2026,8 +2069,11 @@ pub fn parse_create_service_linked_role_error(
     crate::output::CreateServiceLinkedRoleOutput,
     crate::error::CreateServiceLinkedRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2039,74 +2085,72 @@ pub fn parse_create_service_linked_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::CreateServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::CreateServiceLinkedRoleErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::CreateServiceLinkedRoleError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::CreateServiceLinkedRoleErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateServiceLinkedRoleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreateServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::CreateServiceLinkedRoleErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreateServiceLinkedRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::CreateServiceLinkedRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateServiceLinkedRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateServiceLinkedRoleError::generic(generic),
     })
 }
@@ -2127,6 +2171,9 @@ pub fn parse_create_service_linked_role_response(
             output,
         )
         .map_err(crate::error::CreateServiceLinkedRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2138,8 +2185,11 @@ pub fn parse_create_service_specific_credential_error(
     crate::output::CreateServiceSpecificCredentialOutput,
     crate::error::CreateServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateServiceSpecificCredentialError::unhandled(generic)),
@@ -2147,61 +2197,58 @@ pub fn parse_create_service_specific_credential_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::CreateServiceSpecificCredentialError {
-            meta: generic,
-            kind: crate::error::CreateServiceSpecificCredentialErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::CreateServiceSpecificCredentialError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreateServiceSpecificCredentialError {
-            meta: generic,
-            kind: crate::error::CreateServiceSpecificCredentialErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreateServiceSpecificCredentialError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotSupportedService" => crate::error::CreateServiceSpecificCredentialError {
-            meta: generic,
-            kind:
-                crate::error::CreateServiceSpecificCredentialErrorKind::ServiceNotSupportedException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_not_supported_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_service_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "NotSupportedService" => {
+            crate::error::CreateServiceSpecificCredentialError::ServiceNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateServiceSpecificCredentialError::generic(generic),
     })
 }
@@ -2224,6 +2271,9 @@ pub fn parse_create_service_specific_credential_response(
                 output,
             )
             .map_err(crate::error::CreateServiceSpecificCredentialError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2232,8 +2282,11 @@ pub fn parse_create_service_specific_credential_response(
 pub fn parse_create_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateUserError::unhandled(generic)),
@@ -2241,9 +2294,8 @@ pub fn parse_create_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreateUserError {
-            meta: generic,
-            kind: crate::error::CreateUserErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::CreateUserError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2251,100 +2303,96 @@ pub fn parse_create_user_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::CreateUserError {
-            meta: generic,
-            kind: crate::error::CreateUserErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => crate::error::CreateUserError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::CreateUserError {
-            meta: generic,
-            kind: crate::error::CreateUserErrorKind::InvalidInputException({
+                let mut output = crate::error::entity_already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::CreateUserError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateUserError {
-            meta: generic,
-            kind: crate::error::CreateUserErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateUserError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::CreateUserError {
-            meta: generic,
-            kind: crate::error::CreateUserErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::CreateUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateUserError {
-            meta: generic,
-            kind: crate::error::CreateUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateUserError::generic(generic),
     })
 }
@@ -2362,6 +2410,9 @@ pub fn parse_create_user_response(
             output,
         )
         .map_err(crate::error::CreateUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2373,8 +2424,11 @@ pub fn parse_create_virtual_mfa_device_error(
     crate::output::CreateVirtualMfaDeviceOutput,
     crate::error::CreateVirtualMFADeviceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2386,9 +2440,8 @@ pub fn parse_create_virtual_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::CreateVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::CreateVirtualMFADeviceErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::CreateVirtualMFADeviceError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2396,17 +2449,17 @@ pub fn parse_create_virtual_mfa_device_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::CreateVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::CreateVirtualMFADeviceErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => {
+            crate::error::CreateVirtualMFADeviceError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2414,65 +2467,64 @@ pub fn parse_create_virtual_mfa_device_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::CreateVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::CreateVirtualMFADeviceErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::CreateVirtualMFADeviceError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::CreateVirtualMFADeviceErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateVirtualMFADeviceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::CreateVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::CreateVirtualMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::CreateVirtualMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateVirtualMFADeviceError::generic(generic),
     })
 }
@@ -2493,6 +2545,9 @@ pub fn parse_create_virtual_mfa_device_response(
             output,
         )
         .map_err(crate::error::CreateVirtualMFADeviceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2504,8 +2559,11 @@ pub fn parse_deactivate_mfa_device_error(
     crate::output::DeactivateMfaDeviceOutput,
     crate::error::DeactivateMFADeviceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeactivateMFADeviceError::unhandled(generic)),
@@ -2513,77 +2571,73 @@ pub fn parse_deactivate_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityTemporarilyUnmodifiable" => crate::error::DeactivateMFADeviceError {
-            meta: generic,
-            kind:
-                crate::error::DeactivateMFADeviceErrorKind::EntityTemporarilyUnmodifiableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "LimitExceeded" => crate::error::DeactivateMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeactivateMFADeviceErrorKind::LimitExceededException({
+        "EntityTemporarilyUnmodifiable" => {
+            crate::error::DeactivateMFADeviceError::EntityTemporarilyUnmodifiableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DeactivateMFADeviceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeactivateMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeactivateMFADeviceErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeactivateMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeactivateMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeactivateMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeactivateMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeactivateMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeactivateMFADeviceError::generic(generic),
     })
 }
@@ -2599,6 +2653,9 @@ pub fn parse_deactivate_mfa_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deactivate_mfa_device_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2607,8 +2664,11 @@ pub fn parse_deactivate_mfa_device_response(
 pub fn parse_delete_access_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAccessKeyOutput, crate::error::DeleteAccessKeyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccessKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAccessKeyError::unhandled(generic)),
@@ -2616,57 +2676,55 @@ pub fn parse_delete_access_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteAccessKeyError {
-            meta: generic,
-            kind: crate::error::DeleteAccessKeyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteAccessKeyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccessKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteAccessKeyError {
-            meta: generic,
-            kind: crate::error::DeleteAccessKeyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteAccessKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccessKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteAccessKeyError {
-            meta: generic,
-            kind: crate::error::DeleteAccessKeyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteAccessKeyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccessKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccessKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteAccessKeyError::generic(generic),
     })
 }
@@ -2679,6 +2737,9 @@ pub fn parse_delete_access_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_access_key_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2690,8 +2751,11 @@ pub fn parse_delete_account_alias_error(
     crate::output::DeleteAccountAliasOutput,
     crate::error::DeleteAccountAliasError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccountAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAccountAliasError::unhandled(generic)),
@@ -2699,57 +2763,55 @@ pub fn parse_delete_account_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteAccountAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAccountAliasErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteAccountAliasError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteAccountAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAccountAliasErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteAccountAliasError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteAccountAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAccountAliasErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteAccountAliasError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteAccountAliasError::generic(generic),
     })
 }
@@ -2765,6 +2827,9 @@ pub fn parse_delete_account_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_account_alias_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2776,8 +2841,11 @@ pub fn parse_delete_account_password_policy_error(
     crate::output::DeleteAccountPasswordPolicyOutput,
     crate::error::DeleteAccountPasswordPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2789,57 +2857,57 @@ pub fn parse_delete_account_password_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteAccountPasswordPolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteAccountPasswordPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteAccountPasswordPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteAccountPasswordPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteAccountPasswordPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::DeleteAccountPasswordPolicyError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteAccountPasswordPolicyError::generic(generic),
     })
 }
@@ -2855,6 +2923,9 @@ pub fn parse_delete_account_password_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_account_password_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2863,8 +2934,11 @@ pub fn parse_delete_account_password_policy_response(
 pub fn parse_delete_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteGroupError::unhandled(generic)),
@@ -2872,74 +2946,70 @@ pub fn parse_delete_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeleteGroupError {
-            meta: generic,
-            kind: crate::error::DeleteGroupErrorKind::DeleteConflictException({
+        "DeleteConflict" => crate::error::DeleteGroupError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteGroupError {
-            meta: generic,
-            kind: crate::error::DeleteGroupErrorKind::LimitExceededException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::DeleteGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteGroupError {
-            meta: generic,
-            kind: crate::error::DeleteGroupErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteGroupError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteGroupError {
-            meta: generic,
-            kind: crate::error::DeleteGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteGroupError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteGroupError::generic(generic),
     })
 }
@@ -2952,6 +3022,9 @@ pub fn parse_delete_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2961,8 +3034,11 @@ pub fn parse_delete_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGroupPolicyOutput, crate::error::DeleteGroupPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteGroupPolicyError::unhandled(generic)),
@@ -2970,57 +3046,55 @@ pub fn parse_delete_group_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteGroupPolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteGroupPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteGroupPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteGroupPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteGroupPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteGroupPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteGroupPolicyError::generic(generic),
     })
 }
@@ -3034,6 +3108,9 @@ pub fn parse_delete_group_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_group_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3045,8 +3122,11 @@ pub fn parse_delete_instance_profile_error(
     crate::output::DeleteInstanceProfileOutput,
     crate::error::DeleteInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteInstanceProfileError::unhandled(generic)),
@@ -3054,74 +3134,70 @@ pub fn parse_delete_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeleteInstanceProfileError {
-            meta: generic,
-            kind: crate::error::DeleteInstanceProfileErrorKind::DeleteConflictException({
+        "DeleteConflict" => crate::error::DeleteInstanceProfileError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteInstanceProfileError {
-            meta: generic,
-            kind: crate::error::DeleteInstanceProfileErrorKind::LimitExceededException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::DeleteInstanceProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteInstanceProfileError {
-            meta: generic,
-            kind: crate::error::DeleteInstanceProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteInstanceProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteInstanceProfileError {
-            meta: generic,
-            kind: crate::error::DeleteInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteInstanceProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteInstanceProfileError::generic(generic),
     })
 }
@@ -3137,6 +3213,9 @@ pub fn parse_delete_instance_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_instance_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3148,8 +3227,11 @@ pub fn parse_delete_login_profile_error(
     crate::output::DeleteLoginProfileOutput,
     crate::error::DeleteLoginProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLoginProfileError::unhandled(generic)),
@@ -3157,76 +3239,73 @@ pub fn parse_delete_login_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityTemporarilyUnmodifiable" => crate::error::DeleteLoginProfileError {
-            meta: generic,
-            kind: crate::error::DeleteLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(
-                {
+        "EntityTemporarilyUnmodifiable" => {
+            crate::error::DeleteLoginProfileError::EntityTemporarilyUnmodifiableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "LimitExceeded" => crate::error::DeleteLoginProfileError {
-            meta: generic,
-            kind: crate::error::DeleteLoginProfileErrorKind::LimitExceededException({
+                    let mut output =
+                        crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DeleteLoginProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteLoginProfileError {
-            meta: generic,
-            kind: crate::error::DeleteLoginProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteLoginProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteLoginProfileError {
-            meta: generic,
-            kind: crate::error::DeleteLoginProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoginProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteLoginProfileError::generic(generic),
     })
 }
@@ -3242,6 +3321,9 @@ pub fn parse_delete_login_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_login_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3253,8 +3335,11 @@ pub fn parse_delete_open_id_connect_provider_error(
     crate::output::DeleteOpenIdConnectProviderOutput,
     crate::error::DeleteOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3266,57 +3351,57 @@ pub fn parse_delete_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::DeleteOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::DeleteOpenIDConnectProviderErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::DeleteOpenIDConnectProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::DeleteOpenIDConnectProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteOpenIDConnectProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::DeleteOpenIDConnectProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::DeleteOpenIDConnectProviderError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteOpenIDConnectProviderError::generic(generic),
     })
 }
@@ -3332,6 +3417,9 @@ pub fn parse_delete_open_id_connect_provider_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_open_id_connect_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3340,8 +3428,11 @@ pub fn parse_delete_open_id_connect_provider_response(
 pub fn parse_delete_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeletePolicyError::unhandled(generic)),
@@ -3349,91 +3440,87 @@ pub fn parse_delete_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::DeleteConflictException({
+        "DeleteConflict" => crate::error::DeletePolicyError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::InvalidInputException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::DeletePolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DeletePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeletePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeletePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeletePolicyError::generic(generic),
     })
 }
@@ -3446,6 +3533,9 @@ pub fn parse_delete_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3457,8 +3547,11 @@ pub fn parse_delete_policy_version_error(
     crate::output::DeletePolicyVersionOutput,
     crate::error::DeletePolicyVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePolicyVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeletePolicyVersionError::unhandled(generic)),
@@ -3466,91 +3559,87 @@ pub fn parse_delete_policy_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeletePolicyVersionError {
-            meta: generic,
-            kind: crate::error::DeletePolicyVersionErrorKind::DeleteConflictException({
+        "DeleteConflict" => crate::error::DeletePolicyVersionError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::DeletePolicyVersionError {
-            meta: generic,
-            kind: crate::error::DeletePolicyVersionErrorKind::InvalidInputException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::DeletePolicyVersionError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeletePolicyVersionError {
-            meta: generic,
-            kind: crate::error::DeletePolicyVersionErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DeletePolicyVersionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeletePolicyVersionError {
-            meta: generic,
-            kind: crate::error::DeletePolicyVersionErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeletePolicyVersionError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeletePolicyVersionError {
-            meta: generic,
-            kind: crate::error::DeletePolicyVersionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeletePolicyVersionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeletePolicyVersionError::generic(generic),
     })
 }
@@ -3566,6 +3655,9 @@ pub fn parse_delete_policy_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_policy_version_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3574,8 +3666,11 @@ pub fn parse_delete_policy_version_response(
 pub fn parse_delete_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRoleOutput, crate::error::DeleteRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRoleError::unhandled(generic)),
@@ -3583,9 +3678,8 @@ pub fn parse_delete_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::DeleteRoleError {
-            meta: generic,
-            kind: crate::error::DeleteRoleErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::DeleteRoleError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3593,100 +3687,94 @@ pub fn parse_delete_role_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DeleteConflict" => crate::error::DeleteRoleError {
-            meta: generic,
-            kind: crate::error::DeleteRoleErrorKind::DeleteConflictException({
+            })
+        }
+        "DeleteConflict" => crate::error::DeleteRoleError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteRoleError {
-            meta: generic,
-            kind: crate::error::DeleteRoleErrorKind::LimitExceededException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::DeleteRoleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteRoleError {
-            meta: generic,
-            kind: crate::error::DeleteRoleErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteRoleError {
-            meta: generic,
-            kind: crate::error::DeleteRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::DeleteRoleError {
-            meta: generic,
-            kind: crate::error::DeleteRoleErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::error::DeleteRoleError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteRoleError::generic(generic),
     })
 }
@@ -3699,6 +3787,9 @@ pub fn parse_delete_role_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_role_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3710,8 +3801,11 @@ pub fn parse_delete_role_permissions_boundary_error(
     crate::output::DeleteRolePermissionsBoundaryOutput,
     crate::error::DeleteRolePermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRolePermissionsBoundaryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3723,60 +3817,58 @@ pub fn parse_delete_role_permissions_boundary_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::DeleteRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::DeleteRolePermissionsBoundaryErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::DeleteRolePermissionsBoundaryError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::DeleteRolePermissionsBoundaryErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::DeleteRolePermissionsBoundaryError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::DeleteRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::DeleteRolePermissionsBoundaryErrorKind::UnmodifiableEntityException(
-                {
+            })
+        }
+        "UnmodifiableEntity" => {
+            crate::error::DeleteRolePermissionsBoundaryError::UnmodifiableEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unmodifiable_entity_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePermissionsBoundaryError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unmodifiable_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteRolePermissionsBoundaryError::generic(generic),
     })
 }
@@ -3792,6 +3884,9 @@ pub fn parse_delete_role_permissions_boundary_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_role_permissions_boundary_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3801,8 +3896,11 @@ pub fn parse_delete_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRolePolicyOutput, crate::error::DeleteRolePolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRolePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRolePolicyError::unhandled(generic)),
@@ -3810,75 +3908,70 @@ pub fn parse_delete_role_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteRolePolicyError {
-            meta: generic,
-            kind: crate::error::DeleteRolePolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteRolePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteRolePolicyError {
-            meta: generic,
-            kind: crate::error::DeleteRolePolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteRolePolicyError {
-            meta: generic,
-            kind: crate::error::DeleteRolePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteRolePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::DeleteRolePolicyError {
-            meta: generic,
-            kind: crate::error::DeleteRolePolicyErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::error::DeleteRolePolicyError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteRolePolicyError::generic(generic),
     })
 }
@@ -3892,6 +3985,9 @@ pub fn parse_delete_role_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_role_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3903,8 +3999,11 @@ pub fn parse_delete_saml_provider_error(
     crate::output::DeleteSamlProviderOutput,
     crate::error::DeleteSAMLProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteSAMLProviderError::unhandled(generic)),
@@ -3912,74 +4011,72 @@ pub fn parse_delete_saml_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::DeleteSAMLProviderError {
-            meta: generic,
-            kind: crate::error::DeleteSAMLProviderErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::DeleteSAMLProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteSAMLProviderError {
-            meta: generic,
-            kind: crate::error::DeleteSAMLProviderErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DeleteSAMLProviderError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteSAMLProviderError {
-            meta: generic,
-            kind: crate::error::DeleteSAMLProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteSAMLProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteSAMLProviderError {
-            meta: generic,
-            kind: crate::error::DeleteSAMLProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteSAMLProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteSAMLProviderError::generic(generic),
     })
 }
@@ -3995,6 +4092,9 @@ pub fn parse_delete_saml_provider_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_saml_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4006,8 +4106,11 @@ pub fn parse_delete_server_certificate_error(
     crate::output::DeleteServerCertificateOutput,
     crate::error::DeleteServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteServerCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4019,74 +4122,70 @@ pub fn parse_delete_server_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeleteServerCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteServerCertificateErrorKind::DeleteConflictException({
+        "DeleteConflict" => crate::error::DeleteServerCertificateError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteServerCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteServerCertificateErrorKind::LimitExceededException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::DeleteServerCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteServerCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteServerCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteServerCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteServerCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteServerCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteServerCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteServerCertificateError::generic(generic),
     })
 }
@@ -4102,6 +4201,9 @@ pub fn parse_delete_server_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_server_certificate_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4113,8 +4215,11 @@ pub fn parse_delete_service_linked_role_error(
     crate::output::DeleteServiceLinkedRoleOutput,
     crate::error::DeleteServiceLinkedRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4126,57 +4231,55 @@ pub fn parse_delete_service_linked_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::DeleteServiceLinkedRoleErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteServiceLinkedRoleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::DeleteServiceLinkedRoleErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteServiceLinkedRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteServiceLinkedRoleError {
-            meta: generic,
-            kind: crate::error::DeleteServiceLinkedRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteServiceLinkedRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteServiceLinkedRoleError::generic(generic),
     })
 }
@@ -4197,6 +4300,9 @@ pub fn parse_delete_service_linked_role_response(
             output,
         )
         .map_err(crate::error::DeleteServiceLinkedRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4208,8 +4314,11 @@ pub fn parse_delete_service_specific_credential_error(
     crate::output::DeleteServiceSpecificCredentialOutput,
     crate::error::DeleteServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteServiceSpecificCredentialError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteServiceSpecificCredentialError::unhandled(generic)),
@@ -4217,23 +4326,23 @@ pub fn parse_delete_service_specific_credential_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::DeleteServiceSpecificCredentialError {
-            meta: generic,
-            kind: crate::error::DeleteServiceSpecificCredentialErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::DeleteServiceSpecificCredentialError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteServiceSpecificCredentialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteServiceSpecificCredentialError::generic(generic),
     })
 }
@@ -4250,6 +4359,9 @@ pub fn parse_delete_service_specific_credential_response(
         let mut output =
             crate::output::delete_service_specific_credential_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4261,8 +4373,11 @@ pub fn parse_delete_signing_certificate_error(
     crate::output::DeleteSigningCertificateOutput,
     crate::error::DeleteSigningCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSigningCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4274,57 +4389,55 @@ pub fn parse_delete_signing_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteSigningCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteSigningCertificateErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteSigningCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteSigningCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteSigningCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteSigningCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteSigningCertificateError {
-            meta: generic,
-            kind: crate::error::DeleteSigningCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteSigningCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSigningCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSigningCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteSigningCertificateError::generic(generic),
     })
 }
@@ -4340,6 +4453,9 @@ pub fn parse_delete_signing_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_signing_certificate_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4351,8 +4467,11 @@ pub fn parse_delete_ssh_public_key_error(
     crate::output::DeleteSshPublicKeyOutput,
     crate::error::DeleteSSHPublicKeyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSSHPublicKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteSSHPublicKeyError::unhandled(generic)),
@@ -4360,23 +4479,23 @@ pub fn parse_delete_ssh_public_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::DeleteSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::DeleteSSHPublicKeyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::DeleteSSHPublicKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteSSHPublicKeyError::generic(generic),
     })
 }
@@ -4392,6 +4511,9 @@ pub fn parse_delete_ssh_public_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_ssh_public_key_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4400,8 +4522,11 @@ pub fn parse_delete_ssh_public_key_response(
 pub fn parse_delete_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteUserError::unhandled(generic)),
@@ -4409,9 +4534,8 @@ pub fn parse_delete_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::DeleteUserError {
-            meta: generic,
-            kind: crate::error::DeleteUserErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::DeleteUserError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4419,82 +4543,79 @@ pub fn parse_delete_user_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DeleteConflict" => crate::error::DeleteUserError {
-            meta: generic,
-            kind: crate::error::DeleteUserErrorKind::DeleteConflictException({
+            })
+        }
+        "DeleteConflict" => crate::error::DeleteUserError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteUserError {
-            meta: generic,
-            kind: crate::error::DeleteUserErrorKind::LimitExceededException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::DeleteUserError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteUserError {
-            meta: generic,
-            kind: crate::error::DeleteUserErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteUserError {
-            meta: generic,
-            kind: crate::error::DeleteUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteUserError::generic(generic),
     })
 }
@@ -4507,6 +4628,9 @@ pub fn parse_delete_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4518,8 +4642,11 @@ pub fn parse_delete_user_permissions_boundary_error(
     crate::output::DeleteUserPermissionsBoundaryOutput,
     crate::error::DeleteUserPermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteUserPermissionsBoundaryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4531,40 +4658,40 @@ pub fn parse_delete_user_permissions_boundary_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::DeleteUserPermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::DeleteUserPermissionsBoundaryErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::DeleteUserPermissionsBoundaryError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteUserPermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::DeleteUserPermissionsBoundaryErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::DeleteUserPermissionsBoundaryError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteUserPermissionsBoundaryError::generic(generic),
     })
 }
@@ -4580,6 +4707,9 @@ pub fn parse_delete_user_permissions_boundary_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_permissions_boundary_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4589,8 +4719,11 @@ pub fn parse_delete_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteUserPolicyOutput, crate::error::DeleteUserPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteUserPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteUserPolicyError::unhandled(generic)),
@@ -4598,57 +4731,55 @@ pub fn parse_delete_user_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::DeleteUserPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteUserPolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::DeleteUserPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteUserPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteUserPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteUserPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteUserPolicyError {
-            meta: generic,
-            kind: crate::error::DeleteUserPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteUserPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteUserPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteUserPolicyError::generic(generic),
     })
 }
@@ -4662,6 +4793,9 @@ pub fn parse_delete_user_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_user_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4673,8 +4807,11 @@ pub fn parse_delete_virtual_mfa_device_error(
     crate::output::DeleteVirtualMfaDeviceOutput,
     crate::error::DeleteVirtualMFADeviceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4686,74 +4823,70 @@ pub fn parse_delete_virtual_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DeleteConflict" => crate::error::DeleteVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeleteVirtualMFADeviceErrorKind::DeleteConflictException({
+        "DeleteConflict" => crate::error::DeleteVirtualMFADeviceError::DeleteConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::delete_conflict_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DeleteVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeleteVirtualMFADeviceErrorKind::LimitExceededException({
+                let mut output = crate::error::delete_conflict_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_delete_conflict_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::DeleteVirtualMFADeviceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DeleteVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeleteVirtualMFADeviceErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DeleteVirtualMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DeleteVirtualMFADeviceError {
-            meta: generic,
-            kind: crate::error::DeleteVirtualMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DeleteVirtualMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteVirtualMFADeviceError::generic(generic),
     })
 }
@@ -4769,6 +4902,9 @@ pub fn parse_delete_virtual_mfa_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_virtual_mfa_device_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4778,8 +4914,11 @@ pub fn parse_detach_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachGroupPolicyOutput, crate::error::DetachGroupPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachGroupPolicyError::unhandled(generic)),
@@ -4787,74 +4926,72 @@ pub fn parse_detach_group_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::DetachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DetachGroupPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::DetachGroupPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DetachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DetachGroupPolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DetachGroupPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DetachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DetachGroupPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DetachGroupPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DetachGroupPolicyError {
-            meta: generic,
-            kind: crate::error::DetachGroupPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DetachGroupPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DetachGroupPolicyError::generic(generic),
     })
 }
@@ -4868,6 +5005,9 @@ pub fn parse_detach_group_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_group_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4877,8 +5017,11 @@ pub fn parse_detach_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachRolePolicyOutput, crate::error::DetachRolePolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachRolePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachRolePolicyError::unhandled(generic)),
@@ -4886,92 +5029,87 @@ pub fn parse_detach_role_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::DetachRolePolicyError {
-            meta: generic,
-            kind: crate::error::DetachRolePolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::DetachRolePolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DetachRolePolicyError {
-            meta: generic,
-            kind: crate::error::DetachRolePolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DetachRolePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DetachRolePolicyError {
-            meta: generic,
-            kind: crate::error::DetachRolePolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DetachRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DetachRolePolicyError {
-            meta: generic,
-            kind: crate::error::DetachRolePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DetachRolePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::DetachRolePolicyError {
-            meta: generic,
-            kind: crate::error::DetachRolePolicyErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::error::DetachRolePolicyError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DetachRolePolicyError::generic(generic),
     })
 }
@@ -4985,6 +5123,9 @@ pub fn parse_detach_role_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_role_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4994,8 +5135,11 @@ pub fn parse_detach_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachUserPolicyOutput, crate::error::DetachUserPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachUserPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachUserPolicyError::unhandled(generic)),
@@ -5003,74 +5147,72 @@ pub fn parse_detach_user_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::DetachUserPolicyError {
-            meta: generic,
-            kind: crate::error::DetachUserPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::DetachUserPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::DetachUserPolicyError {
-            meta: generic,
-            kind: crate::error::DetachUserPolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::DetachUserPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::DetachUserPolicyError {
-            meta: generic,
-            kind: crate::error::DetachUserPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::DetachUserPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::DetachUserPolicyError {
-            meta: generic,
-            kind: crate::error::DetachUserPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::DetachUserPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachUserPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachUserPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DetachUserPolicyError::generic(generic),
     })
 }
@@ -5084,6 +5226,9 @@ pub fn parse_detach_user_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_user_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5092,8 +5237,11 @@ pub fn parse_detach_user_policy_response(
 pub fn parse_enable_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableMfaDeviceOutput, crate::error::EnableMFADeviceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::EnableMFADeviceError::unhandled(generic)),
@@ -5101,9 +5249,8 @@ pub fn parse_enable_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::EnableMFADeviceError {
-            meta: generic,
-            kind: crate::error::EnableMFADeviceErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => {
+            crate::error::EnableMFADeviceError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5111,17 +5258,17 @@ pub fn parse_enable_mfa_device_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityTemporarilyUnmodifiable" => crate::error::EnableMFADeviceError {
-            meta: generic,
-            kind: crate::error::EnableMFADeviceErrorKind::EntityTemporarilyUnmodifiableException({
+            })
+        }
+        "EntityTemporarilyUnmodifiable" => {
+            crate::error::EnableMFADeviceError::EntityTemporarilyUnmodifiableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5129,17 +5276,17 @@ pub fn parse_enable_mfa_device_error(
                         crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidAuthenticationCode" => crate::error::EnableMFADeviceError {
-            meta: generic,
-            kind: crate::error::EnableMFADeviceErrorKind::InvalidAuthenticationCodeException({
+            })
+        }
+        "InvalidAuthenticationCode" => {
+            crate::error::EnableMFADeviceError::InvalidAuthenticationCodeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5147,65 +5294,64 @@ pub fn parse_enable_mfa_device_error(
                         crate::error::invalid_authentication_code_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_authentication_code_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::EnableMFADeviceError {
-            meta: generic,
-            kind: crate::error::EnableMFADeviceErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::EnableMFADeviceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::EnableMFADeviceError {
-            meta: generic,
-            kind: crate::error::EnableMFADeviceErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::EnableMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::EnableMFADeviceError {
-            meta: generic,
-            kind: crate::error::EnableMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::EnableMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::EnableMFADeviceError::generic(generic),
     })
 }
@@ -5218,6 +5364,9 @@ pub fn parse_enable_mfa_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_mfa_device_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5229,8 +5378,11 @@ pub fn parse_generate_credential_report_error(
     crate::output::GenerateCredentialReportOutput,
     crate::error::GenerateCredentialReportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateCredentialReportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5242,40 +5394,38 @@ pub fn parse_generate_credential_report_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::GenerateCredentialReportError {
-            meta: generic,
-            kind: crate::error::GenerateCredentialReportErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::GenerateCredentialReportError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateCredentialReportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GenerateCredentialReportError {
-            meta: generic,
-            kind: crate::error::GenerateCredentialReportErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GenerateCredentialReportError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateCredentialReportError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateCredentialReportError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GenerateCredentialReportError::generic(generic),
     })
 }
@@ -5296,6 +5446,9 @@ pub fn parse_generate_credential_report_response(
             output,
         )
         .map_err(crate::error::GenerateCredentialReportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5307,8 +5460,11 @@ pub fn parse_generate_organizations_access_report_error(
     crate::output::GenerateOrganizationsAccessReportOutput,
     crate::error::GenerateOrganizationsAccessReportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateOrganizationsAccessReportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5318,7 +5474,7 @@ pub fn parse_generate_organizations_access_report_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ReportGenerationLimitExceeded" => crate::error::GenerateOrganizationsAccessReportError { meta: generic, kind: crate::error::GenerateOrganizationsAccessReportErrorKind::ReportGenerationLimitExceededException({
+        "ReportGenerationLimitExceeded" => crate::error::GenerateOrganizationsAccessReportError::ReportGenerationLimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5326,6 +5482,7 @@ pub fn parse_generate_organizations_access_report_error(
                     let mut output = crate::error::report_generation_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_report_generation_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateOrganizationsAccessReportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5333,7 +5490,7 @@ pub fn parse_generate_organizations_access_report_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GenerateOrganizationsAccessReportError::generic(generic)
     })
 }
@@ -5356,6 +5513,9 @@ pub fn parse_generate_organizations_access_report_response(
                 output,
             )
             .map_err(crate::error::GenerateOrganizationsAccessReportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5367,8 +5527,11 @@ pub fn parse_generate_service_last_accessed_details_error(
     crate::output::GenerateServiceLastAccessedDetailsOutput,
     crate::error::GenerateServiceLastAccessedDetailsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5378,44 +5541,40 @@ pub fn parse_generate_service_last_accessed_details_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GenerateServiceLastAccessedDetailsError {
-            meta: generic,
-            kind: crate::error::GenerateServiceLastAccessedDetailsErrorKind::InvalidInputException(
-                {
+        "InvalidInput" => {
+            crate::error::GenerateServiceLastAccessedDetailsError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_input_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "NoSuchEntity" => crate::error::GenerateServiceLastAccessedDetailsError {
-            meta: generic,
-            kind: crate::error::GenerateServiceLastAccessedDetailsErrorKind::NoSuchEntityException(
-                {
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GenerateServiceLastAccessedDetailsError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::no_such_entity_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GenerateServiceLastAccessedDetailsError::generic(generic),
     })
 }
@@ -5433,6 +5592,9 @@ pub fn parse_generate_service_last_accessed_details_response(
             crate::output::generate_service_last_accessed_details_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_generate_service_last_accessed_details(response.body().as_ref(), output).map_err(crate::error::GenerateServiceLastAccessedDetailsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5444,8 +5606,11 @@ pub fn parse_get_access_key_last_used_error(
     crate::output::GetAccessKeyLastUsedOutput,
     crate::error::GetAccessKeyLastUsedError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAccessKeyLastUsedError::unhandled(generic)),
@@ -5453,23 +5618,23 @@ pub fn parse_get_access_key_last_used_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetAccessKeyLastUsedError {
-            meta: generic,
-            kind: crate::error::GetAccessKeyLastUsedErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetAccessKeyLastUsedError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetAccessKeyLastUsedError::generic(generic),
     })
 }
@@ -5490,6 +5655,9 @@ pub fn parse_get_access_key_last_used_response(
             output,
         )
         .map_err(crate::error::GetAccessKeyLastUsedError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5501,8 +5669,11 @@ pub fn parse_get_account_authorization_details_error(
     crate::output::GetAccountAuthorizationDetailsOutput,
     crate::error::GetAccountAuthorizationDetailsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAccountAuthorizationDetailsError::unhandled(generic)),
@@ -5510,23 +5681,23 @@ pub fn parse_get_account_authorization_details_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::GetAccountAuthorizationDetailsError {
-            meta: generic,
-            kind: crate::error::GetAccountAuthorizationDetailsErrorKind::ServiceFailureException({
+        "ServiceFailure" => {
+            crate::error::GetAccountAuthorizationDetailsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetAccountAuthorizationDetailsError::generic(generic),
     })
 }
@@ -5549,6 +5720,9 @@ pub fn parse_get_account_authorization_details_response(
                 output,
             )
             .map_err(crate::error::GetAccountAuthorizationDetailsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5560,8 +5734,11 @@ pub fn parse_get_account_password_policy_error(
     crate::output::GetAccountPasswordPolicyOutput,
     crate::error::GetAccountPasswordPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccountPasswordPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5573,40 +5750,38 @@ pub fn parse_get_account_password_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::GetAccountPasswordPolicyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetAccountPasswordPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::GetAccountPasswordPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetAccountPasswordPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountPasswordPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountPasswordPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetAccountPasswordPolicyError::generic(generic),
     })
 }
@@ -5627,6 +5802,9 @@ pub fn parse_get_account_password_policy_response(
             output,
         )
         .map_err(crate::error::GetAccountPasswordPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5636,8 +5814,11 @@ pub fn parse_get_account_summary_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccountSummaryOutput, crate::error::GetAccountSummaryError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccountSummaryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetAccountSummaryError::unhandled(generic)),
@@ -5645,23 +5826,21 @@ pub fn parse_get_account_summary_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::GetAccountSummaryError {
-            meta: generic,
-            kind: crate::error::GetAccountSummaryErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::GetAccountSummaryError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSummaryError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetAccountSummaryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetAccountSummaryError::generic(generic),
     })
 }
@@ -5680,6 +5859,9 @@ pub fn parse_get_account_summary_response(
             output,
         )
         .map_err(crate::error::GetAccountSummaryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5691,8 +5873,11 @@ pub fn parse_get_context_keys_for_custom_policy_error(
     crate::output::GetContextKeysForCustomPolicyOutput,
     crate::error::GetContextKeysForCustomPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetContextKeysForCustomPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5704,23 +5889,23 @@ pub fn parse_get_context_keys_for_custom_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetContextKeysForCustomPolicyError {
-            meta: generic,
-            kind: crate::error::GetContextKeysForCustomPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetContextKeysForCustomPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForCustomPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetContextKeysForCustomPolicyError::generic(generic),
     })
 }
@@ -5743,6 +5928,9 @@ pub fn parse_get_context_keys_for_custom_policy_response(
                 output,
             )
             .map_err(crate::error::GetContextKeysForCustomPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5754,8 +5942,11 @@ pub fn parse_get_context_keys_for_principal_policy_error(
     crate::output::GetContextKeysForPrincipalPolicyOutput,
     crate::error::GetContextKeysForPrincipalPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5765,40 +5956,40 @@ pub fn parse_get_context_keys_for_principal_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetContextKeysForPrincipalPolicyError {
-            meta: generic,
-            kind: crate::error::GetContextKeysForPrincipalPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetContextKeysForPrincipalPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::GetContextKeysForPrincipalPolicyError {
-            meta: generic,
-            kind: crate::error::GetContextKeysForPrincipalPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetContextKeysForPrincipalPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetContextKeysForPrincipalPolicyError::generic(generic),
     })
 }
@@ -5816,6 +6007,9 @@ pub fn parse_get_context_keys_for_principal_policy_response(
             crate::output::get_context_keys_for_principal_policy_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_context_keys_for_principal_policy(response.body().as_ref(), output).map_err(crate::error::GetContextKeysForPrincipalPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5827,8 +6021,11 @@ pub fn parse_get_credential_report_error(
     crate::output::GetCredentialReportOutput,
     crate::error::GetCredentialReportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCredentialReportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetCredentialReportError::unhandled(generic)),
@@ -5836,9 +6033,8 @@ pub fn parse_get_credential_report_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ReportExpired" => crate::error::GetCredentialReportError {
-            meta: generic,
-            kind: crate::error::GetCredentialReportErrorKind::CredentialReportExpiredException({
+        "ReportExpired" => {
+            crate::error::GetCredentialReportError::CredentialReportExpiredException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5846,38 +6042,35 @@ pub fn parse_get_credential_report_error(
                         crate::error::credential_report_expired_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_credential_report_expired_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ReportNotPresent" => crate::error::GetCredentialReportError {
-            meta: generic,
-            kind: crate::error::GetCredentialReportErrorKind::CredentialReportNotPresentException(
-                {
+            })
+        }
+        "ReportNotPresent" => {
+            crate::error::GetCredentialReportError::CredentialReportNotPresentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::credential_report_not_present_exception::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_credential_report_not_present_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ReportInProgress" => crate::error::GetCredentialReportError {
-            meta: generic,
-            kind: crate::error::GetCredentialReportErrorKind::CredentialReportNotReadyException({
+                    let mut output =
+                        crate::error::credential_report_not_present_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_credential_report_not_present_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ReportInProgress" => {
+            crate::error::GetCredentialReportError::CredentialReportNotReadyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5885,31 +6078,30 @@ pub fn parse_get_credential_report_error(
                         crate::error::credential_report_not_ready_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_credential_report_not_ready_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetCredentialReportError {
-            meta: generic,
-            kind: crate::error::GetCredentialReportErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetCredentialReportError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCredentialReportError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetCredentialReportError::generic(generic),
     })
 }
@@ -5930,6 +6122,9 @@ pub fn parse_get_credential_report_response(
             output,
         )
         .map_err(crate::error::GetCredentialReportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5938,8 +6133,11 @@ pub fn parse_get_credential_report_response(
 pub fn parse_get_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGroupOutput, crate::error::GetGroupError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetGroupError::unhandled(generic)),
@@ -5947,40 +6145,38 @@ pub fn parse_get_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetGroupError {
-            meta: generic,
-            kind: crate::error::GetGroupErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetGroupError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetGroupError {
-            meta: generic,
-            kind: crate::error::GetGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetGroupError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetGroupError::generic(generic),
     })
 }
@@ -5998,6 +6194,9 @@ pub fn parse_get_group_response(
             output,
         )
         .map_err(crate::error::GetGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6006,8 +6205,11 @@ pub fn parse_get_group_response(
 pub fn parse_get_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGroupPolicyOutput, crate::error::GetGroupPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetGroupPolicyError::unhandled(generic)),
@@ -6015,40 +6217,38 @@ pub fn parse_get_group_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetGroupPolicyError {
-            meta: generic,
-            kind: crate::error::GetGroupPolicyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetGroupPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetGroupPolicyError {
-            meta: generic,
-            kind: crate::error::GetGroupPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetGroupPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetGroupPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetGroupPolicyError::generic(generic),
     })
 }
@@ -6066,6 +6266,9 @@ pub fn parse_get_group_policy_response(
             output,
         )
         .map_err(crate::error::GetGroupPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6077,8 +6280,11 @@ pub fn parse_get_instance_profile_error(
     crate::output::GetInstanceProfileOutput,
     crate::error::GetInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetInstanceProfileError::unhandled(generic)),
@@ -6086,40 +6292,38 @@ pub fn parse_get_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetInstanceProfileError {
-            meta: generic,
-            kind: crate::error::GetInstanceProfileErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetInstanceProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetInstanceProfileError {
-            meta: generic,
-            kind: crate::error::GetInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetInstanceProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetInstanceProfileError::generic(generic),
     })
 }
@@ -6140,6 +6344,9 @@ pub fn parse_get_instance_profile_response(
             output,
         )
         .map_err(crate::error::GetInstanceProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6148,8 +6355,11 @@ pub fn parse_get_instance_profile_response(
 pub fn parse_get_login_profile_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLoginProfileOutput, crate::error::GetLoginProfileError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLoginProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLoginProfileError::unhandled(generic)),
@@ -6157,40 +6367,38 @@ pub fn parse_get_login_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetLoginProfileError {
-            meta: generic,
-            kind: crate::error::GetLoginProfileErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetLoginProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetLoginProfileError {
-            meta: generic,
-            kind: crate::error::GetLoginProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetLoginProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetLoginProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetLoginProfileError::generic(generic),
     })
 }
@@ -6208,6 +6416,9 @@ pub fn parse_get_login_profile_response(
             output,
         )
         .map_err(crate::error::GetLoginProfileError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6219,8 +6430,11 @@ pub fn parse_get_open_id_connect_provider_error(
     crate::output::GetOpenIdConnectProviderOutput,
     crate::error::GetOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6232,57 +6446,55 @@ pub fn parse_get_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::GetOpenIDConnectProviderErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetOpenIDConnectProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::GetOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::GetOpenIDConnectProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetOpenIDConnectProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::GetOpenIDConnectProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetOpenIDConnectProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetOpenIDConnectProviderError::generic(generic),
     })
 }
@@ -6303,6 +6515,9 @@ pub fn parse_get_open_id_connect_provider_response(
             output,
         )
         .map_err(crate::error::GetOpenIDConnectProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6314,8 +6529,11 @@ pub fn parse_get_organizations_access_report_error(
     crate::output::GetOrganizationsAccessReportOutput,
     crate::error::GetOrganizationsAccessReportError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6327,23 +6545,23 @@ pub fn parse_get_organizations_access_report_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetOrganizationsAccessReportError {
-            meta: generic,
-            kind: crate::error::GetOrganizationsAccessReportErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetOrganizationsAccessReportError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetOrganizationsAccessReportError::generic(generic),
     })
 }
@@ -6364,6 +6582,9 @@ pub fn parse_get_organizations_access_report_response(
             output,
         )
         .map_err(crate::error::GetOrganizationsAccessReportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6372,8 +6593,11 @@ pub fn parse_get_organizations_access_report_response(
 pub fn parse_get_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPolicyOutput, crate::error::GetPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPolicyError::unhandled(generic)),
@@ -6381,57 +6605,55 @@ pub fn parse_get_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetPolicyError {
-            meta: generic,
-            kind: crate::error::GetPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::GetPolicyError {
-            meta: generic,
-            kind: crate::error::GetPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetPolicyError {
-            meta: generic,
-            kind: crate::error::GetPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetPolicyError::generic(generic),
     })
 }
@@ -6449,6 +6671,9 @@ pub fn parse_get_policy_response(
             output,
         )
         .map_err(crate::error::GetPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6458,8 +6683,11 @@ pub fn parse_get_policy_version_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPolicyVersionOutput, crate::error::GetPolicyVersionError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPolicyVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPolicyVersionError::unhandled(generic)),
@@ -6467,57 +6695,55 @@ pub fn parse_get_policy_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetPolicyVersionError {
-            meta: generic,
-            kind: crate::error::GetPolicyVersionErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetPolicyVersionError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::GetPolicyVersionError {
-            meta: generic,
-            kind: crate::error::GetPolicyVersionErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetPolicyVersionError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetPolicyVersionError {
-            meta: generic,
-            kind: crate::error::GetPolicyVersionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetPolicyVersionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPolicyVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetPolicyVersionError::generic(generic),
     })
 }
@@ -6536,6 +6762,9 @@ pub fn parse_get_policy_version_response(
             output,
         )
         .map_err(crate::error::GetPolicyVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6544,8 +6773,11 @@ pub fn parse_get_policy_version_response(
 pub fn parse_get_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRoleOutput, crate::error::GetRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRoleError::unhandled(generic)),
@@ -6553,40 +6785,38 @@ pub fn parse_get_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetRoleError {
-            meta: generic,
-            kind: crate::error::GetRoleErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetRoleError {
-            meta: generic,
-            kind: crate::error::GetRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetRoleError::generic(generic),
     })
 }
@@ -6604,6 +6834,9 @@ pub fn parse_get_role_response(
             output,
         )
         .map_err(crate::error::GetRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6612,8 +6845,11 @@ pub fn parse_get_role_response(
 pub fn parse_get_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRolePolicyOutput, crate::error::GetRolePolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRolePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRolePolicyError::unhandled(generic)),
@@ -6621,40 +6857,38 @@ pub fn parse_get_role_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetRolePolicyError {
-            meta: generic,
-            kind: crate::error::GetRolePolicyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetRolePolicyError {
-            meta: generic,
-            kind: crate::error::GetRolePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetRolePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetRolePolicyError::generic(generic),
     })
 }
@@ -6672,6 +6906,9 @@ pub fn parse_get_role_policy_response(
             output,
         )
         .map_err(crate::error::GetRolePolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6680,8 +6917,11 @@ pub fn parse_get_role_policy_response(
 pub fn parse_get_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSamlProviderOutput, crate::error::GetSAMLProviderError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSAMLProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSAMLProviderError::unhandled(generic)),
@@ -6689,57 +6929,55 @@ pub fn parse_get_saml_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetSAMLProviderError {
-            meta: generic,
-            kind: crate::error::GetSAMLProviderErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetSAMLProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::GetSAMLProviderError {
-            meta: generic,
-            kind: crate::error::GetSAMLProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetSAMLProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetSAMLProviderError {
-            meta: generic,
-            kind: crate::error::GetSAMLProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetSAMLProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSAMLProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetSAMLProviderError::generic(generic),
     })
 }
@@ -6757,6 +6995,9 @@ pub fn parse_get_saml_provider_response(
             output,
         )
         .map_err(crate::error::GetSAMLProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6768,8 +7009,11 @@ pub fn parse_get_server_certificate_error(
     crate::output::GetServerCertificateOutput,
     crate::error::GetServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetServerCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetServerCertificateError::unhandled(generic)),
@@ -6777,40 +7021,38 @@ pub fn parse_get_server_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetServerCertificateError {
-            meta: generic,
-            kind: crate::error::GetServerCertificateErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetServerCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetServerCertificateError {
-            meta: generic,
-            kind: crate::error::GetServerCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetServerCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetServerCertificateError::generic(generic),
     })
 }
@@ -6831,6 +7073,9 @@ pub fn parse_get_server_certificate_response(
             output,
         )
         .map_err(crate::error::GetServerCertificateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6842,8 +7087,11 @@ pub fn parse_get_service_last_accessed_details_error(
     crate::output::GetServiceLastAccessedDetailsOutput,
     crate::error::GetServiceLastAccessedDetailsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6855,40 +7103,40 @@ pub fn parse_get_service_last_accessed_details_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetServiceLastAccessedDetailsError {
-            meta: generic,
-            kind: crate::error::GetServiceLastAccessedDetailsErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::GetServiceLastAccessedDetailsError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::GetServiceLastAccessedDetailsError {
-            meta: generic,
-            kind: crate::error::GetServiceLastAccessedDetailsErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetServiceLastAccessedDetailsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetServiceLastAccessedDetailsError::generic(generic),
     })
 }
@@ -6911,6 +7159,9 @@ pub fn parse_get_service_last_accessed_details_response(
                 output,
             )
             .map_err(crate::error::GetServiceLastAccessedDetailsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6922,8 +7173,11 @@ pub fn parse_get_service_last_accessed_details_with_entities_error(
     crate::output::GetServiceLastAccessedDetailsWithEntitiesOutput,
     crate::error::GetServiceLastAccessedDetailsWithEntitiesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6935,39 +7189,41 @@ pub fn parse_get_service_last_accessed_details_with_entities_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetServiceLastAccessedDetailsWithEntitiesError { meta: generic, kind: crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidInput" => {
+            crate::error::GetServiceLastAccessedDetailsWithEntitiesError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NoSuchEntity" => crate::error::GetServiceLastAccessedDetailsWithEntitiesError { meta: generic, kind: crate::error::GetServiceLastAccessedDetailsWithEntitiesErrorKind::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetServiceLastAccessedDetailsWithEntitiesError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GetServiceLastAccessedDetailsWithEntitiesError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::GetServiceLastAccessedDetailsWithEntitiesError::generic(generic),
     })
 }
 
@@ -6985,6 +7241,9 @@ pub fn parse_get_service_last_accessed_details_with_entities_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_service_last_accessed_details_with_entities(response.body().as_ref(), output).map_err(crate::error::GetServiceLastAccessedDetailsWithEntitiesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6996,8 +7255,11 @@ pub fn parse_get_service_linked_role_deletion_status_error(
     crate::output::GetServiceLinkedRoleDeletionStatusOutput,
     crate::error::GetServiceLinkedRoleDeletionStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7007,65 +7269,57 @@ pub fn parse_get_service_linked_role_deletion_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::GetServiceLinkedRoleDeletionStatusError {
-            meta: generic,
-            kind: crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::InvalidInputException(
-                {
+        "InvalidInput" => {
+            crate::error::GetServiceLinkedRoleDeletionStatusError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_input_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "NoSuchEntity" => crate::error::GetServiceLinkedRoleDeletionStatusError {
-            meta: generic,
-            kind: crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::NoSuchEntityException(
-                {
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::GetServiceLinkedRoleDeletionStatusError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::no_such_entity_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceFailure" => crate::error::GetServiceLinkedRoleDeletionStatusError {
-            meta: generic,
-            kind:
-                crate::error::GetServiceLinkedRoleDeletionStatusErrorKind::ServiceFailureException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_failure_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::GetServiceLinkedRoleDeletionStatusError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetServiceLinkedRoleDeletionStatusError::generic(generic),
     })
 }
@@ -7083,6 +7337,9 @@ pub fn parse_get_service_linked_role_deletion_status_response(
             crate::output::get_service_linked_role_deletion_status_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_service_linked_role_deletion_status(response.body().as_ref(), output).map_err(crate::error::GetServiceLinkedRoleDeletionStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7091,8 +7348,11 @@ pub fn parse_get_service_linked_role_deletion_status_response(
 pub fn parse_get_ssh_public_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSshPublicKeyOutput, crate::error::GetSSHPublicKeyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSSHPublicKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSSHPublicKeyError::unhandled(generic)),
@@ -7100,26 +7360,25 @@ pub fn parse_get_ssh_public_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetSSHPublicKeyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetSSHPublicKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnrecognizedPublicKeyEncoding" => crate::error::GetSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException({
+            })
+        }
+        "UnrecognizedPublicKeyEncoding" => {
+            crate::error::GetSSHPublicKeyError::UnrecognizedPublicKeyEncodingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7128,14 +7387,15 @@ pub fn parse_get_ssh_public_key_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unrecognized_public_key_encoding_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSSHPublicKeyError::generic(generic),
     })
 }
@@ -7153,6 +7413,9 @@ pub fn parse_get_ssh_public_key_response(
             output,
         )
         .map_err(crate::error::GetSSHPublicKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7161,8 +7424,11 @@ pub fn parse_get_ssh_public_key_response(
 pub fn parse_get_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUserOutput, crate::error::GetUserError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetUserError::unhandled(generic)),
@@ -7170,40 +7436,38 @@ pub fn parse_get_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetUserError {
-            meta: generic,
-            kind: crate::error::GetUserErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetUserError {
-            meta: generic,
-            kind: crate::error::GetUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetUserError::generic(generic),
     })
 }
@@ -7221,6 +7485,9 @@ pub fn parse_get_user_response(
             output,
         )
         .map_err(crate::error::GetUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7229,8 +7496,11 @@ pub fn parse_get_user_response(
 pub fn parse_get_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetUserPolicyOutput, crate::error::GetUserPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetUserPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetUserPolicyError::unhandled(generic)),
@@ -7238,40 +7508,38 @@ pub fn parse_get_user_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::GetUserPolicyError {
-            meta: generic,
-            kind: crate::error::GetUserPolicyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::GetUserPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::GetUserPolicyError {
-            meta: generic,
-            kind: crate::error::GetUserPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::GetUserPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetUserPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetUserPolicyError::generic(generic),
     })
 }
@@ -7289,6 +7557,9 @@ pub fn parse_get_user_policy_response(
             output,
         )
         .map_err(crate::error::GetUserPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7297,8 +7568,11 @@ pub fn parse_get_user_policy_response(
 pub fn parse_list_access_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAccessKeysOutput, crate::error::ListAccessKeysError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAccessKeysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAccessKeysError::unhandled(generic)),
@@ -7306,40 +7580,38 @@ pub fn parse_list_access_keys_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListAccessKeysError {
-            meta: generic,
-            kind: crate::error::ListAccessKeysErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListAccessKeysError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAccessKeysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListAccessKeysError {
-            meta: generic,
-            kind: crate::error::ListAccessKeysErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListAccessKeysError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAccessKeysError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAccessKeysError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListAccessKeysError::generic(generic),
     })
 }
@@ -7357,6 +7629,9 @@ pub fn parse_list_access_keys_response(
             output,
         )
         .map_err(crate::error::ListAccessKeysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7368,8 +7643,11 @@ pub fn parse_list_account_aliases_error(
     crate::output::ListAccountAliasesOutput,
     crate::error::ListAccountAliasesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAccountAliasesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAccountAliasesError::unhandled(generic)),
@@ -7377,23 +7655,21 @@ pub fn parse_list_account_aliases_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListAccountAliasesError {
-            meta: generic,
-            kind: crate::error::ListAccountAliasesErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListAccountAliasesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAccountAliasesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAccountAliasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListAccountAliasesError::generic(generic),
     })
 }
@@ -7414,6 +7690,9 @@ pub fn parse_list_account_aliases_response(
             output,
         )
         .map_err(crate::error::ListAccountAliasesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7425,8 +7704,11 @@ pub fn parse_list_attached_group_policies_error(
     crate::output::ListAttachedGroupPoliciesOutput,
     crate::error::ListAttachedGroupPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAttachedGroupPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7438,57 +7720,57 @@ pub fn parse_list_attached_group_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListAttachedGroupPoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedGroupPoliciesErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListAttachedGroupPoliciesError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedGroupPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListAttachedGroupPoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedGroupPoliciesErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListAttachedGroupPoliciesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedGroupPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListAttachedGroupPoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedGroupPoliciesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::ListAttachedGroupPoliciesError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedGroupPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListAttachedGroupPoliciesError::generic(generic),
     })
 }
@@ -7509,6 +7791,9 @@ pub fn parse_list_attached_group_policies_response(
             output,
         )
         .map_err(crate::error::ListAttachedGroupPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7520,8 +7805,11 @@ pub fn parse_list_attached_role_policies_error(
     crate::output::ListAttachedRolePoliciesOutput,
     crate::error::ListAttachedRolePoliciesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7533,57 +7821,55 @@ pub fn parse_list_attached_role_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListAttachedRolePoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedRolePoliciesErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListAttachedRolePoliciesError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListAttachedRolePoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedRolePoliciesErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListAttachedRolePoliciesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListAttachedRolePoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedRolePoliciesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListAttachedRolePoliciesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListAttachedRolePoliciesError::generic(generic),
     })
 }
@@ -7604,6 +7890,9 @@ pub fn parse_list_attached_role_policies_response(
             output,
         )
         .map_err(crate::error::ListAttachedRolePoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7615,8 +7904,11 @@ pub fn parse_list_attached_user_policies_error(
     crate::output::ListAttachedUserPoliciesOutput,
     crate::error::ListAttachedUserPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7628,57 +7920,55 @@ pub fn parse_list_attached_user_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListAttachedUserPoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedUserPoliciesErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListAttachedUserPoliciesError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListAttachedUserPoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedUserPoliciesErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListAttachedUserPoliciesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListAttachedUserPoliciesError {
-            meta: generic,
-            kind: crate::error::ListAttachedUserPoliciesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListAttachedUserPoliciesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListAttachedUserPoliciesError::generic(generic),
     })
 }
@@ -7699,6 +7989,9 @@ pub fn parse_list_attached_user_policies_response(
             output,
         )
         .map_err(crate::error::ListAttachedUserPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7710,8 +8003,11 @@ pub fn parse_list_entities_for_policy_error(
     crate::output::ListEntitiesForPolicyOutput,
     crate::error::ListEntitiesForPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListEntitiesForPolicyError::unhandled(generic)),
@@ -7719,57 +8015,55 @@ pub fn parse_list_entities_for_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListEntitiesForPolicyError {
-            meta: generic,
-            kind: crate::error::ListEntitiesForPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListEntitiesForPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListEntitiesForPolicyError {
-            meta: generic,
-            kind: crate::error::ListEntitiesForPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListEntitiesForPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListEntitiesForPolicyError {
-            meta: generic,
-            kind: crate::error::ListEntitiesForPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListEntitiesForPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListEntitiesForPolicyError::generic(generic),
     })
 }
@@ -7790,6 +8084,9 @@ pub fn parse_list_entities_for_policy_response(
             output,
         )
         .map_err(crate::error::ListEntitiesForPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7799,8 +8096,11 @@ pub fn parse_list_group_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupPoliciesOutput, crate::error::ListGroupPoliciesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListGroupPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListGroupPoliciesError::unhandled(generic)),
@@ -7808,40 +8108,38 @@ pub fn parse_list_group_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListGroupPoliciesError {
-            meta: generic,
-            kind: crate::error::ListGroupPoliciesErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListGroupPoliciesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListGroupPoliciesError {
-            meta: generic,
-            kind: crate::error::ListGroupPoliciesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListGroupPoliciesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupPoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupPoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListGroupPoliciesError::generic(generic),
     })
 }
@@ -7860,6 +8158,9 @@ pub fn parse_list_group_policies_response(
             output,
         )
         .map_err(crate::error::ListGroupPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7868,8 +8169,11 @@ pub fn parse_list_group_policies_response(
 pub fn parse_list_groups_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListGroupsError::unhandled(generic)),
@@ -7877,23 +8181,21 @@ pub fn parse_list_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListGroupsError {
-            meta: generic,
-            kind: crate::error::ListGroupsErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListGroupsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListGroupsError::generic(generic),
     })
 }
@@ -7911,6 +8213,9 @@ pub fn parse_list_groups_response(
             output,
         )
         .map_err(crate::error::ListGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7920,8 +8225,11 @@ pub fn parse_list_groups_for_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGroupsForUserOutput, crate::error::ListGroupsForUserError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListGroupsForUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListGroupsForUserError::unhandled(generic)),
@@ -7929,40 +8237,38 @@ pub fn parse_list_groups_for_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListGroupsForUserError {
-            meta: generic,
-            kind: crate::error::ListGroupsForUserErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListGroupsForUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsForUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListGroupsForUserError {
-            meta: generic,
-            kind: crate::error::ListGroupsForUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListGroupsForUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsForUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListGroupsForUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListGroupsForUserError::generic(generic),
     })
 }
@@ -7981,6 +8287,9 @@ pub fn parse_list_groups_for_user_response(
             output,
         )
         .map_err(crate::error::ListGroupsForUserError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7992,8 +8301,11 @@ pub fn parse_list_instance_profiles_error(
     crate::output::ListInstanceProfilesOutput,
     crate::error::ListInstanceProfilesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListInstanceProfilesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListInstanceProfilesError::unhandled(generic)),
@@ -8001,23 +8313,21 @@ pub fn parse_list_instance_profiles_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListInstanceProfilesError {
-            meta: generic,
-            kind: crate::error::ListInstanceProfilesErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListInstanceProfilesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfilesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfilesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListInstanceProfilesError::generic(generic),
     })
 }
@@ -8038,6 +8348,9 @@ pub fn parse_list_instance_profiles_response(
             output,
         )
         .map_err(crate::error::ListInstanceProfilesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8049,8 +8362,11 @@ pub fn parse_list_instance_profiles_for_role_error(
     crate::output::ListInstanceProfilesForRoleOutput,
     crate::error::ListInstanceProfilesForRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListInstanceProfilesForRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8062,40 +8378,40 @@ pub fn parse_list_instance_profiles_for_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListInstanceProfilesForRoleError {
-            meta: generic,
-            kind: crate::error::ListInstanceProfilesForRoleErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListInstanceProfilesForRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfilesForRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListInstanceProfilesForRoleError {
-            meta: generic,
-            kind: crate::error::ListInstanceProfilesForRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::ListInstanceProfilesForRoleError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfilesForRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListInstanceProfilesForRoleError::generic(generic),
     })
 }
@@ -8116,6 +8432,9 @@ pub fn parse_list_instance_profiles_for_role_response(
             output,
         )
         .map_err(crate::error::ListInstanceProfilesForRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8127,8 +8446,11 @@ pub fn parse_list_instance_profile_tags_error(
     crate::output::ListInstanceProfileTagsOutput,
     crate::error::ListInstanceProfileTagsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8140,40 +8462,38 @@ pub fn parse_list_instance_profile_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListInstanceProfileTagsError {
-            meta: generic,
-            kind: crate::error::ListInstanceProfileTagsErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListInstanceProfileTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListInstanceProfileTagsError {
-            meta: generic,
-            kind: crate::error::ListInstanceProfileTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListInstanceProfileTagsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListInstanceProfileTagsError::generic(generic),
     })
 }
@@ -8194,6 +8514,9 @@ pub fn parse_list_instance_profile_tags_response(
             output,
         )
         .map_err(crate::error::ListInstanceProfileTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8202,8 +8525,11 @@ pub fn parse_list_instance_profile_tags_response(
 pub fn parse_list_mfa_devices_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMfaDevicesOutput, crate::error::ListMFADevicesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListMFADevicesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListMFADevicesError::unhandled(generic)),
@@ -8211,40 +8537,38 @@ pub fn parse_list_mfa_devices_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListMFADevicesError {
-            meta: generic,
-            kind: crate::error::ListMFADevicesErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListMFADevicesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADevicesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListMFADevicesError {
-            meta: generic,
-            kind: crate::error::ListMFADevicesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListMFADevicesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADevicesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADevicesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListMFADevicesError::generic(generic),
     })
 }
@@ -8262,6 +8586,9 @@ pub fn parse_list_mfa_devices_response(
             output,
         )
         .map_err(crate::error::ListMFADevicesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8271,8 +8598,11 @@ pub fn parse_list_mfa_device_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMfaDeviceTagsOutput, crate::error::ListMFADeviceTagsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListMFADeviceTagsError::unhandled(generic)),
@@ -8280,57 +8610,55 @@ pub fn parse_list_mfa_device_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListMFADeviceTagsError {
-            meta: generic,
-            kind: crate::error::ListMFADeviceTagsErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListMFADeviceTagsError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListMFADeviceTagsError {
-            meta: generic,
-            kind: crate::error::ListMFADeviceTagsErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListMFADeviceTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListMFADeviceTagsError {
-            meta: generic,
-            kind: crate::error::ListMFADeviceTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListMFADeviceTagsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListMFADeviceTagsError::generic(generic),
     })
 }
@@ -8349,6 +8677,9 @@ pub fn parse_list_mfa_device_tags_response(
             output,
         )
         .map_err(crate::error::ListMFADeviceTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8360,8 +8691,11 @@ pub fn parse_list_open_id_connect_providers_error(
     crate::output::ListOpenIdConnectProvidersOutput,
     crate::error::ListOpenIDConnectProvidersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListOpenIDConnectProvidersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8373,23 +8707,23 @@ pub fn parse_list_open_id_connect_providers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListOpenIDConnectProvidersError {
-            meta: generic,
-            kind: crate::error::ListOpenIDConnectProvidersErrorKind::ServiceFailureException({
+        "ServiceFailure" => {
+            crate::error::ListOpenIDConnectProvidersError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListOpenIDConnectProvidersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListOpenIDConnectProvidersError::generic(generic),
     })
 }
@@ -8410,6 +8744,9 @@ pub fn parse_list_open_id_connect_providers_response(
             output,
         )
         .map_err(crate::error::ListOpenIDConnectProvidersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8421,8 +8758,11 @@ pub fn parse_list_open_id_connect_provider_tags_error(
     crate::output::ListOpenIdConnectProviderTagsOutput,
     crate::error::ListOpenIDConnectProviderTagsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListOpenIDConnectProviderTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8434,57 +8774,57 @@ pub fn parse_list_open_id_connect_provider_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListOpenIDConnectProviderTagsError {
-            meta: generic,
-            kind: crate::error::ListOpenIDConnectProviderTagsErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListOpenIDConnectProviderTagsError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListOpenIDConnectProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListOpenIDConnectProviderTagsError {
-            meta: generic,
-            kind: crate::error::ListOpenIDConnectProviderTagsErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListOpenIDConnectProviderTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListOpenIDConnectProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListOpenIDConnectProviderTagsError {
-            meta: generic,
-            kind: crate::error::ListOpenIDConnectProviderTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::ListOpenIDConnectProviderTagsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListOpenIDConnectProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListOpenIDConnectProviderTagsError::generic(generic),
     })
 }
@@ -8507,6 +8847,9 @@ pub fn parse_list_open_id_connect_provider_tags_response(
                 output,
             )
             .map_err(crate::error::ListOpenIDConnectProviderTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8515,8 +8858,11 @@ pub fn parse_list_open_id_connect_provider_tags_response(
 pub fn parse_list_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPoliciesOutput, crate::error::ListPoliciesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListPoliciesError::unhandled(generic)),
@@ -8524,23 +8870,21 @@ pub fn parse_list_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListPoliciesError {
-            meta: generic,
-            kind: crate::error::ListPoliciesErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListPoliciesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListPoliciesError::generic(generic),
     })
 }
@@ -8558,6 +8902,9 @@ pub fn parse_list_policies_response(
             output,
         )
         .map_err(crate::error::ListPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8569,8 +8916,11 @@ pub fn parse_list_policies_granting_service_access_error(
     crate::output::ListPoliciesGrantingServiceAccessOutput,
     crate::error::ListPoliciesGrantingServiceAccessError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8580,44 +8930,40 @@ pub fn parse_list_policies_granting_service_access_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListPoliciesGrantingServiceAccessError {
-            meta: generic,
-            kind: crate::error::ListPoliciesGrantingServiceAccessErrorKind::InvalidInputException(
-                {
+        "InvalidInput" => {
+            crate::error::ListPoliciesGrantingServiceAccessError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_input_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "NoSuchEntity" => crate::error::ListPoliciesGrantingServiceAccessError {
-            meta: generic,
-            kind: crate::error::ListPoliciesGrantingServiceAccessErrorKind::NoSuchEntityException(
-                {
+                    let mut output = crate::error::invalid_input_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListPoliciesGrantingServiceAccessError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::no_such_entity_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::no_such_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListPoliciesGrantingServiceAccessError::generic(generic),
     })
 }
@@ -8635,6 +8981,9 @@ pub fn parse_list_policies_granting_service_access_response(
             crate::output::list_policies_granting_service_access_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_list_policies_granting_service_access(response.body().as_ref(), output).map_err(crate::error::ListPoliciesGrantingServiceAccessError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8643,8 +8992,11 @@ pub fn parse_list_policies_granting_service_access_response(
 pub fn parse_list_policy_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPolicyTagsOutput, crate::error::ListPolicyTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPolicyTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListPolicyTagsError::unhandled(generic)),
@@ -8652,57 +9004,55 @@ pub fn parse_list_policy_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListPolicyTagsError {
-            meta: generic,
-            kind: crate::error::ListPolicyTagsErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListPolicyTagsError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListPolicyTagsError {
-            meta: generic,
-            kind: crate::error::ListPolicyTagsErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListPolicyTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListPolicyTagsError {
-            meta: generic,
-            kind: crate::error::ListPolicyTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListPolicyTagsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListPolicyTagsError::generic(generic),
     })
 }
@@ -8720,6 +9070,9 @@ pub fn parse_list_policy_tags_response(
             output,
         )
         .map_err(crate::error::ListPolicyTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8731,8 +9084,11 @@ pub fn parse_list_policy_versions_error(
     crate::output::ListPolicyVersionsOutput,
     crate::error::ListPolicyVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPolicyVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListPolicyVersionsError::unhandled(generic)),
@@ -8740,57 +9096,55 @@ pub fn parse_list_policy_versions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListPolicyVersionsError {
-            meta: generic,
-            kind: crate::error::ListPolicyVersionsErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListPolicyVersionsError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyVersionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListPolicyVersionsError {
-            meta: generic,
-            kind: crate::error::ListPolicyVersionsErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListPolicyVersionsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyVersionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListPolicyVersionsError {
-            meta: generic,
-            kind: crate::error::ListPolicyVersionsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListPolicyVersionsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyVersionsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPolicyVersionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListPolicyVersionsError::generic(generic),
     })
 }
@@ -8811,6 +9165,9 @@ pub fn parse_list_policy_versions_response(
             output,
         )
         .map_err(crate::error::ListPolicyVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8820,8 +9177,11 @@ pub fn parse_list_role_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRolePoliciesOutput, crate::error::ListRolePoliciesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRolePoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRolePoliciesError::unhandled(generic)),
@@ -8829,40 +9189,38 @@ pub fn parse_list_role_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListRolePoliciesError {
-            meta: generic,
-            kind: crate::error::ListRolePoliciesErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListRolePoliciesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRolePoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListRolePoliciesError {
-            meta: generic,
-            kind: crate::error::ListRolePoliciesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListRolePoliciesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRolePoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRolePoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListRolePoliciesError::generic(generic),
     })
 }
@@ -8881,6 +9239,9 @@ pub fn parse_list_role_policies_response(
             output,
         )
         .map_err(crate::error::ListRolePoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8889,8 +9250,11 @@ pub fn parse_list_role_policies_response(
 pub fn parse_list_roles_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRolesOutput, crate::error::ListRolesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRolesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRolesError::unhandled(generic)),
@@ -8898,23 +9262,21 @@ pub fn parse_list_roles_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListRolesError {
-            meta: generic,
-            kind: crate::error::ListRolesErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListRolesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRolesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRolesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListRolesError::generic(generic),
     })
 }
@@ -8932,6 +9294,9 @@ pub fn parse_list_roles_response(
             output,
         )
         .map_err(crate::error::ListRolesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8940,8 +9305,11 @@ pub fn parse_list_roles_response(
 pub fn parse_list_role_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRoleTagsOutput, crate::error::ListRoleTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRoleTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRoleTagsError::unhandled(generic)),
@@ -8949,40 +9317,38 @@ pub fn parse_list_role_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListRoleTagsError {
-            meta: generic,
-            kind: crate::error::ListRoleTagsErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListRoleTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRoleTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListRoleTagsError {
-            meta: generic,
-            kind: crate::error::ListRoleTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListRoleTagsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRoleTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListRoleTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListRoleTagsError::generic(generic),
     })
 }
@@ -9000,6 +9366,9 @@ pub fn parse_list_role_tags_response(
             output,
         )
         .map_err(crate::error::ListRoleTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9009,8 +9378,11 @@ pub fn parse_list_saml_providers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSamlProvidersOutput, crate::error::ListSAMLProvidersError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSAMLProvidersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListSAMLProvidersError::unhandled(generic)),
@@ -9018,23 +9390,21 @@ pub fn parse_list_saml_providers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListSAMLProvidersError {
-            meta: generic,
-            kind: crate::error::ListSAMLProvidersErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListSAMLProvidersError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProvidersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProvidersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListSAMLProvidersError::generic(generic),
     })
 }
@@ -9053,6 +9423,9 @@ pub fn parse_list_saml_providers_response(
             output,
         )
         .map_err(crate::error::ListSAMLProvidersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9064,8 +9437,11 @@ pub fn parse_list_saml_provider_tags_error(
     crate::output::ListSamlProviderTagsOutput,
     crate::error::ListSAMLProviderTagsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListSAMLProviderTagsError::unhandled(generic)),
@@ -9073,57 +9449,55 @@ pub fn parse_list_saml_provider_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::ListSAMLProviderTagsError {
-            meta: generic,
-            kind: crate::error::ListSAMLProviderTagsErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::ListSAMLProviderTagsError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ListSAMLProviderTagsError {
-            meta: generic,
-            kind: crate::error::ListSAMLProviderTagsErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ListSAMLProviderTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListSAMLProviderTagsError {
-            meta: generic,
-            kind: crate::error::ListSAMLProviderTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListSAMLProviderTagsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListSAMLProviderTagsError::generic(generic),
     })
 }
@@ -9144,6 +9518,9 @@ pub fn parse_list_saml_provider_tags_response(
             output,
         )
         .map_err(crate::error::ListSAMLProviderTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9155,8 +9532,11 @@ pub fn parse_list_server_certificates_error(
     crate::output::ListServerCertificatesOutput,
     crate::error::ListServerCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListServerCertificatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9168,23 +9548,21 @@ pub fn parse_list_server_certificates_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListServerCertificatesError {
-            meta: generic,
-            kind: crate::error::ListServerCertificatesErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListServerCertificatesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServerCertificatesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServerCertificatesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListServerCertificatesError::generic(generic),
     })
 }
@@ -9205,6 +9583,9 @@ pub fn parse_list_server_certificates_response(
             output,
         )
         .map_err(crate::error::ListServerCertificatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9216,8 +9597,11 @@ pub fn parse_list_server_certificate_tags_error(
     crate::output::ListServerCertificateTagsOutput,
     crate::error::ListServerCertificateTagsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListServerCertificateTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9229,40 +9613,40 @@ pub fn parse_list_server_certificate_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListServerCertificateTagsError {
-            meta: generic,
-            kind: crate::error::ListServerCertificateTagsErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListServerCertificateTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServerCertificateTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListServerCertificateTagsError {
-            meta: generic,
-            kind: crate::error::ListServerCertificateTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::ListServerCertificateTagsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServerCertificateTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListServerCertificateTagsError::generic(generic),
     })
 }
@@ -9283,6 +9667,9 @@ pub fn parse_list_server_certificate_tags_response(
             output,
         )
         .map_err(crate::error::ListServerCertificateTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9294,8 +9681,11 @@ pub fn parse_list_service_specific_credentials_error(
     crate::output::ListServiceSpecificCredentialsOutput,
     crate::error::ListServiceSpecificCredentialsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListServiceSpecificCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListServiceSpecificCredentialsError::unhandled(generic)),
@@ -9303,44 +9693,41 @@ pub fn parse_list_service_specific_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListServiceSpecificCredentialsError {
-            meta: generic,
-            kind: crate::error::ListServiceSpecificCredentialsErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListServiceSpecificCredentialsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServiceSpecificCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotSupportedService" => crate::error::ListServiceSpecificCredentialsError {
-            meta: generic,
-            kind:
-                crate::error::ListServiceSpecificCredentialsErrorKind::ServiceNotSupportedException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_not_supported_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_service_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServiceSpecificCredentialsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "NotSupportedService" => {
+            crate::error::ListServiceSpecificCredentialsError::ServiceNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::service_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListServiceSpecificCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListServiceSpecificCredentialsError::generic(generic),
     })
 }
@@ -9363,6 +9750,9 @@ pub fn parse_list_service_specific_credentials_response(
                 output,
             )
             .map_err(crate::error::ListServiceSpecificCredentialsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9374,8 +9764,11 @@ pub fn parse_list_signing_certificates_error(
     crate::output::ListSigningCertificatesOutput,
     crate::error::ListSigningCertificatesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSigningCertificatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9387,40 +9780,38 @@ pub fn parse_list_signing_certificates_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListSigningCertificatesError {
-            meta: generic,
-            kind: crate::error::ListSigningCertificatesErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListSigningCertificatesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSigningCertificatesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListSigningCertificatesError {
-            meta: generic,
-            kind: crate::error::ListSigningCertificatesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListSigningCertificatesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSigningCertificatesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSigningCertificatesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListSigningCertificatesError::generic(generic),
     })
 }
@@ -9441,6 +9832,9 @@ pub fn parse_list_signing_certificates_response(
             output,
         )
         .map_err(crate::error::ListSigningCertificatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9450,8 +9844,11 @@ pub fn parse_list_ssh_public_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSshPublicKeysOutput, crate::error::ListSSHPublicKeysError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSSHPublicKeysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListSSHPublicKeysError::unhandled(generic)),
@@ -9459,23 +9856,23 @@ pub fn parse_list_ssh_public_keys_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListSSHPublicKeysError {
-            meta: generic,
-            kind: crate::error::ListSSHPublicKeysErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListSSHPublicKeysError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListSSHPublicKeysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSSHPublicKeysError::generic(generic),
     })
 }
@@ -9494,6 +9891,9 @@ pub fn parse_list_ssh_public_keys_response(
             output,
         )
         .map_err(crate::error::ListSSHPublicKeysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9503,8 +9903,11 @@ pub fn parse_list_user_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUserPoliciesOutput, crate::error::ListUserPoliciesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListUserPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListUserPoliciesError::unhandled(generic)),
@@ -9512,40 +9915,38 @@ pub fn parse_list_user_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListUserPoliciesError {
-            meta: generic,
-            kind: crate::error::ListUserPoliciesErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListUserPoliciesError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUserPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListUserPoliciesError {
-            meta: generic,
-            kind: crate::error::ListUserPoliciesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListUserPoliciesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUserPoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUserPoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListUserPoliciesError::generic(generic),
     })
 }
@@ -9564,6 +9965,9 @@ pub fn parse_list_user_policies_response(
             output,
         )
         .map_err(crate::error::ListUserPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9572,8 +9976,11 @@ pub fn parse_list_user_policies_response(
 pub fn parse_list_users_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListUsersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListUsersError::unhandled(generic)),
@@ -9581,23 +9988,21 @@ pub fn parse_list_users_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::ListUsersError {
-            meta: generic,
-            kind: crate::error::ListUsersErrorKind::ServiceFailureException({
+        "ServiceFailure" => crate::error::ListUsersError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUsersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListUsersError::generic(generic),
     })
 }
@@ -9615,6 +10020,9 @@ pub fn parse_list_users_response(
             output,
         )
         .map_err(crate::error::ListUsersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9623,8 +10031,11 @@ pub fn parse_list_users_response(
 pub fn parse_list_user_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListUserTagsOutput, crate::error::ListUserTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListUserTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListUserTagsError::unhandled(generic)),
@@ -9632,40 +10043,38 @@ pub fn parse_list_user_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ListUserTagsError {
-            meta: generic,
-            kind: crate::error::ListUserTagsErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ListUserTagsError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUserTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ListUserTagsError {
-            meta: generic,
-            kind: crate::error::ListUserTagsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ListUserTagsError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUserTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListUserTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListUserTagsError::generic(generic),
     })
 }
@@ -9683,6 +10092,9 @@ pub fn parse_list_user_tags_response(
             output,
         )
         .map_err(crate::error::ListUserTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9694,8 +10106,11 @@ pub fn parse_list_virtual_mfa_devices_error(
     crate::output::ListVirtualMfaDevicesOutput,
     crate::error::ListVirtualMFADevicesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVirtualMFADevicesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListVirtualMFADevicesError::generic(generic))
 }
 
@@ -9715,6 +10130,9 @@ pub fn parse_list_virtual_mfa_devices_response(
             output,
         )
         .map_err(crate::error::ListVirtualMFADevicesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9723,8 +10141,11 @@ pub fn parse_list_virtual_mfa_devices_response(
 pub fn parse_put_group_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutGroupPolicyOutput, crate::error::PutGroupPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutGroupPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutGroupPolicyError::unhandled(generic)),
@@ -9732,26 +10153,25 @@ pub fn parse_put_group_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutGroupPolicyError {
-            meta: generic,
-            kind: crate::error::PutGroupPolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::PutGroupPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::PutGroupPolicyError {
-            meta: generic,
-            kind: crate::error::PutGroupPolicyErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::PutGroupPolicyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9759,48 +10179,47 @@ pub fn parse_put_group_policy_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::PutGroupPolicyError {
-            meta: generic,
-            kind: crate::error::PutGroupPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::PutGroupPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutGroupPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::PutGroupPolicyError {
-            meta: generic,
-            kind: crate::error::PutGroupPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::PutGroupPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutGroupPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutGroupPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutGroupPolicyError::generic(generic),
     })
 }
@@ -9813,6 +10232,9 @@ pub fn parse_put_group_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_group_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9824,8 +10246,11 @@ pub fn parse_put_role_permissions_boundary_error(
     crate::output::PutRolePermissionsBoundaryOutput,
     crate::error::PutRolePermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9837,80 +10262,77 @@ pub fn parse_put_role_permissions_boundary_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::PutRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutRolePermissionsBoundaryErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::PutRolePermissionsBoundaryError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::PutRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutRolePermissionsBoundaryErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::PutRolePermissionsBoundaryError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyNotAttachable" => crate::error::PutRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutRolePermissionsBoundaryErrorKind::PolicyNotAttachableException(
-                {
+            })
+        }
+        "PolicyNotAttachable" => {
+            crate::error::PutRolePermissionsBoundaryError::PolicyNotAttachableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::policy_not_attachable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceFailure" => crate::error::PutRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutRolePermissionsBoundaryErrorKind::ServiceFailureException({
+                    let mut output =
+                        crate::error::policy_not_attachable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::PutRolePermissionsBoundaryError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::PutRolePermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutRolePermissionsBoundaryErrorKind::UnmodifiableEntityException({
+            })
+        }
+        "UnmodifiableEntity" => {
+            crate::error::PutRolePermissionsBoundaryError::UnmodifiableEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9918,14 +10340,15 @@ pub fn parse_put_role_permissions_boundary_error(
                         crate::error::unmodifiable_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutRolePermissionsBoundaryError::generic(generic),
     })
 }
@@ -9941,6 +10364,9 @@ pub fn parse_put_role_permissions_boundary_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_role_permissions_boundary_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9949,8 +10375,11 @@ pub fn parse_put_role_permissions_boundary_response(
 pub fn parse_put_role_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutRolePolicyOutput, crate::error::PutRolePolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutRolePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutRolePolicyError::unhandled(generic)),
@@ -9958,26 +10387,25 @@ pub fn parse_put_role_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutRolePolicyError {
-            meta: generic,
-            kind: crate::error::PutRolePolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::PutRolePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::PutRolePolicyError {
-            meta: generic,
-            kind: crate::error::PutRolePolicyErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::PutRolePolicyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9985,66 +10413,62 @@ pub fn parse_put_role_policy_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::PutRolePolicyError {
-            meta: generic,
-            kind: crate::error::PutRolePolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::PutRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::PutRolePolicyError {
-            meta: generic,
-            kind: crate::error::PutRolePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::PutRolePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::PutRolePolicyError {
-            meta: generic,
-            kind: crate::error::PutRolePolicyErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::error::PutRolePolicyError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutRolePolicyError::generic(generic),
     })
 }
@@ -10057,6 +10481,9 @@ pub fn parse_put_role_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_role_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10068,8 +10495,11 @@ pub fn parse_put_user_permissions_boundary_error(
     crate::output::PutUserPermissionsBoundaryOutput,
     crate::error::PutUserPermissionsBoundaryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10081,77 +10511,75 @@ pub fn parse_put_user_permissions_boundary_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::PutUserPermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutUserPermissionsBoundaryErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::PutUserPermissionsBoundaryError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::PutUserPermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutUserPermissionsBoundaryErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::PutUserPermissionsBoundaryError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyNotAttachable" => crate::error::PutUserPermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutUserPermissionsBoundaryErrorKind::PolicyNotAttachableException(
-                {
+            })
+        }
+        "PolicyNotAttachable" => {
+            crate::error::PutUserPermissionsBoundaryError::PolicyNotAttachableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::policy_not_attachable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceFailure" => crate::error::PutUserPermissionsBoundaryError {
-            meta: generic,
-            kind: crate::error::PutUserPermissionsBoundaryErrorKind::ServiceFailureException({
+                    let mut output =
+                        crate::error::policy_not_attachable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_policy_not_attachable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::PutUserPermissionsBoundaryError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPermissionsBoundaryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutUserPermissionsBoundaryError::generic(generic),
     })
 }
@@ -10167,6 +10595,9 @@ pub fn parse_put_user_permissions_boundary_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_user_permissions_boundary_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10175,8 +10606,11 @@ pub fn parse_put_user_permissions_boundary_response(
 pub fn parse_put_user_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutUserPolicyOutput, crate::error::PutUserPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutUserPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutUserPolicyError::unhandled(generic)),
@@ -10184,26 +10618,25 @@ pub fn parse_put_user_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::PutUserPolicyError {
-            meta: generic,
-            kind: crate::error::PutUserPolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::PutUserPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::PutUserPolicyError {
-            meta: generic,
-            kind: crate::error::PutUserPolicyErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::PutUserPolicyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10211,48 +10644,47 @@ pub fn parse_put_user_policy_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::PutUserPolicyError {
-            meta: generic,
-            kind: crate::error::PutUserPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::PutUserPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::PutUserPolicyError {
-            meta: generic,
-            kind: crate::error::PutUserPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::PutUserPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutUserPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutUserPolicyError::generic(generic),
     })
 }
@@ -10265,6 +10697,9 @@ pub fn parse_put_user_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_user_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10276,8 +10711,11 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
     crate::output::RemoveClientIdFromOpenIdConnectProviderOutput,
     crate::error::RemoveClientIDFromOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10289,55 +10727,58 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::RemoveClientIDFromOpenIDConnectProviderError { meta: generic, kind: crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidInput" => {
+            crate::error::RemoveClientIDFromOpenIDConnectProviderError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NoSuchEntity" => crate::error::RemoveClientIDFromOpenIDConnectProviderError { meta: generic, kind: crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::RemoveClientIDFromOpenIDConnectProviderError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailure" => crate::error::RemoveClientIDFromOpenIDConnectProviderError { meta: generic, kind: crate::error::RemoveClientIDFromOpenIDConnectProviderErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::RemoveClientIDFromOpenIDConnectProviderError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveClientIDFromOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::RemoveClientIDFromOpenIDConnectProviderError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::RemoveClientIDFromOpenIDConnectProviderError::generic(generic),
     })
 }
 
@@ -10354,6 +10795,9 @@ pub fn parse_remove_client_id_from_open_id_connect_provider_response(
             crate::output::remove_client_id_from_open_id_connect_provider_output::Builder::default(
             );
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10365,8 +10809,11 @@ pub fn parse_remove_role_from_instance_profile_error(
     crate::output::RemoveRoleFromInstanceProfileOutput,
     crate::error::RemoveRoleFromInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10378,77 +10825,75 @@ pub fn parse_remove_role_from_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::RemoveRoleFromInstanceProfileError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromInstanceProfileErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::RemoveRoleFromInstanceProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::RemoveRoleFromInstanceProfileError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromInstanceProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::RemoveRoleFromInstanceProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::RemoveRoleFromInstanceProfileError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::RemoveRoleFromInstanceProfileError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::RemoveRoleFromInstanceProfileError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromInstanceProfileErrorKind::UnmodifiableEntityException(
-                {
+            })
+        }
+        "UnmodifiableEntity" => {
+            crate::error::RemoveRoleFromInstanceProfileError::UnmodifiableEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unmodifiable_entity_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unmodifiable_entity_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::RemoveRoleFromInstanceProfileError::generic(generic),
     })
 }
@@ -10465,6 +10910,9 @@ pub fn parse_remove_role_from_instance_profile_response(
         let mut output =
             crate::output::remove_role_from_instance_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10476,8 +10924,11 @@ pub fn parse_remove_user_from_group_error(
     crate::output::RemoveUserFromGroupOutput,
     crate::error::RemoveUserFromGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RemoveUserFromGroupError::unhandled(generic)),
@@ -10485,57 +10936,55 @@ pub fn parse_remove_user_from_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::RemoveUserFromGroupError {
-            meta: generic,
-            kind: crate::error::RemoveUserFromGroupErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::RemoveUserFromGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::RemoveUserFromGroupError {
-            meta: generic,
-            kind: crate::error::RemoveUserFromGroupErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::RemoveUserFromGroupError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::RemoveUserFromGroupError {
-            meta: generic,
-            kind: crate::error::RemoveUserFromGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::RemoveUserFromGroupError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveUserFromGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::RemoveUserFromGroupError::generic(generic),
     })
 }
@@ -10551,6 +11000,9 @@ pub fn parse_remove_user_from_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_user_from_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10562,8 +11014,11 @@ pub fn parse_reset_service_specific_credential_error(
     crate::output::ResetServiceSpecificCredentialOutput,
     crate::error::ResetServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetServiceSpecificCredentialError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ResetServiceSpecificCredentialError::unhandled(generic)),
@@ -10571,23 +11026,23 @@ pub fn parse_reset_service_specific_credential_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::ResetServiceSpecificCredentialError {
-            meta: generic,
-            kind: crate::error::ResetServiceSpecificCredentialErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::ResetServiceSpecificCredentialError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetServiceSpecificCredentialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ResetServiceSpecificCredentialError::generic(generic),
     })
 }
@@ -10610,6 +11065,9 @@ pub fn parse_reset_service_specific_credential_response(
                 output,
             )
             .map_err(crate::error::ResetServiceSpecificCredentialError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10618,8 +11076,11 @@ pub fn parse_reset_service_specific_credential_response(
 pub fn parse_resync_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResyncMfaDeviceOutput, crate::error::ResyncMFADeviceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ResyncMFADeviceError::unhandled(generic)),
@@ -10627,9 +11088,8 @@ pub fn parse_resync_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidAuthenticationCode" => crate::error::ResyncMFADeviceError {
-            meta: generic,
-            kind: crate::error::ResyncMFADeviceErrorKind::InvalidAuthenticationCodeException({
+        "InvalidAuthenticationCode" => {
+            crate::error::ResyncMFADeviceError::InvalidAuthenticationCodeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10637,65 +11097,64 @@ pub fn parse_resync_mfa_device_error(
                         crate::error::invalid_authentication_code_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_authentication_code_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::ResyncMFADeviceError {
-            meta: generic,
-            kind: crate::error::ResyncMFADeviceErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::ResyncMFADeviceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::ResyncMFADeviceError {
-            meta: generic,
-            kind: crate::error::ResyncMFADeviceErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::ResyncMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::ResyncMFADeviceError {
-            meta: generic,
-            kind: crate::error::ResyncMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::ResyncMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ResyncMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ResyncMFADeviceError::generic(generic),
     })
 }
@@ -10708,6 +11167,9 @@ pub fn parse_resync_mfa_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::resync_mfa_device_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10719,8 +11181,11 @@ pub fn parse_set_default_policy_version_error(
     crate::output::SetDefaultPolicyVersionOutput,
     crate::error::SetDefaultPolicyVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10732,74 +11197,72 @@ pub fn parse_set_default_policy_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::SetDefaultPolicyVersionError {
-            meta: generic,
-            kind: crate::error::SetDefaultPolicyVersionErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::SetDefaultPolicyVersionError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::SetDefaultPolicyVersionError {
-            meta: generic,
-            kind: crate::error::SetDefaultPolicyVersionErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::SetDefaultPolicyVersionError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::SetDefaultPolicyVersionError {
-            meta: generic,
-            kind: crate::error::SetDefaultPolicyVersionErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::SetDefaultPolicyVersionError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::SetDefaultPolicyVersionError {
-            meta: generic,
-            kind: crate::error::SetDefaultPolicyVersionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::SetDefaultPolicyVersionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDefaultPolicyVersionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SetDefaultPolicyVersionError::generic(generic),
     })
 }
@@ -10815,6 +11278,9 @@ pub fn parse_set_default_policy_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_default_policy_version_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10826,8 +11292,11 @@ pub fn parse_set_security_token_service_preferences_error(
     crate::output::SetSecurityTokenServicePreferencesOutput,
     crate::error::SetSecurityTokenServicePreferencesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetSecurityTokenServicePreferencesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10837,27 +11306,23 @@ pub fn parse_set_security_token_service_preferences_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ServiceFailure" => crate::error::SetSecurityTokenServicePreferencesError {
-            meta: generic,
-            kind:
-                crate::error::SetSecurityTokenServicePreferencesErrorKind::ServiceFailureException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_failure_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSecurityTokenServicePreferencesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "ServiceFailure" => {
+            crate::error::SetSecurityTokenServicePreferencesError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetSecurityTokenServicePreferencesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::SetSecurityTokenServicePreferencesError::generic(generic),
     })
 }
@@ -10874,6 +11339,9 @@ pub fn parse_set_security_token_service_preferences_response(
         let mut output =
             crate::output::set_security_token_service_preferences_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10885,8 +11353,11 @@ pub fn parse_simulate_custom_policy_error(
     crate::output::SimulateCustomPolicyOutput,
     crate::error::SimulateCustomPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SimulateCustomPolicyError::unhandled(generic)),
@@ -10894,40 +11365,38 @@ pub fn parse_simulate_custom_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::SimulateCustomPolicyError {
-            meta: generic,
-            kind: crate::error::SimulateCustomPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::SimulateCustomPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyEvaluation" => crate::error::SimulateCustomPolicyError {
-            meta: generic,
-            kind: crate::error::SimulateCustomPolicyErrorKind::PolicyEvaluationException({
+            })
+        }
+        "PolicyEvaluation" => crate::error::SimulateCustomPolicyError::PolicyEvaluationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::policy_evaluation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_policy_evaluation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::policy_evaluation_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_policy_evaluation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SimulateCustomPolicyError::generic(generic),
     })
 }
@@ -10948,6 +11417,9 @@ pub fn parse_simulate_custom_policy_response(
             output,
         )
         .map_err(crate::error::SimulateCustomPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10959,8 +11431,11 @@ pub fn parse_simulate_principal_policy_error(
     crate::output::SimulatePrincipalPolicyOutput,
     crate::error::SimulatePrincipalPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10972,57 +11447,57 @@ pub fn parse_simulate_principal_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::SimulatePrincipalPolicyError {
-            meta: generic,
-            kind: crate::error::SimulatePrincipalPolicyErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::SimulatePrincipalPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::SimulatePrincipalPolicyError {
-            meta: generic,
-            kind: crate::error::SimulatePrincipalPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::SimulatePrincipalPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PolicyEvaluation" => crate::error::SimulatePrincipalPolicyError {
-            meta: generic,
-            kind: crate::error::SimulatePrincipalPolicyErrorKind::PolicyEvaluationException({
+            })
+        }
+        "PolicyEvaluation" => {
+            crate::error::SimulatePrincipalPolicyError::PolicyEvaluationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::policy_evaluation_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_policy_evaluation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SimulatePrincipalPolicyError::generic(generic),
     })
 }
@@ -11043,6 +11518,9 @@ pub fn parse_simulate_principal_policy_response(
             output,
         )
         .map_err(crate::error::SimulatePrincipalPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11054,8 +11532,11 @@ pub fn parse_tag_instance_profile_error(
     crate::output::TagInstanceProfileOutput,
     crate::error::TagInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagInstanceProfileError::unhandled(generic)),
@@ -11063,9 +11544,8 @@ pub fn parse_tag_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::TagInstanceProfileErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::TagInstanceProfileError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11073,82 +11553,81 @@ pub fn parse_tag_instance_profile_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::TagInstanceProfileErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::TagInstanceProfileError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::TagInstanceProfileErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagInstanceProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::TagInstanceProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagInstanceProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::TagInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagInstanceProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagInstanceProfileError::generic(generic),
     })
 }
@@ -11164,6 +11643,9 @@ pub fn parse_tag_instance_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_instance_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11172,8 +11654,11 @@ pub fn parse_tag_instance_profile_response(
 pub fn parse_tag_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagMfaDeviceOutput, crate::error::TagMFADeviceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagMFADeviceError::unhandled(generic)),
@@ -11181,9 +11666,8 @@ pub fn parse_tag_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagMFADeviceError {
-            meta: generic,
-            kind: crate::error::TagMFADeviceErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::TagMFADeviceError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11191,82 +11675,81 @@ pub fn parse_tag_mfa_device_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagMFADeviceError {
-            meta: generic,
-            kind: crate::error::TagMFADeviceErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::TagMFADeviceError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagMFADeviceError {
-            meta: generic,
-            kind: crate::error::TagMFADeviceErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagMFADeviceError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagMFADeviceError {
-            meta: generic,
-            kind: crate::error::TagMFADeviceErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagMFADeviceError {
-            meta: generic,
-            kind: crate::error::TagMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagMFADeviceError::generic(generic),
     })
 }
@@ -11279,6 +11762,9 @@ pub fn parse_tag_mfa_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_mfa_device_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11290,8 +11776,11 @@ pub fn parse_tag_open_id_connect_provider_error(
     crate::output::TagOpenIdConnectProviderOutput,
     crate::error::TagOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -11303,94 +11792,90 @@ pub fn parse_tag_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::TagOpenIDConnectProviderErrorKind::ConcurrentModificationException(
-                {
+        "ConcurrentModification" => {
+            crate::error::TagOpenIDConnectProviderError::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::concurrent_modification_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidInput" => crate::error::TagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::TagOpenIDConnectProviderErrorKind::InvalidInputException({
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInput" => {
+            crate::error::TagOpenIDConnectProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::TagOpenIDConnectProviderErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagOpenIDConnectProviderError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::TagOpenIDConnectProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagOpenIDConnectProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::TagOpenIDConnectProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagOpenIDConnectProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagOpenIDConnectProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagOpenIDConnectProviderError::generic(generic),
     })
 }
@@ -11406,6 +11891,9 @@ pub fn parse_tag_open_id_connect_provider_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_open_id_connect_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11414,8 +11902,11 @@ pub fn parse_tag_open_id_connect_provider_response(
 pub fn parse_tag_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagPolicyOutput, crate::error::TagPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagPolicyError::unhandled(generic)),
@@ -11423,9 +11914,8 @@ pub fn parse_tag_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagPolicyError {
-            meta: generic,
-            kind: crate::error::TagPolicyErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::TagPolicyError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11433,82 +11923,81 @@ pub fn parse_tag_policy_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagPolicyError {
-            meta: generic,
-            kind: crate::error::TagPolicyErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::TagPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagPolicyError {
-            meta: generic,
-            kind: crate::error::TagPolicyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagPolicyError {
-            meta: generic,
-            kind: crate::error::TagPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagPolicyError {
-            meta: generic,
-            kind: crate::error::TagPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagPolicyError::generic(generic),
     })
 }
@@ -11521,6 +12010,9 @@ pub fn parse_tag_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11529,8 +12021,11 @@ pub fn parse_tag_policy_response(
 pub fn parse_tag_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagRoleOutput, crate::error::TagRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagRoleError::unhandled(generic)),
@@ -11538,92 +12033,88 @@ pub fn parse_tag_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagRoleError {
-            meta: generic,
-            kind: crate::error::TagRoleErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => crate::error::TagRoleError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagRoleError {
-            meta: generic,
-            kind: crate::error::TagRoleErrorKind::InvalidInputException({
+                let mut output =
+                    crate::error::concurrent_modification_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::TagRoleError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagRoleError {
-            meta: generic,
-            kind: crate::error::TagRoleErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagRoleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagRoleError {
-            meta: generic,
-            kind: crate::error::TagRoleErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagRoleError {
-            meta: generic,
-            kind: crate::error::TagRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagRoleError::generic(generic),
     })
 }
@@ -11636,6 +12127,9 @@ pub fn parse_tag_role_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_role_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11644,8 +12138,11 @@ pub fn parse_tag_role_response(
 pub fn parse_tag_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagSamlProviderOutput, crate::error::TagSAMLProviderError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagSAMLProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagSAMLProviderError::unhandled(generic)),
@@ -11653,9 +12150,8 @@ pub fn parse_tag_saml_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::TagSAMLProviderErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::TagSAMLProviderError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11663,82 +12159,81 @@ pub fn parse_tag_saml_provider_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::TagSAMLProviderErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::TagSAMLProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::TagSAMLProviderErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagSAMLProviderError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::TagSAMLProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagSAMLProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::TagSAMLProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagSAMLProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagSAMLProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagSAMLProviderError::generic(generic),
     })
 }
@@ -11751,6 +12246,9 @@ pub fn parse_tag_saml_provider_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_saml_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11762,8 +12260,11 @@ pub fn parse_tag_server_certificate_error(
     crate::output::TagServerCertificateOutput,
     crate::error::TagServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagServerCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagServerCertificateError::unhandled(generic)),
@@ -11771,9 +12272,8 @@ pub fn parse_tag_server_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagServerCertificateError {
-            meta: generic,
-            kind: crate::error::TagServerCertificateErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::TagServerCertificateError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11781,82 +12281,81 @@ pub fn parse_tag_server_certificate_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagServerCertificateError {
-            meta: generic,
-            kind: crate::error::TagServerCertificateErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::TagServerCertificateError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagServerCertificateError {
-            meta: generic,
-            kind: crate::error::TagServerCertificateErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagServerCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagServerCertificateError {
-            meta: generic,
-            kind: crate::error::TagServerCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagServerCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagServerCertificateError {
-            meta: generic,
-            kind: crate::error::TagServerCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagServerCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagServerCertificateError::generic(generic),
     })
 }
@@ -11872,6 +12371,9 @@ pub fn parse_tag_server_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_server_certificate_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11880,8 +12382,11 @@ pub fn parse_tag_server_certificate_response(
 pub fn parse_tag_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagUserOutput, crate::error::TagUserError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagUserError::unhandled(generic)),
@@ -11889,92 +12394,88 @@ pub fn parse_tag_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::TagUserError {
-            meta: generic,
-            kind: crate::error::TagUserErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => crate::error::TagUserError::ConcurrentModificationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::concurrent_modification_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidInput" => crate::error::TagUserError {
-            meta: generic,
-            kind: crate::error::TagUserErrorKind::InvalidInputException({
+                let mut output =
+                    crate::error::concurrent_modification_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidInput" => {
+            crate::error::TagUserError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::TagUserError {
-            meta: generic,
-            kind: crate::error::TagUserErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::TagUserError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::TagUserError {
-            meta: generic,
-            kind: crate::error::TagUserErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::TagUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::TagUserError {
-            meta: generic,
-            kind: crate::error::TagUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::TagUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TagUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagUserError::generic(generic),
     })
 }
@@ -11987,6 +12488,9 @@ pub fn parse_tag_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_user_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11998,8 +12502,11 @@ pub fn parse_untag_instance_profile_error(
     crate::output::UntagInstanceProfileOutput,
     crate::error::UntagInstanceProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagInstanceProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagInstanceProfileError::unhandled(generic)),
@@ -12007,9 +12514,8 @@ pub fn parse_untag_instance_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::UntagInstanceProfileErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagInstanceProfileError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12017,65 +12523,64 @@ pub fn parse_untag_instance_profile_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::UntagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::UntagInstanceProfileErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UntagInstanceProfileError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::UntagInstanceProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagInstanceProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagInstanceProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagInstanceProfileError {
-            meta: generic,
-            kind: crate::error::UntagInstanceProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagInstanceProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagInstanceProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagInstanceProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagInstanceProfileError::generic(generic),
     })
 }
@@ -12091,6 +12596,9 @@ pub fn parse_untag_instance_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_instance_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12099,8 +12607,11 @@ pub fn parse_untag_instance_profile_response(
 pub fn parse_untag_mfa_device_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagMfaDeviceOutput, crate::error::UntagMFADeviceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagMFADeviceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagMFADeviceError::unhandled(generic)),
@@ -12108,9 +12619,8 @@ pub fn parse_untag_mfa_device_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagMFADeviceError {
-            meta: generic,
-            kind: crate::error::UntagMFADeviceErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagMFADeviceError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12118,65 +12628,64 @@ pub fn parse_untag_mfa_device_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::UntagMFADeviceError {
-            meta: generic,
-            kind: crate::error::UntagMFADeviceErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UntagMFADeviceError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagMFADeviceError {
-            meta: generic,
-            kind: crate::error::UntagMFADeviceErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagMFADeviceError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagMFADeviceError {
-            meta: generic,
-            kind: crate::error::UntagMFADeviceErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagMFADeviceError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagMFADeviceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagMFADeviceError::generic(generic),
     })
 }
@@ -12189,6 +12698,9 @@ pub fn parse_untag_mfa_device_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_mfa_device_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12200,8 +12712,11 @@ pub fn parse_untag_open_id_connect_provider_error(
     crate::output::UntagOpenIdConnectProviderOutput,
     crate::error::UntagOpenIDConnectProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -12213,78 +12728,75 @@ pub fn parse_untag_open_id_connect_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagOpenIDConnectProviderError {
-            meta: generic,
-            kind:
-                crate::error::UntagOpenIDConnectProviderErrorKind::ConcurrentModificationException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::concurrent_modification_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidInput" => crate::error::UntagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::UntagOpenIDConnectProviderErrorKind::InvalidInputException({
+        "ConcurrentModification" => {
+            crate::error::UntagOpenIDConnectProviderError::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UntagOpenIDConnectProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::UntagOpenIDConnectProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagOpenIDConnectProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagOpenIDConnectProviderError {
-            meta: generic,
-            kind: crate::error::UntagOpenIDConnectProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::UntagOpenIDConnectProviderError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagOpenIDConnectProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagOpenIDConnectProviderError::generic(generic),
     })
 }
@@ -12300,6 +12812,9 @@ pub fn parse_untag_open_id_connect_provider_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_open_id_connect_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12308,8 +12823,11 @@ pub fn parse_untag_open_id_connect_provider_response(
 pub fn parse_untag_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagPolicyOutput, crate::error::UntagPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagPolicyError::unhandled(generic)),
@@ -12317,9 +12835,8 @@ pub fn parse_untag_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagPolicyError {
-            meta: generic,
-            kind: crate::error::UntagPolicyErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagPolicyError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12327,65 +12844,64 @@ pub fn parse_untag_policy_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::UntagPolicyError {
-            meta: generic,
-            kind: crate::error::UntagPolicyErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UntagPolicyError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagPolicyError {
-            meta: generic,
-            kind: crate::error::UntagPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagPolicyError {
-            meta: generic,
-            kind: crate::error::UntagPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagPolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagPolicyError::generic(generic),
     })
 }
@@ -12398,6 +12914,9 @@ pub fn parse_untag_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12406,8 +12925,11 @@ pub fn parse_untag_policy_response(
 pub fn parse_untag_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagRoleOutput, crate::error::UntagRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagRoleError::unhandled(generic)),
@@ -12415,9 +12937,8 @@ pub fn parse_untag_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagRoleError {
-            meta: generic,
-            kind: crate::error::UntagRoleErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagRoleError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12425,48 +12946,47 @@ pub fn parse_untag_role_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagRoleError {
-            meta: generic,
-            kind: crate::error::UntagRoleErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagRoleError {
-            meta: generic,
-            kind: crate::error::UntagRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagRoleError::generic(generic),
     })
 }
@@ -12479,6 +12999,9 @@ pub fn parse_untag_role_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_role_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12488,8 +13011,11 @@ pub fn parse_untag_saml_provider_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagSamlProviderOutput, crate::error::UntagSAMLProviderError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagSAMLProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagSAMLProviderError::unhandled(generic)),
@@ -12497,9 +13023,8 @@ pub fn parse_untag_saml_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UntagSAMLProviderErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagSAMLProviderError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12507,65 +13032,64 @@ pub fn parse_untag_saml_provider_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::UntagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UntagSAMLProviderErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UntagSAMLProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UntagSAMLProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagSAMLProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UntagSAMLProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagSAMLProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagSAMLProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagSAMLProviderError::generic(generic),
     })
 }
@@ -12579,6 +13103,9 @@ pub fn parse_untag_saml_provider_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_saml_provider_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12590,8 +13117,11 @@ pub fn parse_untag_server_certificate_error(
     crate::output::UntagServerCertificateOutput,
     crate::error::UntagServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagServerCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -12603,9 +13133,8 @@ pub fn parse_untag_server_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagServerCertificateError {
-            meta: generic,
-            kind: crate::error::UntagServerCertificateErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagServerCertificateError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12613,65 +13142,64 @@ pub fn parse_untag_server_certificate_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::UntagServerCertificateError {
-            meta: generic,
-            kind: crate::error::UntagServerCertificateErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UntagServerCertificateError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagServerCertificateError {
-            meta: generic,
-            kind: crate::error::UntagServerCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagServerCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagServerCertificateError {
-            meta: generic,
-            kind: crate::error::UntagServerCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagServerCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagServerCertificateError::generic(generic),
     })
 }
@@ -12687,6 +13215,9 @@ pub fn parse_untag_server_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_server_certificate_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12695,8 +13226,11 @@ pub fn parse_untag_server_certificate_response(
 pub fn parse_untag_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagUserOutput, crate::error::UntagUserError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagUserError::unhandled(generic)),
@@ -12704,9 +13238,8 @@ pub fn parse_untag_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UntagUserError {
-            meta: generic,
-            kind: crate::error::UntagUserErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UntagUserError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12714,48 +13247,47 @@ pub fn parse_untag_user_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UntagUserError {
-            meta: generic,
-            kind: crate::error::UntagUserErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UntagUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UntagUserError {
-            meta: generic,
-            kind: crate::error::UntagUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UntagUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UntagUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagUserError::generic(generic),
     })
 }
@@ -12768,6 +13300,9 @@ pub fn parse_untag_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_user_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12776,8 +13311,11 @@ pub fn parse_untag_user_response(
 pub fn parse_update_access_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAccessKeyOutput, crate::error::UpdateAccessKeyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAccessKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateAccessKeyError::unhandled(generic)),
@@ -12785,57 +13323,55 @@ pub fn parse_update_access_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::UpdateAccessKeyError {
-            meta: generic,
-            kind: crate::error::UpdateAccessKeyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::UpdateAccessKeyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccessKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateAccessKeyError {
-            meta: generic,
-            kind: crate::error::UpdateAccessKeyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateAccessKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccessKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateAccessKeyError {
-            meta: generic,
-            kind: crate::error::UpdateAccessKeyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateAccessKeyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccessKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccessKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateAccessKeyError::generic(generic),
     })
 }
@@ -12848,6 +13384,9 @@ pub fn parse_update_access_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_access_key_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12859,8 +13398,11 @@ pub fn parse_update_account_password_policy_error(
     crate::output::UpdateAccountPasswordPolicyOutput,
     crate::error::UpdateAccountPasswordPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -12872,79 +13414,75 @@ pub fn parse_update_account_password_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::UpdateAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAccountPasswordPolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::UpdateAccountPasswordPolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::UpdateAccountPasswordPolicyError {
-            meta: generic,
-            kind:
-                crate::error::UpdateAccountPasswordPolicyErrorKind::MalformedPolicyDocumentException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::malformed_policy_document_exception::Builder::default(
-                                );
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "NoSuchEntity" => crate::error::UpdateAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAccountPasswordPolicyErrorKind::NoSuchEntityException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::UpdateAccountPasswordPolicyError::MalformedPolicyDocumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::malformed_policy_document_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateAccountPasswordPolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateAccountPasswordPolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAccountPasswordPolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::UpdateAccountPasswordPolicyError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAccountPasswordPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAccountPasswordPolicyError::generic(generic),
     })
 }
@@ -12960,6 +13498,9 @@ pub fn parse_update_account_password_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_account_password_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -12971,8 +13512,11 @@ pub fn parse_update_assume_role_policy_error(
     crate::output::UpdateAssumeRolePolicyOutput,
     crate::error::UpdateAssumeRolePolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -12984,80 +13528,75 @@ pub fn parse_update_assume_role_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::UpdateAssumeRolePolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAssumeRolePolicyErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::UpdateAssumeRolePolicyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::UpdateAssumeRolePolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAssumeRolePolicyErrorKind::MalformedPolicyDocumentException(
-                {
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::UpdateAssumeRolePolicyError::MalformedPolicyDocumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::malformed_policy_document_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "NoSuchEntity" => crate::error::UpdateAssumeRolePolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAssumeRolePolicyErrorKind::NoSuchEntityException({
+                    let mut output =
+                        crate::error::malformed_policy_document_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateAssumeRolePolicyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateAssumeRolePolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAssumeRolePolicyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateAssumeRolePolicyError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::UpdateAssumeRolePolicyError {
-            meta: generic,
-            kind: crate::error::UpdateAssumeRolePolicyErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => {
+            crate::error::UpdateAssumeRolePolicyError::UnmodifiableEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -13065,14 +13604,15 @@ pub fn parse_update_assume_role_policy_error(
                         crate::error::unmodifiable_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAssumeRolePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAssumeRolePolicyError::generic(generic),
     })
 }
@@ -13088,6 +13628,9 @@ pub fn parse_update_assume_role_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_assume_role_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13096,8 +13639,11 @@ pub fn parse_update_assume_role_policy_response(
 pub fn parse_update_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateGroupError::unhandled(generic)),
@@ -13105,75 +13651,70 @@ pub fn parse_update_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::UpdateGroupError {
-            meta: generic,
-            kind: crate::error::UpdateGroupErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => crate::error::UpdateGroupError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UpdateGroupError {
-            meta: generic,
-            kind: crate::error::UpdateGroupErrorKind::LimitExceededException({
+                let mut output = crate::error::entity_already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::UpdateGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateGroupError {
-            meta: generic,
-            kind: crate::error::UpdateGroupErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateGroupError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateGroupError {
-            meta: generic,
-            kind: crate::error::UpdateGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateGroupError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateGroupError::generic(generic),
     })
 }
@@ -13186,6 +13727,9 @@ pub fn parse_update_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13197,8 +13741,11 @@ pub fn parse_update_login_profile_error(
     crate::output::UpdateLoginProfileOutput,
     crate::error::UpdateLoginProfileError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateLoginProfileError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateLoginProfileError::unhandled(generic)),
@@ -13206,62 +13753,60 @@ pub fn parse_update_login_profile_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityTemporarilyUnmodifiable" => crate::error::UpdateLoginProfileError {
-            meta: generic,
-            kind: crate::error::UpdateLoginProfileErrorKind::EntityTemporarilyUnmodifiableException(
-                {
+        "EntityTemporarilyUnmodifiable" => {
+            crate::error::UpdateLoginProfileError::EntityTemporarilyUnmodifiableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "LimitExceeded" => crate::error::UpdateLoginProfileError {
-            meta: generic,
-            kind: crate::error::UpdateLoginProfileErrorKind::LimitExceededException({
+                    let mut output =
+                        crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::UpdateLoginProfileError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateLoginProfileError {
-            meta: generic,
-            kind: crate::error::UpdateLoginProfileErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateLoginProfileError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PasswordPolicyViolation" => crate::error::UpdateLoginProfileError {
-            meta: generic,
-            kind: crate::error::UpdateLoginProfileErrorKind::PasswordPolicyViolationException({
+            })
+        }
+        "PasswordPolicyViolation" => {
+            crate::error::UpdateLoginProfileError::PasswordPolicyViolationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -13269,31 +13814,30 @@ pub fn parse_update_login_profile_error(
                         crate::error::password_policy_violation_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_password_policy_violation_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateLoginProfileError {
-            meta: generic,
-            kind: crate::error::UpdateLoginProfileErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateLoginProfileError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateLoginProfileError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateLoginProfileError::generic(generic),
     })
 }
@@ -13309,6 +13853,9 @@ pub fn parse_update_login_profile_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_login_profile_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13320,8 +13867,11 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
     crate::output::UpdateOpenIdConnectProviderThumbprintOutput,
     crate::error::UpdateOpenIDConnectProviderThumbprintError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -13333,55 +13883,58 @@ pub fn parse_update_open_id_connect_provider_thumbprint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::UpdateOpenIDConnectProviderThumbprintError { meta: generic, kind: crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::InvalidInputException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidInput" => {
+            crate::error::UpdateOpenIDConnectProviderThumbprintError::InvalidInputException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NoSuchEntity" => crate::error::UpdateOpenIDConnectProviderThumbprintError { meta: generic, kind: crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::NoSuchEntityException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateOpenIDConnectProviderThumbprintError::NoSuchEntityException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailure" => crate::error::UpdateOpenIDConnectProviderThumbprintError { meta: generic, kind: crate::error::UpdateOpenIDConnectProviderThumbprintErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailure" => {
+            crate::error::UpdateOpenIDConnectProviderThumbprintError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateOpenIDConnectProviderThumbprintError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateOpenIDConnectProviderThumbprintError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::UpdateOpenIDConnectProviderThumbprintError::generic(generic),
     })
 }
 
@@ -13397,6 +13950,9 @@ pub fn parse_update_open_id_connect_provider_thumbprint_response(
         let mut output =
             crate::output::update_open_id_connect_provider_thumbprint_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13405,8 +13961,11 @@ pub fn parse_update_open_id_connect_provider_thumbprint_response(
 pub fn parse_update_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateRoleOutput, crate::error::UpdateRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRoleError::unhandled(generic)),
@@ -13414,58 +13973,53 @@ pub fn parse_update_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::UpdateRoleError {
-            meta: generic,
-            kind: crate::error::UpdateRoleErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::UpdateRoleError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateRoleError {
-            meta: generic,
-            kind: crate::error::UpdateRoleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateRoleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::UpdateRoleError {
-            meta: generic,
-            kind: crate::error::UpdateRoleErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => crate::error::UpdateRoleError::UnmodifiableEntityException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::unmodifiable_entity_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::unmodifiable_entity_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateRoleError::generic(generic),
     })
 }
@@ -13478,6 +14032,9 @@ pub fn parse_update_role_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_role_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13489,8 +14046,11 @@ pub fn parse_update_role_description_error(
     crate::output::UpdateRoleDescriptionOutput,
     crate::error::UpdateRoleDescriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRoleDescriptionError::unhandled(generic)),
@@ -13498,43 +14058,40 @@ pub fn parse_update_role_description_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::UpdateRoleDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateRoleDescriptionErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::UpdateRoleDescriptionError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateRoleDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateRoleDescriptionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateRoleDescriptionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnmodifiableEntity" => crate::error::UpdateRoleDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateRoleDescriptionErrorKind::UnmodifiableEntityException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnmodifiableEntity" => {
+            crate::error::UpdateRoleDescriptionError::UnmodifiableEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -13542,14 +14099,15 @@ pub fn parse_update_role_description_error(
                         crate::error::unmodifiable_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_unmodifiable_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateRoleDescriptionError::generic(generic),
     })
 }
@@ -13570,6 +14128,9 @@ pub fn parse_update_role_description_response(
             output,
         )
         .map_err(crate::error::UpdateRoleDescriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13581,8 +14142,11 @@ pub fn parse_update_saml_provider_error(
     crate::output::UpdateSamlProviderOutput,
     crate::error::UpdateSAMLProviderError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateSAMLProviderError::unhandled(generic)),
@@ -13590,74 +14154,72 @@ pub fn parse_update_saml_provider_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidInput" => crate::error::UpdateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UpdateSAMLProviderErrorKind::InvalidInputException({
+        "InvalidInput" => {
+            crate::error::UpdateSAMLProviderError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UpdateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UpdateSAMLProviderErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::UpdateSAMLProviderError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UpdateSAMLProviderErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateSAMLProviderError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateSAMLProviderError {
-            meta: generic,
-            kind: crate::error::UpdateSAMLProviderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateSAMLProviderError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateSAMLProviderError::generic(generic),
     })
 }
@@ -13678,6 +14240,9 @@ pub fn parse_update_saml_provider_response(
             output,
         )
         .map_err(crate::error::UpdateSAMLProviderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13689,8 +14254,11 @@ pub fn parse_update_server_certificate_error(
     crate::output::UpdateServerCertificateOutput,
     crate::error::UpdateServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateServerCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -13702,9 +14270,8 @@ pub fn parse_update_server_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EntityAlreadyExists" => crate::error::UpdateServerCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateServerCertificateErrorKind::EntityAlreadyExistsException({
+        "EntityAlreadyExists" => {
+            crate::error::UpdateServerCertificateError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -13712,65 +14279,64 @@ pub fn parse_update_server_certificate_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UpdateServerCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateServerCertificateErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::UpdateServerCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateServerCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateServerCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateServerCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateServerCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateServerCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateServerCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateServerCertificateError::generic(generic),
     })
 }
@@ -13786,6 +14352,9 @@ pub fn parse_update_server_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_server_certificate_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13797,8 +14366,11 @@ pub fn parse_update_service_specific_credential_error(
     crate::output::UpdateServiceSpecificCredentialOutput,
     crate::error::UpdateServiceSpecificCredentialError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateServiceSpecificCredentialError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateServiceSpecificCredentialError::unhandled(generic)),
@@ -13806,23 +14378,23 @@ pub fn parse_update_service_specific_credential_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::UpdateServiceSpecificCredentialError {
-            meta: generic,
-            kind: crate::error::UpdateServiceSpecificCredentialErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::UpdateServiceSpecificCredentialError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateServiceSpecificCredentialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateServiceSpecificCredentialError::generic(generic),
     })
 }
@@ -13839,6 +14411,9 @@ pub fn parse_update_service_specific_credential_response(
         let mut output =
             crate::output::update_service_specific_credential_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13850,8 +14425,11 @@ pub fn parse_update_signing_certificate_error(
     crate::output::UpdateSigningCertificateOutput,
     crate::error::UpdateSigningCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSigningCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -13863,57 +14441,55 @@ pub fn parse_update_signing_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => crate::error::UpdateSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateSigningCertificateErrorKind::LimitExceededException({
+        "LimitExceeded" => {
+            crate::error::UpdateSigningCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateSigningCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateSigningCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UpdateSigningCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateSigningCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSigningCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSigningCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateSigningCertificateError::generic(generic),
     })
 }
@@ -13929,6 +14505,9 @@ pub fn parse_update_signing_certificate_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_signing_certificate_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13940,8 +14519,11 @@ pub fn parse_update_ssh_public_key_error(
     crate::output::UpdateSshPublicKeyOutput,
     crate::error::UpdateSSHPublicKeyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSSHPublicKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateSSHPublicKeyError::unhandled(generic)),
@@ -13949,23 +14531,23 @@ pub fn parse_update_ssh_public_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchEntity" => crate::error::UpdateSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::UpdateSSHPublicKeyErrorKind::NoSuchEntityException({
+        "NoSuchEntity" => {
+            crate::error::UpdateSSHPublicKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSSHPublicKeyError::generic(generic),
     })
 }
@@ -13981,6 +14563,9 @@ pub fn parse_update_ssh_public_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_ssh_public_key_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -13989,8 +14574,11 @@ pub fn parse_update_ssh_public_key_response(
 pub fn parse_update_user_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateUserError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateUserError::unhandled(generic)),
@@ -13998,9 +14586,8 @@ pub fn parse_update_user_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UpdateUserError {
-            meta: generic,
-            kind: crate::error::UpdateUserErrorKind::ConcurrentModificationException({
+        "ConcurrentModification" => {
+            crate::error::UpdateUserError::ConcurrentModificationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14008,35 +14595,32 @@ pub fn parse_update_user_error(
                         crate::error::concurrent_modification_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::UpdateUserError {
-            meta: generic,
-            kind: crate::error::UpdateUserErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => crate::error::UpdateUserError::EntityAlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::entity_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EntityTemporarilyUnmodifiable" => crate::error::UpdateUserError {
-            meta: generic,
-            kind: crate::error::UpdateUserErrorKind::EntityTemporarilyUnmodifiableException({
+                let mut output = crate::error::entity_already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EntityTemporarilyUnmodifiable" => {
+            crate::error::UpdateUserError::EntityTemporarilyUnmodifiableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14044,65 +14628,64 @@ pub fn parse_update_user_error(
                         crate::error::entity_temporarily_unmodifiable_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_temporarily_unmodifiable_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UpdateUserError {
-            meta: generic,
-            kind: crate::error::UpdateUserErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::UpdateUserError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UpdateUserError {
-            meta: generic,
-            kind: crate::error::UpdateUserErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UpdateUserError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UpdateUserError {
-            meta: generic,
-            kind: crate::error::UpdateUserErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UpdateUserError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateUserError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateUserError::generic(generic),
     })
 }
@@ -14115,6 +14698,9 @@ pub fn parse_update_user_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_user_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14126,8 +14712,11 @@ pub fn parse_upload_server_certificate_error(
     crate::output::UploadServerCertificateOutput,
     crate::error::UploadServerCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UploadServerCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -14139,29 +14728,26 @@ pub fn parse_upload_server_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConcurrentModification" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::ConcurrentModificationException(
-                {
+        "ConcurrentModification" => {
+            crate::error::UploadServerCertificateError::ConcurrentModificationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::concurrent_modification_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "EntityAlreadyExists" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::EntityAlreadyExistsException({
+                    let mut output =
+                        crate::error::concurrent_modification_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_concurrent_modification_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "EntityAlreadyExists" => {
+            crate::error::UploadServerCertificateError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14169,68 +14755,68 @@ pub fn parse_upload_server_certificate_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidInput" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::InvalidInputException({
+            })
+        }
+        "InvalidInput" => {
+            crate::error::UploadServerCertificateError::InvalidInputException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_input_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_input_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KeyPairMismatch" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::KeyPairMismatchException({
+            })
+        }
+        "KeyPairMismatch" => {
+            crate::error::UploadServerCertificateError::KeyPairMismatchException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::key_pair_mismatch_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_key_pair_mismatch_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::UploadServerCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedCertificate" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::MalformedCertificateException({
+            })
+        }
+        "MalformedCertificate" => {
+            crate::error::UploadServerCertificateError::MalformedCertificateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14238,31 +14824,30 @@ pub fn parse_upload_server_certificate_error(
                         crate::error::malformed_certificate_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UploadServerCertificateError {
-            meta: generic,
-            kind: crate::error::UploadServerCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UploadServerCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadServerCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UploadServerCertificateError::generic(generic),
     })
 }
@@ -14283,6 +14868,9 @@ pub fn parse_upload_server_certificate_response(
             output,
         )
         .map_err(crate::error::UploadServerCertificateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14294,8 +14882,11 @@ pub fn parse_upload_signing_certificate_error(
     crate::output::UploadSigningCertificateOutput,
     crate::error::UploadSigningCertificateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -14307,9 +14898,8 @@ pub fn parse_upload_signing_certificate_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateCertificate" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::DuplicateCertificateException({
+        "DuplicateCertificate" => {
+            crate::error::UploadSigningCertificateError::DuplicateCertificateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14317,17 +14907,17 @@ pub fn parse_upload_signing_certificate_error(
                         crate::error::duplicate_certificate_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EntityAlreadyExists" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::EntityAlreadyExistsException({
+            })
+        }
+        "EntityAlreadyExists" => {
+            crate::error::UploadSigningCertificateError::EntityAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14335,17 +14925,17 @@ pub fn parse_upload_signing_certificate_error(
                         crate::error::entity_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_entity_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidCertificate" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::InvalidCertificateException({
+            })
+        }
+        "InvalidCertificate" => {
+            crate::error::UploadSigningCertificateError::InvalidCertificateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14353,34 +14943,34 @@ pub fn parse_upload_signing_certificate_error(
                         crate::error::invalid_certificate_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::UploadSigningCertificateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedCertificate" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::MalformedCertificateException({
+            })
+        }
+        "MalformedCertificate" => {
+            crate::error::UploadSigningCertificateError::MalformedCertificateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14388,48 +14978,47 @@ pub fn parse_upload_signing_certificate_error(
                         crate::error::malformed_certificate_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_certificate_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UploadSigningCertificateError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailure" => crate::error::UploadSigningCertificateError {
-            meta: generic,
-            kind: crate::error::UploadSigningCertificateErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailure" => crate::error::UploadSigningCertificateError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_failure_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UploadSigningCertificateError::generic(generic),
     })
 }
@@ -14450,6 +15039,9 @@ pub fn parse_upload_signing_certificate_response(
             output,
         )
         .map_err(crate::error::UploadSigningCertificateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -14461,8 +15053,11 @@ pub fn parse_upload_ssh_public_key_error(
     crate::output::UploadSshPublicKeyOutput,
     crate::error::UploadSSHPublicKeyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UploadSSHPublicKeyError::unhandled(generic)),
@@ -14470,9 +15065,8 @@ pub fn parse_upload_ssh_public_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateSSHPublicKey" => crate::error::UploadSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::UploadSSHPublicKeyErrorKind::DuplicateSshPublicKeyException({
+        "DuplicateSSHPublicKey" => {
+            crate::error::UploadSSHPublicKeyError::DuplicateSshPublicKeyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -14480,84 +15074,83 @@ pub fn parse_upload_ssh_public_key_error(
                         crate::error::duplicate_ssh_public_key_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_duplicate_ssh_public_key_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidPublicKey" => crate::error::UploadSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::UploadSSHPublicKeyErrorKind::InvalidPublicKeyException({
+            })
+        }
+        "InvalidPublicKey" => crate::error::UploadSSHPublicKeyError::InvalidPublicKeyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_public_key_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_public_key_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UploadSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::UploadSSHPublicKeyErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_public_key_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_public_key_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::UploadSSHPublicKeyError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NoSuchEntity" => crate::error::UploadSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::UploadSSHPublicKeyErrorKind::NoSuchEntityException({
+            })
+        }
+        "NoSuchEntity" => {
+            crate::error::UploadSSHPublicKeyError::NoSuchEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::no_such_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_no_such_entity_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnrecognizedPublicKeyEncoding" => crate::error::UploadSSHPublicKeyError {
-            meta: generic,
-            kind: crate::error::UploadSSHPublicKeyErrorKind::UnrecognizedPublicKeyEncodingException(
-                {
+            })
+        }
+        "UnrecognizedPublicKeyEncoding" => {
+            crate::error::UploadSSHPublicKeyError::UnrecognizedPublicKeyEncodingException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::unrecognized_public_key_encoding_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_unrecognized_public_key_encoding_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unrecognized_public_key_encoding_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_unrecognized_public_key_encoding_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UploadSSHPublicKeyError::generic(generic),
     })
 }
@@ -14578,6 +15171,9 @@ pub fn parse_upload_ssh_public_key_response(
             output,
         )
         .map_err(crate::error::UploadSSHPublicKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

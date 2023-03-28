@@ -258,15 +258,8 @@ pub enum Error {
     UnsupportedActionForDeploymentTypeException(
         crate::error::UnsupportedActionForDeploymentTypeException,
     ),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -396,36 +389,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AddTagsToOnPremisesInstancesError> for Error {
     fn from(err: crate::error::AddTagsToOnPremisesInstancesError) -> Self {
-        match err.kind {
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::InstanceLimitExceededException(
+        match err {
+            crate::error::AddTagsToOnPremisesInstancesError::InstanceLimitExceededException(
                 inner,
             ) => Error::InstanceLimitExceededException(inner),
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::InstanceNameRequiredException(
+            crate::error::AddTagsToOnPremisesInstancesError::InstanceNameRequiredException(
                 inner,
             ) => Error::InstanceNameRequiredException(inner),
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::InstanceNotRegisteredException(
+            crate::error::AddTagsToOnPremisesInstancesError::InstanceNotRegisteredException(
                 inner,
             ) => Error::InstanceNotRegisteredException(inner),
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::InvalidInstanceNameException(
+            crate::error::AddTagsToOnPremisesInstancesError::InvalidInstanceNameException(
                 inner,
             ) => Error::InvalidInstanceNameException(inner),
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::InvalidTagException(inner) => {
+            crate::error::AddTagsToOnPremisesInstancesError::InvalidTagException(inner) => {
                 Error::InvalidTagException(inner)
             }
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::TagLimitExceededException(
-                inner,
-            ) => Error::TagLimitExceededException(inner),
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::TagRequiredException(inner) => {
+            crate::error::AddTagsToOnPremisesInstancesError::TagLimitExceededException(inner) => {
+                Error::TagLimitExceededException(inner)
+            }
+            crate::error::AddTagsToOnPremisesInstancesError::TagRequiredException(inner) => {
                 Error::TagRequiredException(inner)
             }
-            crate::error::AddTagsToOnPremisesInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::AddTagsToOnPremisesInstancesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -442,20 +442,41 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetApplicationRevisionsError> for Error {
     fn from(err: crate::error::BatchGetApplicationRevisionsError) -> Self {
-        match err.kind {
-            crate::error::BatchGetApplicationRevisionsErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::BatchGetApplicationRevisionsErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::BatchGetApplicationRevisionsErrorKind::BatchLimitExceededException(inner) => Error::BatchLimitExceededException(inner),
-            crate::error::BatchGetApplicationRevisionsErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::BatchGetApplicationRevisionsErrorKind::InvalidRevisionException(inner) => Error::InvalidRevisionException(inner),
-            crate::error::BatchGetApplicationRevisionsErrorKind::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
-            crate::error::BatchGetApplicationRevisionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchGetApplicationRevisionsError::ApplicationDoesNotExistException(
+                inner,
+            ) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::BatchGetApplicationRevisionsError::ApplicationNameRequiredException(
+                inner,
+            ) => Error::ApplicationNameRequiredException(inner),
+            crate::error::BatchGetApplicationRevisionsError::BatchLimitExceededException(inner) => {
+                Error::BatchLimitExceededException(inner)
+            }
+            crate::error::BatchGetApplicationRevisionsError::InvalidApplicationNameException(
+                inner,
+            ) => Error::InvalidApplicationNameException(inner),
+            crate::error::BatchGetApplicationRevisionsError::InvalidRevisionException(inner) => {
+                Error::InvalidRevisionException(inner)
+            }
+            crate::error::BatchGetApplicationRevisionsError::RevisionRequiredException(inner) => {
+                Error::RevisionRequiredException(inner)
+            }
+            crate::error::BatchGetApplicationRevisionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -471,28 +492,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetApplicationsError> for Error {
     fn from(err: crate::error::BatchGetApplicationsError) -> Self {
-        match err.kind {
-            crate::error::BatchGetApplicationsErrorKind::ApplicationDoesNotExistException(
-                inner,
-            ) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::BatchGetApplicationsErrorKind::ApplicationNameRequiredException(
-                inner,
-            ) => Error::ApplicationNameRequiredException(inner),
-            crate::error::BatchGetApplicationsErrorKind::BatchLimitExceededException(inner) => {
+        match err {
+            crate::error::BatchGetApplicationsError::ApplicationDoesNotExistException(inner) => {
+                Error::ApplicationDoesNotExistException(inner)
+            }
+            crate::error::BatchGetApplicationsError::ApplicationNameRequiredException(inner) => {
+                Error::ApplicationNameRequiredException(inner)
+            }
+            crate::error::BatchGetApplicationsError::BatchLimitExceededException(inner) => {
                 Error::BatchLimitExceededException(inner)
             }
-            crate::error::BatchGetApplicationsErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::BatchGetApplicationsError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::BatchGetApplicationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchGetApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -508,21 +534,44 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetDeploymentGroupsError> for Error {
     fn from(err: crate::error::BatchGetDeploymentGroupsError) -> Self {
-        match err.kind {
-            crate::error::BatchGetDeploymentGroupsErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::BatchLimitExceededException(inner) => Error::BatchLimitExceededException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
-            crate::error::BatchGetDeploymentGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchGetDeploymentGroupsError::ApplicationDoesNotExistException(
+                inner,
+            ) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::BatchGetDeploymentGroupsError::ApplicationNameRequiredException(
+                inner,
+            ) => Error::ApplicationNameRequiredException(inner),
+            crate::error::BatchGetDeploymentGroupsError::BatchLimitExceededException(inner) => {
+                Error::BatchLimitExceededException(inner)
+            }
+            crate::error::BatchGetDeploymentGroupsError::DeploymentConfigDoesNotExistException(
+                inner,
+            ) => Error::DeploymentConfigDoesNotExistException(inner),
+            crate::error::BatchGetDeploymentGroupsError::DeploymentGroupNameRequiredException(
+                inner,
+            ) => Error::DeploymentGroupNameRequiredException(inner),
+            crate::error::BatchGetDeploymentGroupsError::InvalidApplicationNameException(inner) => {
+                Error::InvalidApplicationNameException(inner)
+            }
+            crate::error::BatchGetDeploymentGroupsError::InvalidDeploymentGroupNameException(
+                inner,
+            ) => Error::InvalidDeploymentGroupNameException(inner),
+            crate::error::BatchGetDeploymentGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -538,36 +587,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetDeploymentInstancesError> for Error {
     fn from(err: crate::error::BatchGetDeploymentInstancesError) -> Self {
-        match err.kind {
-            crate::error::BatchGetDeploymentInstancesErrorKind::BatchLimitExceededException(
-                inner,
-            ) => Error::BatchLimitExceededException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::DeploymentDoesNotExistException(
+        match err {
+            crate::error::BatchGetDeploymentInstancesError::BatchLimitExceededException(inner) => {
+                Error::BatchLimitExceededException(inner)
+            }
+            crate::error::BatchGetDeploymentInstancesError::DeploymentDoesNotExistException(
                 inner,
             ) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::DeploymentIdRequiredException(
+            crate::error::BatchGetDeploymentInstancesError::DeploymentIdRequiredException(
                 inner,
             ) => Error::DeploymentIdRequiredException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::InstanceIdRequiredException(
-                inner,
-            ) => Error::InstanceIdRequiredException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::InvalidComputePlatformException(
+            crate::error::BatchGetDeploymentInstancesError::InstanceIdRequiredException(inner) => {
+                Error::InstanceIdRequiredException(inner)
+            }
+            crate::error::BatchGetDeploymentInstancesError::InvalidComputePlatformException(
                 inner,
             ) => Error::InvalidComputePlatformException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::InvalidDeploymentIdException(
-                inner,
-            ) => Error::InvalidDeploymentIdException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::InvalidInstanceNameException(
-                inner,
-            ) => Error::InvalidInstanceNameException(inner),
-            crate::error::BatchGetDeploymentInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::BatchGetDeploymentInstancesError::InvalidDeploymentIdException(inner) => {
+                Error::InvalidDeploymentIdException(inner)
+            }
+            crate::error::BatchGetDeploymentInstancesError::InvalidInstanceNameException(inner) => {
+                Error::InvalidInstanceNameException(inner)
+            }
+            crate::error::BatchGetDeploymentInstancesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -583,25 +639,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetDeploymentsError> for Error {
     fn from(err: crate::error::BatchGetDeploymentsError) -> Self {
-        match err.kind {
-            crate::error::BatchGetDeploymentsErrorKind::BatchLimitExceededException(inner) => {
+        match err {
+            crate::error::BatchGetDeploymentsError::BatchLimitExceededException(inner) => {
                 Error::BatchLimitExceededException(inner)
             }
-            crate::error::BatchGetDeploymentsErrorKind::DeploymentIdRequiredException(inner) => {
+            crate::error::BatchGetDeploymentsError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)
             }
-            crate::error::BatchGetDeploymentsErrorKind::InvalidDeploymentIdException(inner) => {
+            crate::error::BatchGetDeploymentsError::InvalidDeploymentIdException(inner) => {
                 Error::InvalidDeploymentIdException(inner)
             }
-            crate::error::BatchGetDeploymentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchGetDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -617,23 +678,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetDeploymentTargetsError> for Error {
     fn from(err: crate::error::BatchGetDeploymentTargetsError) -> Self {
-        match err.kind {
-            crate::error::BatchGetDeploymentTargetsErrorKind::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::DeploymentTargetDoesNotExistException(inner) => Error::DeploymentTargetDoesNotExistException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::DeploymentTargetIdRequiredException(inner) => Error::DeploymentTargetIdRequiredException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::DeploymentTargetListSizeExceededException(inner) => Error::DeploymentTargetListSizeExceededException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::InstanceDoesNotExistException(inner) => Error::InstanceDoesNotExistException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::InvalidDeploymentTargetIdException(inner) => Error::InvalidDeploymentTargetIdException(inner),
-            crate::error::BatchGetDeploymentTargetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::BatchGetDeploymentTargetsError::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
+            crate::error::BatchGetDeploymentTargetsError::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
+            crate::error::BatchGetDeploymentTargetsError::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
+            crate::error::BatchGetDeploymentTargetsError::DeploymentTargetDoesNotExistException(inner) => Error::DeploymentTargetDoesNotExistException(inner),
+            crate::error::BatchGetDeploymentTargetsError::DeploymentTargetIdRequiredException(inner) => Error::DeploymentTargetIdRequiredException(inner),
+            crate::error::BatchGetDeploymentTargetsError::DeploymentTargetListSizeExceededException(inner) => Error::DeploymentTargetListSizeExceededException(inner),
+            crate::error::BatchGetDeploymentTargetsError::InstanceDoesNotExistException(inner) => Error::InstanceDoesNotExistException(inner),
+            crate::error::BatchGetDeploymentTargetsError::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
+            crate::error::BatchGetDeploymentTargetsError::InvalidDeploymentTargetIdException(inner) => Error::InvalidDeploymentTargetIdException(inner),
+            crate::error::BatchGetDeploymentTargetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -649,24 +717,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetOnPremisesInstancesError> for Error {
     fn from(err: crate::error::BatchGetOnPremisesInstancesError) -> Self {
-        match err.kind {
-            crate::error::BatchGetOnPremisesInstancesErrorKind::BatchLimitExceededException(
-                inner,
-            ) => Error::BatchLimitExceededException(inner),
-            crate::error::BatchGetOnPremisesInstancesErrorKind::InstanceNameRequiredException(
+        match err {
+            crate::error::BatchGetOnPremisesInstancesError::BatchLimitExceededException(inner) => {
+                Error::BatchLimitExceededException(inner)
+            }
+            crate::error::BatchGetOnPremisesInstancesError::InstanceNameRequiredException(
                 inner,
             ) => Error::InstanceNameRequiredException(inner),
-            crate::error::BatchGetOnPremisesInstancesErrorKind::InvalidInstanceNameException(
-                inner,
-            ) => Error::InvalidInstanceNameException(inner),
-            crate::error::BatchGetOnPremisesInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::BatchGetOnPremisesInstancesError::InvalidInstanceNameException(inner) => {
+                Error::InvalidInstanceNameException(inner)
+            }
+            crate::error::BatchGetOnPremisesInstancesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -682,22 +757,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ContinueDeploymentError> for Error {
     fn from(err: crate::error::ContinueDeploymentError) -> Self {
-        match err.kind {
-            crate::error::ContinueDeploymentErrorKind::DeploymentAlreadyCompletedException(inner) => Error::DeploymentAlreadyCompletedException(inner),
-            crate::error::ContinueDeploymentErrorKind::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::ContinueDeploymentErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
-            crate::error::ContinueDeploymentErrorKind::DeploymentIsNotInReadyStateException(inner) => Error::DeploymentIsNotInReadyStateException(inner),
-            crate::error::ContinueDeploymentErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
-            crate::error::ContinueDeploymentErrorKind::InvalidDeploymentStatusException(inner) => Error::InvalidDeploymentStatusException(inner),
-            crate::error::ContinueDeploymentErrorKind::InvalidDeploymentWaitTypeException(inner) => Error::InvalidDeploymentWaitTypeException(inner),
-            crate::error::ContinueDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-            crate::error::ContinueDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ContinueDeploymentError::DeploymentAlreadyCompletedException(inner) => {
+                Error::DeploymentAlreadyCompletedException(inner)
+            }
+            crate::error::ContinueDeploymentError::DeploymentDoesNotExistException(inner) => {
+                Error::DeploymentDoesNotExistException(inner)
+            }
+            crate::error::ContinueDeploymentError::DeploymentIdRequiredException(inner) => {
+                Error::DeploymentIdRequiredException(inner)
+            }
+            crate::error::ContinueDeploymentError::DeploymentIsNotInReadyStateException(inner) => {
+                Error::DeploymentIsNotInReadyStateException(inner)
+            }
+            crate::error::ContinueDeploymentError::InvalidDeploymentIdException(inner) => {
+                Error::InvalidDeploymentIdException(inner)
+            }
+            crate::error::ContinueDeploymentError::InvalidDeploymentStatusException(inner) => {
+                Error::InvalidDeploymentStatusException(inner)
+            }
+            crate::error::ContinueDeploymentError::InvalidDeploymentWaitTypeException(inner) => {
+                Error::InvalidDeploymentWaitTypeException(inner)
+            }
+            crate::error::ContinueDeploymentError::UnsupportedActionForDeploymentTypeException(
+                inner,
+            ) => Error::UnsupportedActionForDeploymentTypeException(inner),
+            crate::error::ContinueDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -712,34 +810,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateApplicationError> for Error {
     fn from(err: crate::error::CreateApplicationError) -> Self {
-        match err.kind {
-            crate::error::CreateApplicationErrorKind::ApplicationAlreadyExistsException(inner) => {
+        match err {
+            crate::error::CreateApplicationError::ApplicationAlreadyExistsException(inner) => {
                 Error::ApplicationAlreadyExistsException(inner)
             }
-            crate::error::CreateApplicationErrorKind::ApplicationLimitExceededException(inner) => {
+            crate::error::CreateApplicationError::ApplicationLimitExceededException(inner) => {
                 Error::ApplicationLimitExceededException(inner)
             }
-            crate::error::CreateApplicationErrorKind::ApplicationNameRequiredException(inner) => {
+            crate::error::CreateApplicationError::ApplicationNameRequiredException(inner) => {
                 Error::ApplicationNameRequiredException(inner)
             }
-            crate::error::CreateApplicationErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::CreateApplicationError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::CreateApplicationErrorKind::InvalidComputePlatformException(inner) => {
+            crate::error::CreateApplicationError::InvalidComputePlatformException(inner) => {
                 Error::InvalidComputePlatformException(inner)
             }
-            crate::error::CreateApplicationErrorKind::InvalidTagsToAddException(inner) => {
+            crate::error::CreateApplicationError::InvalidTagsToAddException(inner) => {
                 Error::InvalidTagsToAddException(inner)
             }
-            crate::error::CreateApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -754,40 +857,47 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDeploymentError> for Error {
     fn from(err: crate::error::CreateDeploymentError) -> Self {
-        match err.kind {
-            crate::error::CreateDeploymentErrorKind::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
-            crate::error::CreateDeploymentErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::CreateDeploymentErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::CreateDeploymentErrorKind::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
-            crate::error::CreateDeploymentErrorKind::DeploymentGroupDoesNotExistException(inner) => Error::DeploymentGroupDoesNotExistException(inner),
-            crate::error::CreateDeploymentErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
-            crate::error::CreateDeploymentErrorKind::DeploymentLimitExceededException(inner) => Error::DeploymentLimitExceededException(inner),
-            crate::error::CreateDeploymentErrorKind::DescriptionTooLongException(inner) => Error::DescriptionTooLongException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidFileExistsBehaviorException(inner) => Error::InvalidFileExistsBehaviorException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidGitHubAccountTokenException(inner) => Error::InvalidGitHubAccountTokenException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidIgnoreApplicationStopFailuresValueException(inner) => Error::InvalidIgnoreApplicationStopFailuresValueException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidLoadBalancerInfoException(inner) => Error::InvalidLoadBalancerInfoException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidRevisionException(inner) => Error::InvalidRevisionException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidTargetInstancesException(inner) => Error::InvalidTargetInstancesException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
-            crate::error::CreateDeploymentErrorKind::InvalidUpdateOutdatedInstancesOnlyValueException(inner) => Error::InvalidUpdateOutdatedInstancesOnlyValueException(inner),
-            crate::error::CreateDeploymentErrorKind::RevisionDoesNotExistException(inner) => Error::RevisionDoesNotExistException(inner),
-            crate::error::CreateDeploymentErrorKind::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
-            crate::error::CreateDeploymentErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateDeploymentErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDeploymentError::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
+            crate::error::CreateDeploymentError::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::CreateDeploymentError::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
+            crate::error::CreateDeploymentError::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
+            crate::error::CreateDeploymentError::DeploymentGroupDoesNotExistException(inner) => Error::DeploymentGroupDoesNotExistException(inner),
+            crate::error::CreateDeploymentError::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
+            crate::error::CreateDeploymentError::DeploymentLimitExceededException(inner) => Error::DeploymentLimitExceededException(inner),
+            crate::error::CreateDeploymentError::DescriptionTooLongException(inner) => Error::DescriptionTooLongException(inner),
+            crate::error::CreateDeploymentError::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
+            crate::error::CreateDeploymentError::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
+            crate::error::CreateDeploymentError::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
+            crate::error::CreateDeploymentError::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),
+            crate::error::CreateDeploymentError::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
+            crate::error::CreateDeploymentError::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
+            crate::error::CreateDeploymentError::InvalidFileExistsBehaviorException(inner) => Error::InvalidFileExistsBehaviorException(inner),
+            crate::error::CreateDeploymentError::InvalidGitHubAccountTokenException(inner) => Error::InvalidGitHubAccountTokenException(inner),
+            crate::error::CreateDeploymentError::InvalidIgnoreApplicationStopFailuresValueException(inner) => Error::InvalidIgnoreApplicationStopFailuresValueException(inner),
+            crate::error::CreateDeploymentError::InvalidLoadBalancerInfoException(inner) => Error::InvalidLoadBalancerInfoException(inner),
+            crate::error::CreateDeploymentError::InvalidRevisionException(inner) => Error::InvalidRevisionException(inner),
+            crate::error::CreateDeploymentError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::error::CreateDeploymentError::InvalidTargetInstancesException(inner) => Error::InvalidTargetInstancesException(inner),
+            crate::error::CreateDeploymentError::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
+            crate::error::CreateDeploymentError::InvalidUpdateOutdatedInstancesOnlyValueException(inner) => Error::InvalidUpdateOutdatedInstancesOnlyValueException(inner),
+            crate::error::CreateDeploymentError::RevisionDoesNotExistException(inner) => Error::RevisionDoesNotExistException(inner),
+            crate::error::CreateDeploymentError::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
+            crate::error::CreateDeploymentError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -803,21 +913,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDeploymentConfigError> for Error {
     fn from(err: crate::error::CreateDeploymentConfigError) -> Self {
-        match err.kind {
-            crate::error::CreateDeploymentConfigErrorKind::DeploymentConfigAlreadyExistsException(inner) => Error::DeploymentConfigAlreadyExistsException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::DeploymentConfigLimitExceededException(inner) => Error::DeploymentConfigLimitExceededException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(inner) => Error::DeploymentConfigNameRequiredException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::InvalidComputePlatformException(inner) => Error::InvalidComputePlatformException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::InvalidMinimumHealthyHostValueException(inner) => Error::InvalidMinimumHealthyHostValueException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
-            crate::error::CreateDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDeploymentConfigError::DeploymentConfigAlreadyExistsException(inner) => Error::DeploymentConfigAlreadyExistsException(inner),
+            crate::error::CreateDeploymentConfigError::DeploymentConfigLimitExceededException(inner) => Error::DeploymentConfigLimitExceededException(inner),
+            crate::error::CreateDeploymentConfigError::DeploymentConfigNameRequiredException(inner) => Error::DeploymentConfigNameRequiredException(inner),
+            crate::error::CreateDeploymentConfigError::InvalidComputePlatformException(inner) => Error::InvalidComputePlatformException(inner),
+            crate::error::CreateDeploymentConfigError::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
+            crate::error::CreateDeploymentConfigError::InvalidMinimumHealthyHostValueException(inner) => Error::InvalidMinimumHealthyHostValueException(inner),
+            crate::error::CreateDeploymentConfigError::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
+            crate::error::CreateDeploymentConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -833,47 +950,54 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDeploymentGroupError> for Error {
     fn from(err: crate::error::CreateDeploymentGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateDeploymentGroupErrorKind::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(inner) => Error::DeploymentGroupAlreadyExistsException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::DeploymentGroupLimitExceededException(inner) => Error::DeploymentGroupLimitExceededException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(inner) => Error::EcsServiceMappingLimitExceededException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(inner) => Error::InvalidBlueGreenDeploymentConfigurationException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidDeploymentStyleException(inner) => Error::InvalidDeploymentStyleException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(inner) => Error::InvalidEc2TagCombinationException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidEc2TagException(inner) => Error::InvalidEc2TagException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidEcsServiceException(inner) => Error::InvalidEcsServiceException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(inner) => Error::InvalidLoadBalancerInfoException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(inner) => Error::InvalidOnPremisesTagCombinationException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidTagsToAddException(inner) => Error::InvalidTagsToAddException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidTargetGroupPairException(inner) => Error::InvalidTargetGroupPairException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::InvalidTriggerConfigException(inner) => Error::InvalidTriggerConfigException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(inner) => Error::LifecycleHookLimitExceededException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::RoleRequiredException(inner) => Error::RoleRequiredException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::TagSetListLimitExceededException(inner) => Error::TagSetListLimitExceededException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(inner) => Error::TriggerTargetsLimitExceededException(inner),
-            crate::error::CreateDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDeploymentGroupError::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
+            crate::error::CreateDeploymentGroupError::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::CreateDeploymentGroupError::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
+            crate::error::CreateDeploymentGroupError::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
+            crate::error::CreateDeploymentGroupError::DeploymentGroupAlreadyExistsException(inner) => Error::DeploymentGroupAlreadyExistsException(inner),
+            crate::error::CreateDeploymentGroupError::DeploymentGroupLimitExceededException(inner) => Error::DeploymentGroupLimitExceededException(inner),
+            crate::error::CreateDeploymentGroupError::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
+            crate::error::CreateDeploymentGroupError::EcsServiceMappingLimitExceededException(inner) => Error::EcsServiceMappingLimitExceededException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidBlueGreenDeploymentConfigurationException(inner) => Error::InvalidBlueGreenDeploymentConfigurationException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidDeploymentStyleException(inner) => Error::InvalidDeploymentStyleException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidEc2TagCombinationException(inner) => Error::InvalidEc2TagCombinationException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidEc2TagException(inner) => Error::InvalidEc2TagException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidEcsServiceException(inner) => Error::InvalidEcsServiceException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidLoadBalancerInfoException(inner) => Error::InvalidLoadBalancerInfoException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidOnPremisesTagCombinationException(inner) => Error::InvalidOnPremisesTagCombinationException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidTagsToAddException(inner) => Error::InvalidTagsToAddException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidTargetGroupPairException(inner) => Error::InvalidTargetGroupPairException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
+            crate::error::CreateDeploymentGroupError::InvalidTriggerConfigException(inner) => Error::InvalidTriggerConfigException(inner),
+            crate::error::CreateDeploymentGroupError::LifecycleHookLimitExceededException(inner) => Error::LifecycleHookLimitExceededException(inner),
+            crate::error::CreateDeploymentGroupError::RoleRequiredException(inner) => Error::RoleRequiredException(inner),
+            crate::error::CreateDeploymentGroupError::TagSetListLimitExceededException(inner) => Error::TagSetListLimitExceededException(inner),
+            crate::error::CreateDeploymentGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::CreateDeploymentGroupError::TriggerTargetsLimitExceededException(inner) => Error::TriggerTargetsLimitExceededException(inner),
+            crate::error::CreateDeploymentGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -888,25 +1012,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteApplicationError> for Error {
     fn from(err: crate::error::DeleteApplicationError) -> Self {
-        match err.kind {
-            crate::error::DeleteApplicationErrorKind::ApplicationNameRequiredException(inner) => {
+        match err {
+            crate::error::DeleteApplicationError::ApplicationNameRequiredException(inner) => {
                 Error::ApplicationNameRequiredException(inner)
             }
-            crate::error::DeleteApplicationErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::DeleteApplicationError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::DeleteApplicationErrorKind::InvalidRoleException(inner) => {
+            crate::error::DeleteApplicationError::InvalidRoleException(inner) => {
                 Error::InvalidRoleException(inner)
             }
-            crate::error::DeleteApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -922,18 +1051,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDeploymentConfigError> for Error {
     fn from(err: crate::error::DeleteDeploymentConfigError) -> Self {
-        match err.kind {
-            crate::error::DeleteDeploymentConfigErrorKind::DeploymentConfigInUseException(inner) => Error::DeploymentConfigInUseException(inner),
-            crate::error::DeleteDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(inner) => Error::DeploymentConfigNameRequiredException(inner),
-            crate::error::DeleteDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
-            crate::error::DeleteDeploymentConfigErrorKind::InvalidOperationException(inner) => Error::InvalidOperationException(inner),
-            crate::error::DeleteDeploymentConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteDeploymentConfigError::DeploymentConfigInUseException(inner) => {
+                Error::DeploymentConfigInUseException(inner)
+            }
+            crate::error::DeleteDeploymentConfigError::DeploymentConfigNameRequiredException(
+                inner,
+            ) => Error::DeploymentConfigNameRequiredException(inner),
+            crate::error::DeleteDeploymentConfigError::InvalidDeploymentConfigNameException(
+                inner,
+            ) => Error::InvalidDeploymentConfigNameException(inner),
+            crate::error::DeleteDeploymentConfigError::InvalidOperationException(inner) => {
+                Error::InvalidOperationException(inner)
+            }
+            crate::error::DeleteDeploymentConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -949,31 +1093,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDeploymentGroupError> for Error {
     fn from(err: crate::error::DeleteDeploymentGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteDeploymentGroupErrorKind::ApplicationNameRequiredException(
-                inner,
-            ) => Error::ApplicationNameRequiredException(inner),
-            crate::error::DeleteDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(
+        match err {
+            crate::error::DeleteDeploymentGroupError::ApplicationNameRequiredException(inner) => {
+                Error::ApplicationNameRequiredException(inner)
+            }
+            crate::error::DeleteDeploymentGroupError::DeploymentGroupNameRequiredException(
                 inner,
             ) => Error::DeploymentGroupNameRequiredException(inner),
-            crate::error::DeleteDeploymentGroupErrorKind::InvalidApplicationNameException(
-                inner,
-            ) => Error::InvalidApplicationNameException(inner),
-            crate::error::DeleteDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(
+            crate::error::DeleteDeploymentGroupError::InvalidApplicationNameException(inner) => {
+                Error::InvalidApplicationNameException(inner)
+            }
+            crate::error::DeleteDeploymentGroupError::InvalidDeploymentGroupNameException(
                 inner,
             ) => Error::InvalidDeploymentGroupNameException(inner),
-            crate::error::DeleteDeploymentGroupErrorKind::InvalidRoleException(inner) => {
+            crate::error::DeleteDeploymentGroupError::InvalidRoleException(inner) => {
                 Error::InvalidRoleException(inner)
             }
-            crate::error::DeleteDeploymentGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteDeploymentGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -989,19 +1138,26 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteGitHubAccountTokenError> for Error {
     fn from(err: crate::error::DeleteGitHubAccountTokenError) -> Self {
-        match err.kind {
-            crate::error::DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenDoesNotExistException(inner) => Error::GitHubAccountTokenDoesNotExistException(inner),
-            crate::error::DeleteGitHubAccountTokenErrorKind::GitHubAccountTokenNameRequiredException(inner) => Error::GitHubAccountTokenNameRequiredException(inner),
-            crate::error::DeleteGitHubAccountTokenErrorKind::InvalidGitHubAccountTokenNameException(inner) => Error::InvalidGitHubAccountTokenNameException(inner),
-            crate::error::DeleteGitHubAccountTokenErrorKind::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
-            crate::error::DeleteGitHubAccountTokenErrorKind::ResourceValidationException(inner) => Error::ResourceValidationException(inner),
-            crate::error::DeleteGitHubAccountTokenErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteGitHubAccountTokenError::GitHubAccountTokenDoesNotExistException(inner) => Error::GitHubAccountTokenDoesNotExistException(inner),
+            crate::error::DeleteGitHubAccountTokenError::GitHubAccountTokenNameRequiredException(inner) => Error::GitHubAccountTokenNameRequiredException(inner),
+            crate::error::DeleteGitHubAccountTokenError::InvalidGitHubAccountTokenNameException(inner) => Error::InvalidGitHubAccountTokenNameException(inner),
+            crate::error::DeleteGitHubAccountTokenError::OperationNotSupportedException(inner) => Error::OperationNotSupportedException(inner),
+            crate::error::DeleteGitHubAccountTokenError::ResourceValidationException(inner) => Error::ResourceValidationException(inner),
+            crate::error::DeleteGitHubAccountTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1017,15 +1173,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteResourcesByExternalIdError> for Error {
     fn from(err: crate::error::DeleteResourcesByExternalIdError) -> Self {
-        match err.kind {
-            crate::error::DeleteResourcesByExternalIdErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteResourcesByExternalIdError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1042,21 +1205,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeregisterOnPremisesInstanceError> for Error {
     fn from(err: crate::error::DeregisterOnPremisesInstanceError) -> Self {
-        match err.kind {
-            crate::error::DeregisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(
+        match err {
+            crate::error::DeregisterOnPremisesInstanceError::InstanceNameRequiredException(
                 inner,
             ) => Error::InstanceNameRequiredException(inner),
-            crate::error::DeregisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(
+            crate::error::DeregisterOnPremisesInstanceError::InvalidInstanceNameException(
                 inner,
             ) => Error::InvalidInstanceNameException(inner),
-            crate::error::DeregisterOnPremisesInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeregisterOnPremisesInstanceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1070,25 +1240,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetApplicationError> for Error {
     fn from(err: crate::error::GetApplicationError) -> Self {
-        match err.kind {
-            crate::error::GetApplicationErrorKind::ApplicationDoesNotExistException(inner) => {
+        match err {
+            crate::error::GetApplicationError::ApplicationDoesNotExistException(inner) => {
                 Error::ApplicationDoesNotExistException(inner)
             }
-            crate::error::GetApplicationErrorKind::ApplicationNameRequiredException(inner) => {
+            crate::error::GetApplicationError::ApplicationNameRequiredException(inner) => {
                 Error::ApplicationNameRequiredException(inner)
             }
-            crate::error::GetApplicationErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::GetApplicationError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::GetApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1104,34 +1279,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetApplicationRevisionError> for Error {
     fn from(err: crate::error::GetApplicationRevisionError) -> Self {
-        match err.kind {
-            crate::error::GetApplicationRevisionErrorKind::ApplicationDoesNotExistException(
-                inner,
-            ) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::GetApplicationRevisionErrorKind::ApplicationNameRequiredException(
-                inner,
-            ) => Error::ApplicationNameRequiredException(inner),
-            crate::error::GetApplicationRevisionErrorKind::InvalidApplicationNameException(
-                inner,
-            ) => Error::InvalidApplicationNameException(inner),
-            crate::error::GetApplicationRevisionErrorKind::InvalidRevisionException(inner) => {
+        match err {
+            crate::error::GetApplicationRevisionError::ApplicationDoesNotExistException(inner) => {
+                Error::ApplicationDoesNotExistException(inner)
+            }
+            crate::error::GetApplicationRevisionError::ApplicationNameRequiredException(inner) => {
+                Error::ApplicationNameRequiredException(inner)
+            }
+            crate::error::GetApplicationRevisionError::InvalidApplicationNameException(inner) => {
+                Error::InvalidApplicationNameException(inner)
+            }
+            crate::error::GetApplicationRevisionError::InvalidRevisionException(inner) => {
                 Error::InvalidRevisionException(inner)
             }
-            crate::error::GetApplicationRevisionErrorKind::RevisionDoesNotExistException(inner) => {
+            crate::error::GetApplicationRevisionError::RevisionDoesNotExistException(inner) => {
                 Error::RevisionDoesNotExistException(inner)
             }
-            crate::error::GetApplicationRevisionErrorKind::RevisionRequiredException(inner) => {
+            crate::error::GetApplicationRevisionError::RevisionRequiredException(inner) => {
                 Error::RevisionRequiredException(inner)
             }
-            crate::error::GetApplicationRevisionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetApplicationRevisionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1144,25 +1324,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeploymentError> for Error {
     fn from(err: crate::error::GetDeploymentError) -> Self {
-        match err.kind {
-            crate::error::GetDeploymentErrorKind::DeploymentDoesNotExistException(inner) => {
+        match err {
+            crate::error::GetDeploymentError::DeploymentDoesNotExistException(inner) => {
                 Error::DeploymentDoesNotExistException(inner)
             }
-            crate::error::GetDeploymentErrorKind::DeploymentIdRequiredException(inner) => {
+            crate::error::GetDeploymentError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)
             }
-            crate::error::GetDeploymentErrorKind::InvalidDeploymentIdException(inner) => {
+            crate::error::GetDeploymentError::InvalidDeploymentIdException(inner) => {
                 Error::InvalidDeploymentIdException(inner)
             }
-            crate::error::GetDeploymentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1177,28 +1362,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeploymentConfigError> for Error {
     fn from(err: crate::error::GetDeploymentConfigError) -> Self {
-        match err.kind {
-            crate::error::GetDeploymentConfigErrorKind::DeploymentConfigDoesNotExistException(
+        match err {
+            crate::error::GetDeploymentConfigError::DeploymentConfigDoesNotExistException(
                 inner,
             ) => Error::DeploymentConfigDoesNotExistException(inner),
-            crate::error::GetDeploymentConfigErrorKind::DeploymentConfigNameRequiredException(
+            crate::error::GetDeploymentConfigError::DeploymentConfigNameRequiredException(
                 inner,
             ) => Error::DeploymentConfigNameRequiredException(inner),
-            crate::error::GetDeploymentConfigErrorKind::InvalidComputePlatformException(inner) => {
+            crate::error::GetDeploymentConfigError::InvalidComputePlatformException(inner) => {
                 Error::InvalidComputePlatformException(inner)
             }
-            crate::error::GetDeploymentConfigErrorKind::InvalidDeploymentConfigNameException(
-                inner,
-            ) => Error::InvalidDeploymentConfigNameException(inner),
-            crate::error::GetDeploymentConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetDeploymentConfigError::InvalidDeploymentConfigNameException(inner) => {
+                Error::InvalidDeploymentConfigNameException(inner)
             }
+            crate::error::GetDeploymentConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1213,37 +1403,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeploymentGroupError> for Error {
     fn from(err: crate::error::GetDeploymentGroupError) -> Self {
-        match err.kind {
-            crate::error::GetDeploymentGroupErrorKind::ApplicationDoesNotExistException(inner) => {
+        match err {
+            crate::error::GetDeploymentGroupError::ApplicationDoesNotExistException(inner) => {
                 Error::ApplicationDoesNotExistException(inner)
             }
-            crate::error::GetDeploymentGroupErrorKind::ApplicationNameRequiredException(inner) => {
+            crate::error::GetDeploymentGroupError::ApplicationNameRequiredException(inner) => {
                 Error::ApplicationNameRequiredException(inner)
             }
-            crate::error::GetDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(
-                inner,
-            ) => Error::DeploymentConfigDoesNotExistException(inner),
-            crate::error::GetDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(
-                inner,
-            ) => Error::DeploymentGroupDoesNotExistException(inner),
-            crate::error::GetDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(
-                inner,
-            ) => Error::DeploymentGroupNameRequiredException(inner),
-            crate::error::GetDeploymentGroupErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::GetDeploymentGroupError::DeploymentConfigDoesNotExistException(inner) => {
+                Error::DeploymentConfigDoesNotExistException(inner)
+            }
+            crate::error::GetDeploymentGroupError::DeploymentGroupDoesNotExistException(inner) => {
+                Error::DeploymentGroupDoesNotExistException(inner)
+            }
+            crate::error::GetDeploymentGroupError::DeploymentGroupNameRequiredException(inner) => {
+                Error::DeploymentGroupNameRequiredException(inner)
+            }
+            crate::error::GetDeploymentGroupError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::GetDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(
-                inner,
-            ) => Error::InvalidDeploymentGroupNameException(inner),
-            crate::error::GetDeploymentGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetDeploymentGroupError::InvalidDeploymentGroupNameException(inner) => {
+                Error::InvalidDeploymentGroupNameException(inner)
             }
+            crate::error::GetDeploymentGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1259,37 +1454,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeploymentInstanceError> for Error {
     fn from(err: crate::error::GetDeploymentInstanceError) -> Self {
-        match err.kind {
-            crate::error::GetDeploymentInstanceErrorKind::DeploymentDoesNotExistException(
-                inner,
-            ) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::GetDeploymentInstanceErrorKind::DeploymentIdRequiredException(inner) => {
+        match err {
+            crate::error::GetDeploymentInstanceError::DeploymentDoesNotExistException(inner) => {
+                Error::DeploymentDoesNotExistException(inner)
+            }
+            crate::error::GetDeploymentInstanceError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)
             }
-            crate::error::GetDeploymentInstanceErrorKind::InstanceDoesNotExistException(inner) => {
+            crate::error::GetDeploymentInstanceError::InstanceDoesNotExistException(inner) => {
                 Error::InstanceDoesNotExistException(inner)
             }
-            crate::error::GetDeploymentInstanceErrorKind::InstanceIdRequiredException(inner) => {
+            crate::error::GetDeploymentInstanceError::InstanceIdRequiredException(inner) => {
                 Error::InstanceIdRequiredException(inner)
             }
-            crate::error::GetDeploymentInstanceErrorKind::InvalidComputePlatformException(
-                inner,
-            ) => Error::InvalidComputePlatformException(inner),
-            crate::error::GetDeploymentInstanceErrorKind::InvalidDeploymentIdException(inner) => {
+            crate::error::GetDeploymentInstanceError::InvalidComputePlatformException(inner) => {
+                Error::InvalidComputePlatformException(inner)
+            }
+            crate::error::GetDeploymentInstanceError::InvalidDeploymentIdException(inner) => {
                 Error::InvalidDeploymentIdException(inner)
             }
-            crate::error::GetDeploymentInstanceErrorKind::InvalidInstanceNameException(inner) => {
+            crate::error::GetDeploymentInstanceError::InvalidInstanceNameException(inner) => {
                 Error::InvalidInstanceNameException(inner)
             }
-            crate::error::GetDeploymentInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDeploymentInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1304,40 +1504,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDeploymentTargetError> for Error {
     fn from(err: crate::error::GetDeploymentTargetError) -> Self {
-        match err.kind {
-            crate::error::GetDeploymentTargetErrorKind::DeploymentDoesNotExistException(inner) => {
+        match err {
+            crate::error::GetDeploymentTargetError::DeploymentDoesNotExistException(inner) => {
                 Error::DeploymentDoesNotExistException(inner)
             }
-            crate::error::GetDeploymentTargetErrorKind::DeploymentIdRequiredException(inner) => {
+            crate::error::GetDeploymentTargetError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)
             }
-            crate::error::GetDeploymentTargetErrorKind::DeploymentNotStartedException(inner) => {
+            crate::error::GetDeploymentTargetError::DeploymentNotStartedException(inner) => {
                 Error::DeploymentNotStartedException(inner)
             }
-            crate::error::GetDeploymentTargetErrorKind::DeploymentTargetDoesNotExistException(
+            crate::error::GetDeploymentTargetError::DeploymentTargetDoesNotExistException(
                 inner,
             ) => Error::DeploymentTargetDoesNotExistException(inner),
-            crate::error::GetDeploymentTargetErrorKind::DeploymentTargetIdRequiredException(
-                inner,
-            ) => Error::DeploymentTargetIdRequiredException(inner),
-            crate::error::GetDeploymentTargetErrorKind::InvalidDeploymentIdException(inner) => {
+            crate::error::GetDeploymentTargetError::DeploymentTargetIdRequiredException(inner) => {
+                Error::DeploymentTargetIdRequiredException(inner)
+            }
+            crate::error::GetDeploymentTargetError::InvalidDeploymentIdException(inner) => {
                 Error::InvalidDeploymentIdException(inner)
             }
-            crate::error::GetDeploymentTargetErrorKind::InvalidDeploymentTargetIdException(
-                inner,
-            ) => Error::InvalidDeploymentTargetIdException(inner),
-            crate::error::GetDeploymentTargetErrorKind::InvalidInstanceNameException(inner) => {
+            crate::error::GetDeploymentTargetError::InvalidDeploymentTargetIdException(inner) => {
+                Error::InvalidDeploymentTargetIdException(inner)
+            }
+            crate::error::GetDeploymentTargetError::InvalidInstanceNameException(inner) => {
                 Error::InvalidInstanceNameException(inner)
             }
-            crate::error::GetDeploymentTargetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDeploymentTargetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1353,25 +1558,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetOnPremisesInstanceError> for Error {
     fn from(err: crate::error::GetOnPremisesInstanceError) -> Self {
-        match err.kind {
-            crate::error::GetOnPremisesInstanceErrorKind::InstanceNameRequiredException(inner) => {
+        match err {
+            crate::error::GetOnPremisesInstanceError::InstanceNameRequiredException(inner) => {
                 Error::InstanceNameRequiredException(inner)
             }
-            crate::error::GetOnPremisesInstanceErrorKind::InstanceNotRegisteredException(inner) => {
+            crate::error::GetOnPremisesInstanceError::InstanceNotRegisteredException(inner) => {
                 Error::InstanceNotRegisteredException(inner)
             }
-            crate::error::GetOnPremisesInstanceErrorKind::InvalidInstanceNameException(inner) => {
+            crate::error::GetOnPremisesInstanceError::InvalidInstanceNameException(inner) => {
                 Error::InvalidInstanceNameException(inner)
             }
-            crate::error::GetOnPremisesInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOnPremisesInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1387,24 +1597,53 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListApplicationRevisionsError> for Error {
     fn from(err: crate::error::ListApplicationRevisionsError) -> Self {
-        match err.kind {
-            crate::error::ListApplicationRevisionsErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::BucketNameFilterRequiredException(inner) => Error::BucketNameFilterRequiredException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidBucketNameFilterException(inner) => Error::InvalidBucketNameFilterException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidDeployedStateFilterException(inner) => Error::InvalidDeployedStateFilterException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidKeyPrefixFilterException(inner) => Error::InvalidKeyPrefixFilterException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidSortByException(inner) => Error::InvalidSortByException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::InvalidSortOrderException(inner) => Error::InvalidSortOrderException(inner),
-            crate::error::ListApplicationRevisionsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListApplicationRevisionsError::ApplicationDoesNotExistException(
+                inner,
+            ) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::ListApplicationRevisionsError::ApplicationNameRequiredException(
+                inner,
+            ) => Error::ApplicationNameRequiredException(inner),
+            crate::error::ListApplicationRevisionsError::BucketNameFilterRequiredException(
+                inner,
+            ) => Error::BucketNameFilterRequiredException(inner),
+            crate::error::ListApplicationRevisionsError::InvalidApplicationNameException(inner) => {
+                Error::InvalidApplicationNameException(inner)
+            }
+            crate::error::ListApplicationRevisionsError::InvalidBucketNameFilterException(
+                inner,
+            ) => Error::InvalidBucketNameFilterException(inner),
+            crate::error::ListApplicationRevisionsError::InvalidDeployedStateFilterException(
+                inner,
+            ) => Error::InvalidDeployedStateFilterException(inner),
+            crate::error::ListApplicationRevisionsError::InvalidKeyPrefixFilterException(inner) => {
+                Error::InvalidKeyPrefixFilterException(inner)
+            }
+            crate::error::ListApplicationRevisionsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListApplicationRevisionsError::InvalidSortByException(inner) => {
+                Error::InvalidSortByException(inner)
+            }
+            crate::error::ListApplicationRevisionsError::InvalidSortOrderException(inner) => {
+                Error::InvalidSortOrderException(inner)
+            }
+            crate::error::ListApplicationRevisionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1419,19 +1658,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListApplicationsError> for Error {
     fn from(err: crate::error::ListApplicationsError) -> Self {
-        match err.kind {
-            crate::error::ListApplicationsErrorKind::InvalidNextTokenException(inner) => {
+        match err {
+            crate::error::ListApplicationsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListApplicationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListApplicationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1447,19 +1691,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDeploymentConfigsError> for Error {
     fn from(err: crate::error::ListDeploymentConfigsError) -> Self {
-        match err.kind {
-            crate::error::ListDeploymentConfigsErrorKind::InvalidNextTokenException(inner) => {
+        match err {
+            crate::error::ListDeploymentConfigsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListDeploymentConfigsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDeploymentConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1475,28 +1724,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDeploymentGroupsError> for Error {
     fn from(err: crate::error::ListDeploymentGroupsError) -> Self {
-        match err.kind {
-            crate::error::ListDeploymentGroupsErrorKind::ApplicationDoesNotExistException(
-                inner,
-            ) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::ListDeploymentGroupsErrorKind::ApplicationNameRequiredException(
-                inner,
-            ) => Error::ApplicationNameRequiredException(inner),
-            crate::error::ListDeploymentGroupsErrorKind::InvalidApplicationNameException(inner) => {
+        match err {
+            crate::error::ListDeploymentGroupsError::ApplicationDoesNotExistException(inner) => {
+                Error::ApplicationDoesNotExistException(inner)
+            }
+            crate::error::ListDeploymentGroupsError::ApplicationNameRequiredException(inner) => {
+                Error::ApplicationNameRequiredException(inner)
+            }
+            crate::error::ListDeploymentGroupsError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::ListDeploymentGroupsErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListDeploymentGroupsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListDeploymentGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDeploymentGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1512,24 +1766,51 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDeploymentInstancesError> for Error {
     fn from(err: crate::error::ListDeploymentInstancesError) -> Self {
-        match err.kind {
-            crate::error::ListDeploymentInstancesErrorKind::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidComputePlatformException(inner) => Error::InvalidComputePlatformException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidDeploymentInstanceTypeException(inner) => Error::InvalidDeploymentInstanceTypeException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidInstanceStatusException(inner) => Error::InvalidInstanceStatusException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidInstanceTypeException(inner) => Error::InvalidInstanceTypeException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::InvalidTargetFilterNameException(inner) => Error::InvalidTargetFilterNameException(inner),
-            crate::error::ListDeploymentInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListDeploymentInstancesError::DeploymentDoesNotExistException(inner) => {
+                Error::DeploymentDoesNotExistException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::DeploymentIdRequiredException(inner) => {
+                Error::DeploymentIdRequiredException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::DeploymentNotStartedException(inner) => {
+                Error::DeploymentNotStartedException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::InvalidComputePlatformException(inner) => {
+                Error::InvalidComputePlatformException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::InvalidDeploymentIdException(inner) => {
+                Error::InvalidDeploymentIdException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::InvalidDeploymentInstanceTypeException(
+                inner,
+            ) => Error::InvalidDeploymentInstanceTypeException(inner),
+            crate::error::ListDeploymentInstancesError::InvalidInstanceStatusException(inner) => {
+                Error::InvalidInstanceStatusException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::InvalidInstanceTypeException(inner) => {
+                Error::InvalidInstanceTypeException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::InvalidTargetFilterNameException(inner) => {
+                Error::InvalidTargetFilterNameException(inner)
+            }
+            crate::error::ListDeploymentInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1542,49 +1823,54 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDeploymentsError> for Error {
     fn from(err: crate::error::ListDeploymentsError) -> Self {
-        match err.kind {
-            crate::error::ListDeploymentsErrorKind::ApplicationDoesNotExistException(inner) => {
+        match err {
+            crate::error::ListDeploymentsError::ApplicationDoesNotExistException(inner) => {
                 Error::ApplicationDoesNotExistException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::ApplicationNameRequiredException(inner) => {
+            crate::error::ListDeploymentsError::ApplicationNameRequiredException(inner) => {
                 Error::ApplicationNameRequiredException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::DeploymentGroupDoesNotExistException(inner) => {
+            crate::error::ListDeploymentsError::DeploymentGroupDoesNotExistException(inner) => {
                 Error::DeploymentGroupDoesNotExistException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::DeploymentGroupNameRequiredException(inner) => {
+            crate::error::ListDeploymentsError::DeploymentGroupNameRequiredException(inner) => {
                 Error::DeploymentGroupNameRequiredException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::ListDeploymentsError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidDeploymentGroupNameException(inner) => {
+            crate::error::ListDeploymentsError::InvalidDeploymentGroupNameException(inner) => {
                 Error::InvalidDeploymentGroupNameException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidDeploymentStatusException(inner) => {
+            crate::error::ListDeploymentsError::InvalidDeploymentStatusException(inner) => {
                 Error::InvalidDeploymentStatusException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidExternalIdException(inner) => {
+            crate::error::ListDeploymentsError::InvalidExternalIdException(inner) => {
                 Error::InvalidExternalIdException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidInputException(inner) => {
+            crate::error::ListDeploymentsError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListDeploymentsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::InvalidTimeRangeException(inner) => {
+            crate::error::ListDeploymentsError::InvalidTimeRangeException(inner) => {
                 Error::InvalidTimeRangeException(inner)
             }
-            crate::error::ListDeploymentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDeploymentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1600,22 +1886,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDeploymentTargetsError> for Error {
     fn from(err: crate::error::ListDeploymentTargetsError) -> Self {
-        match err.kind {
-            crate::error::ListDeploymentTargetsErrorKind::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::InvalidDeploymentInstanceTypeException(inner) => Error::InvalidDeploymentInstanceTypeException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::InvalidInstanceStatusException(inner) => Error::InvalidInstanceStatusException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::InvalidInstanceTypeException(inner) => Error::InvalidInstanceTypeException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListDeploymentTargetsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListDeploymentTargetsError::DeploymentDoesNotExistException(inner) => {
+                Error::DeploymentDoesNotExistException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::DeploymentIdRequiredException(inner) => {
+                Error::DeploymentIdRequiredException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::DeploymentNotStartedException(inner) => {
+                Error::DeploymentNotStartedException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::InvalidDeploymentIdException(inner) => {
+                Error::InvalidDeploymentIdException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::InvalidDeploymentInstanceTypeException(
+                inner,
+            ) => Error::InvalidDeploymentInstanceTypeException(inner),
+            crate::error::ListDeploymentTargetsError::InvalidInstanceStatusException(inner) => {
+                Error::InvalidInstanceStatusException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::InvalidInstanceTypeException(inner) => {
+                Error::InvalidInstanceTypeException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListDeploymentTargetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1631,24 +1940,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListGitHubAccountTokenNamesError> for Error {
     fn from(err: crate::error::ListGitHubAccountTokenNamesError) -> Self {
-        match err.kind {
-            crate::error::ListGitHubAccountTokenNamesErrorKind::InvalidNextTokenException(
-                inner,
-            ) => Error::InvalidNextTokenException(inner),
-            crate::error::ListGitHubAccountTokenNamesErrorKind::OperationNotSupportedException(
+        match err {
+            crate::error::ListGitHubAccountTokenNamesError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListGitHubAccountTokenNamesError::OperationNotSupportedException(
                 inner,
             ) => Error::OperationNotSupportedException(inner),
-            crate::error::ListGitHubAccountTokenNamesErrorKind::ResourceValidationException(
-                inner,
-            ) => Error::ResourceValidationException(inner),
-            crate::error::ListGitHubAccountTokenNamesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListGitHubAccountTokenNamesError::ResourceValidationException(inner) => {
+                Error::ResourceValidationException(inner)
+            }
+            crate::error::ListGitHubAccountTokenNamesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1665,25 +1981,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListOnPremisesInstancesError> for Error {
     fn from(err: crate::error::ListOnPremisesInstancesError) -> Self {
-        match err.kind {
-            crate::error::ListOnPremisesInstancesErrorKind::InvalidNextTokenException(inner) => {
+        match err {
+            crate::error::ListOnPremisesInstancesError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListOnPremisesInstancesErrorKind::InvalidRegistrationStatusException(
+            crate::error::ListOnPremisesInstancesError::InvalidRegistrationStatusException(
                 inner,
             ) => Error::InvalidRegistrationStatusException(inner),
-            crate::error::ListOnPremisesInstancesErrorKind::InvalidTagFilterException(inner) => {
+            crate::error::ListOnPremisesInstancesError::InvalidTagFilterException(inner) => {
                 Error::InvalidTagFilterException(inner)
             }
-            crate::error::ListOnPremisesInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOnPremisesInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1698,25 +2019,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::ArnNotSupportedException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::ArnNotSupportedException(inner) => {
                 Error::ArnNotSupportedException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InvalidArnException(inner) => {
+            crate::error::ListTagsForResourceError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ResourceArnRequiredException(inner) => {
+            crate::error::ListTagsForResourceError::ResourceArnRequiredException(inner) => {
                 Error::ResourceArnRequiredException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1740,21 +2066,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutLifecycleEventHookExecutionStatusError> for Error {
     fn from(err: crate::error::PutLifecycleEventHookExecutionStatusError) -> Self {
-        match err.kind {
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionIdException(inner) => Error::InvalidLifecycleEventHookExecutionIdException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::InvalidLifecycleEventHookExecutionStatusException(inner) => Error::InvalidLifecycleEventHookExecutionStatusException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::LifecycleEventAlreadyCompletedException(inner) => Error::LifecycleEventAlreadyCompletedException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-            crate::error::PutLifecycleEventHookExecutionStatusErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::PutLifecycleEventHookExecutionStatusError::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::InvalidLifecycleEventHookExecutionIdException(inner) => Error::InvalidLifecycleEventHookExecutionIdException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::InvalidLifecycleEventHookExecutionStatusException(inner) => Error::InvalidLifecycleEventHookExecutionStatusException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::LifecycleEventAlreadyCompletedException(inner) => Error::LifecycleEventAlreadyCompletedException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
+            crate::error::PutLifecycleEventHookExecutionStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1770,20 +2103,41 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RegisterApplicationRevisionError> for Error {
     fn from(err: crate::error::RegisterApplicationRevisionError) -> Self {
-        match err.kind {
-            crate::error::RegisterApplicationRevisionErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::RegisterApplicationRevisionErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::RegisterApplicationRevisionErrorKind::DescriptionTooLongException(inner) => Error::DescriptionTooLongException(inner),
-            crate::error::RegisterApplicationRevisionErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::RegisterApplicationRevisionErrorKind::InvalidRevisionException(inner) => Error::InvalidRevisionException(inner),
-            crate::error::RegisterApplicationRevisionErrorKind::RevisionRequiredException(inner) => Error::RevisionRequiredException(inner),
-            crate::error::RegisterApplicationRevisionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RegisterApplicationRevisionError::ApplicationDoesNotExistException(
+                inner,
+            ) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::RegisterApplicationRevisionError::ApplicationNameRequiredException(
+                inner,
+            ) => Error::ApplicationNameRequiredException(inner),
+            crate::error::RegisterApplicationRevisionError::DescriptionTooLongException(inner) => {
+                Error::DescriptionTooLongException(inner)
+            }
+            crate::error::RegisterApplicationRevisionError::InvalidApplicationNameException(
+                inner,
+            ) => Error::InvalidApplicationNameException(inner),
+            crate::error::RegisterApplicationRevisionError::InvalidRevisionException(inner) => {
+                Error::InvalidRevisionException(inner)
+            }
+            crate::error::RegisterApplicationRevisionError::RevisionRequiredException(inner) => {
+                Error::RevisionRequiredException(inner)
+            }
+            crate::error::RegisterApplicationRevisionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1799,24 +2153,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RegisterOnPremisesInstanceError> for Error {
     fn from(err: crate::error::RegisterOnPremisesInstanceError) -> Self {
-        match err.kind {
-            crate::error::RegisterOnPremisesInstanceErrorKind::IamArnRequiredException(inner) => Error::IamArnRequiredException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::IamSessionArnAlreadyRegisteredException(inner) => Error::IamSessionArnAlreadyRegisteredException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::IamUserArnAlreadyRegisteredException(inner) => Error::IamUserArnAlreadyRegisteredException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::IamUserArnRequiredException(inner) => Error::IamUserArnRequiredException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::InstanceNameAlreadyRegisteredException(inner) => Error::InstanceNameAlreadyRegisteredException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::InstanceNameRequiredException(inner) => Error::InstanceNameRequiredException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::InvalidIamSessionArnException(inner) => Error::InvalidIamSessionArnException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::InvalidIamUserArnException(inner) => Error::InvalidIamUserArnException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::MultipleIamArnsProvidedException(inner) => Error::MultipleIamArnsProvidedException(inner),
-            crate::error::RegisterOnPremisesInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RegisterOnPremisesInstanceError::IamArnRequiredException(inner) => Error::IamArnRequiredException(inner),
+            crate::error::RegisterOnPremisesInstanceError::IamSessionArnAlreadyRegisteredException(inner) => Error::IamSessionArnAlreadyRegisteredException(inner),
+            crate::error::RegisterOnPremisesInstanceError::IamUserArnAlreadyRegisteredException(inner) => Error::IamUserArnAlreadyRegisteredException(inner),
+            crate::error::RegisterOnPremisesInstanceError::IamUserArnRequiredException(inner) => Error::IamUserArnRequiredException(inner),
+            crate::error::RegisterOnPremisesInstanceError::InstanceNameAlreadyRegisteredException(inner) => Error::InstanceNameAlreadyRegisteredException(inner),
+            crate::error::RegisterOnPremisesInstanceError::InstanceNameRequiredException(inner) => Error::InstanceNameRequiredException(inner),
+            crate::error::RegisterOnPremisesInstanceError::InvalidIamSessionArnException(inner) => Error::InvalidIamSessionArnException(inner),
+            crate::error::RegisterOnPremisesInstanceError::InvalidIamUserArnException(inner) => Error::InvalidIamUserArnException(inner),
+            crate::error::RegisterOnPremisesInstanceError::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
+            crate::error::RegisterOnPremisesInstanceError::MultipleIamArnsProvidedException(inner) => Error::MultipleIamArnsProvidedException(inner),
+            crate::error::RegisterOnPremisesInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1836,21 +2197,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RemoveTagsFromOnPremisesInstancesError> for Error {
     fn from(err: crate::error::RemoveTagsFromOnPremisesInstancesError) -> Self {
-        match err.kind {
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::InstanceLimitExceededException(inner) => Error::InstanceLimitExceededException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNameRequiredException(inner) => Error::InstanceNameRequiredException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::InstanceNotRegisteredException(inner) => Error::InstanceNotRegisteredException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::TagRequiredException(inner) => Error::TagRequiredException(inner),
-            crate::error::RemoveTagsFromOnPremisesInstancesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::RemoveTagsFromOnPremisesInstancesError::InstanceLimitExceededException(inner) => Error::InstanceLimitExceededException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::InstanceNameRequiredException(inner) => Error::InstanceNameRequiredException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::InstanceNotRegisteredException(inner) => Error::InstanceNotRegisteredException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::InvalidInstanceNameException(inner) => Error::InvalidInstanceNameException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::TagLimitExceededException(inner) => Error::TagLimitExceededException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::TagRequiredException(inner) => Error::TagRequiredException(inner),
+            crate::error::RemoveTagsFromOnPremisesInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1871,20 +2239,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::SkipWaitTimeForInstanceTerminationError> for Error {
     fn from(err: crate::error::SkipWaitTimeForInstanceTerminationError) -> Self {
-        match err.kind {
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::DeploymentAlreadyCompletedException(inner) => Error::DeploymentAlreadyCompletedException(inner),
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
-            crate::error::SkipWaitTimeForInstanceTerminationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::SkipWaitTimeForInstanceTerminationError::DeploymentAlreadyCompletedException(inner) => Error::DeploymentAlreadyCompletedException(inner),
+            crate::error::SkipWaitTimeForInstanceTerminationError::DeploymentDoesNotExistException(inner) => Error::DeploymentDoesNotExistException(inner),
+            crate::error::SkipWaitTimeForInstanceTerminationError::DeploymentIdRequiredException(inner) => Error::DeploymentIdRequiredException(inner),
+            crate::error::SkipWaitTimeForInstanceTerminationError::DeploymentNotStartedException(inner) => Error::DeploymentNotStartedException(inner),
+            crate::error::SkipWaitTimeForInstanceTerminationError::InvalidDeploymentIdException(inner) => Error::InvalidDeploymentIdException(inner),
+            crate::error::SkipWaitTimeForInstanceTerminationError::UnsupportedActionForDeploymentTypeException(inner) => Error::UnsupportedActionForDeploymentTypeException(inner),
+            crate::error::SkipWaitTimeForInstanceTerminationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1897,34 +2272,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopDeploymentError> for Error {
     fn from(err: crate::error::StopDeploymentError) -> Self {
-        match err.kind {
-            crate::error::StopDeploymentErrorKind::DeploymentAlreadyCompletedException(inner) => {
+        match err {
+            crate::error::StopDeploymentError::DeploymentAlreadyCompletedException(inner) => {
                 Error::DeploymentAlreadyCompletedException(inner)
             }
-            crate::error::StopDeploymentErrorKind::DeploymentDoesNotExistException(inner) => {
+            crate::error::StopDeploymentError::DeploymentDoesNotExistException(inner) => {
                 Error::DeploymentDoesNotExistException(inner)
             }
-            crate::error::StopDeploymentErrorKind::DeploymentGroupDoesNotExistException(inner) => {
+            crate::error::StopDeploymentError::DeploymentGroupDoesNotExistException(inner) => {
                 Error::DeploymentGroupDoesNotExistException(inner)
             }
-            crate::error::StopDeploymentErrorKind::DeploymentIdRequiredException(inner) => {
+            crate::error::StopDeploymentError::DeploymentIdRequiredException(inner) => {
                 Error::DeploymentIdRequiredException(inner)
             }
-            crate::error::StopDeploymentErrorKind::InvalidDeploymentIdException(inner) => {
+            crate::error::StopDeploymentError::InvalidDeploymentIdException(inner) => {
                 Error::InvalidDeploymentIdException(inner)
             }
-            crate::error::StopDeploymentErrorKind::UnsupportedActionForDeploymentTypeException(
+            crate::error::StopDeploymentError::UnsupportedActionForDeploymentTypeException(
                 inner,
             ) => Error::UnsupportedActionForDeploymentTypeException(inner),
-            crate::error::StopDeploymentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopDeploymentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1937,40 +2317,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::ApplicationDoesNotExistException(inner) => {
+        match err {
+            crate::error::TagResourceError::ApplicationDoesNotExistException(inner) => {
                 Error::ApplicationDoesNotExistException(inner)
             }
-            crate::error::TagResourceErrorKind::ArnNotSupportedException(inner) => {
+            crate::error::TagResourceError::ArnNotSupportedException(inner) => {
                 Error::ArnNotSupportedException(inner)
             }
-            crate::error::TagResourceErrorKind::DeploymentConfigDoesNotExistException(inner) => {
+            crate::error::TagResourceError::DeploymentConfigDoesNotExistException(inner) => {
                 Error::DeploymentConfigDoesNotExistException(inner)
             }
-            crate::error::TagResourceErrorKind::DeploymentGroupDoesNotExistException(inner) => {
+            crate::error::TagResourceError::DeploymentGroupDoesNotExistException(inner) => {
                 Error::DeploymentGroupDoesNotExistException(inner)
             }
-            crate::error::TagResourceErrorKind::InvalidArnException(inner) => {
+            crate::error::TagResourceError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::TagResourceErrorKind::InvalidTagsToAddException(inner) => {
+            crate::error::TagResourceError::InvalidTagsToAddException(inner) => {
                 Error::InvalidTagsToAddException(inner)
             }
-            crate::error::TagResourceErrorKind::ResourceArnRequiredException(inner) => {
+            crate::error::TagResourceError::ResourceArnRequiredException(inner) => {
                 Error::ResourceArnRequiredException(inner)
             }
-            crate::error::TagResourceErrorKind::TagRequiredException(inner) => {
+            crate::error::TagResourceError::TagRequiredException(inner) => {
                 Error::TagRequiredException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1983,40 +2368,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::ApplicationDoesNotExistException(inner) => {
+        match err {
+            crate::error::UntagResourceError::ApplicationDoesNotExistException(inner) => {
                 Error::ApplicationDoesNotExistException(inner)
             }
-            crate::error::UntagResourceErrorKind::ArnNotSupportedException(inner) => {
+            crate::error::UntagResourceError::ArnNotSupportedException(inner) => {
                 Error::ArnNotSupportedException(inner)
             }
-            crate::error::UntagResourceErrorKind::DeploymentConfigDoesNotExistException(inner) => {
+            crate::error::UntagResourceError::DeploymentConfigDoesNotExistException(inner) => {
                 Error::DeploymentConfigDoesNotExistException(inner)
             }
-            crate::error::UntagResourceErrorKind::DeploymentGroupDoesNotExistException(inner) => {
+            crate::error::UntagResourceError::DeploymentGroupDoesNotExistException(inner) => {
                 Error::DeploymentGroupDoesNotExistException(inner)
             }
-            crate::error::UntagResourceErrorKind::InvalidArnException(inner) => {
+            crate::error::UntagResourceError::InvalidArnException(inner) => {
                 Error::InvalidArnException(inner)
             }
-            crate::error::UntagResourceErrorKind::InvalidTagsToAddException(inner) => {
+            crate::error::UntagResourceError::InvalidTagsToAddException(inner) => {
                 Error::InvalidTagsToAddException(inner)
             }
-            crate::error::UntagResourceErrorKind::ResourceArnRequiredException(inner) => {
+            crate::error::UntagResourceError::ResourceArnRequiredException(inner) => {
                 Error::ResourceArnRequiredException(inner)
             }
-            crate::error::UntagResourceErrorKind::TagRequiredException(inner) => {
+            crate::error::UntagResourceError::TagRequiredException(inner) => {
                 Error::TagRequiredException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2031,28 +2421,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateApplicationError> for Error {
     fn from(err: crate::error::UpdateApplicationError) -> Self {
-        match err.kind {
-            crate::error::UpdateApplicationErrorKind::ApplicationAlreadyExistsException(inner) => {
+        match err {
+            crate::error::UpdateApplicationError::ApplicationAlreadyExistsException(inner) => {
                 Error::ApplicationAlreadyExistsException(inner)
             }
-            crate::error::UpdateApplicationErrorKind::ApplicationDoesNotExistException(inner) => {
+            crate::error::UpdateApplicationError::ApplicationDoesNotExistException(inner) => {
                 Error::ApplicationDoesNotExistException(inner)
             }
-            crate::error::UpdateApplicationErrorKind::ApplicationNameRequiredException(inner) => {
+            crate::error::UpdateApplicationError::ApplicationNameRequiredException(inner) => {
                 Error::ApplicationNameRequiredException(inner)
             }
-            crate::error::UpdateApplicationErrorKind::InvalidApplicationNameException(inner) => {
+            crate::error::UpdateApplicationError::InvalidApplicationNameException(inner) => {
                 Error::InvalidApplicationNameException(inner)
             }
-            crate::error::UpdateApplicationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateApplicationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2068,46 +2463,169 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateDeploymentGroupError> for Error {
     fn from(err: crate::error::UpdateDeploymentGroupError) -> Self {
-        match err.kind {
-            crate::error::UpdateDeploymentGroupErrorKind::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::DeploymentGroupAlreadyExistsException(inner) => Error::DeploymentGroupAlreadyExistsException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::DeploymentGroupDoesNotExistException(inner) => Error::DeploymentGroupDoesNotExistException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::EcsServiceMappingLimitExceededException(inner) => Error::EcsServiceMappingLimitExceededException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidBlueGreenDeploymentConfigurationException(inner) => Error::InvalidBlueGreenDeploymentConfigurationException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidDeploymentStyleException(inner) => Error::InvalidDeploymentStyleException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidEc2TagCombinationException(inner) => Error::InvalidEc2TagCombinationException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidEc2TagException(inner) => Error::InvalidEc2TagException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidEcsServiceException(inner) => Error::InvalidEcsServiceException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidLoadBalancerInfoException(inner) => Error::InvalidLoadBalancerInfoException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidOnPremisesTagCombinationException(inner) => Error::InvalidOnPremisesTagCombinationException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidTagException(inner) => Error::InvalidTagException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidTargetGroupPairException(inner) => Error::InvalidTargetGroupPairException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::InvalidTriggerConfigException(inner) => Error::InvalidTriggerConfigException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::LifecycleHookLimitExceededException(inner) => Error::LifecycleHookLimitExceededException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::TagSetListLimitExceededException(inner) => Error::TagSetListLimitExceededException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::ThrottlingException(inner) => Error::ThrottlingException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::TriggerTargetsLimitExceededException(inner) => Error::TriggerTargetsLimitExceededException(inner),
-            crate::error::UpdateDeploymentGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDeploymentGroupError::AlarmsLimitExceededException(inner) => Error::AlarmsLimitExceededException(inner),
+            crate::error::UpdateDeploymentGroupError::ApplicationDoesNotExistException(inner) => Error::ApplicationDoesNotExistException(inner),
+            crate::error::UpdateDeploymentGroupError::ApplicationNameRequiredException(inner) => Error::ApplicationNameRequiredException(inner),
+            crate::error::UpdateDeploymentGroupError::DeploymentConfigDoesNotExistException(inner) => Error::DeploymentConfigDoesNotExistException(inner),
+            crate::error::UpdateDeploymentGroupError::DeploymentGroupAlreadyExistsException(inner) => Error::DeploymentGroupAlreadyExistsException(inner),
+            crate::error::UpdateDeploymentGroupError::DeploymentGroupDoesNotExistException(inner) => Error::DeploymentGroupDoesNotExistException(inner),
+            crate::error::UpdateDeploymentGroupError::DeploymentGroupNameRequiredException(inner) => Error::DeploymentGroupNameRequiredException(inner),
+            crate::error::UpdateDeploymentGroupError::EcsServiceMappingLimitExceededException(inner) => Error::EcsServiceMappingLimitExceededException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidAlarmConfigException(inner) => Error::InvalidAlarmConfigException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidApplicationNameException(inner) => Error::InvalidApplicationNameException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidAutoRollbackConfigException(inner) => Error::InvalidAutoRollbackConfigException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidAutoScalingGroupException(inner) => Error::InvalidAutoScalingGroupException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidBlueGreenDeploymentConfigurationException(inner) => Error::InvalidBlueGreenDeploymentConfigurationException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidDeploymentConfigNameException(inner) => Error::InvalidDeploymentConfigNameException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidDeploymentGroupNameException(inner) => Error::InvalidDeploymentGroupNameException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidDeploymentStyleException(inner) => Error::InvalidDeploymentStyleException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidEc2TagCombinationException(inner) => Error::InvalidEc2TagCombinationException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidEc2TagException(inner) => Error::InvalidEc2TagException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidEcsServiceException(inner) => Error::InvalidEcsServiceException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidLoadBalancerInfoException(inner) => Error::InvalidLoadBalancerInfoException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidOnPremisesTagCombinationException(inner) => Error::InvalidOnPremisesTagCombinationException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidRoleException(inner) => Error::InvalidRoleException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidTagException(inner) => Error::InvalidTagException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidTargetGroupPairException(inner) => Error::InvalidTargetGroupPairException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidTrafficRoutingConfigurationException(inner) => Error::InvalidTrafficRoutingConfigurationException(inner),
+            crate::error::UpdateDeploymentGroupError::InvalidTriggerConfigException(inner) => Error::InvalidTriggerConfigException(inner),
+            crate::error::UpdateDeploymentGroupError::LifecycleHookLimitExceededException(inner) => Error::LifecycleHookLimitExceededException(inner),
+            crate::error::UpdateDeploymentGroupError::TagSetListLimitExceededException(inner) => Error::TagSetListLimitExceededException(inner),
+            crate::error::UpdateDeploymentGroupError::ThrottlingException(inner) => Error::ThrottlingException(inner),
+            crate::error::UpdateDeploymentGroupError::TriggerTargetsLimitExceededException(inner) => Error::TriggerTargetsLimitExceededException(inner),
+            crate::error::UpdateDeploymentGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AlarmsLimitExceededException(e) => e.request_id(),
+            Self::ApplicationAlreadyExistsException(e) => e.request_id(),
+            Self::ApplicationDoesNotExistException(e) => e.request_id(),
+            Self::ApplicationLimitExceededException(e) => e.request_id(),
+            Self::ApplicationNameRequiredException(e) => e.request_id(),
+            Self::ArnNotSupportedException(e) => e.request_id(),
+            Self::BatchLimitExceededException(e) => e.request_id(),
+            Self::BucketNameFilterRequiredException(e) => e.request_id(),
+            Self::DeploymentAlreadyCompletedException(e) => e.request_id(),
+            Self::DeploymentConfigAlreadyExistsException(e) => e.request_id(),
+            Self::DeploymentConfigDoesNotExistException(e) => e.request_id(),
+            Self::DeploymentConfigInUseException(e) => e.request_id(),
+            Self::DeploymentConfigLimitExceededException(e) => e.request_id(),
+            Self::DeploymentConfigNameRequiredException(e) => e.request_id(),
+            Self::DeploymentDoesNotExistException(e) => e.request_id(),
+            Self::DeploymentGroupAlreadyExistsException(e) => e.request_id(),
+            Self::DeploymentGroupDoesNotExistException(e) => e.request_id(),
+            Self::DeploymentGroupLimitExceededException(e) => e.request_id(),
+            Self::DeploymentGroupNameRequiredException(e) => e.request_id(),
+            Self::DeploymentIdRequiredException(e) => e.request_id(),
+            Self::DeploymentIsNotInReadyStateException(e) => e.request_id(),
+            Self::DeploymentLimitExceededException(e) => e.request_id(),
+            Self::DeploymentNotStartedException(e) => e.request_id(),
+            Self::DeploymentTargetDoesNotExistException(e) => e.request_id(),
+            Self::DeploymentTargetIdRequiredException(e) => e.request_id(),
+            Self::DeploymentTargetListSizeExceededException(e) => e.request_id(),
+            Self::DescriptionTooLongException(e) => e.request_id(),
+            Self::EcsServiceMappingLimitExceededException(e) => e.request_id(),
+            Self::GitHubAccountTokenDoesNotExistException(e) => e.request_id(),
+            Self::GitHubAccountTokenNameRequiredException(e) => e.request_id(),
+            Self::IamArnRequiredException(e) => e.request_id(),
+            Self::IamSessionArnAlreadyRegisteredException(e) => e.request_id(),
+            Self::IamUserArnAlreadyRegisteredException(e) => e.request_id(),
+            Self::IamUserArnRequiredException(e) => e.request_id(),
+            Self::InstanceDoesNotExistException(e) => e.request_id(),
+            Self::InstanceIdRequiredException(e) => e.request_id(),
+            Self::InstanceLimitExceededException(e) => e.request_id(),
+            Self::InstanceNameAlreadyRegisteredException(e) => e.request_id(),
+            Self::InstanceNameRequiredException(e) => e.request_id(),
+            Self::InstanceNotRegisteredException(e) => e.request_id(),
+            Self::InvalidAlarmConfigException(e) => e.request_id(),
+            Self::InvalidApplicationNameException(e) => e.request_id(),
+            Self::InvalidArnException(e) => e.request_id(),
+            Self::InvalidAutoRollbackConfigException(e) => e.request_id(),
+            Self::InvalidAutoScalingGroupException(e) => e.request_id(),
+            Self::InvalidBlueGreenDeploymentConfigurationException(e) => e.request_id(),
+            Self::InvalidBucketNameFilterException(e) => e.request_id(),
+            Self::InvalidComputePlatformException(e) => e.request_id(),
+            Self::InvalidDeployedStateFilterException(e) => e.request_id(),
+            Self::InvalidDeploymentConfigNameException(e) => e.request_id(),
+            Self::InvalidDeploymentGroupNameException(e) => e.request_id(),
+            Self::InvalidDeploymentIdException(e) => e.request_id(),
+            Self::InvalidDeploymentInstanceTypeException(e) => e.request_id(),
+            Self::InvalidDeploymentStatusException(e) => e.request_id(),
+            Self::InvalidDeploymentStyleException(e) => e.request_id(),
+            Self::InvalidDeploymentTargetIdException(e) => e.request_id(),
+            Self::InvalidDeploymentWaitTypeException(e) => e.request_id(),
+            Self::InvalidEc2TagCombinationException(e) => e.request_id(),
+            Self::InvalidEc2TagException(e) => e.request_id(),
+            Self::InvalidEcsServiceException(e) => e.request_id(),
+            Self::InvalidExternalIdException(e) => e.request_id(),
+            Self::InvalidFileExistsBehaviorException(e) => e.request_id(),
+            Self::InvalidGitHubAccountTokenException(e) => e.request_id(),
+            Self::InvalidGitHubAccountTokenNameException(e) => e.request_id(),
+            Self::InvalidIamSessionArnException(e) => e.request_id(),
+            Self::InvalidIamUserArnException(e) => e.request_id(),
+            Self::InvalidIgnoreApplicationStopFailuresValueException(e) => e.request_id(),
+            Self::InvalidInputException(e) => e.request_id(),
+            Self::InvalidInstanceNameException(e) => e.request_id(),
+            Self::InvalidInstanceStatusException(e) => e.request_id(),
+            Self::InvalidInstanceTypeException(e) => e.request_id(),
+            Self::InvalidKeyPrefixFilterException(e) => e.request_id(),
+            Self::InvalidLifecycleEventHookExecutionIdException(e) => e.request_id(),
+            Self::InvalidLifecycleEventHookExecutionStatusException(e) => e.request_id(),
+            Self::InvalidLoadBalancerInfoException(e) => e.request_id(),
+            Self::InvalidMinimumHealthyHostValueException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidOnPremisesTagCombinationException(e) => e.request_id(),
+            Self::InvalidOperationException(e) => e.request_id(),
+            Self::InvalidRegistrationStatusException(e) => e.request_id(),
+            Self::InvalidRevisionException(e) => e.request_id(),
+            Self::InvalidRoleException(e) => e.request_id(),
+            Self::InvalidSortByException(e) => e.request_id(),
+            Self::InvalidSortOrderException(e) => e.request_id(),
+            Self::InvalidTagException(e) => e.request_id(),
+            Self::InvalidTagFilterException(e) => e.request_id(),
+            Self::InvalidTagsToAddException(e) => e.request_id(),
+            Self::InvalidTargetFilterNameException(e) => e.request_id(),
+            Self::InvalidTargetGroupPairException(e) => e.request_id(),
+            Self::InvalidTargetInstancesException(e) => e.request_id(),
+            Self::InvalidTimeRangeException(e) => e.request_id(),
+            Self::InvalidTrafficRoutingConfigurationException(e) => e.request_id(),
+            Self::InvalidTriggerConfigException(e) => e.request_id(),
+            Self::InvalidUpdateOutdatedInstancesOnlyValueException(e) => e.request_id(),
+            Self::LifecycleEventAlreadyCompletedException(e) => e.request_id(),
+            Self::LifecycleHookLimitExceededException(e) => e.request_id(),
+            Self::MultipleIamArnsProvidedException(e) => e.request_id(),
+            Self::OperationNotSupportedException(e) => e.request_id(),
+            Self::ResourceArnRequiredException(e) => e.request_id(),
+            Self::ResourceValidationException(e) => e.request_id(),
+            Self::RevisionDoesNotExistException(e) => e.request_id(),
+            Self::RevisionRequiredException(e) => e.request_id(),
+            Self::RoleRequiredException(e) => e.request_id(),
+            Self::TagLimitExceededException(e) => e.request_id(),
+            Self::TagRequiredException(e) => e.request_id(),
+            Self::TagSetListLimitExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::TriggerTargetsLimitExceededException(e) => e.request_id(),
+            Self::UnsupportedActionForDeploymentTypeException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

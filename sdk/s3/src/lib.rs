@@ -80,6 +80,8 @@ pub mod paginator;
 
 pub mod presigning;
 
+mod s3_request_id;
+
 /// Generated accessors for nested fields
 mod lens;
 
@@ -94,14 +96,11 @@ mod event_stream_serde;
 
 mod rest_xml_unwrapped_errors;
 
-mod s3_errors;
-
 /// Crate version number.
 pub static PKG_VERSION: &str = env!("CARGO_PKG_VERSION");
 pub use aws_smithy_http::endpoint::Endpoint;
 static API_METADATA: aws_http::user_agent::ApiMetadata =
     aws_http::user_agent::ApiMetadata::new("s3", PKG_VERSION);
-pub use crate::s3_errors::ErrorExt;
 pub use aws_credential_types::Credentials;
 pub use aws_types::app_name::AppName;
 pub use aws_types::region::Region;

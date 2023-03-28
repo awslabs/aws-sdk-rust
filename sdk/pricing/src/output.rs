@@ -12,6 +12,7 @@ pub struct GetProductsOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetProductsOutput {
     /// <p>The format version of the response. For example, aws_v1.</p>
@@ -27,6 +28,11 @@ impl GetProductsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetProductsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetProductsOutput`](crate::output::GetProductsOutput).
 pub mod get_products_output {
 
@@ -37,6 +43,7 @@ pub mod get_products_output {
         pub(crate) format_version: std::option::Option<std::string::String>,
         pub(crate) price_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The format version of the response. For example, aws_v1.</p>
@@ -81,12 +88,22 @@ pub mod get_products_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetProductsOutput`](crate::output::GetProductsOutput).
         pub fn build(self) -> crate::output::GetProductsOutput {
             crate::output::GetProductsOutput {
                 format_version: self.format_version,
                 price_list: self.price_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,6 +125,7 @@ pub struct GetAttributeValuesOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAttributeValuesOutput {
     /// <p>The list of values for an attribute. For example, <code>Throughput Optimized HDD</code> and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code> <code>volumeType</code>.</p>
@@ -117,6 +135,11 @@ impl GetAttributeValuesOutput {
     /// <p>The pagination token that indicates the next set of results to retrieve.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAttributeValuesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
@@ -129,6 +152,7 @@ pub mod get_attribute_values_output {
         pub(crate) attribute_values:
             std::option::Option<std::vec::Vec<crate::model::AttributeValue>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `attribute_values`.
@@ -160,11 +184,21 @@ pub mod get_attribute_values_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAttributeValuesOutput`](crate::output::GetAttributeValuesOutput).
         pub fn build(self) -> crate::output::GetAttributeValuesOutput {
             crate::output::GetAttributeValuesOutput {
                 attribute_values: self.attribute_values,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -189,6 +223,7 @@ pub struct DescribeServicesOutput {
     /// <p>The pagination token for the next set of retrievable results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeServicesOutput {
     /// <p>The service metadata for the service or services in the response.</p>
@@ -204,6 +239,11 @@ impl DescribeServicesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeServicesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
 pub mod describe_services_output {
 
@@ -214,6 +254,7 @@ pub mod describe_services_output {
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::Service>>,
         pub(crate) format_version: std::option::Option<std::string::String>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `services`.
@@ -258,12 +299,22 @@ pub mod describe_services_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeServicesOutput`](crate::output::DescribeServicesOutput).
         pub fn build(self) -> crate::output::DescribeServicesOutput {
             crate::output::DescribeServicesOutput {
                 services: self.services,
                 format_version: self.format_version,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }

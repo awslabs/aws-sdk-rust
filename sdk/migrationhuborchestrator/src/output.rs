@@ -10,6 +10,7 @@ pub struct ListWorkflowStepGroupsOutput {
     #[doc(hidden)]
     pub workflow_step_groups_summary:
         std::option::Option<std::vec::Vec<crate::model::WorkflowStepGroupSummary>>,
+    _request_id: Option<String>,
 }
 impl ListWorkflowStepGroupsOutput {
     /// <p>The pagination token.</p>
@@ -23,6 +24,11 @@ impl ListWorkflowStepGroupsOutput {
         self.workflow_step_groups_summary.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkflowStepGroupsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkflowStepGroupsOutput`](crate::output::ListWorkflowStepGroupsOutput).
 pub mod list_workflow_step_groups_output {
 
@@ -33,6 +39,7 @@ pub mod list_workflow_step_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workflow_step_groups_summary:
             std::option::Option<std::vec::Vec<crate::model::WorkflowStepGroupSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -67,11 +74,21 @@ pub mod list_workflow_step_groups_output {
             self.workflow_step_groups_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkflowStepGroupsOutput`](crate::output::ListWorkflowStepGroupsOutput).
         pub fn build(self) -> crate::output::ListWorkflowStepGroupsOutput {
             crate::output::ListWorkflowStepGroupsOutput {
                 next_token: self.next_token,
                 workflow_step_groups_summary: self.workflow_step_groups_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -111,6 +128,7 @@ pub struct CreateWorkflowStepGroupOutput {
     /// <p>The time at which the step group is created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateWorkflowStepGroupOutput {
     /// <p>The ID of the migration workflow that contains the step group.</p>
@@ -146,6 +164,11 @@ impl CreateWorkflowStepGroupOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkflowStepGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkflowStepGroupOutput`](crate::output::CreateWorkflowStepGroupOutput).
 pub mod create_workflow_step_group_output {
 
@@ -161,6 +184,7 @@ pub mod create_workflow_step_group_output {
         pub(crate) next: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow that contains the step group.</p>
@@ -273,6 +297,15 @@ pub mod create_workflow_step_group_output {
             self.creation_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkflowStepGroupOutput`](crate::output::CreateWorkflowStepGroupOutput).
         pub fn build(self) -> crate::output::CreateWorkflowStepGroupOutput {
             crate::output::CreateWorkflowStepGroupOutput {
@@ -284,6 +317,7 @@ pub mod create_workflow_step_group_output {
                 next: self.next,
                 previous: self.previous,
                 creation_time: self.creation_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -298,18 +332,38 @@ impl CreateWorkflowStepGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowStepGroupOutput {}
+pub struct DeleteWorkflowStepGroupOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteWorkflowStepGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
 pub mod delete_workflow_step_group_output {
 
     /// A builder for [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkflowStepGroupOutput`](crate::output::DeleteWorkflowStepGroupOutput).
         pub fn build(self) -> crate::output::DeleteWorkflowStepGroupOutput {
-            crate::output::DeleteWorkflowStepGroupOutput {}
+            crate::output::DeleteWorkflowStepGroupOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -348,6 +402,7 @@ pub struct UpdateWorkflowStepGroupOutput {
     /// <p>The time at which the step group was last modified.</p>
     #[doc(hidden)]
     pub last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkflowStepGroupOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -383,6 +438,11 @@ impl UpdateWorkflowStepGroupOutput {
         self.last_modified_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWorkflowStepGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateWorkflowStepGroupOutput`](crate::output::UpdateWorkflowStepGroupOutput).
 pub mod update_workflow_step_group_output {
 
@@ -398,6 +458,7 @@ pub mod update_workflow_step_group_output {
         pub(crate) next: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) last_modified_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -510,6 +571,15 @@ pub mod update_workflow_step_group_output {
             self.last_modified_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkflowStepGroupOutput`](crate::output::UpdateWorkflowStepGroupOutput).
         pub fn build(self) -> crate::output::UpdateWorkflowStepGroupOutput {
             crate::output::UpdateWorkflowStepGroupOutput {
@@ -521,6 +591,7 @@ pub mod update_workflow_step_group_output {
                 next: self.next,
                 previous: self.previous,
                 last_modified_time: self.last_modified_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -572,6 +643,7 @@ pub struct GetWorkflowStepGroupOutput {
     /// <p>The next step group.</p>
     #[doc(hidden)]
     pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetWorkflowStepGroupOutput {
     /// <p>The ID of the step group.</p>
@@ -623,6 +695,11 @@ impl GetWorkflowStepGroupOutput {
         self.next.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetWorkflowStepGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetWorkflowStepGroupOutput`](crate::output::GetWorkflowStepGroupOutput).
 pub mod get_workflow_step_group_output {
 
@@ -642,6 +719,7 @@ pub mod get_workflow_step_group_output {
         pub(crate) tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
         pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the step group.</p>
@@ -803,6 +881,15 @@ pub mod get_workflow_step_group_output {
             self.next = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWorkflowStepGroupOutput`](crate::output::GetWorkflowStepGroupOutput).
         pub fn build(self) -> crate::output::GetWorkflowStepGroupOutput {
             crate::output::GetWorkflowStepGroupOutput {
@@ -818,6 +905,7 @@ pub mod get_workflow_step_group_output {
                 tools: self.tools,
                 previous: self.previous,
                 next: self.next,
+                _request_id: self._request_id,
             }
         }
     }
@@ -845,6 +933,7 @@ pub struct RetryWorkflowStepOutput {
     /// <p>The status of the step.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::StepStatus>,
+    _request_id: Option<String>,
 }
 impl RetryWorkflowStepOutput {
     /// <p>The ID of the step group.</p>
@@ -864,6 +953,11 @@ impl RetryWorkflowStepOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RetryWorkflowStepOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RetryWorkflowStepOutput`](crate::output::RetryWorkflowStepOutput).
 pub mod retry_workflow_step_output {
 
@@ -875,6 +969,7 @@ pub mod retry_workflow_step_output {
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::StepStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the step group.</p>
@@ -920,6 +1015,15 @@ pub mod retry_workflow_step_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RetryWorkflowStepOutput`](crate::output::RetryWorkflowStepOutput).
         pub fn build(self) -> crate::output::RetryWorkflowStepOutput {
             crate::output::RetryWorkflowStepOutput {
@@ -927,6 +1031,7 @@ pub mod retry_workflow_step_output {
                 workflow_id: self.workflow_id,
                 id: self.id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -949,6 +1054,7 @@ pub struct ListWorkflowStepsOutput {
     #[doc(hidden)]
     pub workflow_steps_summary:
         std::option::Option<std::vec::Vec<crate::model::WorkflowStepSummary>>,
+    _request_id: Option<String>,
 }
 impl ListWorkflowStepsOutput {
     /// <p>The pagination token.</p>
@@ -962,6 +1068,11 @@ impl ListWorkflowStepsOutput {
         self.workflow_steps_summary.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkflowStepsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkflowStepsOutput`](crate::output::ListWorkflowStepsOutput).
 pub mod list_workflow_steps_output {
 
@@ -972,6 +1083,7 @@ pub mod list_workflow_steps_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workflow_steps_summary:
             std::option::Option<std::vec::Vec<crate::model::WorkflowStepSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -1003,11 +1115,21 @@ pub mod list_workflow_steps_output {
             self.workflow_steps_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkflowStepsOutput`](crate::output::ListWorkflowStepsOutput).
         pub fn build(self) -> crate::output::ListWorkflowStepsOutput {
             crate::output::ListWorkflowStepsOutput {
                 next_token: self.next_token,
                 workflow_steps_summary: self.workflow_steps_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1035,6 +1157,7 @@ pub struct CreateWorkflowStepOutput {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateWorkflowStepOutput {
     /// <p>The ID of the step.</p>
@@ -1054,6 +1177,11 @@ impl CreateWorkflowStepOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkflowStepOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkflowStepOutput`](crate::output::CreateWorkflowStepOutput).
 pub mod create_workflow_step_output {
 
@@ -1065,6 +1193,7 @@ pub mod create_workflow_step_output {
         pub(crate) step_group_id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the step.</p>
@@ -1110,6 +1239,15 @@ pub mod create_workflow_step_output {
             self.name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkflowStepOutput`](crate::output::CreateWorkflowStepOutput).
         pub fn build(self) -> crate::output::CreateWorkflowStepOutput {
             crate::output::CreateWorkflowStepOutput {
@@ -1117,6 +1255,7 @@ pub mod create_workflow_step_output {
                 step_group_id: self.step_group_id,
                 workflow_id: self.workflow_id,
                 name: self.name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1131,18 +1270,38 @@ impl CreateWorkflowStepOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkflowStepOutput {}
+pub struct DeleteWorkflowStepOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteWorkflowStepOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
 pub mod delete_workflow_step_output {
 
     /// A builder for [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkflowStepOutput`](crate::output::DeleteWorkflowStepOutput).
         pub fn build(self) -> crate::output::DeleteWorkflowStepOutput {
-            crate::output::DeleteWorkflowStepOutput {}
+            crate::output::DeleteWorkflowStepOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1169,6 +1328,7 @@ pub struct UpdateWorkflowStepOutput {
     /// <p>The name of the step.</p>
     #[doc(hidden)]
     pub name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkflowStepOutput {
     /// <p>The ID of the step.</p>
@@ -1188,6 +1348,11 @@ impl UpdateWorkflowStepOutput {
         self.name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateWorkflowStepOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateWorkflowStepOutput`](crate::output::UpdateWorkflowStepOutput).
 pub mod update_workflow_step_output {
 
@@ -1199,6 +1364,7 @@ pub mod update_workflow_step_output {
         pub(crate) step_group_id: std::option::Option<std::string::String>,
         pub(crate) workflow_id: std::option::Option<std::string::String>,
         pub(crate) name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the step.</p>
@@ -1244,6 +1410,15 @@ pub mod update_workflow_step_output {
             self.name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkflowStepOutput`](crate::output::UpdateWorkflowStepOutput).
         pub fn build(self) -> crate::output::UpdateWorkflowStepOutput {
             crate::output::UpdateWorkflowStepOutput {
@@ -1251,6 +1426,7 @@ pub mod update_workflow_step_output {
                 step_group_id: self.step_group_id,
                 workflow_id: self.workflow_id,
                 name: self.name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1330,6 +1506,7 @@ pub struct GetWorkflowStepOutput {
     /// <p>The total number of servers that have been migrated.</p>
     #[doc(hidden)]
     pub total_no_of_srv: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl GetWorkflowStepOutput {
     /// <p>The name of the step.</p>
@@ -1419,6 +1596,11 @@ impl GetWorkflowStepOutput {
         self.total_no_of_srv
     }
 }
+impl aws_http::request_id::RequestId for GetWorkflowStepOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetWorkflowStepOutput`](crate::output::GetWorkflowStepOutput).
 pub mod get_workflow_step_output {
 
@@ -1448,6 +1630,7 @@ pub mod get_workflow_step_output {
         pub(crate) no_of_srv_completed: std::option::Option<i32>,
         pub(crate) no_of_srv_failed: std::option::Option<i32>,
         pub(crate) total_no_of_srv: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the step.</p>
@@ -1723,6 +1906,15 @@ pub mod get_workflow_step_output {
             self.total_no_of_srv = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWorkflowStepOutput`](crate::output::GetWorkflowStepOutput).
         pub fn build(self) -> crate::output::GetWorkflowStepOutput {
             crate::output::GetWorkflowStepOutput {
@@ -1747,6 +1939,7 @@ pub mod get_workflow_step_output {
                 no_of_srv_completed: self.no_of_srv_completed,
                 no_of_srv_failed: self.no_of_srv_failed,
                 total_no_of_srv: self.total_no_of_srv,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1769,6 +1962,7 @@ pub struct ListTemplateStepGroupsOutput {
     #[doc(hidden)]
     pub template_step_group_summary:
         std::option::Option<std::vec::Vec<crate::model::TemplateStepGroupSummary>>,
+    _request_id: Option<String>,
 }
 impl ListTemplateStepGroupsOutput {
     /// <p>The pagination token.</p>
@@ -1782,6 +1976,11 @@ impl ListTemplateStepGroupsOutput {
         self.template_step_group_summary.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTemplateStepGroupsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTemplateStepGroupsOutput`](crate::output::ListTemplateStepGroupsOutput).
 pub mod list_template_step_groups_output {
 
@@ -1792,6 +1991,7 @@ pub mod list_template_step_groups_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) template_step_group_summary:
             std::option::Option<std::vec::Vec<crate::model::TemplateStepGroupSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -1826,11 +2026,21 @@ pub mod list_template_step_groups_output {
             self.template_step_group_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTemplateStepGroupsOutput`](crate::output::ListTemplateStepGroupsOutput).
         pub fn build(self) -> crate::output::ListTemplateStepGroupsOutput {
             crate::output::ListTemplateStepGroupsOutput {
                 next_token: self.next_token,
                 template_step_group_summary: self.template_step_group_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1876,6 +2086,7 @@ pub struct GetTemplateStepGroupOutput {
     /// <p>The next step group.</p>
     #[doc(hidden)]
     pub next: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetTemplateStepGroupOutput {
     /// <p>The ID of the template.</p>
@@ -1919,6 +2130,11 @@ impl GetTemplateStepGroupOutput {
         self.next.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetTemplateStepGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTemplateStepGroupOutput`](crate::output::GetTemplateStepGroupOutput).
 pub mod get_template_step_group_output {
 
@@ -1936,6 +2152,7 @@ pub mod get_template_step_group_output {
         pub(crate) tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
         pub(crate) previous: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the template.</p>
@@ -2074,6 +2291,15 @@ pub mod get_template_step_group_output {
             self.next = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTemplateStepGroupOutput`](crate::output::GetTemplateStepGroupOutput).
         pub fn build(self) -> crate::output::GetTemplateStepGroupOutput {
             crate::output::GetTemplateStepGroupOutput {
@@ -2087,6 +2313,7 @@ pub mod get_template_step_group_output {
                 tools: self.tools,
                 previous: self.previous,
                 next: self.next,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2109,6 +2336,7 @@ pub struct ListTemplateStepsOutput {
     #[doc(hidden)]
     pub template_step_summary_list:
         std::option::Option<std::vec::Vec<crate::model::TemplateStepSummary>>,
+    _request_id: Option<String>,
 }
 impl ListTemplateStepsOutput {
     /// <p>The pagination token.</p>
@@ -2122,6 +2350,11 @@ impl ListTemplateStepsOutput {
         self.template_step_summary_list.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTemplateStepsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTemplateStepsOutput`](crate::output::ListTemplateStepsOutput).
 pub mod list_template_steps_output {
 
@@ -2132,6 +2365,7 @@ pub mod list_template_steps_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) template_step_summary_list:
             std::option::Option<std::vec::Vec<crate::model::TemplateStepSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -2166,11 +2400,21 @@ pub mod list_template_steps_output {
             self.template_step_summary_list = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTemplateStepsOutput`](crate::output::ListTemplateStepsOutput).
         pub fn build(self) -> crate::output::ListTemplateStepsOutput {
             crate::output::ListTemplateStepsOutput {
                 next_token: self.next_token,
                 template_step_summary_list: self.template_step_summary_list,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2220,6 +2464,7 @@ pub struct GetTemplateStepOutput {
     #[doc(hidden)]
     pub step_automation_configuration:
         std::option::Option<crate::model::StepAutomationConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetTemplateStepOutput {
     /// <p>The ID of the step.</p>
@@ -2269,6 +2514,11 @@ impl GetTemplateStepOutput {
         self.step_automation_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetTemplateStepOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTemplateStepOutput`](crate::output::GetTemplateStepOutput).
 pub mod get_template_step_output {
 
@@ -2288,6 +2538,7 @@ pub mod get_template_step_output {
         pub(crate) outputs: std::option::Option<std::vec::Vec<crate::model::StepOutput>>,
         pub(crate) step_automation_configuration:
             std::option::Option<crate::model::StepAutomationConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the step.</p>
@@ -2442,6 +2693,15 @@ pub mod get_template_step_output {
             self.step_automation_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTemplateStepOutput`](crate::output::GetTemplateStepOutput).
         pub fn build(self) -> crate::output::GetTemplateStepOutput {
             crate::output::GetTemplateStepOutput {
@@ -2456,6 +2716,7 @@ pub mod get_template_step_output {
                 next: self.next,
                 outputs: self.outputs,
                 step_automation_configuration: self.step_automation_configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2477,6 +2738,7 @@ pub struct ListPluginsOutput {
     /// <p>Migration Hub Orchestrator plugins.</p>
     #[doc(hidden)]
     pub plugins: std::option::Option<std::vec::Vec<crate::model::PluginSummary>>,
+    _request_id: Option<String>,
 }
 impl ListPluginsOutput {
     /// <p>The pagination token.</p>
@@ -2488,6 +2750,11 @@ impl ListPluginsOutput {
         self.plugins.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPluginsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPluginsOutput`](crate::output::ListPluginsOutput).
 pub mod list_plugins_output {
 
@@ -2497,6 +2764,7 @@ pub mod list_plugins_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) plugins: std::option::Option<std::vec::Vec<crate::model::PluginSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -2528,11 +2796,21 @@ pub mod list_plugins_output {
             self.plugins = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPluginsOutput`](crate::output::ListPluginsOutput).
         pub fn build(self) -> crate::output::ListPluginsOutput {
             crate::output::ListPluginsOutput {
                 next_token: self.next_token,
                 plugins: self.plugins,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2554,6 +2832,7 @@ pub struct ListTemplatesOutput {
     /// <p>The summary of the template.</p>
     #[doc(hidden)]
     pub template_summary: std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
+    _request_id: Option<String>,
 }
 impl ListTemplatesOutput {
     /// <p>The pagination token.</p>
@@ -2563,6 +2842,11 @@ impl ListTemplatesOutput {
     /// <p>The summary of the template.</p>
     pub fn template_summary(&self) -> std::option::Option<&[crate::model::TemplateSummary]> {
         self.template_summary.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTemplatesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
@@ -2575,6 +2859,7 @@ pub mod list_templates_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) template_summary:
             std::option::Option<std::vec::Vec<crate::model::TemplateSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -2606,11 +2891,21 @@ pub mod list_templates_output {
             self.template_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTemplatesOutput`](crate::output::ListTemplatesOutput).
         pub fn build(self) -> crate::output::ListTemplatesOutput {
             crate::output::ListTemplatesOutput {
                 next_token: self.next_token,
                 template_summary: self.template_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2647,6 +2942,7 @@ pub struct GetTemplateOutput {
     /// <p>The time at which the template was last created.</p>
     #[doc(hidden)]
     pub creation_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetTemplateOutput {
     /// <p>The ID of the template.</p>
@@ -2678,6 +2974,11 @@ impl GetTemplateOutput {
         self.creation_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTemplateOutput`](crate::output::GetTemplateOutput).
 pub mod get_template_output {
 
@@ -2692,6 +2993,7 @@ pub mod get_template_output {
         pub(crate) tools: std::option::Option<std::vec::Vec<crate::model::Tool>>,
         pub(crate) status: std::option::Option<crate::model::TemplateStatus>,
         pub(crate) creation_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the template.</p>
@@ -2788,6 +3090,15 @@ pub mod get_template_output {
             self.creation_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTemplateOutput`](crate::output::GetTemplateOutput).
         pub fn build(self) -> crate::output::GetTemplateOutput {
             crate::output::GetTemplateOutput {
@@ -2798,6 +3109,7 @@ pub mod get_template_output {
                 tools: self.tools,
                 status: self.status,
                 creation_time: self.creation_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2828,6 +3140,7 @@ pub struct StopWorkflowOutput {
     /// <p>The time at which the migration workflow was stopped.</p>
     #[doc(hidden)]
     pub last_stop_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl StopWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -2851,6 +3164,11 @@ impl StopWorkflowOutput {
         self.last_stop_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopWorkflowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StopWorkflowOutput`](crate::output::StopWorkflowOutput).
 pub mod stop_workflow_output {
 
@@ -2863,6 +3181,7 @@ pub mod stop_workflow_output {
         pub(crate) status: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) last_stop_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -2924,6 +3243,15 @@ pub mod stop_workflow_output {
             self.last_stop_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopWorkflowOutput`](crate::output::StopWorkflowOutput).
         pub fn build(self) -> crate::output::StopWorkflowOutput {
             crate::output::StopWorkflowOutput {
@@ -2932,6 +3260,7 @@ pub mod stop_workflow_output {
                 status: self.status,
                 status_message: self.status_message,
                 last_stop_time: self.last_stop_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2962,6 +3291,7 @@ pub struct StartWorkflowOutput {
     /// <p>The time at which the migration workflow was last started.</p>
     #[doc(hidden)]
     pub last_start_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl StartWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -2985,6 +3315,11 @@ impl StartWorkflowOutput {
         self.last_start_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartWorkflowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartWorkflowOutput`](crate::output::StartWorkflowOutput).
 pub mod start_workflow_output {
 
@@ -2997,6 +3332,7 @@ pub mod start_workflow_output {
         pub(crate) status: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
         pub(crate) status_message: std::option::Option<std::string::String>,
         pub(crate) last_start_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -3058,6 +3394,15 @@ pub mod start_workflow_output {
             self.last_start_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartWorkflowOutput`](crate::output::StartWorkflowOutput).
         pub fn build(self) -> crate::output::StartWorkflowOutput {
             crate::output::StartWorkflowOutput {
@@ -3066,6 +3411,7 @@ pub mod start_workflow_output {
                 status: self.status,
                 status_message: self.status_message,
                 last_start_time: self.last_start_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3088,6 +3434,7 @@ pub struct ListWorkflowsOutput {
     #[doc(hidden)]
     pub migration_workflow_summary:
         std::option::Option<std::vec::Vec<crate::model::MigrationWorkflowSummary>>,
+    _request_id: Option<String>,
 }
 impl ListWorkflowsOutput {
     /// <p>The pagination token.</p>
@@ -3101,6 +3448,11 @@ impl ListWorkflowsOutput {
         self.migration_workflow_summary.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkflowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
 pub mod list_workflows_output {
 
@@ -3111,6 +3463,7 @@ pub mod list_workflows_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) migration_workflow_summary:
             std::option::Option<std::vec::Vec<crate::model::MigrationWorkflowSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token.</p>
@@ -3145,11 +3498,21 @@ pub mod list_workflows_output {
             self.migration_workflow_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkflowsOutput`](crate::output::ListWorkflowsOutput).
         pub fn build(self) -> crate::output::ListWorkflowsOutput {
             crate::output::ListWorkflowsOutput {
                 next_token: self.next_token,
                 migration_workflow_summary: self.migration_workflow_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3201,6 +3564,7 @@ pub struct CreateWorkflowOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -3271,7 +3635,13 @@ impl std::fmt::Debug for CreateWorkflowOutput {
         formatter.field("status", &self.status);
         formatter.field("creation_time", &self.creation_time);
         formatter.field("tags", &self.tags);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for CreateWorkflowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
@@ -3296,6 +3666,7 @@ pub mod create_workflow_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -3459,6 +3830,15 @@ pub mod create_workflow_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkflowOutput`](crate::output::CreateWorkflowOutput).
         pub fn build(self) -> crate::output::CreateWorkflowOutput {
             crate::output::CreateWorkflowOutput {
@@ -3473,6 +3853,7 @@ pub mod create_workflow_output {
                 status: self.status,
                 creation_time: self.creation_time,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3493,6 +3874,7 @@ pub mod create_workflow_output {
             formatter.field("status", &self.status);
             formatter.field("creation_time", &self.creation_time);
             formatter.field("tags", &self.tags);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3517,6 +3899,7 @@ pub struct DeleteWorkflowOutput {
     /// <p>The status of the migration workflow.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
+    _request_id: Option<String>,
 }
 impl DeleteWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -3532,6 +3915,11 @@ impl DeleteWorkflowOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteWorkflowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
 pub mod delete_workflow_output {
 
@@ -3542,6 +3930,7 @@ pub mod delete_workflow_output {
         pub(crate) id: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::MigrationWorkflowStatusEnum>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -3577,12 +3966,22 @@ pub mod delete_workflow_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkflowOutput`](crate::output::DeleteWorkflowOutput).
         pub fn build(self) -> crate::output::DeleteWorkflowOutput {
             crate::output::DeleteWorkflowOutput {
                 id: self.id,
                 arn: self.arn,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3637,6 +4036,7 @@ pub struct UpdateWorkflowOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -3712,7 +4112,13 @@ impl std::fmt::Debug for UpdateWorkflowOutput {
         formatter.field("creation_time", &self.creation_time);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("tags", &self.tags);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateWorkflowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
@@ -3738,6 +4144,7 @@ pub mod update_workflow_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -3914,6 +4321,15 @@ pub mod update_workflow_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkflowOutput`](crate::output::UpdateWorkflowOutput).
         pub fn build(self) -> crate::output::UpdateWorkflowOutput {
             crate::output::UpdateWorkflowOutput {
@@ -3929,6 +4345,7 @@ pub mod update_workflow_output {
                 creation_time: self.creation_time,
                 last_modified_time: self.last_modified_time,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3950,6 +4367,7 @@ pub mod update_workflow_output {
             formatter.field("creation_time", &self.creation_time);
             formatter.field("last_modified_time", &self.last_modified_time);
             formatter.field("tags", &self.tags);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -4028,6 +4446,7 @@ pub struct GetWorkflowOutput {
     /// <p>The Amazon S3 bucket where the migration logs are stored.</p>
     #[doc(hidden)]
     pub workflow_bucket: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetWorkflowOutput {
     /// <p>The ID of the migration workflow.</p>
@@ -4143,7 +4562,13 @@ impl std::fmt::Debug for GetWorkflowOutput {
         formatter.field("workflow_inputs", &"*** Sensitive Data Redacted ***");
         formatter.field("tags", &self.tags);
         formatter.field("workflow_bucket", &self.workflow_bucket);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetWorkflowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
@@ -4177,6 +4602,7 @@ pub mod get_workflow_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) workflow_bucket: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the migration workflow.</p>
@@ -4451,6 +4877,15 @@ pub mod get_workflow_output {
             self.workflow_bucket = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWorkflowOutput`](crate::output::GetWorkflowOutput).
         pub fn build(self) -> crate::output::GetWorkflowOutput {
             crate::output::GetWorkflowOutput {
@@ -4474,6 +4909,7 @@ pub mod get_workflow_output {
                 workflow_inputs: self.workflow_inputs,
                 tags: self.tags,
                 workflow_bucket: self.workflow_bucket,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4503,6 +4939,7 @@ pub mod get_workflow_output {
             formatter.field("workflow_inputs", &"*** Sensitive Data Redacted ***");
             formatter.field("tags", &self.tags);
             formatter.field("workflow_bucket", &self.workflow_bucket);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -4517,18 +4954,38 @@ impl GetWorkflowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -4542,18 +4999,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -4572,6 +5049,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags added to a resource.</p>
@@ -4580,6 +5058,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -4592,6 +5075,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -4619,9 +5103,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }

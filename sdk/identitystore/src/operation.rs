@@ -23,6 +23,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroup {
     type Output =
         std::result::Result<crate::output::CreateGroupOutput, crate::error::CreateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_group_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateGroupMembership {
         crate::error::CreateGroupMembershipError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_group_membership_error(response)
         } else {
@@ -89,6 +91,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
     type Output =
         std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_user_error(response)
         } else {
@@ -121,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroup {
     type Output =
         std::result::Result<crate::output::DeleteGroupOutput, crate::error::DeleteGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_group_error(response)
         } else {
@@ -155,6 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteGroupMembership {
         crate::error::DeleteGroupMembershipError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_group_membership_error(response)
         } else {
@@ -187,6 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUser {
     type Output =
         std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_user_error(response)
         } else {
@@ -219,6 +225,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGroup {
     type Output =
         std::result::Result<crate::output::DescribeGroupOutput, crate::error::DescribeGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_group_error(response)
         } else {
@@ -253,6 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeGroupMembership 
         crate::error::DescribeGroupMembershipError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_group_membership_error(response)
         } else {
@@ -285,6 +293,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUser {
     type Output =
         std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_user_error(response)
         } else {
@@ -317,6 +326,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupId {
     type Output =
         std::result::Result<crate::output::GetGroupIdOutput, crate::error::GetGroupIdError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_group_id_error(response)
         } else {
@@ -351,6 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetGroupMembershipId {
         crate::error::GetGroupMembershipIdError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_group_membership_id_error(response)
         } else {
@@ -382,6 +393,7 @@ impl GetUserId {
 impl aws_smithy_http::response::ParseStrictResponse for GetUserId {
     type Output = std::result::Result<crate::output::GetUserIdOutput, crate::error::GetUserIdError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_user_id_error(response)
         } else {
@@ -416,6 +428,7 @@ impl aws_smithy_http::response::ParseStrictResponse for IsMemberInGroups {
         crate::error::IsMemberInGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_is_member_in_groups_error(response)
         } else {
@@ -450,6 +463,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupMemberships {
         crate::error::ListGroupMembershipsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_group_memberships_error(response)
         } else {
@@ -484,6 +498,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroupMembershipsForM
         crate::error::ListGroupMembershipsForMemberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_group_memberships_for_member_error(response)
         } else {
@@ -516,6 +531,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListGroups {
     type Output =
         std::result::Result<crate::output::ListGroupsOutput, crate::error::ListGroupsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_groups_error(response)
         } else {
@@ -547,6 +563,7 @@ impl ListUsers {
 impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
     type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_users_error(response)
         } else {
@@ -579,6 +596,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateGroup {
     type Output =
         std::result::Result<crate::output::UpdateGroupOutput, crate::error::UpdateGroupError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_group_error(response)
         } else {
@@ -611,6 +629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUser {
     type Output =
         std::result::Result<crate::output::UpdateUserOutput, crate::error::UpdateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_error(response)
         } else {

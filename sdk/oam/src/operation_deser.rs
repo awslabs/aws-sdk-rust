@@ -3,8 +3,11 @@
 pub fn parse_create_link_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLinkOutput, crate::error::CreateLinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateLinkError::unhandled(generic)),
@@ -13,31 +16,33 @@ pub fn parse_create_link_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => {
-            crate::error::CreateLinkError {
-                meta: generic,
-                kind: crate::error::CreateLinkErrorKind::ConflictException({
+            crate::error::CreateLinkError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLinkError::unhandled)?;
-                        output = output.set_amzn_error_type(
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::CreateLinkError::unhandled)?;
+                    output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_create_link_conflict_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "InternalServiceFault" => crate::error::CreateLinkError {
-            meta: generic,
-            kind: crate::error::CreateLinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::CreateLinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -48,38 +53,36 @@ pub fn parse_create_link_error(
                         crate::http_serde::deser_header_create_link_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::CreateLinkError {
-            meta: generic,
-            kind: crate::error::CreateLinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::CreateLinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_create_link_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::CreateLinkError {
-            meta: generic,
-            kind: crate::error::CreateLinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::CreateLinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -91,17 +94,17 @@ pub fn parse_create_link_error(
                         crate::http_serde::deser_header_create_link_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceQuotaExceededException" => crate::error::CreateLinkError {
-            meta: generic,
-            kind: crate::error::CreateLinkErrorKind::ServiceQuotaExceededException({
+            })
+        }
+        "ServiceQuotaExceededException" => {
+            crate::error::CreateLinkError::ServiceQuotaExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -113,14 +116,15 @@ pub fn parse_create_link_error(
                         crate::http_serde::deser_header_create_link_service_quota_exceeded_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateLinkError::generic(generic),
     })
 }
@@ -138,6 +142,9 @@ pub fn parse_create_link_response(
             output,
         )
         .map_err(crate::error::CreateLinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -146,8 +153,11 @@ pub fn parse_create_link_response(
 pub fn parse_create_sink_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSinkOutput, crate::error::CreateSinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateSinkError::unhandled(generic)),
@@ -156,31 +166,33 @@ pub fn parse_create_sink_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => {
-            crate::error::CreateSinkError {
-                meta: generic,
-                kind: crate::error::CreateSinkErrorKind::ConflictException({
+            crate::error::CreateSinkError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSinkError::unhandled)?;
-                        output = output.set_amzn_error_type(
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::CreateSinkError::unhandled)?;
+                    output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_create_sink_conflict_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "InternalServiceFault" => crate::error::CreateSinkError {
-            meta: generic,
-            kind: crate::error::CreateSinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::CreateSinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -191,38 +203,36 @@ pub fn parse_create_sink_error(
                         crate::http_serde::deser_header_create_sink_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::CreateSinkError {
-            meta: generic,
-            kind: crate::error::CreateSinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::CreateSinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_create_sink_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::CreateSinkError {
-            meta: generic,
-            kind: crate::error::CreateSinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::CreateSinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -234,17 +244,17 @@ pub fn parse_create_sink_error(
                         crate::http_serde::deser_header_create_sink_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceQuotaExceededException" => crate::error::CreateSinkError {
-            meta: generic,
-            kind: crate::error::CreateSinkErrorKind::ServiceQuotaExceededException({
+            })
+        }
+        "ServiceQuotaExceededException" => {
+            crate::error::CreateSinkError::ServiceQuotaExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -256,14 +266,15 @@ pub fn parse_create_sink_error(
                         crate::http_serde::deser_header_create_sink_service_quota_exceeded_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::CreateSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateSinkError::generic(generic),
     })
 }
@@ -281,6 +292,9 @@ pub fn parse_create_sink_response(
             output,
         )
         .map_err(crate::error::CreateSinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -289,8 +303,11 @@ pub fn parse_create_sink_response(
 pub fn parse_delete_link_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLinkOutput, crate::error::DeleteLinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLinkError::unhandled(generic)),
@@ -298,9 +315,8 @@ pub fn parse_delete_link_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::DeleteLinkError {
-            meta: generic,
-            kind: crate::error::DeleteLinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::DeleteLinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -311,38 +327,36 @@ pub fn parse_delete_link_error(
                         crate::http_serde::deser_header_delete_link_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::DeleteLinkError {
-            meta: generic,
-            kind: crate::error::DeleteLinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::DeleteLinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_delete_link_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::DeleteLinkError {
-            meta: generic,
-            kind: crate::error::DeleteLinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::DeleteLinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -354,35 +368,34 @@ pub fn parse_delete_link_error(
                         crate::http_serde::deser_header_delete_link_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteLinkError {
-            meta: generic,
-            kind: crate::error::DeleteLinkErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => crate::error::DeleteLinkError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_delete_link_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteLinkError::generic(generic),
     })
 }
@@ -395,6 +408,9 @@ pub fn parse_delete_link_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_link_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -403,8 +419,11 @@ pub fn parse_delete_link_response(
 pub fn parse_delete_sink_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSinkOutput, crate::error::DeleteSinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteSinkError::unhandled(generic)),
@@ -413,31 +432,33 @@ pub fn parse_delete_sink_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "ConflictException" => {
-            crate::error::DeleteSinkError {
-                meta: generic,
-                kind: crate::error::DeleteSinkErrorKind::ConflictException({
+            crate::error::DeleteSinkError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSinkError::unhandled)?;
-                        output = output.set_amzn_error_type(
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DeleteSinkError::unhandled)?;
+                    output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_delete_sink_conflict_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "InternalServiceFault" => crate::error::DeleteSinkError {
-            meta: generic,
-            kind: crate::error::DeleteSinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::DeleteSinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -448,38 +469,36 @@ pub fn parse_delete_sink_error(
                         crate::http_serde::deser_header_delete_sink_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::DeleteSinkError {
-            meta: generic,
-            kind: crate::error::DeleteSinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::DeleteSinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_delete_sink_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::DeleteSinkError {
-            meta: generic,
-            kind: crate::error::DeleteSinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::DeleteSinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -491,35 +510,34 @@ pub fn parse_delete_sink_error(
                         crate::http_serde::deser_header_delete_sink_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::DeleteSinkError {
-            meta: generic,
-            kind: crate::error::DeleteSinkErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => crate::error::DeleteSinkError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_delete_sink_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::DeleteSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteSinkError::generic(generic),
     })
 }
@@ -532,6 +550,9 @@ pub fn parse_delete_sink_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_sink_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -540,8 +561,11 @@ pub fn parse_delete_sink_response(
 pub fn parse_get_link_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetLinkOutput, crate::error::GetLinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetLinkError::unhandled(generic)),
@@ -549,9 +573,8 @@ pub fn parse_get_link_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::GetLinkError {
-            meta: generic,
-            kind: crate::error::GetLinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::GetLinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -562,38 +585,36 @@ pub fn parse_get_link_error(
                         crate::http_serde::deser_header_get_link_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::GetLinkError {
-            meta: generic,
-            kind: crate::error::GetLinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::GetLinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_get_link_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::GetLinkError {
-            meta: generic,
-            kind: crate::error::GetLinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::GetLinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -605,35 +626,34 @@ pub fn parse_get_link_error(
                         crate::http_serde::deser_header_get_link_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetLinkError {
-            meta: generic,
-            kind: crate::error::GetLinkErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => crate::error::GetLinkError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_get_link_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetLinkError::generic(generic),
     })
 }
@@ -651,6 +671,9 @@ pub fn parse_get_link_response(
             output,
         )
         .map_err(crate::error::GetLinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -659,8 +682,11 @@ pub fn parse_get_link_response(
 pub fn parse_get_sink_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSinkOutput, crate::error::GetSinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSinkError::unhandled(generic)),
@@ -668,9 +694,8 @@ pub fn parse_get_sink_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::GetSinkError {
-            meta: generic,
-            kind: crate::error::GetSinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::GetSinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -681,38 +706,36 @@ pub fn parse_get_sink_error(
                         crate::http_serde::deser_header_get_sink_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::GetSinkError {
-            meta: generic,
-            kind: crate::error::GetSinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::GetSinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_get_sink_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::GetSinkError {
-            meta: generic,
-            kind: crate::error::GetSinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::GetSinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -724,35 +747,34 @@ pub fn parse_get_sink_error(
                         crate::http_serde::deser_header_get_sink_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetSinkError {
-            meta: generic,
-            kind: crate::error::GetSinkErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => crate::error::GetSinkError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_get_sink_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetSinkError::generic(generic),
     })
 }
@@ -770,6 +792,9 @@ pub fn parse_get_sink_response(
             output,
         )
         .map_err(crate::error::GetSinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -778,8 +803,11 @@ pub fn parse_get_sink_response(
 pub fn parse_get_sink_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSinkPolicyOutput, crate::error::GetSinkPolicyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSinkPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSinkPolicyError::unhandled(generic)),
@@ -787,9 +815,8 @@ pub fn parse_get_sink_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::GetSinkPolicyError {
-            meta: generic,
-            kind: crate::error::GetSinkPolicyErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::GetSinkPolicyError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -800,17 +827,17 @@ pub fn parse_get_sink_policy_error(
                         crate::http_serde::deser_header_get_sink_policy_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::GetSinkPolicyError {
-            meta: generic,
-            kind: crate::error::GetSinkPolicyErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => {
+            crate::error::GetSinkPolicyError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -821,17 +848,17 @@ pub fn parse_get_sink_policy_error(
                         crate::http_serde::deser_header_get_sink_policy_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::GetSinkPolicyError {
-            meta: generic,
-            kind: crate::error::GetSinkPolicyErrorKind::MissingRequiredParameterException({
+            })
+        }
+        "MissingRequiredParameterException" => {
+            crate::error::GetSinkPolicyError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -843,17 +870,17 @@ pub fn parse_get_sink_policy_error(
                         crate::http_serde::deser_header_get_sink_policy_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::GetSinkPolicyError {
-            meta: generic,
-            kind: crate::error::GetSinkPolicyErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::GetSinkPolicyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -864,14 +891,15 @@ pub fn parse_get_sink_policy_error(
                         crate::http_serde::deser_header_get_sink_policy_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::GetSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSinkPolicyError::generic(generic),
     })
 }
@@ -889,6 +917,9 @@ pub fn parse_get_sink_policy_response(
             output,
         )
         .map_err(crate::error::GetSinkPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -898,8 +929,11 @@ pub fn parse_list_attached_links_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAttachedLinksOutput, crate::error::ListAttachedLinksError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAttachedLinksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAttachedLinksError::unhandled(generic)),
@@ -907,9 +941,8 @@ pub fn parse_list_attached_links_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListAttachedLinksError {
-            meta: generic,
-            kind: crate::error::ListAttachedLinksErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::ListAttachedLinksError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -920,17 +953,17 @@ pub fn parse_list_attached_links_error(
                         crate::http_serde::deser_header_list_attached_links_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListAttachedLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::ListAttachedLinksError {
-            meta: generic,
-            kind: crate::error::ListAttachedLinksErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => {
+            crate::error::ListAttachedLinksError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -941,17 +974,17 @@ pub fn parse_list_attached_links_error(
                         crate::http_serde::deser_header_list_attached_links_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListAttachedLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::ListAttachedLinksError {
-            meta: generic,
-            kind: crate::error::ListAttachedLinksErrorKind::MissingRequiredParameterException({
+            })
+        }
+        "MissingRequiredParameterException" => {
+            crate::error::ListAttachedLinksError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -963,17 +996,17 @@ pub fn parse_list_attached_links_error(
                         crate::http_serde::deser_header_list_attached_links_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListAttachedLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListAttachedLinksError {
-            meta: generic,
-            kind: crate::error::ListAttachedLinksErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListAttachedLinksError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -984,14 +1017,15 @@ pub fn parse_list_attached_links_error(
                         crate::http_serde::deser_header_list_attached_links_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListAttachedLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListAttachedLinksError::generic(generic),
     })
 }
@@ -1010,6 +1044,9 @@ pub fn parse_list_attached_links_response(
             output,
         )
         .map_err(crate::error::ListAttachedLinksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1018,8 +1055,11 @@ pub fn parse_list_attached_links_response(
 pub fn parse_list_links_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLinksOutput, crate::error::ListLinksError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListLinksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLinksError::unhandled(generic)),
@@ -1027,9 +1067,8 @@ pub fn parse_list_links_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListLinksError {
-            meta: generic,
-            kind: crate::error::ListLinksErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::ListLinksError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1040,56 +1079,53 @@ pub fn parse_list_links_error(
                         crate::http_serde::deser_header_list_links_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::ListLinksError {
-            meta: generic,
-            kind: crate::error::ListLinksErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::ListLinksError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLinksError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLinksError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_list_links_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListLinksError {
-            meta: generic,
-            kind: crate::error::ListLinksErrorKind::ResourceNotFoundException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::ListLinksError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLinksError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLinksError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_list_links_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListLinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListLinksError::generic(generic),
     })
 }
@@ -1107,6 +1143,9 @@ pub fn parse_list_links_response(
             output,
         )
         .map_err(crate::error::ListLinksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1115,8 +1154,11 @@ pub fn parse_list_links_response(
 pub fn parse_list_sinks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSinksOutput, crate::error::ListSinksError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSinksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListSinksError::unhandled(generic)),
@@ -1124,9 +1166,8 @@ pub fn parse_list_sinks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::ListSinksError {
-            meta: generic,
-            kind: crate::error::ListSinksErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::ListSinksError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1137,56 +1178,53 @@ pub fn parse_list_sinks_error(
                         crate::http_serde::deser_header_list_sinks_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListSinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::ListSinksError {
-            meta: generic,
-            kind: crate::error::ListSinksErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::ListSinksError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSinksError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSinksError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_list_sinks_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListSinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListSinksError {
-            meta: generic,
-            kind: crate::error::ListSinksErrorKind::ResourceNotFoundException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFoundException" => crate::error::ListSinksError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSinksError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSinksError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_list_sinks_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListSinksError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListSinksError::generic(generic),
     })
 }
@@ -1204,6 +1242,9 @@ pub fn parse_list_sinks_response(
             output,
         )
         .map_err(crate::error::ListSinksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1215,8 +1256,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -1224,9 +1268,8 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => {
+            crate::error::ListTagsForResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1237,31 +1280,32 @@ pub fn parse_list_tags_for_resource_error(
                         crate::http_serde::deser_header_list_tags_for_resource_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::ListTagsForResourceError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ListTagsForResourceError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -1282,6 +1326,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1290,8 +1337,11 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_put_sink_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutSinkPolicyOutput, crate::error::PutSinkPolicyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutSinkPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutSinkPolicyError::unhandled(generic)),
@@ -1299,9 +1349,8 @@ pub fn parse_put_sink_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::PutSinkPolicyError {
-            meta: generic,
-            kind: crate::error::PutSinkPolicyErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::PutSinkPolicyError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1312,17 +1361,17 @@ pub fn parse_put_sink_policy_error(
                         crate::http_serde::deser_header_put_sink_policy_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::PutSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::PutSinkPolicyError {
-            meta: generic,
-            kind: crate::error::PutSinkPolicyErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => {
+            crate::error::PutSinkPolicyError::InvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1333,17 +1382,17 @@ pub fn parse_put_sink_policy_error(
                         crate::http_serde::deser_header_put_sink_policy_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::PutSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::PutSinkPolicyError {
-            meta: generic,
-            kind: crate::error::PutSinkPolicyErrorKind::MissingRequiredParameterException({
+            })
+        }
+        "MissingRequiredParameterException" => {
+            crate::error::PutSinkPolicyError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1355,17 +1404,17 @@ pub fn parse_put_sink_policy_error(
                         crate::http_serde::deser_header_put_sink_policy_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::PutSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::PutSinkPolicyError {
-            meta: generic,
-            kind: crate::error::PutSinkPolicyErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::PutSinkPolicyError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1376,14 +1425,15 @@ pub fn parse_put_sink_policy_error(
                         crate::http_serde::deser_header_put_sink_policy_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::PutSinkPolicyError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutSinkPolicyError::generic(generic),
     })
 }
@@ -1401,6 +1451,9 @@ pub fn parse_put_sink_policy_response(
             output,
         )
         .map_err(crate::error::PutSinkPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1409,8 +1462,11 @@ pub fn parse_put_sink_policy_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -1418,61 +1474,57 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => crate::error::TagResourceError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_tag_resource_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::TagResourceError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyTagsException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTagsException" => crate::error::TagResourceError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::ValidationException({
+                let mut output = crate::error::too_many_tags_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::TagResourceError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -1485,6 +1537,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1493,8 +1548,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -1502,9 +1560,8 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ResourceNotFoundException({
+        "ResourceNotFoundException" => {
+            crate::error::UntagResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1515,31 +1572,32 @@ pub fn parse_untag_resource_error(
                         crate::http_serde::deser_header_untag_resource_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::UntagResourceError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::UntagResourceError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -1552,6 +1610,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1560,8 +1621,11 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_link_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateLinkOutput, crate::error::UpdateLinkError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateLinkError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateLinkError::unhandled(generic)),
@@ -1569,9 +1633,8 @@ pub fn parse_update_link_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceFault" => crate::error::UpdateLinkError {
-            meta: generic,
-            kind: crate::error::UpdateLinkErrorKind::InternalServiceFault({
+        "InternalServiceFault" => {
+            crate::error::UpdateLinkError::InternalServiceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1582,38 +1645,36 @@ pub fn parse_update_link_error(
                         crate::http_serde::deser_header_update_link_internal_service_fault_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::UpdateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidParameterException" => crate::error::UpdateLinkError {
-            meta: generic,
-            kind: crate::error::UpdateLinkErrorKind::InvalidParameterException({
+            })
+        }
+        "InvalidParameterException" => crate::error::UpdateLinkError::InvalidParameterException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_parameter_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::invalid_parameter_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_update_link_invalid_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::UpdateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MissingRequiredParameterException" => crate::error::UpdateLinkError {
-            meta: generic,
-            kind: crate::error::UpdateLinkErrorKind::MissingRequiredParameterException({
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MissingRequiredParameterException" => {
+            crate::error::UpdateLinkError::MissingRequiredParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1625,35 +1686,34 @@ pub fn parse_update_link_error(
                         crate::http_serde::deser_header_update_link_missing_required_parameter_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::UpdateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateLinkError {
-            meta: generic,
-            kind: crate::error::UpdateLinkErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => crate::error::UpdateLinkError::ResourceNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLinkError::unhandled)?;
-                    output = output.set_amzn_error_type(
+                let mut output = crate::error::resource_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_resource_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLinkError::unhandled)?;
+                output = output.set_amzn_error_type(
                         crate::http_serde::deser_header_update_link_resource_not_found_exception_amzn_error_type(response.headers())
                                                 .map_err(|_|crate::error::UpdateLinkError::unhandled("Failed to parse amznErrorType from header `x-amzn-ErrorType"))?
                     );
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateLinkError::generic(generic),
     })
 }
@@ -1671,6 +1731,9 @@ pub fn parse_update_link_response(
             output,
         )
         .map_err(crate::error::UpdateLinkError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

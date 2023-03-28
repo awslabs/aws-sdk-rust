@@ -6,11 +6,17 @@ pub struct UpdateQualificationTypeOutput {
     /// <p> Contains a QualificationType data structure.</p>
     #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
+    _request_id: Option<String>,
 }
 impl UpdateQualificationTypeOutput {
     /// <p> Contains a QualificationType data structure.</p>
     pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
         self.qualification_type.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateQualificationTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
@@ -21,6 +27,7 @@ pub mod update_qualification_type_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Contains a QualificationType data structure.</p>
@@ -36,10 +43,20 @@ pub mod update_qualification_type_output {
             self.qualification_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateQualificationTypeOutput`](crate::output::UpdateQualificationTypeOutput).
         pub fn build(self) -> crate::output::UpdateQualificationTypeOutput {
             crate::output::UpdateQualificationTypeOutput {
                 qualification_type: self.qualification_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -54,18 +71,38 @@ impl UpdateQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateNotificationSettingsOutput {}
+pub struct UpdateNotificationSettingsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateNotificationSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
 pub mod update_notification_settings_output {
 
     /// A builder for [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateNotificationSettingsOutput`](crate::output::UpdateNotificationSettingsOutput).
         pub fn build(self) -> crate::output::UpdateNotificationSettingsOutput {
-            crate::output::UpdateNotificationSettingsOutput {}
+            crate::output::UpdateNotificationSettingsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -79,18 +116,38 @@ impl UpdateNotificationSettingsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHitTypeOfHitOutput {}
+pub struct UpdateHitTypeOfHitOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateHitTypeOfHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
 pub mod update_hit_type_of_hit_output {
 
     /// A builder for [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateHitTypeOfHitOutput`](crate::output::UpdateHitTypeOfHitOutput).
         pub fn build(self) -> crate::output::UpdateHitTypeOfHitOutput {
-            crate::output::UpdateHitTypeOfHitOutput {}
+            crate::output::UpdateHitTypeOfHitOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -104,18 +161,38 @@ impl UpdateHitTypeOfHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateHitReviewStatusOutput {}
+pub struct UpdateHitReviewStatusOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateHitReviewStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
 pub mod update_hit_review_status_output {
 
     /// A builder for [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateHitReviewStatusOutput`](crate::output::UpdateHitReviewStatusOutput).
         pub fn build(self) -> crate::output::UpdateHitReviewStatusOutput {
-            crate::output::UpdateHitReviewStatusOutput {}
+            crate::output::UpdateHitReviewStatusOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -129,18 +206,38 @@ impl UpdateHitReviewStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateExpirationForHitOutput {}
+pub struct UpdateExpirationForHitOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateExpirationForHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
 pub mod update_expiration_for_hit_output {
 
     /// A builder for [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateExpirationForHitOutput`](crate::output::UpdateExpirationForHitOutput).
         pub fn build(self) -> crate::output::UpdateExpirationForHitOutput {
-            crate::output::UpdateExpirationForHitOutput {}
+            crate::output::UpdateExpirationForHitOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -154,18 +251,38 @@ impl UpdateExpirationForHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendTestEventNotificationOutput {}
+pub struct SendTestEventNotificationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for SendTestEventNotificationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
 pub mod send_test_event_notification_output {
 
     /// A builder for [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendTestEventNotificationOutput`](crate::output::SendTestEventNotificationOutput).
         pub fn build(self) -> crate::output::SendTestEventNotificationOutput {
-            crate::output::SendTestEventNotificationOutput {}
+            crate::output::SendTestEventNotificationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -179,18 +296,38 @@ impl SendTestEventNotificationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SendBonusOutput {}
+pub struct SendBonusOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for SendBonusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SendBonusOutput`](crate::output::SendBonusOutput).
 pub mod send_bonus_output {
 
     /// A builder for [`SendBonusOutput`](crate::output::SendBonusOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendBonusOutput`](crate::output::SendBonusOutput).
         pub fn build(self) -> crate::output::SendBonusOutput {
-            crate::output::SendBonusOutput {}
+            crate::output::SendBonusOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -204,18 +341,38 @@ impl SendBonusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectQualificationRequestOutput {}
+pub struct RejectQualificationRequestOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for RejectQualificationRequestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
 pub mod reject_qualification_request_output {
 
     /// A builder for [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RejectQualificationRequestOutput`](crate::output::RejectQualificationRequestOutput).
         pub fn build(self) -> crate::output::RejectQualificationRequestOutput {
-            crate::output::RejectQualificationRequestOutput {}
+            crate::output::RejectQualificationRequestOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -229,18 +386,38 @@ impl RejectQualificationRequestOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct RejectAssignmentOutput {}
+pub struct RejectAssignmentOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for RejectAssignmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
 pub mod reject_assignment_output {
 
     /// A builder for [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RejectAssignmentOutput`](crate::output::RejectAssignmentOutput).
         pub fn build(self) -> crate::output::RejectAssignmentOutput {
-            crate::output::RejectAssignmentOutput {}
+            crate::output::RejectAssignmentOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -259,6 +436,7 @@ pub struct NotifyWorkersOutput {
     #[doc(hidden)]
     pub notify_workers_failure_statuses:
         std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
+    _request_id: Option<String>,
 }
 impl NotifyWorkersOutput {
     /// <p> When MTurk sends notifications to the list of Workers, it returns back any failures it encounters in this list of NotifyWorkersFailureStatus objects. </p>
@@ -266,6 +444,11 @@ impl NotifyWorkersOutput {
         &self,
     ) -> std::option::Option<&[crate::model::NotifyWorkersFailureStatus]> {
         self.notify_workers_failure_statuses.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for NotifyWorkersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
@@ -277,6 +460,7 @@ pub mod notify_workers_output {
     pub struct Builder {
         pub(crate) notify_workers_failure_statuses:
             std::option::Option<std::vec::Vec<crate::model::NotifyWorkersFailureStatus>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `notify_workers_failure_statuses`.
@@ -301,10 +485,20 @@ pub mod notify_workers_output {
             self.notify_workers_failure_statuses = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`NotifyWorkersOutput`](crate::output::NotifyWorkersOutput).
         pub fn build(self) -> crate::output::NotifyWorkersOutput {
             crate::output::NotifyWorkersOutput {
                 notify_workers_failure_statuses: self.notify_workers_failure_statuses,
+                _request_id: self._request_id,
             }
         }
     }
@@ -329,6 +523,7 @@ pub struct ListWorkersWithQualificationTypeOutput {
     /// <p> The list of Qualification elements returned by this call. </p>
     #[doc(hidden)]
     pub qualifications: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
+    _request_id: Option<String>,
 }
 impl ListWorkersWithQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -344,6 +539,11 @@ impl ListWorkersWithQualificationTypeOutput {
         self.qualifications.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkersWithQualificationTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
 pub mod list_workers_with_qualification_type_output {
 
@@ -354,6 +554,7 @@ pub mod list_workers_with_qualification_type_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) qualifications: std::option::Option<std::vec::Vec<crate::model::Qualification>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -395,12 +596,22 @@ pub mod list_workers_with_qualification_type_output {
             self.qualifications = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkersWithQualificationTypeOutput`](crate::output::ListWorkersWithQualificationTypeOutput).
         pub fn build(self) -> crate::output::ListWorkersWithQualificationTypeOutput {
             crate::output::ListWorkersWithQualificationTypeOutput {
                 next_token: self.next_token,
                 num_results: self.num_results,
                 qualifications: self.qualifications,
+                _request_id: self._request_id,
             }
         }
     }
@@ -425,6 +636,7 @@ pub struct ListWorkerBlocksOutput {
     /// <p> The list of WorkerBlocks, containing the collection of Worker IDs and reasons for blocking.</p>
     #[doc(hidden)]
     pub worker_blocks: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
+    _request_id: Option<String>,
 }
 impl ListWorkerBlocksOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -440,6 +652,11 @@ impl ListWorkerBlocksOutput {
         self.worker_blocks.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkerBlocksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
 pub mod list_worker_blocks_output {
 
@@ -450,6 +667,7 @@ pub mod list_worker_blocks_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) worker_blocks: std::option::Option<std::vec::Vec<crate::model::WorkerBlock>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -491,12 +709,22 @@ pub mod list_worker_blocks_output {
             self.worker_blocks = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkerBlocksOutput`](crate::output::ListWorkerBlocksOutput).
         pub fn build(self) -> crate::output::ListWorkerBlocksOutput {
             crate::output::ListWorkerBlocksOutput {
                 next_token: self.next_token,
                 num_results: self.num_results,
                 worker_blocks: self.worker_blocks,
+                _request_id: self._request_id,
             }
         }
     }
@@ -530,6 +758,7 @@ pub struct ListReviewPolicyResultsForHitOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListReviewPolicyResultsForHitOutput {
     /// <p>The HITId of the HIT for which results have been returned.</p>
@@ -557,6 +786,11 @@ impl ListReviewPolicyResultsForHitOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReviewPolicyResultsForHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
 pub mod list_review_policy_results_for_hit_output {
 
@@ -570,6 +804,7 @@ pub mod list_review_policy_results_for_hit_output {
         pub(crate) assignment_review_report: std::option::Option<crate::model::ReviewReport>,
         pub(crate) hit_review_report: std::option::Option<crate::model::ReviewReport>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The HITId of the HIT for which results have been returned.</p>
@@ -644,6 +879,15 @@ pub mod list_review_policy_results_for_hit_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListReviewPolicyResultsForHitOutput`](crate::output::ListReviewPolicyResultsForHitOutput).
         pub fn build(self) -> crate::output::ListReviewPolicyResultsForHitOutput {
             crate::output::ListReviewPolicyResultsForHitOutput {
@@ -653,6 +897,7 @@ pub mod list_review_policy_results_for_hit_output {
                 assignment_review_report: self.assignment_review_report,
                 hit_review_report: self.hit_review_report,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -677,6 +922,7 @@ pub struct ListReviewableHiTsOutput {
     /// <p> The list of HIT elements returned by the query.</p>
     #[doc(hidden)]
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+    _request_id: Option<String>,
 }
 impl ListReviewableHiTsOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -692,6 +938,11 @@ impl ListReviewableHiTsOutput {
         self.hi_ts.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListReviewableHiTsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
 pub mod list_reviewable_hi_ts_output {
 
@@ -702,6 +953,7 @@ pub mod list_reviewable_hi_ts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -743,12 +995,22 @@ pub mod list_reviewable_hi_ts_output {
             self.hi_ts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListReviewableHiTsOutput`](crate::output::ListReviewableHiTsOutput).
         pub fn build(self) -> crate::output::ListReviewableHiTsOutput {
             crate::output::ListReviewableHiTsOutput {
                 next_token: self.next_token,
                 num_results: self.num_results,
                 hi_ts: self.hi_ts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -773,6 +1035,7 @@ pub struct ListQualificationTypesOutput {
     /// <p> The list of QualificationType elements returned by the query. </p>
     #[doc(hidden)]
     pub qualification_types: std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
+    _request_id: Option<String>,
 }
 impl ListQualificationTypesOutput {
     /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
@@ -788,6 +1051,11 @@ impl ListQualificationTypesOutput {
         self.qualification_types.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListQualificationTypesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
 pub mod list_qualification_types_output {
 
@@ -799,6 +1067,7 @@ pub mod list_qualification_types_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) qualification_types:
             std::option::Option<std::vec::Vec<crate::model::QualificationType>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The number of Qualification types on this page in the filtered results list, equivalent to the number of types this operation returns. </p>
@@ -840,12 +1109,22 @@ pub mod list_qualification_types_output {
             self.qualification_types = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListQualificationTypesOutput`](crate::output::ListQualificationTypesOutput).
         pub fn build(self) -> crate::output::ListQualificationTypesOutput {
             crate::output::ListQualificationTypesOutput {
                 num_results: self.num_results,
                 next_token: self.next_token,
                 qualification_types: self.qualification_types,
+                _request_id: self._request_id,
             }
         }
     }
@@ -871,6 +1150,7 @@ pub struct ListQualificationRequestsOutput {
     #[doc(hidden)]
     pub qualification_requests:
         std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
+    _request_id: Option<String>,
 }
 impl ListQualificationRequestsOutput {
     /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
@@ -888,6 +1168,11 @@ impl ListQualificationRequestsOutput {
         self.qualification_requests.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListQualificationRequestsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
 pub mod list_qualification_requests_output {
 
@@ -899,6 +1184,7 @@ pub mod list_qualification_requests_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) qualification_requests:
             std::option::Option<std::vec::Vec<crate::model::QualificationRequest>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of Qualification requests on this page in the filtered results list, equivalent to the number of Qualification requests being returned by this call.</p>
@@ -940,12 +1226,22 @@ pub mod list_qualification_requests_output {
             self.qualification_requests = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListQualificationRequestsOutput`](crate::output::ListQualificationRequestsOutput).
         pub fn build(self) -> crate::output::ListQualificationRequestsOutput {
             crate::output::ListQualificationRequestsOutput {
                 num_results: self.num_results,
                 next_token: self.next_token,
                 qualification_requests: self.qualification_requests,
+                _request_id: self._request_id,
             }
         }
     }
@@ -970,6 +1266,7 @@ pub struct ListHiTsForQualificationTypeOutput {
     /// <p> The list of HIT elements returned by the query.</p>
     #[doc(hidden)]
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+    _request_id: Option<String>,
 }
 impl ListHiTsForQualificationTypeOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -985,6 +1282,11 @@ impl ListHiTsForQualificationTypeOutput {
         self.hi_ts.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHiTsForQualificationTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
 pub mod list_hi_ts_for_qualification_type_output {
 
@@ -995,6 +1297,7 @@ pub mod list_hi_ts_for_qualification_type_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -1036,12 +1339,22 @@ pub mod list_hi_ts_for_qualification_type_output {
             self.hi_ts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListHiTsForQualificationTypeOutput`](crate::output::ListHiTsForQualificationTypeOutput).
         pub fn build(self) -> crate::output::ListHiTsForQualificationTypeOutput {
             crate::output::ListHiTsForQualificationTypeOutput {
                 next_token: self.next_token,
                 num_results: self.num_results,
                 hi_ts: self.hi_ts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1066,6 +1379,7 @@ pub struct ListHiTsOutput {
     /// <p> The list of HIT elements returned by the query.</p>
     #[doc(hidden)]
     pub hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+    _request_id: Option<String>,
 }
 impl ListHiTsOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -1081,6 +1395,11 @@ impl ListHiTsOutput {
         self.hi_ts.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHiTsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListHiTsOutput`](crate::output::ListHiTsOutput).
 pub mod list_hi_ts_output {
 
@@ -1091,6 +1410,7 @@ pub mod list_hi_ts_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) hi_ts: std::option::Option<std::vec::Vec<crate::model::Hit>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -1132,12 +1452,22 @@ pub mod list_hi_ts_output {
             self.hi_ts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListHiTsOutput`](crate::output::ListHiTsOutput).
         pub fn build(self) -> crate::output::ListHiTsOutput {
             crate::output::ListHiTsOutput {
                 next_token: self.next_token,
                 num_results: self.num_results,
                 hi_ts: self.hi_ts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1162,6 +1492,7 @@ pub struct ListBonusPaymentsOutput {
     /// <p>A successful request to the ListBonusPayments operation returns a list of BonusPayment objects. </p>
     #[doc(hidden)]
     pub bonus_payments: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
+    _request_id: Option<String>,
 }
 impl ListBonusPaymentsOutput {
     /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
@@ -1177,6 +1508,11 @@ impl ListBonusPaymentsOutput {
         self.bonus_payments.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBonusPaymentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
 pub mod list_bonus_payments_output {
 
@@ -1187,6 +1523,7 @@ pub mod list_bonus_payments_output {
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) bonus_payments: std::option::Option<std::vec::Vec<crate::model::BonusPayment>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The number of bonus payments on this page in the filtered results list, equivalent to the number of bonus payments being returned by this call. </p>
@@ -1228,12 +1565,22 @@ pub mod list_bonus_payments_output {
             self.bonus_payments = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBonusPaymentsOutput`](crate::output::ListBonusPaymentsOutput).
         pub fn build(self) -> crate::output::ListBonusPaymentsOutput {
             crate::output::ListBonusPaymentsOutput {
                 num_results: self.num_results,
                 next_token: self.next_token,
                 bonus_payments: self.bonus_payments,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1258,6 +1605,7 @@ pub struct ListAssignmentsForHitOutput {
     /// <p> The collection of Assignment data structures returned by this call.</p>
     #[doc(hidden)]
     pub assignments: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
+    _request_id: Option<String>,
 }
 impl ListAssignmentsForHitOutput {
     /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -1273,6 +1621,11 @@ impl ListAssignmentsForHitOutput {
         self.assignments.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAssignmentsForHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
 pub mod list_assignments_for_hit_output {
 
@@ -1283,6 +1636,7 @@ pub mod list_assignments_for_hit_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) num_results: std::option::Option<i32>,
         pub(crate) assignments: std::option::Option<std::vec::Vec<crate::model::Assignment>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results. </p>
@@ -1324,12 +1678,22 @@ pub mod list_assignments_for_hit_output {
             self.assignments = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAssignmentsForHitOutput`](crate::output::ListAssignmentsForHitOutput).
         pub fn build(self) -> crate::output::ListAssignmentsForHitOutput {
             crate::output::ListAssignmentsForHitOutput {
                 next_token: self.next_token,
                 num_results: self.num_results,
                 assignments: self.assignments,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1348,11 +1712,17 @@ pub struct GetQualificationTypeOutput {
     /// <p> The returned Qualification Type</p>
     #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
+    _request_id: Option<String>,
 }
 impl GetQualificationTypeOutput {
     /// <p> The returned Qualification Type</p>
     pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
         self.qualification_type.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetQualificationTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
@@ -1363,6 +1733,7 @@ pub mod get_qualification_type_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The returned Qualification Type</p>
@@ -1378,10 +1749,20 @@ pub mod get_qualification_type_output {
             self.qualification_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetQualificationTypeOutput`](crate::output::GetQualificationTypeOutput).
         pub fn build(self) -> crate::output::GetQualificationTypeOutput {
             crate::output::GetQualificationTypeOutput {
                 qualification_type: self.qualification_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1400,11 +1781,17 @@ pub struct GetQualificationScoreOutput {
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     #[doc(hidden)]
     pub qualification: std::option::Option<crate::model::Qualification>,
+    _request_id: Option<String>,
 }
 impl GetQualificationScoreOutput {
     /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
     pub fn qualification(&self) -> std::option::Option<&crate::model::Qualification> {
         self.qualification.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetQualificationScoreOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
@@ -1415,6 +1802,7 @@ pub mod get_qualification_score_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification: std::option::Option<crate::model::Qualification>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Qualification data structure of the Qualification assigned to a user, including the Qualification type and the value (score). </p>
@@ -1430,10 +1818,20 @@ pub mod get_qualification_score_output {
             self.qualification = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetQualificationScoreOutput`](crate::output::GetQualificationScoreOutput).
         pub fn build(self) -> crate::output::GetQualificationScoreOutput {
             crate::output::GetQualificationScoreOutput {
                 qualification: self.qualification,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1452,11 +1850,17 @@ pub struct GetHitOutput {
     /// <p> Contains the requested HIT data.</p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
+    _request_id: Option<String>,
 }
 impl GetHitOutput {
     /// <p> Contains the requested HIT data.</p>
     pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
         self.hit.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetHitOutput`](crate::output::GetHitOutput).
@@ -1467,6 +1871,7 @@ pub mod get_hit_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Contains the requested HIT data.</p>
@@ -1479,9 +1884,21 @@ pub mod get_hit_output {
             self.hit = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetHitOutput`](crate::output::GetHitOutput).
         pub fn build(self) -> crate::output::GetHitOutput {
-            crate::output::GetHitOutput { hit: self.hit }
+            crate::output::GetHitOutput {
+                hit: self.hit,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1499,11 +1916,17 @@ pub struct GetFileUploadUrlOutput {
     /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
     #[doc(hidden)]
     pub file_upload_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetFileUploadUrlOutput {
     /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
     pub fn file_upload_url(&self) -> std::option::Option<&str> {
         self.file_upload_url.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetFileUploadUrlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
@@ -1514,6 +1937,7 @@ pub mod get_file_upload_url_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) file_upload_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> A temporary URL for the file that the Worker uploaded for the answer. </p>
@@ -1529,10 +1953,20 @@ pub mod get_file_upload_url_output {
             self.file_upload_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetFileUploadUrlOutput`](crate::output::GetFileUploadUrlOutput).
         pub fn build(self) -> crate::output::GetFileUploadUrlOutput {
             crate::output::GetFileUploadUrlOutput {
                 file_upload_url: self.file_upload_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1554,6 +1988,7 @@ pub struct GetAssignmentOutput {
     /// <p> The HIT associated with this assignment. The response includes one HIT element.</p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
+    _request_id: Option<String>,
 }
 impl GetAssignmentOutput {
     /// <p> The assignment. The response includes one Assignment element. </p>
@@ -1565,6 +2000,11 @@ impl GetAssignmentOutput {
         self.hit.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAssignmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
 pub mod get_assignment_output {
 
@@ -1574,6 +2014,7 @@ pub mod get_assignment_output {
     pub struct Builder {
         pub(crate) assignment: std::option::Option<crate::model::Assignment>,
         pub(crate) hit: std::option::Option<crate::model::Hit>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The assignment. The response includes one Assignment element. </p>
@@ -1599,11 +2040,21 @@ pub mod get_assignment_output {
             self.hit = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAssignmentOutput`](crate::output::GetAssignmentOutput).
         pub fn build(self) -> crate::output::GetAssignmentOutput {
             crate::output::GetAssignmentOutput {
                 assignment: self.assignment,
                 hit: self.hit,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1625,6 +2076,7 @@ pub struct GetAccountBalanceOutput {
     /// <p>A string representing a currency amount.</p>
     #[doc(hidden)]
     pub on_hold_balance: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAccountBalanceOutput {
     /// <p>A string representing a currency amount.</p>
@@ -1636,6 +2088,11 @@ impl GetAccountBalanceOutput {
         self.on_hold_balance.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAccountBalanceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
 pub mod get_account_balance_output {
 
@@ -1645,6 +2102,7 @@ pub mod get_account_balance_output {
     pub struct Builder {
         pub(crate) available_balance: std::option::Option<std::string::String>,
         pub(crate) on_hold_balance: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A string representing a currency amount.</p>
@@ -1673,11 +2131,21 @@ pub mod get_account_balance_output {
             self.on_hold_balance = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccountBalanceOutput`](crate::output::GetAccountBalanceOutput).
         pub fn build(self) -> crate::output::GetAccountBalanceOutput {
             crate::output::GetAccountBalanceOutput {
                 available_balance: self.available_balance,
                 on_hold_balance: self.on_hold_balance,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1692,18 +2160,38 @@ impl GetAccountBalanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateQualificationFromWorkerOutput {}
+pub struct DisassociateQualificationFromWorkerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisassociateQualificationFromWorkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
 pub mod disassociate_qualification_from_worker_output {
 
     /// A builder for [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateQualificationFromWorkerOutput`](crate::output::DisassociateQualificationFromWorkerOutput).
         pub fn build(self) -> crate::output::DisassociateQualificationFromWorkerOutput {
-            crate::output::DisassociateQualificationFromWorkerOutput {}
+            crate::output::DisassociateQualificationFromWorkerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1717,18 +2205,38 @@ impl DisassociateQualificationFromWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkerBlockOutput {}
+pub struct DeleteWorkerBlockOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteWorkerBlockOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
 pub mod delete_worker_block_output {
 
     /// A builder for [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkerBlockOutput`](crate::output::DeleteWorkerBlockOutput).
         pub fn build(self) -> crate::output::DeleteWorkerBlockOutput {
-            crate::output::DeleteWorkerBlockOutput {}
+            crate::output::DeleteWorkerBlockOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1742,18 +2250,38 @@ impl DeleteWorkerBlockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteQualificationTypeOutput {}
+pub struct DeleteQualificationTypeOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteQualificationTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
 pub mod delete_qualification_type_output {
 
     /// A builder for [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteQualificationTypeOutput`](crate::output::DeleteQualificationTypeOutput).
         pub fn build(self) -> crate::output::DeleteQualificationTypeOutput {
-            crate::output::DeleteQualificationTypeOutput {}
+            crate::output::DeleteQualificationTypeOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1767,18 +2295,38 @@ impl DeleteQualificationTypeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteHitOutput {}
+pub struct DeleteHitOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteHitOutput`](crate::output::DeleteHitOutput).
 pub mod delete_hit_output {
 
     /// A builder for [`DeleteHitOutput`](crate::output::DeleteHitOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteHitOutput`](crate::output::DeleteHitOutput).
         pub fn build(self) -> crate::output::DeleteHitOutput {
-            crate::output::DeleteHitOutput {}
+            crate::output::DeleteHitOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1792,18 +2340,38 @@ impl DeleteHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateWorkerBlockOutput {}
+pub struct CreateWorkerBlockOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateWorkerBlockOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
 pub mod create_worker_block_output {
 
     /// A builder for [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkerBlockOutput`](crate::output::CreateWorkerBlockOutput).
         pub fn build(self) -> crate::output::CreateWorkerBlockOutput {
-            crate::output::CreateWorkerBlockOutput {}
+            crate::output::CreateWorkerBlockOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1821,11 +2389,17 @@ pub struct CreateQualificationTypeOutput {
     /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
     #[doc(hidden)]
     pub qualification_type: std::option::Option<crate::model::QualificationType>,
+    _request_id: Option<String>,
 }
 impl CreateQualificationTypeOutput {
     /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
     pub fn qualification_type(&self) -> std::option::Option<&crate::model::QualificationType> {
         self.qualification_type.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateQualificationTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
@@ -1836,6 +2410,7 @@ pub mod create_qualification_type_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) qualification_type: std::option::Option<crate::model::QualificationType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The created Qualification type, returned as a QualificationType data structure.</p>
@@ -1851,10 +2426,20 @@ pub mod create_qualification_type_output {
             self.qualification_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateQualificationTypeOutput`](crate::output::CreateQualificationTypeOutput).
         pub fn build(self) -> crate::output::CreateQualificationTypeOutput {
             crate::output::CreateQualificationTypeOutput {
                 qualification_type: self.qualification_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1873,11 +2458,17 @@ pub struct CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
+    _request_id: Option<String>,
 }
 impl CreateHitWithHitTypeOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
         self.hit.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateHitWithHitTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
@@ -1888,6 +2479,7 @@ pub mod create_hit_with_hit_type_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
@@ -1900,9 +2492,21 @@ pub mod create_hit_with_hit_type_output {
             self.hit = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateHitWithHitTypeOutput`](crate::output::CreateHitWithHitTypeOutput).
         pub fn build(self) -> crate::output::CreateHitWithHitTypeOutput {
-            crate::output::CreateHitWithHitTypeOutput { hit: self.hit }
+            crate::output::CreateHitWithHitTypeOutput {
+                hit: self.hit,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1920,11 +2524,17 @@ pub struct CreateHitTypeOutput {
     /// <p> The ID of the newly registered HIT type.</p>
     #[doc(hidden)]
     pub hit_type_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateHitTypeOutput {
     /// <p> The ID of the newly registered HIT type.</p>
     pub fn hit_type_id(&self) -> std::option::Option<&str> {
         self.hit_type_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateHitTypeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
@@ -1935,6 +2545,7 @@ pub mod create_hit_type_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit_type_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The ID of the newly registered HIT type.</p>
@@ -1947,10 +2558,20 @@ pub mod create_hit_type_output {
             self.hit_type_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateHitTypeOutput`](crate::output::CreateHitTypeOutput).
         pub fn build(self) -> crate::output::CreateHitTypeOutput {
             crate::output::CreateHitTypeOutput {
                 hit_type_id: self.hit_type_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1969,11 +2590,17 @@ pub struct CreateHitOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     #[doc(hidden)]
     pub hit: std::option::Option<crate::model::Hit>,
+    _request_id: Option<String>,
 }
 impl CreateHitOutput {
     /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
     pub fn hit(&self) -> std::option::Option<&crate::model::Hit> {
         self.hit.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateHitOutput`](crate::output::CreateHitOutput).
@@ -1984,6 +2611,7 @@ pub mod create_hit_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hit: std::option::Option<crate::model::Hit>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Contains the newly created HIT data. For a description of the HIT data structure as it appears in responses, see the HIT Data Structure documentation. </p>
@@ -1996,9 +2624,21 @@ pub mod create_hit_output {
             self.hit = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateHitOutput`](crate::output::CreateHitOutput).
         pub fn build(self) -> crate::output::CreateHitOutput {
-            crate::output::CreateHitOutput { hit: self.hit }
+            crate::output::CreateHitOutput {
+                hit: self.hit,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2012,18 +2652,38 @@ impl CreateHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateAdditionalAssignmentsForHitOutput {}
+pub struct CreateAdditionalAssignmentsForHitOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateAdditionalAssignmentsForHitOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
 pub mod create_additional_assignments_for_hit_output {
 
     /// A builder for [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAdditionalAssignmentsForHitOutput`](crate::output::CreateAdditionalAssignmentsForHitOutput).
         pub fn build(self) -> crate::output::CreateAdditionalAssignmentsForHitOutput {
-            crate::output::CreateAdditionalAssignmentsForHitOutput {}
+            crate::output::CreateAdditionalAssignmentsForHitOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2037,18 +2697,38 @@ impl CreateAdditionalAssignmentsForHitOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateQualificationWithWorkerOutput {}
+pub struct AssociateQualificationWithWorkerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AssociateQualificationWithWorkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
 pub mod associate_qualification_with_worker_output {
 
     /// A builder for [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateQualificationWithWorkerOutput`](crate::output::AssociateQualificationWithWorkerOutput).
         pub fn build(self) -> crate::output::AssociateQualificationWithWorkerOutput {
-            crate::output::AssociateQualificationWithWorkerOutput {}
+            crate::output::AssociateQualificationWithWorkerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2062,18 +2742,38 @@ impl AssociateQualificationWithWorkerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ApproveAssignmentOutput {}
+pub struct ApproveAssignmentOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for ApproveAssignmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
 pub mod approve_assignment_output {
 
     /// A builder for [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ApproveAssignmentOutput`](crate::output::ApproveAssignmentOutput).
         pub fn build(self) -> crate::output::ApproveAssignmentOutput {
-            crate::output::ApproveAssignmentOutput {}
+            crate::output::ApproveAssignmentOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2087,18 +2787,38 @@ impl ApproveAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AcceptQualificationRequestOutput {}
+pub struct AcceptQualificationRequestOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AcceptQualificationRequestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
 pub mod accept_qualification_request_output {
 
     /// A builder for [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AcceptQualificationRequestOutput`](crate::output::AcceptQualificationRequestOutput).
         pub fn build(self) -> crate::output::AcceptQualificationRequestOutput {
-            crate::output::AcceptQualificationRequestOutput {}
+            crate::output::AcceptQualificationRequestOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

@@ -18,6 +18,7 @@ pub struct SynthesizeSpeechOutput {
     /// <p>Number of characters synthesized.</p>
     #[doc(hidden)]
     pub request_characters: i32,
+    _request_id: Option<String>,
 }
 impl SynthesizeSpeechOutput {
     /// <p> Stream containing the synthesized speech. </p>
@@ -40,6 +41,11 @@ impl SynthesizeSpeechOutput {
         self.request_characters
     }
 }
+impl aws_http::request_id::RequestId for SynthesizeSpeechOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput).
 pub mod synthesize_speech_output {
 
@@ -50,6 +56,7 @@ pub mod synthesize_speech_output {
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) request_characters: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Stream containing the synthesized speech. </p>
@@ -99,12 +106,22 @@ pub mod synthesize_speech_output {
             self.request_characters = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SynthesizeSpeechOutput`](crate::output::SynthesizeSpeechOutput).
         pub fn build(self) -> crate::output::SynthesizeSpeechOutput {
             crate::output::SynthesizeSpeechOutput {
                 audio_stream: self.audio_stream.unwrap_or_default(),
                 content_type: self.content_type,
                 request_characters: self.request_characters.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,11 +140,17 @@ pub struct StartSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
     #[doc(hidden)]
     pub synthesis_task: std::option::Option<crate::model::SynthesisTask>,
+    _request_id: Option<String>,
 }
 impl StartSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
     pub fn synthesis_task(&self) -> std::option::Option<&crate::model::SynthesisTask> {
         self.synthesis_task.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StartSpeechSynthesisTaskOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
@@ -138,6 +161,7 @@ pub mod start_speech_synthesis_task_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>SynthesisTask object that provides information and attributes about a newly submitted speech synthesis task.</p>
@@ -153,10 +177,20 @@ pub mod start_speech_synthesis_task_output {
             self.synthesis_task = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartSpeechSynthesisTaskOutput`](crate::output::StartSpeechSynthesisTaskOutput).
         pub fn build(self) -> crate::output::StartSpeechSynthesisTaskOutput {
             crate::output::StartSpeechSynthesisTaskOutput {
                 synthesis_task: self.synthesis_task,
+                _request_id: self._request_id,
             }
         }
     }
@@ -171,18 +205,38 @@ impl StartSpeechSynthesisTaskOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutLexiconOutput {}
+pub struct PutLexiconOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutLexiconOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutLexiconOutput`](crate::output::PutLexiconOutput).
 pub mod put_lexicon_output {
 
     /// A builder for [`PutLexiconOutput`](crate::output::PutLexiconOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutLexiconOutput`](crate::output::PutLexiconOutput).
         pub fn build(self) -> crate::output::PutLexiconOutput {
-            crate::output::PutLexiconOutput {}
+            crate::output::PutLexiconOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -203,6 +257,7 @@ pub struct ListSpeechSynthesisTasksOutput {
     /// <p>List of SynthesisTask objects that provides information from the specified task in the list request, including output format, creation time, task status, and so on.</p>
     #[doc(hidden)]
     pub synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
+    _request_id: Option<String>,
 }
 impl ListSpeechSynthesisTasksOutput {
     /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
@@ -214,6 +269,11 @@ impl ListSpeechSynthesisTasksOutput {
         self.synthesis_tasks.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSpeechSynthesisTasksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
 pub mod list_speech_synthesis_tasks_output {
 
@@ -223,6 +283,7 @@ pub mod list_speech_synthesis_tasks_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) synthesis_tasks: std::option::Option<std::vec::Vec<crate::model::SynthesisTask>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An opaque pagination token returned from the previous List operation in this request. If present, this indicates where to continue the listing.</p>
@@ -254,11 +315,21 @@ pub mod list_speech_synthesis_tasks_output {
             self.synthesis_tasks = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSpeechSynthesisTasksOutput`](crate::output::ListSpeechSynthesisTasksOutput).
         pub fn build(self) -> crate::output::ListSpeechSynthesisTasksOutput {
             crate::output::ListSpeechSynthesisTasksOutput {
                 next_token: self.next_token,
                 synthesis_tasks: self.synthesis_tasks,
+                _request_id: self._request_id,
             }
         }
     }
@@ -280,6 +351,7 @@ pub struct ListLexiconsOutput {
     /// <p>The pagination token to use in the next request to continue the listing of lexicons. <code>NextToken</code> is returned only if the response is truncated.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLexiconsOutput {
     /// <p>A list of lexicon names and attributes.</p>
@@ -291,6 +363,11 @@ impl ListLexiconsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLexiconsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
 pub mod list_lexicons_output {
 
@@ -300,6 +377,7 @@ pub mod list_lexicons_output {
     pub struct Builder {
         pub(crate) lexicons: std::option::Option<std::vec::Vec<crate::model::LexiconDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `lexicons`.
@@ -331,11 +409,21 @@ pub mod list_lexicons_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLexiconsOutput`](crate::output::ListLexiconsOutput).
         pub fn build(self) -> crate::output::ListLexiconsOutput {
             crate::output::ListLexiconsOutput {
                 lexicons: self.lexicons,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -354,11 +442,17 @@ pub struct GetSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     #[doc(hidden)]
     pub synthesis_task: std::option::Option<crate::model::SynthesisTask>,
+    _request_id: Option<String>,
 }
 impl GetSpeechSynthesisTaskOutput {
     /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
     pub fn synthesis_task(&self) -> std::option::Option<&crate::model::SynthesisTask> {
         self.synthesis_task.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetSpeechSynthesisTaskOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
@@ -369,6 +463,7 @@ pub mod get_speech_synthesis_task_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) synthesis_task: std::option::Option<crate::model::SynthesisTask>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>SynthesisTask object that provides information from the requested task, including output format, creation time, task status, and so on.</p>
@@ -384,10 +479,20 @@ pub mod get_speech_synthesis_task_output {
             self.synthesis_task = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSpeechSynthesisTaskOutput`](crate::output::GetSpeechSynthesisTaskOutput).
         pub fn build(self) -> crate::output::GetSpeechSynthesisTaskOutput {
             crate::output::GetSpeechSynthesisTaskOutput {
                 synthesis_task: self.synthesis_task,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,6 +514,7 @@ pub struct GetLexiconOutput {
     /// <p>Metadata of the lexicon, including phonetic alphabetic used, language code, lexicon ARN, number of lexemes defined in the lexicon, and size of lexicon in bytes.</p>
     #[doc(hidden)]
     pub lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
+    _request_id: Option<String>,
 }
 impl GetLexiconOutput {
     /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
@@ -420,6 +526,11 @@ impl GetLexiconOutput {
         self.lexicon_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLexiconOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetLexiconOutput`](crate::output::GetLexiconOutput).
 pub mod get_lexicon_output {
 
@@ -429,6 +540,7 @@ pub mod get_lexicon_output {
     pub struct Builder {
         pub(crate) lexicon: std::option::Option<crate::model::Lexicon>,
         pub(crate) lexicon_attributes: std::option::Option<crate::model::LexiconAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lexicon object that provides name and the string content of the lexicon. </p>
@@ -454,11 +566,21 @@ pub mod get_lexicon_output {
             self.lexicon_attributes = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLexiconOutput`](crate::output::GetLexiconOutput).
         pub fn build(self) -> crate::output::GetLexiconOutput {
             crate::output::GetLexiconOutput {
                 lexicon: self.lexicon,
                 lexicon_attributes: self.lexicon_attributes,
+                _request_id: self._request_id,
             }
         }
     }
@@ -480,6 +602,7 @@ pub struct DescribeVoicesOutput {
     /// <p>The pagination token to use in the next request to continue the listing of voices. <code>NextToken</code> is returned only if the response is truncated.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeVoicesOutput {
     /// <p>A list of voices with their properties.</p>
@@ -491,6 +614,11 @@ impl DescribeVoicesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeVoicesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
 pub mod describe_voices_output {
 
@@ -500,6 +628,7 @@ pub mod describe_voices_output {
     pub struct Builder {
         pub(crate) voices: std::option::Option<std::vec::Vec<crate::model::Voice>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `voices`.
@@ -531,11 +660,21 @@ pub mod describe_voices_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVoicesOutput`](crate::output::DescribeVoicesOutput).
         pub fn build(self) -> crate::output::DescribeVoicesOutput {
             crate::output::DescribeVoicesOutput {
                 voices: self.voices,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -550,18 +689,38 @@ impl DescribeVoicesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLexiconOutput {}
+pub struct DeleteLexiconOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteLexiconOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
 pub mod delete_lexicon_output {
 
     /// A builder for [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLexiconOutput`](crate::output::DeleteLexiconOutput).
         pub fn build(self) -> crate::output::DeleteLexiconOutput {
-            crate::output::DeleteLexiconOutput {}
+            crate::output::DeleteLexiconOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

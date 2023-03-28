@@ -6,8 +6,11 @@ pub fn parse_create_byte_match_set_error(
     crate::output::CreateByteMatchSetOutput,
     crate::error::CreateByteMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateByteMatchSetError::unhandled(generic)),
@@ -15,9 +18,8 @@ pub fn parse_create_byte_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateByteMatchSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateByteMatchSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -25,34 +27,34 @@ pub fn parse_create_byte_match_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateByteMatchSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateByteMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateByteMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::CreateByteMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -60,17 +62,17 @@ pub fn parse_create_byte_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateByteMatchSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateByteMatchSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -78,17 +80,17 @@ pub fn parse_create_byte_match_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateByteMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateByteMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -96,31 +98,30 @@ pub fn parse_create_byte_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateByteMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateByteMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateByteMatchSetError::generic(generic),
     })
 }
@@ -141,6 +142,9 @@ pub fn parse_create_byte_match_set_response(
             output,
         )
         .map_err(crate::error::CreateByteMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -150,8 +154,11 @@ pub fn parse_create_geo_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGeoMatchSetOutput, crate::error::CreateGeoMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateGeoMatchSetError::unhandled(generic)),
@@ -159,9 +166,8 @@ pub fn parse_create_geo_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateGeoMatchSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateGeoMatchSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -169,34 +175,34 @@ pub fn parse_create_geo_match_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateGeoMatchSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateGeoMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateGeoMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::CreateGeoMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -204,17 +210,17 @@ pub fn parse_create_geo_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateGeoMatchSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateGeoMatchSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -222,17 +228,17 @@ pub fn parse_create_geo_match_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateGeoMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateGeoMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -240,31 +246,30 @@ pub fn parse_create_geo_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateGeoMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateGeoMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateGeoMatchSetError::generic(generic),
     })
 }
@@ -283,6 +288,9 @@ pub fn parse_create_geo_match_set_response(
             output,
         )
         .map_err(crate::error::CreateGeoMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -291,8 +299,11 @@ pub fn parse_create_geo_match_set_response(
 pub fn parse_create_ip_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateIpSetOutput, crate::error::CreateIPSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateIPSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateIPSetError::unhandled(generic)),
@@ -300,9 +311,8 @@ pub fn parse_create_ip_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateIPSetError {
-            meta: generic,
-            kind: crate::error::CreateIPSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateIPSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -310,34 +320,32 @@ pub fn parse_create_ip_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateIPSetError {
-            meta: generic,
-            kind: crate::error::CreateIPSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => crate::error::CreateIPSetError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateIPSetError {
-            meta: generic,
-            kind: crate::error::CreateIPSetErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::CreateIPSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -345,17 +353,17 @@ pub fn parse_create_ip_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateIPSetError {
-            meta: generic,
-            kind: crate::error::CreateIPSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateIPSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -363,17 +371,17 @@ pub fn parse_create_ip_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateIPSetError {
-            meta: generic,
-            kind: crate::error::CreateIPSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateIPSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -381,31 +389,30 @@ pub fn parse_create_ip_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateIPSetError {
-            meta: generic,
-            kind: crate::error::CreateIPSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateIPSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateIPSetError::generic(generic),
     })
 }
@@ -423,6 +430,9 @@ pub fn parse_create_ip_set_response(
             output,
         )
         .map_err(crate::error::CreateIPSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -434,8 +444,11 @@ pub fn parse_create_rate_based_rule_error(
     crate::output::CreateRateBasedRuleOutput,
     crate::error::CreateRateBasedRuleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateRateBasedRuleError::unhandled(generic)),
@@ -443,26 +456,25 @@ pub fn parse_create_rate_based_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => {
+            crate::error::CreateRateBasedRuleError::WafBadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFDisallowedNameException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafDisallowedNameException({
+            })
+        }
+        "WAFDisallowedNameException" => {
+            crate::error::CreateRateBasedRuleError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -470,34 +482,34 @@ pub fn parse_create_rate_based_rule_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateRateBasedRuleError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateRateBasedRuleError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -505,17 +517,17 @@ pub fn parse_create_rate_based_rule_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateRateBasedRuleError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -523,67 +535,66 @@ pub fn parse_create_rate_based_rule_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateRateBasedRuleError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafTagOperationException({
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationException" => {
+            crate::error::CreateRateBasedRuleError::WafTagOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_tag_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => crate::error::CreateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::CreateRateBasedRuleErrorKind::WafTagOperationInternalErrorException(
-                {
+            })
+        }
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::CreateRateBasedRuleError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateRateBasedRuleError::generic(generic),
     })
 }
@@ -604,6 +615,9 @@ pub fn parse_create_rate_based_rule_response(
             output,
         )
         .map_err(crate::error::CreateRateBasedRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -615,8 +629,11 @@ pub fn parse_create_regex_match_set_error(
     crate::output::CreateRegexMatchSetOutput,
     crate::error::CreateRegexMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateRegexMatchSetError::unhandled(generic)),
@@ -624,9 +641,8 @@ pub fn parse_create_regex_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexMatchSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateRegexMatchSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -634,34 +650,34 @@ pub fn parse_create_regex_match_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexMatchSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateRegexMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateRegexMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -669,31 +685,30 @@ pub fn parse_create_regex_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateRegexMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateRegexMatchSetError::generic(generic),
     })
 }
@@ -714,6 +729,9 @@ pub fn parse_create_regex_match_set_response(
             output,
         )
         .map_err(crate::error::CreateRegexMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -725,8 +743,11 @@ pub fn parse_create_regex_pattern_set_error(
     crate::output::CreateRegexPatternSetOutput,
     crate::error::CreateRegexPatternSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRegexPatternSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateRegexPatternSetError::unhandled(generic)),
@@ -734,9 +755,8 @@ pub fn parse_create_regex_pattern_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexPatternSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateRegexPatternSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -744,34 +764,34 @@ pub fn parse_create_regex_pattern_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexPatternSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateRegexPatternSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexPatternSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateRegexPatternSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -779,31 +799,32 @@ pub fn parse_create_regex_pattern_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::CreateRegexPatternSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::CreateRegexPatternSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateRegexPatternSetError::generic(generic),
     })
 }
@@ -824,6 +845,9 @@ pub fn parse_create_regex_pattern_set_response(
             output,
         )
         .map_err(crate::error::CreateRegexPatternSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -832,8 +856,11 @@ pub fn parse_create_regex_pattern_set_response(
 pub fn parse_create_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRuleOutput, crate::error::CreateRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateRuleError::unhandled(generic)),
@@ -841,26 +868,23 @@ pub fn parse_create_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => crate::error::CreateRuleError::WafBadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_bad_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFDisallowedNameException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafDisallowedNameException({
+                let mut output = crate::error::waf_bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFDisallowedNameException" => {
+            crate::error::CreateRuleError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -868,34 +892,32 @@ pub fn parse_create_rule_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => crate::error::CreateRuleError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafInvalidParameterException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidParameterException" => {
+            crate::error::CreateRuleError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -903,17 +925,17 @@ pub fn parse_create_rule_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateRuleError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -921,66 +943,63 @@ pub fn parse_create_rule_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateRuleError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::CreateRuleError {
-            meta: generic,
-            kind: crate::error::CreateRuleErrorKind::WafTagOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => {
-            crate::error::CreateRuleError {
-                meta: generic,
-                kind: crate::error::CreateRuleErrorKind::WafTagOperationInternalErrorException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
+            tmp
+        }),
+        "WAFTagOperationException" => crate::error::CreateRuleError::WafTagOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::CreateRuleError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         _ => crate::error::CreateRuleError::generic(generic),
     })
@@ -999,6 +1018,9 @@ pub fn parse_create_rule_response(
             output,
         )
         .map_err(crate::error::CreateRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1007,8 +1029,11 @@ pub fn parse_create_rule_response(
 pub fn parse_create_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateRuleGroupOutput, crate::error::CreateRuleGroupError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateRuleGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateRuleGroupError::unhandled(generic)),
@@ -1016,26 +1041,23 @@ pub fn parse_create_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => crate::error::CreateRuleGroupError::WafBadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_bad_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFDisallowedNameException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafDisallowedNameException({
+                let mut output = crate::error::waf_bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFDisallowedNameException" => {
+            crate::error::CreateRuleGroupError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1043,34 +1065,34 @@ pub fn parse_create_rule_group_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateRuleGroupError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateRuleGroupError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1078,51 +1100,49 @@ pub fn parse_create_rule_group_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateRuleGroupError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafTagOperationException({
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationException" => {
+            crate::error::CreateRuleGroupError::WafTagOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_tag_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => crate::error::CreateRuleGroupError {
-            meta: generic,
-            kind: crate::error::CreateRuleGroupErrorKind::WafTagOperationInternalErrorException({
+            })
+        }
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::CreateRuleGroupError::WafTagOperationInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1131,14 +1151,15 @@ pub fn parse_create_rule_group_error(
                         );
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateRuleGroupError::generic(generic),
     })
 }
@@ -1156,6 +1177,9 @@ pub fn parse_create_rule_group_response(
             output,
         )
         .map_err(crate::error::CreateRuleGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1167,8 +1191,11 @@ pub fn parse_create_size_constraint_set_error(
     crate::output::CreateSizeConstraintSetOutput,
     crate::error::CreateSizeConstraintSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1180,9 +1207,8 @@ pub fn parse_create_size_constraint_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::CreateSizeConstraintSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateSizeConstraintSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1190,34 +1216,34 @@ pub fn parse_create_size_constraint_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::CreateSizeConstraintSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateSizeConstraintSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::CreateSizeConstraintSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::CreateSizeConstraintSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1225,17 +1251,17 @@ pub fn parse_create_size_constraint_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::CreateSizeConstraintSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateSizeConstraintSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1243,17 +1269,17 @@ pub fn parse_create_size_constraint_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::CreateSizeConstraintSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateSizeConstraintSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1261,31 +1287,32 @@ pub fn parse_create_size_constraint_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::CreateSizeConstraintSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::CreateSizeConstraintSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateSizeConstraintSetError::generic(generic),
     })
 }
@@ -1306,6 +1333,9 @@ pub fn parse_create_size_constraint_set_response(
             output,
         )
         .map_err(crate::error::CreateSizeConstraintSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1317,8 +1347,11 @@ pub fn parse_create_sql_injection_match_set_error(
     crate::output::CreateSqlInjectionMatchSetOutput,
     crate::error::CreateSqlInjectionMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1330,9 +1363,8 @@ pub fn parse_create_sql_injection_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateSqlInjectionMatchSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateSqlInjectionMatchSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1340,34 +1372,34 @@ pub fn parse_create_sql_injection_match_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateSqlInjectionMatchSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateSqlInjectionMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateSqlInjectionMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::CreateSqlInjectionMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1375,37 +1407,35 @@ pub fn parse_create_sql_injection_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(
-                {
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateSqlInjectionMatchSetError::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateSqlInjectionMatchSetErrorKind::WafLimitsExceededException({
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateSqlInjectionMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1413,31 +1443,32 @@ pub fn parse_create_sql_injection_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateSqlInjectionMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::CreateSqlInjectionMatchSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateSqlInjectionMatchSetError::generic(generic),
     })
 }
@@ -1458,6 +1489,9 @@ pub fn parse_create_sql_injection_match_set_response(
             output,
         )
         .map_err(crate::error::CreateSqlInjectionMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1466,8 +1500,11 @@ pub fn parse_create_sql_injection_match_set_response(
 pub fn parse_create_web_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateWebAclOutput, crate::error::CreateWebACLError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateWebACLError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateWebACLError::unhandled(generic)),
@@ -1475,26 +1512,23 @@ pub fn parse_create_web_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => crate::error::CreateWebACLError::WafBadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_bad_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFDisallowedNameException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafDisallowedNameException({
+                let mut output = crate::error::waf_bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFDisallowedNameException" => {
+            crate::error::CreateWebACLError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1502,34 +1536,34 @@ pub fn parse_create_web_acl_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateWebACLError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::CreateWebACLError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1537,17 +1571,17 @@ pub fn parse_create_web_acl_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateWebACLError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1555,17 +1589,17 @@ pub fn parse_create_web_acl_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateWebACLError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1573,66 +1607,63 @@ pub fn parse_create_web_acl_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateWebACLError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::CreateWebACLError {
-            meta: generic,
-            kind: crate::error::CreateWebACLErrorKind::WafTagOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => {
-            crate::error::CreateWebACLError {
-                meta: generic,
-                kind: crate::error::CreateWebACLErrorKind::WafTagOperationInternalErrorException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
+            tmp
+        }),
+        "WAFTagOperationException" => crate::error::CreateWebACLError::WafTagOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::CreateWebACLError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         _ => crate::error::CreateWebACLError::generic(generic),
     })
@@ -1651,6 +1682,9 @@ pub fn parse_create_web_acl_response(
             output,
         )
         .map_err(crate::error::CreateWebACLError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1662,8 +1696,11 @@ pub fn parse_create_web_acl_migration_stack_error(
     crate::output::CreateWebAclMigrationStackOutput,
     crate::error::CreateWebACLMigrationStackError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1675,9 +1712,8 @@ pub fn parse_create_web_acl_migration_stack_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFEntityMigrationException" => crate::error::CreateWebACLMigrationStackError {
-            meta: generic,
-            kind: crate::error::CreateWebACLMigrationStackErrorKind::WafEntityMigrationException({
+        "WAFEntityMigrationException" => {
+            crate::error::CreateWebACLMigrationStackError::WafEntityMigrationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1685,74 +1721,70 @@ pub fn parse_create_web_acl_migration_stack_error(
                         crate::error::waf_entity_migration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_entity_migration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateWebACLMigrationStackError {
-            meta: generic,
-            kind: crate::error::CreateWebACLMigrationStackErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateWebACLMigrationStackError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::CreateWebACLMigrationStackError {
-            meta: generic,
-            kind: crate::error::CreateWebACLMigrationStackErrorKind::WafInvalidOperationException(
-                {
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::CreateWebACLMigrationStackError::WafInvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_operation_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateWebACLMigrationStackError {
-            meta: generic,
-            kind: crate::error::CreateWebACLMigrationStackErrorKind::WafInvalidParameterException(
-                {
+                    let mut output =
+                        crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateWebACLMigrationStackError::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFNonexistentItemException" => crate::error::CreateWebACLMigrationStackError {
-            meta: generic,
-            kind: crate::error::CreateWebACLMigrationStackErrorKind::WafNonexistentItemException({
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::CreateWebACLMigrationStackError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1760,14 +1792,15 @@ pub fn parse_create_web_acl_migration_stack_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateWebACLMigrationStackError::generic(generic),
     })
 }
@@ -1788,6 +1821,9 @@ pub fn parse_create_web_acl_migration_stack_response(
             output,
         )
         .map_err(crate::error::CreateWebACLMigrationStackError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1797,8 +1833,11 @@ pub fn parse_create_xss_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateXssMatchSetOutput, crate::error::CreateXssMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateXssMatchSetError::unhandled(generic)),
@@ -1806,9 +1845,8 @@ pub fn parse_create_xss_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::CreateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateXssMatchSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::CreateXssMatchSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1816,34 +1854,34 @@ pub fn parse_create_xss_match_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::CreateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateXssMatchSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::CreateXssMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::CreateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateXssMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::CreateXssMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1851,17 +1889,17 @@ pub fn parse_create_xss_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::CreateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateXssMatchSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::CreateXssMatchSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1869,17 +1907,17 @@ pub fn parse_create_xss_match_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::CreateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateXssMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::CreateXssMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1887,31 +1925,30 @@ pub fn parse_create_xss_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::CreateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::CreateXssMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::CreateXssMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateXssMatchSetError::generic(generic),
     })
 }
@@ -1930,6 +1967,9 @@ pub fn parse_create_xss_match_set_response(
             output,
         )
         .map_err(crate::error::CreateXssMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1941,8 +1981,11 @@ pub fn parse_delete_byte_match_set_error(
     crate::output::DeleteByteMatchSetOutput,
     crate::error::DeleteByteMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteByteMatchSetError::unhandled(generic)),
@@ -1950,26 +1993,25 @@ pub fn parse_delete_byte_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteByteMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteByteMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteByteMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteByteMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteByteMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteByteMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1977,17 +2019,17 @@ pub fn parse_delete_byte_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteByteMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteByteMatchSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteByteMatchSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1995,17 +2037,17 @@ pub fn parse_delete_byte_match_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteByteMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteByteMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteByteMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2013,17 +2055,17 @@ pub fn parse_delete_byte_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteByteMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteByteMatchSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteByteMatchSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2031,31 +2073,30 @@ pub fn parse_delete_byte_match_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteByteMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteByteMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteByteMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteByteMatchSetError::generic(generic),
     })
 }
@@ -2076,6 +2117,9 @@ pub fn parse_delete_byte_match_set_response(
             output,
         )
         .map_err(crate::error::DeleteByteMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2085,8 +2129,11 @@ pub fn parse_delete_geo_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGeoMatchSetOutput, crate::error::DeleteGeoMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteGeoMatchSetError::unhandled(generic)),
@@ -2094,26 +2141,25 @@ pub fn parse_delete_geo_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteGeoMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteGeoMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteGeoMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteGeoMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2121,17 +2167,17 @@ pub fn parse_delete_geo_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteGeoMatchSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteGeoMatchSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2139,17 +2185,17 @@ pub fn parse_delete_geo_match_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteGeoMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteGeoMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2157,17 +2203,17 @@ pub fn parse_delete_geo_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteGeoMatchSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteGeoMatchSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2175,31 +2221,30 @@ pub fn parse_delete_geo_match_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteGeoMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteGeoMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteGeoMatchSetError::generic(generic),
     })
 }
@@ -2218,6 +2263,9 @@ pub fn parse_delete_geo_match_set_response(
             output,
         )
         .map_err(crate::error::DeleteGeoMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2226,8 +2274,11 @@ pub fn parse_delete_geo_match_set_response(
 pub fn parse_delete_ip_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteIpSetOutput, crate::error::DeleteIPSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteIPSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteIPSetError::unhandled(generic)),
@@ -2235,26 +2286,23 @@ pub fn parse_delete_ip_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteIPSetError {
-            meta: generic,
-            kind: crate::error::DeleteIPSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::DeleteIPSetError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteIPSetError {
-            meta: generic,
-            kind: crate::error::DeleteIPSetErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteIPSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2262,17 +2310,17 @@ pub fn parse_delete_ip_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteIPSetError {
-            meta: generic,
-            kind: crate::error::DeleteIPSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteIPSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2280,17 +2328,17 @@ pub fn parse_delete_ip_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteIPSetError {
-            meta: generic,
-            kind: crate::error::DeleteIPSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteIPSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2298,17 +2346,17 @@ pub fn parse_delete_ip_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteIPSetError {
-            meta: generic,
-            kind: crate::error::DeleteIPSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteIPSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2316,31 +2364,30 @@ pub fn parse_delete_ip_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteIPSetError {
-            meta: generic,
-            kind: crate::error::DeleteIPSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteIPSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteIPSetError::generic(generic),
     })
 }
@@ -2358,6 +2405,9 @@ pub fn parse_delete_ip_set_response(
             output,
         )
         .map_err(crate::error::DeleteIPSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2369,8 +2419,11 @@ pub fn parse_delete_logging_configuration_error(
     crate::output::DeleteLoggingConfigurationOutput,
     crate::error::DeleteLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2382,26 +2435,25 @@ pub fn parse_delete_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::DeleteLoggingConfigurationErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteLoggingConfigurationError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::DeleteLoggingConfigurationErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteLoggingConfigurationError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2409,31 +2461,32 @@ pub fn parse_delete_logging_configuration_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::DeleteLoggingConfigurationErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::DeleteLoggingConfigurationError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteLoggingConfigurationError::generic(generic),
     })
 }
@@ -2449,6 +2502,9 @@ pub fn parse_delete_logging_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_logging_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2460,8 +2516,11 @@ pub fn parse_delete_permission_policy_error(
     crate::output::DeletePermissionPolicyOutput,
     crate::error::DeletePermissionPolicyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePermissionPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2473,26 +2532,25 @@ pub fn parse_delete_permission_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeletePermissionPolicyError {
-            meta: generic,
-            kind: crate::error::DeletePermissionPolicyErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeletePermissionPolicyError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeletePermissionPolicyError {
-            meta: generic,
-            kind: crate::error::DeletePermissionPolicyErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeletePermissionPolicyError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2500,31 +2558,32 @@ pub fn parse_delete_permission_policy_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeletePermissionPolicyError {
-            meta: generic,
-            kind: crate::error::DeletePermissionPolicyErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::DeletePermissionPolicyError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeletePermissionPolicyError::generic(generic),
     })
 }
@@ -2540,6 +2599,9 @@ pub fn parse_delete_permission_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_permission_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2551,8 +2613,11 @@ pub fn parse_delete_rate_based_rule_error(
     crate::output::DeleteRateBasedRuleOutput,
     crate::error::DeleteRateBasedRuleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRateBasedRuleError::unhandled(generic)),
@@ -2560,26 +2625,25 @@ pub fn parse_delete_rate_based_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteRateBasedRuleError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteRateBasedRuleError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2587,17 +2651,17 @@ pub fn parse_delete_rate_based_rule_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteRateBasedRuleError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2605,17 +2669,17 @@ pub fn parse_delete_rate_based_rule_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteRateBasedRuleError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2623,17 +2687,17 @@ pub fn parse_delete_rate_based_rule_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteRateBasedRuleError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2641,67 +2705,66 @@ pub fn parse_delete_rate_based_rule_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteRateBasedRuleError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafTagOperationException({
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationException" => {
+            crate::error::DeleteRateBasedRuleError::WafTagOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_tag_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => crate::error::DeleteRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRateBasedRuleErrorKind::WafTagOperationInternalErrorException(
-                {
+            })
+        }
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::DeleteRateBasedRuleError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteRateBasedRuleError::generic(generic),
     })
 }
@@ -2722,6 +2785,9 @@ pub fn parse_delete_rate_based_rule_response(
             output,
         )
         .map_err(crate::error::DeleteRateBasedRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2733,8 +2799,11 @@ pub fn parse_delete_regex_match_set_error(
     crate::output::DeleteRegexMatchSetOutput,
     crate::error::DeleteRegexMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRegexMatchSetError::unhandled(generic)),
@@ -2742,26 +2811,25 @@ pub fn parse_delete_regex_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteRegexMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteRegexMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2769,17 +2837,17 @@ pub fn parse_delete_regex_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexMatchSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteRegexMatchSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2787,17 +2855,17 @@ pub fn parse_delete_regex_match_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteRegexMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2805,17 +2873,17 @@ pub fn parse_delete_regex_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexMatchSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteRegexMatchSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2823,31 +2891,30 @@ pub fn parse_delete_regex_match_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteRegexMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteRegexMatchSetError::generic(generic),
     })
 }
@@ -2868,6 +2935,9 @@ pub fn parse_delete_regex_match_set_response(
             output,
         )
         .map_err(crate::error::DeleteRegexMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2879,8 +2949,11 @@ pub fn parse_delete_regex_pattern_set_error(
     crate::output::DeleteRegexPatternSetOutput,
     crate::error::DeleteRegexPatternSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRegexPatternSetError::unhandled(generic)),
@@ -2888,26 +2961,25 @@ pub fn parse_delete_regex_pattern_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexPatternSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteRegexPatternSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexPatternSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteRegexPatternSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2915,17 +2987,17 @@ pub fn parse_delete_regex_pattern_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexPatternSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteRegexPatternSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2933,17 +3005,17 @@ pub fn parse_delete_regex_pattern_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexPatternSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteRegexPatternSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2951,17 +3023,17 @@ pub fn parse_delete_regex_pattern_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexPatternSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteRegexPatternSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2969,31 +3041,32 @@ pub fn parse_delete_regex_pattern_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::DeleteRegexPatternSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::DeleteRegexPatternSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteRegexPatternSetError::generic(generic),
     })
 }
@@ -3014,6 +3087,9 @@ pub fn parse_delete_regex_pattern_set_response(
             output,
         )
         .map_err(crate::error::DeleteRegexPatternSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3022,8 +3098,11 @@ pub fn parse_delete_regex_pattern_set_response(
 pub fn parse_delete_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRuleError::unhandled(generic)),
@@ -3031,26 +3110,23 @@ pub fn parse_delete_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::DeleteRuleError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteRuleError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3058,17 +3134,17 @@ pub fn parse_delete_rule_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteRuleError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3076,17 +3152,17 @@ pub fn parse_delete_rule_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteRuleError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3094,17 +3170,17 @@ pub fn parse_delete_rule_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteRuleError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3112,66 +3188,63 @@ pub fn parse_delete_rule_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteRuleError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::DeleteRuleError {
-            meta: generic,
-            kind: crate::error::DeleteRuleErrorKind::WafTagOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => {
-            crate::error::DeleteRuleError {
-                meta: generic,
-                kind: crate::error::DeleteRuleErrorKind::WafTagOperationInternalErrorException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
+            tmp
+        }),
+        "WAFTagOperationException" => crate::error::DeleteRuleError::WafTagOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::DeleteRuleError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         _ => crate::error::DeleteRuleError::generic(generic),
     })
@@ -3190,6 +3263,9 @@ pub fn parse_delete_rule_response(
             output,
         )
         .map_err(crate::error::DeleteRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3198,8 +3274,11 @@ pub fn parse_delete_rule_response(
 pub fn parse_delete_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteRuleGroupOutput, crate::error::DeleteRuleGroupError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteRuleGroupError::unhandled(generic)),
@@ -3207,26 +3286,25 @@ pub fn parse_delete_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteRuleGroupError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::DeleteRuleGroupError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3234,17 +3312,17 @@ pub fn parse_delete_rule_group_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteRuleGroupError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3252,17 +3330,17 @@ pub fn parse_delete_rule_group_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteRuleGroupError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3270,17 +3348,17 @@ pub fn parse_delete_rule_group_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteRuleGroupError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3288,51 +3366,49 @@ pub fn parse_delete_rule_group_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteRuleGroupError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafTagOperationException({
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationException" => {
+            crate::error::DeleteRuleGroupError::WafTagOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_tag_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => crate::error::DeleteRuleGroupError {
-            meta: generic,
-            kind: crate::error::DeleteRuleGroupErrorKind::WafTagOperationInternalErrorException({
+            })
+        }
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::DeleteRuleGroupError::WafTagOperationInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3341,14 +3417,15 @@ pub fn parse_delete_rule_group_error(
                         );
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteRuleGroupError::generic(generic),
     })
 }
@@ -3366,6 +3443,9 @@ pub fn parse_delete_rule_group_response(
             output,
         )
         .map_err(crate::error::DeleteRuleGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3377,8 +3457,11 @@ pub fn parse_delete_size_constraint_set_error(
     crate::output::DeleteSizeConstraintSetOutput,
     crate::error::DeleteSizeConstraintSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3390,26 +3473,25 @@ pub fn parse_delete_size_constraint_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::DeleteSizeConstraintSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteSizeConstraintSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::DeleteSizeConstraintSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteSizeConstraintSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3417,17 +3499,17 @@ pub fn parse_delete_size_constraint_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::DeleteSizeConstraintSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteSizeConstraintSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3435,17 +3517,17 @@ pub fn parse_delete_size_constraint_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::DeleteSizeConstraintSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteSizeConstraintSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3453,17 +3535,17 @@ pub fn parse_delete_size_constraint_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::DeleteSizeConstraintSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteSizeConstraintSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3471,31 +3553,32 @@ pub fn parse_delete_size_constraint_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::DeleteSizeConstraintSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::DeleteSizeConstraintSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteSizeConstraintSetError::generic(generic),
     })
 }
@@ -3516,6 +3599,9 @@ pub fn parse_delete_size_constraint_set_response(
             output,
         )
         .map_err(crate::error::DeleteSizeConstraintSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3527,8 +3613,11 @@ pub fn parse_delete_sql_injection_match_set_error(
     crate::output::DeleteSqlInjectionMatchSetOutput,
     crate::error::DeleteSqlInjectionMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3540,26 +3629,25 @@ pub fn parse_delete_sql_injection_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteSqlInjectionMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteSqlInjectionMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteSqlInjectionMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteSqlInjectionMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3567,17 +3655,17 @@ pub fn parse_delete_sql_injection_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteSqlInjectionMatchSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteSqlInjectionMatchSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3585,17 +3673,17 @@ pub fn parse_delete_sql_injection_match_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteSqlInjectionMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteSqlInjectionMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3603,17 +3691,17 @@ pub fn parse_delete_sql_injection_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteSqlInjectionMatchSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteSqlInjectionMatchSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3621,31 +3709,32 @@ pub fn parse_delete_sql_injection_match_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteSqlInjectionMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::DeleteSqlInjectionMatchSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteSqlInjectionMatchSetError::generic(generic),
     })
 }
@@ -3666,6 +3755,9 @@ pub fn parse_delete_sql_injection_match_set_response(
             output,
         )
         .map_err(crate::error::DeleteSqlInjectionMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3674,8 +3766,11 @@ pub fn parse_delete_sql_injection_match_set_response(
 pub fn parse_delete_web_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteWebAclOutput, crate::error::DeleteWebACLError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteWebACLError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteWebACLError::unhandled(generic)),
@@ -3683,26 +3778,25 @@ pub fn parse_delete_web_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteWebACLError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteWebACLError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3710,17 +3804,17 @@ pub fn parse_delete_web_acl_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteWebACLError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3728,17 +3822,17 @@ pub fn parse_delete_web_acl_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteWebACLError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3746,17 +3840,17 @@ pub fn parse_delete_web_acl_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteWebACLError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3764,66 +3858,63 @@ pub fn parse_delete_web_acl_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteWebACLError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::DeleteWebACLError {
-            meta: generic,
-            kind: crate::error::DeleteWebACLErrorKind::WafTagOperationException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => {
-            crate::error::DeleteWebACLError {
-                meta: generic,
-                kind: crate::error::DeleteWebACLErrorKind::WafTagOperationInternalErrorException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
+            tmp
+        }),
+        "WAFTagOperationException" => crate::error::DeleteWebACLError::WafTagOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::DeleteWebACLError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteWebACLError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         _ => crate::error::DeleteWebACLError::generic(generic),
     })
@@ -3842,6 +3933,9 @@ pub fn parse_delete_web_acl_response(
             output,
         )
         .map_err(crate::error::DeleteWebACLError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3851,8 +3945,11 @@ pub fn parse_delete_xss_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteXssMatchSetOutput, crate::error::DeleteXssMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteXssMatchSetError::unhandled(generic)),
@@ -3860,26 +3957,25 @@ pub fn parse_delete_xss_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::DeleteXssMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteXssMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::DeleteXssMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::DeleteXssMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteXssMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::DeleteXssMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3887,17 +3983,17 @@ pub fn parse_delete_xss_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonEmptyEntityException" => crate::error::DeleteXssMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteXssMatchSetErrorKind::WafNonEmptyEntityException({
+            })
+        }
+        "WAFNonEmptyEntityException" => {
+            crate::error::DeleteXssMatchSetError::WafNonEmptyEntityException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3905,17 +4001,17 @@ pub fn parse_delete_xss_match_set_error(
                         crate::error::waf_non_empty_entity_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_non_empty_entity_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::DeleteXssMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteXssMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::DeleteXssMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3923,17 +4019,17 @@ pub fn parse_delete_xss_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::DeleteXssMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteXssMatchSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::DeleteXssMatchSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3941,31 +4037,30 @@ pub fn parse_delete_xss_match_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::DeleteXssMatchSetError {
-            meta: generic,
-            kind: crate::error::DeleteXssMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::DeleteXssMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteXssMatchSetError::generic(generic),
     })
 }
@@ -3984,6 +4079,9 @@ pub fn parse_delete_xss_match_set_response(
             output,
         )
         .map_err(crate::error::DeleteXssMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3992,8 +4090,11 @@ pub fn parse_delete_xss_match_set_response(
 pub fn parse_get_byte_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetByteMatchSetOutput, crate::error::GetByteMatchSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetByteMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetByteMatchSetError::unhandled(generic)),
@@ -4001,26 +4102,25 @@ pub fn parse_get_byte_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetByteMatchSetError {
-            meta: generic,
-            kind: crate::error::GetByteMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetByteMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetByteMatchSetError {
-            meta: generic,
-            kind: crate::error::GetByteMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetByteMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4028,17 +4128,17 @@ pub fn parse_get_byte_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetByteMatchSetError {
-            meta: generic,
-            kind: crate::error::GetByteMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetByteMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4046,14 +4146,15 @@ pub fn parse_get_byte_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetByteMatchSetError::generic(generic),
     })
 }
@@ -4071,6 +4172,9 @@ pub fn parse_get_byte_match_set_response(
             output,
         )
         .map_err(crate::error::GetByteMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4079,8 +4183,11 @@ pub fn parse_get_byte_match_set_response(
 pub fn parse_get_change_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetChangeTokenOutput, crate::error::GetChangeTokenError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetChangeTokenError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetChangeTokenError::unhandled(generic)),
@@ -4088,23 +4195,23 @@ pub fn parse_get_change_token_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetChangeTokenError {
-            meta: generic,
-            kind: crate::error::GetChangeTokenErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetChangeTokenError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChangeTokenError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetChangeTokenError::generic(generic),
     })
 }
@@ -4122,6 +4229,9 @@ pub fn parse_get_change_token_response(
             output,
         )
         .map_err(crate::error::GetChangeTokenError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4133,8 +4243,11 @@ pub fn parse_get_change_token_status_error(
     crate::output::GetChangeTokenStatusOutput,
     crate::error::GetChangeTokenStatusError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetChangeTokenStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetChangeTokenStatusError::unhandled(generic)),
@@ -4142,26 +4255,25 @@ pub fn parse_get_change_token_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetChangeTokenStatusError {
-            meta: generic,
-            kind: crate::error::GetChangeTokenStatusErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetChangeTokenStatusError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChangeTokenStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetChangeTokenStatusError {
-            meta: generic,
-            kind: crate::error::GetChangeTokenStatusErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetChangeTokenStatusError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4169,14 +4281,15 @@ pub fn parse_get_change_token_status_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetChangeTokenStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetChangeTokenStatusError::generic(generic),
     })
 }
@@ -4197,6 +4310,9 @@ pub fn parse_get_change_token_status_response(
             output,
         )
         .map_err(crate::error::GetChangeTokenStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4205,8 +4321,11 @@ pub fn parse_get_change_token_status_response(
 pub fn parse_get_geo_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGeoMatchSetOutput, crate::error::GetGeoMatchSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetGeoMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetGeoMatchSetError::unhandled(generic)),
@@ -4214,26 +4333,25 @@ pub fn parse_get_geo_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::GetGeoMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetGeoMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::GetGeoMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetGeoMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4241,17 +4359,17 @@ pub fn parse_get_geo_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::GetGeoMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetGeoMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4259,14 +4377,15 @@ pub fn parse_get_geo_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetGeoMatchSetError::generic(generic),
     })
 }
@@ -4284,6 +4403,9 @@ pub fn parse_get_geo_match_set_response(
             output,
         )
         .map_err(crate::error::GetGeoMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4292,8 +4414,11 @@ pub fn parse_get_geo_match_set_response(
 pub fn parse_get_ip_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetIpSetOutput, crate::error::GetIPSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIPSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetIPSetError::unhandled(generic)),
@@ -4301,44 +4426,38 @@ pub fn parse_get_ip_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetIPSetError {
-            meta: generic,
-            kind: crate::error::GetIPSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::GetIPSetError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetIPSetError {
-            meta: generic,
-            kind: crate::error::GetIPSetErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => crate::error::GetIPSetError::WafInvalidAccountException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_invalid_account_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetIPSetError {
-            meta: generic,
-            kind: crate::error::GetIPSetErrorKind::WafNonexistentItemException({
+                let mut output = crate::error::waf_invalid_account_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFNonexistentItemException" => {
+            crate::error::GetIPSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4346,14 +4465,15 @@ pub fn parse_get_ip_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetIPSetError::generic(generic),
     })
 }
@@ -4371,6 +4491,9 @@ pub fn parse_get_ip_set_response(
             output,
         )
         .map_err(crate::error::GetIPSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4382,8 +4505,11 @@ pub fn parse_get_logging_configuration_error(
     crate::output::GetLoggingConfigurationOutput,
     crate::error::GetLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4395,26 +4521,25 @@ pub fn parse_get_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::GetLoggingConfigurationErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetLoggingConfigurationError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::GetLoggingConfigurationErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetLoggingConfigurationError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4422,14 +4547,15 @@ pub fn parse_get_logging_configuration_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetLoggingConfigurationError::generic(generic),
     })
 }
@@ -4450,6 +4576,9 @@ pub fn parse_get_logging_configuration_response(
             output,
         )
         .map_err(crate::error::GetLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4461,8 +4590,11 @@ pub fn parse_get_permission_policy_error(
     crate::output::GetPermissionPolicyOutput,
     crate::error::GetPermissionPolicyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPermissionPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPermissionPolicyError::unhandled(generic)),
@@ -4470,26 +4602,25 @@ pub fn parse_get_permission_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetPermissionPolicyError {
-            meta: generic,
-            kind: crate::error::GetPermissionPolicyErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetPermissionPolicyError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetPermissionPolicyError {
-            meta: generic,
-            kind: crate::error::GetPermissionPolicyErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetPermissionPolicyError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4497,14 +4628,15 @@ pub fn parse_get_permission_policy_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetPermissionPolicyError::generic(generic),
     })
 }
@@ -4525,6 +4657,9 @@ pub fn parse_get_permission_policy_response(
             output,
         )
         .map_err(crate::error::GetPermissionPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4534,8 +4669,11 @@ pub fn parse_get_rate_based_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRateBasedRuleOutput, crate::error::GetRateBasedRuleError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRateBasedRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRateBasedRuleError::unhandled(generic)),
@@ -4543,26 +4681,25 @@ pub fn parse_get_rate_based_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetRateBasedRuleError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetRateBasedRuleError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4570,17 +4707,17 @@ pub fn parse_get_rate_based_rule_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetRateBasedRuleError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4588,14 +4725,15 @@ pub fn parse_get_rate_based_rule_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetRateBasedRuleError::generic(generic),
     })
 }
@@ -4614,6 +4752,9 @@ pub fn parse_get_rate_based_rule_response(
             output,
         )
         .map_err(crate::error::GetRateBasedRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4625,8 +4766,11 @@ pub fn parse_get_rate_based_rule_managed_keys_error(
     crate::output::GetRateBasedRuleManagedKeysOutput,
     crate::error::GetRateBasedRuleManagedKeysError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4638,26 +4782,25 @@ pub fn parse_get_rate_based_rule_managed_keys_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetRateBasedRuleManagedKeysError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetRateBasedRuleManagedKeysError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetRateBasedRuleManagedKeysError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetRateBasedRuleManagedKeysError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4665,54 +4808,51 @@ pub fn parse_get_rate_based_rule_managed_keys_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::GetRateBasedRuleManagedKeysError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleManagedKeysErrorKind::WafInvalidParameterException(
-                {
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::GetRateBasedRuleManagedKeysError::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFNonexistentItemException" => crate::error::GetRateBasedRuleManagedKeysError {
-            meta: generic,
-            kind: crate::error::GetRateBasedRuleManagedKeysErrorKind::WafNonexistentItemException(
-                {
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetRateBasedRuleManagedKeysError::WafNonexistentItemException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_nonexistent_item_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::waf_nonexistent_item_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetRateBasedRuleManagedKeysError::generic(generic),
     })
 }
@@ -4734,6 +4874,9 @@ pub fn parse_get_rate_based_rule_managed_keys_response(
                 output,
             )
             .map_err(crate::error::GetRateBasedRuleManagedKeysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4743,8 +4886,11 @@ pub fn parse_get_regex_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRegexMatchSetOutput, crate::error::GetRegexMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRegexMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRegexMatchSetError::unhandled(generic)),
@@ -4752,26 +4898,25 @@ pub fn parse_get_regex_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::GetRegexMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetRegexMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::GetRegexMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetRegexMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4779,17 +4924,17 @@ pub fn parse_get_regex_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::GetRegexMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetRegexMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4797,14 +4942,15 @@ pub fn parse_get_regex_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetRegexMatchSetError::generic(generic),
     })
 }
@@ -4823,6 +4969,9 @@ pub fn parse_get_regex_match_set_response(
             output,
         )
         .map_err(crate::error::GetRegexMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4834,8 +4983,11 @@ pub fn parse_get_regex_pattern_set_error(
     crate::output::GetRegexPatternSetOutput,
     crate::error::GetRegexPatternSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRegexPatternSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRegexPatternSetError::unhandled(generic)),
@@ -4843,26 +4995,25 @@ pub fn parse_get_regex_pattern_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::GetRegexPatternSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetRegexPatternSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::GetRegexPatternSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetRegexPatternSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4870,17 +5021,17 @@ pub fn parse_get_regex_pattern_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::GetRegexPatternSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetRegexPatternSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4888,14 +5039,15 @@ pub fn parse_get_regex_pattern_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetRegexPatternSetError::generic(generic),
     })
 }
@@ -4916,6 +5068,9 @@ pub fn parse_get_regex_pattern_set_response(
             output,
         )
         .map_err(crate::error::GetRegexPatternSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4924,8 +5079,11 @@ pub fn parse_get_regex_pattern_set_response(
 pub fn parse_get_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRuleOutput, crate::error::GetRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRuleError::unhandled(generic)),
@@ -4933,59 +5091,51 @@ pub fn parse_get_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetRuleError {
-            meta: generic,
-            kind: crate::error::GetRuleErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::GetRuleError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetRuleError {
-            meta: generic,
-            kind: crate::error::GetRuleErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => crate::error::GetRuleError::WafInvalidAccountException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_invalid_account_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetRuleError {
-            meta: generic,
-            kind: crate::error::GetRuleErrorKind::WafNonexistentItemException({
+                let mut output = crate::error::waf_invalid_account_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFNonexistentItemException" => crate::error::GetRuleError::WafNonexistentItemException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_nonexistent_item_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_nonexistent_item_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetRuleError::generic(generic),
     })
 }
@@ -5003,6 +5153,9 @@ pub fn parse_get_rule_response(
             output,
         )
         .map_err(crate::error::GetRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5011,8 +5164,11 @@ pub fn parse_get_rule_response(
 pub fn parse_get_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetRuleGroupOutput, crate::error::GetRuleGroupError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetRuleGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetRuleGroupError::unhandled(generic)),
@@ -5020,26 +5176,25 @@ pub fn parse_get_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetRuleGroupError {
-            meta: generic,
-            kind: crate::error::GetRuleGroupErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetRuleGroupError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetRuleGroupError {
-            meta: generic,
-            kind: crate::error::GetRuleGroupErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetRuleGroupError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5047,14 +5202,15 @@ pub fn parse_get_rule_group_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetRuleGroupError::generic(generic),
     })
 }
@@ -5072,6 +5228,9 @@ pub fn parse_get_rule_group_response(
             output,
         )
         .map_err(crate::error::GetRuleGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5083,8 +5242,11 @@ pub fn parse_get_sampled_requests_error(
     crate::output::GetSampledRequestsOutput,
     crate::error::GetSampledRequestsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSampledRequestsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSampledRequestsError::unhandled(generic)),
@@ -5092,26 +5254,25 @@ pub fn parse_get_sampled_requests_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetSampledRequestsError {
-            meta: generic,
-            kind: crate::error::GetSampledRequestsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetSampledRequestsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSampledRequestsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetSampledRequestsError {
-            meta: generic,
-            kind: crate::error::GetSampledRequestsErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetSampledRequestsError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5119,14 +5280,15 @@ pub fn parse_get_sampled_requests_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSampledRequestsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSampledRequestsError::generic(generic),
     })
 }
@@ -5147,6 +5309,9 @@ pub fn parse_get_sampled_requests_response(
             output,
         )
         .map_err(crate::error::GetSampledRequestsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5158,8 +5323,11 @@ pub fn parse_get_size_constraint_set_error(
     crate::output::GetSizeConstraintSetOutput,
     crate::error::GetSizeConstraintSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSizeConstraintSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSizeConstraintSetError::unhandled(generic)),
@@ -5167,26 +5335,25 @@ pub fn parse_get_size_constraint_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::GetSizeConstraintSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetSizeConstraintSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::GetSizeConstraintSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetSizeConstraintSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5194,17 +5361,17 @@ pub fn parse_get_size_constraint_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::GetSizeConstraintSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetSizeConstraintSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5212,14 +5379,15 @@ pub fn parse_get_size_constraint_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSizeConstraintSetError::generic(generic),
     })
 }
@@ -5240,6 +5408,9 @@ pub fn parse_get_size_constraint_set_response(
             output,
         )
         .map_err(crate::error::GetSizeConstraintSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5251,8 +5422,11 @@ pub fn parse_get_sql_injection_match_set_error(
     crate::output::GetSqlInjectionMatchSetOutput,
     crate::error::GetSqlInjectionMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSqlInjectionMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5264,26 +5438,25 @@ pub fn parse_get_sql_injection_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::GetSqlInjectionMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetSqlInjectionMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::GetSqlInjectionMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetSqlInjectionMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5291,17 +5464,17 @@ pub fn parse_get_sql_injection_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::GetSqlInjectionMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetSqlInjectionMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5309,14 +5482,15 @@ pub fn parse_get_sql_injection_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSqlInjectionMatchSetError::generic(generic),
     })
 }
@@ -5337,6 +5511,9 @@ pub fn parse_get_sql_injection_match_set_response(
             output,
         )
         .map_err(crate::error::GetSqlInjectionMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5345,8 +5522,11 @@ pub fn parse_get_sql_injection_match_set_response(
 pub fn parse_get_web_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetWebAclOutput, crate::error::GetWebACLError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetWebACLError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetWebACLError::unhandled(generic)),
@@ -5354,44 +5534,38 @@ pub fn parse_get_web_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetWebACLError {
-            meta: generic,
-            kind: crate::error::GetWebACLErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::GetWebACLError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetWebACLError {
-            meta: generic,
-            kind: crate::error::GetWebACLErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => crate::error::GetWebACLError::WafInvalidAccountException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_invalid_account_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetWebACLError {
-            meta: generic,
-            kind: crate::error::GetWebACLErrorKind::WafNonexistentItemException({
+                let mut output = crate::error::waf_invalid_account_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFNonexistentItemException" => {
+            crate::error::GetWebACLError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5399,14 +5573,15 @@ pub fn parse_get_web_acl_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetWebACLError::generic(generic),
     })
 }
@@ -5424,6 +5599,9 @@ pub fn parse_get_web_acl_response(
             output,
         )
         .map_err(crate::error::GetWebACLError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5432,8 +5610,11 @@ pub fn parse_get_web_acl_response(
 pub fn parse_get_xss_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetXssMatchSetOutput, crate::error::GetXssMatchSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetXssMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetXssMatchSetError::unhandled(generic)),
@@ -5441,26 +5622,25 @@ pub fn parse_get_xss_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::GetXssMatchSetError {
-            meta: generic,
-            kind: crate::error::GetXssMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::GetXssMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::GetXssMatchSetError {
-            meta: generic,
-            kind: crate::error::GetXssMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::GetXssMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5468,17 +5648,17 @@ pub fn parse_get_xss_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::GetXssMatchSetError {
-            meta: generic,
-            kind: crate::error::GetXssMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::GetXssMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5486,14 +5666,15 @@ pub fn parse_get_xss_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetXssMatchSetError::generic(generic),
     })
 }
@@ -5511,6 +5692,9 @@ pub fn parse_get_xss_match_set_response(
             output,
         )
         .map_err(crate::error::GetXssMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5522,8 +5706,11 @@ pub fn parse_list_activated_rules_in_rule_group_error(
     crate::output::ListActivatedRulesInRuleGroupOutput,
     crate::error::ListActivatedRulesInRuleGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5535,67 +5722,59 @@ pub fn parse_list_activated_rules_in_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListActivatedRulesInRuleGroupError {
-            meta: generic,
-            kind: crate::error::ListActivatedRulesInRuleGroupErrorKind::WafInternalErrorException(
-                {
+        "WAFInternalErrorException" => {
+            crate::error::ListActivatedRulesInRuleGroupError::WafInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFInvalidParameterException" => crate::error::ListActivatedRulesInRuleGroupError {
-            meta: generic,
-            kind:
-                crate::error::ListActivatedRulesInRuleGroupErrorKind::WafInvalidParameterException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::waf_invalid_parameter_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "WAFNonexistentItemException" => crate::error::ListActivatedRulesInRuleGroupError {
-            meta: generic,
-            kind: crate::error::ListActivatedRulesInRuleGroupErrorKind::WafNonexistentItemException(
-                {
+                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::ListActivatedRulesInRuleGroupError::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_nonexistent_item_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::ListActivatedRulesInRuleGroupError::WafNonexistentItemException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_nonexistent_item_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListActivatedRulesInRuleGroupError::generic(generic),
     })
 }
@@ -5618,6 +5797,9 @@ pub fn parse_list_activated_rules_in_rule_group_response(
                 output,
             )
             .map_err(crate::error::ListActivatedRulesInRuleGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5627,8 +5809,11 @@ pub fn parse_list_byte_match_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListByteMatchSetsOutput, crate::error::ListByteMatchSetsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListByteMatchSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListByteMatchSetsError::unhandled(generic)),
@@ -5636,26 +5821,25 @@ pub fn parse_list_byte_match_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListByteMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListByteMatchSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListByteMatchSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByteMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListByteMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListByteMatchSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListByteMatchSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5663,14 +5847,15 @@ pub fn parse_list_byte_match_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByteMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListByteMatchSetsError::generic(generic),
     })
 }
@@ -5689,6 +5874,9 @@ pub fn parse_list_byte_match_sets_response(
             output,
         )
         .map_err(crate::error::ListByteMatchSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5698,8 +5886,11 @@ pub fn parse_list_geo_match_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGeoMatchSetsOutput, crate::error::ListGeoMatchSetsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListGeoMatchSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListGeoMatchSetsError::unhandled(generic)),
@@ -5707,26 +5898,25 @@ pub fn parse_list_geo_match_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListGeoMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListGeoMatchSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListGeoMatchSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGeoMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListGeoMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListGeoMatchSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListGeoMatchSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5734,14 +5924,15 @@ pub fn parse_list_geo_match_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGeoMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListGeoMatchSetsError::generic(generic),
     })
 }
@@ -5760,6 +5951,9 @@ pub fn parse_list_geo_match_sets_response(
             output,
         )
         .map_err(crate::error::ListGeoMatchSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5768,8 +5962,11 @@ pub fn parse_list_geo_match_sets_response(
 pub fn parse_list_ip_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListIpSetsOutput, crate::error::ListIPSetsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListIPSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListIPSetsError::unhandled(generic)),
@@ -5777,26 +5974,23 @@ pub fn parse_list_ip_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListIPSetsError {
-            meta: generic,
-            kind: crate::error::ListIPSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::ListIPSetsError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIPSetsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListIPSetsError {
-            meta: generic,
-            kind: crate::error::ListIPSetsErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIPSetsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::ListIPSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5804,14 +5998,15 @@ pub fn parse_list_ip_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListIPSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListIPSetsError::generic(generic),
     })
 }
@@ -5829,6 +6024,9 @@ pub fn parse_list_ip_sets_response(
             output,
         )
         .map_err(crate::error::ListIPSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5840,8 +6038,11 @@ pub fn parse_list_logging_configurations_error(
     crate::output::ListLoggingConfigurationsOutput,
     crate::error::ListLoggingConfigurationsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListLoggingConfigurationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5853,26 +6054,25 @@ pub fn parse_list_logging_configurations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListLoggingConfigurationsError {
-            meta: generic,
-            kind: crate::error::ListLoggingConfigurationsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListLoggingConfigurationsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLoggingConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::ListLoggingConfigurationsError {
-            meta: generic,
-            kind: crate::error::ListLoggingConfigurationsErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::ListLoggingConfigurationsError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5880,17 +6080,17 @@ pub fn parse_list_logging_configurations_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLoggingConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::ListLoggingConfigurationsError {
-            meta: generic,
-            kind: crate::error::ListLoggingConfigurationsErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::ListLoggingConfigurationsError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5898,14 +6098,15 @@ pub fn parse_list_logging_configurations_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLoggingConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListLoggingConfigurationsError::generic(generic),
     })
 }
@@ -5926,6 +6127,9 @@ pub fn parse_list_logging_configurations_response(
             output,
         )
         .map_err(crate::error::ListLoggingConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5937,8 +6141,11 @@ pub fn parse_list_rate_based_rules_error(
     crate::output::ListRateBasedRulesOutput,
     crate::error::ListRateBasedRulesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRateBasedRulesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRateBasedRulesError::unhandled(generic)),
@@ -5946,26 +6153,25 @@ pub fn parse_list_rate_based_rules_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListRateBasedRulesError {
-            meta: generic,
-            kind: crate::error::ListRateBasedRulesErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListRateBasedRulesError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRateBasedRulesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListRateBasedRulesError {
-            meta: generic,
-            kind: crate::error::ListRateBasedRulesErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListRateBasedRulesError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5973,14 +6179,15 @@ pub fn parse_list_rate_based_rules_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRateBasedRulesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListRateBasedRulesError::generic(generic),
     })
 }
@@ -6001,6 +6208,9 @@ pub fn parse_list_rate_based_rules_response(
             output,
         )
         .map_err(crate::error::ListRateBasedRulesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6012,8 +6222,11 @@ pub fn parse_list_regex_match_sets_error(
     crate::output::ListRegexMatchSetsOutput,
     crate::error::ListRegexMatchSetsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRegexMatchSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRegexMatchSetsError::unhandled(generic)),
@@ -6021,26 +6234,25 @@ pub fn parse_list_regex_match_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListRegexMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListRegexMatchSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListRegexMatchSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRegexMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListRegexMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListRegexMatchSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListRegexMatchSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6048,14 +6260,15 @@ pub fn parse_list_regex_match_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRegexMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListRegexMatchSetsError::generic(generic),
     })
 }
@@ -6076,6 +6289,9 @@ pub fn parse_list_regex_match_sets_response(
             output,
         )
         .map_err(crate::error::ListRegexMatchSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6087,8 +6303,11 @@ pub fn parse_list_regex_pattern_sets_error(
     crate::output::ListRegexPatternSetsOutput,
     crate::error::ListRegexPatternSetsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRegexPatternSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRegexPatternSetsError::unhandled(generic)),
@@ -6096,26 +6315,25 @@ pub fn parse_list_regex_pattern_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListRegexPatternSetsError {
-            meta: generic,
-            kind: crate::error::ListRegexPatternSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListRegexPatternSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRegexPatternSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListRegexPatternSetsError {
-            meta: generic,
-            kind: crate::error::ListRegexPatternSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListRegexPatternSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6123,14 +6341,15 @@ pub fn parse_list_regex_pattern_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRegexPatternSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListRegexPatternSetsError::generic(generic),
     })
 }
@@ -6151,6 +6370,9 @@ pub fn parse_list_regex_pattern_sets_response(
             output,
         )
         .map_err(crate::error::ListRegexPatternSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6159,8 +6381,11 @@ pub fn parse_list_regex_pattern_sets_response(
 pub fn parse_list_rule_groups_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRuleGroupsOutput, crate::error::ListRuleGroupsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRuleGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRuleGroupsError::unhandled(generic)),
@@ -6168,23 +6393,23 @@ pub fn parse_list_rule_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListRuleGroupsError {
-            meta: generic,
-            kind: crate::error::ListRuleGroupsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListRuleGroupsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRuleGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListRuleGroupsError::generic(generic),
     })
 }
@@ -6202,6 +6427,9 @@ pub fn parse_list_rule_groups_response(
             output,
         )
         .map_err(crate::error::ListRuleGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6210,8 +6438,11 @@ pub fn parse_list_rule_groups_response(
 pub fn parse_list_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListRulesOutput, crate::error::ListRulesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRulesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRulesError::unhandled(generic)),
@@ -6219,41 +6450,36 @@ pub fn parse_list_rules_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListRulesError {
-            meta: generic,
-            kind: crate::error::ListRulesErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::ListRulesError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRulesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListRulesError {
-            meta: generic,
-            kind: crate::error::ListRulesErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => crate::error::ListRulesError::WafInvalidAccountException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::waf_invalid_account_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRulesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_invalid_account_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListRulesError::generic(generic),
     })
 }
@@ -6271,6 +6497,9 @@ pub fn parse_list_rules_response(
             output,
         )
         .map_err(crate::error::ListRulesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6282,8 +6511,11 @@ pub fn parse_list_size_constraint_sets_error(
     crate::output::ListSizeConstraintSetsOutput,
     crate::error::ListSizeConstraintSetsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSizeConstraintSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6295,26 +6527,25 @@ pub fn parse_list_size_constraint_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListSizeConstraintSetsError {
-            meta: generic,
-            kind: crate::error::ListSizeConstraintSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListSizeConstraintSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSizeConstraintSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListSizeConstraintSetsError {
-            meta: generic,
-            kind: crate::error::ListSizeConstraintSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListSizeConstraintSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6322,14 +6553,15 @@ pub fn parse_list_size_constraint_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSizeConstraintSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSizeConstraintSetsError::generic(generic),
     })
 }
@@ -6350,6 +6582,9 @@ pub fn parse_list_size_constraint_sets_response(
             output,
         )
         .map_err(crate::error::ListSizeConstraintSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6361,8 +6596,11 @@ pub fn parse_list_sql_injection_match_sets_error(
     crate::output::ListSqlInjectionMatchSetsOutput,
     crate::error::ListSqlInjectionMatchSetsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSqlInjectionMatchSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6374,26 +6612,25 @@ pub fn parse_list_sql_injection_match_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListSqlInjectionMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListSqlInjectionMatchSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListSqlInjectionMatchSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSqlInjectionMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListSqlInjectionMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListSqlInjectionMatchSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListSqlInjectionMatchSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6401,14 +6638,15 @@ pub fn parse_list_sql_injection_match_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSqlInjectionMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSqlInjectionMatchSetsError::generic(generic),
     })
 }
@@ -6429,6 +6667,9 @@ pub fn parse_list_sql_injection_match_sets_response(
             output,
         )
         .map_err(crate::error::ListSqlInjectionMatchSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6440,8 +6681,11 @@ pub fn parse_list_subscribed_rule_groups_error(
     crate::output::ListSubscribedRuleGroupsOutput,
     crate::error::ListSubscribedRuleGroupsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSubscribedRuleGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6453,26 +6697,25 @@ pub fn parse_list_subscribed_rule_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListSubscribedRuleGroupsError {
-            meta: generic,
-            kind: crate::error::ListSubscribedRuleGroupsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListSubscribedRuleGroupsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribedRuleGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::ListSubscribedRuleGroupsError {
-            meta: generic,
-            kind: crate::error::ListSubscribedRuleGroupsErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::ListSubscribedRuleGroupsError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6480,14 +6723,15 @@ pub fn parse_list_subscribed_rule_groups_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSubscribedRuleGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSubscribedRuleGroupsError::generic(generic),
     })
 }
@@ -6508,6 +6752,9 @@ pub fn parse_list_subscribed_rule_groups_response(
             output,
         )
         .map_err(crate::error::ListSubscribedRuleGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6519,8 +6766,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -6528,43 +6778,42 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => {
+            crate::error::ListTagsForResourceError::WafBadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::ListTagsForResourceError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::ListTagsForResourceError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6572,17 +6821,17 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::ListTagsForResourceError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6590,50 +6839,51 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::WafTagOperationException({
+            })
+        }
+        "WAFTagOperationException" => {
+            crate::error::ListTagsForResourceError::WafTagOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_tag_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::WafTagOperationInternalErrorException(
-                {
+            })
+        }
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::ListTagsForResourceError::WafTagOperationInternalErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -6654,6 +6904,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6662,8 +6915,11 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_list_web_ac_ls_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListWebAcLsOutput, crate::error::ListWebACLsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListWebACLsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListWebACLsError::unhandled(generic)),
@@ -6671,26 +6927,23 @@ pub fn parse_list_web_ac_ls_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListWebACLsError {
-            meta: generic,
-            kind: crate::error::ListWebACLsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::ListWebACLsError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebACLsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListWebACLsError {
-            meta: generic,
-            kind: crate::error::ListWebACLsErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebACLsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::ListWebACLsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6698,14 +6951,15 @@ pub fn parse_list_web_ac_ls_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListWebACLsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListWebACLsError::generic(generic),
     })
 }
@@ -6723,6 +6977,9 @@ pub fn parse_list_web_ac_ls_response(
             output,
         )
         .map_err(crate::error::ListWebACLsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6732,8 +6989,11 @@ pub fn parse_list_xss_match_sets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListXssMatchSetsOutput, crate::error::ListXssMatchSetsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListXssMatchSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListXssMatchSetsError::unhandled(generic)),
@@ -6741,26 +7001,25 @@ pub fn parse_list_xss_match_sets_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::ListXssMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListXssMatchSetsErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::ListXssMatchSetsError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListXssMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::ListXssMatchSetsError {
-            meta: generic,
-            kind: crate::error::ListXssMatchSetsErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::ListXssMatchSetsError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6768,14 +7027,15 @@ pub fn parse_list_xss_match_sets_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListXssMatchSetsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListXssMatchSetsError::generic(generic),
     })
 }
@@ -6794,6 +7054,9 @@ pub fn parse_list_xss_match_sets_response(
             output,
         )
         .map_err(crate::error::ListXssMatchSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6805,8 +7068,11 @@ pub fn parse_put_logging_configuration_error(
     crate::output::PutLoggingConfigurationOutput,
     crate::error::PutLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6818,26 +7084,25 @@ pub fn parse_put_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::PutLoggingConfigurationError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::PutLoggingConfigurationError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6845,51 +7110,50 @@ pub fn parse_put_logging_configuration_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFServiceLinkedRoleErrorException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind:
-                crate::error::PutLoggingConfigurationErrorKind::WafServiceLinkedRoleErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::waf_service_linked_role_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_waf_service_linked_role_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "WAFStaleDataException" => crate::error::PutLoggingConfigurationError {
-            meta: generic,
-            kind: crate::error::PutLoggingConfigurationErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFServiceLinkedRoleErrorException" => {
+            crate::error::PutLoggingConfigurationError::WafServiceLinkedRoleErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_service_linked_role_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_service_linked_role_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::PutLoggingConfigurationError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutLoggingConfigurationError::generic(generic),
     })
 }
@@ -6910,6 +7174,9 @@ pub fn parse_put_logging_configuration_response(
             output,
         )
         .map_err(crate::error::PutLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6921,8 +7188,11 @@ pub fn parse_put_permission_policy_error(
     crate::output::PutPermissionPolicyOutput,
     crate::error::PutPermissionPolicyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutPermissionPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutPermissionPolicyError::unhandled(generic)),
@@ -6930,47 +7200,43 @@ pub fn parse_put_permission_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::PutPermissionPolicyError {
-            meta: generic,
-            kind: crate::error::PutPermissionPolicyErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::PutPermissionPolicyError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidPermissionPolicyException" => crate::error::PutPermissionPolicyError {
-            meta: generic,
-            kind: crate::error::PutPermissionPolicyErrorKind::WafInvalidPermissionPolicyException(
-                {
+            })
+        }
+        "WAFInvalidPermissionPolicyException" => {
+            crate::error::PutPermissionPolicyError::WafInvalidPermissionPolicyException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_permission_policy_exception::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_permission_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFNonexistentItemException" => crate::error::PutPermissionPolicyError {
-            meta: generic,
-            kind: crate::error::PutPermissionPolicyErrorKind::WafNonexistentItemException({
+                    let mut output =
+                        crate::error::waf_invalid_permission_policy_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_permission_policy_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::PutPermissionPolicyError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6978,31 +7244,30 @@ pub fn parse_put_permission_policy_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::PutPermissionPolicyError {
-            meta: generic,
-            kind: crate::error::PutPermissionPolicyErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::PutPermissionPolicyError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutPermissionPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutPermissionPolicyError::generic(generic),
     })
 }
@@ -7018,6 +7283,9 @@ pub fn parse_put_permission_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_permission_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7026,8 +7294,11 @@ pub fn parse_put_permission_policy_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -7035,43 +7306,38 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => crate::error::TagResourceError::WafBadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_bad_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::WafInternalErrorException({
+                let mut output = crate::error::waf_bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInternalErrorException" => crate::error::TagResourceError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::WafInvalidParameterException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidParameterException" => {
+            crate::error::TagResourceError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7079,17 +7345,17 @@ pub fn parse_tag_resource_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::TagResourceError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7097,17 +7363,17 @@ pub fn parse_tag_resource_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::TagResourceError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7115,49 +7381,48 @@ pub fn parse_tag_resource_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::WafTagOperationException({
+            })
+        }
+        "WAFTagOperationException" => crate::error::TagResourceError::WafTagOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::TagResourceError::WafTagOperationInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                    let mut output =
+                        crate::error::waf_tag_operation_internal_error_exception::Builder::default(
+                        );
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::WafTagOperationInternalErrorException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_internal_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
         _ => crate::error::TagResourceError::generic(generic),
     })
@@ -7171,6 +7436,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7179,8 +7447,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -7188,43 +7459,40 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFBadRequestException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::WafBadRequestException({
+        "WAFBadRequestException" => crate::error::UntagResourceError::WafBadRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_bad_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::WafInternalErrorException({
+                let mut output = crate::error::waf_bad_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInternalErrorException" => {
+            crate::error::UntagResourceError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UntagResourceError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7232,17 +7500,17 @@ pub fn parse_untag_resource_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UntagResourceError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7250,34 +7518,32 @@ pub fn parse_untag_resource_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFTagOperationException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::WafTagOperationException({
+            })
+        }
+        "WAFTagOperationException" => crate::error::UntagResourceError::WafTagOperationException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_tag_operation_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFTagOperationInternalErrorException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::WafTagOperationInternalErrorException({
+                let mut output = crate::error::waf_tag_operation_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFTagOperationInternalErrorException" => {
+            crate::error::UntagResourceError::WafTagOperationInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7286,14 +7552,15 @@ pub fn parse_untag_resource_error(
                         );
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_tag_operation_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -7306,6 +7573,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7317,8 +7587,11 @@ pub fn parse_update_byte_match_set_error(
     crate::output::UpdateByteMatchSetOutput,
     crate::error::UpdateByteMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateByteMatchSetError::unhandled(generic)),
@@ -7326,26 +7599,25 @@ pub fn parse_update_byte_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateByteMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateByteMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7353,17 +7625,17 @@ pub fn parse_update_byte_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateByteMatchSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7371,17 +7643,17 @@ pub fn parse_update_byte_match_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateByteMatchSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7389,17 +7661,17 @@ pub fn parse_update_byte_match_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateByteMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7407,17 +7679,17 @@ pub fn parse_update_byte_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateByteMatchSetError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7425,17 +7697,17 @@ pub fn parse_update_byte_match_set_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateByteMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7443,31 +7715,30 @@ pub fn parse_update_byte_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateByteMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateByteMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateByteMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateByteMatchSetError::generic(generic),
     })
 }
@@ -7488,6 +7759,9 @@ pub fn parse_update_byte_match_set_response(
             output,
         )
         .map_err(crate::error::UpdateByteMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7497,8 +7771,11 @@ pub fn parse_update_geo_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateGeoMatchSetOutput, crate::error::UpdateGeoMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateGeoMatchSetError::unhandled(generic)),
@@ -7506,26 +7783,25 @@ pub fn parse_update_geo_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateGeoMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateGeoMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7533,17 +7809,17 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateGeoMatchSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7551,17 +7827,17 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateGeoMatchSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7569,17 +7845,17 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateGeoMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7587,17 +7863,17 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateGeoMatchSetError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7605,17 +7881,17 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateGeoMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7623,17 +7899,17 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::UpdateGeoMatchSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7641,31 +7917,30 @@ pub fn parse_update_geo_match_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateGeoMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateGeoMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateGeoMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateGeoMatchSetError::generic(generic),
     })
 }
@@ -7684,6 +7959,9 @@ pub fn parse_update_geo_match_set_response(
             output,
         )
         .map_err(crate::error::UpdateGeoMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7692,8 +7970,11 @@ pub fn parse_update_geo_match_set_response(
 pub fn parse_update_ip_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateIpSetOutput, crate::error::UpdateIPSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateIPSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateIPSetError::unhandled(generic)),
@@ -7701,26 +7982,23 @@ pub fn parse_update_ip_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::UpdateIPSetError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateIPSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7728,17 +8006,17 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateIPSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7746,17 +8024,17 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateIPSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7764,17 +8042,17 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateIPSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7782,17 +8060,17 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateIPSetError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7800,17 +8078,17 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateIPSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7818,17 +8096,17 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::UpdateIPSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7836,31 +8114,30 @@ pub fn parse_update_ip_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateIPSetError {
-            meta: generic,
-            kind: crate::error::UpdateIPSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateIPSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateIPSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateIPSetError::generic(generic),
     })
 }
@@ -7878,6 +8155,9 @@ pub fn parse_update_ip_set_response(
             output,
         )
         .map_err(crate::error::UpdateIPSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7889,8 +8169,11 @@ pub fn parse_update_rate_based_rule_error(
     crate::output::UpdateRateBasedRuleOutput,
     crate::error::UpdateRateBasedRuleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRateBasedRuleError::unhandled(generic)),
@@ -7898,26 +8181,25 @@ pub fn parse_update_rate_based_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateRateBasedRuleError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateRateBasedRuleError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7925,17 +8207,17 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateRateBasedRuleError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7943,17 +8225,17 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateRateBasedRuleError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7961,17 +8243,17 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateRateBasedRuleError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7979,17 +8261,17 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateRateBasedRuleError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7997,17 +8279,17 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateRateBasedRuleError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8015,17 +8297,17 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::UpdateRateBasedRuleError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8033,31 +8315,30 @@ pub fn parse_update_rate_based_rule_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateRateBasedRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRateBasedRuleErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateRateBasedRuleError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateRateBasedRuleError::generic(generic),
     })
 }
@@ -8078,6 +8359,9 @@ pub fn parse_update_rate_based_rule_response(
             output,
         )
         .map_err(crate::error::UpdateRateBasedRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8089,8 +8373,11 @@ pub fn parse_update_regex_match_set_error(
     crate::output::UpdateRegexMatchSetOutput,
     crate::error::UpdateRegexMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRegexMatchSetError::unhandled(generic)),
@@ -8098,9 +8385,8 @@ pub fn parse_update_regex_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFDisallowedNameException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafDisallowedNameException({
+        "WAFDisallowedNameException" => {
+            crate::error::UpdateRegexMatchSetError::WafDisallowedNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8108,34 +8394,34 @@ pub fn parse_update_regex_match_set_error(
                         crate::error::waf_disallowed_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_disallowed_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInternalErrorException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafInternalErrorException({
+            })
+        }
+        "WAFInternalErrorException" => {
+            crate::error::UpdateRegexMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateRegexMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8143,17 +8429,17 @@ pub fn parse_update_regex_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateRegexMatchSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8161,17 +8447,17 @@ pub fn parse_update_regex_match_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateRegexMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8179,17 +8465,17 @@ pub fn parse_update_regex_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateRegexMatchSetError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8197,17 +8483,17 @@ pub fn parse_update_regex_match_set_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateRegexMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8215,31 +8501,30 @@ pub fn parse_update_regex_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateRegexMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateRegexMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateRegexMatchSetError::generic(generic),
     })
 }
@@ -8260,6 +8545,9 @@ pub fn parse_update_regex_match_set_response(
             output,
         )
         .map_err(crate::error::UpdateRegexMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8271,8 +8559,11 @@ pub fn parse_update_regex_pattern_set_error(
     crate::output::UpdateRegexPatternSetOutput,
     crate::error::UpdateRegexPatternSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRegexPatternSetError::unhandled(generic)),
@@ -8280,26 +8571,25 @@ pub fn parse_update_regex_pattern_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateRegexPatternSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateRegexPatternSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8307,17 +8597,17 @@ pub fn parse_update_regex_pattern_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateRegexPatternSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8325,17 +8615,17 @@ pub fn parse_update_regex_pattern_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidRegexPatternException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafInvalidRegexPatternException({
+            })
+        }
+        "WAFInvalidRegexPatternException" => {
+            crate::error::UpdateRegexPatternSetError::WafInvalidRegexPatternException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8343,17 +8633,17 @@ pub fn parse_update_regex_pattern_set_error(
                         crate::error::waf_invalid_regex_pattern_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_regex_pattern_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateRegexPatternSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8361,17 +8651,17 @@ pub fn parse_update_regex_pattern_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateRegexPatternSetError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8379,17 +8669,17 @@ pub fn parse_update_regex_pattern_set_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateRegexPatternSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8397,31 +8687,32 @@ pub fn parse_update_regex_pattern_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateRegexPatternSetError {
-            meta: generic,
-            kind: crate::error::UpdateRegexPatternSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::UpdateRegexPatternSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateRegexPatternSetError::generic(generic),
     })
 }
@@ -8442,6 +8733,9 @@ pub fn parse_update_regex_pattern_set_response(
             output,
         )
         .map_err(crate::error::UpdateRegexPatternSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8450,8 +8744,11 @@ pub fn parse_update_regex_pattern_set_response(
 pub fn parse_update_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateRuleOutput, crate::error::UpdateRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRuleError::unhandled(generic)),
@@ -8459,26 +8756,23 @@ pub fn parse_update_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => crate::error::UpdateRuleError::WafInternalErrorException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_internal_error_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafInvalidAccountException({
+                let mut output = crate::error::waf_internal_error_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateRuleError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8486,17 +8780,17 @@ pub fn parse_update_rule_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateRuleError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8504,17 +8798,17 @@ pub fn parse_update_rule_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateRuleError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8522,17 +8816,17 @@ pub fn parse_update_rule_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateRuleError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8540,17 +8834,17 @@ pub fn parse_update_rule_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateRuleError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8558,17 +8852,17 @@ pub fn parse_update_rule_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateRuleError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8576,17 +8870,17 @@ pub fn parse_update_rule_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::UpdateRuleError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8594,31 +8888,30 @@ pub fn parse_update_rule_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateRuleError {
-            meta: generic,
-            kind: crate::error::UpdateRuleErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateRuleError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateRuleError::generic(generic),
     })
 }
@@ -8636,6 +8929,9 @@ pub fn parse_update_rule_response(
             output,
         )
         .map_err(crate::error::UpdateRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8644,8 +8940,11 @@ pub fn parse_update_rule_response(
 pub fn parse_update_rule_group_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateRuleGroupOutput, crate::error::UpdateRuleGroupError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateRuleGroupError::unhandled(generic)),
@@ -8653,26 +8952,25 @@ pub fn parse_update_rule_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateRuleGroupError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateRuleGroupError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8680,17 +8978,17 @@ pub fn parse_update_rule_group_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateRuleGroupError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8698,17 +8996,17 @@ pub fn parse_update_rule_group_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateRuleGroupError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8716,17 +9014,17 @@ pub fn parse_update_rule_group_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateRuleGroupError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8734,17 +9032,17 @@ pub fn parse_update_rule_group_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateRuleGroupError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8752,31 +9050,30 @@ pub fn parse_update_rule_group_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateRuleGroupError {
-            meta: generic,
-            kind: crate::error::UpdateRuleGroupErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateRuleGroupError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateRuleGroupError::generic(generic),
     })
 }
@@ -8794,6 +9091,9 @@ pub fn parse_update_rule_group_response(
             output,
         )
         .map_err(crate::error::UpdateRuleGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8805,8 +9105,11 @@ pub fn parse_update_size_constraint_set_error(
     crate::output::UpdateSizeConstraintSetOutput,
     crate::error::UpdateSizeConstraintSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8818,26 +9121,25 @@ pub fn parse_update_size_constraint_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateSizeConstraintSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateSizeConstraintSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8845,17 +9147,17 @@ pub fn parse_update_size_constraint_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateSizeConstraintSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8863,17 +9165,17 @@ pub fn parse_update_size_constraint_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateSizeConstraintSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8881,17 +9183,17 @@ pub fn parse_update_size_constraint_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateSizeConstraintSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8899,37 +9201,35 @@ pub fn parse_update_size_constraint_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafNonexistentContainerException(
-                {
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateSizeConstraintSetError::WafNonexistentContainerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_nonexistent_container_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafNonexistentItemException({
+                    let mut output =
+                        crate::error::waf_nonexistent_container_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateSizeConstraintSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8937,17 +9237,17 @@ pub fn parse_update_size_constraint_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::UpdateSizeConstraintSetError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8955,31 +9255,32 @@ pub fn parse_update_size_constraint_set_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateSizeConstraintSetError {
-            meta: generic,
-            kind: crate::error::UpdateSizeConstraintSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::UpdateSizeConstraintSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSizeConstraintSetError::generic(generic),
     })
 }
@@ -9000,6 +9301,9 @@ pub fn parse_update_size_constraint_set_response(
             output,
         )
         .map_err(crate::error::UpdateSizeConstraintSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9011,8 +9315,11 @@ pub fn parse_update_sql_injection_match_set_error(
     crate::output::UpdateSqlInjectionMatchSetOutput,
     crate::error::UpdateSqlInjectionMatchSetError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9024,26 +9331,25 @@ pub fn parse_update_sql_injection_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9051,57 +9357,53 @@ pub fn parse_update_sql_injection_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidOperationException(
-                {
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafInvalidOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_operation_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafInvalidParameterException(
-                {
+                    let mut output =
+                        crate::error::waf_invalid_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafInvalidParameterException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::waf_invalid_parameter_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafLimitsExceededException({
+                    let mut output =
+                        crate::error::waf_invalid_parameter_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9109,39 +9411,35 @@ pub fn parse_update_sql_injection_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind:
-                crate::error::UpdateSqlInjectionMatchSetErrorKind::WafNonexistentContainerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::waf_nonexistent_container_exception::Builder::default(
-                                );
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafNonexistentContainerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::waf_nonexistent_container_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9149,31 +9447,32 @@ pub fn parse_update_sql_injection_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateSqlInjectionMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateSqlInjectionMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => {
+            crate::error::UpdateSqlInjectionMatchSetError::WafStaleDataException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_stale_data_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSqlInjectionMatchSetError::generic(generic),
     })
 }
@@ -9194,6 +9493,9 @@ pub fn parse_update_sql_injection_match_set_response(
             output,
         )
         .map_err(crate::error::UpdateSqlInjectionMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9202,8 +9504,11 @@ pub fn parse_update_sql_injection_match_set_response(
 pub fn parse_update_web_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateWebAclOutput, crate::error::UpdateWebACLError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateWebACLError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateWebACLError::unhandled(generic)),
@@ -9211,26 +9516,25 @@ pub fn parse_update_web_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateWebACLError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateWebACLError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9238,17 +9542,17 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateWebACLError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9256,17 +9560,17 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateWebACLError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9274,17 +9578,17 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateWebACLError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9292,17 +9596,17 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateWebACLError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9310,17 +9614,17 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateWebACLError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9328,17 +9632,17 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFReferencedItemException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafReferencedItemException({
+            })
+        }
+        "WAFReferencedItemException" => {
+            crate::error::UpdateWebACLError::WafReferencedItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9346,34 +9650,32 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_referenced_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_referenced_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateWebACLError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "WAFSubscriptionNotFoundException" => crate::error::UpdateWebACLError {
-            meta: generic,
-            kind: crate::error::UpdateWebACLErrorKind::WafSubscriptionNotFoundException({
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "WAFSubscriptionNotFoundException" => {
+            crate::error::UpdateWebACLError::WafSubscriptionNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9381,14 +9683,15 @@ pub fn parse_update_web_acl_error(
                         crate::error::waf_subscription_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_subscription_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateWebACLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateWebACLError::generic(generic),
     })
 }
@@ -9406,6 +9709,9 @@ pub fn parse_update_web_acl_response(
             output,
         )
         .map_err(crate::error::UpdateWebACLError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9415,8 +9721,11 @@ pub fn parse_update_xss_match_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateXssMatchSetOutput, crate::error::UpdateXssMatchSetError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateXssMatchSetError::unhandled(generic)),
@@ -9424,26 +9733,25 @@ pub fn parse_update_xss_match_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "WAFInternalErrorException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafInternalErrorException({
+        "WAFInternalErrorException" => {
+            crate::error::UpdateXssMatchSetError::WafInternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::waf_internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidAccountException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafInvalidAccountException({
+            })
+        }
+        "WAFInvalidAccountException" => {
+            crate::error::UpdateXssMatchSetError::WafInvalidAccountException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9451,17 +9759,17 @@ pub fn parse_update_xss_match_set_error(
                         crate::error::waf_invalid_account_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_account_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidOperationException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafInvalidOperationException({
+            })
+        }
+        "WAFInvalidOperationException" => {
+            crate::error::UpdateXssMatchSetError::WafInvalidOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9469,17 +9777,17 @@ pub fn parse_update_xss_match_set_error(
                         crate::error::waf_invalid_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFInvalidParameterException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafInvalidParameterException({
+            })
+        }
+        "WAFInvalidParameterException" => {
+            crate::error::UpdateXssMatchSetError::WafInvalidParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9487,17 +9795,17 @@ pub fn parse_update_xss_match_set_error(
                         crate::error::waf_invalid_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_invalid_parameter_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFLimitsExceededException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafLimitsExceededException({
+            })
+        }
+        "WAFLimitsExceededException" => {
+            crate::error::UpdateXssMatchSetError::WafLimitsExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9505,17 +9813,17 @@ pub fn parse_update_xss_match_set_error(
                         crate::error::waf_limits_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_limits_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentContainerException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafNonexistentContainerException({
+            })
+        }
+        "WAFNonexistentContainerException" => {
+            crate::error::UpdateXssMatchSetError::WafNonexistentContainerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9523,17 +9831,17 @@ pub fn parse_update_xss_match_set_error(
                         crate::error::waf_nonexistent_container_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_container_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFNonexistentItemException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafNonexistentItemException({
+            })
+        }
+        "WAFNonexistentItemException" => {
+            crate::error::UpdateXssMatchSetError::WafNonexistentItemException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9541,31 +9849,30 @@ pub fn parse_update_xss_match_set_error(
                         crate::error::waf_nonexistent_item_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_waf_nonexistent_item_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WAFStaleDataException" => crate::error::UpdateXssMatchSetError {
-            meta: generic,
-            kind: crate::error::UpdateXssMatchSetErrorKind::WafStaleDataException({
+            })
+        }
+        "WAFStaleDataException" => crate::error::UpdateXssMatchSetError::WafStaleDataException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::waf_stale_data_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::waf_stale_data_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_waf_stale_data_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UpdateXssMatchSetError::generic(generic),
     })
 }
@@ -9584,6 +9891,9 @@ pub fn parse_update_xss_match_set_response(
             output,
         )
         .map_err(crate::error::UpdateXssMatchSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

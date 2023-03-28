@@ -10,6 +10,7 @@ pub struct ListWorkspacesOutput {
     /// Pagination token to use when requesting the next page in this list.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListWorkspacesOutput {
     /// The list of existing workspaces, including those undergoing creation or deletion.
@@ -21,6 +22,11 @@ impl ListWorkspacesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWorkspacesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
 pub mod list_workspaces_output {
 
@@ -30,6 +36,7 @@ pub mod list_workspaces_output {
     pub struct Builder {
         pub(crate) workspaces: std::option::Option<std::vec::Vec<crate::model::WorkspaceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `workspaces`.
@@ -61,11 +68,21 @@ pub mod list_workspaces_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWorkspacesOutput`](crate::output::ListWorkspacesOutput).
         pub fn build(self) -> crate::output::ListWorkspacesOutput {
             crate::output::ListWorkspacesOutput {
                 workspaces: self.workspaces,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -94,6 +111,7 @@ pub struct CreateWorkspaceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateWorkspaceOutput {
     /// The generated ID of the workspace that was just created.
@@ -116,6 +134,11 @@ impl CreateWorkspaceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateWorkspaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
 pub mod create_workspace_output {
 
@@ -129,6 +152,7 @@ pub mod create_workspace_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The generated ID of the workspace that was just created.
@@ -189,6 +213,15 @@ pub mod create_workspace_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWorkspaceOutput`](crate::output::CreateWorkspaceOutput).
         pub fn build(self) -> crate::output::CreateWorkspaceOutput {
             crate::output::CreateWorkspaceOutput {
@@ -196,6 +229,7 @@ pub mod create_workspace_output {
                 arn: self.arn,
                 status: self.status,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -210,18 +244,38 @@ impl CreateWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteWorkspaceOutput {}
+pub struct DeleteWorkspaceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteWorkspaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
 pub mod delete_workspace_output {
 
     /// A builder for [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWorkspaceOutput`](crate::output::DeleteWorkspaceOutput).
         pub fn build(self) -> crate::output::DeleteWorkspaceOutput {
-            crate::output::DeleteWorkspaceOutput {}
+            crate::output::DeleteWorkspaceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -235,18 +289,38 @@ impl DeleteWorkspaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateWorkspaceAliasOutput {}
+pub struct UpdateWorkspaceAliasOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateWorkspaceAliasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
 pub mod update_workspace_alias_output {
 
     /// A builder for [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWorkspaceAliasOutput`](crate::output::UpdateWorkspaceAliasOutput).
         pub fn build(self) -> crate::output::UpdateWorkspaceAliasOutput {
-            crate::output::UpdateWorkspaceAliasOutput {}
+            crate::output::UpdateWorkspaceAliasOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -264,11 +338,17 @@ pub struct DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
     #[doc(hidden)]
     pub workspace: std::option::Option<crate::model::WorkspaceDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeWorkspaceOutput {
     /// The properties of the selected workspace.
     pub fn workspace(&self) -> std::option::Option<&crate::model::WorkspaceDescription> {
         self.workspace.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeWorkspaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
@@ -279,6 +359,7 @@ pub mod describe_workspace_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workspace: std::option::Option<crate::model::WorkspaceDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The properties of the selected workspace.
@@ -294,10 +375,20 @@ pub mod describe_workspace_output {
             self.workspace = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeWorkspaceOutput`](crate::output::DescribeWorkspaceOutput).
         pub fn build(self) -> crate::output::DescribeWorkspaceOutput {
             crate::output::DescribeWorkspaceOutput {
                 workspace: self.workspace,
+                _request_id: self._request_id,
             }
         }
     }
@@ -320,6 +411,7 @@ pub struct ListRuleGroupsNamespacesOutput {
     /// Pagination token to use when requesting the next page in this list.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRuleGroupsNamespacesOutput {
     /// The list of the selected rule groups namespaces.
@@ -333,6 +425,11 @@ impl ListRuleGroupsNamespacesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRuleGroupsNamespacesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
 pub mod list_rule_groups_namespaces_output {
 
@@ -343,6 +440,7 @@ pub mod list_rule_groups_namespaces_output {
         pub(crate) rule_groups_namespaces:
             std::option::Option<std::vec::Vec<crate::model::RuleGroupsNamespaceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `rule_groups_namespaces`.
@@ -377,11 +475,21 @@ pub mod list_rule_groups_namespaces_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRuleGroupsNamespacesOutput`](crate::output::ListRuleGroupsNamespacesOutput).
         pub fn build(self) -> crate::output::ListRuleGroupsNamespacesOutput {
             crate::output::ListRuleGroupsNamespacesOutput {
                 rule_groups_namespaces: self.rule_groups_namespaces,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -410,6 +518,7 @@ pub struct CreateRuleGroupsNamespaceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
@@ -432,6 +541,11 @@ impl CreateRuleGroupsNamespaceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRuleGroupsNamespaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
 pub mod create_rule_groups_namespace_output {
 
@@ -445,6 +559,7 @@ pub mod create_rule_groups_namespace_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The rule groups namespace name.
@@ -505,6 +620,15 @@ pub mod create_rule_groups_namespace_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRuleGroupsNamespaceOutput`](crate::output::CreateRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::CreateRuleGroupsNamespaceOutput {
             crate::output::CreateRuleGroupsNamespaceOutput {
@@ -512,6 +636,7 @@ pub mod create_rule_groups_namespace_output {
                 arn: self.arn,
                 status: self.status,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -526,18 +651,38 @@ impl CreateRuleGroupsNamespaceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleGroupsNamespaceOutput {}
+pub struct DeleteRuleGroupsNamespaceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteRuleGroupsNamespaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
 pub mod delete_rule_groups_namespace_output {
 
     /// A builder for [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRuleGroupsNamespaceOutput`](crate::output::DeleteRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::DeleteRuleGroupsNamespaceOutput {
-            crate::output::DeleteRuleGroupsNamespaceOutput {}
+            crate::output::DeleteRuleGroupsNamespaceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -565,6 +710,7 @@ pub struct PutRuleGroupsNamespaceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl PutRuleGroupsNamespaceOutput {
     /// The rule groups namespace name.
@@ -587,6 +733,11 @@ impl PutRuleGroupsNamespaceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutRuleGroupsNamespaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
 pub mod put_rule_groups_namespace_output {
 
@@ -600,6 +751,7 @@ pub mod put_rule_groups_namespace_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The rule groups namespace name.
@@ -660,6 +812,15 @@ pub mod put_rule_groups_namespace_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRuleGroupsNamespaceOutput`](crate::output::PutRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::PutRuleGroupsNamespaceOutput {
             crate::output::PutRuleGroupsNamespaceOutput {
@@ -667,6 +828,7 @@ pub mod put_rule_groups_namespace_output {
                 arn: self.arn,
                 status: self.status,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -685,6 +847,7 @@ pub struct DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
     #[doc(hidden)]
     pub rule_groups_namespace: std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeRuleGroupsNamespaceOutput {
     /// The selected rule groups namespace.
@@ -692,6 +855,11 @@ impl DescribeRuleGroupsNamespaceOutput {
         &self,
     ) -> std::option::Option<&crate::model::RuleGroupsNamespaceDescription> {
         self.rule_groups_namespace.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeRuleGroupsNamespaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
@@ -703,6 +871,7 @@ pub mod describe_rule_groups_namespace_output {
     pub struct Builder {
         pub(crate) rule_groups_namespace:
             std::option::Option<crate::model::RuleGroupsNamespaceDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The selected rule groups namespace.
@@ -721,10 +890,20 @@ pub mod describe_rule_groups_namespace_output {
             self.rule_groups_namespace = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRuleGroupsNamespaceOutput`](crate::output::DescribeRuleGroupsNamespaceOutput).
         pub fn build(self) -> crate::output::DescribeRuleGroupsNamespaceOutput {
             crate::output::DescribeRuleGroupsNamespaceOutput {
                 rule_groups_namespace: self.rule_groups_namespace,
+                _request_id: self._request_id,
             }
         }
     }
@@ -743,11 +922,17 @@ pub struct CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+    _request_id: Option<String>,
 }
 impl CreateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateLoggingConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
@@ -758,6 +943,7 @@ pub mod create_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The status of the logging configuration.
@@ -773,10 +959,20 @@ pub mod create_logging_configuration_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLoggingConfigurationOutput`](crate::output::CreateLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::CreateLoggingConfigurationOutput {
             crate::output::CreateLoggingConfigurationOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -791,18 +987,38 @@ impl CreateLoggingConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLoggingConfigurationOutput {}
+pub struct DeleteLoggingConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteLoggingConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
 pub mod delete_logging_configuration_output {
 
     /// A builder for [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLoggingConfigurationOutput`](crate::output::DeleteLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteLoggingConfigurationOutput {
-            crate::output::DeleteLoggingConfigurationOutput {}
+            crate::output::DeleteLoggingConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -820,11 +1036,17 @@ pub struct UpdateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+    _request_id: Option<String>,
 }
 impl UpdateLoggingConfigurationOutput {
     /// The status of the logging configuration.
     pub fn status(&self) -> std::option::Option<&crate::model::LoggingConfigurationStatus> {
         self.status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateLoggingConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
@@ -835,6 +1057,7 @@ pub mod update_logging_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::LoggingConfigurationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The status of the logging configuration.
@@ -850,10 +1073,20 @@ pub mod update_logging_configuration_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLoggingConfigurationOutput`](crate::output::UpdateLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateLoggingConfigurationOutput {
             crate::output::UpdateLoggingConfigurationOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -872,6 +1105,7 @@ pub struct DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
     #[doc(hidden)]
     pub logging_configuration: std::option::Option<crate::model::LoggingConfigurationMetadata>,
+    _request_id: Option<String>,
 }
 impl DescribeLoggingConfigurationOutput {
     /// Metadata object containing information about the logging configuration of a workspace.
@@ -879,6 +1113,11 @@ impl DescribeLoggingConfigurationOutput {
         &self,
     ) -> std::option::Option<&crate::model::LoggingConfigurationMetadata> {
         self.logging_configuration.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeLoggingConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
@@ -890,6 +1129,7 @@ pub mod describe_logging_configuration_output {
     pub struct Builder {
         pub(crate) logging_configuration:
             std::option::Option<crate::model::LoggingConfigurationMetadata>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Metadata object containing information about the logging configuration of a workspace.
@@ -908,10 +1148,20 @@ pub mod describe_logging_configuration_output {
             self.logging_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLoggingConfigurationOutput`](crate::output::DescribeLoggingConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeLoggingConfigurationOutput {
             crate::output::DescribeLoggingConfigurationOutput {
                 logging_configuration: self.logging_configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -930,11 +1180,17 @@ pub struct CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+    _request_id: Option<String>,
 }
 impl CreateAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAlertManagerDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
@@ -945,6 +1201,7 @@ pub mod create_alert_manager_definition_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The status of alert manager definition.
@@ -960,10 +1217,20 @@ pub mod create_alert_manager_definition_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAlertManagerDefinitionOutput`](crate::output::CreateAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::CreateAlertManagerDefinitionOutput {
             crate::output::CreateAlertManagerDefinitionOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -978,18 +1245,38 @@ impl CreateAlertManagerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlertManagerDefinitionOutput {}
+pub struct DeleteAlertManagerDefinitionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAlertManagerDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
 pub mod delete_alert_manager_definition_output {
 
     /// A builder for [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAlertManagerDefinitionOutput`](crate::output::DeleteAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteAlertManagerDefinitionOutput {
-            crate::output::DeleteAlertManagerDefinitionOutput {}
+            crate::output::DeleteAlertManagerDefinitionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1007,11 +1294,17 @@ pub struct PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+    _request_id: Option<String>,
 }
 impl PutAlertManagerDefinitionOutput {
     /// The status of alert manager definition.
     pub fn status(&self) -> std::option::Option<&crate::model::AlertManagerDefinitionStatus> {
         self.status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for PutAlertManagerDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
@@ -1022,6 +1315,7 @@ pub mod put_alert_manager_definition_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::AlertManagerDefinitionStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The status of alert manager definition.
@@ -1037,10 +1331,20 @@ pub mod put_alert_manager_definition_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAlertManagerDefinitionOutput`](crate::output::PutAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::PutAlertManagerDefinitionOutput {
             crate::output::PutAlertManagerDefinitionOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1060,6 +1364,7 @@ pub struct DescribeAlertManagerDefinitionOutput {
     #[doc(hidden)]
     pub alert_manager_definition:
         std::option::Option<crate::model::AlertManagerDefinitionDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeAlertManagerDefinitionOutput {
     /// The properties of the selected workspace's alert manager definition.
@@ -1067,6 +1372,11 @@ impl DescribeAlertManagerDefinitionOutput {
         &self,
     ) -> std::option::Option<&crate::model::AlertManagerDefinitionDescription> {
         self.alert_manager_definition.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAlertManagerDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
@@ -1078,6 +1388,7 @@ pub mod describe_alert_manager_definition_output {
     pub struct Builder {
         pub(crate) alert_manager_definition:
             std::option::Option<crate::model::AlertManagerDefinitionDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// The properties of the selected workspace's alert manager definition.
@@ -1096,10 +1407,20 @@ pub mod describe_alert_manager_definition_output {
             self.alert_manager_definition = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAlertManagerDefinitionOutput`](crate::output::DescribeAlertManagerDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeAlertManagerDefinitionOutput {
             crate::output::DescribeAlertManagerDefinitionOutput {
                 alert_manager_definition: self.alert_manager_definition,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1114,18 +1435,38 @@ impl DescribeAlertManagerDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1139,18 +1480,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1169,6 +1530,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// The list of tags assigned to the resource.
@@ -1177,6 +1539,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1189,6 +1556,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1216,9 +1584,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }

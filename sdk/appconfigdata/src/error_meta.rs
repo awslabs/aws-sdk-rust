@@ -11,15 +11,8 @@ pub enum Error {
     ResourceNotFoundException(crate::error::ResourceNotFoundException),
     /// <p>The request was denied due to request throttling.</p>
     ThrottlingException(crate::error::ThrottlingException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,28 +37,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetLatestConfigurationError> for Error {
     fn from(err: crate::error::GetLatestConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetLatestConfigurationErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetLatestConfigurationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetLatestConfigurationErrorKind::InternalServerException(inner) => {
+            crate::error::GetLatestConfigurationError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetLatestConfigurationErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetLatestConfigurationError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetLatestConfigurationErrorKind::ThrottlingException(inner) => {
+            crate::error::GetLatestConfigurationError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::GetLatestConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetLatestConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -81,29 +79,47 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StartConfigurationSessionError> for Error {
     fn from(err: crate::error::StartConfigurationSessionError) -> Self {
-        match err.kind {
-            crate::error::StartConfigurationSessionErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::StartConfigurationSessionError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::StartConfigurationSessionErrorKind::InternalServerException(inner) => {
+            crate::error::StartConfigurationSessionError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::StartConfigurationSessionErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::StartConfigurationSessionError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::StartConfigurationSessionErrorKind::ThrottlingException(inner) => {
+            crate::error::StartConfigurationSessionError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::StartConfigurationSessionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::StartConfigurationSessionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

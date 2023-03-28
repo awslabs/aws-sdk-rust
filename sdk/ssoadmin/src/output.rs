@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdatePermissionSetOutput {}
+pub struct UpdatePermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdatePermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput).
 pub mod update_permission_set_output {
 
     /// A builder for [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePermissionSetOutput`](crate::output::UpdatePermissionSetOutput).
         pub fn build(self) -> crate::output::UpdatePermissionSetOutput {
-            crate::output::UpdatePermissionSetOutput {}
+            crate::output::UpdatePermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,20 +47,40 @@ impl UpdatePermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateInstanceAccessControlAttributeConfigurationOutput {}
+pub struct UpdateInstanceAccessControlAttributeConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateInstanceAccessControlAttributeConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput).
 pub mod update_instance_access_control_attribute_configuration_output {
 
     /// A builder for [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateInstanceAccessControlAttributeConfigurationOutput`](crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput).
         pub fn build(
             self,
         ) -> crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput {
-            crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput {}
+            crate::output::UpdateInstanceAccessControlAttributeConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -55,18 +95,38 @@ impl UpdateInstanceAccessControlAttributeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -80,18 +140,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -105,18 +185,38 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutPermissionsBoundaryToPermissionSetOutput {}
+pub struct PutPermissionsBoundaryToPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutPermissionsBoundaryToPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
 pub mod put_permissions_boundary_to_permission_set_output {
 
     /// A builder for [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutPermissionsBoundaryToPermissionSetOutput`](crate::output::PutPermissionsBoundaryToPermissionSetOutput).
         pub fn build(self) -> crate::output::PutPermissionsBoundaryToPermissionSetOutput {
-            crate::output::PutPermissionsBoundaryToPermissionSetOutput {}
+            crate::output::PutPermissionsBoundaryToPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -130,18 +230,38 @@ impl PutPermissionsBoundaryToPermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutInlinePolicyToPermissionSetOutput {}
+pub struct PutInlinePolicyToPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutInlinePolicyToPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput).
 pub mod put_inline_policy_to_permission_set_output {
 
     /// A builder for [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutInlinePolicyToPermissionSetOutput`](crate::output::PutInlinePolicyToPermissionSetOutput).
         pub fn build(self) -> crate::output::PutInlinePolicyToPermissionSetOutput {
-            crate::output::PutInlinePolicyToPermissionSetOutput {}
+            crate::output::PutInlinePolicyToPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -160,6 +280,7 @@ pub struct ProvisionPermissionSetOutput {
     #[doc(hidden)]
     pub permission_set_provisioning_status:
         std::option::Option<crate::model::PermissionSetProvisioningStatus>,
+    _request_id: Option<String>,
 }
 impl ProvisionPermissionSetOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
@@ -167,6 +288,11 @@ impl ProvisionPermissionSetOutput {
         &self,
     ) -> std::option::Option<&crate::model::PermissionSetProvisioningStatus> {
         self.permission_set_provisioning_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ProvisionPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput).
@@ -178,6 +304,7 @@ pub mod provision_permission_set_output {
     pub struct Builder {
         pub(crate) permission_set_provisioning_status:
             std::option::Option<crate::model::PermissionSetProvisioningStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status object for the permission set provisioning operation.</p>
@@ -196,10 +323,20 @@ pub mod provision_permission_set_output {
             self.permission_set_provisioning_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ProvisionPermissionSetOutput`](crate::output::ProvisionPermissionSetOutput).
         pub fn build(self) -> crate::output::ProvisionPermissionSetOutput {
             crate::output::ProvisionPermissionSetOutput {
                 permission_set_provisioning_status: self.permission_set_provisioning_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -221,6 +358,7 @@ pub struct ListTagsForResourceOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A set of key-value pairs that are used to manage the resource.</p>
@@ -232,6 +370,11 @@ impl ListTagsForResourceOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -241,6 +384,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -272,11 +416,21 @@ pub mod list_tags_for_resource_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tags: self.tags,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -298,6 +452,7 @@ pub struct ListPermissionSetsProvisionedToAccountOutput {
     /// <p>Defines the level of access that an AWS account has.</p>
     #[doc(hidden)]
     pub permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListPermissionSetsProvisionedToAccountOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -309,6 +464,11 @@ impl ListPermissionSetsProvisionedToAccountOutput {
         self.permission_sets.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPermissionSetsProvisionedToAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput).
 pub mod list_permission_sets_provisioned_to_account_output {
 
@@ -318,6 +478,7 @@ pub mod list_permission_sets_provisioned_to_account_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
@@ -349,11 +510,21 @@ pub mod list_permission_sets_provisioned_to_account_output {
             self.permission_sets = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPermissionSetsProvisionedToAccountOutput`](crate::output::ListPermissionSetsProvisionedToAccountOutput).
         pub fn build(self) -> crate::output::ListPermissionSetsProvisionedToAccountOutput {
             crate::output::ListPermissionSetsProvisionedToAccountOutput {
                 next_token: self.next_token,
                 permission_sets: self.permission_sets,
+                _request_id: self._request_id,
             }
         }
     }
@@ -375,6 +546,7 @@ pub struct ListPermissionSetsOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPermissionSetsOutput {
     /// <p>Defines the level of access on an AWS account.</p>
@@ -386,6 +558,11 @@ impl ListPermissionSetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPermissionSetsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput).
 pub mod list_permission_sets_output {
 
@@ -395,6 +572,7 @@ pub mod list_permission_sets_output {
     pub struct Builder {
         pub(crate) permission_sets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `permission_sets`.
@@ -426,11 +604,21 @@ pub mod list_permission_sets_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPermissionSetsOutput`](crate::output::ListPermissionSetsOutput).
         pub fn build(self) -> crate::output::ListPermissionSetsOutput {
             crate::output::ListPermissionSetsOutput {
                 permission_sets: self.permission_sets,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -453,6 +641,7 @@ pub struct ListPermissionSetProvisioningStatusOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
@@ -466,6 +655,11 @@ impl ListPermissionSetProvisioningStatusOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPermissionSetProvisioningStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput).
 pub mod list_permission_set_provisioning_status_output {
 
@@ -477,6 +671,7 @@ pub mod list_permission_set_provisioning_status_output {
             std::vec::Vec<crate::model::PermissionSetProvisioningStatusMetadata>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `permission_sets_provisioning_status`.
@@ -513,11 +708,21 @@ pub mod list_permission_set_provisioning_status_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPermissionSetProvisioningStatusOutput`](crate::output::ListPermissionSetProvisioningStatusOutput).
         pub fn build(self) -> crate::output::ListPermissionSetProvisioningStatusOutput {
             crate::output::ListPermissionSetProvisioningStatusOutput {
                 permission_sets_provisioning_status: self.permission_sets_provisioning_status,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -540,6 +745,7 @@ pub struct ListManagedPoliciesInPermissionSetOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListManagedPoliciesInPermissionSetOutput {
     /// <p>An array of the <code>AttachedManagedPolicy</code> data type object.</p>
@@ -553,6 +759,11 @@ impl ListManagedPoliciesInPermissionSetOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListManagedPoliciesInPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput).
 pub mod list_managed_policies_in_permission_set_output {
 
@@ -563,6 +774,7 @@ pub mod list_managed_policies_in_permission_set_output {
         pub(crate) attached_managed_policies:
             std::option::Option<std::vec::Vec<crate::model::AttachedManagedPolicy>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `attached_managed_policies`.
@@ -597,11 +809,21 @@ pub mod list_managed_policies_in_permission_set_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListManagedPoliciesInPermissionSetOutput`](crate::output::ListManagedPoliciesInPermissionSetOutput).
         pub fn build(self) -> crate::output::ListManagedPoliciesInPermissionSetOutput {
             crate::output::ListManagedPoliciesInPermissionSetOutput {
                 attached_managed_policies: self.attached_managed_policies,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -623,6 +845,7 @@ pub struct ListInstancesOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListInstancesOutput {
     /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>
@@ -634,6 +857,11 @@ impl ListInstancesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListInstancesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
 pub mod list_instances_output {
 
@@ -643,6 +871,7 @@ pub mod list_instances_output {
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::InstanceMetadata>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instances`.
@@ -674,11 +903,21 @@ pub mod list_instances_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::output::ListInstancesOutput).
         pub fn build(self) -> crate::output::ListInstancesOutput {
             crate::output::ListInstancesOutput {
                 instances: self.instances,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -701,6 +940,7 @@ pub struct ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
     /// <p>Specifies the names and paths of the customer managed policies that you have attached to your permission set.</p>
@@ -714,6 +954,11 @@ impl ListCustomerManagedPolicyReferencesInPermissionSetOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomerManagedPolicyReferencesInPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
 pub mod list_customer_managed_policy_references_in_permission_set_output {
 
@@ -724,6 +969,7 @@ pub mod list_customer_managed_policy_references_in_permission_set_output {
         pub(crate) customer_managed_policy_references:
             std::option::Option<std::vec::Vec<crate::model::CustomerManagedPolicyReference>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `customer_managed_policy_references`.
@@ -758,6 +1004,15 @@ pub mod list_customer_managed_policy_references_in_permission_set_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCustomerManagedPolicyReferencesInPermissionSetOutput`](crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput).
         pub fn build(
             self,
@@ -765,6 +1020,7 @@ pub mod list_customer_managed_policy_references_in_permission_set_output {
             crate::output::ListCustomerManagedPolicyReferencesInPermissionSetOutput {
                 customer_managed_policy_references: self.customer_managed_policy_references,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -788,6 +1044,7 @@ pub struct ListAccountsForProvisionedPermissionSetOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAccountsForProvisionedPermissionSetOutput {
     /// <p>The list of AWS <code>AccountIds</code>.</p>
@@ -799,6 +1056,11 @@ impl ListAccountsForProvisionedPermissionSetOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAccountsForProvisionedPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput).
 pub mod list_accounts_for_provisioned_permission_set_output {
 
@@ -808,6 +1070,7 @@ pub mod list_accounts_for_provisioned_permission_set_output {
     pub struct Builder {
         pub(crate) account_ids: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `account_ids`.
@@ -839,11 +1102,21 @@ pub mod list_accounts_for_provisioned_permission_set_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAccountsForProvisionedPermissionSetOutput`](crate::output::ListAccountsForProvisionedPermissionSetOutput).
         pub fn build(self) -> crate::output::ListAccountsForProvisionedPermissionSetOutput {
             crate::output::ListAccountsForProvisionedPermissionSetOutput {
                 account_ids: self.account_ids,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -866,6 +1139,7 @@ pub struct ListAccountAssignmentsOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAccountAssignmentsOutput {
     /// <p>The list of assignments that match the input AWS account and permission set.</p>
@@ -875,6 +1149,11 @@ impl ListAccountAssignmentsOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListAccountAssignmentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput).
@@ -887,6 +1166,7 @@ pub mod list_account_assignments_output {
         pub(crate) account_assignments:
             std::option::Option<std::vec::Vec<crate::model::AccountAssignment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `account_assignments`.
@@ -918,11 +1198,21 @@ pub mod list_account_assignments_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAccountAssignmentsOutput`](crate::output::ListAccountAssignmentsOutput).
         pub fn build(self) -> crate::output::ListAccountAssignmentsOutput {
             crate::output::ListAccountAssignmentsOutput {
                 account_assignments: self.account_assignments,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -945,6 +1235,7 @@ pub struct ListAccountAssignmentDeletionStatusOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAccountAssignmentDeletionStatusOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
@@ -958,6 +1249,11 @@ impl ListAccountAssignmentDeletionStatusOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAccountAssignmentDeletionStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput).
 pub mod list_account_assignment_deletion_status_output {
 
@@ -969,6 +1265,7 @@ pub mod list_account_assignment_deletion_status_output {
             std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `account_assignments_deletion_status`.
@@ -1005,11 +1302,21 @@ pub mod list_account_assignment_deletion_status_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAccountAssignmentDeletionStatusOutput`](crate::output::ListAccountAssignmentDeletionStatusOutput).
         pub fn build(self) -> crate::output::ListAccountAssignmentDeletionStatusOutput {
             crate::output::ListAccountAssignmentDeletionStatusOutput {
                 account_assignments_deletion_status: self.account_assignments_deletion_status,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1032,6 +1339,7 @@ pub struct ListAccountAssignmentCreationStatusOutput {
     /// <p>The pagination token for the list API. Initially the value is null. Use the output of previous API calls to make subsequent calls.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
@@ -1045,6 +1353,11 @@ impl ListAccountAssignmentCreationStatusOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAccountAssignmentCreationStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput).
 pub mod list_account_assignment_creation_status_output {
 
@@ -1056,6 +1369,7 @@ pub mod list_account_assignment_creation_status_output {
             std::vec::Vec<crate::model::AccountAssignmentOperationStatusMetadata>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `account_assignments_creation_status`.
@@ -1092,11 +1406,21 @@ pub mod list_account_assignment_creation_status_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAccountAssignmentCreationStatusOutput`](crate::output::ListAccountAssignmentCreationStatusOutput).
         pub fn build(self) -> crate::output::ListAccountAssignmentCreationStatusOutput {
             crate::output::ListAccountAssignmentCreationStatusOutput {
                 account_assignments_creation_status: self.account_assignments_creation_status,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1115,11 +1439,17 @@ pub struct GetPermissionsBoundaryForPermissionSetOutput {
     /// <p>The permissions boundary attached to the specified permission set.</p>
     #[doc(hidden)]
     pub permissions_boundary: std::option::Option<crate::model::PermissionsBoundary>,
+    _request_id: Option<String>,
 }
 impl GetPermissionsBoundaryForPermissionSetOutput {
     /// <p>The permissions boundary attached to the specified permission set.</p>
     pub fn permissions_boundary(&self) -> std::option::Option<&crate::model::PermissionsBoundary> {
         self.permissions_boundary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetPermissionsBoundaryForPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
@@ -1130,6 +1460,7 @@ pub mod get_permissions_boundary_for_permission_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permissions_boundary: std::option::Option<crate::model::PermissionsBoundary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The permissions boundary attached to the specified permission set.</p>
@@ -1145,10 +1476,20 @@ pub mod get_permissions_boundary_for_permission_set_output {
             self.permissions_boundary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPermissionsBoundaryForPermissionSetOutput`](crate::output::GetPermissionsBoundaryForPermissionSetOutput).
         pub fn build(self) -> crate::output::GetPermissionsBoundaryForPermissionSetOutput {
             crate::output::GetPermissionsBoundaryForPermissionSetOutput {
                 permissions_boundary: self.permissions_boundary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1167,11 +1508,17 @@ pub struct GetInlinePolicyForPermissionSetOutput {
     /// <p>The inline policy that is attached to the permission set.</p>
     #[doc(hidden)]
     pub inline_policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetInlinePolicyForPermissionSetOutput {
     /// <p>The inline policy that is attached to the permission set.</p>
     pub fn inline_policy(&self) -> std::option::Option<&str> {
         self.inline_policy.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetInlinePolicyForPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput).
@@ -1182,6 +1529,7 @@ pub mod get_inline_policy_for_permission_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) inline_policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The inline policy that is attached to the permission set.</p>
@@ -1197,10 +1545,20 @@ pub mod get_inline_policy_for_permission_set_output {
             self.inline_policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetInlinePolicyForPermissionSetOutput`](crate::output::GetInlinePolicyForPermissionSetOutput).
         pub fn build(self) -> crate::output::GetInlinePolicyForPermissionSetOutput {
             crate::output::GetInlinePolicyForPermissionSetOutput {
                 inline_policy: self.inline_policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1215,18 +1573,38 @@ impl GetInlinePolicyForPermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachManagedPolicyFromPermissionSetOutput {}
+pub struct DetachManagedPolicyFromPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DetachManagedPolicyFromPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
 pub mod detach_managed_policy_from_permission_set_output {
 
     /// A builder for [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DetachManagedPolicyFromPermissionSetOutput`](crate::output::DetachManagedPolicyFromPermissionSetOutput).
         pub fn build(self) -> crate::output::DetachManagedPolicyFromPermissionSetOutput {
-            crate::output::DetachManagedPolicyFromPermissionSetOutput {}
+            crate::output::DetachManagedPolicyFromPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1240,20 +1618,42 @@ impl DetachManagedPolicyFromPermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {}
+pub struct DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId
+    for DetachCustomerManagedPolicyReferenceFromPermissionSetOutput
+{
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
 pub mod detach_customer_managed_policy_reference_from_permission_set_output {
 
     /// A builder for [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DetachCustomerManagedPolicyReferenceFromPermissionSetOutput`](crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput).
         pub fn build(
             self,
         ) -> crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
-            crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {}
+            crate::output::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1274,6 +1674,7 @@ pub struct DescribePermissionSetProvisioningStatusOutput {
     #[doc(hidden)]
     pub permission_set_provisioning_status:
         std::option::Option<crate::model::PermissionSetProvisioningStatus>,
+    _request_id: Option<String>,
 }
 impl DescribePermissionSetProvisioningStatusOutput {
     /// <p>The status object for the permission set provisioning operation.</p>
@@ -1281,6 +1682,11 @@ impl DescribePermissionSetProvisioningStatusOutput {
         &self,
     ) -> std::option::Option<&crate::model::PermissionSetProvisioningStatus> {
         self.permission_set_provisioning_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribePermissionSetProvisioningStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput).
@@ -1292,6 +1698,7 @@ pub mod describe_permission_set_provisioning_status_output {
     pub struct Builder {
         pub(crate) permission_set_provisioning_status:
             std::option::Option<crate::model::PermissionSetProvisioningStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status object for the permission set provisioning operation.</p>
@@ -1310,10 +1717,20 @@ pub mod describe_permission_set_provisioning_status_output {
             self.permission_set_provisioning_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribePermissionSetProvisioningStatusOutput`](crate::output::DescribePermissionSetProvisioningStatusOutput).
         pub fn build(self) -> crate::output::DescribePermissionSetProvisioningStatusOutput {
             crate::output::DescribePermissionSetProvisioningStatusOutput {
                 permission_set_provisioning_status: self.permission_set_provisioning_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1332,11 +1749,17 @@ pub struct DescribePermissionSetOutput {
     /// <p>Describes the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
+    _request_id: Option<String>,
 }
 impl DescribePermissionSetOutput {
     /// <p>Describes the level of access on an AWS account.</p>
     pub fn permission_set(&self) -> std::option::Option<&crate::model::PermissionSet> {
         self.permission_set.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribePermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput).
@@ -1347,6 +1770,7 @@ pub mod describe_permission_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_set: std::option::Option<crate::model::PermissionSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes the level of access on an AWS account.</p>
@@ -1362,10 +1786,20 @@ pub mod describe_permission_set_output {
             self.permission_set = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribePermissionSetOutput`](crate::output::DescribePermissionSetOutput).
         pub fn build(self) -> crate::output::DescribePermissionSetOutput {
             crate::output::DescribePermissionSetOutput {
                 permission_set: self.permission_set,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1392,6 +1826,7 @@ pub struct DescribeInstanceAccessControlAttributeConfigurationOutput {
     #[doc(hidden)]
     pub instance_access_control_attribute_configuration:
         std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+    _request_id: Option<String>,
 }
 impl DescribeInstanceAccessControlAttributeConfigurationOutput {
     /// <p>The status of the attribute configuration process.</p>
@@ -1412,6 +1847,11 @@ impl DescribeInstanceAccessControlAttributeConfigurationOutput {
             .as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeInstanceAccessControlAttributeConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput).
 pub mod describe_instance_access_control_attribute_configuration_output {
 
@@ -1424,6 +1864,7 @@ pub mod describe_instance_access_control_attribute_configuration_output {
         pub(crate) status_reason: std::option::Option<std::string::String>,
         pub(crate) instance_access_control_attribute_configuration:
             std::option::Option<crate::model::InstanceAccessControlAttributeConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the attribute configuration process.</p>
@@ -1473,6 +1914,15 @@ pub mod describe_instance_access_control_attribute_configuration_output {
             self.instance_access_control_attribute_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeInstanceAccessControlAttributeConfigurationOutput`](crate::output::DescribeInstanceAccessControlAttributeConfigurationOutput).
         pub fn build(
             self,
@@ -1482,6 +1932,7 @@ pub mod describe_instance_access_control_attribute_configuration_output {
                 status_reason: self.status_reason,
                 instance_access_control_attribute_configuration: self
                     .instance_access_control_attribute_configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1503,6 +1954,7 @@ pub struct DescribeAccountAssignmentDeletionStatusOutput {
     #[doc(hidden)]
     pub account_assignment_deletion_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+    _request_id: Option<String>,
 }
 impl DescribeAccountAssignmentDeletionStatusOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
@@ -1510,6 +1962,11 @@ impl DescribeAccountAssignmentDeletionStatusOutput {
         &self,
     ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
         self.account_assignment_deletion_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAccountAssignmentDeletionStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput).
@@ -1521,6 +1978,7 @@ pub mod describe_account_assignment_deletion_status_output {
     pub struct Builder {
         pub(crate) account_assignment_deletion_status:
             std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status object for the account assignment deletion operation.</p>
@@ -1539,10 +1997,20 @@ pub mod describe_account_assignment_deletion_status_output {
             self.account_assignment_deletion_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAccountAssignmentDeletionStatusOutput`](crate::output::DescribeAccountAssignmentDeletionStatusOutput).
         pub fn build(self) -> crate::output::DescribeAccountAssignmentDeletionStatusOutput {
             crate::output::DescribeAccountAssignmentDeletionStatusOutput {
                 account_assignment_deletion_status: self.account_assignment_deletion_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1562,6 +2030,7 @@ pub struct DescribeAccountAssignmentCreationStatusOutput {
     #[doc(hidden)]
     pub account_assignment_creation_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+    _request_id: Option<String>,
 }
 impl DescribeAccountAssignmentCreationStatusOutput {
     /// <p>The status object for the account assignment creation operation.</p>
@@ -1569,6 +2038,11 @@ impl DescribeAccountAssignmentCreationStatusOutput {
         &self,
     ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
         self.account_assignment_creation_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAccountAssignmentCreationStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput).
@@ -1580,6 +2054,7 @@ pub mod describe_account_assignment_creation_status_output {
     pub struct Builder {
         pub(crate) account_assignment_creation_status:
             std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status object for the account assignment creation operation.</p>
@@ -1598,10 +2073,20 @@ pub mod describe_account_assignment_creation_status_output {
             self.account_assignment_creation_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAccountAssignmentCreationStatusOutput`](crate::output::DescribeAccountAssignmentCreationStatusOutput).
         pub fn build(self) -> crate::output::DescribeAccountAssignmentCreationStatusOutput {
             crate::output::DescribeAccountAssignmentCreationStatusOutput {
                 account_assignment_creation_status: self.account_assignment_creation_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1616,18 +2101,38 @@ impl DescribeAccountAssignmentCreationStatusOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionSetOutput {}
+pub struct DeletePermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeletePermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput).
 pub mod delete_permission_set_output {
 
     /// A builder for [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePermissionSetOutput`](crate::output::DeletePermissionSetOutput).
         pub fn build(self) -> crate::output::DeletePermissionSetOutput {
-            crate::output::DeletePermissionSetOutput {}
+            crate::output::DeletePermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1641,18 +2146,38 @@ impl DeletePermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePermissionsBoundaryFromPermissionSetOutput {}
+pub struct DeletePermissionsBoundaryFromPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeletePermissionsBoundaryFromPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
 pub mod delete_permissions_boundary_from_permission_set_output {
 
     /// A builder for [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePermissionsBoundaryFromPermissionSetOutput`](crate::output::DeletePermissionsBoundaryFromPermissionSetOutput).
         pub fn build(self) -> crate::output::DeletePermissionsBoundaryFromPermissionSetOutput {
-            crate::output::DeletePermissionsBoundaryFromPermissionSetOutput {}
+            crate::output::DeletePermissionsBoundaryFromPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1667,20 +2192,40 @@ impl DeletePermissionsBoundaryFromPermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInstanceAccessControlAttributeConfigurationOutput {}
+pub struct DeleteInstanceAccessControlAttributeConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteInstanceAccessControlAttributeConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput).
 pub mod delete_instance_access_control_attribute_configuration_output {
 
     /// A builder for [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteInstanceAccessControlAttributeConfigurationOutput`](crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput).
         pub fn build(
             self,
         ) -> crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput {
-            crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput {}
+            crate::output::DeleteInstanceAccessControlAttributeConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1695,18 +2240,38 @@ impl DeleteInstanceAccessControlAttributeConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteInlinePolicyFromPermissionSetOutput {}
+pub struct DeleteInlinePolicyFromPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteInlinePolicyFromPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput).
 pub mod delete_inline_policy_from_permission_set_output {
 
     /// A builder for [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteInlinePolicyFromPermissionSetOutput`](crate::output::DeleteInlinePolicyFromPermissionSetOutput).
         pub fn build(self) -> crate::output::DeleteInlinePolicyFromPermissionSetOutput {
-            crate::output::DeleteInlinePolicyFromPermissionSetOutput {}
+            crate::output::DeleteInlinePolicyFromPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1725,6 +2290,7 @@ pub struct DeleteAccountAssignmentOutput {
     #[doc(hidden)]
     pub account_assignment_deletion_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+    _request_id: Option<String>,
 }
 impl DeleteAccountAssignmentOutput {
     /// <p>The status object for the account assignment deletion operation.</p>
@@ -1732,6 +2298,11 @@ impl DeleteAccountAssignmentOutput {
         &self,
     ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
         self.account_assignment_deletion_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteAccountAssignmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput).
@@ -1743,6 +2314,7 @@ pub mod delete_account_assignment_output {
     pub struct Builder {
         pub(crate) account_assignment_deletion_status:
             std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status object for the account assignment deletion operation.</p>
@@ -1761,10 +2333,20 @@ pub mod delete_account_assignment_output {
             self.account_assignment_deletion_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAccountAssignmentOutput`](crate::output::DeleteAccountAssignmentOutput).
         pub fn build(self) -> crate::output::DeleteAccountAssignmentOutput {
             crate::output::DeleteAccountAssignmentOutput {
                 account_assignment_deletion_status: self.account_assignment_deletion_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1783,11 +2365,17 @@ pub struct CreatePermissionSetOutput {
     /// <p>Defines the level of access on an AWS account.</p>
     #[doc(hidden)]
     pub permission_set: std::option::Option<crate::model::PermissionSet>,
+    _request_id: Option<String>,
 }
 impl CreatePermissionSetOutput {
     /// <p>Defines the level of access on an AWS account.</p>
     pub fn permission_set(&self) -> std::option::Option<&crate::model::PermissionSet> {
         self.permission_set.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreatePermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput).
@@ -1798,6 +2386,7 @@ pub mod create_permission_set_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission_set: std::option::Option<crate::model::PermissionSet>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Defines the level of access on an AWS account.</p>
@@ -1813,10 +2402,20 @@ pub mod create_permission_set_output {
             self.permission_set = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePermissionSetOutput`](crate::output::CreatePermissionSetOutput).
         pub fn build(self) -> crate::output::CreatePermissionSetOutput {
             crate::output::CreatePermissionSetOutput {
                 permission_set: self.permission_set,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1831,20 +2430,40 @@ impl CreatePermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateInstanceAccessControlAttributeConfigurationOutput {}
+pub struct CreateInstanceAccessControlAttributeConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateInstanceAccessControlAttributeConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput).
 pub mod create_instance_access_control_attribute_configuration_output {
 
     /// A builder for [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateInstanceAccessControlAttributeConfigurationOutput`](crate::output::CreateInstanceAccessControlAttributeConfigurationOutput).
         pub fn build(
             self,
         ) -> crate::output::CreateInstanceAccessControlAttributeConfigurationOutput {
-            crate::output::CreateInstanceAccessControlAttributeConfigurationOutput {}
+            crate::output::CreateInstanceAccessControlAttributeConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1864,6 +2483,7 @@ pub struct CreateAccountAssignmentOutput {
     #[doc(hidden)]
     pub account_assignment_creation_status:
         std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+    _request_id: Option<String>,
 }
 impl CreateAccountAssignmentOutput {
     /// <p>The status object for the account assignment creation operation.</p>
@@ -1871,6 +2491,11 @@ impl CreateAccountAssignmentOutput {
         &self,
     ) -> std::option::Option<&crate::model::AccountAssignmentOperationStatus> {
         self.account_assignment_creation_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAccountAssignmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput).
@@ -1882,6 +2507,7 @@ pub mod create_account_assignment_output {
     pub struct Builder {
         pub(crate) account_assignment_creation_status:
             std::option::Option<crate::model::AccountAssignmentOperationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status object for the account assignment creation operation.</p>
@@ -1900,10 +2526,20 @@ pub mod create_account_assignment_output {
             self.account_assignment_creation_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAccountAssignmentOutput`](crate::output::CreateAccountAssignmentOutput).
         pub fn build(self) -> crate::output::CreateAccountAssignmentOutput {
             crate::output::CreateAccountAssignmentOutput {
                 account_assignment_creation_status: self.account_assignment_creation_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1918,18 +2554,38 @@ impl CreateAccountAssignmentOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachManagedPolicyToPermissionSetOutput {}
+pub struct AttachManagedPolicyToPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AttachManagedPolicyToPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
 pub mod attach_managed_policy_to_permission_set_output {
 
     /// A builder for [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AttachManagedPolicyToPermissionSetOutput`](crate::output::AttachManagedPolicyToPermissionSetOutput).
         pub fn build(self) -> crate::output::AttachManagedPolicyToPermissionSetOutput {
-            crate::output::AttachManagedPolicyToPermissionSetOutput {}
+            crate::output::AttachManagedPolicyToPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1943,20 +2599,40 @@ impl AttachManagedPolicyToPermissionSetOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AttachCustomerManagedPolicyReferenceToPermissionSetOutput {}
+pub struct AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
 pub mod attach_customer_managed_policy_reference_to_permission_set_output {
 
     /// A builder for [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AttachCustomerManagedPolicyReferenceToPermissionSetOutput`](crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput).
         pub fn build(
             self,
         ) -> crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
-            crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {}
+            crate::output::AttachCustomerManagedPolicyReferenceToPermissionSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

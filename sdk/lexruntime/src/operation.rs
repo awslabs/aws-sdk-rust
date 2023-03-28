@@ -23,6 +23,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSession {
     type Output =
         std::result::Result<crate::output::DeleteSessionOutput, crate::error::DeleteSessionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_session_error(response)
         } else {
@@ -55,6 +56,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSession {
     type Output =
         std::result::Result<crate::output::GetSessionOutput, crate::error::GetSessionError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_session_error(response)
         } else {
@@ -125,6 +127,7 @@ impl PostText {
 impl aws_smithy_http::response::ParseStrictResponse for PostText {
     type Output = std::result::Result<crate::output::PostTextOutput, crate::error::PostTextError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_post_text_error(response)
         } else {

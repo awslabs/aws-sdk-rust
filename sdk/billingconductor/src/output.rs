@@ -15,6 +15,7 @@ pub struct ListPricingRulesAssociatedToPricingPlanOutput {
     /// <p> The pagination token to be used on subsequent calls. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPricingRulesAssociatedToPricingPlanOutput {
     /// <p> The billing period for which the pricing rule associations are listed. </p>
@@ -34,6 +35,11 @@ impl ListPricingRulesAssociatedToPricingPlanOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPricingRulesAssociatedToPricingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput).
 pub mod list_pricing_rules_associated_to_pricing_plan_output {
 
@@ -45,6 +51,7 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
         pub(crate) pricing_plan_arn: std::option::Option<std::string::String>,
         pub(crate) pricing_rule_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The billing period for which the pricing rule associations are listed. </p>
@@ -102,6 +109,15 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPricingRulesAssociatedToPricingPlanOutput`](crate::output::ListPricingRulesAssociatedToPricingPlanOutput).
         pub fn build(self) -> crate::output::ListPricingRulesAssociatedToPricingPlanOutput {
             crate::output::ListPricingRulesAssociatedToPricingPlanOutput {
@@ -109,6 +125,7 @@ pub mod list_pricing_rules_associated_to_pricing_plan_output {
                 pricing_plan_arn: self.pricing_plan_arn,
                 pricing_rule_arns: self.pricing_rule_arns,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -134,6 +151,7 @@ pub struct ListPricingRulesOutput {
     /// <p> The pagination token that's used on subsequent calls to get pricing rules. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPricingRulesOutput {
     /// <p> The billing period for which the described pricing rules are applicable. </p>
@@ -149,6 +167,11 @@ impl ListPricingRulesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPricingRulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput).
 pub mod list_pricing_rules_output {
 
@@ -160,6 +183,7 @@ pub mod list_pricing_rules_output {
         pub(crate) pricing_rules:
             std::option::Option<std::vec::Vec<crate::model::PricingRuleListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The billing period for which the described pricing rules are applicable. </p>
@@ -204,12 +228,22 @@ pub mod list_pricing_rules_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPricingRulesOutput`](crate::output::ListPricingRulesOutput).
         pub fn build(self) -> crate::output::ListPricingRulesOutput {
             crate::output::ListPricingRulesOutput {
                 billing_period: self.billing_period,
                 pricing_rules: self.pricing_rules,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -228,11 +262,17 @@ pub struct CreatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreatePricingRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput).
@@ -243,6 +283,7 @@ pub mod create_pricing_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the created pricing rule. </p>
@@ -255,9 +296,21 @@ pub mod create_pricing_rule_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePricingRuleOutput`](crate::output::CreatePricingRuleOutput).
         pub fn build(self) -> crate::output::CreatePricingRuleOutput {
-            crate::output::CreatePricingRuleOutput { arn: self.arn }
+            crate::output::CreatePricingRuleOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -275,11 +328,17 @@ pub struct DeletePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeletePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeletePricingRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput).
@@ -290,6 +349,7 @@ pub mod delete_pricing_rule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the deleted pricing rule. </p>
@@ -302,9 +362,21 @@ pub mod delete_pricing_rule_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePricingRuleOutput`](crate::output::DeletePricingRuleOutput).
         pub fn build(self) -> crate::output::DeletePricingRuleOutput {
-            crate::output::DeletePricingRuleOutput { arn: self.arn }
+            crate::output::DeletePricingRuleOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -360,6 +432,7 @@ pub struct UpdatePricingRuleOutput {
     /// <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
     #[doc(hidden)]
     pub operation: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdatePricingRuleOutput {
     /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
@@ -436,7 +509,13 @@ impl std::fmt::Debug for UpdatePricingRuleOutput {
         formatter.field("tiering", &self.tiering);
         formatter.field("usage_type", &self.usage_type);
         formatter.field("operation", &self.operation);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdatePricingRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
@@ -459,6 +538,7 @@ pub mod update_pricing_rule_output {
         pub(crate) tiering: std::option::Option<crate::model::UpdateTieringInput>,
         pub(crate) usage_type: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the successfully updated pricing rule. </p>
@@ -610,6 +690,15 @@ pub mod update_pricing_rule_output {
             self.operation = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePricingRuleOutput`](crate::output::UpdatePricingRuleOutput).
         pub fn build(self) -> crate::output::UpdatePricingRuleOutput {
             crate::output::UpdatePricingRuleOutput {
@@ -628,6 +717,7 @@ pub mod update_pricing_rule_output {
                 tiering: self.tiering,
                 usage_type: self.usage_type,
                 operation: self.operation,
+                _request_id: self._request_id,
             }
         }
     }
@@ -650,6 +740,7 @@ pub mod update_pricing_rule_output {
             formatter.field("tiering", &self.tiering);
             formatter.field("usage_type", &self.usage_type);
             formatter.field("operation", &self.operation);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -668,11 +759,17 @@ pub struct DisassociatePricingRulesOutput {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociatePricingRulesOutput {
     /// <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DisassociatePricingRulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput).
@@ -683,6 +780,7 @@ pub mod disassociate_pricing_rules_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the pricing plan that the pricing rules successfully disassociated from. </p>
@@ -695,9 +793,21 @@ pub mod disassociate_pricing_rules_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociatePricingRulesOutput`](crate::output::DisassociatePricingRulesOutput).
         pub fn build(self) -> crate::output::DisassociatePricingRulesOutput {
-            crate::output::DisassociatePricingRulesOutput { arn: self.arn }
+            crate::output::DisassociatePricingRulesOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -715,11 +825,17 @@ pub struct AssociatePricingRulesOutput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociatePricingRulesOutput {
     /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AssociatePricingRulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput).
@@ -730,6 +846,7 @@ pub mod associate_pricing_rules_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated with. </p>
@@ -742,9 +859,21 @@ pub mod associate_pricing_rules_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociatePricingRulesOutput`](crate::output::AssociatePricingRulesOutput).
         pub fn build(self) -> crate::output::AssociatePricingRulesOutput {
-            crate::output::AssociatePricingRulesOutput { arn: self.arn }
+            crate::output::AssociatePricingRulesOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -771,6 +900,7 @@ pub struct ListPricingPlansAssociatedWithPricingRuleOutput {
     /// <p> The pagination token to be used on subsequent calls. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPricingPlansAssociatedWithPricingRuleOutput {
     /// <p> The pricing plan billing period for which associations will be listed. </p>
@@ -790,6 +920,11 @@ impl ListPricingPlansAssociatedWithPricingRuleOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPricingPlansAssociatedWithPricingRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput).
 pub mod list_pricing_plans_associated_with_pricing_rule_output {
 
@@ -801,6 +936,7 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
         pub(crate) pricing_rule_arn: std::option::Option<std::string::String>,
         pub(crate) pricing_plan_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The pricing plan billing period for which associations will be listed. </p>
@@ -858,6 +994,15 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPricingPlansAssociatedWithPricingRuleOutput`](crate::output::ListPricingPlansAssociatedWithPricingRuleOutput).
         pub fn build(self) -> crate::output::ListPricingPlansAssociatedWithPricingRuleOutput {
             crate::output::ListPricingPlansAssociatedWithPricingRuleOutput {
@@ -865,6 +1010,7 @@ pub mod list_pricing_plans_associated_with_pricing_rule_output {
                 pricing_rule_arn: self.pricing_rule_arn,
                 pricing_plan_arns: self.pricing_plan_arns,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -890,6 +1036,7 @@ pub struct ListPricingPlansOutput {
     /// <p>The pagination token that's used on subsequent calls to get pricing plans. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPricingPlansOutput {
     /// <p> The billing period for which the described pricing plans are applicable. </p>
@@ -905,6 +1052,11 @@ impl ListPricingPlansOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPricingPlansOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput).
 pub mod list_pricing_plans_output {
 
@@ -916,6 +1068,7 @@ pub mod list_pricing_plans_output {
         pub(crate) pricing_plans:
             std::option::Option<std::vec::Vec<crate::model::PricingPlanListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The billing period for which the described pricing plans are applicable. </p>
@@ -960,12 +1113,22 @@ pub mod list_pricing_plans_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPricingPlansOutput`](crate::output::ListPricingPlansOutput).
         pub fn build(self) -> crate::output::ListPricingPlansOutput {
             crate::output::ListPricingPlansOutput {
                 billing_period: self.billing_period,
                 pricing_plans: self.pricing_plans,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -984,11 +1147,17 @@ pub struct CreatePricingPlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreatePricingPlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreatePricingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput).
@@ -999,6 +1168,7 @@ pub mod create_pricing_plan_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the created pricing plan.</p>
@@ -1011,9 +1181,21 @@ pub mod create_pricing_plan_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePricingPlanOutput`](crate::output::CreatePricingPlanOutput).
         pub fn build(self) -> crate::output::CreatePricingPlanOutput {
-            crate::output::CreatePricingPlanOutput { arn: self.arn }
+            crate::output::CreatePricingPlanOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1031,11 +1213,17 @@ pub struct DeletePricingPlanOutput {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeletePricingPlanOutput {
     /// <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeletePricingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput).
@@ -1046,6 +1234,7 @@ pub mod delete_pricing_plan_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the deleted pricing plan. </p>
@@ -1058,9 +1247,21 @@ pub mod delete_pricing_plan_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePricingPlanOutput`](crate::output::DeletePricingPlanOutput).
         pub fn build(self) -> crate::output::DeletePricingPlanOutput {
-            crate::output::DeletePricingPlanOutput { arn: self.arn }
+            crate::output::DeletePricingPlanOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1090,6 +1291,7 @@ pub struct UpdatePricingPlanOutput {
     /// <p> The most recent time when the pricing plan was modified. </p>
     #[doc(hidden)]
     pub last_modified_time: i64,
+    _request_id: Option<String>,
 }
 impl UpdatePricingPlanOutput {
     /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
@@ -1121,7 +1323,13 @@ impl std::fmt::Debug for UpdatePricingPlanOutput {
         formatter.field("description", &"*** Sensitive Data Redacted ***");
         formatter.field("size", &self.size);
         formatter.field("last_modified_time", &self.last_modified_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdatePricingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
@@ -1136,6 +1344,7 @@ pub mod update_pricing_plan_output {
         pub(crate) description: std::option::Option<std::string::String>,
         pub(crate) size: std::option::Option<i64>,
         pub(crate) last_modified_time: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the updated pricing plan. </p>
@@ -1188,6 +1397,15 @@ pub mod update_pricing_plan_output {
             self.last_modified_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePricingPlanOutput`](crate::output::UpdatePricingPlanOutput).
         pub fn build(self) -> crate::output::UpdatePricingPlanOutput {
             crate::output::UpdatePricingPlanOutput {
@@ -1196,6 +1414,7 @@ pub mod update_pricing_plan_output {
                 description: self.description,
                 size: self.size.unwrap_or_default(),
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -1207,6 +1426,7 @@ pub mod update_pricing_plan_output {
             formatter.field("description", &"*** Sensitive Data Redacted ***");
             formatter.field("size", &self.size);
             formatter.field("last_modified_time", &self.last_modified_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1233,6 +1453,7 @@ pub struct ListResourcesAssociatedToCustomLineItemOutput {
     /// <p> The pagination token to be used in subsequent requests to retrieve additional results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourcesAssociatedToCustomLineItemOutput {
     /// <p> The custom line item ARN for which the resource associations are listed. </p>
@@ -1251,6 +1472,11 @@ impl ListResourcesAssociatedToCustomLineItemOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourcesAssociatedToCustomLineItemOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput).
 pub mod list_resources_associated_to_custom_line_item_output {
 
@@ -1263,6 +1489,7 @@ pub mod list_resources_associated_to_custom_line_item_output {
             std::vec::Vec<crate::model::ListResourcesAssociatedToCustomLineItemResponseElement>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The custom line item ARN for which the resource associations are listed. </p>
@@ -1309,12 +1536,22 @@ pub mod list_resources_associated_to_custom_line_item_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListResourcesAssociatedToCustomLineItemOutput`](crate::output::ListResourcesAssociatedToCustomLineItemOutput).
         pub fn build(self) -> crate::output::ListResourcesAssociatedToCustomLineItemOutput {
             crate::output::ListResourcesAssociatedToCustomLineItemOutput {
                 arn: self.arn,
                 associated_resources: self.associated_resources,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1338,6 +1575,7 @@ pub struct ListCustomLineItemVersionsOutput {
     /// <p>The pagination token that's used on subsequent calls to retrieve custom line item versions.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomLineItemVersionsOutput {
     /// <p>A list of <code>CustomLineItemVersionListElements</code> that are received.</p>
@@ -1351,6 +1589,11 @@ impl ListCustomLineItemVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomLineItemVersionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
 pub mod list_custom_line_item_versions_output {
 
@@ -1361,6 +1604,7 @@ pub mod list_custom_line_item_versions_output {
         pub(crate) custom_line_item_versions:
             std::option::Option<std::vec::Vec<crate::model::CustomLineItemVersionListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `custom_line_item_versions`.
@@ -1397,11 +1641,21 @@ pub mod list_custom_line_item_versions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCustomLineItemVersionsOutput`](crate::output::ListCustomLineItemVersionsOutput).
         pub fn build(self) -> crate::output::ListCustomLineItemVersionsOutput {
             crate::output::ListCustomLineItemVersionsOutput {
                 custom_line_item_versions: self.custom_line_item_versions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1425,6 +1679,7 @@ pub struct BatchDisassociateResourcesFromCustomLineItemOutput {
     #[doc(hidden)]
     pub failed_disassociated_resources:
         std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
+    _request_id: Option<String>,
 }
 impl BatchDisassociateResourcesFromCustomLineItemOutput {
     /// <p> A list of <code>DisassociateResourceResponseElement</code> for each resource that's been disassociated from a percentage custom line item successfully. </p>
@@ -1440,6 +1695,11 @@ impl BatchDisassociateResourcesFromCustomLineItemOutput {
         self.failed_disassociated_resources.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchDisassociateResourcesFromCustomLineItemOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput).
 pub mod batch_disassociate_resources_from_custom_line_item_output {
 
@@ -1451,6 +1711,7 @@ pub mod batch_disassociate_resources_from_custom_line_item_output {
             std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
         pub(crate) failed_disassociated_resources:
             std::option::Option<std::vec::Vec<crate::model::DisassociateResourceResponseElement>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `successfully_disassociated_resources`.
@@ -1503,11 +1764,21 @@ pub mod batch_disassociate_resources_from_custom_line_item_output {
             self.failed_disassociated_resources = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDisassociateResourcesFromCustomLineItemOutput`](crate::output::BatchDisassociateResourcesFromCustomLineItemOutput).
         pub fn build(self) -> crate::output::BatchDisassociateResourcesFromCustomLineItemOutput {
             crate::output::BatchDisassociateResourcesFromCustomLineItemOutput {
                 successfully_disassociated_resources: self.successfully_disassociated_resources,
                 failed_disassociated_resources: self.failed_disassociated_resources,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1532,6 +1803,7 @@ pub struct BatchAssociateResourcesToCustomLineItemOutput {
     #[doc(hidden)]
     pub failed_associated_resources:
         std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+    _request_id: Option<String>,
 }
 impl BatchAssociateResourcesToCustomLineItemOutput {
     /// <p> A list of <code>AssociateResourceResponseElement</code> for each resource that's been associated to a percentage custom line item successfully. </p>
@@ -1547,6 +1819,11 @@ impl BatchAssociateResourcesToCustomLineItemOutput {
         self.failed_associated_resources.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchAssociateResourcesToCustomLineItemOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput).
 pub mod batch_associate_resources_to_custom_line_item_output {
 
@@ -1558,6 +1835,7 @@ pub mod batch_associate_resources_to_custom_line_item_output {
             std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
         pub(crate) failed_associated_resources:
             std::option::Option<std::vec::Vec<crate::model::AssociateResourceResponseElement>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `successfully_associated_resources`.
@@ -1608,11 +1886,21 @@ pub mod batch_associate_resources_to_custom_line_item_output {
             self.failed_associated_resources = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchAssociateResourcesToCustomLineItemOutput`](crate::output::BatchAssociateResourcesToCustomLineItemOutput).
         pub fn build(self) -> crate::output::BatchAssociateResourcesToCustomLineItemOutput {
             crate::output::BatchAssociateResourcesToCustomLineItemOutput {
                 successfully_associated_resources: self.successfully_associated_resources,
                 failed_associated_resources: self.failed_associated_resources,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1636,6 +1924,7 @@ pub struct ListCustomLineItemsOutput {
     /// <p> The pagination token that's used on subsequent calls to get custom line items (FFLIs). </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCustomLineItemsOutput {
     /// <p> A list of <code>FreeFormLineItemListElements</code> received. </p>
@@ -1649,6 +1938,11 @@ impl ListCustomLineItemsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCustomLineItemsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput).
 pub mod list_custom_line_items_output {
 
@@ -1659,6 +1953,7 @@ pub mod list_custom_line_items_output {
         pub(crate) custom_line_items:
             std::option::Option<std::vec::Vec<crate::model::CustomLineItemListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `custom_line_items`.
@@ -1690,11 +1985,21 @@ pub mod list_custom_line_items_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCustomLineItemsOutput`](crate::output::ListCustomLineItemsOutput).
         pub fn build(self) -> crate::output::ListCustomLineItemsOutput {
             crate::output::ListCustomLineItemsOutput {
                 custom_line_items: self.custom_line_items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1713,11 +2018,17 @@ pub struct CreateCustomLineItemOutput {
     /// <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCustomLineItemOutput {
     /// <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateCustomLineItemOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput).
@@ -1728,6 +2039,7 @@ pub mod create_custom_line_item_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the created custom line item. </p>
@@ -1740,9 +2052,21 @@ pub mod create_custom_line_item_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCustomLineItemOutput`](crate::output::CreateCustomLineItemOutput).
         pub fn build(self) -> crate::output::CreateCustomLineItemOutput {
-            crate::output::CreateCustomLineItemOutput { arn: self.arn }
+            crate::output::CreateCustomLineItemOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1760,11 +2084,17 @@ pub struct DeleteCustomLineItemOutput {
     /// <p> Then ARN of the deleted custom line item. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteCustomLineItemOutput {
     /// <p> Then ARN of the deleted custom line item. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteCustomLineItemOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput).
@@ -1775,6 +2105,7 @@ pub mod delete_custom_line_item_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Then ARN of the deleted custom line item. </p>
@@ -1787,9 +2118,21 @@ pub mod delete_custom_line_item_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteCustomLineItemOutput`](crate::output::DeleteCustomLineItemOutput).
         pub fn build(self) -> crate::output::DeleteCustomLineItemOutput {
-            crate::output::DeleteCustomLineItemOutput { arn: self.arn }
+            crate::output::DeleteCustomLineItemOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1825,6 +2168,7 @@ pub struct UpdateCustomLineItemOutput {
     /// <p> The number of resources that are associated to the custom line item. </p>
     #[doc(hidden)]
     pub association_size: i64,
+    _request_id: Option<String>,
 }
 impl UpdateCustomLineItemOutput {
     /// <p> The ARN of the successfully updated custom line item. </p>
@@ -1868,7 +2212,13 @@ impl std::fmt::Debug for UpdateCustomLineItemOutput {
         formatter.field("charge_details", &self.charge_details);
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("association_size", &self.association_size);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateCustomLineItemOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput).
@@ -1886,6 +2236,7 @@ pub mod update_custom_line_item_output {
             std::option::Option<crate::model::ListCustomLineItemChargeDetails>,
         pub(crate) last_modified_time: std::option::Option<i64>,
         pub(crate) association_size: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The ARN of the successfully updated custom line item. </p>
@@ -1967,6 +2318,15 @@ pub mod update_custom_line_item_output {
             self.association_size = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateCustomLineItemOutput`](crate::output::UpdateCustomLineItemOutput).
         pub fn build(self) -> crate::output::UpdateCustomLineItemOutput {
             crate::output::UpdateCustomLineItemOutput {
@@ -1977,6 +2337,7 @@ pub mod update_custom_line_item_output {
                 charge_details: self.charge_details,
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
                 association_size: self.association_size.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -1990,6 +2351,7 @@ pub mod update_custom_line_item_output {
             formatter.field("charge_details", &self.charge_details);
             formatter.field("last_modified_time", &self.last_modified_time);
             formatter.field("association_size", &self.association_size);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2008,11 +2370,17 @@ pub struct DisassociateAccountsOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociateAccountsOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DisassociateAccountsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput).
@@ -2023,6 +2391,7 @@ pub mod disassociate_accounts_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the billing group that the array of account IDs is disassociated from. </p>
@@ -2035,9 +2404,21 @@ pub mod disassociate_accounts_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateAccountsOutput`](crate::output::DisassociateAccountsOutput).
         pub fn build(self) -> crate::output::DisassociateAccountsOutput {
-            crate::output::DisassociateAccountsOutput { arn: self.arn }
+            crate::output::DisassociateAccountsOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2055,11 +2436,17 @@ pub struct AssociateAccountsOutput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateAccountsOutput {
     /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AssociateAccountsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput).
@@ -2070,6 +2457,7 @@ pub mod associate_accounts_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The Amazon Resource Name (ARN) of the billing group that associates the array of account IDs. </p>
@@ -2082,9 +2470,21 @@ pub mod associate_accounts_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateAccountsOutput`](crate::output::AssociateAccountsOutput).
         pub fn build(self) -> crate::output::AssociateAccountsOutput {
-            crate::output::AssociateAccountsOutput { arn: self.arn }
+            crate::output::AssociateAccountsOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2105,6 +2505,7 @@ pub struct ListBillingGroupsOutput {
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBillingGroupsOutput {
     /// <p>A list of <code>BillingGroupListElement</code> retrieved. </p>
@@ -2114,6 +2515,11 @@ impl ListBillingGroupsOutput {
     /// <p>The pagination token that's used on subsequent calls to get billing groups. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListBillingGroupsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput).
@@ -2126,6 +2532,7 @@ pub mod list_billing_groups_output {
         pub(crate) billing_groups:
             std::option::Option<std::vec::Vec<crate::model::BillingGroupListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `billing_groups`.
@@ -2157,11 +2564,21 @@ pub mod list_billing_groups_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBillingGroupsOutput`](crate::output::ListBillingGroupsOutput).
         pub fn build(self) -> crate::output::ListBillingGroupsOutput {
             crate::output::ListBillingGroupsOutput {
                 billing_groups: self.billing_groups,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2180,11 +2597,17 @@ pub struct CreateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the created billing group. </p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the created billing group. </p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateBillingGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput).
@@ -2195,6 +2618,7 @@ pub mod create_billing_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the created billing group. </p>
@@ -2207,9 +2631,21 @@ pub mod create_billing_group_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBillingGroupOutput`](crate::output::CreateBillingGroupOutput).
         pub fn build(self) -> crate::output::CreateBillingGroupOutput {
-            crate::output::CreateBillingGroupOutput { arn: self.arn }
+            crate::output::CreateBillingGroupOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2227,11 +2663,17 @@ pub struct DeleteBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
     #[doc(hidden)]
     pub arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
     pub fn arn(&self) -> std::option::Option<&str> {
         self.arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteBillingGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput).
@@ -2242,6 +2684,7 @@ pub mod delete_billing_group_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the deleted billing group.</p>
@@ -2254,9 +2697,21 @@ pub mod delete_billing_group_output {
             self.arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBillingGroupOutput`](crate::output::DeleteBillingGroupOutput).
         pub fn build(self) -> crate::output::DeleteBillingGroupOutput {
-            crate::output::DeleteBillingGroupOutput { arn: self.arn }
+            crate::output::DeleteBillingGroupOutput {
+                arn: self.arn,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2298,6 +2753,7 @@ pub struct UpdateBillingGroupOutput {
     /// <p> The reason why the billing group is in its current status. </p>
     #[doc(hidden)]
     pub status_reason: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateBillingGroupOutput {
     /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
@@ -2349,7 +2805,13 @@ impl std::fmt::Debug for UpdateBillingGroupOutput {
         formatter.field("last_modified_time", &self.last_modified_time);
         formatter.field("status", &self.status);
         formatter.field("status_reason", &self.status_reason);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateBillingGroupOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput).
@@ -2368,6 +2830,7 @@ pub mod update_billing_group_output {
         pub(crate) last_modified_time: std::option::Option<i64>,
         pub(crate) status: std::option::Option<crate::model::BillingGroupStatus>,
         pub(crate) status_reason: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the billing group that was updated. </p>
@@ -2472,6 +2935,15 @@ pub mod update_billing_group_output {
             self.status_reason = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBillingGroupOutput`](crate::output::UpdateBillingGroupOutput).
         pub fn build(self) -> crate::output::UpdateBillingGroupOutput {
             crate::output::UpdateBillingGroupOutput {
@@ -2484,6 +2956,7 @@ pub mod update_billing_group_output {
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
                 status: self.status,
                 status_reason: self.status_reason,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2499,6 +2972,7 @@ pub mod update_billing_group_output {
             formatter.field("last_modified_time", &self.last_modified_time);
             formatter.field("status", &self.status);
             formatter.field("status_reason", &self.status_reason);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2513,18 +2987,38 @@ impl UpdateBillingGroupOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2538,18 +3032,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2568,6 +3082,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p> The tags for the resource. </p>
@@ -2576,6 +3091,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -2588,6 +3108,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -2615,9 +3136,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2639,6 +3172,7 @@ pub struct ListBillingGroupCostReportsOutput {
     /// <p>The pagination token that's used on subsequent calls to get reports. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBillingGroupCostReportsOutput {
     /// <p>A list of <code>BillingGroupCostReportElement</code> retrieved. </p>
@@ -2652,6 +3186,11 @@ impl ListBillingGroupCostReportsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBillingGroupCostReportsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput).
 pub mod list_billing_group_cost_reports_output {
 
@@ -2662,6 +3201,7 @@ pub mod list_billing_group_cost_reports_output {
         pub(crate) billing_group_cost_reports:
             std::option::Option<std::vec::Vec<crate::model::BillingGroupCostReportElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `billing_group_cost_reports`.
@@ -2696,11 +3236,21 @@ pub mod list_billing_group_cost_reports_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBillingGroupCostReportsOutput`](crate::output::ListBillingGroupCostReportsOutput).
         pub fn build(self) -> crate::output::ListBillingGroupCostReportsOutput {
             crate::output::ListBillingGroupCostReportsOutput {
                 billing_group_cost_reports: self.billing_group_cost_reports,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2723,6 +3273,7 @@ pub struct ListAccountAssociationsOutput {
     /// <p> The pagination token that's used on subsequent calls to get accounts. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAccountAssociationsOutput {
     /// <p> The list of linked accounts in the payer account. </p>
@@ -2736,6 +3287,11 @@ impl ListAccountAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAccountAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput).
 pub mod list_account_associations_output {
 
@@ -2746,6 +3302,7 @@ pub mod list_account_associations_output {
         pub(crate) linked_accounts:
             std::option::Option<std::vec::Vec<crate::model::AccountAssociationsListElement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `linked_accounts`.
@@ -2780,11 +3337,21 @@ pub mod list_account_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAccountAssociationsOutput`](crate::output::ListAccountAssociationsOutput).
         pub fn build(self) -> crate::output::ListAccountAssociationsOutput {
             crate::output::ListAccountAssociationsOutput {
                 linked_accounts: self.linked_accounts,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }

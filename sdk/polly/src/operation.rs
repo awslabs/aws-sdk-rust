@@ -23,6 +23,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteLexicon {
     type Output =
         std::result::Result<crate::output::DeleteLexiconOutput, crate::error::DeleteLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_lexicon_error(response)
         } else {
@@ -55,6 +56,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVoices {
     type Output =
         std::result::Result<crate::output::DescribeVoicesOutput, crate::error::DescribeVoicesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_voices_error(response)
         } else {
@@ -87,6 +89,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLexicon {
     type Output =
         std::result::Result<crate::output::GetLexiconOutput, crate::error::GetLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_lexicon_error(response)
         } else {
@@ -121,6 +124,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSpeechSynthesisTask {
         crate::error::GetSpeechSynthesisTaskError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_speech_synthesis_task_error(response)
         } else {
@@ -153,6 +157,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLexicons {
     type Output =
         std::result::Result<crate::output::ListLexiconsOutput, crate::error::ListLexiconsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_lexicons_error(response)
         } else {
@@ -187,6 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSpeechSynthesisTasks
         crate::error::ListSpeechSynthesisTasksError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_speech_synthesis_tasks_error(response)
         } else {
@@ -219,6 +225,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutLexicon {
     type Output =
         std::result::Result<crate::output::PutLexiconOutput, crate::error::PutLexiconError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_lexicon_error(response)
         } else {
@@ -253,6 +260,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartSpeechSynthesisTask
         crate::error::StartSpeechSynthesisTaskError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_speech_synthesis_task_error(response)
         } else {

@@ -9,6 +9,7 @@ pub struct SearchQuantumTasksOutput {
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SearchQuantumTasksOutput {
     /// <p>An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified filters.</p>
@@ -18,6 +19,11 @@ impl SearchQuantumTasksOutput {
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for SearchQuantumTasksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`SearchQuantumTasksOutput`](crate::output::SearchQuantumTasksOutput).
@@ -30,6 +36,7 @@ pub mod search_quantum_tasks_output {
         pub(crate) quantum_tasks:
             std::option::Option<std::vec::Vec<crate::model::QuantumTaskSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `quantum_tasks`.
@@ -61,11 +68,21 @@ pub mod search_quantum_tasks_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchQuantumTasksOutput`](crate::output::SearchQuantumTasksOutput).
         pub fn build(self) -> crate::output::SearchQuantumTasksOutput {
             crate::output::SearchQuantumTasksOutput {
                 quantum_tasks: self.quantum_tasks,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,11 +101,17 @@ pub struct CreateQuantumTaskOutput {
     /// <p>The ARN of the task created by the request.</p>
     #[doc(hidden)]
     pub quantum_task_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateQuantumTaskOutput {
     /// <p>The ARN of the task created by the request.</p>
     pub fn quantum_task_arn(&self) -> std::option::Option<&str> {
         self.quantum_task_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateQuantumTaskOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateQuantumTaskOutput`](crate::output::CreateQuantumTaskOutput).
@@ -99,6 +122,7 @@ pub mod create_quantum_task_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quantum_task_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the task created by the request.</p>
@@ -114,10 +138,20 @@ pub mod create_quantum_task_output {
             self.quantum_task_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateQuantumTaskOutput`](crate::output::CreateQuantumTaskOutput).
         pub fn build(self) -> crate::output::CreateQuantumTaskOutput {
             crate::output::CreateQuantumTaskOutput {
                 quantum_task_arn: self.quantum_task_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -139,6 +173,7 @@ pub struct CancelQuantumTaskOutput {
     /// <p>The status of the cancellation request.</p>
     #[doc(hidden)]
     pub cancellation_status: std::option::Option<crate::model::CancellationStatus>,
+    _request_id: Option<String>,
 }
 impl CancelQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
@@ -150,6 +185,11 @@ impl CancelQuantumTaskOutput {
         self.cancellation_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CancelQuantumTaskOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CancelQuantumTaskOutput`](crate::output::CancelQuantumTaskOutput).
 pub mod cancel_quantum_task_output {
 
@@ -159,6 +199,7 @@ pub mod cancel_quantum_task_output {
     pub struct Builder {
         pub(crate) quantum_task_arn: std::option::Option<std::string::String>,
         pub(crate) cancellation_status: std::option::Option<crate::model::CancellationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the task.</p>
@@ -187,11 +228,21 @@ pub mod cancel_quantum_task_output {
             self.cancellation_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelQuantumTaskOutput`](crate::output::CancelQuantumTaskOutput).
         pub fn build(self) -> crate::output::CancelQuantumTaskOutput {
             crate::output::CancelQuantumTaskOutput {
                 quantum_task_arn: self.quantum_task_arn,
                 cancellation_status: self.cancellation_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -244,6 +295,7 @@ pub struct GetQuantumTaskOutput {
     /// <p>The ARN of the Amazon Braket job associated with the quantum task.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetQuantumTaskOutput {
     /// <p>The ARN of the task.</p>
@@ -298,6 +350,11 @@ impl GetQuantumTaskOutput {
         self.job_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetQuantumTaskOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetQuantumTaskOutput`](crate::output::GetQuantumTaskOutput).
 pub mod get_quantum_task_output {
 
@@ -319,6 +376,7 @@ pub mod get_quantum_task_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) job_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the task.</p>
@@ -480,6 +538,15 @@ pub mod get_quantum_task_output {
             self.job_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetQuantumTaskOutput`](crate::output::GetQuantumTaskOutput).
         pub fn build(self) -> crate::output::GetQuantumTaskOutput {
             crate::output::GetQuantumTaskOutput {
@@ -495,6 +562,7 @@ pub mod get_quantum_task_output {
                 ended_at: self.ended_at,
                 tags: self.tags,
                 job_arn: self.job_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -516,6 +584,7 @@ pub struct SearchJobsOutput {
     /// <p>A token used for pagination of results, or <code>null</code> if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SearchJobsOutput {
     /// <p>An array of <code>JobSummary</code> objects for devices that match the specified filter values.</p>
@@ -527,6 +596,11 @@ impl SearchJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SearchJobsOutput`](crate::output::SearchJobsOutput).
 pub mod search_jobs_output {
 
@@ -536,6 +610,7 @@ pub mod search_jobs_output {
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `jobs`.
@@ -567,11 +642,21 @@ pub mod search_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchJobsOutput`](crate::output::SearchJobsOutput).
         pub fn build(self) -> crate::output::SearchJobsOutput {
             crate::output::SearchJobsOutput {
                 jobs: self.jobs,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -590,11 +675,17 @@ pub struct CreateJobOutput {
     /// <p>The ARN of the Amazon Braket job created.</p>
     #[doc(hidden)]
     pub job_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateJobOutput {
     /// <p>The ARN of the Amazon Braket job created.</p>
     pub fn job_arn(&self) -> std::option::Option<&str> {
         self.job_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateJobOutput`](crate::output::CreateJobOutput).
@@ -605,6 +696,7 @@ pub mod create_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the Amazon Braket job created.</p>
@@ -617,10 +709,20 @@ pub mod create_job_output {
             self.job_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateJobOutput`](crate::output::CreateJobOutput).
         pub fn build(self) -> crate::output::CreateJobOutput {
             crate::output::CreateJobOutput {
                 job_arn: self.job_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -642,6 +744,7 @@ pub struct CancelJobOutput {
     /// <p>The status of the job cancellation request.</p>
     #[doc(hidden)]
     pub cancellation_status: std::option::Option<crate::model::CancellationStatus>,
+    _request_id: Option<String>,
 }
 impl CancelJobOutput {
     /// <p>The ARN of the Amazon Braket job.</p>
@@ -653,6 +756,11 @@ impl CancelJobOutput {
         self.cancellation_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CancelJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CancelJobOutput`](crate::output::CancelJobOutput).
 pub mod cancel_job_output {
 
@@ -662,6 +770,7 @@ pub mod cancel_job_output {
     pub struct Builder {
         pub(crate) job_arn: std::option::Option<std::string::String>,
         pub(crate) cancellation_status: std::option::Option<crate::model::CancellationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the Amazon Braket job.</p>
@@ -687,11 +796,21 @@ pub mod cancel_job_output {
             self.cancellation_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelJobOutput`](crate::output::CancelJobOutput).
         pub fn build(self) -> crate::output::CancelJobOutput {
             crate::output::CancelJobOutput {
                 job_arn: self.job_arn,
                 cancellation_status: self.cancellation_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -766,6 +885,7 @@ pub struct GetJobOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetJobOutput {
     /// <p>The status of the Amazon Braket job.</p>
@@ -853,6 +973,11 @@ impl GetJobOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
 pub mod get_job_output {
 
@@ -885,6 +1010,7 @@ pub mod get_job_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the Amazon Braket job.</p>
@@ -1161,6 +1287,15 @@ pub mod get_job_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetJobOutput`](crate::output::GetJobOutput).
         pub fn build(self) -> crate::output::GetJobOutput {
             crate::output::GetJobOutput {
@@ -1183,6 +1318,7 @@ pub mod get_job_output {
                 device_config: self.device_config,
                 events: self.events,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1204,6 +1340,7 @@ pub struct SearchDevicesOutput {
     /// <p>A token used for pagination of results, or null if there are no additional results. Use the token value in a subsequent request to continue results where the previous request ended.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SearchDevicesOutput {
     /// <p>An array of <code>DeviceSummary</code> objects for devices that match the specified filter values.</p>
@@ -1215,6 +1352,11 @@ impl SearchDevicesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchDevicesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SearchDevicesOutput`](crate::output::SearchDevicesOutput).
 pub mod search_devices_output {
 
@@ -1224,6 +1366,7 @@ pub mod search_devices_output {
     pub struct Builder {
         pub(crate) devices: std::option::Option<std::vec::Vec<crate::model::DeviceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `devices`.
@@ -1255,11 +1398,21 @@ pub mod search_devices_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchDevicesOutput`](crate::output::SearchDevicesOutput).
         pub fn build(self) -> crate::output::SearchDevicesOutput {
             crate::output::SearchDevicesOutput {
                 devices: self.devices,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1293,6 +1446,7 @@ pub struct GetDeviceOutput {
     /// <p>Details about the capabilities of the device.</p>
     #[doc(hidden)]
     pub device_capabilities: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDeviceOutput {
     /// <p>The ARN of the device.</p>
@@ -1320,6 +1474,11 @@ impl GetDeviceOutput {
         self.device_capabilities.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDeviceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDeviceOutput`](crate::output::GetDeviceOutput).
 pub mod get_device_output {
 
@@ -1333,6 +1492,7 @@ pub mod get_device_output {
         pub(crate) device_type: std::option::Option<crate::model::DeviceType>,
         pub(crate) device_status: std::option::Option<crate::model::DeviceStatus>,
         pub(crate) device_capabilities: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the device.</p>
@@ -1407,6 +1567,15 @@ pub mod get_device_output {
             self.device_capabilities = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDeviceOutput`](crate::output::GetDeviceOutput).
         pub fn build(self) -> crate::output::GetDeviceOutput {
             crate::output::GetDeviceOutput {
@@ -1416,6 +1585,7 @@ pub mod get_device_output {
                 device_type: self.device_type,
                 device_status: self.device_status,
                 device_capabilities: self.device_capabilities,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1430,18 +1600,38 @@ impl GetDeviceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1455,18 +1645,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1485,6 +1695,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Displays the key, value pairs of tags associated with this resource.</p>
@@ -1493,6 +1704,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -1505,6 +1721,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -1532,9 +1749,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }

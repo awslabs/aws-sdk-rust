@@ -3,8 +3,11 @@
 pub fn parse_activate_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ActivateGatewayOutput, crate::error::ActivateGatewayError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ActivateGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ActivateGatewayError::unhandled(generic)),
@@ -12,26 +15,25 @@ pub fn parse_activate_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ActivateGatewayError {
-            meta: generic,
-            kind: crate::error::ActivateGatewayErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ActivateGatewayError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ActivateGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ActivateGatewayError {
-            meta: generic,
-            kind: crate::error::ActivateGatewayErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ActivateGatewayError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -39,14 +41,15 @@ pub fn parse_activate_gateway_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ActivateGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ActivateGatewayError::generic(generic),
     })
 }
@@ -64,6 +67,9 @@ pub fn parse_activate_gateway_response(
             output,
         )
         .map_err(crate::error::ActivateGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -72,8 +78,11 @@ pub fn parse_activate_gateway_response(
 pub fn parse_add_cache_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddCacheOutput, crate::error::AddCacheError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddCacheError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddCacheError::unhandled(generic)),
@@ -81,26 +90,25 @@ pub fn parse_add_cache_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AddCacheError {
-            meta: generic,
-            kind: crate::error::AddCacheErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AddCacheError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AddCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AddCacheError {
-            meta: generic,
-            kind: crate::error::AddCacheErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AddCacheError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -108,14 +116,15 @@ pub fn parse_add_cache_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddCacheError::generic(generic),
     })
 }
@@ -133,6 +142,9 @@ pub fn parse_add_cache_response(
             output,
         )
         .map_err(crate::error::AddCacheError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -142,8 +154,11 @@ pub fn parse_add_tags_to_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddTagsToResourceError::unhandled(generic)),
@@ -151,26 +166,25 @@ pub fn parse_add_tags_to_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AddTagsToResourceError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AddTagsToResourceError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -178,14 +192,15 @@ pub fn parse_add_tags_to_resource_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddTagsToResourceError::generic(generic),
     })
 }
@@ -204,6 +219,9 @@ pub fn parse_add_tags_to_resource_response(
             output,
         )
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -212,8 +230,11 @@ pub fn parse_add_tags_to_resource_response(
 pub fn parse_add_upload_buffer_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddUploadBufferOutput, crate::error::AddUploadBufferError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddUploadBufferError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddUploadBufferError::unhandled(generic)),
@@ -221,26 +242,25 @@ pub fn parse_add_upload_buffer_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AddUploadBufferError {
-            meta: generic,
-            kind: crate::error::AddUploadBufferErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AddUploadBufferError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AddUploadBufferError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AddUploadBufferError {
-            meta: generic,
-            kind: crate::error::AddUploadBufferErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AddUploadBufferError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -248,14 +268,15 @@ pub fn parse_add_upload_buffer_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddUploadBufferError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddUploadBufferError::generic(generic),
     })
 }
@@ -273,6 +294,9 @@ pub fn parse_add_upload_buffer_response(
             output,
         )
         .map_err(crate::error::AddUploadBufferError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -282,8 +306,11 @@ pub fn parse_add_working_storage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddWorkingStorageOutput, crate::error::AddWorkingStorageError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddWorkingStorageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddWorkingStorageError::unhandled(generic)),
@@ -291,26 +318,25 @@ pub fn parse_add_working_storage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AddWorkingStorageError {
-            meta: generic,
-            kind: crate::error::AddWorkingStorageErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AddWorkingStorageError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AddWorkingStorageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AddWorkingStorageError {
-            meta: generic,
-            kind: crate::error::AddWorkingStorageErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AddWorkingStorageError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -318,14 +344,15 @@ pub fn parse_add_working_storage_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddWorkingStorageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddWorkingStorageError::generic(generic),
     })
 }
@@ -344,6 +371,9 @@ pub fn parse_add_working_storage_response(
             output,
         )
         .map_err(crate::error::AddWorkingStorageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -352,8 +382,11 @@ pub fn parse_add_working_storage_response(
 pub fn parse_assign_tape_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssignTapePoolOutput, crate::error::AssignTapePoolError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssignTapePoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssignTapePoolError::unhandled(generic)),
@@ -361,26 +394,25 @@ pub fn parse_assign_tape_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AssignTapePoolError {
-            meta: generic,
-            kind: crate::error::AssignTapePoolErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AssignTapePoolError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AssignTapePoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AssignTapePoolError {
-            meta: generic,
-            kind: crate::error::AssignTapePoolErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AssignTapePoolError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -388,14 +420,15 @@ pub fn parse_assign_tape_pool_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssignTapePoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssignTapePoolError::generic(generic),
     })
 }
@@ -413,6 +446,9 @@ pub fn parse_assign_tape_pool_response(
             output,
         )
         .map_err(crate::error::AssignTapePoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -424,8 +460,11 @@ pub fn parse_associate_file_system_error(
     crate::output::AssociateFileSystemOutput,
     crate::error::AssociateFileSystemError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateFileSystemError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssociateFileSystemError::unhandled(generic)),
@@ -433,26 +472,25 @@ pub fn parse_associate_file_system_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AssociateFileSystemError {
-            meta: generic,
-            kind: crate::error::AssociateFileSystemErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AssociateFileSystemError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateFileSystemError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AssociateFileSystemError {
-            meta: generic,
-            kind: crate::error::AssociateFileSystemErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AssociateFileSystemError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -460,14 +498,15 @@ pub fn parse_associate_file_system_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateFileSystemError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssociateFileSystemError::generic(generic),
     })
 }
@@ -488,6 +527,9 @@ pub fn parse_associate_file_system_response(
             output,
         )
         .map_err(crate::error::AssociateFileSystemError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -496,8 +538,11 @@ pub fn parse_associate_file_system_response(
 pub fn parse_attach_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachVolumeOutput, crate::error::AttachVolumeError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachVolumeError::unhandled(generic)),
@@ -505,26 +550,25 @@ pub fn parse_attach_volume_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::AttachVolumeError {
-            meta: generic,
-            kind: crate::error::AttachVolumeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::AttachVolumeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::AttachVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::AttachVolumeError {
-            meta: generic,
-            kind: crate::error::AttachVolumeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::AttachVolumeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -532,14 +576,15 @@ pub fn parse_attach_volume_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AttachVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AttachVolumeError::generic(generic),
     })
 }
@@ -557,6 +602,9 @@ pub fn parse_attach_volume_response(
             output,
         )
         .map_err(crate::error::AttachVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -565,8 +613,11 @@ pub fn parse_attach_volume_response(
 pub fn parse_cancel_archival_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelArchivalOutput, crate::error::CancelArchivalError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelArchivalError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CancelArchivalError::unhandled(generic)),
@@ -574,26 +625,25 @@ pub fn parse_cancel_archival_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CancelArchivalError {
-            meta: generic,
-            kind: crate::error::CancelArchivalErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CancelArchivalError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CancelArchivalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CancelArchivalError {
-            meta: generic,
-            kind: crate::error::CancelArchivalErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CancelArchivalError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -601,14 +651,15 @@ pub fn parse_cancel_archival_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelArchivalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CancelArchivalError::generic(generic),
     })
 }
@@ -626,6 +677,9 @@ pub fn parse_cancel_archival_response(
             output,
         )
         .map_err(crate::error::CancelArchivalError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -634,8 +688,11 @@ pub fn parse_cancel_archival_response(
 pub fn parse_cancel_retrieval_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelRetrievalOutput, crate::error::CancelRetrievalError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelRetrievalError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CancelRetrievalError::unhandled(generic)),
@@ -643,26 +700,25 @@ pub fn parse_cancel_retrieval_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CancelRetrievalError {
-            meta: generic,
-            kind: crate::error::CancelRetrievalErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CancelRetrievalError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CancelRetrievalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CancelRetrievalError {
-            meta: generic,
-            kind: crate::error::CancelRetrievalErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CancelRetrievalError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -670,14 +726,15 @@ pub fn parse_cancel_retrieval_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelRetrievalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CancelRetrievalError::generic(generic),
     })
 }
@@ -695,6 +752,9 @@ pub fn parse_cancel_retrieval_response(
             output,
         )
         .map_err(crate::error::CancelRetrievalError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -706,8 +766,11 @@ pub fn parse_create_cachedi_scsi_volume_error(
     crate::output::CreateCachediScsiVolumeOutput,
     crate::error::CreateCachediSCSIVolumeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -719,26 +782,25 @@ pub fn parse_create_cachedi_scsi_volume_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateCachediSCSIVolumeError {
-            meta: generic,
-            kind: crate::error::CreateCachediSCSIVolumeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateCachediSCSIVolumeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateCachediSCSIVolumeError {
-            meta: generic,
-            kind: crate::error::CreateCachediSCSIVolumeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateCachediSCSIVolumeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -746,14 +808,15 @@ pub fn parse_create_cachedi_scsi_volume_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateCachediSCSIVolumeError::generic(generic),
     })
 }
@@ -774,6 +837,9 @@ pub fn parse_create_cachedi_scsi_volume_response(
             output,
         )
         .map_err(crate::error::CreateCachediSCSIVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -785,8 +851,11 @@ pub fn parse_create_nfs_file_share_error(
     crate::output::CreateNfsFileShareOutput,
     crate::error::CreateNFSFileShareError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateNFSFileShareError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateNFSFileShareError::unhandled(generic)),
@@ -794,26 +863,25 @@ pub fn parse_create_nfs_file_share_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateNFSFileShareError {
-            meta: generic,
-            kind: crate::error::CreateNFSFileShareErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateNFSFileShareError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNFSFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateNFSFileShareError {
-            meta: generic,
-            kind: crate::error::CreateNFSFileShareErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateNFSFileShareError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -821,14 +889,15 @@ pub fn parse_create_nfs_file_share_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateNFSFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateNFSFileShareError::generic(generic),
     })
 }
@@ -849,6 +918,9 @@ pub fn parse_create_nfs_file_share_response(
             output,
         )
         .map_err(crate::error::CreateNFSFileShareError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -860,8 +932,11 @@ pub fn parse_create_smb_file_share_error(
     crate::output::CreateSmbFileShareOutput,
     crate::error::CreateSMBFileShareError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSMBFileShareError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateSMBFileShareError::unhandled(generic)),
@@ -869,26 +944,25 @@ pub fn parse_create_smb_file_share_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateSMBFileShareError {
-            meta: generic,
-            kind: crate::error::CreateSMBFileShareErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateSMBFileShareError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSMBFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateSMBFileShareError {
-            meta: generic,
-            kind: crate::error::CreateSMBFileShareErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateSMBFileShareError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -896,14 +970,15 @@ pub fn parse_create_smb_file_share_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSMBFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateSMBFileShareError::generic(generic),
     })
 }
@@ -924,6 +999,9 @@ pub fn parse_create_smb_file_share_response(
             output,
         )
         .map_err(crate::error::CreateSMBFileShareError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -932,8 +1010,11 @@ pub fn parse_create_smb_file_share_response(
 pub fn parse_create_snapshot_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSnapshotOutput, crate::error::CreateSnapshotError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateSnapshotError::unhandled(generic)),
@@ -941,26 +1022,25 @@ pub fn parse_create_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateSnapshotError {
-            meta: generic,
-            kind: crate::error::CreateSnapshotErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateSnapshotError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateSnapshotError {
-            meta: generic,
-            kind: crate::error::CreateSnapshotErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateSnapshotError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -968,31 +1048,30 @@ pub fn parse_create_snapshot_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableError" => crate::error::CreateSnapshotError {
-            meta: generic,
-            kind: crate::error::CreateSnapshotErrorKind::ServiceUnavailableError({
+            })
+        }
+        "ServiceUnavailableError" => crate::error::CreateSnapshotError::ServiceUnavailableError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_unavailable_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_unavailable_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateSnapshotError::generic(generic),
     })
 }
@@ -1010,6 +1089,9 @@ pub fn parse_create_snapshot_response(
             output,
         )
         .map_err(crate::error::CreateSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1021,8 +1103,11 @@ pub fn parse_create_snapshot_from_volume_recovery_point_error(
     crate::output::CreateSnapshotFromVolumeRecoveryPointOutput,
     crate::error::CreateSnapshotFromVolumeRecoveryPointError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1034,55 +1119,61 @@ pub fn parse_create_snapshot_from_volume_recovery_point_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateSnapshotFromVolumeRecoveryPointError { meta: generic, kind: crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::CreateSnapshotFromVolumeRecoveryPointError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::CreateSnapshotFromVolumeRecoveryPointError { meta: generic, kind: crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateSnapshotFromVolumeRecoveryPointError::InvalidGatewayRequestException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableError" => crate::error::CreateSnapshotFromVolumeRecoveryPointError { meta: generic, kind: crate::error::CreateSnapshotFromVolumeRecoveryPointErrorKind::ServiceUnavailableError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_gateway_request_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ServiceUnavailableError" => {
+            crate::error::CreateSnapshotFromVolumeRecoveryPointError::ServiceUnavailableError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateSnapshotFromVolumeRecoveryPointError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::CreateSnapshotFromVolumeRecoveryPointError::generic(generic),
     })
 }
 
@@ -1099,6 +1190,9 @@ pub fn parse_create_snapshot_from_volume_recovery_point_response(
             crate::output::create_snapshot_from_volume_recovery_point_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_create_snapshot_from_volume_recovery_point(response.body().as_ref(), output).map_err(crate::error::CreateSnapshotFromVolumeRecoveryPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1110,8 +1204,11 @@ pub fn parse_create_storedi_scsi_volume_error(
     crate::output::CreateStorediScsiVolumeOutput,
     crate::error::CreateStorediSCSIVolumeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1123,26 +1220,25 @@ pub fn parse_create_storedi_scsi_volume_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateStorediSCSIVolumeError {
-            meta: generic,
-            kind: crate::error::CreateStorediSCSIVolumeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateStorediSCSIVolumeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateStorediSCSIVolumeError {
-            meta: generic,
-            kind: crate::error::CreateStorediSCSIVolumeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateStorediSCSIVolumeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1150,14 +1246,15 @@ pub fn parse_create_storedi_scsi_volume_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateStorediSCSIVolumeError::generic(generic),
     })
 }
@@ -1178,6 +1275,9 @@ pub fn parse_create_storedi_scsi_volume_response(
             output,
         )
         .map_err(crate::error::CreateStorediSCSIVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1186,8 +1286,11 @@ pub fn parse_create_storedi_scsi_volume_response(
 pub fn parse_create_tape_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTapePoolOutput, crate::error::CreateTapePoolError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTapePoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateTapePoolError::unhandled(generic)),
@@ -1195,26 +1298,25 @@ pub fn parse_create_tape_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateTapePoolError {
-            meta: generic,
-            kind: crate::error::CreateTapePoolErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateTapePoolError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTapePoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateTapePoolError {
-            meta: generic,
-            kind: crate::error::CreateTapePoolErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateTapePoolError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1222,14 +1324,15 @@ pub fn parse_create_tape_pool_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTapePoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateTapePoolError::generic(generic),
     })
 }
@@ -1247,6 +1350,9 @@ pub fn parse_create_tape_pool_response(
             output,
         )
         .map_err(crate::error::CreateTapePoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1255,8 +1361,11 @@ pub fn parse_create_tape_pool_response(
 pub fn parse_create_tapes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTapesOutput, crate::error::CreateTapesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTapesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateTapesError::unhandled(generic)),
@@ -1264,26 +1373,25 @@ pub fn parse_create_tapes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateTapesError {
-            meta: generic,
-            kind: crate::error::CreateTapesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateTapesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTapesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateTapesError {
-            meta: generic,
-            kind: crate::error::CreateTapesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateTapesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1291,14 +1399,15 @@ pub fn parse_create_tapes_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTapesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateTapesError::generic(generic),
     })
 }
@@ -1316,6 +1425,9 @@ pub fn parse_create_tapes_response(
             output,
         )
         .map_err(crate::error::CreateTapesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1327,8 +1439,11 @@ pub fn parse_create_tape_with_barcode_error(
     crate::output::CreateTapeWithBarcodeOutput,
     crate::error::CreateTapeWithBarcodeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateTapeWithBarcodeError::unhandled(generic)),
@@ -1336,26 +1451,25 @@ pub fn parse_create_tape_with_barcode_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::CreateTapeWithBarcodeError {
-            meta: generic,
-            kind: crate::error::CreateTapeWithBarcodeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::CreateTapeWithBarcodeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::CreateTapeWithBarcodeError {
-            meta: generic,
-            kind: crate::error::CreateTapeWithBarcodeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::CreateTapeWithBarcodeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1363,14 +1477,15 @@ pub fn parse_create_tape_with_barcode_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateTapeWithBarcodeError::generic(generic),
     })
 }
@@ -1391,6 +1506,9 @@ pub fn parse_create_tape_with_barcode_response(
             output,
         )
         .map_err(crate::error::CreateTapeWithBarcodeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1402,8 +1520,11 @@ pub fn parse_delete_automatic_tape_creation_policy_error(
     crate::output::DeleteAutomaticTapeCreationPolicyOutput,
     crate::error::DeleteAutomaticTapeCreationPolicyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1413,39 +1534,42 @@ pub fn parse_delete_automatic_tape_creation_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteAutomaticTapeCreationPolicyError { meta: generic, kind: crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::DeleteAutomaticTapeCreationPolicyError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::DeleteAutomaticTapeCreationPolicyError { meta: generic, kind: crate::error::DeleteAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteAutomaticTapeCreationPolicyError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteAutomaticTapeCreationPolicyError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteAutomaticTapeCreationPolicyError::generic(generic),
     })
 }
 
@@ -1462,6 +1586,9 @@ pub fn parse_delete_automatic_tape_creation_policy_response(
             crate::output::delete_automatic_tape_creation_policy_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_delete_automatic_tape_creation_policy(response.body().as_ref(), output).map_err(crate::error::DeleteAutomaticTapeCreationPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1473,8 +1600,11 @@ pub fn parse_delete_bandwidth_rate_limit_error(
     crate::output::DeleteBandwidthRateLimitOutput,
     crate::error::DeleteBandwidthRateLimitError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1486,43 +1616,41 @@ pub fn parse_delete_bandwidth_rate_limit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteBandwidthRateLimitError {
-            meta: generic,
-            kind: crate::error::DeleteBandwidthRateLimitErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteBandwidthRateLimitError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteBandwidthRateLimitError {
-            meta: generic,
-            kind: crate::error::DeleteBandwidthRateLimitErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteBandwidthRateLimitError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteBandwidthRateLimitError::generic(generic),
     })
 }
@@ -1543,6 +1671,9 @@ pub fn parse_delete_bandwidth_rate_limit_response(
             output,
         )
         .map_err(crate::error::DeleteBandwidthRateLimitError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1554,8 +1685,11 @@ pub fn parse_delete_chap_credentials_error(
     crate::output::DeleteChapCredentialsOutput,
     crate::error::DeleteChapCredentialsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteChapCredentialsError::unhandled(generic)),
@@ -1563,26 +1697,25 @@ pub fn parse_delete_chap_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteChapCredentialsError {
-            meta: generic,
-            kind: crate::error::DeleteChapCredentialsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteChapCredentialsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteChapCredentialsError {
-            meta: generic,
-            kind: crate::error::DeleteChapCredentialsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteChapCredentialsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1590,14 +1723,15 @@ pub fn parse_delete_chap_credentials_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteChapCredentialsError::generic(generic),
     })
 }
@@ -1618,6 +1752,9 @@ pub fn parse_delete_chap_credentials_response(
             output,
         )
         .map_err(crate::error::DeleteChapCredentialsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1626,8 +1763,11 @@ pub fn parse_delete_chap_credentials_response(
 pub fn parse_delete_file_share_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteFileShareOutput, crate::error::DeleteFileShareError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteFileShareError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteFileShareError::unhandled(generic)),
@@ -1635,26 +1775,25 @@ pub fn parse_delete_file_share_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteFileShareError {
-            meta: generic,
-            kind: crate::error::DeleteFileShareErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteFileShareError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteFileShareError {
-            meta: generic,
-            kind: crate::error::DeleteFileShareErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteFileShareError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1662,14 +1801,15 @@ pub fn parse_delete_file_share_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteFileShareError::generic(generic),
     })
 }
@@ -1687,6 +1827,9 @@ pub fn parse_delete_file_share_response(
             output,
         )
         .map_err(crate::error::DeleteFileShareError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1695,8 +1838,11 @@ pub fn parse_delete_file_share_response(
 pub fn parse_delete_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteGatewayOutput, crate::error::DeleteGatewayError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteGatewayError::unhandled(generic)),
@@ -1704,26 +1850,25 @@ pub fn parse_delete_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteGatewayError {
-            meta: generic,
-            kind: crate::error::DeleteGatewayErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteGatewayError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteGatewayError {
-            meta: generic,
-            kind: crate::error::DeleteGatewayErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteGatewayError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1731,14 +1876,15 @@ pub fn parse_delete_gateway_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteGatewayError::generic(generic),
     })
 }
@@ -1756,6 +1902,9 @@ pub fn parse_delete_gateway_response(
             output,
         )
         .map_err(crate::error::DeleteGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1767,8 +1916,11 @@ pub fn parse_delete_snapshot_schedule_error(
     crate::output::DeleteSnapshotScheduleOutput,
     crate::error::DeleteSnapshotScheduleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1780,26 +1932,25 @@ pub fn parse_delete_snapshot_schedule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteSnapshotScheduleError {
-            meta: generic,
-            kind: crate::error::DeleteSnapshotScheduleErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteSnapshotScheduleError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteSnapshotScheduleError {
-            meta: generic,
-            kind: crate::error::DeleteSnapshotScheduleErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteSnapshotScheduleError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1807,14 +1958,15 @@ pub fn parse_delete_snapshot_schedule_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteSnapshotScheduleError::generic(generic),
     })
 }
@@ -1835,6 +1987,9 @@ pub fn parse_delete_snapshot_schedule_response(
             output,
         )
         .map_err(crate::error::DeleteSnapshotScheduleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1843,8 +1998,11 @@ pub fn parse_delete_snapshot_schedule_response(
 pub fn parse_delete_tape_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTapeOutput, crate::error::DeleteTapeError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTapeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteTapeError::unhandled(generic)),
@@ -1852,26 +2010,25 @@ pub fn parse_delete_tape_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteTapeError {
-            meta: generic,
-            kind: crate::error::DeleteTapeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteTapeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteTapeError {
-            meta: generic,
-            kind: crate::error::DeleteTapeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteTapeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1879,14 +2036,15 @@ pub fn parse_delete_tape_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteTapeError::generic(generic),
     })
 }
@@ -1904,6 +2062,9 @@ pub fn parse_delete_tape_response(
             output,
         )
         .map_err(crate::error::DeleteTapeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1913,8 +2074,11 @@ pub fn parse_delete_tape_archive_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTapeArchiveOutput, crate::error::DeleteTapeArchiveError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteTapeArchiveError::unhandled(generic)),
@@ -1922,26 +2086,25 @@ pub fn parse_delete_tape_archive_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteTapeArchiveError {
-            meta: generic,
-            kind: crate::error::DeleteTapeArchiveErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteTapeArchiveError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteTapeArchiveError {
-            meta: generic,
-            kind: crate::error::DeleteTapeArchiveErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteTapeArchiveError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1949,14 +2112,15 @@ pub fn parse_delete_tape_archive_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteTapeArchiveError::generic(generic),
     })
 }
@@ -1975,6 +2139,9 @@ pub fn parse_delete_tape_archive_response(
             output,
         )
         .map_err(crate::error::DeleteTapeArchiveError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1983,8 +2150,11 @@ pub fn parse_delete_tape_archive_response(
 pub fn parse_delete_tape_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTapePoolOutput, crate::error::DeleteTapePoolError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTapePoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteTapePoolError::unhandled(generic)),
@@ -1992,26 +2162,25 @@ pub fn parse_delete_tape_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteTapePoolError {
-            meta: generic,
-            kind: crate::error::DeleteTapePoolErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteTapePoolError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapePoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteTapePoolError {
-            meta: generic,
-            kind: crate::error::DeleteTapePoolErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteTapePoolError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2019,14 +2188,15 @@ pub fn parse_delete_tape_pool_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteTapePoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteTapePoolError::generic(generic),
     })
 }
@@ -2044,6 +2214,9 @@ pub fn parse_delete_tape_pool_response(
             output,
         )
         .map_err(crate::error::DeleteTapePoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2052,8 +2225,11 @@ pub fn parse_delete_tape_pool_response(
 pub fn parse_delete_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteVolumeOutput, crate::error::DeleteVolumeError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteVolumeError::unhandled(generic)),
@@ -2061,26 +2237,25 @@ pub fn parse_delete_volume_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DeleteVolumeError {
-            meta: generic,
-            kind: crate::error::DeleteVolumeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DeleteVolumeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DeleteVolumeError {
-            meta: generic,
-            kind: crate::error::DeleteVolumeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DeleteVolumeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2088,14 +2263,15 @@ pub fn parse_delete_volume_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteVolumeError::generic(generic),
     })
 }
@@ -2113,6 +2289,9 @@ pub fn parse_delete_volume_response(
             output,
         )
         .map_err(crate::error::DeleteVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2124,8 +2303,11 @@ pub fn parse_describe_availability_monitor_test_error(
     crate::output::DescribeAvailabilityMonitorTestOutput,
     crate::error::DescribeAvailabilityMonitorTestError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeAvailabilityMonitorTestError::unhandled(generic)),
@@ -2133,39 +2315,42 @@ pub fn parse_describe_availability_monitor_test_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeAvailabilityMonitorTestError { meta: generic, kind: crate::error::DescribeAvailabilityMonitorTestErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::DescribeAvailabilityMonitorTestError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::DescribeAvailabilityMonitorTestError { meta: generic, kind: crate::error::DescribeAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeAvailabilityMonitorTestError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeAvailabilityMonitorTestError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeAvailabilityMonitorTestError::generic(generic),
     })
 }
 
@@ -2187,6 +2372,9 @@ pub fn parse_describe_availability_monitor_test_response(
                 output,
             )
             .map_err(crate::error::DescribeAvailabilityMonitorTestError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2198,8 +2386,11 @@ pub fn parse_describe_bandwidth_rate_limit_error(
     crate::output::DescribeBandwidthRateLimitOutput,
     crate::error::DescribeBandwidthRateLimitError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2211,43 +2402,41 @@ pub fn parse_describe_bandwidth_rate_limit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeBandwidthRateLimitError {
-            meta: generic,
-            kind: crate::error::DescribeBandwidthRateLimitErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeBandwidthRateLimitError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeBandwidthRateLimitError {
-            meta: generic,
-            kind: crate::error::DescribeBandwidthRateLimitErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeBandwidthRateLimitError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeBandwidthRateLimitError::generic(generic),
     })
 }
@@ -2268,6 +2457,9 @@ pub fn parse_describe_bandwidth_rate_limit_response(
             output,
         )
         .map_err(crate::error::DescribeBandwidthRateLimitError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2279,8 +2471,11 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_error(
     crate::output::DescribeBandwidthRateLimitScheduleOutput,
     crate::error::DescribeBandwidthRateLimitScheduleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2290,39 +2485,42 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeBandwidthRateLimitScheduleError { meta: generic, kind: crate::error::DescribeBandwidthRateLimitScheduleErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::DescribeBandwidthRateLimitScheduleError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::DescribeBandwidthRateLimitScheduleError { meta: generic, kind: crate::error::DescribeBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeBandwidthRateLimitScheduleError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeBandwidthRateLimitScheduleError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeBandwidthRateLimitScheduleError::generic(generic),
     })
 }
 
@@ -2339,6 +2537,9 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_response(
             crate::output::describe_bandwidth_rate_limit_schedule_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_bandwidth_rate_limit_schedule(response.body().as_ref(), output).map_err(crate::error::DescribeBandwidthRateLimitScheduleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2347,8 +2548,11 @@ pub fn parse_describe_bandwidth_rate_limit_schedule_response(
 pub fn parse_describe_cache_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeCacheOutput, crate::error::DescribeCacheError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCacheError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeCacheError::unhandled(generic)),
@@ -2356,26 +2560,25 @@ pub fn parse_describe_cache_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeCacheError {
-            meta: generic,
-            kind: crate::error::DescribeCacheErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeCacheError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeCacheError {
-            meta: generic,
-            kind: crate::error::DescribeCacheErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeCacheError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2383,14 +2586,15 @@ pub fn parse_describe_cache_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeCacheError::generic(generic),
     })
 }
@@ -2408,6 +2612,9 @@ pub fn parse_describe_cache_response(
             output,
         )
         .map_err(crate::error::DescribeCacheError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2419,8 +2626,11 @@ pub fn parse_describe_cachedi_scsi_volumes_error(
     crate::output::DescribeCachediScsiVolumesOutput,
     crate::error::DescribeCachediSCSIVolumesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2432,43 +2642,41 @@ pub fn parse_describe_cachedi_scsi_volumes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeCachediSCSIVolumesError {
-            meta: generic,
-            kind: crate::error::DescribeCachediSCSIVolumesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeCachediSCSIVolumesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeCachediSCSIVolumesError {
-            meta: generic,
-            kind: crate::error::DescribeCachediSCSIVolumesErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeCachediSCSIVolumesError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeCachediSCSIVolumesError::generic(generic),
     })
 }
@@ -2489,6 +2697,9 @@ pub fn parse_describe_cachedi_scsi_volumes_response(
             output,
         )
         .map_err(crate::error::DescribeCachediSCSIVolumesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2500,8 +2711,11 @@ pub fn parse_describe_chap_credentials_error(
     crate::output::DescribeChapCredentialsOutput,
     crate::error::DescribeChapCredentialsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2513,26 +2727,25 @@ pub fn parse_describe_chap_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeChapCredentialsError {
-            meta: generic,
-            kind: crate::error::DescribeChapCredentialsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeChapCredentialsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeChapCredentialsError {
-            meta: generic,
-            kind: crate::error::DescribeChapCredentialsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeChapCredentialsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2540,14 +2753,15 @@ pub fn parse_describe_chap_credentials_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeChapCredentialsError::generic(generic),
     })
 }
@@ -2568,6 +2782,9 @@ pub fn parse_describe_chap_credentials_response(
             output,
         )
         .map_err(crate::error::DescribeChapCredentialsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2579,8 +2796,11 @@ pub fn parse_describe_file_system_associations_error(
     crate::output::DescribeFileSystemAssociationsOutput,
     crate::error::DescribeFileSystemAssociationsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeFileSystemAssociationsError::unhandled(generic)),
@@ -2588,39 +2808,42 @@ pub fn parse_describe_file_system_associations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeFileSystemAssociationsError { meta: generic, kind: crate::error::DescribeFileSystemAssociationsErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::DescribeFileSystemAssociationsError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::DescribeFileSystemAssociationsError { meta: generic, kind: crate::error::DescribeFileSystemAssociationsErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeFileSystemAssociationsError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeFileSystemAssociationsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeFileSystemAssociationsError::generic(generic),
     })
 }
 
@@ -2642,6 +2865,9 @@ pub fn parse_describe_file_system_associations_response(
                 output,
             )
             .map_err(crate::error::DescribeFileSystemAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2653,8 +2879,11 @@ pub fn parse_describe_gateway_information_error(
     crate::output::DescribeGatewayInformationOutput,
     crate::error::DescribeGatewayInformationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2666,43 +2895,41 @@ pub fn parse_describe_gateway_information_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeGatewayInformationError {
-            meta: generic,
-            kind: crate::error::DescribeGatewayInformationErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeGatewayInformationError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeGatewayInformationError {
-            meta: generic,
-            kind: crate::error::DescribeGatewayInformationErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeGatewayInformationError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeGatewayInformationError::generic(generic),
     })
 }
@@ -2723,6 +2950,9 @@ pub fn parse_describe_gateway_information_response(
             output,
         )
         .map_err(crate::error::DescribeGatewayInformationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2734,8 +2964,11 @@ pub fn parse_describe_maintenance_start_time_error(
     crate::output::DescribeMaintenanceStartTimeOutput,
     crate::error::DescribeMaintenanceStartTimeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2747,44 +2980,41 @@ pub fn parse_describe_maintenance_start_time_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeMaintenanceStartTimeError {
-            meta: generic,
-            kind: crate::error::DescribeMaintenanceStartTimeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeMaintenanceStartTimeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeMaintenanceStartTimeError {
-            meta: generic,
-            kind:
-                crate::error::DescribeMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_gateway_request_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeMaintenanceStartTimeError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeMaintenanceStartTimeError::generic(generic),
     })
 }
@@ -2806,6 +3036,9 @@ pub fn parse_describe_maintenance_start_time_response(
                 output,
             )
             .map_err(crate::error::DescribeMaintenanceStartTimeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2817,8 +3050,11 @@ pub fn parse_describe_nfs_file_shares_error(
     crate::output::DescribeNfsFileSharesOutput,
     crate::error::DescribeNFSFileSharesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeNFSFileSharesError::unhandled(generic)),
@@ -2826,26 +3062,25 @@ pub fn parse_describe_nfs_file_shares_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeNFSFileSharesError {
-            meta: generic,
-            kind: crate::error::DescribeNFSFileSharesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeNFSFileSharesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeNFSFileSharesError {
-            meta: generic,
-            kind: crate::error::DescribeNFSFileSharesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeNFSFileSharesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2853,14 +3088,15 @@ pub fn parse_describe_nfs_file_shares_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeNFSFileSharesError::generic(generic),
     })
 }
@@ -2881,6 +3117,9 @@ pub fn parse_describe_nfs_file_shares_response(
             output,
         )
         .map_err(crate::error::DescribeNFSFileSharesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2892,8 +3131,11 @@ pub fn parse_describe_smb_file_shares_error(
     crate::output::DescribeSmbFileSharesOutput,
     crate::error::DescribeSMBFileSharesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeSMBFileSharesError::unhandled(generic)),
@@ -2901,26 +3143,25 @@ pub fn parse_describe_smb_file_shares_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeSMBFileSharesError {
-            meta: generic,
-            kind: crate::error::DescribeSMBFileSharesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeSMBFileSharesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeSMBFileSharesError {
-            meta: generic,
-            kind: crate::error::DescribeSMBFileSharesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeSMBFileSharesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2928,14 +3169,15 @@ pub fn parse_describe_smb_file_shares_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeSMBFileSharesError::generic(generic),
     })
 }
@@ -2956,6 +3198,9 @@ pub fn parse_describe_smb_file_shares_response(
             output,
         )
         .map_err(crate::error::DescribeSMBFileSharesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2967,8 +3212,11 @@ pub fn parse_describe_smb_settings_error(
     crate::output::DescribeSmbSettingsOutput,
     crate::error::DescribeSMBSettingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeSMBSettingsError::unhandled(generic)),
@@ -2976,26 +3224,25 @@ pub fn parse_describe_smb_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeSMBSettingsError {
-            meta: generic,
-            kind: crate::error::DescribeSMBSettingsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeSMBSettingsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeSMBSettingsError {
-            meta: generic,
-            kind: crate::error::DescribeSMBSettingsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeSMBSettingsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3003,14 +3250,15 @@ pub fn parse_describe_smb_settings_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeSMBSettingsError::generic(generic),
     })
 }
@@ -3031,6 +3279,9 @@ pub fn parse_describe_smb_settings_response(
             output,
         )
         .map_err(crate::error::DescribeSMBSettingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3042,8 +3293,11 @@ pub fn parse_describe_snapshot_schedule_error(
     crate::output::DescribeSnapshotScheduleOutput,
     crate::error::DescribeSnapshotScheduleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3055,43 +3309,41 @@ pub fn parse_describe_snapshot_schedule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeSnapshotScheduleError {
-            meta: generic,
-            kind: crate::error::DescribeSnapshotScheduleErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeSnapshotScheduleError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeSnapshotScheduleError {
-            meta: generic,
-            kind: crate::error::DescribeSnapshotScheduleErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeSnapshotScheduleError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeSnapshotScheduleError::generic(generic),
     })
 }
@@ -3112,6 +3364,9 @@ pub fn parse_describe_snapshot_schedule_response(
             output,
         )
         .map_err(crate::error::DescribeSnapshotScheduleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3123,8 +3378,11 @@ pub fn parse_describe_storedi_scsi_volumes_error(
     crate::output::DescribeStorediScsiVolumesOutput,
     crate::error::DescribeStorediSCSIVolumesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3136,43 +3394,41 @@ pub fn parse_describe_storedi_scsi_volumes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeStorediSCSIVolumesError {
-            meta: generic,
-            kind: crate::error::DescribeStorediSCSIVolumesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeStorediSCSIVolumesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeStorediSCSIVolumesError {
-            meta: generic,
-            kind: crate::error::DescribeStorediSCSIVolumesErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeStorediSCSIVolumesError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeStorediSCSIVolumesError::generic(generic),
     })
 }
@@ -3193,6 +3449,9 @@ pub fn parse_describe_storedi_scsi_volumes_response(
             output,
         )
         .map_err(crate::error::DescribeStorediSCSIVolumesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3204,8 +3463,11 @@ pub fn parse_describe_tape_archives_error(
     crate::output::DescribeTapeArchivesOutput,
     crate::error::DescribeTapeArchivesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeTapeArchivesError::unhandled(generic)),
@@ -3213,26 +3475,25 @@ pub fn parse_describe_tape_archives_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeTapeArchivesError {
-            meta: generic,
-            kind: crate::error::DescribeTapeArchivesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeTapeArchivesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeTapeArchivesError {
-            meta: generic,
-            kind: crate::error::DescribeTapeArchivesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeTapeArchivesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3240,14 +3501,15 @@ pub fn parse_describe_tape_archives_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeTapeArchivesError::generic(generic),
     })
 }
@@ -3268,6 +3530,9 @@ pub fn parse_describe_tape_archives_response(
             output,
         )
         .map_err(crate::error::DescribeTapeArchivesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3279,8 +3544,11 @@ pub fn parse_describe_tape_recovery_points_error(
     crate::output::DescribeTapeRecoveryPointsOutput,
     crate::error::DescribeTapeRecoveryPointsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3292,43 +3560,41 @@ pub fn parse_describe_tape_recovery_points_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeTapeRecoveryPointsError {
-            meta: generic,
-            kind: crate::error::DescribeTapeRecoveryPointsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeTapeRecoveryPointsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeTapeRecoveryPointsError {
-            meta: generic,
-            kind: crate::error::DescribeTapeRecoveryPointsErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeTapeRecoveryPointsError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeTapeRecoveryPointsError::generic(generic),
     })
 }
@@ -3349,6 +3615,9 @@ pub fn parse_describe_tape_recovery_points_response(
             output,
         )
         .map_err(crate::error::DescribeTapeRecoveryPointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3357,8 +3626,11 @@ pub fn parse_describe_tape_recovery_points_response(
 pub fn parse_describe_tapes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTapesOutput, crate::error::DescribeTapesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTapesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeTapesError::unhandled(generic)),
@@ -3366,26 +3638,25 @@ pub fn parse_describe_tapes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeTapesError {
-            meta: generic,
-            kind: crate::error::DescribeTapesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeTapesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeTapesError {
-            meta: generic,
-            kind: crate::error::DescribeTapesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeTapesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3393,14 +3664,15 @@ pub fn parse_describe_tapes_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTapesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeTapesError::generic(generic),
     })
 }
@@ -3418,6 +3690,9 @@ pub fn parse_describe_tapes_response(
             output,
         )
         .map_err(crate::error::DescribeTapesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3429,8 +3704,11 @@ pub fn parse_describe_upload_buffer_error(
     crate::output::DescribeUploadBufferOutput,
     crate::error::DescribeUploadBufferError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeUploadBufferError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeUploadBufferError::unhandled(generic)),
@@ -3438,26 +3716,25 @@ pub fn parse_describe_upload_buffer_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeUploadBufferError {
-            meta: generic,
-            kind: crate::error::DescribeUploadBufferErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeUploadBufferError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUploadBufferError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeUploadBufferError {
-            meta: generic,
-            kind: crate::error::DescribeUploadBufferErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeUploadBufferError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3465,14 +3742,15 @@ pub fn parse_describe_upload_buffer_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeUploadBufferError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeUploadBufferError::generic(generic),
     })
 }
@@ -3493,6 +3771,9 @@ pub fn parse_describe_upload_buffer_response(
             output,
         )
         .map_err(crate::error::DescribeUploadBufferError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3504,8 +3785,11 @@ pub fn parse_describe_vtl_devices_error(
     crate::output::DescribeVtlDevicesOutput,
     crate::error::DescribeVTLDevicesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeVTLDevicesError::unhandled(generic)),
@@ -3513,26 +3797,25 @@ pub fn parse_describe_vtl_devices_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeVTLDevicesError {
-            meta: generic,
-            kind: crate::error::DescribeVTLDevicesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeVTLDevicesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeVTLDevicesError {
-            meta: generic,
-            kind: crate::error::DescribeVTLDevicesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeVTLDevicesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3540,14 +3823,15 @@ pub fn parse_describe_vtl_devices_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeVTLDevicesError::generic(generic),
     })
 }
@@ -3568,6 +3852,9 @@ pub fn parse_describe_vtl_devices_response(
             output,
         )
         .map_err(crate::error::DescribeVTLDevicesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3579,8 +3866,11 @@ pub fn parse_describe_working_storage_error(
     crate::output::DescribeWorkingStorageOutput,
     crate::error::DescribeWorkingStorageError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3592,26 +3882,25 @@ pub fn parse_describe_working_storage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DescribeWorkingStorageError {
-            meta: generic,
-            kind: crate::error::DescribeWorkingStorageErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DescribeWorkingStorageError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DescribeWorkingStorageError {
-            meta: generic,
-            kind: crate::error::DescribeWorkingStorageErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DescribeWorkingStorageError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3619,14 +3908,15 @@ pub fn parse_describe_working_storage_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeWorkingStorageError::generic(generic),
     })
 }
@@ -3647,6 +3937,9 @@ pub fn parse_describe_working_storage_response(
             output,
         )
         .map_err(crate::error::DescribeWorkingStorageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3655,8 +3948,11 @@ pub fn parse_describe_working_storage_response(
 pub fn parse_detach_volume_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachVolumeOutput, crate::error::DetachVolumeError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachVolumeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachVolumeError::unhandled(generic)),
@@ -3664,26 +3960,25 @@ pub fn parse_detach_volume_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DetachVolumeError {
-            meta: generic,
-            kind: crate::error::DetachVolumeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DetachVolumeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DetachVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DetachVolumeError {
-            meta: generic,
-            kind: crate::error::DetachVolumeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DetachVolumeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3691,14 +3986,15 @@ pub fn parse_detach_volume_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DetachVolumeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DetachVolumeError::generic(generic),
     })
 }
@@ -3716,6 +4012,9 @@ pub fn parse_detach_volume_response(
             output,
         )
         .map_err(crate::error::DetachVolumeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3724,8 +4023,11 @@ pub fn parse_detach_volume_response(
 pub fn parse_disable_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DisableGatewayOutput, crate::error::DisableGatewayError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DisableGatewayError::unhandled(generic)),
@@ -3733,26 +4035,25 @@ pub fn parse_disable_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DisableGatewayError {
-            meta: generic,
-            kind: crate::error::DisableGatewayErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DisableGatewayError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DisableGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DisableGatewayError {
-            meta: generic,
-            kind: crate::error::DisableGatewayErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DisableGatewayError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3760,14 +4061,15 @@ pub fn parse_disable_gateway_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisableGatewayError::generic(generic),
     })
 }
@@ -3785,6 +4087,9 @@ pub fn parse_disable_gateway_response(
             output,
         )
         .map_err(crate::error::DisableGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3796,8 +4101,11 @@ pub fn parse_disassociate_file_system_error(
     crate::output::DisassociateFileSystemOutput,
     crate::error::DisassociateFileSystemError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateFileSystemError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3809,26 +4117,25 @@ pub fn parse_disassociate_file_system_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::DisassociateFileSystemError {
-            meta: generic,
-            kind: crate::error::DisassociateFileSystemErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::DisassociateFileSystemError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFileSystemError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::DisassociateFileSystemError {
-            meta: generic,
-            kind: crate::error::DisassociateFileSystemErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::DisassociateFileSystemError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3836,14 +4143,15 @@ pub fn parse_disassociate_file_system_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateFileSystemError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisassociateFileSystemError::generic(generic),
     })
 }
@@ -3864,6 +4172,9 @@ pub fn parse_disassociate_file_system_response(
             output,
         )
         .map_err(crate::error::DisassociateFileSystemError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3872,8 +4183,11 @@ pub fn parse_disassociate_file_system_response(
 pub fn parse_join_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::JoinDomainOutput, crate::error::JoinDomainError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::JoinDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::JoinDomainError::unhandled(generic)),
@@ -3881,26 +4195,25 @@ pub fn parse_join_domain_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::JoinDomainError {
-            meta: generic,
-            kind: crate::error::JoinDomainErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::JoinDomainError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::JoinDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::JoinDomainError {
-            meta: generic,
-            kind: crate::error::JoinDomainErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::JoinDomainError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3908,14 +4221,15 @@ pub fn parse_join_domain_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::JoinDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::JoinDomainError::generic(generic),
     })
 }
@@ -3933,6 +4247,9 @@ pub fn parse_join_domain_response(
             output,
         )
         .map_err(crate::error::JoinDomainError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3944,8 +4261,11 @@ pub fn parse_list_automatic_tape_creation_policies_error(
     crate::output::ListAutomaticTapeCreationPoliciesOutput,
     crate::error::ListAutomaticTapeCreationPoliciesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3955,39 +4275,42 @@ pub fn parse_list_automatic_tape_creation_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListAutomaticTapeCreationPoliciesError { meta: generic, kind: crate::error::ListAutomaticTapeCreationPoliciesErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::ListAutomaticTapeCreationPoliciesError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::ListAutomaticTapeCreationPoliciesError { meta: generic, kind: crate::error::ListAutomaticTapeCreationPoliciesErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListAutomaticTapeCreationPoliciesError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListAutomaticTapeCreationPoliciesError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListAutomaticTapeCreationPoliciesError::generic(generic),
     })
 }
 
@@ -4004,6 +4327,9 @@ pub fn parse_list_automatic_tape_creation_policies_response(
             crate::output::list_automatic_tape_creation_policies_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_automatic_tape_creation_policies(response.body().as_ref(), output).map_err(crate::error::ListAutomaticTapeCreationPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4012,8 +4338,11 @@ pub fn parse_list_automatic_tape_creation_policies_response(
 pub fn parse_list_file_shares_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListFileSharesOutput, crate::error::ListFileSharesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListFileSharesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListFileSharesError::unhandled(generic)),
@@ -4021,26 +4350,25 @@ pub fn parse_list_file_shares_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListFileSharesError {
-            meta: generic,
-            kind: crate::error::ListFileSharesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListFileSharesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListFileSharesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListFileSharesError {
-            meta: generic,
-            kind: crate::error::ListFileSharesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListFileSharesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4048,14 +4376,15 @@ pub fn parse_list_file_shares_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFileSharesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListFileSharesError::generic(generic),
     })
 }
@@ -4073,6 +4402,9 @@ pub fn parse_list_file_shares_response(
             output,
         )
         .map_err(crate::error::ListFileSharesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4084,8 +4416,11 @@ pub fn parse_list_file_system_associations_error(
     crate::output::ListFileSystemAssociationsOutput,
     crate::error::ListFileSystemAssociationsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4097,43 +4432,41 @@ pub fn parse_list_file_system_associations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListFileSystemAssociationsError {
-            meta: generic,
-            kind: crate::error::ListFileSystemAssociationsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListFileSystemAssociationsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListFileSystemAssociationsError {
-            meta: generic,
-            kind: crate::error::ListFileSystemAssociationsErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListFileSystemAssociationsError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListFileSystemAssociationsError::generic(generic),
     })
 }
@@ -4154,6 +4487,9 @@ pub fn parse_list_file_system_associations_response(
             output,
         )
         .map_err(crate::error::ListFileSystemAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4162,8 +4498,11 @@ pub fn parse_list_file_system_associations_response(
 pub fn parse_list_gateways_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGatewaysOutput, crate::error::ListGatewaysError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListGatewaysError::unhandled(generic)),
@@ -4171,26 +4510,25 @@ pub fn parse_list_gateways_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListGatewaysError {
-            meta: generic,
-            kind: crate::error::ListGatewaysErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListGatewaysError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListGatewaysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListGatewaysError {
-            meta: generic,
-            kind: crate::error::ListGatewaysErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListGatewaysError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4198,14 +4536,15 @@ pub fn parse_list_gateways_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGatewaysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListGatewaysError::generic(generic),
     })
 }
@@ -4223,6 +4562,9 @@ pub fn parse_list_gateways_response(
             output,
         )
         .map_err(crate::error::ListGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4231,8 +4573,11 @@ pub fn parse_list_gateways_response(
 pub fn parse_list_local_disks_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLocalDisksOutput, crate::error::ListLocalDisksError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListLocalDisksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLocalDisksError::unhandled(generic)),
@@ -4240,26 +4585,25 @@ pub fn parse_list_local_disks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListLocalDisksError {
-            meta: generic,
-            kind: crate::error::ListLocalDisksErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListLocalDisksError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListLocalDisksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListLocalDisksError {
-            meta: generic,
-            kind: crate::error::ListLocalDisksErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListLocalDisksError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4267,14 +4611,15 @@ pub fn parse_list_local_disks_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLocalDisksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListLocalDisksError::generic(generic),
     })
 }
@@ -4292,6 +4637,9 @@ pub fn parse_list_local_disks_response(
             output,
         )
         .map_err(crate::error::ListLocalDisksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4303,8 +4651,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -4312,26 +4663,25 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListTagsForResourceError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListTagsForResourceError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4339,14 +4689,15 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -4367,6 +4718,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4375,8 +4729,11 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_list_tape_pools_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTapePoolsOutput, crate::error::ListTapePoolsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTapePoolsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTapePoolsError::unhandled(generic)),
@@ -4384,26 +4741,25 @@ pub fn parse_list_tape_pools_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListTapePoolsError {
-            meta: generic,
-            kind: crate::error::ListTapePoolsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListTapePoolsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListTapePoolsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListTapePoolsError {
-            meta: generic,
-            kind: crate::error::ListTapePoolsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListTapePoolsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4411,14 +4767,15 @@ pub fn parse_list_tape_pools_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTapePoolsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTapePoolsError::generic(generic),
     })
 }
@@ -4436,6 +4793,9 @@ pub fn parse_list_tape_pools_response(
             output,
         )
         .map_err(crate::error::ListTapePoolsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4444,8 +4804,11 @@ pub fn parse_list_tape_pools_response(
 pub fn parse_list_tapes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTapesOutput, crate::error::ListTapesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTapesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTapesError::unhandled(generic)),
@@ -4453,26 +4816,25 @@ pub fn parse_list_tapes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListTapesError {
-            meta: generic,
-            kind: crate::error::ListTapesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListTapesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListTapesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListTapesError {
-            meta: generic,
-            kind: crate::error::ListTapesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListTapesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4480,14 +4842,15 @@ pub fn parse_list_tapes_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTapesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTapesError::generic(generic),
     })
 }
@@ -4505,6 +4868,9 @@ pub fn parse_list_tapes_response(
             output,
         )
         .map_err(crate::error::ListTapesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4516,8 +4882,11 @@ pub fn parse_list_volume_initiators_error(
     crate::output::ListVolumeInitiatorsOutput,
     crate::error::ListVolumeInitiatorsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListVolumeInitiatorsError::unhandled(generic)),
@@ -4525,26 +4894,25 @@ pub fn parse_list_volume_initiators_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListVolumeInitiatorsError {
-            meta: generic,
-            kind: crate::error::ListVolumeInitiatorsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListVolumeInitiatorsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListVolumeInitiatorsError {
-            meta: generic,
-            kind: crate::error::ListVolumeInitiatorsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListVolumeInitiatorsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4552,14 +4920,15 @@ pub fn parse_list_volume_initiators_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListVolumeInitiatorsError::generic(generic),
     })
 }
@@ -4580,6 +4949,9 @@ pub fn parse_list_volume_initiators_response(
             output,
         )
         .map_err(crate::error::ListVolumeInitiatorsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4591,8 +4963,11 @@ pub fn parse_list_volume_recovery_points_error(
     crate::output::ListVolumeRecoveryPointsOutput,
     crate::error::ListVolumeRecoveryPointsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4604,43 +4979,41 @@ pub fn parse_list_volume_recovery_points_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListVolumeRecoveryPointsError {
-            meta: generic,
-            kind: crate::error::ListVolumeRecoveryPointsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListVolumeRecoveryPointsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListVolumeRecoveryPointsError {
-            meta: generic,
-            kind: crate::error::ListVolumeRecoveryPointsErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListVolumeRecoveryPointsError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListVolumeRecoveryPointsError::generic(generic),
     })
 }
@@ -4661,6 +5034,9 @@ pub fn parse_list_volume_recovery_points_response(
             output,
         )
         .map_err(crate::error::ListVolumeRecoveryPointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4669,8 +5045,11 @@ pub fn parse_list_volume_recovery_points_response(
 pub fn parse_list_volumes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListVolumesOutput, crate::error::ListVolumesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVolumesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListVolumesError::unhandled(generic)),
@@ -4678,26 +5057,25 @@ pub fn parse_list_volumes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ListVolumesError {
-            meta: generic,
-            kind: crate::error::ListVolumesErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ListVolumesError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ListVolumesError {
-            meta: generic,
-            kind: crate::error::ListVolumesErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ListVolumesError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4705,14 +5083,15 @@ pub fn parse_list_volumes_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVolumesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListVolumesError::generic(generic),
     })
 }
@@ -4730,6 +5109,9 @@ pub fn parse_list_volumes_response(
             output,
         )
         .map_err(crate::error::ListVolumesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4741,8 +5123,11 @@ pub fn parse_notify_when_uploaded_error(
     crate::output::NotifyWhenUploadedOutput,
     crate::error::NotifyWhenUploadedError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::NotifyWhenUploadedError::unhandled(generic)),
@@ -4750,26 +5135,25 @@ pub fn parse_notify_when_uploaded_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::NotifyWhenUploadedError {
-            meta: generic,
-            kind: crate::error::NotifyWhenUploadedErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::NotifyWhenUploadedError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::NotifyWhenUploadedError {
-            meta: generic,
-            kind: crate::error::NotifyWhenUploadedErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::NotifyWhenUploadedError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4777,14 +5161,15 @@ pub fn parse_notify_when_uploaded_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::NotifyWhenUploadedError::generic(generic),
     })
 }
@@ -4805,6 +5190,9 @@ pub fn parse_notify_when_uploaded_response(
             output,
         )
         .map_err(crate::error::NotifyWhenUploadedError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4813,8 +5201,11 @@ pub fn parse_notify_when_uploaded_response(
 pub fn parse_refresh_cache_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RefreshCacheOutput, crate::error::RefreshCacheError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RefreshCacheError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RefreshCacheError::unhandled(generic)),
@@ -4822,26 +5213,25 @@ pub fn parse_refresh_cache_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::RefreshCacheError {
-            meta: generic,
-            kind: crate::error::RefreshCacheErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::RefreshCacheError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::RefreshCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::RefreshCacheError {
-            meta: generic,
-            kind: crate::error::RefreshCacheErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::RefreshCacheError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4849,14 +5239,15 @@ pub fn parse_refresh_cache_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RefreshCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RefreshCacheError::generic(generic),
     })
 }
@@ -4874,6 +5265,9 @@ pub fn parse_refresh_cache_response(
             output,
         )
         .map_err(crate::error::RefreshCacheError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4885,8 +5279,11 @@ pub fn parse_remove_tags_from_resource_error(
     crate::output::RemoveTagsFromResourceOutput,
     crate::error::RemoveTagsFromResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4898,26 +5295,25 @@ pub fn parse_remove_tags_from_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::RemoveTagsFromResourceError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::RemoveTagsFromResourceError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4925,14 +5321,15 @@ pub fn parse_remove_tags_from_resource_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveTagsFromResourceError::generic(generic),
     })
 }
@@ -4953,6 +5350,9 @@ pub fn parse_remove_tags_from_resource_response(
             output,
         )
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4961,8 +5361,11 @@ pub fn parse_remove_tags_from_resource_response(
 pub fn parse_reset_cache_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResetCacheOutput, crate::error::ResetCacheError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetCacheError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ResetCacheError::unhandled(generic)),
@@ -4970,26 +5373,25 @@ pub fn parse_reset_cache_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ResetCacheError {
-            meta: generic,
-            kind: crate::error::ResetCacheErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ResetCacheError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ResetCacheError {
-            meta: generic,
-            kind: crate::error::ResetCacheErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ResetCacheError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4997,14 +5399,15 @@ pub fn parse_reset_cache_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResetCacheError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ResetCacheError::generic(generic),
     })
 }
@@ -5022,6 +5425,9 @@ pub fn parse_reset_cache_response(
             output,
         )
         .map_err(crate::error::ResetCacheError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5033,8 +5439,11 @@ pub fn parse_retrieve_tape_archive_error(
     crate::output::RetrieveTapeArchiveOutput,
     crate::error::RetrieveTapeArchiveError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RetrieveTapeArchiveError::unhandled(generic)),
@@ -5042,26 +5451,25 @@ pub fn parse_retrieve_tape_archive_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::RetrieveTapeArchiveError {
-            meta: generic,
-            kind: crate::error::RetrieveTapeArchiveErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::RetrieveTapeArchiveError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::RetrieveTapeArchiveError {
-            meta: generic,
-            kind: crate::error::RetrieveTapeArchiveErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::RetrieveTapeArchiveError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5069,14 +5477,15 @@ pub fn parse_retrieve_tape_archive_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RetrieveTapeArchiveError::generic(generic),
     })
 }
@@ -5097,6 +5506,9 @@ pub fn parse_retrieve_tape_archive_response(
             output,
         )
         .map_err(crate::error::RetrieveTapeArchiveError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5108,8 +5520,11 @@ pub fn parse_retrieve_tape_recovery_point_error(
     crate::output::RetrieveTapeRecoveryPointOutput,
     crate::error::RetrieveTapeRecoveryPointError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5121,43 +5536,41 @@ pub fn parse_retrieve_tape_recovery_point_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::RetrieveTapeRecoveryPointError {
-            meta: generic,
-            kind: crate::error::RetrieveTapeRecoveryPointErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::RetrieveTapeRecoveryPointError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::RetrieveTapeRecoveryPointError {
-            meta: generic,
-            kind: crate::error::RetrieveTapeRecoveryPointErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::RetrieveTapeRecoveryPointError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::RetrieveTapeRecoveryPointError::generic(generic),
     })
 }
@@ -5178,6 +5591,9 @@ pub fn parse_retrieve_tape_recovery_point_response(
             output,
         )
         .map_err(crate::error::RetrieveTapeRecoveryPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5189,8 +5605,11 @@ pub fn parse_set_local_console_password_error(
     crate::output::SetLocalConsolePasswordOutput,
     crate::error::SetLocalConsolePasswordError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5202,26 +5621,25 @@ pub fn parse_set_local_console_password_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::SetLocalConsolePasswordError {
-            meta: generic,
-            kind: crate::error::SetLocalConsolePasswordErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::SetLocalConsolePasswordError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::SetLocalConsolePasswordError {
-            meta: generic,
-            kind: crate::error::SetLocalConsolePasswordErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::SetLocalConsolePasswordError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5229,14 +5647,15 @@ pub fn parse_set_local_console_password_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SetLocalConsolePasswordError::generic(generic),
     })
 }
@@ -5257,6 +5676,9 @@ pub fn parse_set_local_console_password_response(
             output,
         )
         .map_err(crate::error::SetLocalConsolePasswordError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5268,8 +5690,11 @@ pub fn parse_set_smb_guest_password_error(
     crate::output::SetSmbGuestPasswordOutput,
     crate::error::SetSMBGuestPasswordError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SetSMBGuestPasswordError::unhandled(generic)),
@@ -5277,26 +5702,25 @@ pub fn parse_set_smb_guest_password_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::SetSMBGuestPasswordError {
-            meta: generic,
-            kind: crate::error::SetSMBGuestPasswordErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::SetSMBGuestPasswordError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::SetSMBGuestPasswordError {
-            meta: generic,
-            kind: crate::error::SetSMBGuestPasswordErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::SetSMBGuestPasswordError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5304,14 +5728,15 @@ pub fn parse_set_smb_guest_password_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SetSMBGuestPasswordError::generic(generic),
     })
 }
@@ -5332,6 +5757,9 @@ pub fn parse_set_smb_guest_password_response(
             output,
         )
         .map_err(crate::error::SetSMBGuestPasswordError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5340,8 +5768,11 @@ pub fn parse_set_smb_guest_password_response(
 pub fn parse_shutdown_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ShutdownGatewayOutput, crate::error::ShutdownGatewayError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ShutdownGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ShutdownGatewayError::unhandled(generic)),
@@ -5349,26 +5780,25 @@ pub fn parse_shutdown_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::ShutdownGatewayError {
-            meta: generic,
-            kind: crate::error::ShutdownGatewayErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::ShutdownGatewayError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::ShutdownGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::ShutdownGatewayError {
-            meta: generic,
-            kind: crate::error::ShutdownGatewayErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::ShutdownGatewayError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5376,14 +5806,15 @@ pub fn parse_shutdown_gateway_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ShutdownGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ShutdownGatewayError::generic(generic),
     })
 }
@@ -5401,6 +5832,9 @@ pub fn parse_shutdown_gateway_response(
             output,
         )
         .map_err(crate::error::ShutdownGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5412,8 +5846,11 @@ pub fn parse_start_availability_monitor_test_error(
     crate::output::StartAvailabilityMonitorTestOutput,
     crate::error::StartAvailabilityMonitorTestError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5425,44 +5862,41 @@ pub fn parse_start_availability_monitor_test_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::StartAvailabilityMonitorTestError {
-            meta: generic,
-            kind: crate::error::StartAvailabilityMonitorTestErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::StartAvailabilityMonitorTestError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::StartAvailabilityMonitorTestError {
-            meta: generic,
-            kind:
-                crate::error::StartAvailabilityMonitorTestErrorKind::InvalidGatewayRequestException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_gateway_request_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::StartAvailabilityMonitorTestError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::StartAvailabilityMonitorTestError::generic(generic),
     })
 }
@@ -5484,6 +5918,9 @@ pub fn parse_start_availability_monitor_test_response(
                 output,
             )
             .map_err(crate::error::StartAvailabilityMonitorTestError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5492,8 +5929,11 @@ pub fn parse_start_availability_monitor_test_response(
 pub fn parse_start_gateway_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartGatewayOutput, crate::error::StartGatewayError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartGatewayError::unhandled(generic)),
@@ -5501,26 +5941,25 @@ pub fn parse_start_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::StartGatewayError {
-            meta: generic,
-            kind: crate::error::StartGatewayErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::StartGatewayError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::StartGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::StartGatewayError {
-            meta: generic,
-            kind: crate::error::StartGatewayErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::StartGatewayError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5528,14 +5967,15 @@ pub fn parse_start_gateway_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartGatewayError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartGatewayError::generic(generic),
     })
 }
@@ -5553,6 +5993,9 @@ pub fn parse_start_gateway_response(
             output,
         )
         .map_err(crate::error::StartGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5564,8 +6007,11 @@ pub fn parse_update_automatic_tape_creation_policy_error(
     crate::output::UpdateAutomaticTapeCreationPolicyOutput,
     crate::error::UpdateAutomaticTapeCreationPolicyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5575,39 +6021,42 @@ pub fn parse_update_automatic_tape_creation_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateAutomaticTapeCreationPolicyError { meta: generic, kind: crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::UpdateAutomaticTapeCreationPolicyError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::UpdateAutomaticTapeCreationPolicyError { meta: generic, kind: crate::error::UpdateAutomaticTapeCreationPolicyErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateAutomaticTapeCreationPolicyError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateAutomaticTapeCreationPolicyError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::UpdateAutomaticTapeCreationPolicyError::generic(generic),
     })
 }
 
@@ -5624,6 +6073,9 @@ pub fn parse_update_automatic_tape_creation_policy_response(
             crate::output::update_automatic_tape_creation_policy_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_update_automatic_tape_creation_policy(response.body().as_ref(), output).map_err(crate::error::UpdateAutomaticTapeCreationPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5635,8 +6087,11 @@ pub fn parse_update_bandwidth_rate_limit_error(
     crate::output::UpdateBandwidthRateLimitOutput,
     crate::error::UpdateBandwidthRateLimitError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5648,43 +6103,41 @@ pub fn parse_update_bandwidth_rate_limit_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateBandwidthRateLimitError {
-            meta: generic,
-            kind: crate::error::UpdateBandwidthRateLimitErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateBandwidthRateLimitError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateBandwidthRateLimitError {
-            meta: generic,
-            kind: crate::error::UpdateBandwidthRateLimitErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateBandwidthRateLimitError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateBandwidthRateLimitError::generic(generic),
     })
 }
@@ -5705,6 +6158,9 @@ pub fn parse_update_bandwidth_rate_limit_response(
             output,
         )
         .map_err(crate::error::UpdateBandwidthRateLimitError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5716,8 +6172,11 @@ pub fn parse_update_bandwidth_rate_limit_schedule_error(
     crate::output::UpdateBandwidthRateLimitScheduleOutput,
     crate::error::UpdateBandwidthRateLimitScheduleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5727,39 +6186,42 @@ pub fn parse_update_bandwidth_rate_limit_schedule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateBandwidthRateLimitScheduleError { meta: generic, kind: crate::error::UpdateBandwidthRateLimitScheduleErrorKind::InternalServerError({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServerError" => {
+            crate::error::UpdateBandwidthRateLimitScheduleError::InternalServerError({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGatewayRequestException" => crate::error::UpdateBandwidthRateLimitScheduleError { meta: generic, kind: crate::error::UpdateBandwidthRateLimitScheduleErrorKind::InvalidGatewayRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateBandwidthRateLimitScheduleError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_gateway_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateBandwidthRateLimitScheduleError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::UpdateBandwidthRateLimitScheduleError::generic(generic),
     })
 }
 
@@ -5776,6 +6238,9 @@ pub fn parse_update_bandwidth_rate_limit_schedule_response(
             crate::output::update_bandwidth_rate_limit_schedule_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_update_bandwidth_rate_limit_schedule(response.body().as_ref(), output).map_err(crate::error::UpdateBandwidthRateLimitScheduleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5787,8 +6252,11 @@ pub fn parse_update_chap_credentials_error(
     crate::output::UpdateChapCredentialsOutput,
     crate::error::UpdateChapCredentialsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateChapCredentialsError::unhandled(generic)),
@@ -5796,26 +6264,25 @@ pub fn parse_update_chap_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateChapCredentialsError {
-            meta: generic,
-            kind: crate::error::UpdateChapCredentialsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateChapCredentialsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateChapCredentialsError {
-            meta: generic,
-            kind: crate::error::UpdateChapCredentialsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateChapCredentialsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5823,14 +6290,15 @@ pub fn parse_update_chap_credentials_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateChapCredentialsError::generic(generic),
     })
 }
@@ -5851,6 +6319,9 @@ pub fn parse_update_chap_credentials_response(
             output,
         )
         .map_err(crate::error::UpdateChapCredentialsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5862,8 +6333,11 @@ pub fn parse_update_file_system_association_error(
     crate::output::UpdateFileSystemAssociationOutput,
     crate::error::UpdateFileSystemAssociationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5875,44 +6349,41 @@ pub fn parse_update_file_system_association_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateFileSystemAssociationError {
-            meta: generic,
-            kind: crate::error::UpdateFileSystemAssociationErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateFileSystemAssociationError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateFileSystemAssociationError {
-            meta: generic,
-            kind:
-                crate::error::UpdateFileSystemAssociationErrorKind::InvalidGatewayRequestException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_gateway_request_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateFileSystemAssociationError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateFileSystemAssociationError::generic(generic),
     })
 }
@@ -5933,6 +6404,9 @@ pub fn parse_update_file_system_association_response(
             output,
         )
         .map_err(crate::error::UpdateFileSystemAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5944,8 +6418,11 @@ pub fn parse_update_gateway_information_error(
     crate::output::UpdateGatewayInformationOutput,
     crate::error::UpdateGatewayInformationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5957,43 +6434,41 @@ pub fn parse_update_gateway_information_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateGatewayInformationError {
-            meta: generic,
-            kind: crate::error::UpdateGatewayInformationErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateGatewayInformationError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateGatewayInformationError {
-            meta: generic,
-            kind: crate::error::UpdateGatewayInformationErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateGatewayInformationError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateGatewayInformationError::generic(generic),
     })
 }
@@ -6014,6 +6489,9 @@ pub fn parse_update_gateway_information_response(
             output,
         )
         .map_err(crate::error::UpdateGatewayInformationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6025,8 +6503,11 @@ pub fn parse_update_gateway_software_now_error(
     crate::output::UpdateGatewaySoftwareNowOutput,
     crate::error::UpdateGatewaySoftwareNowError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6038,43 +6519,41 @@ pub fn parse_update_gateway_software_now_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateGatewaySoftwareNowError {
-            meta: generic,
-            kind: crate::error::UpdateGatewaySoftwareNowErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateGatewaySoftwareNowError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateGatewaySoftwareNowError {
-            meta: generic,
-            kind: crate::error::UpdateGatewaySoftwareNowErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateGatewaySoftwareNowError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateGatewaySoftwareNowError::generic(generic),
     })
 }
@@ -6095,6 +6574,9 @@ pub fn parse_update_gateway_software_now_response(
             output,
         )
         .map_err(crate::error::UpdateGatewaySoftwareNowError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6106,8 +6588,11 @@ pub fn parse_update_maintenance_start_time_error(
     crate::output::UpdateMaintenanceStartTimeOutput,
     crate::error::UpdateMaintenanceStartTimeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6119,43 +6604,41 @@ pub fn parse_update_maintenance_start_time_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateMaintenanceStartTimeError {
-            meta: generic,
-            kind: crate::error::UpdateMaintenanceStartTimeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateMaintenanceStartTimeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateMaintenanceStartTimeError {
-            meta: generic,
-            kind: crate::error::UpdateMaintenanceStartTimeErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateMaintenanceStartTimeError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateMaintenanceStartTimeError::generic(generic),
     })
 }
@@ -6176,6 +6659,9 @@ pub fn parse_update_maintenance_start_time_response(
             output,
         )
         .map_err(crate::error::UpdateMaintenanceStartTimeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6187,8 +6673,11 @@ pub fn parse_update_nfs_file_share_error(
     crate::output::UpdateNfsFileShareOutput,
     crate::error::UpdateNFSFileShareError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateNFSFileShareError::unhandled(generic)),
@@ -6196,26 +6685,25 @@ pub fn parse_update_nfs_file_share_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateNFSFileShareError {
-            meta: generic,
-            kind: crate::error::UpdateNFSFileShareErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateNFSFileShareError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateNFSFileShareError {
-            meta: generic,
-            kind: crate::error::UpdateNFSFileShareErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateNFSFileShareError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6223,14 +6711,15 @@ pub fn parse_update_nfs_file_share_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateNFSFileShareError::generic(generic),
     })
 }
@@ -6251,6 +6740,9 @@ pub fn parse_update_nfs_file_share_response(
             output,
         )
         .map_err(crate::error::UpdateNFSFileShareError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6262,8 +6754,11 @@ pub fn parse_update_smb_file_share_error(
     crate::output::UpdateSmbFileShareOutput,
     crate::error::UpdateSMBFileShareError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateSMBFileShareError::unhandled(generic)),
@@ -6271,26 +6766,25 @@ pub fn parse_update_smb_file_share_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateSMBFileShareError {
-            meta: generic,
-            kind: crate::error::UpdateSMBFileShareErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateSMBFileShareError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateSMBFileShareError {
-            meta: generic,
-            kind: crate::error::UpdateSMBFileShareErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateSMBFileShareError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6298,14 +6792,15 @@ pub fn parse_update_smb_file_share_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSMBFileShareError::generic(generic),
     })
 }
@@ -6326,6 +6821,9 @@ pub fn parse_update_smb_file_share_response(
             output,
         )
         .map_err(crate::error::UpdateSMBFileShareError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6337,8 +6835,11 @@ pub fn parse_update_smb_file_share_visibility_error(
     crate::output::UpdateSmbFileShareVisibilityOutput,
     crate::error::UpdateSMBFileShareVisibilityError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6350,44 +6851,41 @@ pub fn parse_update_smb_file_share_visibility_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateSMBFileShareVisibilityError {
-            meta: generic,
-            kind: crate::error::UpdateSMBFileShareVisibilityErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateSMBFileShareVisibilityError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateSMBFileShareVisibilityError {
-            meta: generic,
-            kind:
-                crate::error::UpdateSMBFileShareVisibilityErrorKind::InvalidGatewayRequestException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_gateway_request_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateSMBFileShareVisibilityError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateSMBFileShareVisibilityError::generic(generic),
     })
 }
@@ -6409,6 +6907,9 @@ pub fn parse_update_smb_file_share_visibility_response(
                 output,
             )
             .map_err(crate::error::UpdateSMBFileShareVisibilityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6420,8 +6921,11 @@ pub fn parse_update_smb_local_groups_error(
     crate::output::UpdateSmbLocalGroupsOutput,
     crate::error::UpdateSMBLocalGroupsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSMBLocalGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateSMBLocalGroupsError::unhandled(generic)),
@@ -6429,26 +6933,25 @@ pub fn parse_update_smb_local_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateSMBLocalGroupsError {
-            meta: generic,
-            kind: crate::error::UpdateSMBLocalGroupsErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateSMBLocalGroupsError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBLocalGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateSMBLocalGroupsError {
-            meta: generic,
-            kind: crate::error::UpdateSMBLocalGroupsErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateSMBLocalGroupsError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6456,14 +6959,15 @@ pub fn parse_update_smb_local_groups_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBLocalGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSMBLocalGroupsError::generic(generic),
     })
 }
@@ -6484,6 +6988,9 @@ pub fn parse_update_smb_local_groups_response(
             output,
         )
         .map_err(crate::error::UpdateSMBLocalGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6495,8 +7002,11 @@ pub fn parse_update_smb_security_strategy_error(
     crate::output::UpdateSmbSecurityStrategyOutput,
     crate::error::UpdateSMBSecurityStrategyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6508,43 +7018,41 @@ pub fn parse_update_smb_security_strategy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateSMBSecurityStrategyError {
-            meta: generic,
-            kind: crate::error::UpdateSMBSecurityStrategyErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateSMBSecurityStrategyError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateSMBSecurityStrategyError {
-            meta: generic,
-            kind: crate::error::UpdateSMBSecurityStrategyErrorKind::InvalidGatewayRequestException(
-                {
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateSMBSecurityStrategyError::InvalidGatewayRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_gateway_request_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_gateway_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateSMBSecurityStrategyError::generic(generic),
     })
 }
@@ -6565,6 +7073,9 @@ pub fn parse_update_smb_security_strategy_response(
             output,
         )
         .map_err(crate::error::UpdateSMBSecurityStrategyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6576,8 +7087,11 @@ pub fn parse_update_snapshot_schedule_error(
     crate::output::UpdateSnapshotScheduleOutput,
     crate::error::UpdateSnapshotScheduleError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6589,26 +7103,25 @@ pub fn parse_update_snapshot_schedule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateSnapshotScheduleError {
-            meta: generic,
-            kind: crate::error::UpdateSnapshotScheduleErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateSnapshotScheduleError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateSnapshotScheduleError {
-            meta: generic,
-            kind: crate::error::UpdateSnapshotScheduleErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateSnapshotScheduleError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6616,14 +7129,15 @@ pub fn parse_update_snapshot_schedule_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSnapshotScheduleError::generic(generic),
     })
 }
@@ -6644,6 +7158,9 @@ pub fn parse_update_snapshot_schedule_response(
             output,
         )
         .map_err(crate::error::UpdateSnapshotScheduleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6655,8 +7172,11 @@ pub fn parse_update_vtl_device_type_error(
     crate::output::UpdateVtlDeviceTypeOutput,
     crate::error::UpdateVTLDeviceTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateVTLDeviceTypeError::unhandled(generic)),
@@ -6664,26 +7184,25 @@ pub fn parse_update_vtl_device_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServerError" => crate::error::UpdateVTLDeviceTypeError {
-            meta: generic,
-            kind: crate::error::UpdateVTLDeviceTypeErrorKind::InternalServerError({
+        "InternalServerError" => {
+            crate::error::UpdateVTLDeviceTypeError::InternalServerError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_server_error::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_server_error_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGatewayRequestException" => crate::error::UpdateVTLDeviceTypeError {
-            meta: generic,
-            kind: crate::error::UpdateVTLDeviceTypeErrorKind::InvalidGatewayRequestException({
+            })
+        }
+        "InvalidGatewayRequestException" => {
+            crate::error::UpdateVTLDeviceTypeError::InvalidGatewayRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6691,14 +7210,15 @@ pub fn parse_update_vtl_device_type_error(
                         crate::error::invalid_gateway_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_gateway_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateVTLDeviceTypeError::generic(generic),
     })
 }
@@ -6719,6 +7239,9 @@ pub fn parse_update_vtl_device_type_response(
             output,
         )
         .map_err(crate::error::UpdateVTLDeviceTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

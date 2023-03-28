@@ -28,6 +28,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::AcceptDirectConnectGatewayAssociationProposalError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_accept_direct_connect_gateway_association_proposal_error(
                 response,
@@ -64,6 +65,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateConnectionOnInte
         crate::error::AllocateConnectionOnInterconnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_connection_on_interconnect_error(response)
         } else {
@@ -98,6 +100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateHostedConnection
         crate::error::AllocateHostedConnectionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_hosted_connection_error(response)
         } else {
@@ -132,6 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocatePrivateVirtualIn
         crate::error::AllocatePrivateVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_private_virtual_interface_error(response)
         } else {
@@ -166,6 +170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocatePublicVirtualInt
         crate::error::AllocatePublicVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_public_virtual_interface_error(response)
         } else {
@@ -200,6 +205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AllocateTransitVirtualIn
         crate::error::AllocateTransitVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_allocate_transit_virtual_interface_error(response)
         } else {
@@ -234,6 +240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateConnectionWithL
         crate::error::AssociateConnectionWithLagError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_connection_with_lag_error(response)
         } else {
@@ -268,6 +275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateHostedConnectio
         crate::error::AssociateHostedConnectionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_hosted_connection_error(response)
         } else {
@@ -302,6 +310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateMacSecKey {
         crate::error::AssociateMacSecKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_mac_sec_key_error(response)
         } else {
@@ -336,6 +345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateVirtualInterfac
         crate::error::AssociateVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_virtual_interface_error(response)
         } else {
@@ -370,6 +380,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmConnection {
         crate::error::ConfirmConnectionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_confirm_connection_error(response)
         } else {
@@ -404,6 +415,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmCustomerAgreement
         crate::error::ConfirmCustomerAgreementError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_confirm_customer_agreement_error(response)
         } else {
@@ -438,6 +450,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmPrivateVirtualInt
         crate::error::ConfirmPrivateVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_confirm_private_virtual_interface_error(response)
         } else {
@@ -472,6 +485,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmPublicVirtualInte
         crate::error::ConfirmPublicVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_confirm_public_virtual_interface_error(response)
         } else {
@@ -506,6 +520,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ConfirmTransitVirtualInt
         crate::error::ConfirmTransitVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_confirm_transit_virtual_interface_error(response)
         } else {
@@ -538,6 +553,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBGPPeer {
     type Output =
         std::result::Result<crate::output::CreateBgpPeerOutput, crate::error::CreateBGPPeerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_bgp_peer_error(response)
         } else {
@@ -572,6 +588,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateConnection {
         crate::error::CreateConnectionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_connection_error(response)
         } else {
@@ -606,6 +623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDirectConnectGatew
         crate::error::CreateDirectConnectGatewayError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_direct_connect_gateway_error(response)
         } else {
@@ -640,6 +658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDirectConnectGatew
         crate::error::CreateDirectConnectGatewayAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_direct_connect_gateway_association_error(response)
         } else {
@@ -679,6 +698,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::CreateDirectConnectGatewayAssociationProposalError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_direct_connect_gateway_association_proposal_error(
                 response,
@@ -715,6 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInterconnect {
         crate::error::CreateInterconnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_interconnect_error(response)
         } else {
@@ -746,6 +767,7 @@ impl CreateLag {
 impl aws_smithy_http::response::ParseStrictResponse for CreateLag {
     type Output = std::result::Result<crate::output::CreateLagOutput, crate::error::CreateLagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_lag_error(response)
         } else {
@@ -780,6 +802,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePrivateVirtualInte
         crate::error::CreatePrivateVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_private_virtual_interface_error(response)
         } else {
@@ -814,6 +837,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePublicVirtualInter
         crate::error::CreatePublicVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_public_virtual_interface_error(response)
         } else {
@@ -848,6 +872,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTransitVirtualInte
         crate::error::CreateTransitVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_transit_virtual_interface_error(response)
         } else {
@@ -880,6 +905,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBGPPeer {
     type Output =
         std::result::Result<crate::output::DeleteBgpPeerOutput, crate::error::DeleteBGPPeerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_bgp_peer_error(response)
         } else {
@@ -914,6 +940,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteConnection {
         crate::error::DeleteConnectionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_connection_error(response)
         } else {
@@ -948,6 +975,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDirectConnectGatew
         crate::error::DeleteDirectConnectGatewayError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_direct_connect_gateway_error(response)
         } else {
@@ -982,6 +1010,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDirectConnectGatew
         crate::error::DeleteDirectConnectGatewayAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_direct_connect_gateway_association_error(response)
         } else {
@@ -1021,6 +1050,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::DeleteDirectConnectGatewayAssociationProposalError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_direct_connect_gateway_association_proposal_error(
                 response,
@@ -1057,6 +1087,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInterconnect {
         crate::error::DeleteInterconnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_interconnect_error(response)
         } else {
@@ -1088,6 +1119,7 @@ impl DeleteLag {
 impl aws_smithy_http::response::ParseStrictResponse for DeleteLag {
     type Output = std::result::Result<crate::output::DeleteLagOutput, crate::error::DeleteLagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_lag_error(response)
         } else {
@@ -1122,6 +1154,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVirtualInterface {
         crate::error::DeleteVirtualInterfaceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_virtual_interface_error(response)
         } else {
@@ -1156,6 +1189,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectionLoa {
         crate::error::DescribeConnectionLoaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connection_loa_error(response)
         } else {
@@ -1190,6 +1224,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnections {
         crate::error::DescribeConnectionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connections_error(response)
         } else {
@@ -1224,6 +1259,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeConnectionsOnInt
         crate::error::DescribeConnectionsOnInterconnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_connections_on_interconnect_error(response)
         } else {
@@ -1258,6 +1294,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeCustomerMetadata
         crate::error::DescribeCustomerMetadataError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_customer_metadata_error(response)
         } else {
@@ -1296,6 +1333,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::DescribeDirectConnectGatewayAssociationProposalsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_direct_connect_gateway_association_proposals_error(response)
         } else {
@@ -1330,6 +1368,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDirectConnectGat
         crate::error::DescribeDirectConnectGatewayAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_direct_connect_gateway_associations_error(
                 response,
@@ -1368,6 +1407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDirectConnectGat
         crate::error::DescribeDirectConnectGatewayAttachmentsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_direct_connect_gateway_attachments_error(
                 response,
@@ -1406,6 +1446,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeDirectConnectGat
         crate::error::DescribeDirectConnectGatewaysError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_direct_connect_gateways_error(response)
         } else {
@@ -1440,6 +1481,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHostedConnection
         crate::error::DescribeHostedConnectionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_hosted_connections_error(response)
         } else {
@@ -1474,6 +1516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInterconnectLoa 
         crate::error::DescribeInterconnectLoaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_interconnect_loa_error(response)
         } else {
@@ -1508,6 +1551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInterconnects {
         crate::error::DescribeInterconnectsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_interconnects_error(response)
         } else {
@@ -1540,6 +1584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLags {
     type Output =
         std::result::Result<crate::output::DescribeLagsOutput, crate::error::DescribeLagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_lags_error(response)
         } else {
@@ -1572,6 +1617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLoa {
     type Output =
         std::result::Result<crate::output::DescribeLoaOutput, crate::error::DescribeLoaError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_loa_error(response)
         } else {
@@ -1606,6 +1652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeLocations {
         crate::error::DescribeLocationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_locations_error(response)
         } else {
@@ -1640,6 +1687,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRouterConfigurat
         crate::error::DescribeRouterConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_router_configuration_error(response)
         } else {
@@ -1672,6 +1720,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTags {
     type Output =
         std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_tags_error(response)
         } else {
@@ -1706,6 +1755,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualGateways 
         crate::error::DescribeVirtualGatewaysError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_virtual_gateways_error(response)
         } else {
@@ -1740,6 +1790,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVirtualInterface
         crate::error::DescribeVirtualInterfacesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_virtual_interfaces_error(response)
         } else {
@@ -1774,6 +1825,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateConnectionFr
         crate::error::DisassociateConnectionFromLagError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_connection_from_lag_error(response)
         } else {
@@ -1808,6 +1860,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMacSecKey {
         crate::error::DisassociateMacSecKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_mac_sec_key_error(response)
         } else {
@@ -1842,6 +1895,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListVirtualInterfaceTest
         crate::error::ListVirtualInterfaceTestHistoryError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_virtual_interface_test_history_error(response)
         } else {
@@ -1876,6 +1930,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartBgpFailoverTest {
         crate::error::StartBgpFailoverTestError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_bgp_failover_test_error(response)
         } else {
@@ -1910,6 +1965,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopBgpFailoverTest {
         crate::error::StopBgpFailoverTestError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_bgp_failover_test_error(response)
         } else {
@@ -1942,6 +1998,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -1974,6 +2031,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -2008,6 +2066,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateConnection {
         crate::error::UpdateConnectionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_connection_error(response)
         } else {
@@ -2042,6 +2101,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectConnectGatew
         crate::error::UpdateDirectConnectGatewayError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_direct_connect_gateway_error(response)
         } else {
@@ -2076,6 +2136,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDirectConnectGatew
         crate::error::UpdateDirectConnectGatewayAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_direct_connect_gateway_association_error(response)
         } else {
@@ -2109,6 +2170,7 @@ impl UpdateLag {
 impl aws_smithy_http::response::ParseStrictResponse for UpdateLag {
     type Output = std::result::Result<crate::output::UpdateLagOutput, crate::error::UpdateLagError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_lag_error(response)
         } else {
@@ -2143,6 +2205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateVirtualInterfaceAt
         crate::error::UpdateVirtualInterfaceAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_virtual_interface_attributes_error(response)
         } else {

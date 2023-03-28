@@ -23,15 +23,8 @@ pub enum Error {
     ThrottledException(crate::error::ThrottledException),
     /// <p>You have exceeded the maximum number of tags you can apply to this resource.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,22 +52,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchGetTracesError> for Error {
     fn from(err: crate::error::BatchGetTracesError) -> Self {
-        match err.kind {
-            crate::error::BatchGetTracesErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::BatchGetTracesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::BatchGetTracesErrorKind::ThrottledException(inner) => {
+            crate::error::BatchGetTracesError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::BatchGetTracesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchGetTracesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -87,22 +85,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateGroupError> for Error {
     fn from(err: crate::error::CreateGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateGroupErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::CreateGroupError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::CreateGroupErrorKind::ThrottledException(inner) => {
+            crate::error::CreateGroupError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::CreateGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -117,25 +120,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateSamplingRuleError> for Error {
     fn from(err: crate::error::CreateSamplingRuleError) -> Self {
-        match err.kind {
-            crate::error::CreateSamplingRuleErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::CreateSamplingRuleError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::CreateSamplingRuleErrorKind::RuleLimitExceededException(inner) => {
+            crate::error::CreateSamplingRuleError::RuleLimitExceededException(inner) => {
                 Error::RuleLimitExceededException(inner)
             }
-            crate::error::CreateSamplingRuleErrorKind::ThrottledException(inner) => {
+            crate::error::CreateSamplingRuleError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::CreateSamplingRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSamplingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -148,22 +156,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteGroupError> for Error {
     fn from(err: crate::error::DeleteGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteGroupErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::DeleteGroupError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::DeleteGroupErrorKind::ThrottledException(inner) => {
+            crate::error::DeleteGroupError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -179,25 +192,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteResourcePolicyError> for Error {
     fn from(err: crate::error::DeleteResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteResourcePolicyErrorKind::InvalidPolicyRevisionIdException(
-                inner,
-            ) => Error::InvalidPolicyRevisionIdException(inner),
-            crate::error::DeleteResourcePolicyErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::DeleteResourcePolicyError::InvalidPolicyRevisionIdException(inner) => {
+                Error::InvalidPolicyRevisionIdException(inner)
+            }
+            crate::error::DeleteResourcePolicyError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::DeleteResourcePolicyErrorKind::ThrottledException(inner) => {
+            crate::error::DeleteResourcePolicyError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::DeleteResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -212,22 +230,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteSamplingRuleError> for Error {
     fn from(err: crate::error::DeleteSamplingRuleError) -> Self {
-        match err.kind {
-            crate::error::DeleteSamplingRuleErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::DeleteSamplingRuleError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::DeleteSamplingRuleErrorKind::ThrottledException(inner) => {
+            crate::error::DeleteSamplingRuleError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::DeleteSamplingRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSamplingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -242,22 +265,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetEncryptionConfigError> for Error {
     fn from(err: crate::error::GetEncryptionConfigError) -> Self {
-        match err.kind {
-            crate::error::GetEncryptionConfigErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetEncryptionConfigError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetEncryptionConfigErrorKind::ThrottledException(inner) => {
+            crate::error::GetEncryptionConfigError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetEncryptionConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetEncryptionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -270,22 +298,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetGroupError> for Error {
     fn from(err: crate::error::GetGroupError) -> Self {
-        match err.kind {
-            crate::error::GetGroupErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetGroupError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetGroupErrorKind::ThrottledException(inner) => {
+            crate::error::GetGroupError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -298,22 +331,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetGroupsError> for Error {
     fn from(err: crate::error::GetGroupsError) -> Self {
-        match err.kind {
-            crate::error::GetGroupsErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetGroupsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetGroupsErrorKind::ThrottledException(inner) => {
+            crate::error::GetGroupsError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -326,22 +364,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInsightError> for Error {
     fn from(err: crate::error::GetInsightError) -> Self {
-        match err.kind {
-            crate::error::GetInsightErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetInsightError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetInsightErrorKind::ThrottledException(inner) => {
+            crate::error::GetInsightError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetInsightErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInsightError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -356,22 +399,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInsightEventsError> for Error {
     fn from(err: crate::error::GetInsightEventsError) -> Self {
-        match err.kind {
-            crate::error::GetInsightEventsErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetInsightEventsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetInsightEventsErrorKind::ThrottledException(inner) => {
+            crate::error::GetInsightEventsError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetInsightEventsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInsightEventsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -387,22 +435,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInsightImpactGraphError> for Error {
     fn from(err: crate::error::GetInsightImpactGraphError) -> Self {
-        match err.kind {
-            crate::error::GetInsightImpactGraphErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetInsightImpactGraphError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetInsightImpactGraphErrorKind::ThrottledException(inner) => {
+            crate::error::GetInsightImpactGraphError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetInsightImpactGraphErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInsightImpactGraphError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -417,22 +470,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInsightSummariesError> for Error {
     fn from(err: crate::error::GetInsightSummariesError) -> Self {
-        match err.kind {
-            crate::error::GetInsightSummariesErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetInsightSummariesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetInsightSummariesErrorKind::ThrottledException(inner) => {
+            crate::error::GetInsightSummariesError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetInsightSummariesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInsightSummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -447,22 +505,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSamplingRulesError> for Error {
     fn from(err: crate::error::GetSamplingRulesError) -> Self {
-        match err.kind {
-            crate::error::GetSamplingRulesErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetSamplingRulesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetSamplingRulesErrorKind::ThrottledException(inner) => {
+            crate::error::GetSamplingRulesError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetSamplingRulesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSamplingRulesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -478,21 +541,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSamplingStatisticSummariesError> for Error {
     fn from(err: crate::error::GetSamplingStatisticSummariesError) -> Self {
-        match err.kind {
-            crate::error::GetSamplingStatisticSummariesErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::GetSamplingStatisticSummariesErrorKind::ThrottledException(inner) => {
+        match err {
+            crate::error::GetSamplingStatisticSummariesError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetSamplingStatisticSummariesError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetSamplingStatisticSummariesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetSamplingStatisticSummariesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -508,22 +578,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSamplingTargetsError> for Error {
     fn from(err: crate::error::GetSamplingTargetsError) -> Self {
-        match err.kind {
-            crate::error::GetSamplingTargetsErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetSamplingTargetsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetSamplingTargetsErrorKind::ThrottledException(inner) => {
+            crate::error::GetSamplingTargetsError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetSamplingTargetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSamplingTargetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -536,22 +611,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetServiceGraphError> for Error {
     fn from(err: crate::error::GetServiceGraphError) -> Self {
-        match err.kind {
-            crate::error::GetServiceGraphErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetServiceGraphError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetServiceGraphErrorKind::ThrottledException(inner) => {
+            crate::error::GetServiceGraphError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetServiceGraphErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetServiceGraphError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -571,21 +651,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTimeSeriesServiceStatisticsError> for Error {
     fn from(err: crate::error::GetTimeSeriesServiceStatisticsError) -> Self {
-        match err.kind {
-            crate::error::GetTimeSeriesServiceStatisticsErrorKind::InvalidRequestException(
-                inner,
-            ) => Error::InvalidRequestException(inner),
-            crate::error::GetTimeSeriesServiceStatisticsErrorKind::ThrottledException(inner) => {
+        match err {
+            crate::error::GetTimeSeriesServiceStatisticsError::InvalidRequestException(inner) => {
+                Error::InvalidRequestException(inner)
+            }
+            crate::error::GetTimeSeriesServiceStatisticsError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetTimeSeriesServiceStatisticsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetTimeSeriesServiceStatisticsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -599,22 +686,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTraceGraphError> for Error {
     fn from(err: crate::error::GetTraceGraphError) -> Self {
-        match err.kind {
-            crate::error::GetTraceGraphErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetTraceGraphError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetTraceGraphErrorKind::ThrottledException(inner) => {
+            crate::error::GetTraceGraphError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetTraceGraphErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTraceGraphError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -629,22 +721,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTraceSummariesError> for Error {
     fn from(err: crate::error::GetTraceSummariesError) -> Self {
-        match err.kind {
-            crate::error::GetTraceSummariesErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::GetTraceSummariesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::GetTraceSummariesErrorKind::ThrottledException(inner) => {
+            crate::error::GetTraceSummariesError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::GetTraceSummariesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTraceSummariesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -660,22 +757,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListResourcePoliciesError> for Error {
     fn from(err: crate::error::ListResourcePoliciesError) -> Self {
-        match err.kind {
-            crate::error::ListResourcePoliciesErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::ListResourcePoliciesError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::ListResourcePoliciesErrorKind::ThrottledException(inner) => {
+            crate::error::ListResourcePoliciesError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::ListResourcePoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListResourcePoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -690,25 +792,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ThrottledException(inner) => {
+            crate::error::ListTagsForResourceError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -723,22 +830,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutEncryptionConfigError> for Error {
     fn from(err: crate::error::PutEncryptionConfigError) -> Self {
-        match err.kind {
-            crate::error::PutEncryptionConfigErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::PutEncryptionConfigError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::PutEncryptionConfigErrorKind::ThrottledException(inner) => {
+            crate::error::PutEncryptionConfigError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::PutEncryptionConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutEncryptionConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -753,34 +865,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutResourcePolicyError> for Error {
     fn from(err: crate::error::PutResourcePolicyError) -> Self {
-        match err.kind {
-            crate::error::PutResourcePolicyErrorKind::InvalidPolicyRevisionIdException(inner) => {
+        match err {
+            crate::error::PutResourcePolicyError::InvalidPolicyRevisionIdException(inner) => {
                 Error::InvalidPolicyRevisionIdException(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::LockoutPreventionException(inner) => {
+            crate::error::PutResourcePolicyError::LockoutPreventionException(inner) => {
                 Error::LockoutPreventionException(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::MalformedPolicyDocumentException(inner) => {
+            crate::error::PutResourcePolicyError::MalformedPolicyDocumentException(inner) => {
                 Error::MalformedPolicyDocumentException(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::PolicyCountLimitExceededException(inner) => {
+            crate::error::PutResourcePolicyError::PolicyCountLimitExceededException(inner) => {
                 Error::PolicyCountLimitExceededException(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::PolicySizeLimitExceededException(inner) => {
+            crate::error::PutResourcePolicyError::PolicySizeLimitExceededException(inner) => {
                 Error::PolicySizeLimitExceededException(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::ThrottledException(inner) => {
+            crate::error::PutResourcePolicyError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::PutResourcePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutResourcePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -795,22 +912,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutTelemetryRecordsError> for Error {
     fn from(err: crate::error::PutTelemetryRecordsError) -> Self {
-        match err.kind {
-            crate::error::PutTelemetryRecordsErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::PutTelemetryRecordsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::PutTelemetryRecordsErrorKind::ThrottledException(inner) => {
+            crate::error::PutTelemetryRecordsError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::PutTelemetryRecordsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutTelemetryRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -825,22 +947,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutTraceSegmentsError> for Error {
     fn from(err: crate::error::PutTraceSegmentsError) -> Self {
-        match err.kind {
-            crate::error::PutTraceSegmentsErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::PutTraceSegmentsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::PutTraceSegmentsErrorKind::ThrottledException(inner) => {
+            crate::error::PutTraceSegmentsError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::PutTraceSegmentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutTraceSegmentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -853,28 +980,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::TagResourceError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::ThrottledException(inner) => {
+            crate::error::TagResourceError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+            crate::error::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -887,25 +1019,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::UntagResourceError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::UntagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::ThrottledException(inner) => {
+            crate::error::UntagResourceError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -918,22 +1055,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateGroupError> for Error {
     fn from(err: crate::error::UpdateGroupError) -> Self {
-        match err.kind {
-            crate::error::UpdateGroupErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::UpdateGroupError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::UpdateGroupErrorKind::ThrottledException(inner) => {
+            crate::error::UpdateGroupError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::UpdateGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -948,23 +1090,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateSamplingRuleError> for Error {
     fn from(err: crate::error::UpdateSamplingRuleError) -> Self {
-        match err.kind {
-            crate::error::UpdateSamplingRuleErrorKind::InvalidRequestException(inner) => {
+        match err {
+            crate::error::UpdateSamplingRuleError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::UpdateSamplingRuleErrorKind::ThrottledException(inner) => {
+            crate::error::UpdateSamplingRuleError::ThrottledException(inner) => {
                 Error::ThrottledException(inner)
             }
-            crate::error::UpdateSamplingRuleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateSamplingRuleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::InvalidPolicyRevisionIdException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::LockoutPreventionException(e) => e.request_id(),
+            Self::MalformedPolicyDocumentException(e) => e.request_id(),
+            Self::PolicyCountLimitExceededException(e) => e.request_id(),
+            Self::PolicySizeLimitExceededException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::RuleLimitExceededException(e) => e.request_id(),
+            Self::ThrottledException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -3,8 +3,11 @@
 pub fn parse_search_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SearchOutput, crate::error::SearchError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SearchError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SearchError::unhandled(generic)),
@@ -12,25 +15,25 @@ pub fn parse_search_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SearchException" => {
-            crate::error::SearchError {
-                meta: generic,
-                kind: crate::error::SearchErrorKind::SearchException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::search_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "SearchException" => crate::error::SearchError::SearchException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::search_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SearchError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
         _ => crate::error::SearchError::generic(generic),
     })
 }
@@ -48,6 +51,9 @@ pub fn parse_search_response(
             output,
         )
         .map_err(crate::error::SearchError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -56,8 +62,11 @@ pub fn parse_search_response(
 pub fn parse_suggest_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SuggestOutput, crate::error::SuggestError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SuggestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SuggestError::unhandled(generic)),
@@ -65,25 +74,25 @@ pub fn parse_suggest_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SearchException" => {
-            crate::error::SuggestError {
-                meta: generic,
-                kind: crate::error::SuggestErrorKind::SearchException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::search_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SuggestError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "SearchException" => crate::error::SuggestError::SearchException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::search_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_search_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SuggestError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
         _ => crate::error::SuggestError::generic(generic),
     })
 }
@@ -101,6 +110,9 @@ pub fn parse_suggest_response(
             output,
         )
         .map_err(crate::error::SuggestError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -109,8 +121,11 @@ pub fn parse_suggest_response(
 pub fn parse_upload_documents_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadDocumentsOutput, crate::error::UploadDocumentsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UploadDocumentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UploadDocumentsError::unhandled(generic)),
@@ -118,23 +133,23 @@ pub fn parse_upload_documents_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DocumentServiceException" => crate::error::UploadDocumentsError {
-            meta: generic,
-            kind: crate::error::UploadDocumentsErrorKind::DocumentServiceException({
+        "DocumentServiceException" => {
+            crate::error::UploadDocumentsError::DocumentServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::document_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_document_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UploadDocumentsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UploadDocumentsError::generic(generic),
     })
 }
@@ -152,6 +167,9 @@ pub fn parse_upload_documents_response(
             output,
         )
         .map_err(crate::error::UploadDocumentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

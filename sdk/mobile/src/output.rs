@@ -7,11 +7,17 @@ pub struct UpdateProjectOutput {
     /// <p> Detailed information about the updated AWS Mobile Hub project. </p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::model::ProjectDetails>,
+    _request_id: Option<String>,
 }
 impl UpdateProjectOutput {
     /// <p> Detailed information about the updated AWS Mobile Hub project. </p>
     pub fn details(&self) -> std::option::Option<&crate::model::ProjectDetails> {
         self.details.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
@@ -22,6 +28,7 @@ pub mod update_project_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Detailed information about the updated AWS Mobile Hub project. </p>
@@ -37,10 +44,20 @@ pub mod update_project_output {
             self.details = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateProjectOutput`](crate::output::UpdateProjectOutput).
         pub fn build(self) -> crate::output::UpdateProjectOutput {
             crate::output::UpdateProjectOutput {
                 details: self.details,
+                _request_id: self._request_id,
             }
         }
     }
@@ -62,6 +79,7 @@ pub struct ListProjectsOutput {
     /// <p> Pagination token. Set to null to start listing records from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListProjectsOutput {
     /// <p> List of projects. </p>
@@ -73,6 +91,11 @@ impl ListProjectsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListProjectsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListProjectsOutput`](crate::output::ListProjectsOutput).
 pub mod list_projects_output {
 
@@ -82,6 +105,7 @@ pub mod list_projects_output {
     pub struct Builder {
         pub(crate) projects: std::option::Option<std::vec::Vec<crate::model::ProjectSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `projects`.
@@ -113,11 +137,21 @@ pub mod list_projects_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProjectsOutput`](crate::output::ListProjectsOutput).
         pub fn build(self) -> crate::output::ListProjectsOutput {
             crate::output::ListProjectsOutput {
                 projects: self.projects,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -139,6 +173,7 @@ pub struct ListBundlesOutput {
     /// <p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBundlesOutput {
     /// <p> A list of bundles. </p>
@@ -150,6 +185,11 @@ impl ListBundlesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBundlesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListBundlesOutput`](crate::output::ListBundlesOutput).
 pub mod list_bundles_output {
 
@@ -159,6 +199,7 @@ pub mod list_bundles_output {
     pub struct Builder {
         pub(crate) bundle_list: std::option::Option<std::vec::Vec<crate::model::BundleDetails>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `bundle_list`.
@@ -190,11 +231,21 @@ pub mod list_bundles_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBundlesOutput`](crate::output::ListBundlesOutput).
         pub fn build(self) -> crate::output::ListBundlesOutput {
             crate::output::ListBundlesOutput {
                 bundle_list: self.bundle_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -219,6 +270,7 @@ pub struct ExportProjectOutput {
     /// <p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>
     #[doc(hidden)]
     pub snapshot_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportProjectOutput {
     /// <p> URL which can be used to download the exported project configuation file(s). </p>
@@ -234,6 +286,11 @@ impl ExportProjectOutput {
         self.snapshot_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ExportProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ExportProjectOutput`](crate::output::ExportProjectOutput).
 pub mod export_project_output {
 
@@ -244,6 +301,7 @@ pub mod export_project_output {
         pub(crate) download_url: std::option::Option<std::string::String>,
         pub(crate) share_url: std::option::Option<std::string::String>,
         pub(crate) snapshot_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> URL which can be used to download the exported project configuation file(s). </p>
@@ -276,12 +334,22 @@ pub mod export_project_output {
             self.snapshot_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportProjectOutput`](crate::output::ExportProjectOutput).
         pub fn build(self) -> crate::output::ExportProjectOutput {
             crate::output::ExportProjectOutput {
                 download_url: self.download_url,
                 share_url: self.share_url,
                 snapshot_id: self.snapshot_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -300,11 +368,17 @@ pub struct ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
     #[doc(hidden)]
     pub download_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportBundleOutput {
     /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
     pub fn download_url(&self) -> std::option::Option<&str> {
         self.download_url.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ExportBundleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ExportBundleOutput`](crate::output::ExportBundleOutput).
@@ -315,6 +389,7 @@ pub mod export_bundle_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) download_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>
@@ -327,10 +402,20 @@ pub mod export_bundle_output {
             self.download_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportBundleOutput`](crate::output::ExportBundleOutput).
         pub fn build(self) -> crate::output::ExportBundleOutput {
             crate::output::ExportBundleOutput {
                 download_url: self.download_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -349,11 +434,17 @@ pub struct DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::model::ProjectDetails>,
+    _request_id: Option<String>,
 }
 impl DescribeProjectOutput {
     /// <p> Detailed information about an AWS Mobile Hub project. </p>
     pub fn details(&self) -> std::option::Option<&crate::model::ProjectDetails> {
         self.details.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
@@ -364,6 +455,7 @@ pub mod describe_project_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Detailed information about an AWS Mobile Hub project. </p>
@@ -379,10 +471,20 @@ pub mod describe_project_output {
             self.details = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProjectOutput`](crate::output::DescribeProjectOutput).
         pub fn build(self) -> crate::output::DescribeProjectOutput {
             crate::output::DescribeProjectOutput {
                 details: self.details,
+                _request_id: self._request_id,
             }
         }
     }
@@ -401,11 +503,17 @@ pub struct DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::model::BundleDetails>,
+    _request_id: Option<String>,
 }
 impl DescribeBundleOutput {
     /// <p> The details of the bundle. </p>
     pub fn details(&self) -> std::option::Option<&crate::model::BundleDetails> {
         self.details.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeBundleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
@@ -416,6 +524,7 @@ pub mod describe_bundle_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::BundleDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The details of the bundle. </p>
@@ -431,10 +540,20 @@ pub mod describe_bundle_output {
             self.details = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeBundleOutput`](crate::output::DescribeBundleOutput).
         pub fn build(self) -> crate::output::DescribeBundleOutput {
             crate::output::DescribeBundleOutput {
                 details: self.details,
+                _request_id: self._request_id,
             }
         }
     }
@@ -456,6 +575,7 @@ pub struct DeleteProjectOutput {
     /// <p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>
     #[doc(hidden)]
     pub orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+    _request_id: Option<String>,
 }
 impl DeleteProjectOutput {
     /// <p> Resources which were deleted. </p>
@@ -467,6 +587,11 @@ impl DeleteProjectOutput {
         self.orphaned_resources.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
 pub mod delete_project_output {
 
@@ -476,6 +601,7 @@ pub mod delete_project_output {
     pub struct Builder {
         pub(crate) deleted_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) orphaned_resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `deleted_resources`.
@@ -516,11 +642,21 @@ pub mod delete_project_output {
             self.orphaned_resources = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteProjectOutput`](crate::output::DeleteProjectOutput).
         pub fn build(self) -> crate::output::DeleteProjectOutput {
             crate::output::DeleteProjectOutput {
                 deleted_resources: self.deleted_resources,
                 orphaned_resources: self.orphaned_resources,
+                _request_id: self._request_id,
             }
         }
     }
@@ -539,11 +675,17 @@ pub struct CreateProjectOutput {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
     #[doc(hidden)]
     pub details: std::option::Option<crate::model::ProjectDetails>,
+    _request_id: Option<String>,
 }
 impl CreateProjectOutput {
     /// <p> Detailed information about the created AWS Mobile Hub project. </p>
     pub fn details(&self) -> std::option::Option<&crate::model::ProjectDetails> {
         self.details.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateProjectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateProjectOutput`](crate::output::CreateProjectOutput).
@@ -554,6 +696,7 @@ pub mod create_project_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) details: std::option::Option<crate::model::ProjectDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Detailed information about the created AWS Mobile Hub project. </p>
@@ -569,10 +712,20 @@ pub mod create_project_output {
             self.details = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateProjectOutput`](crate::output::CreateProjectOutput).
         pub fn build(self) -> crate::output::CreateProjectOutput {
             crate::output::CreateProjectOutput {
                 details: self.details,
+                _request_id: self._request_id,
             }
         }
     }

@@ -4,9 +4,7 @@
  */
 
 use async_stream::stream;
-use aws_sdk_transcribestreaming::error::{
-    AudioStreamError, TranscriptResultStreamError, TranscriptResultStreamErrorKind,
-};
+use aws_sdk_transcribestreaming::error::{AudioStreamError, TranscriptResultStreamError};
 use aws_sdk_transcribestreaming::model::{
     AudioEvent, AudioStream, LanguageCode, MediaEncoding, TranscriptResultStream,
 };
@@ -76,10 +74,7 @@ async fn test_error() {
 
     match output.transcript_result_stream.recv().await {
         Err(SdkError::ServiceError(context)) => match context.err() {
-            TranscriptResultStreamError {
-                kind: TranscriptResultStreamErrorKind::BadRequestException(err),
-                ..
-            } => {
+            TranscriptResultStreamError::BadRequestException(err) => {
                 assert_eq!(
                     Some("A complete signal was sent without the preceding empty frame."),
                     err.message()

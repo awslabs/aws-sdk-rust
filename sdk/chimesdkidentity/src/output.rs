@@ -9,6 +9,7 @@ pub struct UpdateAppInstanceUserEndpointOutput {
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAppInstanceUserEndpointOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -25,7 +26,13 @@ impl std::fmt::Debug for UpdateAppInstanceUserEndpointOutput {
         let mut formatter = f.debug_struct("UpdateAppInstanceUserEndpointOutput");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAppInstanceUserEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput).
@@ -37,6 +44,7 @@ pub mod update_app_instance_user_endpoint_output {
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -62,11 +70,21 @@ pub mod update_app_instance_user_endpoint_output {
             self.endpoint_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAppInstanceUserEndpointOutput`](crate::output::UpdateAppInstanceUserEndpointOutput).
         pub fn build(self) -> crate::output::UpdateAppInstanceUserEndpointOutput {
             crate::output::UpdateAppInstanceUserEndpointOutput {
                 app_instance_user_arn: self.app_instance_user_arn,
                 endpoint_id: self.endpoint_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -75,6 +93,7 @@ pub mod update_app_instance_user_endpoint_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
             formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -93,11 +112,17 @@ pub struct UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAppInstanceUserOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
     pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput).
@@ -108,6 +133,7 @@ pub mod update_app_instance_user_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -123,10 +149,20 @@ pub mod update_app_instance_user_output {
             self.app_instance_user_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAppInstanceUserOutput`](crate::output::UpdateAppInstanceUserOutput).
         pub fn build(self) -> crate::output::UpdateAppInstanceUserOutput {
             crate::output::UpdateAppInstanceUserOutput {
                 app_instance_user_arn: self.app_instance_user_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -145,11 +181,17 @@ pub struct UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAppInstanceOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAppInstanceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput).
@@ -160,6 +202,7 @@ pub mod update_app_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -175,10 +218,20 @@ pub mod update_app_instance_output {
             self.app_instance_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAppInstanceOutput`](crate::output::UpdateAppInstanceOutput).
         pub fn build(self) -> crate::output::UpdateAppInstanceOutput {
             crate::output::UpdateAppInstanceOutput {
                 app_instance_arn: self.app_instance_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -193,18 +246,38 @@ impl UpdateAppInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -218,18 +291,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -250,6 +343,7 @@ pub struct RegisterAppInstanceUserEndpointOutput {
     /// <p>The unique identifier of the <code>AppInstanceUserEndpoint</code>.</p>
     #[doc(hidden)]
     pub endpoint_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RegisterAppInstanceUserEndpointOutput {
     /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -266,7 +360,13 @@ impl std::fmt::Debug for RegisterAppInstanceUserEndpointOutput {
         let mut formatter = f.debug_struct("RegisterAppInstanceUserEndpointOutput");
         formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
         formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for RegisterAppInstanceUserEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput).
@@ -278,6 +378,7 @@ pub mod register_app_instance_user_endpoint_output {
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
         pub(crate) endpoint_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstanceUser</code>.</p>
@@ -303,11 +404,21 @@ pub mod register_app_instance_user_endpoint_output {
             self.endpoint_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterAppInstanceUserEndpointOutput`](crate::output::RegisterAppInstanceUserEndpointOutput).
         pub fn build(self) -> crate::output::RegisterAppInstanceUserEndpointOutput {
             crate::output::RegisterAppInstanceUserEndpointOutput {
                 app_instance_user_arn: self.app_instance_user_arn,
                 endpoint_id: self.endpoint_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -316,6 +427,7 @@ pub mod register_app_instance_user_endpoint_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("app_instance_user_arn", &"*** Sensitive Data Redacted ***");
             formatter.field("endpoint_id", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -338,6 +450,7 @@ pub struct PutAppInstanceRetentionSettingsOutput {
     /// <p>The time at which the API deletes data.</p>
     #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl PutAppInstanceRetentionSettingsOutput {
     /// <p>The time in days to retain data. Data type: number.</p>
@@ -351,6 +464,11 @@ impl PutAppInstanceRetentionSettingsOutput {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutAppInstanceRetentionSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput).
 pub mod put_app_instance_retention_settings_output {
 
@@ -361,6 +479,7 @@ pub mod put_app_instance_retention_settings_output {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
         pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time in days to retain data. Data type: number.</p>
@@ -392,11 +511,21 @@ pub mod put_app_instance_retention_settings_output {
             self.initiate_deletion_timestamp = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAppInstanceRetentionSettingsOutput`](crate::output::PutAppInstanceRetentionSettingsOutput).
         pub fn build(self) -> crate::output::PutAppInstanceRetentionSettingsOutput {
             crate::output::PutAppInstanceRetentionSettingsOutput {
                 app_instance_retention_settings: self.app_instance_retention_settings,
                 initiate_deletion_timestamp: self.initiate_deletion_timestamp,
+                _request_id: self._request_id,
             }
         }
     }
@@ -415,11 +544,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -430,6 +565,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -451,9 +587,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -478,6 +626,7 @@ pub struct ListAppInstanceUsersOutput {
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppInstanceUsersOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -501,7 +650,13 @@ impl std::fmt::Debug for ListAppInstanceUsersOutput {
         formatter.field("app_instance_arn", &self.app_instance_arn);
         formatter.field("app_instance_users", &self.app_instance_users);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListAppInstanceUsersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput).
@@ -515,6 +670,7 @@ pub mod list_app_instance_users_output {
         pub(crate) app_instance_users:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceUserSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -559,12 +715,22 @@ pub mod list_app_instance_users_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAppInstanceUsersOutput`](crate::output::ListAppInstanceUsersOutput).
         pub fn build(self) -> crate::output::ListAppInstanceUsersOutput {
             crate::output::ListAppInstanceUsersOutput {
                 app_instance_arn: self.app_instance_arn,
                 app_instance_users: self.app_instance_users,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -574,6 +740,7 @@ pub mod list_app_instance_users_output {
             formatter.field("app_instance_arn", &self.app_instance_arn);
             formatter.field("app_instance_users", &self.app_instance_users);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -596,6 +763,7 @@ pub struct ListAppInstanceUserEndpointsOutput {
     /// <p>The token passed by previous API calls until all requested endpoints are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppInstanceUserEndpointsOutput {
     /// <p>The information for each requested <code>AppInstanceUserEndpoint</code>.</p>
@@ -617,7 +785,13 @@ impl std::fmt::Debug for ListAppInstanceUserEndpointsOutput {
             &self.app_instance_user_endpoints,
         );
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListAppInstanceUserEndpointsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput).
@@ -630,6 +804,7 @@ pub mod list_app_instance_user_endpoints_output {
         pub(crate) app_instance_user_endpoints:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceUserEndpointSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `app_instance_user_endpoints`.
@@ -664,11 +839,21 @@ pub mod list_app_instance_user_endpoints_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAppInstanceUserEndpointsOutput`](crate::output::ListAppInstanceUserEndpointsOutput).
         pub fn build(self) -> crate::output::ListAppInstanceUserEndpointsOutput {
             crate::output::ListAppInstanceUserEndpointsOutput {
                 app_instance_user_endpoints: self.app_instance_user_endpoints,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -680,6 +865,7 @@ pub mod list_app_instance_user_endpoints_output {
                 &self.app_instance_user_endpoints,
             );
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -701,6 +887,7 @@ pub struct ListAppInstancesOutput {
     /// <p>The token passed by previous API requests until the maximum number of <code>AppInstance</code>s is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppInstancesOutput {
     /// <p>The information for each <code>AppInstance</code>.</p>
@@ -717,7 +904,13 @@ impl std::fmt::Debug for ListAppInstancesOutput {
         let mut formatter = f.debug_struct("ListAppInstancesOutput");
         formatter.field("app_instances", &self.app_instances);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListAppInstancesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput).
@@ -730,6 +923,7 @@ pub mod list_app_instances_output {
         pub(crate) app_instances:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `app_instances`.
@@ -761,11 +955,21 @@ pub mod list_app_instances_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAppInstancesOutput`](crate::output::ListAppInstancesOutput).
         pub fn build(self) -> crate::output::ListAppInstancesOutput {
             crate::output::ListAppInstancesOutput {
                 app_instances: self.app_instances,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -774,6 +978,7 @@ pub mod list_app_instances_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("app_instances", &self.app_instances);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -799,6 +1004,7 @@ pub struct ListAppInstanceAdminsOutput {
     /// <p>The token returned from previous API requests until the number of administrators is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppInstanceAdminsOutput {
     /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -822,7 +1028,13 @@ impl std::fmt::Debug for ListAppInstanceAdminsOutput {
         formatter.field("app_instance_arn", &self.app_instance_arn);
         formatter.field("app_instance_admins", &self.app_instance_admins);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListAppInstanceAdminsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput).
@@ -836,6 +1048,7 @@ pub mod list_app_instance_admins_output {
         pub(crate) app_instance_admins:
             std::option::Option<std::vec::Vec<crate::model::AppInstanceAdminSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the <code>AppInstance</code>.</p>
@@ -880,12 +1093,22 @@ pub mod list_app_instance_admins_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAppInstanceAdminsOutput`](crate::output::ListAppInstanceAdminsOutput).
         pub fn build(self) -> crate::output::ListAppInstanceAdminsOutput {
             crate::output::ListAppInstanceAdminsOutput {
                 app_instance_arn: self.app_instance_arn,
                 app_instance_admins: self.app_instance_admins,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -895,6 +1118,7 @@ pub mod list_app_instance_admins_output {
             formatter.field("app_instance_arn", &self.app_instance_arn);
             formatter.field("app_instance_admins", &self.app_instance_admins);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -917,6 +1141,7 @@ pub struct GetAppInstanceRetentionSettingsOutput {
     /// <p>The timestamp representing the time at which the specified items are retained, in Epoch Seconds.</p>
     #[doc(hidden)]
     pub initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetAppInstanceRetentionSettingsOutput {
     /// <p>The retention settings for the <code>AppInstance</code>.</p>
@@ -930,6 +1155,11 @@ impl GetAppInstanceRetentionSettingsOutput {
         self.initiate_deletion_timestamp.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetAppInstanceRetentionSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput).
 pub mod get_app_instance_retention_settings_output {
 
@@ -940,6 +1170,7 @@ pub mod get_app_instance_retention_settings_output {
         pub(crate) app_instance_retention_settings:
             std::option::Option<crate::model::AppInstanceRetentionSettings>,
         pub(crate) initiate_deletion_timestamp: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The retention settings for the <code>AppInstance</code>.</p>
@@ -971,11 +1202,21 @@ pub mod get_app_instance_retention_settings_output {
             self.initiate_deletion_timestamp = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAppInstanceRetentionSettingsOutput`](crate::output::GetAppInstanceRetentionSettingsOutput).
         pub fn build(self) -> crate::output::GetAppInstanceRetentionSettingsOutput {
             crate::output::GetAppInstanceRetentionSettingsOutput {
                 app_instance_retention_settings: self.app_instance_retention_settings,
                 initiate_deletion_timestamp: self.initiate_deletion_timestamp,
+                _request_id: self._request_id,
             }
         }
     }
@@ -994,6 +1235,7 @@ pub struct DescribeAppInstanceUserEndpointOutput {
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
     pub app_instance_user_endpoint: std::option::Option<crate::model::AppInstanceUserEndpoint>,
+    _request_id: Option<String>,
 }
 impl DescribeAppInstanceUserEndpointOutput {
     /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
@@ -1001,6 +1243,11 @@ impl DescribeAppInstanceUserEndpointOutput {
         &self,
     ) -> std::option::Option<&crate::model::AppInstanceUserEndpoint> {
         self.app_instance_user_endpoint.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAppInstanceUserEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput).
@@ -1012,6 +1259,7 @@ pub mod describe_app_instance_user_endpoint_output {
     pub struct Builder {
         pub(crate) app_instance_user_endpoint:
             std::option::Option<crate::model::AppInstanceUserEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>, ID, name, type, resource ARN, attributes, allow messages, state, and created and last updated timestamps. All timestamps use epoch milliseconds.</p>
@@ -1030,10 +1278,20 @@ pub mod describe_app_instance_user_endpoint_output {
             self.app_instance_user_endpoint = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAppInstanceUserEndpointOutput`](crate::output::DescribeAppInstanceUserEndpointOutput).
         pub fn build(self) -> crate::output::DescribeAppInstanceUserEndpointOutput {
             crate::output::DescribeAppInstanceUserEndpointOutput {
                 app_instance_user_endpoint: self.app_instance_user_endpoint,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1052,11 +1310,17 @@ pub struct DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     #[doc(hidden)]
     pub app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
+    _request_id: Option<String>,
 }
 impl DescribeAppInstanceUserOutput {
     /// <p>The name of the <code>AppInstanceUser</code>.</p>
     pub fn app_instance_user(&self) -> std::option::Option<&crate::model::AppInstanceUser> {
         self.app_instance_user.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput).
@@ -1067,6 +1331,7 @@ pub mod describe_app_instance_user_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user: std::option::Option<crate::model::AppInstanceUser>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the <code>AppInstanceUser</code>.</p>
@@ -1082,10 +1347,20 @@ pub mod describe_app_instance_user_output {
             self.app_instance_user = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAppInstanceUserOutput`](crate::output::DescribeAppInstanceUserOutput).
         pub fn build(self) -> crate::output::DescribeAppInstanceUserOutput {
             crate::output::DescribeAppInstanceUserOutput {
                 app_instance_user: self.app_instance_user,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1104,11 +1379,17 @@ pub struct DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
     pub app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
+    _request_id: Option<String>,
 }
 impl DescribeAppInstanceAdminOutput {
     /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
     pub fn app_instance_admin(&self) -> std::option::Option<&crate::model::AppInstanceAdmin> {
         self.app_instance_admin.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAppInstanceAdminOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput).
@@ -1119,6 +1400,7 @@ pub mod describe_app_instance_admin_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::AppInstanceAdmin>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN and name of the <code>AppInstanceUser</code>, the ARN of the <code>AppInstance</code>, and the created and last-updated timestamps. All timestamps use epoch milliseconds.</p>
@@ -1134,10 +1416,20 @@ pub mod describe_app_instance_admin_output {
             self.app_instance_admin = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAppInstanceAdminOutput`](crate::output::DescribeAppInstanceAdminOutput).
         pub fn build(self) -> crate::output::DescribeAppInstanceAdminOutput {
             crate::output::DescribeAppInstanceAdminOutput {
                 app_instance_admin: self.app_instance_admin,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1156,11 +1448,17 @@ pub struct DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     #[doc(hidden)]
     pub app_instance: std::option::Option<crate::model::AppInstance>,
+    _request_id: Option<String>,
 }
 impl DescribeAppInstanceOutput {
     /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
     pub fn app_instance(&self) -> std::option::Option<&crate::model::AppInstance> {
         self.app_instance.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAppInstanceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput).
@@ -1171,6 +1469,7 @@ pub mod describe_app_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance: std::option::Option<crate::model::AppInstance>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN, metadata, created and last-updated timestamps, and the name of the <code>AppInstance</code>. All timestamps use epoch milliseconds.</p>
@@ -1186,10 +1485,20 @@ pub mod describe_app_instance_output {
             self.app_instance = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAppInstanceOutput`](crate::output::DescribeAppInstanceOutput).
         pub fn build(self) -> crate::output::DescribeAppInstanceOutput {
             crate::output::DescribeAppInstanceOutput {
                 app_instance: self.app_instance,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1204,18 +1513,38 @@ impl DescribeAppInstanceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeregisterAppInstanceUserEndpointOutput {}
+pub struct DeregisterAppInstanceUserEndpointOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeregisterAppInstanceUserEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
 pub mod deregister_app_instance_user_endpoint_output {
 
     /// A builder for [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeregisterAppInstanceUserEndpointOutput`](crate::output::DeregisterAppInstanceUserEndpointOutput).
         pub fn build(self) -> crate::output::DeregisterAppInstanceUserEndpointOutput {
-            crate::output::DeregisterAppInstanceUserEndpointOutput {}
+            crate::output::DeregisterAppInstanceUserEndpointOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1229,18 +1558,38 @@ impl DeregisterAppInstanceUserEndpointOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInstanceUserOutput {}
+pub struct DeleteAppInstanceUserOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
 pub mod delete_app_instance_user_output {
 
     /// A builder for [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAppInstanceUserOutput`](crate::output::DeleteAppInstanceUserOutput).
         pub fn build(self) -> crate::output::DeleteAppInstanceUserOutput {
-            crate::output::DeleteAppInstanceUserOutput {}
+            crate::output::DeleteAppInstanceUserOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1254,18 +1603,38 @@ impl DeleteAppInstanceUserOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInstanceAdminOutput {}
+pub struct DeleteAppInstanceAdminOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAppInstanceAdminOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
 pub mod delete_app_instance_admin_output {
 
     /// A builder for [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAppInstanceAdminOutput`](crate::output::DeleteAppInstanceAdminOutput).
         pub fn build(self) -> crate::output::DeleteAppInstanceAdminOutput {
-            crate::output::DeleteAppInstanceAdminOutput {}
+            crate::output::DeleteAppInstanceAdminOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1279,18 +1648,38 @@ impl DeleteAppInstanceAdminOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppInstanceOutput {}
+pub struct DeleteAppInstanceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAppInstanceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
 pub mod delete_app_instance_output {
 
     /// A builder for [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAppInstanceOutput`](crate::output::DeleteAppInstanceOutput).
         pub fn build(self) -> crate::output::DeleteAppInstanceOutput {
-            crate::output::DeleteAppInstanceOutput {}
+            crate::output::DeleteAppInstanceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1308,11 +1697,17 @@ pub struct CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
     #[doc(hidden)]
     pub app_instance_user_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAppInstanceUserOutput {
     /// <p>The user's ARN.</p>
     pub fn app_instance_user_arn(&self) -> std::option::Option<&str> {
         self.app_instance_user_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput).
@@ -1323,6 +1718,7 @@ pub mod create_app_instance_user_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_user_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The user's ARN.</p>
@@ -1338,10 +1734,20 @@ pub mod create_app_instance_user_output {
             self.app_instance_user_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAppInstanceUserOutput`](crate::output::CreateAppInstanceUserOutput).
         pub fn build(self) -> crate::output::CreateAppInstanceUserOutput {
             crate::output::CreateAppInstanceUserOutput {
                 app_instance_user_arn: self.app_instance_user_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1363,6 +1769,7 @@ pub struct CreateAppInstanceAdminOutput {
     /// <p>The ARN of the of the admin for the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAppInstanceAdminOutput {
     /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
@@ -1374,6 +1781,11 @@ impl CreateAppInstanceAdminOutput {
         self.app_instance_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateAppInstanceAdminOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput).
 pub mod create_app_instance_admin_output {
 
@@ -1383,6 +1795,7 @@ pub mod create_app_instance_admin_output {
     pub struct Builder {
         pub(crate) app_instance_admin: std::option::Option<crate::model::Identity>,
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name and ARN of the admin for the <code>AppInstance</code>.</p>
@@ -1411,11 +1824,21 @@ pub mod create_app_instance_admin_output {
             self.app_instance_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAppInstanceAdminOutput`](crate::output::CreateAppInstanceAdminOutput).
         pub fn build(self) -> crate::output::CreateAppInstanceAdminOutput {
             crate::output::CreateAppInstanceAdminOutput {
                 app_instance_admin: self.app_instance_admin,
                 app_instance_arn: self.app_instance_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1434,11 +1857,17 @@ pub struct CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     #[doc(hidden)]
     pub app_instance_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAppInstanceOutput {
     /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
     pub fn app_instance_arn(&self) -> std::option::Option<&str> {
         self.app_instance_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAppInstanceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput).
@@ -1449,6 +1878,7 @@ pub mod create_app_instance_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_instance_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Number (ARN) of the <code>AppInstance</code>.</p>
@@ -1464,10 +1894,20 @@ pub mod create_app_instance_output {
             self.app_instance_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAppInstanceOutput`](crate::output::CreateAppInstanceOutput).
         pub fn build(self) -> crate::output::CreateAppInstanceOutput {
             crate::output::CreateAppInstanceOutput {
                 app_instance_arn: self.app_instance_arn,
+                _request_id: self._request_id,
             }
         }
     }

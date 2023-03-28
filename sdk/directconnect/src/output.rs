@@ -94,6 +94,7 @@ pub struct UpdateVirtualInterfaceAttributesOutput {
     /// <p>Indicates whether SiteLink is enabled.</p>
     #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl UpdateVirtualInterfaceAttributesOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -215,6 +216,11 @@ impl UpdateVirtualInterfaceAttributesOutput {
         self.site_link_enabled
     }
 }
+impl aws_http::request_id::RequestId for UpdateVirtualInterfaceAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
 pub mod update_virtual_interface_attributes_output {
 
@@ -250,6 +256,7 @@ pub mod update_virtual_interface_attributes_output {
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) site_link_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -608,6 +615,15 @@ pub mod update_virtual_interface_attributes_output {
             self.site_link_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVirtualInterfaceAttributesOutput`](crate::output::UpdateVirtualInterfaceAttributesOutput).
         pub fn build(self) -> crate::output::UpdateVirtualInterfaceAttributesOutput {
             crate::output::UpdateVirtualInterfaceAttributesOutput {
@@ -637,6 +653,7 @@ pub mod update_virtual_interface_attributes_output {
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
                 site_link_enabled: self.site_link_enabled,
+                _request_id: self._request_id,
             }
         }
     }
@@ -725,6 +742,7 @@ pub struct UpdateLagOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl UpdateLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
@@ -824,6 +842,11 @@ impl UpdateLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateLagOutput`](crate::output::UpdateLagOutput).
 pub mod update_lag_output {
 
@@ -852,6 +875,7 @@ pub mod update_lag_output {
         pub(crate) mac_sec_capable: std::option::Option<bool>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
@@ -1132,6 +1156,15 @@ pub mod update_lag_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLagOutput`](crate::output::UpdateLagOutput).
         pub fn build(self) -> crate::output::UpdateLagOutput {
             crate::output::UpdateLagOutput {
@@ -1156,6 +1189,7 @@ pub mod update_lag_output {
                 mac_sec_capable: self.mac_sec_capable,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1175,6 +1209,7 @@ pub struct UpdateDirectConnectGatewayAssociationOutput {
     #[doc(hidden)]
     pub direct_connect_gateway_association:
         std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    _request_id: Option<String>,
 }
 impl UpdateDirectConnectGatewayAssociationOutput {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
@@ -1182,6 +1217,11 @@ impl UpdateDirectConnectGatewayAssociationOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateDirectConnectGatewayAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
@@ -1193,6 +1233,7 @@ pub mod update_direct_connect_gateway_association_output {
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
@@ -1211,10 +1252,20 @@ pub mod update_direct_connect_gateway_association_output {
             self.direct_connect_gateway_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayAssociationOutput`](crate::output::UpdateDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::UpdateDirectConnectGatewayAssociationOutput {
             crate::output::UpdateDirectConnectGatewayAssociationOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1233,6 +1284,7 @@ pub struct UpdateDirectConnectGatewayOutput {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
     #[doc(hidden)]
     pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+    _request_id: Option<String>,
 }
 impl UpdateDirectConnectGatewayOutput {
     /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
@@ -1240,6 +1292,11 @@ impl UpdateDirectConnectGatewayOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateDirectConnectGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
@@ -1250,6 +1307,7 @@ pub mod update_direct_connect_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a Direct Connect gateway, which enables you to connect virtual interfaces and virtual private gateway or transit gateways.</p>
@@ -1265,10 +1323,20 @@ pub mod update_direct_connect_gateway_output {
             self.direct_connect_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDirectConnectGatewayOutput`](crate::output::UpdateDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::UpdateDirectConnectGatewayOutput {
             crate::output::UpdateDirectConnectGatewayOutput {
                 direct_connect_gateway: self.direct_connect_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1363,6 +1431,7 @@ pub struct UpdateConnectionOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl UpdateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -1469,6 +1538,11 @@ impl UpdateConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
 pub mod update_connection_output {
 
@@ -1498,6 +1572,7 @@ pub mod update_connection_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -1797,6 +1872,15 @@ pub mod update_connection_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateConnectionOutput`](crate::output::UpdateConnectionOutput).
         pub fn build(self) -> crate::output::UpdateConnectionOutput {
             crate::output::UpdateConnectionOutput {
@@ -1822,6 +1906,7 @@ pub mod update_connection_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1836,18 +1921,38 @@ impl UpdateConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1861,18 +1966,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1890,6 +2015,7 @@ pub struct StopBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
     #[doc(hidden)]
     pub virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
+    _request_id: Option<String>,
 }
 impl StopBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
@@ -1897,6 +2023,11 @@ impl StopBgpFailoverTestOutput {
         &self,
     ) -> std::option::Option<&crate::model::VirtualInterfaceTestHistory> {
         self.virtual_interface_test.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StopBgpFailoverTestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
@@ -1908,6 +2039,7 @@ pub mod stop_bgp_failover_test_output {
     pub struct Builder {
         pub(crate) virtual_interface_test:
             std::option::Option<crate::model::VirtualInterfaceTestHistory>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the virtual interface failover test.</p>
@@ -1926,10 +2058,20 @@ pub mod stop_bgp_failover_test_output {
             self.virtual_interface_test = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopBgpFailoverTestOutput`](crate::output::StopBgpFailoverTestOutput).
         pub fn build(self) -> crate::output::StopBgpFailoverTestOutput {
             crate::output::StopBgpFailoverTestOutput {
                 virtual_interface_test: self.virtual_interface_test,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1948,6 +2090,7 @@ pub struct StartBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
     #[doc(hidden)]
     pub virtual_interface_test: std::option::Option<crate::model::VirtualInterfaceTestHistory>,
+    _request_id: Option<String>,
 }
 impl StartBgpFailoverTestOutput {
     /// <p>Information about the virtual interface failover test.</p>
@@ -1955,6 +2098,11 @@ impl StartBgpFailoverTestOutput {
         &self,
     ) -> std::option::Option<&crate::model::VirtualInterfaceTestHistory> {
         self.virtual_interface_test.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StartBgpFailoverTestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
@@ -1966,6 +2114,7 @@ pub mod start_bgp_failover_test_output {
     pub struct Builder {
         pub(crate) virtual_interface_test:
             std::option::Option<crate::model::VirtualInterfaceTestHistory>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the virtual interface failover test.</p>
@@ -1984,10 +2133,20 @@ pub mod start_bgp_failover_test_output {
             self.virtual_interface_test = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartBgpFailoverTestOutput`](crate::output::StartBgpFailoverTestOutput).
         pub fn build(self) -> crate::output::StartBgpFailoverTestOutput {
             crate::output::StartBgpFailoverTestOutput {
                 virtual_interface_test: self.virtual_interface_test,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2010,6 +2169,7 @@ pub struct ListVirtualInterfaceTestHistoryOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualInterfaceTestHistoryOutput {
     /// <p>The ID of the tested virtual interface.</p>
@@ -2023,6 +2183,11 @@ impl ListVirtualInterfaceTestHistoryOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVirtualInterfaceTestHistoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
 pub mod list_virtual_interface_test_history_output {
 
@@ -2033,6 +2198,7 @@ pub mod list_virtual_interface_test_history_output {
         pub(crate) virtual_interface_test_history:
             std::option::Option<std::vec::Vec<crate::model::VirtualInterfaceTestHistory>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_interface_test_history`.
@@ -2067,11 +2233,21 @@ pub mod list_virtual_interface_test_history_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVirtualInterfaceTestHistoryOutput`](crate::output::ListVirtualInterfaceTestHistoryOutput).
         pub fn build(self) -> crate::output::ListVirtualInterfaceTestHistoryOutput {
             crate::output::ListVirtualInterfaceTestHistoryOutput {
                 virtual_interface_test_history: self.virtual_interface_test_history,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2093,6 +2269,7 @@ pub struct DisassociateMacSecKeyOutput {
     /// <p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl DisassociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -2104,6 +2281,11 @@ impl DisassociateMacSecKeyOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateMacSecKeyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
 pub mod disassociate_mac_sec_key_output {
 
@@ -2113,6 +2295,7 @@ pub mod disassociate_mac_sec_key_output {
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -2147,11 +2330,21 @@ pub mod disassociate_mac_sec_key_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateMacSecKeyOutput`](crate::output::DisassociateMacSecKeyOutput).
         pub fn build(self) -> crate::output::DisassociateMacSecKeyOutput {
             crate::output::DisassociateMacSecKeyOutput {
                 connection_id: self.connection_id,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2246,6 +2439,7 @@ pub struct DisassociateConnectionFromLagOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl DisassociateConnectionFromLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -2352,6 +2546,11 @@ impl DisassociateConnectionFromLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateConnectionFromLagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
 pub mod disassociate_connection_from_lag_output {
 
@@ -2381,6 +2580,7 @@ pub mod disassociate_connection_from_lag_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -2680,6 +2880,15 @@ pub mod disassociate_connection_from_lag_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateConnectionFromLagOutput`](crate::output::DisassociateConnectionFromLagOutput).
         pub fn build(self) -> crate::output::DisassociateConnectionFromLagOutput {
             crate::output::DisassociateConnectionFromLagOutput {
@@ -2705,6 +2914,7 @@ pub mod disassociate_connection_from_lag_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2723,11 +2933,17 @@ pub struct DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
     #[doc(hidden)]
     pub virtual_interfaces: std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualInterfacesOutput {
     /// <p>The virtual interfaces</p>
     pub fn virtual_interfaces(&self) -> std::option::Option<&[crate::model::VirtualInterface]> {
         self.virtual_interfaces.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeVirtualInterfacesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
@@ -2739,6 +2955,7 @@ pub mod describe_virtual_interfaces_output {
     pub struct Builder {
         pub(crate) virtual_interfaces:
             std::option::Option<std::vec::Vec<crate::model::VirtualInterface>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_interfaces`.
@@ -2760,10 +2977,20 @@ pub mod describe_virtual_interfaces_output {
             self.virtual_interfaces = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVirtualInterfacesOutput`](crate::output::DescribeVirtualInterfacesOutput).
         pub fn build(self) -> crate::output::DescribeVirtualInterfacesOutput {
             crate::output::DescribeVirtualInterfacesOutput {
                 virtual_interfaces: self.virtual_interfaces,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2782,11 +3009,17 @@ pub struct DescribeVirtualGatewaysOutput {
     /// <p>The virtual private gateways.</p>
     #[doc(hidden)]
     pub virtual_gateways: std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
+    _request_id: Option<String>,
 }
 impl DescribeVirtualGatewaysOutput {
     /// <p>The virtual private gateways.</p>
     pub fn virtual_gateways(&self) -> std::option::Option<&[crate::model::VirtualGateway]> {
         self.virtual_gateways.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeVirtualGatewaysOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
@@ -2798,6 +3031,7 @@ pub mod describe_virtual_gateways_output {
     pub struct Builder {
         pub(crate) virtual_gateways:
             std::option::Option<std::vec::Vec<crate::model::VirtualGateway>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_gateways`.
@@ -2819,10 +3053,20 @@ pub mod describe_virtual_gateways_output {
             self.virtual_gateways = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVirtualGatewaysOutput`](crate::output::DescribeVirtualGatewaysOutput).
         pub fn build(self) -> crate::output::DescribeVirtualGatewaysOutput {
             crate::output::DescribeVirtualGatewaysOutput {
                 virtual_gateways: self.virtual_gateways,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2841,11 +3085,17 @@ pub struct DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+    _request_id: Option<String>,
 }
 impl DescribeTagsOutput {
     /// <p>Information about the tags.</p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeTagsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
@@ -2856,6 +3106,7 @@ pub mod describe_tags_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_tags`.
@@ -2877,10 +3128,20 @@ pub mod describe_tags_output {
             self.resource_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTagsOutput`](crate::output::DescribeTagsOutput).
         pub fn build(self) -> crate::output::DescribeTagsOutput {
             crate::output::DescribeTagsOutput {
                 resource_tags: self.resource_tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2908,6 +3169,7 @@ pub struct DescribeRouterConfigurationOutput {
     /// <p>Provides the details about a virtual interface's router.</p>
     #[doc(hidden)]
     pub virtual_interface_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeRouterConfigurationOutput {
     /// <p>The customer router configuration.</p>
@@ -2927,6 +3189,11 @@ impl DescribeRouterConfigurationOutput {
         self.virtual_interface_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRouterConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
 pub mod describe_router_configuration_output {
 
@@ -2938,6 +3205,7 @@ pub mod describe_router_configuration_output {
         pub(crate) router: std::option::Option<crate::model::RouterType>,
         pub(crate) virtual_interface_id: std::option::Option<std::string::String>,
         pub(crate) virtual_interface_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The customer router configuration.</p>
@@ -2989,6 +3257,15 @@ pub mod describe_router_configuration_output {
             self.virtual_interface_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRouterConfigurationOutput`](crate::output::DescribeRouterConfigurationOutput).
         pub fn build(self) -> crate::output::DescribeRouterConfigurationOutput {
             crate::output::DescribeRouterConfigurationOutput {
@@ -2996,6 +3273,7 @@ pub mod describe_router_configuration_output {
                 router: self.router,
                 virtual_interface_id: self.virtual_interface_id,
                 virtual_interface_name: self.virtual_interface_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3014,11 +3292,17 @@ pub struct DescribeLocationsOutput {
     /// <p>The locations.</p>
     #[doc(hidden)]
     pub locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
+    _request_id: Option<String>,
 }
 impl DescribeLocationsOutput {
     /// <p>The locations.</p>
     pub fn locations(&self) -> std::option::Option<&[crate::model::Location]> {
         self.locations.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeLocationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
@@ -3029,6 +3313,7 @@ pub mod describe_locations_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) locations: std::option::Option<std::vec::Vec<crate::model::Location>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `locations`.
@@ -3050,10 +3335,20 @@ pub mod describe_locations_output {
             self.locations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLocationsOutput`](crate::output::DescribeLocationsOutput).
         pub fn build(self) -> crate::output::DescribeLocationsOutput {
             crate::output::DescribeLocationsOutput {
                 locations: self.locations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3075,6 +3370,7 @@ pub struct DescribeLoaOutput {
     /// <p>The standard media type for the LOA-CFA document. The only supported value is application/pdf.</p>
     #[doc(hidden)]
     pub loa_content_type: std::option::Option<crate::model::LoaContentType>,
+    _request_id: Option<String>,
 }
 impl DescribeLoaOutput {
     /// <p>The binary contents of the LOA-CFA document.</p>
@@ -3086,6 +3382,11 @@ impl DescribeLoaOutput {
         self.loa_content_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLoaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
 pub mod describe_loa_output {
 
@@ -3095,6 +3396,7 @@ pub mod describe_loa_output {
     pub struct Builder {
         pub(crate) loa_content: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) loa_content_type: std::option::Option<crate::model::LoaContentType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The binary contents of the LOA-CFA document.</p>
@@ -3123,11 +3425,21 @@ pub mod describe_loa_output {
             self.loa_content_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLoaOutput`](crate::output::DescribeLoaOutput).
         pub fn build(self) -> crate::output::DescribeLoaOutput {
             crate::output::DescribeLoaOutput {
                 loa_content: self.loa_content,
                 loa_content_type: self.loa_content_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3146,11 +3458,17 @@ pub struct DescribeLagsOutput {
     /// <p>The LAGs.</p>
     #[doc(hidden)]
     pub lags: std::option::Option<std::vec::Vec<crate::model::Lag>>,
+    _request_id: Option<String>,
 }
 impl DescribeLagsOutput {
     /// <p>The LAGs.</p>
     pub fn lags(&self) -> std::option::Option<&[crate::model::Lag]> {
         self.lags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeLagsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
@@ -3161,6 +3479,7 @@ pub mod describe_lags_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) lags: std::option::Option<std::vec::Vec<crate::model::Lag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `lags`.
@@ -3182,9 +3501,21 @@ pub mod describe_lags_output {
             self.lags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLagsOutput`](crate::output::DescribeLagsOutput).
         pub fn build(self) -> crate::output::DescribeLagsOutput {
-            crate::output::DescribeLagsOutput { lags: self.lags }
+            crate::output::DescribeLagsOutput {
+                lags: self.lags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3202,11 +3533,17 @@ pub struct DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
     #[doc(hidden)]
     pub interconnects: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
+    _request_id: Option<String>,
 }
 impl DescribeInterconnectsOutput {
     /// <p>The interconnects.</p>
     pub fn interconnects(&self) -> std::option::Option<&[crate::model::Interconnect]> {
         self.interconnects.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeInterconnectsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
@@ -3217,6 +3554,7 @@ pub mod describe_interconnects_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnects: std::option::Option<std::vec::Vec<crate::model::Interconnect>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `interconnects`.
@@ -3238,10 +3576,20 @@ pub mod describe_interconnects_output {
             self.interconnects = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeInterconnectsOutput`](crate::output::DescribeInterconnectsOutput).
         pub fn build(self) -> crate::output::DescribeInterconnectsOutput {
             crate::output::DescribeInterconnectsOutput {
                 interconnects: self.interconnects,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3260,11 +3608,17 @@ pub struct DescribeInterconnectLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     #[doc(hidden)]
     pub loa: std::option::Option<crate::model::Loa>,
+    _request_id: Option<String>,
 }
 impl DescribeInterconnectLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     pub fn loa(&self) -> std::option::Option<&crate::model::Loa> {
         self.loa.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeInterconnectLoaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
@@ -3275,6 +3629,7 @@ pub mod describe_interconnect_loa_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
@@ -3287,9 +3642,21 @@ pub mod describe_interconnect_loa_output {
             self.loa = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeInterconnectLoaOutput`](crate::output::DescribeInterconnectLoaOutput).
         pub fn build(self) -> crate::output::DescribeInterconnectLoaOutput {
-            crate::output::DescribeInterconnectLoaOutput { loa: self.loa }
+            crate::output::DescribeInterconnectLoaOutput {
+                loa: self.loa,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3307,11 +3674,17 @@ pub struct DescribeHostedConnectionsOutput {
     /// <p>The connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
+    _request_id: Option<String>,
 }
 impl DescribeHostedConnectionsOutput {
     /// <p>The connections.</p>
     pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
         self.connections.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeHostedConnectionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
@@ -3322,6 +3695,7 @@ pub mod describe_hosted_connections_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `connections`.
@@ -3343,10 +3717,20 @@ pub mod describe_hosted_connections_output {
             self.connections = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeHostedConnectionsOutput`](crate::output::DescribeHostedConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeHostedConnectionsOutput {
             crate::output::DescribeHostedConnectionsOutput {
                 connections: self.connections,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3369,6 +3753,7 @@ pub struct DescribeDirectConnectGatewaysOutput {
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDirectConnectGatewaysOutput {
     /// <p>The Direct Connect gateways.</p>
@@ -3382,6 +3767,11 @@ impl DescribeDirectConnectGatewaysOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDirectConnectGatewaysOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
 pub mod describe_direct_connect_gateways_output {
 
@@ -3392,6 +3782,7 @@ pub mod describe_direct_connect_gateways_output {
         pub(crate) direct_connect_gateways:
             std::option::Option<std::vec::Vec<crate::model::DirectConnectGateway>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `direct_connect_gateways`.
@@ -3426,11 +3817,21 @@ pub mod describe_direct_connect_gateways_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewaysOutput`](crate::output::DescribeDirectConnectGatewaysOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewaysOutput {
             crate::output::DescribeDirectConnectGatewaysOutput {
                 direct_connect_gateways: self.direct_connect_gateways,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3453,6 +3854,7 @@ pub struct DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDirectConnectGatewayAttachmentsOutput {
     /// <p>The attachments.</p>
@@ -3466,6 +3868,11 @@ impl DescribeDirectConnectGatewayAttachmentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAttachmentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
 pub mod describe_direct_connect_gateway_attachments_output {
 
@@ -3476,6 +3883,7 @@ pub mod describe_direct_connect_gateway_attachments_output {
         pub(crate) direct_connect_gateway_attachments:
             std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAttachment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `direct_connect_gateway_attachments`.
@@ -3510,11 +3918,21 @@ pub mod describe_direct_connect_gateway_attachments_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAttachmentsOutput`](crate::output::DescribeDirectConnectGatewayAttachmentsOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAttachmentsOutput {
             crate::output::DescribeDirectConnectGatewayAttachmentsOutput {
                 direct_connect_gateway_attachments: self.direct_connect_gateway_attachments,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3537,6 +3955,7 @@ pub struct DescribeDirectConnectGatewayAssociationsOutput {
     /// <p>The token to retrieve the next page.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDirectConnectGatewayAssociationsOutput {
     /// <p>Information about the associations.</p>
@@ -3550,6 +3969,11 @@ impl DescribeDirectConnectGatewayAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
 pub mod describe_direct_connect_gateway_associations_output {
 
@@ -3560,6 +3984,7 @@ pub mod describe_direct_connect_gateway_associations_output {
         pub(crate) direct_connect_gateway_associations:
             std::option::Option<std::vec::Vec<crate::model::DirectConnectGatewayAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `direct_connect_gateway_associations`.
@@ -3596,11 +4021,21 @@ pub mod describe_direct_connect_gateway_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationsOutput`](crate::output::DescribeDirectConnectGatewayAssociationsOutput).
         pub fn build(self) -> crate::output::DescribeDirectConnectGatewayAssociationsOutput {
             crate::output::DescribeDirectConnectGatewayAssociationsOutput {
                 direct_connect_gateway_associations: self.direct_connect_gateway_associations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3624,6 +4059,7 @@ pub struct DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeDirectConnectGatewayAssociationProposalsOutput {
     /// <p>Describes the Direct Connect gateway association proposals.</p>
@@ -3637,6 +4073,11 @@ impl DescribeDirectConnectGatewayAssociationProposalsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeDirectConnectGatewayAssociationProposalsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
 pub mod describe_direct_connect_gateway_association_proposals_output {
 
@@ -3648,6 +4089,7 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
             std::vec::Vec<crate::model::DirectConnectGatewayAssociationProposal>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `direct_connect_gateway_association_proposals`.
@@ -3686,6 +4128,15 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDirectConnectGatewayAssociationProposalsOutput`](crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput).
         pub fn build(
             self,
@@ -3694,6 +4145,7 @@ pub mod describe_direct_connect_gateway_association_proposals_output {
                 direct_connect_gateway_association_proposals: self
                     .direct_connect_gateway_association_proposals,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3721,6 +4173,7 @@ pub struct DescribeCustomerMetadataOutput {
     /// </ul>
     #[doc(hidden)]
     pub nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
+    _request_id: Option<String>,
 }
 impl DescribeCustomerMetadataOutput {
     /// <p>The list of customer agreements.</p>
@@ -3737,6 +4190,11 @@ impl DescribeCustomerMetadataOutput {
         self.nni_partner_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeCustomerMetadataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
 pub mod describe_customer_metadata_output {
 
@@ -3746,6 +4204,7 @@ pub mod describe_customer_metadata_output {
     pub struct Builder {
         pub(crate) agreements: std::option::Option<std::vec::Vec<crate::model::CustomerAgreement>>,
         pub(crate) nni_partner_type: std::option::Option<crate::model::NniPartnerType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `agreements`.
@@ -3790,11 +4249,21 @@ pub mod describe_customer_metadata_output {
             self.nni_partner_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCustomerMetadataOutput`](crate::output::DescribeCustomerMetadataOutput).
         pub fn build(self) -> crate::output::DescribeCustomerMetadataOutput {
             crate::output::DescribeCustomerMetadataOutput {
                 agreements: self.agreements,
                 nni_partner_type: self.nni_partner_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3813,11 +4282,17 @@ pub struct DescribeConnectionsOnInterconnectOutput {
     /// <p>The connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
+    _request_id: Option<String>,
 }
 impl DescribeConnectionsOnInterconnectOutput {
     /// <p>The connections.</p>
     pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
         self.connections.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeConnectionsOnInterconnectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
@@ -3828,6 +4303,7 @@ pub mod describe_connections_on_interconnect_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `connections`.
@@ -3849,10 +4325,20 @@ pub mod describe_connections_on_interconnect_output {
             self.connections = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeConnectionsOnInterconnectOutput`](crate::output::DescribeConnectionsOnInterconnectOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOnInterconnectOutput {
             crate::output::DescribeConnectionsOnInterconnectOutput {
                 connections: self.connections,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3871,11 +4357,17 @@ pub struct DescribeConnectionsOutput {
     /// <p>The connections.</p>
     #[doc(hidden)]
     pub connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
+    _request_id: Option<String>,
 }
 impl DescribeConnectionsOutput {
     /// <p>The connections.</p>
     pub fn connections(&self) -> std::option::Option<&[crate::model::Connection]> {
         self.connections.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeConnectionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
@@ -3886,6 +4378,7 @@ pub mod describe_connections_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connections: std::option::Option<std::vec::Vec<crate::model::Connection>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `connections`.
@@ -3907,10 +4400,20 @@ pub mod describe_connections_output {
             self.connections = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeConnectionsOutput`](crate::output::DescribeConnectionsOutput).
         pub fn build(self) -> crate::output::DescribeConnectionsOutput {
             crate::output::DescribeConnectionsOutput {
                 connections: self.connections,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3929,11 +4432,17 @@ pub struct DescribeConnectionLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     #[doc(hidden)]
     pub loa: std::option::Option<crate::model::Loa>,
+    _request_id: Option<String>,
 }
 impl DescribeConnectionLoaOutput {
     /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
     pub fn loa(&self) -> std::option::Option<&crate::model::Loa> {
         self.loa.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeConnectionLoaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
@@ -3944,6 +4453,7 @@ pub mod describe_connection_loa_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) loa: std::option::Option<crate::model::Loa>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Letter of Authorization - Connecting Facility Assignment (LOA-CFA).</p>
@@ -3956,9 +4466,21 @@ pub mod describe_connection_loa_output {
             self.loa = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeConnectionLoaOutput`](crate::output::DescribeConnectionLoaOutput).
         pub fn build(self) -> crate::output::DescribeConnectionLoaOutput {
-            crate::output::DescribeConnectionLoaOutput { loa: self.loa }
+            crate::output::DescribeConnectionLoaOutput {
+                loa: self.loa,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3987,6 +4509,7 @@ pub struct DeleteVirtualInterfaceOutput {
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
+    _request_id: Option<String>,
 }
 impl DeleteVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -4007,6 +4530,11 @@ impl DeleteVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
 pub mod delete_virtual_interface_output {
 
@@ -4016,6 +4544,7 @@ pub mod delete_virtual_interface_output {
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -4056,10 +4585,20 @@ pub mod delete_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteVirtualInterfaceOutput`](crate::output::DeleteVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::DeleteVirtualInterfaceOutput {
             crate::output::DeleteVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4148,6 +4687,7 @@ pub struct DeleteLagOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl DeleteLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
@@ -4247,6 +4787,11 @@ impl DeleteLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteLagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLagOutput`](crate::output::DeleteLagOutput).
 pub mod delete_lag_output {
 
@@ -4275,6 +4820,7 @@ pub mod delete_lag_output {
         pub(crate) mac_sec_capable: std::option::Option<bool>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
@@ -4555,6 +5101,15 @@ pub mod delete_lag_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLagOutput`](crate::output::DeleteLagOutput).
         pub fn build(self) -> crate::output::DeleteLagOutput {
             crate::output::DeleteLagOutput {
@@ -4579,6 +5134,7 @@ pub mod delete_lag_output {
                 mac_sec_capable: self.mac_sec_capable,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4606,6 +5162,7 @@ pub struct DeleteInterconnectOutput {
     /// </ul>
     #[doc(hidden)]
     pub interconnect_state: std::option::Option<crate::model::InterconnectState>,
+    _request_id: Option<String>,
 }
 impl DeleteInterconnectOutput {
     /// <p>The state of the interconnect. The following are the possible values:</p>
@@ -4622,6 +5179,11 @@ impl DeleteInterconnectOutput {
         self.interconnect_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteInterconnectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
 pub mod delete_interconnect_output {
 
@@ -4630,6 +5192,7 @@ pub mod delete_interconnect_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) interconnect_state: std::option::Option<crate::model::InterconnectState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state of the interconnect. The following are the possible values:</p>
@@ -4663,10 +5226,20 @@ pub mod delete_interconnect_output {
             self.interconnect_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteInterconnectOutput`](crate::output::DeleteInterconnectOutput).
         pub fn build(self) -> crate::output::DeleteInterconnectOutput {
             crate::output::DeleteInterconnectOutput {
                 interconnect_state: self.interconnect_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4686,6 +5259,7 @@ pub struct DeleteDirectConnectGatewayAssociationProposalOutput {
     #[doc(hidden)]
     pub direct_connect_gateway_association_proposal:
         std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+    _request_id: Option<String>,
 }
 impl DeleteDirectConnectGatewayAssociationProposalOutput {
     /// <p>The ID of the associated gateway.</p>
@@ -4693,6 +5267,11 @@ impl DeleteDirectConnectGatewayAssociationProposalOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociationProposal> {
         self.direct_connect_gateway_association_proposal.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteDirectConnectGatewayAssociationProposalOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
@@ -4704,6 +5283,7 @@ pub mod delete_direct_connect_gateway_association_proposal_output {
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal:
             std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the associated gateway.</p>
@@ -4722,11 +5302,21 @@ pub mod delete_direct_connect_gateway_association_proposal_output {
             self.direct_connect_gateway_association_proposal = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationProposalOutput`](crate::output::DeleteDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayAssociationProposalOutput {
             crate::output::DeleteDirectConnectGatewayAssociationProposalOutput {
                 direct_connect_gateway_association_proposal: self
                     .direct_connect_gateway_association_proposal,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4747,6 +5337,7 @@ pub struct DeleteDirectConnectGatewayAssociationOutput {
     #[doc(hidden)]
     pub direct_connect_gateway_association:
         std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    _request_id: Option<String>,
 }
 impl DeleteDirectConnectGatewayAssociationOutput {
     /// <p>Information about the deleted association.</p>
@@ -4754,6 +5345,11 @@ impl DeleteDirectConnectGatewayAssociationOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteDirectConnectGatewayAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
@@ -4765,6 +5361,7 @@ pub mod delete_direct_connect_gateway_association_output {
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the deleted association.</p>
@@ -4783,10 +5380,20 @@ pub mod delete_direct_connect_gateway_association_output {
             self.direct_connect_gateway_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayAssociationOutput`](crate::output::DeleteDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayAssociationOutput {
             crate::output::DeleteDirectConnectGatewayAssociationOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4805,6 +5412,7 @@ pub struct DeleteDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+    _request_id: Option<String>,
 }
 impl DeleteDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
@@ -4812,6 +5420,11 @@ impl DeleteDirectConnectGatewayOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteDirectConnectGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
@@ -4822,6 +5435,7 @@ pub mod delete_direct_connect_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Direct Connect gateway.</p>
@@ -4837,10 +5451,20 @@ pub mod delete_direct_connect_gateway_output {
             self.direct_connect_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDirectConnectGatewayOutput`](crate::output::DeleteDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::DeleteDirectConnectGatewayOutput {
             crate::output::DeleteDirectConnectGatewayOutput {
                 direct_connect_gateway: self.direct_connect_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4935,6 +5559,7 @@ pub struct DeleteConnectionOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl DeleteConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -5041,6 +5666,11 @@ impl DeleteConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
 
@@ -5070,6 +5700,7 @@ pub mod delete_connection_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -5369,6 +6000,15 @@ pub mod delete_connection_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
             crate::output::DeleteConnectionOutput {
@@ -5394,6 +6034,7 @@ pub mod delete_connection_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5412,11 +6053,17 @@ pub struct DeleteBgpPeerOutput {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+    _request_id: Option<String>,
 }
 impl DeleteBgpPeerOutput {
     /// <p>The virtual interface.</p>
     pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteBgpPeerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
@@ -5427,6 +6074,7 @@ pub mod delete_bgp_peer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The virtual interface.</p>
@@ -5442,10 +6090,20 @@ pub mod delete_bgp_peer_output {
             self.virtual_interface = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBgpPeerOutput`](crate::output::DeleteBgpPeerOutput).
         pub fn build(self) -> crate::output::DeleteBgpPeerOutput {
             crate::output::DeleteBgpPeerOutput {
                 virtual_interface: self.virtual_interface,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5464,11 +6122,17 @@ pub struct CreateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+    _request_id: Option<String>,
 }
 impl CreateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateTransitVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
@@ -5479,6 +6143,7 @@ pub mod create_transit_virtual_interface_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a virtual interface.</p>
@@ -5494,10 +6159,20 @@ pub mod create_transit_virtual_interface_output {
             self.virtual_interface = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTransitVirtualInterfaceOutput`](crate::output::CreateTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreateTransitVirtualInterfaceOutput {
             crate::output::CreateTransitVirtualInterfaceOutput {
                 virtual_interface: self.virtual_interface,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5603,6 +6278,7 @@ pub struct CreatePublicVirtualInterfaceOutput {
     /// <p>Indicates whether SiteLink is enabled.</p>
     #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl CreatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -5724,6 +6400,11 @@ impl CreatePublicVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
+impl aws_http::request_id::RequestId for CreatePublicVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
 pub mod create_public_virtual_interface_output {
 
@@ -5759,6 +6440,7 @@ pub mod create_public_virtual_interface_output {
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) site_link_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -6117,6 +6799,15 @@ pub mod create_public_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePublicVirtualInterfaceOutput`](crate::output::CreatePublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreatePublicVirtualInterfaceOutput {
             crate::output::CreatePublicVirtualInterfaceOutput {
@@ -6146,6 +6837,7 @@ pub mod create_public_virtual_interface_output {
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
                 site_link_enabled: self.site_link_enabled,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6251,6 +6943,7 @@ pub struct CreatePrivateVirtualInterfaceOutput {
     /// <p>Indicates whether SiteLink is enabled.</p>
     #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl CreatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -6372,6 +7065,11 @@ impl CreatePrivateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
+impl aws_http::request_id::RequestId for CreatePrivateVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
 pub mod create_private_virtual_interface_output {
 
@@ -6407,6 +7105,7 @@ pub mod create_private_virtual_interface_output {
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) site_link_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -6765,6 +7464,15 @@ pub mod create_private_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePrivateVirtualInterfaceOutput`](crate::output::CreatePrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::CreatePrivateVirtualInterfaceOutput {
             crate::output::CreatePrivateVirtualInterfaceOutput {
@@ -6794,6 +7502,7 @@ pub mod create_private_virtual_interface_output {
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
                 site_link_enabled: self.site_link_enabled,
+                _request_id: self._request_id,
             }
         }
     }
@@ -6882,6 +7591,7 @@ pub struct CreateLagOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the LAG.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl CreateLagOutput {
     /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
@@ -6981,6 +7691,11 @@ impl CreateLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateLagOutput`](crate::output::CreateLagOutput).
 pub mod create_lag_output {
 
@@ -7009,6 +7724,7 @@ pub mod create_lag_output {
         pub(crate) mac_sec_capable: std::option::Option<bool>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The individual bandwidth of the physical connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>
@@ -7289,6 +8005,15 @@ pub mod create_lag_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLagOutput`](crate::output::CreateLagOutput).
         pub fn build(self) -> crate::output::CreateLagOutput {
             crate::output::CreateLagOutput {
@@ -7313,6 +8038,7 @@ pub mod create_lag_output {
                 mac_sec_capable: self.mac_sec_capable,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7382,6 +8108,7 @@ pub struct CreateInterconnectOutput {
     /// <p>The name of the service provider associated with the interconnect.</p>
     #[doc(hidden)]
     pub provider_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateInterconnectOutput {
     /// <p>The ID of the interconnect.</p>
@@ -7456,6 +8183,11 @@ impl CreateInterconnectOutput {
         self.provider_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateInterconnectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
 pub mod create_interconnect_output {
 
@@ -7478,6 +8210,7 @@ pub mod create_interconnect_output {
         pub(crate) has_logical_redundancy: std::option::Option<crate::model::HasLogicalRedundancy>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) provider_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the interconnect.</p>
@@ -7681,6 +8414,15 @@ pub mod create_interconnect_output {
             self.provider_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateInterconnectOutput`](crate::output::CreateInterconnectOutput).
         pub fn build(self) -> crate::output::CreateInterconnectOutput {
             crate::output::CreateInterconnectOutput {
@@ -7699,6 +8441,7 @@ pub mod create_interconnect_output {
                 has_logical_redundancy: self.has_logical_redundancy,
                 tags: self.tags,
                 provider_name: self.provider_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7718,6 +8461,7 @@ pub struct CreateDirectConnectGatewayAssociationProposalOutput {
     #[doc(hidden)]
     pub direct_connect_gateway_association_proposal:
         std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+    _request_id: Option<String>,
 }
 impl CreateDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about the Direct Connect gateway proposal.</p>
@@ -7725,6 +8469,11 @@ impl CreateDirectConnectGatewayAssociationProposalOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociationProposal> {
         self.direct_connect_gateway_association_proposal.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateDirectConnectGatewayAssociationProposalOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
@@ -7736,6 +8485,7 @@ pub mod create_direct_connect_gateway_association_proposal_output {
     pub struct Builder {
         pub(crate) direct_connect_gateway_association_proposal:
             std::option::Option<crate::model::DirectConnectGatewayAssociationProposal>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the Direct Connect gateway proposal.</p>
@@ -7754,11 +8504,21 @@ pub mod create_direct_connect_gateway_association_proposal_output {
             self.direct_connect_gateway_association_proposal = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationProposalOutput`](crate::output::CreateDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayAssociationProposalOutput {
             crate::output::CreateDirectConnectGatewayAssociationProposalOutput {
                 direct_connect_gateway_association_proposal: self
                     .direct_connect_gateway_association_proposal,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7779,6 +8539,7 @@ pub struct CreateDirectConnectGatewayAssociationOutput {
     #[doc(hidden)]
     pub direct_connect_gateway_association:
         std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    _request_id: Option<String>,
 }
 impl CreateDirectConnectGatewayAssociationOutput {
     /// <p>The association to be created.</p>
@@ -7786,6 +8547,11 @@ impl CreateDirectConnectGatewayAssociationOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateDirectConnectGatewayAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
@@ -7797,6 +8563,7 @@ pub mod create_direct_connect_gateway_association_output {
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The association to be created.</p>
@@ -7815,10 +8582,20 @@ pub mod create_direct_connect_gateway_association_output {
             self.direct_connect_gateway_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDirectConnectGatewayAssociationOutput`](crate::output::CreateDirectConnectGatewayAssociationOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayAssociationOutput {
             crate::output::CreateDirectConnectGatewayAssociationOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7837,6 +8614,7 @@ pub struct CreateDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
     #[doc(hidden)]
     pub direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+    _request_id: Option<String>,
 }
 impl CreateDirectConnectGatewayOutput {
     /// <p>The Direct Connect gateway.</p>
@@ -7844,6 +8622,11 @@ impl CreateDirectConnectGatewayOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGateway> {
         self.direct_connect_gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateDirectConnectGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
@@ -7854,6 +8637,7 @@ pub mod create_direct_connect_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) direct_connect_gateway: std::option::Option<crate::model::DirectConnectGateway>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Direct Connect gateway.</p>
@@ -7869,10 +8653,20 @@ pub mod create_direct_connect_gateway_output {
             self.direct_connect_gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDirectConnectGatewayOutput`](crate::output::CreateDirectConnectGatewayOutput).
         pub fn build(self) -> crate::output::CreateDirectConnectGatewayOutput {
             crate::output::CreateDirectConnectGatewayOutput {
                 direct_connect_gateway: self.direct_connect_gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -7967,6 +8761,7 @@ pub struct CreateConnectionOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl CreateConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -8073,6 +8868,11 @@ impl CreateConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
 pub mod create_connection_output {
 
@@ -8102,6 +8902,7 @@ pub mod create_connection_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -8401,6 +9202,15 @@ pub mod create_connection_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateConnectionOutput`](crate::output::CreateConnectionOutput).
         pub fn build(self) -> crate::output::CreateConnectionOutput {
             crate::output::CreateConnectionOutput {
@@ -8426,6 +9236,7 @@ pub mod create_connection_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8444,11 +9255,17 @@ pub struct CreateBgpPeerOutput {
     /// <p>The virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+    _request_id: Option<String>,
 }
 impl CreateBgpPeerOutput {
     /// <p>The virtual interface.</p>
     pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateBgpPeerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
@@ -8459,6 +9276,7 @@ pub mod create_bgp_peer_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The virtual interface.</p>
@@ -8474,10 +9292,20 @@ pub mod create_bgp_peer_output {
             self.virtual_interface = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBgpPeerOutput`](crate::output::CreateBgpPeerOutput).
         pub fn build(self) -> crate::output::CreateBgpPeerOutput {
             crate::output::CreateBgpPeerOutput {
                 virtual_interface: self.virtual_interface,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8507,6 +9335,7 @@ pub struct ConfirmTransitVirtualInterfaceOutput {
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
+    _request_id: Option<String>,
 }
 impl ConfirmTransitVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -8527,6 +9356,11 @@ impl ConfirmTransitVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfirmTransitVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
 pub mod confirm_transit_virtual_interface_output {
 
@@ -8536,6 +9370,7 @@ pub mod confirm_transit_virtual_interface_output {
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -8576,10 +9411,20 @@ pub mod confirm_transit_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfirmTransitVirtualInterfaceOutput`](crate::output::ConfirmTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmTransitVirtualInterfaceOutput {
             crate::output::ConfirmTransitVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8609,6 +9454,7 @@ pub struct ConfirmPublicVirtualInterfaceOutput {
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
+    _request_id: Option<String>,
 }
 impl ConfirmPublicVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -8629,6 +9475,11 @@ impl ConfirmPublicVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfirmPublicVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
 pub mod confirm_public_virtual_interface_output {
 
@@ -8638,6 +9489,7 @@ pub mod confirm_public_virtual_interface_output {
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -8678,10 +9530,20 @@ pub mod confirm_public_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfirmPublicVirtualInterfaceOutput`](crate::output::ConfirmPublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmPublicVirtualInterfaceOutput {
             crate::output::ConfirmPublicVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8711,6 +9573,7 @@ pub struct ConfirmPrivateVirtualInterfaceOutput {
     /// </ul>
     #[doc(hidden)]
     pub virtual_interface_state: std::option::Option<crate::model::VirtualInterfaceState>,
+    _request_id: Option<String>,
 }
 impl ConfirmPrivateVirtualInterfaceOutput {
     /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -8731,6 +9594,11 @@ impl ConfirmPrivateVirtualInterfaceOutput {
         self.virtual_interface_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfirmPrivateVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
 pub mod confirm_private_virtual_interface_output {
 
@@ -8740,6 +9608,7 @@ pub mod confirm_private_virtual_interface_output {
     pub struct Builder {
         pub(crate) virtual_interface_state:
             std::option::Option<crate::model::VirtualInterfaceState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state of the virtual interface. The following are the possible values:</p>
@@ -8780,10 +9649,20 @@ pub mod confirm_private_virtual_interface_output {
             self.virtual_interface_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfirmPrivateVirtualInterfaceOutput`](crate::output::ConfirmPrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::ConfirmPrivateVirtualInterfaceOutput {
             crate::output::ConfirmPrivateVirtualInterfaceOutput {
                 virtual_interface_state: self.virtual_interface_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8802,11 +9681,17 @@ pub struct ConfirmCustomerAgreementOutput {
     /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ConfirmCustomerAgreementOutput {
     /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ConfirmCustomerAgreementOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
@@ -8817,6 +9702,7 @@ pub mod confirm_customer_agreement_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The status of the customer agreement when the connection was created. This will be either <code>signed</code> or <code>unsigned</code>. </p>
@@ -8829,10 +9715,20 @@ pub mod confirm_customer_agreement_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfirmCustomerAgreementOutput`](crate::output::ConfirmCustomerAgreementOutput).
         pub fn build(self) -> crate::output::ConfirmCustomerAgreementOutput {
             crate::output::ConfirmCustomerAgreementOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -8862,6 +9758,7 @@ pub struct ConfirmConnectionOutput {
     /// </ul>
     #[doc(hidden)]
     pub connection_state: std::option::Option<crate::model::ConnectionState>,
+    _request_id: Option<String>,
 }
 impl ConfirmConnectionOutput {
     /// <p>The state of the connection. The following are the possible values:</p>
@@ -8880,6 +9777,11 @@ impl ConfirmConnectionOutput {
         self.connection_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ConfirmConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
 pub mod confirm_connection_output {
 
@@ -8888,6 +9790,7 @@ pub mod confirm_connection_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) connection_state: std::option::Option<crate::model::ConnectionState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state of the connection. The following are the possible values:</p>
@@ -8925,10 +9828,20 @@ pub mod confirm_connection_output {
             self.connection_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfirmConnectionOutput`](crate::output::ConfirmConnectionOutput).
         pub fn build(self) -> crate::output::ConfirmConnectionOutput {
             crate::output::ConfirmConnectionOutput {
                 connection_state: self.connection_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -9034,6 +9947,7 @@ pub struct AssociateVirtualInterfaceOutput {
     /// <p>Indicates whether SiteLink is enabled.</p>
     #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl AssociateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -9155,6 +10069,11 @@ impl AssociateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
+impl aws_http::request_id::RequestId for AssociateVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
 pub mod associate_virtual_interface_output {
 
@@ -9190,6 +10109,7 @@ pub mod associate_virtual_interface_output {
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) site_link_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -9548,6 +10468,15 @@ pub mod associate_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateVirtualInterfaceOutput`](crate::output::AssociateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AssociateVirtualInterfaceOutput {
             crate::output::AssociateVirtualInterfaceOutput {
@@ -9577,6 +10506,7 @@ pub mod associate_virtual_interface_output {
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
                 site_link_enabled: self.site_link_enabled,
+                _request_id: self._request_id,
             }
         }
     }
@@ -9598,6 +10528,7 @@ pub struct AssociateMacSecKeyOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl AssociateMacSecKeyOutput {
     /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -9609,6 +10540,11 @@ impl AssociateMacSecKeyOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateMacSecKeyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
 pub mod associate_mac_sec_key_output {
 
@@ -9618,6 +10554,7 @@ pub mod associate_mac_sec_key_output {
     pub struct Builder {
         pub(crate) connection_id: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>
@@ -9652,11 +10589,21 @@ pub mod associate_mac_sec_key_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateMacSecKeyOutput`](crate::output::AssociateMacSecKeyOutput).
         pub fn build(self) -> crate::output::AssociateMacSecKeyOutput {
             crate::output::AssociateMacSecKeyOutput {
                 connection_id: self.connection_id,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -9751,6 +10698,7 @@ pub struct AssociateHostedConnectionOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl AssociateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -9857,6 +10805,11 @@ impl AssociateHostedConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateHostedConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
 pub mod associate_hosted_connection_output {
 
@@ -9886,6 +10839,7 @@ pub mod associate_hosted_connection_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -10185,6 +11139,15 @@ pub mod associate_hosted_connection_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateHostedConnectionOutput`](crate::output::AssociateHostedConnectionOutput).
         pub fn build(self) -> crate::output::AssociateHostedConnectionOutput {
             crate::output::AssociateHostedConnectionOutput {
@@ -10210,6 +11173,7 @@ pub mod associate_hosted_connection_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -10304,6 +11268,7 @@ pub struct AssociateConnectionWithLagOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl AssociateConnectionWithLagOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -10410,6 +11375,11 @@ impl AssociateConnectionWithLagOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateConnectionWithLagOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
 pub mod associate_connection_with_lag_output {
 
@@ -10439,6 +11409,7 @@ pub mod associate_connection_with_lag_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -10738,6 +11709,15 @@ pub mod associate_connection_with_lag_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateConnectionWithLagOutput`](crate::output::AssociateConnectionWithLagOutput).
         pub fn build(self) -> crate::output::AssociateConnectionWithLagOutput {
             crate::output::AssociateConnectionWithLagOutput {
@@ -10763,6 +11743,7 @@ pub mod associate_connection_with_lag_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -10781,11 +11762,17 @@ pub struct AllocateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     #[doc(hidden)]
     pub virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+    _request_id: Option<String>,
 }
 impl AllocateTransitVirtualInterfaceOutput {
     /// <p>Information about a virtual interface.</p>
     pub fn virtual_interface(&self) -> std::option::Option<&crate::model::VirtualInterface> {
         self.virtual_interface.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for AllocateTransitVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
@@ -10796,6 +11783,7 @@ pub mod allocate_transit_virtual_interface_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_interface: std::option::Option<crate::model::VirtualInterface>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about a virtual interface.</p>
@@ -10811,10 +11799,20 @@ pub mod allocate_transit_virtual_interface_output {
             self.virtual_interface = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocateTransitVirtualInterfaceOutput`](crate::output::AllocateTransitVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocateTransitVirtualInterfaceOutput {
             crate::output::AllocateTransitVirtualInterfaceOutput {
                 virtual_interface: self.virtual_interface,
+                _request_id: self._request_id,
             }
         }
     }
@@ -10920,6 +11918,7 @@ pub struct AllocatePublicVirtualInterfaceOutput {
     /// <p>Indicates whether SiteLink is enabled.</p>
     #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl AllocatePublicVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -11041,6 +12040,11 @@ impl AllocatePublicVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
+impl aws_http::request_id::RequestId for AllocatePublicVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
 pub mod allocate_public_virtual_interface_output {
 
@@ -11076,6 +12080,7 @@ pub mod allocate_public_virtual_interface_output {
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) site_link_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -11434,6 +12439,15 @@ pub mod allocate_public_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocatePublicVirtualInterfaceOutput`](crate::output::AllocatePublicVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocatePublicVirtualInterfaceOutput {
             crate::output::AllocatePublicVirtualInterfaceOutput {
@@ -11463,6 +12477,7 @@ pub mod allocate_public_virtual_interface_output {
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
                 site_link_enabled: self.site_link_enabled,
+                _request_id: self._request_id,
             }
         }
     }
@@ -11568,6 +12583,7 @@ pub struct AllocatePrivateVirtualInterfaceOutput {
     /// <p>Indicates whether SiteLink is enabled.</p>
     #[doc(hidden)]
     pub site_link_enabled: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl AllocatePrivateVirtualInterfaceOutput {
     /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -11689,6 +12705,11 @@ impl AllocatePrivateVirtualInterfaceOutput {
         self.site_link_enabled
     }
 }
+impl aws_http::request_id::RequestId for AllocatePrivateVirtualInterfaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
 pub mod allocate_private_virtual_interface_output {
 
@@ -11724,6 +12745,7 @@ pub mod allocate_private_virtual_interface_output {
         pub(crate) aws_logical_device_id: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
         pub(crate) site_link_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the virtual interface.</p>
@@ -12082,6 +13104,15 @@ pub mod allocate_private_virtual_interface_output {
             self.site_link_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocatePrivateVirtualInterfaceOutput`](crate::output::AllocatePrivateVirtualInterfaceOutput).
         pub fn build(self) -> crate::output::AllocatePrivateVirtualInterfaceOutput {
             crate::output::AllocatePrivateVirtualInterfaceOutput {
@@ -12111,6 +13142,7 @@ pub mod allocate_private_virtual_interface_output {
                 aws_logical_device_id: self.aws_logical_device_id,
                 tags: self.tags,
                 site_link_enabled: self.site_link_enabled,
+                _request_id: self._request_id,
             }
         }
     }
@@ -12205,6 +13237,7 @@ pub struct AllocateHostedConnectionOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl AllocateHostedConnectionOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -12311,6 +13344,11 @@ impl AllocateHostedConnectionOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AllocateHostedConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
 pub mod allocate_hosted_connection_output {
 
@@ -12340,6 +13378,7 @@ pub mod allocate_hosted_connection_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -12639,6 +13678,15 @@ pub mod allocate_hosted_connection_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocateHostedConnectionOutput`](crate::output::AllocateHostedConnectionOutput).
         pub fn build(self) -> crate::output::AllocateHostedConnectionOutput {
             crate::output::AllocateHostedConnectionOutput {
@@ -12664,6 +13712,7 @@ pub mod allocate_hosted_connection_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -12758,6 +13807,7 @@ pub struct AllocateConnectionOnInterconnectOutput {
     /// <p>The MAC Security (MACsec) security keys associated with the connection.</p>
     #[doc(hidden)]
     pub mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+    _request_id: Option<String>,
 }
 impl AllocateConnectionOnInterconnectOutput {
     /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -12864,6 +13914,11 @@ impl AllocateConnectionOnInterconnectOutput {
         self.mac_sec_keys.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AllocateConnectionOnInterconnectOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
 pub mod allocate_connection_on_interconnect_output {
 
@@ -12893,6 +13948,7 @@ pub mod allocate_connection_on_interconnect_output {
         pub(crate) port_encryption_status: std::option::Option<std::string::String>,
         pub(crate) encryption_mode: std::option::Option<std::string::String>,
         pub(crate) mac_sec_keys: std::option::Option<std::vec::Vec<crate::model::MacSecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Amazon Web Services account that owns the connection.</p>
@@ -13192,6 +14248,15 @@ pub mod allocate_connection_on_interconnect_output {
             self.mac_sec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AllocateConnectionOnInterconnectOutput`](crate::output::AllocateConnectionOnInterconnectOutput).
         pub fn build(self) -> crate::output::AllocateConnectionOnInterconnectOutput {
             crate::output::AllocateConnectionOnInterconnectOutput {
@@ -13217,6 +14282,7 @@ pub mod allocate_connection_on_interconnect_output {
                 port_encryption_status: self.port_encryption_status,
                 encryption_mode: self.encryption_mode,
                 mac_sec_keys: self.mac_sec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -13236,6 +14302,7 @@ pub struct AcceptDirectConnectGatewayAssociationProposalOutput {
     #[doc(hidden)]
     pub direct_connect_gateway_association:
         std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+    _request_id: Option<String>,
 }
 impl AcceptDirectConnectGatewayAssociationProposalOutput {
     /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
@@ -13243,6 +14310,11 @@ impl AcceptDirectConnectGatewayAssociationProposalOutput {
         &self,
     ) -> std::option::Option<&crate::model::DirectConnectGatewayAssociation> {
         self.direct_connect_gateway_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for AcceptDirectConnectGatewayAssociationProposalOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
@@ -13254,6 +14326,7 @@ pub mod accept_direct_connect_gateway_association_proposal_output {
     pub struct Builder {
         pub(crate) direct_connect_gateway_association:
             std::option::Option<crate::model::DirectConnectGatewayAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about an association between a Direct Connect gateway and a virtual private gateway or transit gateway.</p>
@@ -13272,10 +14345,20 @@ pub mod accept_direct_connect_gateway_association_proposal_output {
             self.direct_connect_gateway_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AcceptDirectConnectGatewayAssociationProposalOutput`](crate::output::AcceptDirectConnectGatewayAssociationProposalOutput).
         pub fn build(self) -> crate::output::AcceptDirectConnectGatewayAssociationProposalOutput {
             crate::output::AcceptDirectConnectGatewayAssociationProposalOutput {
                 direct_connect_gateway_association: self.direct_connect_gateway_association,
+                _request_id: self._request_id,
             }
         }
     }

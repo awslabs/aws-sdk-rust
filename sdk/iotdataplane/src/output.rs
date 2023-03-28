@@ -7,11 +7,17 @@ pub struct UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl UpdateThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateThingShadowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
@@ -22,6 +28,7 @@ pub mod update_thing_shadow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state information, in JSON format.</p>
@@ -34,10 +41,20 @@ pub mod update_thing_shadow_output {
             self.payload = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateThingShadowOutput`](crate::output::UpdateThingShadowOutput).
         pub fn build(self) -> crate::output::UpdateThingShadowOutput {
             crate::output::UpdateThingShadowOutput {
                 payload: self.payload,
+                _request_id: self._request_id,
             }
         }
     }
@@ -52,18 +69,38 @@ impl UpdateThingShadowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PublishOutput {}
+pub struct PublishOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PublishOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PublishOutput`](crate::output::PublishOutput).
 pub mod publish_output {
 
     /// A builder for [`PublishOutput`](crate::output::PublishOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PublishOutput`](crate::output::PublishOutput).
         pub fn build(self) -> crate::output::PublishOutput {
-            crate::output::PublishOutput {}
+            crate::output::PublishOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -84,6 +121,7 @@ pub struct ListRetainedMessagesOutput {
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRetainedMessagesOutput {
     /// <p>A summary list the account's retained messages. The information returned doesn't include the message payloads of the retained messages.</p>
@@ -93,6 +131,11 @@ impl ListRetainedMessagesOutput {
     /// <p>The token for the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListRetainedMessagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
@@ -105,6 +148,7 @@ pub mod list_retained_messages_output {
         pub(crate) retained_topics:
             std::option::Option<std::vec::Vec<crate::model::RetainedMessageSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `retained_topics`.
@@ -136,11 +180,21 @@ pub mod list_retained_messages_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRetainedMessagesOutput`](crate::output::ListRetainedMessagesOutput).
         pub fn build(self) -> crate::output::ListRetainedMessagesOutput {
             crate::output::ListRetainedMessagesOutput {
                 retained_topics: self.retained_topics,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -165,6 +219,7 @@ pub struct ListNamedShadowsForThingOutput {
     /// <p>The Epoch date and time the response was generated by IoT.</p>
     #[doc(hidden)]
     pub timestamp: i64,
+    _request_id: Option<String>,
 }
 impl ListNamedShadowsForThingOutput {
     /// <p>The list of shadows for the specified thing.</p>
@@ -180,6 +235,11 @@ impl ListNamedShadowsForThingOutput {
         self.timestamp
     }
 }
+impl aws_http::request_id::RequestId for ListNamedShadowsForThingOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
 pub mod list_named_shadows_for_thing_output {
 
@@ -190,6 +250,7 @@ pub mod list_named_shadows_for_thing_output {
         pub(crate) results: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) timestamp: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `results`.
@@ -231,12 +292,22 @@ pub mod list_named_shadows_for_thing_output {
             self.timestamp = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListNamedShadowsForThingOutput`](crate::output::ListNamedShadowsForThingOutput).
         pub fn build(self) -> crate::output::ListNamedShadowsForThingOutput {
             crate::output::ListNamedShadowsForThingOutput {
                 results: self.results,
                 next_token: self.next_token,
                 timestamp: self.timestamp.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -255,11 +326,17 @@ pub struct GetThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl GetThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetThingShadowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
@@ -270,6 +347,7 @@ pub mod get_thing_shadow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state information, in JSON format.</p>
@@ -282,10 +360,20 @@ pub mod get_thing_shadow_output {
             self.payload = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetThingShadowOutput`](crate::output::GetThingShadowOutput).
         pub fn build(self) -> crate::output::GetThingShadowOutput {
             crate::output::GetThingShadowOutput {
                 payload: self.payload,
+                _request_id: self._request_id,
             }
         }
     }
@@ -313,6 +401,7 @@ pub struct GetRetainedMessageOutput {
     /// <p>The Epoch date and time, in milliseconds, when the retained message was stored by IoT.</p>
     #[doc(hidden)]
     pub last_modified_time: i64,
+    _request_id: Option<String>,
 }
 impl GetRetainedMessageOutput {
     /// <p>The topic name to which the retained message was published.</p>
@@ -332,6 +421,11 @@ impl GetRetainedMessageOutput {
         self.last_modified_time
     }
 }
+impl aws_http::request_id::RequestId for GetRetainedMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
 pub mod get_retained_message_output {
 
@@ -343,6 +437,7 @@ pub mod get_retained_message_output {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) qos: std::option::Option<i32>,
         pub(crate) last_modified_time: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The topic name to which the retained message was published.</p>
@@ -385,6 +480,15 @@ pub mod get_retained_message_output {
             self.last_modified_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRetainedMessageOutput`](crate::output::GetRetainedMessageOutput).
         pub fn build(self) -> crate::output::GetRetainedMessageOutput {
             crate::output::GetRetainedMessageOutput {
@@ -392,6 +496,7 @@ pub mod get_retained_message_output {
                 payload: self.payload,
                 qos: self.qos.unwrap_or_default(),
                 last_modified_time: self.last_modified_time.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -410,11 +515,17 @@ pub struct DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     #[doc(hidden)]
     pub payload: std::option::Option<aws_smithy_types::Blob>,
+    _request_id: Option<String>,
 }
 impl DeleteThingShadowOutput {
     /// <p>The state information, in JSON format.</p>
     pub fn payload(&self) -> std::option::Option<&aws_smithy_types::Blob> {
         self.payload.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteThingShadowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
@@ -425,6 +536,7 @@ pub mod delete_thing_shadow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) payload: std::option::Option<aws_smithy_types::Blob>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The state information, in JSON format.</p>
@@ -437,10 +549,20 @@ pub mod delete_thing_shadow_output {
             self.payload = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteThingShadowOutput`](crate::output::DeleteThingShadowOutput).
         pub fn build(self) -> crate::output::DeleteThingShadowOutput {
             crate::output::DeleteThingShadowOutput {
                 payload: self.payload,
+                _request_id: self._request_id,
             }
         }
     }

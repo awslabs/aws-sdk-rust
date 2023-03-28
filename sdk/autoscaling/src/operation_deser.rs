@@ -3,8 +3,11 @@
 pub fn parse_attach_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AttachInstancesOutput, crate::error::AttachInstancesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachInstancesError::unhandled(generic)),
@@ -12,40 +15,38 @@ pub fn parse_attach_instances_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::AttachInstancesError {
-            meta: generic,
-            kind: crate::error::AttachInstancesErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::AttachInstancesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::AttachInstancesError {
-            meta: generic,
-            kind: crate::error::AttachInstancesErrorKind::ServiceLinkedRoleFailure({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleFailure" => {
+            crate::error::AttachInstancesError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachInstancesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AttachInstancesError::generic(generic),
     })
 }
@@ -58,6 +59,9 @@ pub fn parse_attach_instances_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_instances_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -69,8 +73,11 @@ pub fn parse_attach_load_balancers_error(
     crate::output::AttachLoadBalancersOutput,
     crate::error::AttachLoadBalancersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachLoadBalancersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachLoadBalancersError::unhandled(generic)),
@@ -78,40 +85,38 @@ pub fn parse_attach_load_balancers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::AttachLoadBalancersError {
-            meta: generic,
-            kind: crate::error::AttachLoadBalancersErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::AttachLoadBalancersError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::AttachLoadBalancersError {
-            meta: generic,
-            kind: crate::error::AttachLoadBalancersErrorKind::ServiceLinkedRoleFailure({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleFailure" => {
+            crate::error::AttachLoadBalancersError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AttachLoadBalancersError::generic(generic),
     })
 }
@@ -127,6 +132,9 @@ pub fn parse_attach_load_balancers_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_load_balancers_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -138,8 +146,11 @@ pub fn parse_attach_load_balancer_target_groups_error(
     crate::output::AttachLoadBalancerTargetGroupsOutput,
     crate::error::AttachLoadBalancerTargetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled(generic)),
@@ -147,43 +158,40 @@ pub fn parse_attach_load_balancer_target_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::AttachLoadBalancerTargetGroupsError {
-            meta: generic,
-            kind: crate::error::AttachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::AttachLoadBalancerTargetGroupsError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::AttachLoadBalancerTargetGroupsError {
-            meta: generic,
-            kind: crate::error::AttachLoadBalancerTargetGroupsErrorKind::ServiceLinkedRoleFailure(
-                {
+            })
+        }
+        "ServiceLinkedRoleFailure" => {
+            crate::error::AttachLoadBalancerTargetGroupsError::ServiceLinkedRoleFailure({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_linked_role_failure::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::service_linked_role_failure::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachLoadBalancerTargetGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AttachLoadBalancerTargetGroupsError::generic(generic),
     })
 }
@@ -200,6 +208,9 @@ pub fn parse_attach_load_balancer_target_groups_response(
         let mut output =
             crate::output::attach_load_balancer_target_groups_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -211,8 +222,11 @@ pub fn parse_attach_traffic_sources_error(
     crate::output::AttachTrafficSourcesOutput,
     crate::error::AttachTrafficSourcesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AttachTrafficSourcesError::unhandled(generic)),
@@ -220,40 +234,38 @@ pub fn parse_attach_traffic_sources_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::AttachTrafficSourcesError {
-            meta: generic,
-            kind: crate::error::AttachTrafficSourcesErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::AttachTrafficSourcesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::AttachTrafficSourcesError {
-            meta: generic,
-            kind: crate::error::AttachTrafficSourcesErrorKind::ServiceLinkedRoleFailure({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleFailure" => {
+            crate::error::AttachTrafficSourcesError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::AttachTrafficSourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AttachTrafficSourcesError::generic(generic),
     })
 }
@@ -269,6 +281,9 @@ pub fn parse_attach_traffic_sources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::attach_traffic_sources_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -280,8 +295,11 @@ pub fn parse_batch_delete_scheduled_action_error(
     crate::output::BatchDeleteScheduledActionOutput,
     crate::error::BatchDeleteScheduledActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -293,23 +311,23 @@ pub fn parse_batch_delete_scheduled_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::BatchDeleteScheduledActionError {
-            meta: generic,
-            kind: crate::error::BatchDeleteScheduledActionErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::BatchDeleteScheduledActionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::BatchDeleteScheduledActionError::generic(generic),
     })
 }
@@ -330,6 +348,9 @@ pub fn parse_batch_delete_scheduled_action_response(
             output,
         )
         .map_err(crate::error::BatchDeleteScheduledActionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -341,8 +362,11 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
     crate::output::BatchPutScheduledUpdateGroupActionOutput,
     crate::error::BatchPutScheduledUpdateGroupActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -353,68 +377,70 @@ pub fn parse_batch_put_scheduled_update_group_action_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "AlreadyExists" => {
-            crate::error::BatchPutScheduledUpdateGroupActionError {
-                meta: generic,
-                kind: crate::error::BatchPutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output = crate::error::already_exists_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
+            crate::error::BatchPutScheduledUpdateGroupActionError::AlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::already_exists_fault::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::BatchPutScheduledUpdateGroupActionError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         "LimitExceeded" => {
-            crate::error::BatchPutScheduledUpdateGroupActionError {
-                meta: generic,
-                kind: crate::error::BatchPutScheduledUpdateGroupActionErrorKind::LimitExceededFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
+            crate::error::BatchPutScheduledUpdateGroupActionError::LimitExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::BatchPutScheduledUpdateGroupActionError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "ResourceContention" => crate::error::BatchPutScheduledUpdateGroupActionError {
-            meta: generic,
-            kind:
-                crate::error::BatchPutScheduledUpdateGroupActionErrorKind::ResourceContentionFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_contention_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "ResourceContention" => {
+            crate::error::BatchPutScheduledUpdateGroupActionError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::BatchPutScheduledUpdateGroupActionError::generic(generic),
     })
 }
@@ -432,6 +458,9 @@ pub fn parse_batch_put_scheduled_update_group_action_response(
             crate::output::batch_put_scheduled_update_group_action_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_batch_put_scheduled_update_group_action(response.body().as_ref(), output).map_err(crate::error::BatchPutScheduledUpdateGroupActionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -443,8 +472,11 @@ pub fn parse_cancel_instance_refresh_error(
     crate::output::CancelInstanceRefreshOutput,
     crate::error::CancelInstanceRefreshError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CancelInstanceRefreshError::unhandled(generic)),
@@ -452,63 +484,61 @@ pub fn parse_cancel_instance_refresh_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ActiveInstanceRefreshNotFound" => crate::error::CancelInstanceRefreshError {
-            meta: generic,
-            kind: crate::error::CancelInstanceRefreshErrorKind::ActiveInstanceRefreshNotFoundFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::active_instance_refresh_not_found_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "LimitExceeded" => {
-            crate::error::CancelInstanceRefreshError {
-                meta: generic,
-                kind: crate::error::CancelInstanceRefreshErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::CancelInstanceRefreshError {
-            meta: generic,
-            kind: crate::error::CancelInstanceRefreshErrorKind::ResourceContentionFault({
+        "ActiveInstanceRefreshNotFound" => {
+            crate::error::CancelInstanceRefreshError::ActiveInstanceRefreshNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let mut output =
+                        crate::error::active_instance_refresh_not_found_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_active_instance_refresh_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "LimitExceeded" => crate::error::CancelInstanceRefreshError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::CancelInstanceRefreshError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CancelInstanceRefreshError::generic(generic),
     })
 }
@@ -529,6 +559,9 @@ pub fn parse_cancel_instance_refresh_response(
             output,
         )
         .map_err(crate::error::CancelInstanceRefreshError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -540,8 +573,11 @@ pub fn parse_complete_lifecycle_action_error(
     crate::output::CompleteLifecycleActionOutput,
     crate::error::CompleteLifecycleActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CompleteLifecycleActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -553,23 +589,23 @@ pub fn parse_complete_lifecycle_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::CompleteLifecycleActionError {
-            meta: generic,
-            kind: crate::error::CompleteLifecycleActionErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::CompleteLifecycleActionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CompleteLifecycleActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CompleteLifecycleActionError::generic(generic),
     })
 }
@@ -585,6 +621,9 @@ pub fn parse_complete_lifecycle_action_response(
         #[allow(unused_mut)]
         let mut output = crate::output::complete_lifecycle_action_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -596,8 +635,11 @@ pub fn parse_create_auto_scaling_group_error(
     crate::output::CreateAutoScalingGroupOutput,
     crate::error::CreateAutoScalingGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -609,78 +651,80 @@ pub fn parse_create_auto_scaling_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => {
-            crate::error::CreateAutoScalingGroupError {
-                meta: generic,
-                kind: crate::error::CreateAutoScalingGroupErrorKind::AlreadyExistsFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "AlreadyExists" => crate::error::CreateAutoScalingGroupError::AlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::already_exists_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "LimitExceeded" => {
-            crate::error::CreateAutoScalingGroupError {
-                meta: generic,
-                kind: crate::error::CreateAutoScalingGroupErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+            tmp
+        }),
+        "LimitExceeded" => crate::error::CreateAutoScalingGroupError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::CreateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::CreateAutoScalingGroupErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::CreateAutoScalingGroupError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::CreateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::CreateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure({
+            })
+        }
+        "ServiceLinkedRoleFailure" => {
+            crate::error::CreateAutoScalingGroupError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateAutoScalingGroupError::generic(generic),
     })
 }
@@ -696,6 +740,9 @@ pub fn parse_create_auto_scaling_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_auto_scaling_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -707,8 +754,11 @@ pub fn parse_create_launch_configuration_error(
     crate::output::CreateLaunchConfigurationOutput,
     crate::error::CreateLaunchConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -720,61 +770,63 @@ pub fn parse_create_launch_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => {
-            crate::error::CreateLaunchConfigurationError {
-                meta: generic,
-                kind: crate::error::CreateLaunchConfigurationErrorKind::AlreadyExistsFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "AlreadyExists" => crate::error::CreateLaunchConfigurationError::AlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::already_exists_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "LimitExceeded" => {
-            crate::error::CreateLaunchConfigurationError {
-                meta: generic,
-                kind: crate::error::CreateLaunchConfigurationErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+            tmp
+        }),
+        "LimitExceeded" => crate::error::CreateLaunchConfigurationError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::CreateLaunchConfigurationError {
-            meta: generic,
-            kind: crate::error::CreateLaunchConfigurationErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::CreateLaunchConfigurationError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateLaunchConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateLaunchConfigurationError::generic(generic),
     })
 }
@@ -790,6 +842,9 @@ pub fn parse_create_launch_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_launch_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -801,8 +856,11 @@ pub fn parse_create_or_update_tags_error(
     crate::output::CreateOrUpdateTagsOutput,
     crate::error::CreateOrUpdateTagsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateOrUpdateTagsError::unhandled(generic)),
@@ -810,78 +868,78 @@ pub fn parse_create_or_update_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => {
-            crate::error::CreateOrUpdateTagsError {
-                meta: generic,
-                kind: crate::error::CreateOrUpdateTagsErrorKind::AlreadyExistsFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "LimitExceeded" => {
-            crate::error::CreateOrUpdateTagsError {
-                meta: generic,
-                kind: crate::error::CreateOrUpdateTagsErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::CreateOrUpdateTagsError {
-            meta: generic,
-            kind: crate::error::CreateOrUpdateTagsErrorKind::ResourceContentionFault({
+        "AlreadyExists" => crate::error::CreateOrUpdateTagsError::AlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::CreateOrUpdateTagsError {
-            meta: generic,
-            kind: crate::error::CreateOrUpdateTagsErrorKind::ResourceInUseFault({
+                let mut output = crate::error::already_exists_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => crate::error::CreateOrUpdateTagsError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::CreateOrUpdateTagsError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceInUse" => {
+            crate::error::CreateOrUpdateTagsError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateOrUpdateTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateOrUpdateTagsError::generic(generic),
     })
 }
@@ -897,6 +955,9 @@ pub fn parse_create_or_update_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_or_update_tags_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -908,8 +969,11 @@ pub fn parse_delete_auto_scaling_group_error(
     crate::output::DeleteAutoScalingGroupOutput,
     crate::error::DeleteAutoScalingGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -921,43 +985,42 @@ pub fn parse_delete_auto_scaling_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::DeleteAutoScalingGroupErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DeleteAutoScalingGroupError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::DeleteAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::DeleteAutoScalingGroupErrorKind::ResourceInUseFault({
+            })
+        }
+        "ResourceInUse" => {
+            crate::error::DeleteAutoScalingGroupError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ScalingActivityInProgress" => crate::error::DeleteAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::DeleteAutoScalingGroupErrorKind::ScalingActivityInProgressFault({
+            })
+        }
+        "ScalingActivityInProgress" => {
+            crate::error::DeleteAutoScalingGroupError::ScalingActivityInProgressFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -965,14 +1028,15 @@ pub fn parse_delete_auto_scaling_group_error(
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteAutoScalingGroupError::generic(generic),
     })
 }
@@ -988,6 +1052,9 @@ pub fn parse_delete_auto_scaling_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_auto_scaling_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -999,8 +1066,11 @@ pub fn parse_delete_launch_configuration_error(
     crate::output::DeleteLaunchConfigurationOutput,
     crate::error::DeleteLaunchConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1012,40 +1082,40 @@ pub fn parse_delete_launch_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteLaunchConfigurationError {
-            meta: generic,
-            kind: crate::error::DeleteLaunchConfigurationErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DeleteLaunchConfigurationError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::DeleteLaunchConfigurationError {
-            meta: generic,
-            kind: crate::error::DeleteLaunchConfigurationErrorKind::ResourceInUseFault({
+            })
+        }
+        "ResourceInUse" => {
+            crate::error::DeleteLaunchConfigurationError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLaunchConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteLaunchConfigurationError::generic(generic),
     })
 }
@@ -1061,6 +1131,9 @@ pub fn parse_delete_launch_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_launch_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1072,8 +1145,11 @@ pub fn parse_delete_lifecycle_hook_error(
     crate::output::DeleteLifecycleHookOutput,
     crate::error::DeleteLifecycleHookError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLifecycleHookError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLifecycleHookError::unhandled(generic)),
@@ -1081,23 +1157,21 @@ pub fn parse_delete_lifecycle_hook_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteLifecycleHookError {
-            meta: generic,
-            kind: crate::error::DeleteLifecycleHookErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::DeleteLifecycleHookError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLifecycleHookError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteLifecycleHookError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteLifecycleHookError::generic(generic),
     })
 }
@@ -1113,6 +1187,9 @@ pub fn parse_delete_lifecycle_hook_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_lifecycle_hook_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1124,8 +1201,11 @@ pub fn parse_delete_notification_configuration_error(
     crate::output::DeleteNotificationConfigurationOutput,
     crate::error::DeleteNotificationConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteNotificationConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteNotificationConfigurationError::unhandled(generic)),
@@ -1133,26 +1213,23 @@ pub fn parse_delete_notification_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteNotificationConfigurationError {
-            meta: generic,
-            kind: crate::error::DeleteNotificationConfigurationErrorKind::ResourceContentionFault(
-                {
+        "ResourceContention" => {
+            crate::error::DeleteNotificationConfigurationError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_contention_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteNotificationConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteNotificationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteNotificationConfigurationError::generic(generic),
     })
 }
@@ -1169,6 +1246,9 @@ pub fn parse_delete_notification_configuration_response(
         let mut output =
             crate::output::delete_notification_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1177,8 +1257,11 @@ pub fn parse_delete_notification_configuration_response(
 pub fn parse_delete_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePolicyOutput, crate::error::DeletePolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeletePolicyError::unhandled(generic)),
@@ -1186,40 +1269,36 @@ pub fn parse_delete_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::DeletePolicyError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::DeletePolicyError {
-            meta: generic,
-            kind: crate::error::DeletePolicyErrorKind::ServiceLinkedRoleFailure({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleFailure" => crate::error::DeletePolicyError::ServiceLinkedRoleFailure({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_linked_role_failure::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::service_linked_role_failure::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeletePolicyError::generic(generic),
     })
 }
@@ -1232,6 +1311,9 @@ pub fn parse_delete_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1243,8 +1325,11 @@ pub fn parse_delete_scheduled_action_error(
     crate::output::DeleteScheduledActionOutput,
     crate::error::DeleteScheduledActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteScheduledActionError::unhandled(generic)),
@@ -1252,23 +1337,23 @@ pub fn parse_delete_scheduled_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteScheduledActionError {
-            meta: generic,
-            kind: crate::error::DeleteScheduledActionErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DeleteScheduledActionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteScheduledActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteScheduledActionError::generic(generic),
     })
 }
@@ -1284,6 +1369,9 @@ pub fn parse_delete_scheduled_action_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_scheduled_action_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1292,8 +1380,11 @@ pub fn parse_delete_scheduled_action_response(
 pub fn parse_delete_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTagsOutput, crate::error::DeleteTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteTagsError::unhandled(generic)),
@@ -1301,40 +1392,38 @@ pub fn parse_delete_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DeleteTagsError {
-            meta: generic,
-            kind: crate::error::DeleteTagsErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::DeleteTagsError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::DeleteTagsError {
-            meta: generic,
-            kind: crate::error::DeleteTagsErrorKind::ResourceInUseFault({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceInUse" => {
+            crate::error::DeleteTagsError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteTagsError::generic(generic),
     })
 }
@@ -1347,6 +1436,9 @@ pub fn parse_delete_tags_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_tags_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1355,8 +1447,11 @@ pub fn parse_delete_tags_response(
 pub fn parse_delete_warm_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteWarmPoolOutput, crate::error::DeleteWarmPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteWarmPoolError::unhandled(generic)),
@@ -1364,62 +1459,60 @@ pub fn parse_delete_warm_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::DeleteWarmPoolError {
-                meta: generic,
-                kind: crate::error::DeleteWarmPoolErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::DeleteWarmPoolError {
-            meta: generic,
-            kind: crate::error::DeleteWarmPoolErrorKind::ResourceContentionFault({
+        "LimitExceeded" => crate::error::DeleteWarmPoolError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::DeleteWarmPoolError {
-            meta: generic,
-            kind: crate::error::DeleteWarmPoolErrorKind::ResourceInUseFault({
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::DeleteWarmPoolError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceInUse" => {
+            crate::error::DeleteWarmPoolError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ScalingActivityInProgress" => crate::error::DeleteWarmPoolError {
-            meta: generic,
-            kind: crate::error::DeleteWarmPoolErrorKind::ScalingActivityInProgressFault({
+            })
+        }
+        "ScalingActivityInProgress" => {
+            crate::error::DeleteWarmPoolError::ScalingActivityInProgressFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1427,14 +1520,15 @@ pub fn parse_delete_warm_pool_error(
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteWarmPoolError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteWarmPoolError::generic(generic),
     })
 }
@@ -1447,6 +1541,9 @@ pub fn parse_delete_warm_pool_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_warm_pool_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1458,8 +1555,11 @@ pub fn parse_describe_account_limits_error(
     crate::output::DescribeAccountLimitsOutput,
     crate::error::DescribeAccountLimitsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeAccountLimitsError::unhandled(generic)),
@@ -1467,23 +1567,23 @@ pub fn parse_describe_account_limits_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeAccountLimitsError {
-            meta: generic,
-            kind: crate::error::DescribeAccountLimitsErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeAccountLimitsError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeAccountLimitsError::generic(generic),
     })
 }
@@ -1504,6 +1604,9 @@ pub fn parse_describe_account_limits_response(
             output,
         )
         .map_err(crate::error::DescribeAccountLimitsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1515,8 +1618,11 @@ pub fn parse_describe_adjustment_types_error(
     crate::output::DescribeAdjustmentTypesOutput,
     crate::error::DescribeAdjustmentTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAdjustmentTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1528,23 +1634,23 @@ pub fn parse_describe_adjustment_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeAdjustmentTypesError {
-            meta: generic,
-            kind: crate::error::DescribeAdjustmentTypesErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeAdjustmentTypesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAdjustmentTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeAdjustmentTypesError::generic(generic),
     })
 }
@@ -1565,6 +1671,9 @@ pub fn parse_describe_adjustment_types_response(
             output,
         )
         .map_err(crate::error::DescribeAdjustmentTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1576,8 +1685,11 @@ pub fn parse_describe_auto_scaling_groups_error(
     crate::output::DescribeAutoScalingGroupsOutput,
     crate::error::DescribeAutoScalingGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1589,42 +1701,42 @@ pub fn parse_describe_auto_scaling_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeAutoScalingGroupsError {
-                meta: generic,
-                kind: crate::error::DescribeAutoScalingGroupsErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeAutoScalingGroupsError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeAutoScalingGroupsError {
-            meta: generic,
-            kind: crate::error::DescribeAutoScalingGroupsErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeAutoScalingGroupsError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeAutoScalingGroupsError::generic(generic),
     })
 }
@@ -1645,6 +1757,9 @@ pub fn parse_describe_auto_scaling_groups_response(
             output,
         )
         .map_err(crate::error::DescribeAutoScalingGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1656,8 +1771,11 @@ pub fn parse_describe_auto_scaling_instances_error(
     crate::output::DescribeAutoScalingInstancesOutput,
     crate::error::DescribeAutoScalingInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1669,42 +1787,42 @@ pub fn parse_describe_auto_scaling_instances_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeAutoScalingInstancesError {
-                meta: generic,
-                kind: crate::error::DescribeAutoScalingInstancesErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeAutoScalingInstancesError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeAutoScalingInstancesError {
-            meta: generic,
-            kind: crate::error::DescribeAutoScalingInstancesErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeAutoScalingInstancesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeAutoScalingInstancesError::generic(generic),
     })
 }
@@ -1725,6 +1843,9 @@ pub fn parse_describe_auto_scaling_instances_response(
             output,
         )
         .map_err(crate::error::DescribeAutoScalingInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1736,8 +1857,11 @@ pub fn parse_describe_auto_scaling_notification_types_error(
     crate::output::DescribeAutoScalingNotificationTypesOutput,
     crate::error::DescribeAutoScalingNotificationTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1747,27 +1871,23 @@ pub fn parse_describe_auto_scaling_notification_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeAutoScalingNotificationTypesError {
-            meta: generic,
-            kind:
-                crate::error::DescribeAutoScalingNotificationTypesErrorKind::ResourceContentionFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_contention_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "ResourceContention" => {
+            crate::error::DescribeAutoScalingNotificationTypesError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeAutoScalingNotificationTypesError::generic(generic),
     })
 }
@@ -1785,6 +1905,9 @@ pub fn parse_describe_auto_scaling_notification_types_response(
             crate::output::describe_auto_scaling_notification_types_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_auto_scaling_notification_types(response.body().as_ref(), output).map_err(crate::error::DescribeAutoScalingNotificationTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1796,8 +1919,11 @@ pub fn parse_describe_instance_refreshes_error(
     crate::output::DescribeInstanceRefreshesOutput,
     crate::error::DescribeInstanceRefreshesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1809,42 +1935,42 @@ pub fn parse_describe_instance_refreshes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeInstanceRefreshesError {
-                meta: generic,
-                kind: crate::error::DescribeInstanceRefreshesErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeInstanceRefreshesError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeInstanceRefreshesError {
-            meta: generic,
-            kind: crate::error::DescribeInstanceRefreshesErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeInstanceRefreshesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeInstanceRefreshesError::generic(generic),
     })
 }
@@ -1865,6 +1991,9 @@ pub fn parse_describe_instance_refreshes_response(
             output,
         )
         .map_err(crate::error::DescribeInstanceRefreshesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1876,8 +2005,11 @@ pub fn parse_describe_launch_configurations_error(
     crate::output::DescribeLaunchConfigurationsOutput,
     crate::error::DescribeLaunchConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1889,42 +2021,42 @@ pub fn parse_describe_launch_configurations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeLaunchConfigurationsError {
-                meta: generic,
-                kind: crate::error::DescribeLaunchConfigurationsErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeLaunchConfigurationsError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeLaunchConfigurationsError {
-            meta: generic,
-            kind: crate::error::DescribeLaunchConfigurationsErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeLaunchConfigurationsError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLaunchConfigurationsError::generic(generic),
     })
 }
@@ -1945,6 +2077,9 @@ pub fn parse_describe_launch_configurations_response(
             output,
         )
         .map_err(crate::error::DescribeLaunchConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1956,8 +2091,11 @@ pub fn parse_describe_lifecycle_hooks_error(
     crate::output::DescribeLifecycleHooksOutput,
     crate::error::DescribeLifecycleHooksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLifecycleHooksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1969,23 +2107,23 @@ pub fn parse_describe_lifecycle_hooks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeLifecycleHooksError {
-            meta: generic,
-            kind: crate::error::DescribeLifecycleHooksErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeLifecycleHooksError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleHooksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLifecycleHooksError::generic(generic),
     })
 }
@@ -2006,6 +2144,9 @@ pub fn parse_describe_lifecycle_hooks_response(
             output,
         )
         .map_err(crate::error::DescribeLifecycleHooksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2017,8 +2158,11 @@ pub fn parse_describe_lifecycle_hook_types_error(
     crate::output::DescribeLifecycleHookTypesOutput,
     crate::error::DescribeLifecycleHookTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLifecycleHookTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2030,23 +2174,23 @@ pub fn parse_describe_lifecycle_hook_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeLifecycleHookTypesError {
-            meta: generic,
-            kind: crate::error::DescribeLifecycleHookTypesErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeLifecycleHookTypesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLifecycleHookTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLifecycleHookTypesError::generic(generic),
     })
 }
@@ -2067,6 +2211,9 @@ pub fn parse_describe_lifecycle_hook_types_response(
             output,
         )
         .map_err(crate::error::DescribeLifecycleHookTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2078,8 +2225,11 @@ pub fn parse_describe_load_balancers_error(
     crate::output::DescribeLoadBalancersOutput,
     crate::error::DescribeLoadBalancersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeLoadBalancersError::unhandled(generic)),
@@ -2087,42 +2237,42 @@ pub fn parse_describe_load_balancers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeLoadBalancersError {
-                meta: generic,
-                kind: crate::error::DescribeLoadBalancersErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeLoadBalancersError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeLoadBalancersError {
-            meta: generic,
-            kind: crate::error::DescribeLoadBalancersErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeLoadBalancersError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLoadBalancersError::generic(generic),
     })
 }
@@ -2143,6 +2293,9 @@ pub fn parse_describe_load_balancers_response(
             output,
         )
         .map_err(crate::error::DescribeLoadBalancersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2154,8 +2307,11 @@ pub fn parse_describe_load_balancer_target_groups_error(
     crate::output::DescribeLoadBalancerTargetGroupsOutput,
     crate::error::DescribeLoadBalancerTargetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2166,44 +2322,44 @@ pub fn parse_describe_load_balancer_target_groups_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => {
-            crate::error::DescribeLoadBalancerTargetGroupsError {
-                meta: generic,
-                kind: crate::error::DescribeLoadBalancerTargetGroupsErrorKind::InvalidNextToken({
+            crate::error::DescribeLoadBalancerTargetGroupsError::InvalidNextToken({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "ResourceContention" => crate::error::DescribeLoadBalancerTargetGroupsError {
-            meta: generic,
-            kind: crate::error::DescribeLoadBalancerTargetGroupsErrorKind::ResourceContentionFault(
-                {
+        "ResourceContention" => {
+            crate::error::DescribeLoadBalancerTargetGroupsError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_contention_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeLoadBalancerTargetGroupsError::generic(generic),
     })
 }
@@ -2226,6 +2382,9 @@ pub fn parse_describe_load_balancer_target_groups_response(
                 output,
             )
             .map_err(crate::error::DescribeLoadBalancerTargetGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2237,8 +2396,11 @@ pub fn parse_describe_metric_collection_types_error(
     crate::output::DescribeMetricCollectionTypesOutput,
     crate::error::DescribeMetricCollectionTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2250,23 +2412,23 @@ pub fn parse_describe_metric_collection_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeMetricCollectionTypesError {
-            meta: generic,
-            kind: crate::error::DescribeMetricCollectionTypesErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeMetricCollectionTypesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeMetricCollectionTypesError::generic(generic),
     })
 }
@@ -2288,6 +2450,9 @@ pub fn parse_describe_metric_collection_types_response(
                 output,
             )
             .map_err(crate::error::DescribeMetricCollectionTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2299,8 +2464,11 @@ pub fn parse_describe_notification_configurations_error(
     crate::output::DescribeNotificationConfigurationsOutput,
     crate::error::DescribeNotificationConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2311,47 +2479,46 @@ pub fn parse_describe_notification_configurations_error(
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
         "InvalidNextToken" => {
-            crate::error::DescribeNotificationConfigurationsError {
-                meta: generic,
-                kind: crate::error::DescribeNotificationConfigurationsErrorKind::InvalidNextToken(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output = crate::error::invalid_next_token::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-            }
+            crate::error::DescribeNotificationConfigurationsError::InvalidNextToken({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::DescribeNotificationConfigurationsError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "ResourceContention" => crate::error::DescribeNotificationConfigurationsError {
-            meta: generic,
-            kind:
-                crate::error::DescribeNotificationConfigurationsErrorKind::ResourceContentionFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_contention_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "ResourceContention" => {
+            crate::error::DescribeNotificationConfigurationsError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::resource_contention_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeNotificationConfigurationsError::generic(generic),
     })
 }
@@ -2374,6 +2541,9 @@ pub fn parse_describe_notification_configurations_response(
                 output,
             )
             .map_err(crate::error::DescribeNotificationConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2383,8 +2553,11 @@ pub fn parse_describe_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribePoliciesOutput, crate::error::DescribePoliciesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribePoliciesError::unhandled(generic)),
@@ -2392,59 +2565,57 @@ pub fn parse_describe_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribePoliciesError {
-                meta: generic,
-                kind: crate::error::DescribePoliciesErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::DescribePoliciesError {
-            meta: generic,
-            kind: crate::error::DescribePoliciesErrorKind::ResourceContentionFault({
+        "InvalidNextToken" => crate::error::DescribePoliciesError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::DescribePoliciesError {
-            meta: generic,
-            kind: crate::error::DescribePoliciesErrorKind::ServiceLinkedRoleFailure({
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribePoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::DescribePoliciesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleFailure" => {
+            crate::error::DescribePoliciesError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribePoliciesError::generic(generic),
     })
 }
@@ -2463,6 +2634,9 @@ pub fn parse_describe_policies_response(
             output,
         )
         .map_err(crate::error::DescribePoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2474,8 +2648,11 @@ pub fn parse_describe_scaling_activities_error(
     crate::output::DescribeScalingActivitiesOutput,
     crate::error::DescribeScalingActivitiesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2487,42 +2664,42 @@ pub fn parse_describe_scaling_activities_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeScalingActivitiesError {
-                meta: generic,
-                kind: crate::error::DescribeScalingActivitiesErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeScalingActivitiesError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeScalingActivitiesError {
-            meta: generic,
-            kind: crate::error::DescribeScalingActivitiesErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeScalingActivitiesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeScalingActivitiesError::generic(generic),
     })
 }
@@ -2543,6 +2720,9 @@ pub fn parse_describe_scaling_activities_response(
             output,
         )
         .map_err(crate::error::DescribeScalingActivitiesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2554,8 +2734,11 @@ pub fn parse_describe_scaling_process_types_error(
     crate::output::DescribeScalingProcessTypesOutput,
     crate::error::DescribeScalingProcessTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeScalingProcessTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2567,23 +2750,23 @@ pub fn parse_describe_scaling_process_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeScalingProcessTypesError {
-            meta: generic,
-            kind: crate::error::DescribeScalingProcessTypesErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeScalingProcessTypesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScalingProcessTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeScalingProcessTypesError::generic(generic),
     })
 }
@@ -2604,6 +2787,9 @@ pub fn parse_describe_scaling_process_types_response(
             output,
         )
         .map_err(crate::error::DescribeScalingProcessTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2615,8 +2801,11 @@ pub fn parse_describe_scheduled_actions_error(
     crate::output::DescribeScheduledActionsOutput,
     crate::error::DescribeScheduledActionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2628,42 +2817,42 @@ pub fn parse_describe_scheduled_actions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeScheduledActionsError {
-                meta: generic,
-                kind: crate::error::DescribeScheduledActionsErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeScheduledActionsError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeScheduledActionsError {
-            meta: generic,
-            kind: crate::error::DescribeScheduledActionsErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeScheduledActionsError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeScheduledActionsError::generic(generic),
     })
 }
@@ -2684,6 +2873,9 @@ pub fn parse_describe_scheduled_actions_response(
             output,
         )
         .map_err(crate::error::DescribeScheduledActionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2692,8 +2884,11 @@ pub fn parse_describe_scheduled_actions_response(
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeTagsError::unhandled(generic)),
@@ -2701,42 +2896,40 @@ pub fn parse_describe_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeTagsError {
-                meta: generic,
-                kind: crate::error::DescribeTagsErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::DescribeTagsError {
-            meta: generic,
-            kind: crate::error::DescribeTagsErrorKind::ResourceContentionFault({
+        "InvalidNextToken" => crate::error::DescribeTagsError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::DescribeTagsError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeTagsError::generic(generic),
     })
 }
@@ -2754,6 +2947,9 @@ pub fn parse_describe_tags_response(
             output,
         )
         .map_err(crate::error::DescribeTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2765,8 +2961,11 @@ pub fn parse_describe_termination_policy_types_error(
     crate::output::DescribeTerminationPolicyTypesOutput,
     crate::error::DescribeTerminationPolicyTypesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeTerminationPolicyTypesError::unhandled(generic)),
@@ -2774,23 +2973,23 @@ pub fn parse_describe_termination_policy_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DescribeTerminationPolicyTypesError {
-            meta: generic,
-            kind: crate::error::DescribeTerminationPolicyTypesErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DescribeTerminationPolicyTypesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeTerminationPolicyTypesError::generic(generic),
     })
 }
@@ -2813,6 +3012,9 @@ pub fn parse_describe_termination_policy_types_response(
                 output,
             )
             .map_err(crate::error::DescribeTerminationPolicyTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2824,8 +3026,11 @@ pub fn parse_describe_traffic_sources_error(
     crate::output::DescribeTrafficSourcesOutput,
     crate::error::DescribeTrafficSourcesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2837,42 +3042,42 @@ pub fn parse_describe_traffic_sources_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeTrafficSourcesError {
-                meta: generic,
-                kind: crate::error::DescribeTrafficSourcesErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InvalidNextToken" => crate::error::DescribeTrafficSourcesError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::DescribeTrafficSourcesError {
-            meta: generic,
-            kind: crate::error::DescribeTrafficSourcesErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::DescribeTrafficSourcesError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeTrafficSourcesError::generic(generic),
     })
 }
@@ -2893,6 +3098,9 @@ pub fn parse_describe_traffic_sources_response(
             output,
         )
         .map_err(crate::error::DescribeTrafficSourcesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2902,8 +3110,11 @@ pub fn parse_describe_warm_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeWarmPoolOutput, crate::error::DescribeWarmPoolError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeWarmPoolError::unhandled(generic)),
@@ -2911,61 +3122,60 @@ pub fn parse_describe_warm_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidNextToken" => {
-            crate::error::DescribeWarmPoolError {
-                meta: generic,
-                kind: crate::error::DescribeWarmPoolErrorKind::InvalidNextToken({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_next_token::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "LimitExceeded" => {
-            crate::error::DescribeWarmPoolError {
-                meta: generic,
-                kind: crate::error::DescribeWarmPoolErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::DescribeWarmPoolError {
-            meta: generic,
-            kind: crate::error::DescribeWarmPoolErrorKind::ResourceContentionFault({
+        "InvalidNextToken" => crate::error::DescribeWarmPoolError::InvalidNextToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_next_token::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => crate::error::DescribeWarmPoolError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::DescribeWarmPoolError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeWarmPoolError::generic(generic),
     })
 }
@@ -2984,6 +3194,9 @@ pub fn parse_describe_warm_pool_response(
             output,
         )
         .map_err(crate::error::DescribeWarmPoolError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2992,8 +3205,11 @@ pub fn parse_describe_warm_pool_response(
 pub fn parse_detach_instances_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DetachInstancesOutput, crate::error::DetachInstancesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachInstancesError::unhandled(generic)),
@@ -3001,23 +3217,21 @@ pub fn parse_detach_instances_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DetachInstancesError {
-            meta: generic,
-            kind: crate::error::DetachInstancesErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::DetachInstancesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachInstancesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachInstancesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DetachInstancesError::generic(generic),
     })
 }
@@ -3035,6 +3249,9 @@ pub fn parse_detach_instances_response(
             output,
         )
         .map_err(crate::error::DetachInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3046,8 +3263,11 @@ pub fn parse_detach_load_balancers_error(
     crate::output::DetachLoadBalancersOutput,
     crate::error::DetachLoadBalancersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachLoadBalancersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachLoadBalancersError::unhandled(generic)),
@@ -3055,23 +3275,21 @@ pub fn parse_detach_load_balancers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DetachLoadBalancersError {
-            meta: generic,
-            kind: crate::error::DetachLoadBalancersErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::DetachLoadBalancersError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DetachLoadBalancersError::generic(generic),
     })
 }
@@ -3087,6 +3305,9 @@ pub fn parse_detach_load_balancers_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_load_balancers_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3098,8 +3319,11 @@ pub fn parse_detach_load_balancer_target_groups_error(
     crate::output::DetachLoadBalancerTargetGroupsOutput,
     crate::error::DetachLoadBalancerTargetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachLoadBalancerTargetGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachLoadBalancerTargetGroupsError::unhandled(generic)),
@@ -3107,23 +3331,23 @@ pub fn parse_detach_load_balancer_target_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DetachLoadBalancerTargetGroupsError {
-            meta: generic,
-            kind: crate::error::DetachLoadBalancerTargetGroupsErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DetachLoadBalancerTargetGroupsError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachLoadBalancerTargetGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DetachLoadBalancerTargetGroupsError::generic(generic),
     })
 }
@@ -3140,6 +3364,9 @@ pub fn parse_detach_load_balancer_target_groups_response(
         let mut output =
             crate::output::detach_load_balancer_target_groups_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3151,8 +3378,11 @@ pub fn parse_detach_traffic_sources_error(
     crate::output::DetachTrafficSourcesOutput,
     crate::error::DetachTrafficSourcesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DetachTrafficSourcesError::unhandled(generic)),
@@ -3160,23 +3390,21 @@ pub fn parse_detach_traffic_sources_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DetachTrafficSourcesError {
-            meta: generic,
-            kind: crate::error::DetachTrafficSourcesErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::DetachTrafficSourcesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DetachTrafficSourcesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DetachTrafficSourcesError::generic(generic),
     })
 }
@@ -3192,6 +3420,9 @@ pub fn parse_detach_traffic_sources_response(
         #[allow(unused_mut)]
         let mut output = crate::output::detach_traffic_sources_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3203,8 +3434,11 @@ pub fn parse_disable_metrics_collection_error(
     crate::output::DisableMetricsCollectionOutput,
     crate::error::DisableMetricsCollectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableMetricsCollectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3216,23 +3450,23 @@ pub fn parse_disable_metrics_collection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::DisableMetricsCollectionError {
-            meta: generic,
-            kind: crate::error::DisableMetricsCollectionErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::DisableMetricsCollectionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DisableMetricsCollectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisableMetricsCollectionError::generic(generic),
     })
 }
@@ -3248,6 +3482,9 @@ pub fn parse_disable_metrics_collection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_metrics_collection_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3259,8 +3496,11 @@ pub fn parse_enable_metrics_collection_error(
     crate::output::EnableMetricsCollectionOutput,
     crate::error::EnableMetricsCollectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableMetricsCollectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3272,23 +3512,23 @@ pub fn parse_enable_metrics_collection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::EnableMetricsCollectionError {
-            meta: generic,
-            kind: crate::error::EnableMetricsCollectionErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::EnableMetricsCollectionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnableMetricsCollectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::EnableMetricsCollectionError::generic(generic),
     })
 }
@@ -3304,6 +3544,9 @@ pub fn parse_enable_metrics_collection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_metrics_collection_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3312,8 +3555,11 @@ pub fn parse_enable_metrics_collection_response(
 pub fn parse_enter_standby_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnterStandbyOutput, crate::error::EnterStandbyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnterStandbyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::EnterStandbyError::unhandled(generic)),
@@ -3321,23 +3567,21 @@ pub fn parse_enter_standby_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::EnterStandbyError {
-            meta: generic,
-            kind: crate::error::EnterStandbyErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::EnterStandbyError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnterStandbyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::EnterStandbyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::EnterStandbyError::generic(generic),
     })
 }
@@ -3355,6 +3599,9 @@ pub fn parse_enter_standby_response(
             output,
         )
         .map_err(crate::error::EnterStandbyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3363,8 +3610,11 @@ pub fn parse_enter_standby_response(
 pub fn parse_execute_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExecutePolicyOutput, crate::error::ExecutePolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ExecutePolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ExecutePolicyError::unhandled(generic)),
@@ -3372,26 +3622,23 @@ pub fn parse_execute_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::ExecutePolicyError {
-            meta: generic,
-            kind: crate::error::ExecutePolicyErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::ExecutePolicyError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ScalingActivityInProgress" => crate::error::ExecutePolicyError {
-            meta: generic,
-            kind: crate::error::ExecutePolicyErrorKind::ScalingActivityInProgressFault({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ScalingActivityInProgress" => {
+            crate::error::ExecutePolicyError::ScalingActivityInProgressFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3399,14 +3646,15 @@ pub fn parse_execute_policy_error(
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExecutePolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ExecutePolicyError::generic(generic),
     })
 }
@@ -3419,6 +3667,9 @@ pub fn parse_execute_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::execute_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3427,8 +3678,11 @@ pub fn parse_execute_policy_response(
 pub fn parse_exit_standby_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ExitStandbyOutput, crate::error::ExitStandbyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ExitStandbyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ExitStandbyError::unhandled(generic)),
@@ -3436,23 +3690,21 @@ pub fn parse_exit_standby_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::ExitStandbyError {
-            meta: generic,
-            kind: crate::error::ExitStandbyErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::ExitStandbyError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExitStandbyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ExitStandbyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ExitStandbyError::generic(generic),
     })
 }
@@ -3470,6 +3722,9 @@ pub fn parse_exit_standby_response(
             output,
         )
         .map_err(crate::error::ExitStandbyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3481,8 +3736,11 @@ pub fn parse_get_predictive_scaling_forecast_error(
     crate::output::GetPredictiveScalingForecastOutput,
     crate::error::GetPredictiveScalingForecastError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPredictiveScalingForecastError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3494,23 +3752,23 @@ pub fn parse_get_predictive_scaling_forecast_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::GetPredictiveScalingForecastError {
-            meta: generic,
-            kind: crate::error::GetPredictiveScalingForecastErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::GetPredictiveScalingForecastError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPredictiveScalingForecastError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetPredictiveScalingForecastError::generic(generic),
     })
 }
@@ -3531,6 +3789,9 @@ pub fn parse_get_predictive_scaling_forecast_response(
             output,
         )
         .map_err(crate::error::GetPredictiveScalingForecastError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3540,8 +3801,11 @@ pub fn parse_put_lifecycle_hook_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutLifecycleHookOutput, crate::error::PutLifecycleHookError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutLifecycleHookError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutLifecycleHookError::unhandled(generic)),
@@ -3549,42 +3813,41 @@ pub fn parse_put_lifecycle_hook_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::PutLifecycleHookError {
-                meta: generic,
-                kind: crate::error::PutLifecycleHookErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::PutLifecycleHookError {
-            meta: generic,
-            kind: crate::error::PutLifecycleHookErrorKind::ResourceContentionFault({
+        "LimitExceeded" => crate::error::PutLifecycleHookError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutLifecycleHookError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::PutLifecycleHookError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutLifecycleHookError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutLifecycleHookError::generic(generic),
     })
 }
@@ -3598,6 +3861,9 @@ pub fn parse_put_lifecycle_hook_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_lifecycle_hook_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3609,8 +3875,11 @@ pub fn parse_put_notification_configuration_error(
     crate::output::PutNotificationConfigurationOutput,
     crate::error::PutNotificationConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3622,59 +3891,60 @@ pub fn parse_put_notification_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::PutNotificationConfigurationError {
-                meta: generic,
-                kind: crate::error::PutNotificationConfigurationErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "LimitExceeded" => crate::error::PutNotificationConfigurationError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::PutNotificationConfigurationError {
-            meta: generic,
-            kind: crate::error::PutNotificationConfigurationErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::PutNotificationConfigurationError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::PutNotificationConfigurationError {
-            meta: generic,
-            kind: crate::error::PutNotificationConfigurationErrorKind::ServiceLinkedRoleFailure({
+            })
+        }
+        "ServiceLinkedRoleFailure" => {
+            crate::error::PutNotificationConfigurationError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutNotificationConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutNotificationConfigurationError::generic(generic),
     })
 }
@@ -3690,6 +3960,9 @@ pub fn parse_put_notification_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_notification_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3699,8 +3972,11 @@ pub fn parse_put_scaling_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutScalingPolicyOutput, crate::error::PutScalingPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutScalingPolicyError::unhandled(generic)),
@@ -3708,59 +3984,58 @@ pub fn parse_put_scaling_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::PutScalingPolicyError {
-                meta: generic,
-                kind: crate::error::PutScalingPolicyErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::PutScalingPolicyError {
-            meta: generic,
-            kind: crate::error::PutScalingPolicyErrorKind::ResourceContentionFault({
+        "LimitExceeded" => crate::error::PutScalingPolicyError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::PutScalingPolicyError {
-            meta: generic,
-            kind: crate::error::PutScalingPolicyErrorKind::ServiceLinkedRoleFailure({
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::PutScalingPolicyError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceLinkedRoleFailure" => {
+            crate::error::PutScalingPolicyError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScalingPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutScalingPolicyError::generic(generic),
     })
 }
@@ -3779,6 +4054,9 @@ pub fn parse_put_scaling_policy_response(
             output,
         )
         .map_err(crate::error::PutScalingPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3790,8 +4068,11 @@ pub fn parse_put_scheduled_update_group_action_error(
     crate::output::PutScheduledUpdateGroupActionOutput,
     crate::error::PutScheduledUpdateGroupActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3803,61 +4084,63 @@ pub fn parse_put_scheduled_update_group_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => {
-            crate::error::PutScheduledUpdateGroupActionError {
-                meta: generic,
-                kind: crate::error::PutScheduledUpdateGroupActionErrorKind::AlreadyExistsFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "AlreadyExists" => crate::error::PutScheduledUpdateGroupActionError::AlreadyExistsFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::already_exists_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_already_exists_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "LimitExceeded" => {
-            crate::error::PutScheduledUpdateGroupActionError {
-                meta: generic,
-                kind: crate::error::PutScheduledUpdateGroupActionErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+            tmp
+        }),
+        "LimitExceeded" => crate::error::PutScheduledUpdateGroupActionError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::PutScheduledUpdateGroupActionError {
-            meta: generic,
-            kind: crate::error::PutScheduledUpdateGroupActionErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::PutScheduledUpdateGroupActionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutScheduledUpdateGroupActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutScheduledUpdateGroupActionError::generic(generic),
     })
 }
@@ -3874,6 +4157,9 @@ pub fn parse_put_scheduled_update_group_action_response(
         let mut output =
             crate::output::put_scheduled_update_group_action_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3882,8 +4168,11 @@ pub fn parse_put_scheduled_update_group_action_response(
 pub fn parse_put_warm_pool_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutWarmPoolOutput, crate::error::PutWarmPoolError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutWarmPoolError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutWarmPoolError::unhandled(generic)),
@@ -3891,42 +4180,41 @@ pub fn parse_put_warm_pool_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::PutWarmPoolError {
-                meta: generic,
-                kind: crate::error::PutWarmPoolErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "ResourceContention" => crate::error::PutWarmPoolError {
-            meta: generic,
-            kind: crate::error::PutWarmPoolErrorKind::ResourceContentionFault({
+        "LimitExceeded" => crate::error::PutWarmPoolError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::PutWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::PutWarmPoolError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PutWarmPoolError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutWarmPoolError::generic(generic),
     })
 }
@@ -3939,6 +4227,9 @@ pub fn parse_put_warm_pool_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_warm_pool_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3950,8 +4241,11 @@ pub fn parse_record_lifecycle_action_heartbeat_error(
     crate::output::RecordLifecycleActionHeartbeatOutput,
     crate::error::RecordLifecycleActionHeartbeatError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RecordLifecycleActionHeartbeatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RecordLifecycleActionHeartbeatError::unhandled(generic)),
@@ -3959,23 +4253,23 @@ pub fn parse_record_lifecycle_action_heartbeat_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::RecordLifecycleActionHeartbeatError {
-            meta: generic,
-            kind: crate::error::RecordLifecycleActionHeartbeatErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::RecordLifecycleActionHeartbeatError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RecordLifecycleActionHeartbeatError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RecordLifecycleActionHeartbeatError::generic(generic),
     })
 }
@@ -3992,6 +4286,9 @@ pub fn parse_record_lifecycle_action_heartbeat_response(
         let mut output =
             crate::output::record_lifecycle_action_heartbeat_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4000,8 +4297,11 @@ pub fn parse_record_lifecycle_action_heartbeat_response(
 pub fn parse_resume_processes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResumeProcessesOutput, crate::error::ResumeProcessesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResumeProcessesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ResumeProcessesError::unhandled(generic)),
@@ -4009,40 +4309,38 @@ pub fn parse_resume_processes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::ResumeProcessesError {
-            meta: generic,
-            kind: crate::error::ResumeProcessesErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::ResumeProcessesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::ResumeProcessesError {
-            meta: generic,
-            kind: crate::error::ResumeProcessesErrorKind::ResourceInUseFault({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceInUse" => {
+            crate::error::ResumeProcessesError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResumeProcessesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ResumeProcessesError::generic(generic),
     })
 }
@@ -4055,6 +4353,9 @@ pub fn parse_resume_processes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::resume_processes_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4066,8 +4367,11 @@ pub fn parse_set_desired_capacity_error(
     crate::output::SetDesiredCapacityOutput,
     crate::error::SetDesiredCapacityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SetDesiredCapacityError::unhandled(generic)),
@@ -4075,26 +4379,23 @@ pub fn parse_set_desired_capacity_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::SetDesiredCapacityError {
-            meta: generic,
-            kind: crate::error::SetDesiredCapacityErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::SetDesiredCapacityError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ScalingActivityInProgress" => crate::error::SetDesiredCapacityError {
-            meta: generic,
-            kind: crate::error::SetDesiredCapacityErrorKind::ScalingActivityInProgressFault({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ScalingActivityInProgress" => {
+            crate::error::SetDesiredCapacityError::ScalingActivityInProgressFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4102,14 +4403,15 @@ pub fn parse_set_desired_capacity_error(
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetDesiredCapacityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SetDesiredCapacityError::generic(generic),
     })
 }
@@ -4125,6 +4427,9 @@ pub fn parse_set_desired_capacity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_desired_capacity_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4134,8 +4439,11 @@ pub fn parse_set_instance_health_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SetInstanceHealthOutput, crate::error::SetInstanceHealthError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetInstanceHealthError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SetInstanceHealthError::unhandled(generic)),
@@ -4143,23 +4451,21 @@ pub fn parse_set_instance_health_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::SetInstanceHealthError {
-            meta: generic,
-            kind: crate::error::SetInstanceHealthErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::SetInstanceHealthError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceHealthError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceHealthError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SetInstanceHealthError::generic(generic),
     })
 }
@@ -4173,6 +4479,9 @@ pub fn parse_set_instance_health_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_instance_health_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4184,8 +4493,11 @@ pub fn parse_set_instance_protection_error(
     crate::output::SetInstanceProtectionOutput,
     crate::error::SetInstanceProtectionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SetInstanceProtectionError::unhandled(generic)),
@@ -4193,42 +4505,43 @@ pub fn parse_set_instance_protection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceeded" => {
-            crate::error::SetInstanceProtectionError {
-                meta: generic,
-                kind: crate::error::SetInstanceProtectionErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "LimitExceeded" => crate::error::SetInstanceProtectionError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ResourceContention" => crate::error::SetInstanceProtectionError {
-            meta: generic,
-            kind: crate::error::SetInstanceProtectionErrorKind::ResourceContentionFault({
+            tmp
+        }),
+        "ResourceContention" => {
+            crate::error::SetInstanceProtectionError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SetInstanceProtectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SetInstanceProtectionError::generic(generic),
     })
 }
@@ -4244,6 +4557,9 @@ pub fn parse_set_instance_protection_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_instance_protection_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4255,8 +4571,11 @@ pub fn parse_start_instance_refresh_error(
     crate::output::StartInstanceRefreshOutput,
     crate::error::StartInstanceRefreshError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartInstanceRefreshError::unhandled(generic)),
@@ -4264,9 +4583,8 @@ pub fn parse_start_instance_refresh_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InstanceRefreshInProgress" => crate::error::StartInstanceRefreshError {
-            meta: generic,
-            kind: crate::error::StartInstanceRefreshErrorKind::InstanceRefreshInProgressFault({
+        "InstanceRefreshInProgress" => {
+            crate::error::StartInstanceRefreshError::InstanceRefreshInProgressFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4274,50 +4592,50 @@ pub fn parse_start_instance_refresh_error(
                         crate::error::instance_refresh_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_instance_refresh_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => {
-            crate::error::StartInstanceRefreshError {
-                meta: generic,
-                kind: crate::error::StartInstanceRefreshErrorKind::LimitExceededFault({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::limit_exceeded_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ResourceContention" => crate::error::StartInstanceRefreshError {
-            meta: generic,
-            kind: crate::error::StartInstanceRefreshErrorKind::ResourceContentionFault({
+        "LimitExceeded" => crate::error::StartInstanceRefreshError::LimitExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_fault::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_limit_exceeded_fault_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceContention" => crate::error::StartInstanceRefreshError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::StartInstanceRefreshError::generic(generic),
     })
 }
@@ -4338,6 +4656,9 @@ pub fn parse_start_instance_refresh_response(
             output,
         )
         .map_err(crate::error::StartInstanceRefreshError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4347,8 +4668,11 @@ pub fn parse_suspend_processes_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SuspendProcessesOutput, crate::error::SuspendProcessesError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SuspendProcessesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SuspendProcessesError::unhandled(generic)),
@@ -4356,40 +4680,38 @@ pub fn parse_suspend_processes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::SuspendProcessesError {
-            meta: generic,
-            kind: crate::error::SuspendProcessesErrorKind::ResourceContentionFault({
+        "ResourceContention" => crate::error::SuspendProcessesError::ResourceContentionFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::resource_contention_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceInUse" => crate::error::SuspendProcessesError {
-            meta: generic,
-            kind: crate::error::SuspendProcessesErrorKind::ResourceInUseFault({
+                let mut output = crate::error::resource_contention_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceInUse" => {
+            crate::error::SuspendProcessesError::ResourceInUseFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_in_use_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_in_use_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::SuspendProcessesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SuspendProcessesError::generic(generic),
     })
 }
@@ -4403,6 +4725,9 @@ pub fn parse_suspend_processes_response(
         #[allow(unused_mut)]
         let mut output = crate::output::suspend_processes_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4414,8 +4739,11 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
     crate::output::TerminateInstanceInAutoScalingGroupOutput,
     crate::error::TerminateInstanceInAutoScalingGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4425,39 +4753,44 @@ pub fn parse_terminate_instance_in_auto_scaling_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::TerminateInstanceInAutoScalingGroupError { meta: generic, kind: crate::error::TerminateInstanceInAutoScalingGroupErrorKind::ResourceContentionFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ResourceContention" => {
+            crate::error::TerminateInstanceInAutoScalingGroupError::ResourceContentionFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ScalingActivityInProgress" => crate::error::TerminateInstanceInAutoScalingGroupError { meta: generic, kind: crate::error::TerminateInstanceInAutoScalingGroupErrorKind::ScalingActivityInProgressFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ScalingActivityInProgress" => {
+            crate::error::TerminateInstanceInAutoScalingGroupError::ScalingActivityInProgressFault(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::scaling_activity_in_progress_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::TerminateInstanceInAutoScalingGroupError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::scaling_activity_in_progress_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::TerminateInstanceInAutoScalingGroupError::generic(generic),
     })
 }
 
@@ -4474,6 +4807,9 @@ pub fn parse_terminate_instance_in_auto_scaling_group_response(
             crate::output::terminate_instance_in_auto_scaling_group_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_terminate_instance_in_auto_scaling_group(response.body().as_ref(), output).map_err(crate::error::TerminateInstanceInAutoScalingGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4485,8 +4821,11 @@ pub fn parse_update_auto_scaling_group_error(
     crate::output::UpdateAutoScalingGroupOutput,
     crate::error::UpdateAutoScalingGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4498,26 +4837,25 @@ pub fn parse_update_auto_scaling_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceContention" => crate::error::UpdateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::UpdateAutoScalingGroupErrorKind::ResourceContentionFault({
+        "ResourceContention" => {
+            crate::error::UpdateAutoScalingGroupError::ResourceContentionFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_contention_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_contention_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ScalingActivityInProgress" => crate::error::UpdateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::UpdateAutoScalingGroupErrorKind::ScalingActivityInProgressFault({
+            })
+        }
+        "ScalingActivityInProgress" => {
+            crate::error::UpdateAutoScalingGroupError::ScalingActivityInProgressFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4525,31 +4863,32 @@ pub fn parse_update_auto_scaling_group_error(
                         crate::error::scaling_activity_in_progress_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_scaling_activity_in_progress_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceLinkedRoleFailure" => crate::error::UpdateAutoScalingGroupError {
-            meta: generic,
-            kind: crate::error::UpdateAutoScalingGroupErrorKind::ServiceLinkedRoleFailure({
+            })
+        }
+        "ServiceLinkedRoleFailure" => {
+            crate::error::UpdateAutoScalingGroupError::ServiceLinkedRoleFailure({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_linked_role_failure::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_service_linked_role_failure_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateAutoScalingGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAutoScalingGroupError::generic(generic),
     })
 }
@@ -4565,6 +4904,9 @@ pub fn parse_update_auto_scaling_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_auto_scaling_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

@@ -3,8 +3,11 @@
 pub fn parse_generate_data_set_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GenerateDataSetOutput, crate::error::GenerateDataSetError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateDataSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GenerateDataSetError::unhandled(generic)),
@@ -12,9 +15,8 @@ pub fn parse_generate_data_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "MarketplaceCommerceAnalyticsException" => crate::error::GenerateDataSetError {
-            meta: generic,
-            kind: crate::error::GenerateDataSetErrorKind::MarketplaceCommerceAnalyticsException({
+        "MarketplaceCommerceAnalyticsException" => {
+            crate::error::GenerateDataSetError::MarketplaceCommerceAnalyticsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -22,14 +24,15 @@ pub fn parse_generate_data_set_error(
                         crate::error::marketplace_commerce_analytics_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GenerateDataSetError::generic(generic),
     })
 }
@@ -47,6 +50,9 @@ pub fn parse_generate_data_set_response(
             output,
         )
         .map_err(crate::error::GenerateDataSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -58,8 +64,11 @@ pub fn parse_start_support_data_export_error(
     crate::output::StartSupportDataExportOutput,
     crate::error::StartSupportDataExportError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartSupportDataExportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -71,26 +80,24 @@ pub fn parse_start_support_data_export_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "MarketplaceCommerceAnalyticsException" => crate::error::StartSupportDataExportError {
-            meta: generic,
-            kind:
-                crate::error::StartSupportDataExportErrorKind::MarketplaceCommerceAnalyticsException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::marketplace_commerce_analytics_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSupportDataExportError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "MarketplaceCommerceAnalyticsException" => {
+            crate::error::StartSupportDataExportError::MarketplaceCommerceAnalyticsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::marketplace_commerce_analytics_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_marketplace_commerce_analytics_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartSupportDataExportError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::StartSupportDataExportError::generic(generic),
     })
 }
@@ -111,6 +118,9 @@ pub fn parse_start_support_data_export_response(
             output,
         )
         .map_err(crate::error::StartSupportDataExportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

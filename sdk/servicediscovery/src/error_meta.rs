@@ -31,15 +31,8 @@ pub enum Error {
     ServiceNotFound(crate::error::ServiceNotFound),
     /// <p>The list of tags on the resource is over the quota. The maximum number of tags that can be applied to a resource is 50.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -73,31 +66,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateHttpNamespaceError> for Error {
     fn from(err: crate::error::CreateHttpNamespaceError) -> Self {
-        match err.kind {
-            crate::error::CreateHttpNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::CreateHttpNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::CreateHttpNamespaceErrorKind::InvalidInput(inner) => {
+            crate::error::CreateHttpNamespaceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreateHttpNamespaceErrorKind::NamespaceAlreadyExists(inner) => {
+            crate::error::CreateHttpNamespaceError::NamespaceAlreadyExists(inner) => {
                 Error::NamespaceAlreadyExists(inner)
             }
-            crate::error::CreateHttpNamespaceErrorKind::ResourceLimitExceeded(inner) => {
+            crate::error::CreateHttpNamespaceError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
-            crate::error::CreateHttpNamespaceErrorKind::TooManyTagsException(inner) => {
+            crate::error::CreateHttpNamespaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::CreateHttpNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateHttpNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -113,30 +111,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreatePrivateDnsNamespaceError> for Error {
     fn from(err: crate::error::CreatePrivateDnsNamespaceError) -> Self {
-        match err.kind {
-            crate::error::CreatePrivateDnsNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::CreatePrivateDnsNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::CreatePrivateDnsNamespaceErrorKind::InvalidInput(inner) => {
+            crate::error::CreatePrivateDnsNamespaceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreatePrivateDnsNamespaceErrorKind::NamespaceAlreadyExists(inner) => {
+            crate::error::CreatePrivateDnsNamespaceError::NamespaceAlreadyExists(inner) => {
                 Error::NamespaceAlreadyExists(inner)
             }
-            crate::error::CreatePrivateDnsNamespaceErrorKind::ResourceLimitExceeded(inner) => {
+            crate::error::CreatePrivateDnsNamespaceError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
-            crate::error::CreatePrivateDnsNamespaceErrorKind::TooManyTagsException(inner) => {
+            crate::error::CreatePrivateDnsNamespaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::CreatePrivateDnsNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreatePrivateDnsNamespaceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -153,30 +158,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreatePublicDnsNamespaceError> for Error {
     fn from(err: crate::error::CreatePublicDnsNamespaceError) -> Self {
-        match err.kind {
-            crate::error::CreatePublicDnsNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::CreatePublicDnsNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::CreatePublicDnsNamespaceErrorKind::InvalidInput(inner) => {
+            crate::error::CreatePublicDnsNamespaceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreatePublicDnsNamespaceErrorKind::NamespaceAlreadyExists(inner) => {
+            crate::error::CreatePublicDnsNamespaceError::NamespaceAlreadyExists(inner) => {
                 Error::NamespaceAlreadyExists(inner)
             }
-            crate::error::CreatePublicDnsNamespaceErrorKind::ResourceLimitExceeded(inner) => {
+            crate::error::CreatePublicDnsNamespaceError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
-            crate::error::CreatePublicDnsNamespaceErrorKind::TooManyTagsException(inner) => {
+            crate::error::CreatePublicDnsNamespaceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::CreatePublicDnsNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreatePublicDnsNamespaceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -190,29 +202,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateServiceError> for Error {
     fn from(err: crate::error::CreateServiceError) -> Self {
-        match err.kind {
-            crate::error::CreateServiceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CreateServiceErrorKind::NamespaceNotFound(inner) => {
+        match err {
+            crate::error::CreateServiceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CreateServiceError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::CreateServiceErrorKind::ResourceLimitExceeded(inner) => {
+            crate::error::CreateServiceError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
-            crate::error::CreateServiceErrorKind::ServiceAlreadyExists(inner) => {
+            crate::error::CreateServiceError::ServiceAlreadyExists(inner) => {
                 Error::ServiceAlreadyExists(inner)
             }
-            crate::error::CreateServiceErrorKind::TooManyTagsException(inner) => {
+            crate::error::CreateServiceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::CreateServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -225,28 +242,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteNamespaceError> for Error {
     fn from(err: crate::error::DeleteNamespaceError) -> Self {
-        match err.kind {
-            crate::error::DeleteNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::DeleteNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::DeleteNamespaceErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::DeleteNamespaceErrorKind::NamespaceNotFound(inner) => {
+            crate::error::DeleteNamespaceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteNamespaceError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::DeleteNamespaceErrorKind::ResourceInUse(inner) => {
-                Error::ResourceInUse(inner)
-            }
-            crate::error::DeleteNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteNamespaceError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::error::DeleteNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -259,23 +277,26 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteServiceError> for Error {
     fn from(err: crate::error::DeleteServiceError) -> Self {
-        match err.kind {
-            crate::error::DeleteServiceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DeleteServiceErrorKind::ResourceInUse(inner) => {
-                Error::ResourceInUse(inner)
-            }
-            crate::error::DeleteServiceErrorKind::ServiceNotFound(inner) => {
+        match err {
+            crate::error::DeleteServiceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteServiceError::ResourceInUse(inner) => Error::ResourceInUse(inner),
+            crate::error::DeleteServiceError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::DeleteServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -290,31 +311,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeregisterInstanceError> for Error {
     fn from(err: crate::error::DeregisterInstanceError) -> Self {
-        match err.kind {
-            crate::error::DeregisterInstanceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::DeregisterInstanceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::DeregisterInstanceErrorKind::InstanceNotFound(inner) => {
+            crate::error::DeregisterInstanceError::InstanceNotFound(inner) => {
                 Error::InstanceNotFound(inner)
             }
-            crate::error::DeregisterInstanceErrorKind::InvalidInput(inner) => {
+            crate::error::DeregisterInstanceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeregisterInstanceErrorKind::ResourceInUse(inner) => {
+            crate::error::DeregisterInstanceError::ResourceInUse(inner) => {
                 Error::ResourceInUse(inner)
             }
-            crate::error::DeregisterInstanceErrorKind::ServiceNotFound(inner) => {
+            crate::error::DeregisterInstanceError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::DeregisterInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeregisterInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -329,28 +355,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DiscoverInstancesError> for Error {
     fn from(err: crate::error::DiscoverInstancesError) -> Self {
-        match err.kind {
-            crate::error::DiscoverInstancesErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::DiscoverInstancesErrorKind::NamespaceNotFound(inner) => {
+        match err {
+            crate::error::DiscoverInstancesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DiscoverInstancesError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::DiscoverInstancesErrorKind::RequestLimitExceeded(inner) => {
+            crate::error::DiscoverInstancesError::RequestLimitExceeded(inner) => {
                 Error::RequestLimitExceeded(inner)
             }
-            crate::error::DiscoverInstancesErrorKind::ServiceNotFound(inner) => {
+            crate::error::DiscoverInstancesError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::DiscoverInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DiscoverInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -363,23 +392,26 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInstanceError> for Error {
     fn from(err: crate::error::GetInstanceError) -> Self {
-        match err.kind {
-            crate::error::GetInstanceErrorKind::InstanceNotFound(inner) => {
+        match err {
+            crate::error::GetInstanceError::InstanceNotFound(inner) => {
                 Error::InstanceNotFound(inner)
             }
-            crate::error::GetInstanceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetInstanceErrorKind::ServiceNotFound(inner) => {
-                Error::ServiceNotFound(inner)
-            }
-            crate::error::GetInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetInstanceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetInstanceError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
+            crate::error::GetInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -395,24 +427,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetInstancesHealthStatusError> for Error {
     fn from(err: crate::error::GetInstancesHealthStatusError) -> Self {
-        match err.kind {
-            crate::error::GetInstancesHealthStatusErrorKind::InstanceNotFound(inner) => {
+        match err {
+            crate::error::GetInstancesHealthStatusError::InstanceNotFound(inner) => {
                 Error::InstanceNotFound(inner)
             }
-            crate::error::GetInstancesHealthStatusErrorKind::InvalidInput(inner) => {
+            crate::error::GetInstancesHealthStatusError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetInstancesHealthStatusErrorKind::ServiceNotFound(inner) => {
+            crate::error::GetInstancesHealthStatusError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::GetInstancesHealthStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetInstancesHealthStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -426,20 +465,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetNamespaceError> for Error {
     fn from(err: crate::error::GetNamespaceError) -> Self {
-        match err.kind {
-            crate::error::GetNamespaceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetNamespaceErrorKind::NamespaceNotFound(inner) => {
+        match err {
+            crate::error::GetNamespaceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetNamespaceError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::GetNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -452,20 +496,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetOperationError> for Error {
     fn from(err: crate::error::GetOperationError) -> Self {
-        match err.kind {
-            crate::error::GetOperationErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetOperationErrorKind::OperationNotFound(inner) => {
+        match err {
+            crate::error::GetOperationError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetOperationError::OperationNotFound(inner) => {
                 Error::OperationNotFound(inner)
             }
-            crate::error::GetOperationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetOperationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -478,20 +527,23 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetServiceError> for Error {
     fn from(err: crate::error::GetServiceError) -> Self {
-        match err.kind {
-            crate::error::GetServiceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetServiceErrorKind::ServiceNotFound(inner) => {
-                Error::ServiceNotFound(inner)
-            }
-            crate::error::GetServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetServiceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetServiceError::ServiceNotFound(inner) => Error::ServiceNotFound(inner),
+            crate::error::GetServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -504,20 +556,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListInstancesError> for Error {
     fn from(err: crate::error::ListInstancesError) -> Self {
-        match err.kind {
-            crate::error::ListInstancesErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListInstancesErrorKind::ServiceNotFound(inner) => {
+        match err {
+            crate::error::ListInstancesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListInstancesError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::ListInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInstancesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -530,19 +587,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListNamespacesError> for Error {
     fn from(err: crate::error::ListNamespacesError) -> Self {
-        match err.kind {
-            crate::error::ListNamespacesErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListNamespacesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::ListNamespacesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListNamespacesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -555,19 +615,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListOperationsError> for Error {
     fn from(err: crate::error::ListOperationsError) -> Self {
-        match err.kind {
-            crate::error::ListOperationsErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListOperationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::ListOperationsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListOperationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -580,17 +643,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListServicesError> for Error {
     fn from(err: crate::error::ListServicesError) -> Self {
-        match err.kind {
-            crate::error::ListServicesErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListServicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::ListServicesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -605,22 +673,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListTagsForResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -635,31 +708,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RegisterInstanceError> for Error {
     fn from(err: crate::error::RegisterInstanceError) -> Self {
-        match err.kind {
-            crate::error::RegisterInstanceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::RegisterInstanceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::RegisterInstanceErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::RegisterInstanceErrorKind::ResourceInUse(inner) => {
+            crate::error::RegisterInstanceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::RegisterInstanceError::ResourceInUse(inner) => {
                 Error::ResourceInUse(inner)
             }
-            crate::error::RegisterInstanceErrorKind::ResourceLimitExceeded(inner) => {
+            crate::error::RegisterInstanceError::ResourceLimitExceeded(inner) => {
                 Error::ResourceLimitExceeded(inner)
             }
-            crate::error::RegisterInstanceErrorKind::ServiceNotFound(inner) => {
+            crate::error::RegisterInstanceError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::RegisterInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RegisterInstanceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -672,23 +748,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::TagResourceErrorKind::ResourceNotFoundException(inner) => {
+        match err {
+            crate::error::TagResourceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::TagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+            crate::error::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -701,20 +782,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::UntagResourceErrorKind::ResourceNotFoundException(inner) => {
+        match err {
+            crate::error::UntagResourceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UntagResourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -729,28 +815,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateHttpNamespaceError> for Error {
     fn from(err: crate::error::UpdateHttpNamespaceError) -> Self {
-        match err.kind {
-            crate::error::UpdateHttpNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::UpdateHttpNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::UpdateHttpNamespaceErrorKind::InvalidInput(inner) => {
+            crate::error::UpdateHttpNamespaceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdateHttpNamespaceErrorKind::NamespaceNotFound(inner) => {
+            crate::error::UpdateHttpNamespaceError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::UpdateHttpNamespaceErrorKind::ResourceInUse(inner) => {
+            crate::error::UpdateHttpNamespaceError::ResourceInUse(inner) => {
                 Error::ResourceInUse(inner)
             }
-            crate::error::UpdateHttpNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateHttpNamespaceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -770,27 +861,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateInstanceCustomHealthStatusError> for Error {
     fn from(err: crate::error::UpdateInstanceCustomHealthStatusError) -> Self {
-        match err.kind {
-            crate::error::UpdateInstanceCustomHealthStatusErrorKind::CustomHealthNotFound(
-                inner,
-            ) => Error::CustomHealthNotFound(inner),
-            crate::error::UpdateInstanceCustomHealthStatusErrorKind::InstanceNotFound(inner) => {
+        match err {
+            crate::error::UpdateInstanceCustomHealthStatusError::CustomHealthNotFound(inner) => {
+                Error::CustomHealthNotFound(inner)
+            }
+            crate::error::UpdateInstanceCustomHealthStatusError::InstanceNotFound(inner) => {
                 Error::InstanceNotFound(inner)
             }
-            crate::error::UpdateInstanceCustomHealthStatusErrorKind::InvalidInput(inner) => {
+            crate::error::UpdateInstanceCustomHealthStatusError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdateInstanceCustomHealthStatusErrorKind::ServiceNotFound(inner) => {
+            crate::error::UpdateInstanceCustomHealthStatusError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::UpdateInstanceCustomHealthStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateInstanceCustomHealthStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -807,27 +905,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdatePrivateDnsNamespaceError> for Error {
     fn from(err: crate::error::UpdatePrivateDnsNamespaceError) -> Self {
-        match err.kind {
-            crate::error::UpdatePrivateDnsNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::UpdatePrivateDnsNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::UpdatePrivateDnsNamespaceErrorKind::InvalidInput(inner) => {
+            crate::error::UpdatePrivateDnsNamespaceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdatePrivateDnsNamespaceErrorKind::NamespaceNotFound(inner) => {
+            crate::error::UpdatePrivateDnsNamespaceError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::UpdatePrivateDnsNamespaceErrorKind::ResourceInUse(inner) => {
+            crate::error::UpdatePrivateDnsNamespaceError::ResourceInUse(inner) => {
                 Error::ResourceInUse(inner)
             }
-            crate::error::UpdatePrivateDnsNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdatePrivateDnsNamespaceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -844,27 +949,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdatePublicDnsNamespaceError> for Error {
     fn from(err: crate::error::UpdatePublicDnsNamespaceError) -> Self {
-        match err.kind {
-            crate::error::UpdatePublicDnsNamespaceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::UpdatePublicDnsNamespaceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::UpdatePublicDnsNamespaceErrorKind::InvalidInput(inner) => {
+            crate::error::UpdatePublicDnsNamespaceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdatePublicDnsNamespaceErrorKind::NamespaceNotFound(inner) => {
+            crate::error::UpdatePublicDnsNamespaceError::NamespaceNotFound(inner) => {
                 Error::NamespaceNotFound(inner)
             }
-            crate::error::UpdatePublicDnsNamespaceErrorKind::ResourceInUse(inner) => {
+            crate::error::UpdatePublicDnsNamespaceError::ResourceInUse(inner) => {
                 Error::ResourceInUse(inner)
             }
-            crate::error::UpdatePublicDnsNamespaceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdatePublicDnsNamespaceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -878,24 +990,50 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateServiceError> for Error {
     fn from(err: crate::error::UpdateServiceError) -> Self {
-        match err.kind {
-            crate::error::UpdateServiceErrorKind::DuplicateRequest(inner) => {
+        match err {
+            crate::error::UpdateServiceError::DuplicateRequest(inner) => {
                 Error::DuplicateRequest(inner)
             }
-            crate::error::UpdateServiceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::UpdateServiceErrorKind::ServiceNotFound(inner) => {
+            crate::error::UpdateServiceError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UpdateServiceError::ServiceNotFound(inner) => {
                 Error::ServiceNotFound(inner)
             }
-            crate::error::UpdateServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::CustomHealthNotFound(e) => e.request_id(),
+            Self::DuplicateRequest(e) => e.request_id(),
+            Self::InstanceNotFound(e) => e.request_id(),
+            Self::InvalidInput(e) => e.request_id(),
+            Self::NamespaceAlreadyExists(e) => e.request_id(),
+            Self::NamespaceNotFound(e) => e.request_id(),
+            Self::OperationNotFound(e) => e.request_id(),
+            Self::RequestLimitExceeded(e) => e.request_id(),
+            Self::ResourceInUse(e) => e.request_id(),
+            Self::ResourceLimitExceeded(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceAlreadyExists(e) => e.request_id(),
+            Self::ServiceNotFound(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

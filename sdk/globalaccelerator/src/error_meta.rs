@@ -41,15 +41,8 @@ pub enum Error {
     ListenerNotFoundException(crate::error::ListenerNotFoundException),
     /// <p>There's already a transaction in progress. Another transaction can't be processed.</p>
     TransactionInProgressException(crate::error::TransactionInProgressException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -89,36 +82,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AddCustomRoutingEndpointsError> for Error {
     fn from(err: crate::error::AddCustomRoutingEndpointsError) -> Self {
-        match err.kind {
-            crate::error::AddCustomRoutingEndpointsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::AddCustomRoutingEndpointsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::AddCustomRoutingEndpointsErrorKind::ConflictException(inner) => {
+            crate::error::AddCustomRoutingEndpointsError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(
-                inner,
-            ) => Error::EndpointAlreadyExistsException(inner),
-            crate::error::AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(
-                inner,
-            ) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(
-                inner,
-            ) => Error::InternalServiceErrorException(inner),
-            crate::error::AddCustomRoutingEndpointsErrorKind::InvalidArgumentException(inner) => {
+            crate::error::AddCustomRoutingEndpointsError::EndpointAlreadyExistsException(inner) => {
+                Error::EndpointAlreadyExistsException(inner)
+            }
+            crate::error::AddCustomRoutingEndpointsError::EndpointGroupNotFoundException(inner) => {
+                Error::EndpointGroupNotFoundException(inner)
+            }
+            crate::error::AddCustomRoutingEndpointsError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::AddCustomRoutingEndpointsError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::AddCustomRoutingEndpointsErrorKind::LimitExceededException(inner) => {
+            crate::error::AddCustomRoutingEndpointsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::AddCustomRoutingEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::AddCustomRoutingEndpointsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -132,34 +132,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AddEndpointsError> for Error {
     fn from(err: crate::error::AddEndpointsError) -> Self {
-        match err.kind {
-            crate::error::AddEndpointsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::AddEndpointsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::AddEndpointsErrorKind::EndpointGroupNotFoundException(inner) => {
+            crate::error::AddEndpointsError::EndpointGroupNotFoundException(inner) => {
                 Error::EndpointGroupNotFoundException(inner)
             }
-            crate::error::AddEndpointsErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::AddEndpointsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::AddEndpointsErrorKind::InvalidArgumentException(inner) => {
+            crate::error::AddEndpointsError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::AddEndpointsErrorKind::LimitExceededException(inner) => {
+            crate::error::AddEndpointsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::AddEndpointsErrorKind::TransactionInProgressException(inner) => {
+            crate::error::AddEndpointsError::TransactionInProgressException(inner) => {
                 Error::TransactionInProgressException(inner)
             }
-            crate::error::AddEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AddEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -174,31 +179,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AdvertiseByoipCidrError> for Error {
     fn from(err: crate::error::AdvertiseByoipCidrError) -> Self {
-        match err.kind {
-            crate::error::AdvertiseByoipCidrErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::AdvertiseByoipCidrError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException(inner) => {
+            crate::error::AdvertiseByoipCidrError::ByoipCidrNotFoundException(inner) => {
                 Error::ByoipCidrNotFoundException(inner)
             }
-            crate::error::AdvertiseByoipCidrErrorKind::IncorrectCidrStateException(inner) => {
+            crate::error::AdvertiseByoipCidrError::IncorrectCidrStateException(inner) => {
                 Error::IncorrectCidrStateException(inner)
             }
-            crate::error::AdvertiseByoipCidrErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::AdvertiseByoipCidrError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::AdvertiseByoipCidrErrorKind::InvalidArgumentException(inner) => {
+            crate::error::AdvertiseByoipCidrError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::AdvertiseByoipCidrErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AdvertiseByoipCidrError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -214,24 +224,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AllowCustomRoutingTrafficError> for Error {
     fn from(err: crate::error::AllowCustomRoutingTrafficError) -> Self {
-        match err.kind {
-            crate::error::AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
-                inner,
-            ) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(
-                inner,
-            ) => Error::InternalServiceErrorException(inner),
-            crate::error::AllowCustomRoutingTrafficErrorKind::InvalidArgumentException(inner) => {
+        match err {
+            crate::error::AllowCustomRoutingTrafficError::EndpointGroupNotFoundException(inner) => {
+                Error::EndpointGroupNotFoundException(inner)
+            }
+            crate::error::AllowCustomRoutingTrafficError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::AllowCustomRoutingTrafficError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::AllowCustomRoutingTrafficErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::AllowCustomRoutingTrafficError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -247,25 +264,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateAcceleratorError> for Error {
     fn from(err: crate::error::CreateAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::CreateAcceleratorErrorKind::InternalServiceErrorException(inner) => {
+        match err {
+            crate::error::CreateAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::CreateAcceleratorErrorKind::InvalidArgumentException(inner) => {
+            crate::error::CreateAcceleratorError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::CreateAcceleratorErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateAcceleratorError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateAcceleratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -285,18 +307,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateCustomRoutingAcceleratorError> for Error {
     fn from(err: crate::error::CreateCustomRoutingAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::CreateCustomRoutingAcceleratorErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateCustomRoutingAcceleratorError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::CreateCustomRoutingAcceleratorError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::CreateCustomRoutingAcceleratorError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::CreateCustomRoutingAcceleratorError::LimitExceededException(inner) => {
+                Error::LimitExceededException(inner)
+            }
+            crate::error::CreateCustomRoutingAcceleratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -316,22 +355,29 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateCustomRoutingEndpointGroupError> for Error {
     fn from(err: crate::error::CreateCustomRoutingEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(inner) => Error::EndpointGroupAlreadyExistsException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException(inner) => Error::InvalidPortRangeException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException(inner) => Error::LimitExceededException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-            crate::error::CreateCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateCustomRoutingEndpointGroupError::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::EndpointGroupAlreadyExistsException(inner) => Error::EndpointGroupAlreadyExistsException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::InvalidPortRangeException(inner) => Error::InvalidPortRangeException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::LimitExceededException(inner) => Error::LimitExceededException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
+            crate::error::CreateCustomRoutingEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -347,30 +393,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateCustomRoutingListenerError> for Error {
     fn from(err: crate::error::CreateCustomRoutingListenerError) -> Self {
-        match err.kind {
-            crate::error::CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(
-                inner,
-            ) => Error::AcceleratorNotFoundException(inner),
-            crate::error::CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(
+        match err {
+            crate::error::CreateCustomRoutingListenerError::AcceleratorNotFoundException(inner) => {
+                Error::AcceleratorNotFoundException(inner)
+            }
+            crate::error::CreateCustomRoutingListenerError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::CreateCustomRoutingListenerErrorKind::InvalidArgumentException(inner) => {
+            crate::error::CreateCustomRoutingListenerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::CreateCustomRoutingListenerErrorKind::InvalidPortRangeException(
-                inner,
-            ) => Error::InvalidPortRangeException(inner),
-            crate::error::CreateCustomRoutingListenerErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateCustomRoutingListenerError::InvalidPortRangeException(inner) => {
+                Error::InvalidPortRangeException(inner)
+            }
+            crate::error::CreateCustomRoutingListenerError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateCustomRoutingListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreateCustomRoutingListenerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -386,37 +439,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateEndpointGroupError> for Error {
     fn from(err: crate::error::CreateEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateEndpointGroupErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::CreateEndpointGroupError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::CreateEndpointGroupErrorKind::AccessDeniedException(inner) => {
+            crate::error::CreateEndpointGroupError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(
-                inner,
-            ) => Error::EndpointGroupAlreadyExistsException(inner),
-            crate::error::CreateEndpointGroupErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::CreateEndpointGroupError::EndpointGroupAlreadyExistsException(inner) => {
+                Error::EndpointGroupAlreadyExistsException(inner)
+            }
+            crate::error::CreateEndpointGroupError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::CreateEndpointGroupErrorKind::InvalidArgumentException(inner) => {
+            crate::error::CreateEndpointGroupError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::CreateEndpointGroupErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateEndpointGroupError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateEndpointGroupErrorKind::ListenerNotFoundException(inner) => {
+            crate::error::CreateEndpointGroupError::ListenerNotFoundException(inner) => {
                 Error::ListenerNotFoundException(inner)
             }
-            crate::error::CreateEndpointGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -429,31 +487,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateListenerError> for Error {
     fn from(err: crate::error::CreateListenerError) -> Self {
-        match err.kind {
-            crate::error::CreateListenerErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::CreateListenerError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::CreateListenerErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::CreateListenerError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::CreateListenerErrorKind::InvalidArgumentException(inner) => {
+            crate::error::CreateListenerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::CreateListenerErrorKind::InvalidPortRangeException(inner) => {
+            crate::error::CreateListenerError::InvalidPortRangeException(inner) => {
                 Error::InvalidPortRangeException(inner)
             }
-            crate::error::CreateListenerErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateListenerError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -468,31 +531,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAcceleratorError> for Error {
     fn from(err: crate::error::DeleteAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::DeleteAcceleratorErrorKind::AcceleratorNotDisabledException(inner) => {
+        match err {
+            crate::error::DeleteAcceleratorError::AcceleratorNotDisabledException(inner) => {
                 Error::AcceleratorNotDisabledException(inner)
             }
-            crate::error::DeleteAcceleratorErrorKind::AcceleratorNotFoundException(inner) => {
+            crate::error::DeleteAcceleratorError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::DeleteAcceleratorErrorKind::AssociatedListenerFoundException(inner) => {
+            crate::error::DeleteAcceleratorError::AssociatedListenerFoundException(inner) => {
                 Error::AssociatedListenerFoundException(inner)
             }
-            crate::error::DeleteAcceleratorErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::DeleteAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DeleteAcceleratorErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DeleteAcceleratorError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DeleteAcceleratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -512,19 +580,38 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteCustomRoutingAcceleratorError> for Error {
     fn from(err: crate::error::DeleteCustomRoutingAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException(inner) => Error::AcceleratorNotDisabledException(inner),
-            crate::error::DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException(inner) => Error::AssociatedListenerFoundException(inner),
-            crate::error::DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteCustomRoutingAcceleratorError::AcceleratorNotDisabledException(
+                inner,
+            ) => Error::AcceleratorNotDisabledException(inner),
+            crate::error::DeleteCustomRoutingAcceleratorError::AcceleratorNotFoundException(
+                inner,
+            ) => Error::AcceleratorNotFoundException(inner),
+            crate::error::DeleteCustomRoutingAcceleratorError::AssociatedListenerFoundException(
+                inner,
+            ) => Error::AssociatedListenerFoundException(inner),
+            crate::error::DeleteCustomRoutingAcceleratorError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::DeleteCustomRoutingAcceleratorError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DeleteCustomRoutingAcceleratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -544,17 +631,32 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteCustomRoutingEndpointGroupError> for Error {
     fn from(err: crate::error::DeleteCustomRoutingEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteCustomRoutingEndpointGroupError::EndpointGroupNotFoundException(
+                inner,
+            ) => Error::EndpointGroupNotFoundException(inner),
+            crate::error::DeleteCustomRoutingEndpointGroupError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::DeleteCustomRoutingEndpointGroupError::InvalidArgumentException(
+                inner,
+            ) => Error::InvalidArgumentException(inner),
+            crate::error::DeleteCustomRoutingEndpointGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -570,18 +672,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteCustomRoutingListenerError> for Error {
     fn from(err: crate::error::DeleteCustomRoutingListenerError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException(inner) => Error::AssociatedEndpointGroupFoundException(inner),
-            crate::error::DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DeleteCustomRoutingListenerErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-            crate::error::DeleteCustomRoutingListenerErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteCustomRoutingListenerError::AssociatedEndpointGroupFoundException(inner) => Error::AssociatedEndpointGroupFoundException(inner),
+            crate::error::DeleteCustomRoutingListenerError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::DeleteCustomRoutingListenerError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DeleteCustomRoutingListenerError::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
+            crate::error::DeleteCustomRoutingListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -596,25 +705,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteEndpointGroupError> for Error {
     fn from(err: crate::error::DeleteEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => {
+        match err {
+            crate::error::DeleteEndpointGroupError::EndpointGroupNotFoundException(inner) => {
                 Error::EndpointGroupNotFoundException(inner)
             }
-            crate::error::DeleteEndpointGroupErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::DeleteEndpointGroupError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DeleteEndpointGroupErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DeleteEndpointGroupError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DeleteEndpointGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -627,28 +741,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteListenerError> for Error {
     fn from(err: crate::error::DeleteListenerError) -> Self {
-        match err.kind {
-            crate::error::DeleteListenerErrorKind::AssociatedEndpointGroupFoundException(inner) => {
+        match err {
+            crate::error::DeleteListenerError::AssociatedEndpointGroupFoundException(inner) => {
                 Error::AssociatedEndpointGroupFoundException(inner)
             }
-            crate::error::DeleteListenerErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::DeleteListenerError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DeleteListenerErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DeleteListenerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DeleteListenerErrorKind::ListenerNotFoundException(inner) => {
+            crate::error::DeleteListenerError::ListenerNotFoundException(inner) => {
                 Error::ListenerNotFoundException(inner)
             }
-            crate::error::DeleteListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -664,24 +783,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DenyCustomRoutingTrafficError> for Error {
     fn from(err: crate::error::DenyCustomRoutingTrafficError) -> Self {
-        match err.kind {
-            crate::error::DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
-                inner,
-            ) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException(
-                inner,
-            ) => Error::InternalServiceErrorException(inner),
-            crate::error::DenyCustomRoutingTrafficErrorKind::InvalidArgumentException(inner) => {
+        match err {
+            crate::error::DenyCustomRoutingTrafficError::EndpointGroupNotFoundException(inner) => {
+                Error::EndpointGroupNotFoundException(inner)
+            }
+            crate::error::DenyCustomRoutingTrafficError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::DenyCustomRoutingTrafficError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DenyCustomRoutingTrafficErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DenyCustomRoutingTrafficError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -698,31 +824,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeprovisionByoipCidrError> for Error {
     fn from(err: crate::error::DeprovisionByoipCidrError) -> Self {
-        match err.kind {
-            crate::error::DeprovisionByoipCidrErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeprovisionByoipCidrError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException(inner) => {
+            crate::error::DeprovisionByoipCidrError::ByoipCidrNotFoundException(inner) => {
                 Error::ByoipCidrNotFoundException(inner)
             }
-            crate::error::DeprovisionByoipCidrErrorKind::IncorrectCidrStateException(inner) => {
+            crate::error::DeprovisionByoipCidrError::IncorrectCidrStateException(inner) => {
                 Error::IncorrectCidrStateException(inner)
             }
-            crate::error::DeprovisionByoipCidrErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::DeprovisionByoipCidrError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DeprovisionByoipCidrErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DeprovisionByoipCidrError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DeprovisionByoipCidrErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeprovisionByoipCidrError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -737,25 +868,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeAcceleratorError> for Error {
     fn from(err: crate::error::DescribeAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::DescribeAcceleratorErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::DescribeAcceleratorError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::DescribeAcceleratorErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::DescribeAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DescribeAcceleratorErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DescribeAcceleratorError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DescribeAcceleratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -771,24 +907,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeAcceleratorAttributesError> for Error {
     fn from(err: crate::error::DescribeAcceleratorAttributesError) -> Self {
-        match err.kind {
-            crate::error::DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
+        match err {
+            crate::error::DescribeAcceleratorAttributesError::AcceleratorNotFoundException(
                 inner,
             ) => Error::AcceleratorNotFoundException(inner),
-            crate::error::DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(
+            crate::error::DescribeAcceleratorAttributesError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::DescribeAcceleratorAttributesErrorKind::InvalidArgumentException(
-                inner,
-            ) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeAcceleratorAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeAcceleratorAttributesError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DescribeAcceleratorAttributesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -809,17 +952,32 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeCustomRoutingAcceleratorError> for Error {
     fn from(err: crate::error::DescribeCustomRoutingAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeCustomRoutingAcceleratorError::AcceleratorNotFoundException(
+                inner,
+            ) => Error::AcceleratorNotFoundException(inner),
+            crate::error::DescribeCustomRoutingAcceleratorError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::DescribeCustomRoutingAcceleratorError::InvalidArgumentException(
+                inner,
+            ) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeCustomRoutingAcceleratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -843,17 +1001,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeCustomRoutingAcceleratorAttributesError> for Error {
     fn from(err: crate::error::DescribeCustomRoutingAcceleratorAttributesError) -> Self {
-        match err.kind {
-            crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeCustomRoutingAcceleratorAttributesError::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
+            crate::error::DescribeCustomRoutingAcceleratorAttributesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::DescribeCustomRoutingAcceleratorAttributesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeCustomRoutingAcceleratorAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -874,17 +1039,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeCustomRoutingEndpointGroupError> for Error {
     fn from(err: crate::error::DescribeCustomRoutingEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeCustomRoutingEndpointGroupErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DescribeCustomRoutingEndpointGroupError::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
+            crate::error::DescribeCustomRoutingEndpointGroupError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::DescribeCustomRoutingEndpointGroupError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::DescribeCustomRoutingEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -900,24 +1072,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeCustomRoutingListenerError> for Error {
     fn from(err: crate::error::DescribeCustomRoutingListenerError) -> Self {
-        match err.kind {
-            crate::error::DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(
+        match err {
+            crate::error::DescribeCustomRoutingListenerError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::DescribeCustomRoutingListenerErrorKind::InvalidArgumentException(
-                inner,
-            ) => Error::InvalidArgumentException(inner),
-            crate::error::DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(
-                inner,
-            ) => Error::ListenerNotFoundException(inner),
-            crate::error::DescribeCustomRoutingListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeCustomRoutingListenerError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::DescribeCustomRoutingListenerError::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::DescribeCustomRoutingListenerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -934,25 +1113,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeEndpointGroupError> for Error {
     fn from(err: crate::error::DescribeEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => {
+        match err {
+            crate::error::DescribeEndpointGroupError::EndpointGroupNotFoundException(inner) => {
                 Error::EndpointGroupNotFoundException(inner)
             }
-            crate::error::DescribeEndpointGroupErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::DescribeEndpointGroupError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DescribeEndpointGroupErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DescribeEndpointGroupError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DescribeEndpointGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -967,25 +1151,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeListenerError> for Error {
     fn from(err: crate::error::DescribeListenerError) -> Self {
-        match err.kind {
-            crate::error::DescribeListenerErrorKind::InternalServiceErrorException(inner) => {
+        match err {
+            crate::error::DescribeListenerError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::DescribeListenerErrorKind::InvalidArgumentException(inner) => {
+            crate::error::DescribeListenerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::DescribeListenerErrorKind::ListenerNotFoundException(inner) => {
+            crate::error::DescribeListenerError::ListenerNotFoundException(inner) => {
                 Error::ListenerNotFoundException(inner)
             }
-            crate::error::DescribeListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1000,25 +1189,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListAcceleratorsError> for Error {
     fn from(err: crate::error::ListAcceleratorsError) -> Self {
-        match err.kind {
-            crate::error::ListAcceleratorsErrorKind::InternalServiceErrorException(inner) => {
+        match err {
+            crate::error::ListAcceleratorsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::ListAcceleratorsErrorKind::InvalidArgumentException(inner) => {
+            crate::error::ListAcceleratorsError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ListAcceleratorsErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListAcceleratorsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListAcceleratorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListAcceleratorsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1031,28 +1225,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListByoipCidrsError> for Error {
     fn from(err: crate::error::ListByoipCidrsError) -> Self {
-        match err.kind {
-            crate::error::ListByoipCidrsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListByoipCidrsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListByoipCidrsErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::ListByoipCidrsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::ListByoipCidrsErrorKind::InvalidArgumentException(inner) => {
+            crate::error::ListByoipCidrsError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ListByoipCidrsErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListByoipCidrsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListByoipCidrsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListByoipCidrsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1068,24 +1267,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCustomRoutingAcceleratorsError> for Error {
     fn from(err: crate::error::ListCustomRoutingAcceleratorsError) -> Self {
-        match err.kind {
-            crate::error::ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(
+        match err {
+            crate::error::ListCustomRoutingAcceleratorsError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException(
-                inner,
-            ) => Error::InvalidArgumentException(inner),
-            crate::error::ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(
-                inner,
-            ) => Error::InvalidNextTokenException(inner),
-            crate::error::ListCustomRoutingAcceleratorsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListCustomRoutingAcceleratorsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListCustomRoutingAcceleratorsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListCustomRoutingAcceleratorsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1106,18 +1312,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCustomRoutingEndpointGroupsError> for Error {
     fn from(err: crate::error::ListCustomRoutingEndpointGroupsError) -> Self {
-        match err.kind {
-            crate::error::ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException(inner) => Error::ListenerNotFoundException(inner),
-            crate::error::ListCustomRoutingEndpointGroupsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListCustomRoutingEndpointGroupsError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::ListCustomRoutingEndpointGroupsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListCustomRoutingEndpointGroupsError::InvalidNextTokenException(
+                inner,
+            ) => Error::InvalidNextTokenException(inner),
+            crate::error::ListCustomRoutingEndpointGroupsError::ListenerNotFoundException(
+                inner,
+            ) => Error::ListenerNotFoundException(inner),
+            crate::error::ListCustomRoutingEndpointGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1133,27 +1356,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCustomRoutingListenersError> for Error {
     fn from(err: crate::error::ListCustomRoutingListenersError) -> Self {
-        match err.kind {
-            crate::error::ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(
-                inner,
-            ) => Error::AcceleratorNotFoundException(inner),
-            crate::error::ListCustomRoutingListenersErrorKind::InternalServiceErrorException(
-                inner,
-            ) => Error::InternalServiceErrorException(inner),
-            crate::error::ListCustomRoutingListenersErrorKind::InvalidArgumentException(inner) => {
+        match err {
+            crate::error::ListCustomRoutingListenersError::AcceleratorNotFoundException(inner) => {
+                Error::AcceleratorNotFoundException(inner)
+            }
+            crate::error::ListCustomRoutingListenersError::InternalServiceErrorException(inner) => {
+                Error::InternalServiceErrorException(inner)
+            }
+            crate::error::ListCustomRoutingListenersError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ListCustomRoutingListenersErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListCustomRoutingListenersError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListCustomRoutingListenersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListCustomRoutingListenersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1170,19 +1400,38 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCustomRoutingPortMappingsError> for Error {
     fn from(err: crate::error::ListCustomRoutingPortMappingsError) -> Self {
-        match err.kind {
-            crate::error::ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(inner) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListCustomRoutingPortMappingsErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListCustomRoutingPortMappingsError::AcceleratorNotFoundException(
+                inner,
+            ) => Error::AcceleratorNotFoundException(inner),
+            crate::error::ListCustomRoutingPortMappingsError::EndpointGroupNotFoundException(
+                inner,
+            ) => Error::EndpointGroupNotFoundException(inner),
+            crate::error::ListCustomRoutingPortMappingsError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::ListCustomRoutingPortMappingsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::ListCustomRoutingPortMappingsError::InvalidNextTokenException(inner) => {
+                Error::InvalidNextTokenException(inner)
+            }
+            crate::error::ListCustomRoutingPortMappingsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1206,18 +1455,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCustomRoutingPortMappingsByDestinationError> for Error {
     fn from(err: crate::error::ListCustomRoutingPortMappingsByDestinationError) -> Self {
-        match err.kind {
-            crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException(inner) => Error::EndpointNotFoundException(inner),
-            crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
-            crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListCustomRoutingPortMappingsByDestinationError::EndpointNotFoundException(inner) => Error::EndpointNotFoundException(inner),
+            crate::error::ListCustomRoutingPortMappingsByDestinationError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::ListCustomRoutingPortMappingsByDestinationError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::ListCustomRoutingPortMappingsByDestinationError::InvalidNextTokenException(inner) => Error::InvalidNextTokenException(inner),
+            crate::error::ListCustomRoutingPortMappingsByDestinationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1232,28 +1488,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListEndpointGroupsError> for Error {
     fn from(err: crate::error::ListEndpointGroupsError) -> Self {
-        match err.kind {
-            crate::error::ListEndpointGroupsErrorKind::InternalServiceErrorException(inner) => {
+        match err {
+            crate::error::ListEndpointGroupsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::ListEndpointGroupsErrorKind::InvalidArgumentException(inner) => {
+            crate::error::ListEndpointGroupsError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ListEndpointGroupsErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListEndpointGroupsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListEndpointGroupsErrorKind::ListenerNotFoundException(inner) => {
+            crate::error::ListEndpointGroupsError::ListenerNotFoundException(inner) => {
                 Error::ListenerNotFoundException(inner)
             }
-            crate::error::ListEndpointGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListEndpointGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1266,28 +1527,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListListenersError> for Error {
     fn from(err: crate::error::ListListenersError) -> Self {
-        match err.kind {
-            crate::error::ListListenersErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::ListListenersError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::ListListenersErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::ListListenersError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::ListListenersErrorKind::InvalidArgumentException(inner) => {
+            crate::error::ListListenersError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ListListenersErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListListenersError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListListenersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListListenersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1302,25 +1568,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::ListTagsForResourceError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InvalidArgumentException(inner) => {
+            crate::error::ListTagsForResourceError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1335,31 +1606,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ProvisionByoipCidrError> for Error {
     fn from(err: crate::error::ProvisionByoipCidrError) -> Self {
-        match err.kind {
-            crate::error::ProvisionByoipCidrErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ProvisionByoipCidrError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ProvisionByoipCidrErrorKind::IncorrectCidrStateException(inner) => {
+            crate::error::ProvisionByoipCidrError::IncorrectCidrStateException(inner) => {
                 Error::IncorrectCidrStateException(inner)
             }
-            crate::error::ProvisionByoipCidrErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::ProvisionByoipCidrError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::ProvisionByoipCidrErrorKind::InvalidArgumentException(inner) => {
+            crate::error::ProvisionByoipCidrError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::ProvisionByoipCidrErrorKind::LimitExceededException(inner) => {
+            crate::error::ProvisionByoipCidrError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::ProvisionByoipCidrErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ProvisionByoipCidrError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1375,33 +1651,40 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RemoveCustomRoutingEndpointsError> for Error {
     fn from(err: crate::error::RemoveCustomRoutingEndpointsError) -> Self {
-        match err.kind {
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::RemoveCustomRoutingEndpointsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::ConflictException(inner) => {
+            crate::error::RemoveCustomRoutingEndpointsError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(
+            crate::error::RemoveCustomRoutingEndpointsError::EndpointGroupNotFoundException(
                 inner,
             ) => Error::EndpointGroupNotFoundException(inner),
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException(
-                inner,
-            ) => Error::EndpointNotFoundException(inner),
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(
+            crate::error::RemoveCustomRoutingEndpointsError::EndpointNotFoundException(inner) => {
+                Error::EndpointNotFoundException(inner)
+            }
+            crate::error::RemoveCustomRoutingEndpointsError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException(
-                inner,
-            ) => Error::InvalidArgumentException(inner),
-            crate::error::RemoveCustomRoutingEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::RemoveCustomRoutingEndpointsError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::RemoveCustomRoutingEndpointsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1415,31 +1698,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RemoveEndpointsError> for Error {
     fn from(err: crate::error::RemoveEndpointsError) -> Self {
-        match err.kind {
-            crate::error::RemoveEndpointsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::RemoveEndpointsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::RemoveEndpointsErrorKind::EndpointGroupNotFoundException(inner) => {
+            crate::error::RemoveEndpointsError::EndpointGroupNotFoundException(inner) => {
                 Error::EndpointGroupNotFoundException(inner)
             }
-            crate::error::RemoveEndpointsErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::RemoveEndpointsError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::RemoveEndpointsErrorKind::InvalidArgumentException(inner) => {
+            crate::error::RemoveEndpointsError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::RemoveEndpointsErrorKind::TransactionInProgressException(inner) => {
+            crate::error::RemoveEndpointsError::TransactionInProgressException(inner) => {
                 Error::TransactionInProgressException(inner)
             }
-            crate::error::RemoveEndpointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RemoveEndpointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1452,25 +1740,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::TagResourceError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::TagResourceError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::TagResourceErrorKind::InvalidArgumentException(inner) => {
+            crate::error::TagResourceError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1483,25 +1776,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::UntagResourceError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::UntagResourceError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::UntagResourceErrorKind::InvalidArgumentException(inner) => {
+            crate::error::UntagResourceError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1516,28 +1814,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateAcceleratorError> for Error {
     fn from(err: crate::error::UpdateAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::UpdateAcceleratorErrorKind::AcceleratorNotFoundException(inner) => {
+        match err {
+            crate::error::UpdateAcceleratorError::AcceleratorNotFoundException(inner) => {
                 Error::AcceleratorNotFoundException(inner)
             }
-            crate::error::UpdateAcceleratorErrorKind::AccessDeniedException(inner) => {
+            crate::error::UpdateAcceleratorError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateAcceleratorErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::UpdateAcceleratorError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::UpdateAcceleratorErrorKind::InvalidArgumentException(inner) => {
+            crate::error::UpdateAcceleratorError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::UpdateAcceleratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAcceleratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1553,27 +1856,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateAcceleratorAttributesError> for Error {
     fn from(err: crate::error::UpdateAcceleratorAttributesError) -> Self {
-        match err.kind {
-            crate::error::UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                inner,
-            ) => Error::AcceleratorNotFoundException(inner),
-            crate::error::UpdateAcceleratorAttributesErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::UpdateAcceleratorAttributesError::AcceleratorNotFoundException(inner) => {
+                Error::AcceleratorNotFoundException(inner)
+            }
+            crate::error::UpdateAcceleratorAttributesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(
+            crate::error::UpdateAcceleratorAttributesError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => {
+            crate::error::UpdateAcceleratorAttributesError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::UpdateAcceleratorAttributesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateAcceleratorAttributesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1594,17 +1904,32 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateCustomRoutingAcceleratorError> for Error {
     fn from(err: crate::error::UpdateCustomRoutingAcceleratorError) -> Self {
-        match err.kind {
-            crate::error::UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateCustomRoutingAcceleratorError::AcceleratorNotFoundException(
+                inner,
+            ) => Error::AcceleratorNotFoundException(inner),
+            crate::error::UpdateCustomRoutingAcceleratorError::InternalServiceErrorException(
+                inner,
+            ) => Error::InternalServiceErrorException(inner),
+            crate::error::UpdateCustomRoutingAcceleratorError::InvalidArgumentException(inner) => {
+                Error::InvalidArgumentException(inner)
+            }
+            crate::error::UpdateCustomRoutingAcceleratorError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1628,18 +1953,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateCustomRoutingAcceleratorAttributesError> for Error {
     fn from(err: crate::error::UpdateCustomRoutingAcceleratorAttributesError) -> Self {
-        match err.kind {
-            crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
-            crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateCustomRoutingAcceleratorAttributesError::AcceleratorNotFoundException(inner) => Error::AcceleratorNotFoundException(inner),
+            crate::error::UpdateCustomRoutingAcceleratorAttributesError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateCustomRoutingAcceleratorAttributesError::InternalServiceErrorException(inner) => Error::InternalServiceErrorException(inner),
+            crate::error::UpdateCustomRoutingAcceleratorAttributesError::InvalidArgumentException(inner) => Error::InvalidArgumentException(inner),
+            crate::error::UpdateCustomRoutingAcceleratorAttributesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1655,30 +1987,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateCustomRoutingListenerError> for Error {
     fn from(err: crate::error::UpdateCustomRoutingListenerError) -> Self {
-        match err.kind {
-            crate::error::UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(
+        match err {
+            crate::error::UpdateCustomRoutingListenerError::InternalServiceErrorException(
                 inner,
             ) => Error::InternalServiceErrorException(inner),
-            crate::error::UpdateCustomRoutingListenerErrorKind::InvalidArgumentException(inner) => {
+            crate::error::UpdateCustomRoutingListenerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException(
-                inner,
-            ) => Error::InvalidPortRangeException(inner),
-            crate::error::UpdateCustomRoutingListenerErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateCustomRoutingListenerError::InvalidPortRangeException(inner) => {
+                Error::InvalidPortRangeException(inner)
+            }
+            crate::error::UpdateCustomRoutingListenerError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException(
-                inner,
-            ) => Error::ListenerNotFoundException(inner),
-            crate::error::UpdateCustomRoutingListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateCustomRoutingListenerError::ListenerNotFoundException(inner) => {
+                Error::ListenerNotFoundException(inner)
+            }
+            crate::error::UpdateCustomRoutingListenerError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1694,31 +2033,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateEndpointGroupError> for Error {
     fn from(err: crate::error::UpdateEndpointGroupError) -> Self {
-        match err.kind {
-            crate::error::UpdateEndpointGroupErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::UpdateEndpointGroupError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException(inner) => {
+            crate::error::UpdateEndpointGroupError::EndpointGroupNotFoundException(inner) => {
                 Error::EndpointGroupNotFoundException(inner)
             }
-            crate::error::UpdateEndpointGroupErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::UpdateEndpointGroupError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::UpdateEndpointGroupErrorKind::InvalidArgumentException(inner) => {
+            crate::error::UpdateEndpointGroupError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::UpdateEndpointGroupErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateEndpointGroupError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateEndpointGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateEndpointGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1731,31 +2075,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateListenerError> for Error {
     fn from(err: crate::error::UpdateListenerError) -> Self {
-        match err.kind {
-            crate::error::UpdateListenerErrorKind::InternalServiceErrorException(inner) => {
+        match err {
+            crate::error::UpdateListenerError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::UpdateListenerErrorKind::InvalidArgumentException(inner) => {
+            crate::error::UpdateListenerError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::UpdateListenerErrorKind::InvalidPortRangeException(inner) => {
+            crate::error::UpdateListenerError::InvalidPortRangeException(inner) => {
                 Error::InvalidPortRangeException(inner)
             }
-            crate::error::UpdateListenerErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateListenerError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateListenerErrorKind::ListenerNotFoundException(inner) => {
+            crate::error::UpdateListenerError::ListenerNotFoundException(inner) => {
                 Error::ListenerNotFoundException(inner)
             }
-            crate::error::UpdateListenerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateListenerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1770,32 +2119,63 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::WithdrawByoipCidrError> for Error {
     fn from(err: crate::error::WithdrawByoipCidrError) -> Self {
-        match err.kind {
-            crate::error::WithdrawByoipCidrErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::WithdrawByoipCidrError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException(inner) => {
+            crate::error::WithdrawByoipCidrError::ByoipCidrNotFoundException(inner) => {
                 Error::ByoipCidrNotFoundException(inner)
             }
-            crate::error::WithdrawByoipCidrErrorKind::IncorrectCidrStateException(inner) => {
+            crate::error::WithdrawByoipCidrError::IncorrectCidrStateException(inner) => {
                 Error::IncorrectCidrStateException(inner)
             }
-            crate::error::WithdrawByoipCidrErrorKind::InternalServiceErrorException(inner) => {
+            crate::error::WithdrawByoipCidrError::InternalServiceErrorException(inner) => {
                 Error::InternalServiceErrorException(inner)
             }
-            crate::error::WithdrawByoipCidrErrorKind::InvalidArgumentException(inner) => {
+            crate::error::WithdrawByoipCidrError::InvalidArgumentException(inner) => {
                 Error::InvalidArgumentException(inner)
             }
-            crate::error::WithdrawByoipCidrErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::WithdrawByoipCidrError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AcceleratorNotDisabledException(e) => e.request_id(),
+            Self::AcceleratorNotFoundException(e) => e.request_id(),
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::AssociatedEndpointGroupFoundException(e) => e.request_id(),
+            Self::AssociatedListenerFoundException(e) => e.request_id(),
+            Self::ByoipCidrNotFoundException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::EndpointAlreadyExistsException(e) => e.request_id(),
+            Self::EndpointGroupAlreadyExistsException(e) => e.request_id(),
+            Self::EndpointGroupNotFoundException(e) => e.request_id(),
+            Self::EndpointNotFoundException(e) => e.request_id(),
+            Self::IncorrectCidrStateException(e) => e.request_id(),
+            Self::InternalServiceErrorException(e) => e.request_id(),
+            Self::InvalidArgumentException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidPortRangeException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ListenerNotFoundException(e) => e.request_id(),
+            Self::TransactionInProgressException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

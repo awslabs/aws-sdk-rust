@@ -6,8 +6,11 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_error(
     crate::output::AcceptDirectConnectGatewayAssociationProposalOutput,
     crate::error::AcceptDirectConnectGatewayAssociationProposalError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AcceptDirectConnectGatewayAssociationProposalError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -21,7 +24,7 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AcceptDirectConnectGatewayAssociationProposalError { meta: generic, kind: crate::error::AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => crate::error::AcceptDirectConnectGatewayAssociationProposalError::DirectConnectClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -29,6 +32,7 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_error(
                     let mut output = crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDirectConnectGatewayAssociationProposalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -36,8 +40,8 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DirectConnectServerException" => crate::error::AcceptDirectConnectGatewayAssociationProposalError { meta: generic, kind: crate::error::AcceptDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException({
+        }),
+        "DirectConnectServerException" => crate::error::AcceptDirectConnectGatewayAssociationProposalError::DirectConnectServerException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -45,6 +49,7 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_error(
                     let mut output = crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AcceptDirectConnectGatewayAssociationProposalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -52,7 +57,7 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::AcceptDirectConnectGatewayAssociationProposalError::generic(generic)
     })
 }
@@ -69,6 +74,9 @@ pub fn parse_accept_direct_connect_gateway_association_proposal_response(
         let mut output = crate::output::accept_direct_connect_gateway_association_proposal_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_accept_direct_connect_gateway_association_proposal(response.body().as_ref(), output).map_err(crate::error::AcceptDirectConnectGatewayAssociationProposalError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -80,8 +88,11 @@ pub fn parse_allocate_connection_on_interconnect_error(
     crate::output::AllocateConnectionOnInterconnectOutput,
     crate::error::AllocateConnectionOnInterconnectError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocateConnectionOnInterconnectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -91,39 +102,43 @@ pub fn parse_allocate_connection_on_interconnect_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AllocateConnectionOnInterconnectError { meta: generic, kind: crate::error::AllocateConnectionOnInterconnectErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::AllocateConnectionOnInterconnectError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateConnectionOnInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::AllocateConnectionOnInterconnectError { meta: generic, kind: crate::error::AllocateConnectionOnInterconnectErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AllocateConnectionOnInterconnectError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateConnectionOnInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::AllocateConnectionOnInterconnectError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::AllocateConnectionOnInterconnectError::generic(generic),
     })
 }
 
@@ -145,6 +160,9 @@ pub fn parse_allocate_connection_on_interconnect_response(
                 output,
             )
             .map_err(crate::error::AllocateConnectionOnInterconnectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -156,8 +174,11 @@ pub fn parse_allocate_hosted_connection_error(
     crate::output::AllocateHostedConnectionOutput,
     crate::error::AllocateHostedConnectionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocateHostedConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -169,9 +190,8 @@ pub fn parse_allocate_hosted_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AllocateHostedConnectionError {
-            meta: generic,
-            kind: crate::error::AllocateHostedConnectionErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::AllocateHostedConnectionError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -179,17 +199,17 @@ pub fn parse_allocate_hosted_connection_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateHostedConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::AllocateHostedConnectionError {
-            meta: generic,
-            kind: crate::error::AllocateHostedConnectionErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AllocateHostedConnectionError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -197,48 +217,49 @@ pub fn parse_allocate_hosted_connection_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateHostedConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DuplicateTagKeysException" => crate::error::AllocateHostedConnectionError {
-            meta: generic,
-            kind: crate::error::AllocateHostedConnectionErrorKind::DuplicateTagKeysException({
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::AllocateHostedConnectionError::DuplicateTagKeysException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateHostedConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::AllocateHostedConnectionError {
-            meta: generic,
-            kind: crate::error::AllocateHostedConnectionErrorKind::TooManyTagsException({
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::AllocateHostedConnectionError::TooManyTagsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateHostedConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AllocateHostedConnectionError::generic(generic),
     })
 }
@@ -259,6 +280,9 @@ pub fn parse_allocate_hosted_connection_response(
             output,
         )
         .map_err(crate::error::AllocateHostedConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -270,8 +294,11 @@ pub fn parse_allocate_private_virtual_interface_error(
     crate::output::AllocatePrivateVirtualInterfaceOutput,
     crate::error::AllocatePrivateVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled(generic)),
@@ -279,85 +306,76 @@ pub fn parse_allocate_private_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AllocatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::AllocatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::AllocatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::AllocatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DuplicateTagKeysException" => crate::error::AllocatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AllocatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::duplicate_tag_keys_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "TooManyTagsException" => crate::error::AllocatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AllocatePrivateVirtualInterfaceErrorKind::TooManyTagsException({
+        "DirectConnectClientException" => {
+            crate::error::AllocatePrivateVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AllocatePrivateVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::AllocatePrivateVirtualInterfaceError::DuplicateTagKeysException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::AllocatePrivateVirtualInterfaceError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AllocatePrivateVirtualInterfaceError::generic(generic),
     })
 }
@@ -380,6 +398,9 @@ pub fn parse_allocate_private_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::AllocatePrivateVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -391,8 +412,11 @@ pub fn parse_allocate_public_virtual_interface_error(
     crate::output::AllocatePublicVirtualInterfaceOutput,
     crate::error::AllocatePublicVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AllocatePublicVirtualInterfaceError::unhandled(generic)),
@@ -400,85 +424,76 @@ pub fn parse_allocate_public_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AllocatePublicVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::AllocatePublicVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::AllocatePublicVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::AllocatePublicVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DuplicateTagKeysException" => crate::error::AllocatePublicVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AllocatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::duplicate_tag_keys_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "TooManyTagsException" => crate::error::AllocatePublicVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AllocatePublicVirtualInterfaceErrorKind::TooManyTagsException({
+        "DirectConnectClientException" => {
+            crate::error::AllocatePublicVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AllocatePublicVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::AllocatePublicVirtualInterfaceError::DuplicateTagKeysException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::AllocatePublicVirtualInterfaceError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AllocatePublicVirtualInterfaceError::generic(generic),
     })
 }
@@ -501,6 +516,9 @@ pub fn parse_allocate_public_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::AllocatePublicVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -512,8 +530,11 @@ pub fn parse_allocate_transit_virtual_interface_error(
     crate::output::AllocateTransitVirtualInterfaceOutput,
     crate::error::AllocateTransitVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AllocateTransitVirtualInterfaceError::unhandled(generic)),
@@ -521,85 +542,76 @@ pub fn parse_allocate_transit_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AllocateTransitVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::AllocateTransitVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::AllocateTransitVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::AllocateTransitVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DuplicateTagKeysException" => crate::error::AllocateTransitVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AllocateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::duplicate_tag_keys_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "TooManyTagsException" => crate::error::AllocateTransitVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AllocateTransitVirtualInterfaceErrorKind::TooManyTagsException({
+        "DirectConnectClientException" => {
+            crate::error::AllocateTransitVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AllocateTransitVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::AllocateTransitVirtualInterfaceError::DuplicateTagKeysException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::AllocateTransitVirtualInterfaceError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AllocateTransitVirtualInterfaceError::generic(generic),
     })
 }
@@ -622,6 +634,9 @@ pub fn parse_allocate_transit_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::AllocateTransitVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -633,8 +648,11 @@ pub fn parse_associate_connection_with_lag_error(
     crate::output::AssociateConnectionWithLagOutput,
     crate::error::AssociateConnectionWithLagError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateConnectionWithLagError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -646,46 +664,42 @@ pub fn parse_associate_connection_with_lag_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AssociateConnectionWithLagError {
-            meta: generic,
-            kind: crate::error::AssociateConnectionWithLagErrorKind::DirectConnectClientException(
-                {
+        "DirectConnectClientException" => {
+            crate::error::AssociateConnectionWithLagError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConnectionWithLagError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DirectConnectServerException" => crate::error::AssociateConnectionWithLagError {
-            meta: generic,
-            kind: crate::error::AssociateConnectionWithLagErrorKind::DirectConnectServerException(
-                {
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConnectionWithLagError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AssociateConnectionWithLagError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConnectionWithLagError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateConnectionWithLagError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AssociateConnectionWithLagError::generic(generic),
     })
 }
@@ -706,6 +720,9 @@ pub fn parse_associate_connection_with_lag_response(
             output,
         )
         .map_err(crate::error::AssociateConnectionWithLagError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -717,8 +734,11 @@ pub fn parse_associate_hosted_connection_error(
     crate::output::AssociateHostedConnectionOutput,
     crate::error::AssociateHostedConnectionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateHostedConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -730,9 +750,8 @@ pub fn parse_associate_hosted_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AssociateHostedConnectionError {
-            meta: generic,
-            kind: crate::error::AssociateHostedConnectionErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::AssociateHostedConnectionError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -740,17 +759,17 @@ pub fn parse_associate_hosted_connection_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateHostedConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::AssociateHostedConnectionError {
-            meta: generic,
-            kind: crate::error::AssociateHostedConnectionErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AssociateHostedConnectionError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -758,14 +777,15 @@ pub fn parse_associate_hosted_connection_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateHostedConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssociateHostedConnectionError::generic(generic),
     })
 }
@@ -786,6 +806,9 @@ pub fn parse_associate_hosted_connection_response(
             output,
         )
         .map_err(crate::error::AssociateHostedConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -797,8 +820,11 @@ pub fn parse_associate_mac_sec_key_error(
     crate::output::AssociateMacSecKeyOutput,
     crate::error::AssociateMacSecKeyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateMacSecKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssociateMacSecKeyError::unhandled(generic)),
@@ -806,9 +832,8 @@ pub fn parse_associate_mac_sec_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AssociateMacSecKeyError {
-            meta: generic,
-            kind: crate::error::AssociateMacSecKeyErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::AssociateMacSecKeyError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -816,17 +841,17 @@ pub fn parse_associate_mac_sec_key_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMacSecKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::AssociateMacSecKeyError {
-            meta: generic,
-            kind: crate::error::AssociateMacSecKeyErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AssociateMacSecKeyError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -834,14 +859,15 @@ pub fn parse_associate_mac_sec_key_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateMacSecKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssociateMacSecKeyError::generic(generic),
     })
 }
@@ -862,6 +888,9 @@ pub fn parse_associate_mac_sec_key_response(
             output,
         )
         .map_err(crate::error::AssociateMacSecKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -873,8 +902,11 @@ pub fn parse_associate_virtual_interface_error(
     crate::output::AssociateVirtualInterfaceOutput,
     crate::error::AssociateVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -886,9 +918,8 @@ pub fn parse_associate_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::AssociateVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AssociateVirtualInterfaceErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::AssociateVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -896,17 +927,17 @@ pub fn parse_associate_virtual_interface_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::AssociateVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::AssociateVirtualInterfaceErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::AssociateVirtualInterfaceError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -914,14 +945,15 @@ pub fn parse_associate_virtual_interface_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssociateVirtualInterfaceError::generic(generic),
     })
 }
@@ -942,6 +974,9 @@ pub fn parse_associate_virtual_interface_response(
             output,
         )
         .map_err(crate::error::AssociateVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -951,8 +986,11 @@ pub fn parse_confirm_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ConfirmConnectionOutput, crate::error::ConfirmConnectionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConfirmConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ConfirmConnectionError::unhandled(generic)),
@@ -960,9 +998,8 @@ pub fn parse_confirm_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::ConfirmConnectionError {
-            meta: generic,
-            kind: crate::error::ConfirmConnectionErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::ConfirmConnectionError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -970,17 +1007,17 @@ pub fn parse_confirm_connection_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::ConfirmConnectionError {
-            meta: generic,
-            kind: crate::error::ConfirmConnectionErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::ConfirmConnectionError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -988,14 +1025,15 @@ pub fn parse_confirm_connection_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ConfirmConnectionError::generic(generic),
     })
 }
@@ -1014,6 +1052,9 @@ pub fn parse_confirm_connection_response(
             output,
         )
         .map_err(crate::error::ConfirmConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1025,8 +1066,11 @@ pub fn parse_confirm_customer_agreement_error(
     crate::output::ConfirmCustomerAgreementOutput,
     crate::error::ConfirmCustomerAgreementError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1038,9 +1082,8 @@ pub fn parse_confirm_customer_agreement_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::ConfirmCustomerAgreementError {
-            meta: generic,
-            kind: crate::error::ConfirmCustomerAgreementErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::ConfirmCustomerAgreementError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1048,17 +1091,17 @@ pub fn parse_confirm_customer_agreement_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::ConfirmCustomerAgreementError {
-            meta: generic,
-            kind: crate::error::ConfirmCustomerAgreementErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::ConfirmCustomerAgreementError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1066,14 +1109,15 @@ pub fn parse_confirm_customer_agreement_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ConfirmCustomerAgreementError::generic(generic),
     })
 }
@@ -1094,6 +1138,9 @@ pub fn parse_confirm_customer_agreement_response(
             output,
         )
         .map_err(crate::error::ConfirmCustomerAgreementError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1105,8 +1152,11 @@ pub fn parse_confirm_private_virtual_interface_error(
     crate::output::ConfirmPrivateVirtualInterfaceOutput,
     crate::error::ConfirmPrivateVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled(generic)),
@@ -1114,48 +1164,42 @@ pub fn parse_confirm_private_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::ConfirmPrivateVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::ConfirmPrivateVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::ConfirmPrivateVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "DirectConnectClientException" => {
+            crate::error::ConfirmPrivateVirtualInterfaceError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::ConfirmPrivateVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ConfirmPrivateVirtualInterfaceError::generic(generic),
     })
 }
@@ -1178,6 +1222,9 @@ pub fn parse_confirm_private_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::ConfirmPrivateVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1189,8 +1236,11 @@ pub fn parse_confirm_public_virtual_interface_error(
     crate::output::ConfirmPublicVirtualInterfaceOutput,
     crate::error::ConfirmPublicVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConfirmPublicVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1202,48 +1252,42 @@ pub fn parse_confirm_public_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::ConfirmPublicVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::ConfirmPublicVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPublicVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::ConfirmPublicVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::ConfirmPublicVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPublicVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "DirectConnectClientException" => {
+            crate::error::ConfirmPublicVirtualInterfaceError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::ConfirmPublicVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmPublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ConfirmPublicVirtualInterfaceError::generic(generic),
     })
 }
@@ -1265,6 +1309,9 @@ pub fn parse_confirm_public_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::ConfirmPublicVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1276,8 +1323,11 @@ pub fn parse_confirm_transit_virtual_interface_error(
     crate::output::ConfirmTransitVirtualInterfaceOutput,
     crate::error::ConfirmTransitVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled(generic)),
@@ -1285,48 +1335,42 @@ pub fn parse_confirm_transit_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::ConfirmTransitVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::ConfirmTransitVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::ConfirmTransitVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::ConfirmTransitVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "DirectConnectClientException" => {
+            crate::error::ConfirmTransitVirtualInterfaceError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::ConfirmTransitVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ConfirmTransitVirtualInterfaceError::generic(generic),
     })
 }
@@ -1349,6 +1393,9 @@ pub fn parse_confirm_transit_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::ConfirmTransitVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1357,8 +1404,11 @@ pub fn parse_confirm_transit_virtual_interface_response(
 pub fn parse_create_bgp_peer_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBgpPeerOutput, crate::error::CreateBGPPeerError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateBGPPeerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateBGPPeerError::unhandled(generic)),
@@ -1366,9 +1416,8 @@ pub fn parse_create_bgp_peer_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateBGPPeerError {
-            meta: generic,
-            kind: crate::error::CreateBGPPeerErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::CreateBGPPeerError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1376,17 +1425,17 @@ pub fn parse_create_bgp_peer_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBGPPeerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::CreateBGPPeerError {
-            meta: generic,
-            kind: crate::error::CreateBGPPeerErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateBGPPeerError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1394,14 +1443,15 @@ pub fn parse_create_bgp_peer_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateBGPPeerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateBGPPeerError::generic(generic),
     })
 }
@@ -1419,6 +1469,9 @@ pub fn parse_create_bgp_peer_response(
             output,
         )
         .map_err(crate::error::CreateBGPPeerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1428,8 +1481,11 @@ pub fn parse_create_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateConnectionOutput, crate::error::CreateConnectionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateConnectionError::unhandled(generic)),
@@ -1437,9 +1493,8 @@ pub fn parse_create_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateConnectionError {
-            meta: generic,
-            kind: crate::error::CreateConnectionErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::CreateConnectionError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1447,17 +1502,17 @@ pub fn parse_create_connection_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::CreateConnectionError {
-            meta: generic,
-            kind: crate::error::CreateConnectionErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateConnectionError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1465,48 +1520,47 @@ pub fn parse_create_connection_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DuplicateTagKeysException" => crate::error::CreateConnectionError {
-            meta: generic,
-            kind: crate::error::CreateConnectionErrorKind::DuplicateTagKeysException({
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::CreateConnectionError::DuplicateTagKeysException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::CreateConnectionError {
-            meta: generic,
-            kind: crate::error::CreateConnectionErrorKind::TooManyTagsException({
+            })
+        }
+        "TooManyTagsException" => crate::error::CreateConnectionError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateConnectionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateConnectionError::generic(generic),
     })
 }
@@ -1525,6 +1579,9 @@ pub fn parse_create_connection_response(
             output,
         )
         .map_err(crate::error::CreateConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1536,8 +1593,11 @@ pub fn parse_create_direct_connect_gateway_error(
     crate::output::CreateDirectConnectGatewayOutput,
     crate::error::CreateDirectConnectGatewayError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDirectConnectGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1549,46 +1609,42 @@ pub fn parse_create_direct_connect_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateDirectConnectGatewayError {
-            meta: generic,
-            kind: crate::error::CreateDirectConnectGatewayErrorKind::DirectConnectClientException(
-                {
+        "DirectConnectClientException" => {
+            crate::error::CreateDirectConnectGatewayError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DirectConnectServerException" => crate::error::CreateDirectConnectGatewayError {
-            meta: generic,
-            kind: crate::error::CreateDirectConnectGatewayErrorKind::DirectConnectServerException(
-                {
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateDirectConnectGatewayError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateDirectConnectGatewayError::generic(generic),
     })
 }
@@ -1609,6 +1665,9 @@ pub fn parse_create_direct_connect_gateway_response(
             output,
         )
         .map_err(crate::error::CreateDirectConnectGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1620,8 +1679,11 @@ pub fn parse_create_direct_connect_gateway_association_error(
     crate::output::CreateDirectConnectGatewayAssociationOutput,
     crate::error::CreateDirectConnectGatewayAssociationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDirectConnectGatewayAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1633,39 +1695,47 @@ pub fn parse_create_direct_connect_gateway_association_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateDirectConnectGatewayAssociationError { meta: generic, kind: crate::error::CreateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::CreateDirectConnectGatewayAssociationError::DirectConnectClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::CreateDirectConnectGatewayAssociationError { meta: generic, kind: crate::error::CreateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateDirectConnectGatewayAssociationError::DirectConnectServerException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateDirectConnectGatewayAssociationError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::CreateDirectConnectGatewayAssociationError::generic(generic),
     })
 }
 
@@ -1682,6 +1752,9 @@ pub fn parse_create_direct_connect_gateway_association_response(
             crate::output::create_direct_connect_gateway_association_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_create_direct_connect_gateway_association(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1693,8 +1766,11 @@ pub fn parse_create_direct_connect_gateway_association_proposal_error(
     crate::output::CreateDirectConnectGatewayAssociationProposalOutput,
     crate::error::CreateDirectConnectGatewayAssociationProposalError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDirectConnectGatewayAssociationProposalError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1708,7 +1784,7 @@ pub fn parse_create_direct_connect_gateway_association_proposal_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateDirectConnectGatewayAssociationProposalError { meta: generic, kind: crate::error::CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => crate::error::CreateDirectConnectGatewayAssociationProposalError::DirectConnectClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1716,6 +1792,7 @@ pub fn parse_create_direct_connect_gateway_association_proposal_error(
                     let mut output = crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationProposalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1723,8 +1800,8 @@ pub fn parse_create_direct_connect_gateway_association_proposal_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DirectConnectServerException" => crate::error::CreateDirectConnectGatewayAssociationProposalError { meta: generic, kind: crate::error::CreateDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException({
+        }),
+        "DirectConnectServerException" => crate::error::CreateDirectConnectGatewayAssociationProposalError::DirectConnectServerException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1732,6 +1809,7 @@ pub fn parse_create_direct_connect_gateway_association_proposal_error(
                     let mut output = crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationProposalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1739,7 +1817,7 @@ pub fn parse_create_direct_connect_gateway_association_proposal_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::CreateDirectConnectGatewayAssociationProposalError::generic(generic)
     })
 }
@@ -1756,6 +1834,9 @@ pub fn parse_create_direct_connect_gateway_association_proposal_response(
         let mut output = crate::output::create_direct_connect_gateway_association_proposal_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_create_direct_connect_gateway_association_proposal(response.body().as_ref(), output).map_err(crate::error::CreateDirectConnectGatewayAssociationProposalError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1767,8 +1848,11 @@ pub fn parse_create_interconnect_error(
     crate::output::CreateInterconnectOutput,
     crate::error::CreateInterconnectError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateInterconnectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateInterconnectError::unhandled(generic)),
@@ -1776,9 +1860,8 @@ pub fn parse_create_interconnect_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateInterconnectError {
-            meta: generic,
-            kind: crate::error::CreateInterconnectErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::CreateInterconnectError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1786,17 +1869,17 @@ pub fn parse_create_interconnect_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::CreateInterconnectError {
-            meta: generic,
-            kind: crate::error::CreateInterconnectErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateInterconnectError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1804,48 +1887,47 @@ pub fn parse_create_interconnect_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DuplicateTagKeysException" => crate::error::CreateInterconnectError {
-            meta: generic,
-            kind: crate::error::CreateInterconnectErrorKind::DuplicateTagKeysException({
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::CreateInterconnectError::DuplicateTagKeysException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::CreateInterconnectError {
-            meta: generic,
-            kind: crate::error::CreateInterconnectErrorKind::TooManyTagsException({
+            })
+        }
+        "TooManyTagsException" => crate::error::CreateInterconnectError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInterconnectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateInterconnectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateInterconnectError::generic(generic),
     })
 }
@@ -1866,6 +1948,9 @@ pub fn parse_create_interconnect_response(
             output,
         )
         .map_err(crate::error::CreateInterconnectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1874,8 +1959,11 @@ pub fn parse_create_interconnect_response(
 pub fn parse_create_lag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLagOutput, crate::error::CreateLagError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLagError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateLagError::unhandled(generic)),
@@ -1883,9 +1971,8 @@ pub fn parse_create_lag_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateLagError {
-            meta: generic,
-            kind: crate::error::CreateLagErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::CreateLagError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1893,17 +1980,17 @@ pub fn parse_create_lag_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLagError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::CreateLagError {
-            meta: generic,
-            kind: crate::error::CreateLagErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateLagError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1911,48 +1998,45 @@ pub fn parse_create_lag_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLagError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DuplicateTagKeysException" => crate::error::CreateLagError {
-            meta: generic,
-            kind: crate::error::CreateLagErrorKind::DuplicateTagKeysException({
+            })
+        }
+        "DuplicateTagKeysException" => crate::error::CreateLagError::DuplicateTagKeysException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLagError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::CreateLagError {
-            meta: generic,
-            kind: crate::error::CreateLagErrorKind::TooManyTagsException({
+                let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLagError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTagsException" => crate::error::CreateLagError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLagError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLagError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateLagError::generic(generic),
     })
 }
@@ -1970,6 +2054,9 @@ pub fn parse_create_lag_response(
             output,
         )
         .map_err(crate::error::CreateLagError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1981,8 +2068,11 @@ pub fn parse_create_private_virtual_interface_error(
     crate::output::CreatePrivateVirtualInterfaceOutput,
     crate::error::CreatePrivateVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1994,85 +2084,76 @@ pub fn parse_create_private_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::CreatePrivateVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::CreatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::CreatePrivateVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DuplicateTagKeysException" => crate::error::CreatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreatePrivateVirtualInterfaceErrorKind::DuplicateTagKeysException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::duplicate_tag_keys_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "TooManyTagsException" => crate::error::CreatePrivateVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreatePrivateVirtualInterfaceErrorKind::TooManyTagsException({
+        "DirectConnectClientException" => {
+            crate::error::CreatePrivateVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreatePrivateVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::CreatePrivateVirtualInterfaceError::DuplicateTagKeysException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::CreatePrivateVirtualInterfaceError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreatePrivateVirtualInterfaceError::generic(generic),
     })
 }
@@ -2094,6 +2175,9 @@ pub fn parse_create_private_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::CreatePrivateVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2105,8 +2189,11 @@ pub fn parse_create_public_virtual_interface_error(
     crate::output::CreatePublicVirtualInterfaceOutput,
     crate::error::CreatePublicVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2118,80 +2205,76 @@ pub fn parse_create_public_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreatePublicVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreatePublicVirtualInterfaceErrorKind::DirectConnectClientException(
-                {
+        "DirectConnectClientException" => {
+            crate::error::CreatePublicVirtualInterfaceError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DirectConnectServerException" => crate::error::CreatePublicVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreatePublicVirtualInterfaceErrorKind::DirectConnectServerException(
-                {
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreatePublicVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DuplicateTagKeysException" => crate::error::CreatePublicVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreatePublicVirtualInterfaceErrorKind::DuplicateTagKeysException({
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::CreatePublicVirtualInterfaceError::DuplicateTagKeysException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::CreatePublicVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreatePublicVirtualInterfaceErrorKind::TooManyTagsException({
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::CreatePublicVirtualInterfaceError::TooManyTagsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreatePublicVirtualInterfaceError::generic(generic),
     })
 }
@@ -2213,6 +2296,9 @@ pub fn parse_create_public_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::CreatePublicVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2224,8 +2310,11 @@ pub fn parse_create_transit_virtual_interface_error(
     crate::output::CreateTransitVirtualInterfaceOutput,
     crate::error::CreateTransitVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2237,85 +2326,76 @@ pub fn parse_create_transit_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::CreateTransitVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::CreateTransitVirtualInterfaceErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::CreateTransitVirtualInterfaceError {
-            meta: generic,
-            kind:
-                crate::error::CreateTransitVirtualInterfaceErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DuplicateTagKeysException" => crate::error::CreateTransitVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreateTransitVirtualInterfaceErrorKind::DuplicateTagKeysException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::duplicate_tag_keys_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "TooManyTagsException" => crate::error::CreateTransitVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::CreateTransitVirtualInterfaceErrorKind::TooManyTagsException({
+        "DirectConnectClientException" => {
+            crate::error::CreateTransitVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::CreateTransitVirtualInterfaceError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DuplicateTagKeysException" => {
+            crate::error::CreateTransitVirtualInterfaceError::DuplicateTagKeysException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::CreateTransitVirtualInterfaceError::TooManyTagsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_tags_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateTransitVirtualInterfaceError::generic(generic),
     })
 }
@@ -2337,6 +2417,9 @@ pub fn parse_create_transit_virtual_interface_response(
                 output,
             )
             .map_err(crate::error::CreateTransitVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2345,8 +2428,11 @@ pub fn parse_create_transit_virtual_interface_response(
 pub fn parse_delete_bgp_peer_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBgpPeerOutput, crate::error::DeleteBGPPeerError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBGPPeerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteBGPPeerError::unhandled(generic)),
@@ -2354,9 +2440,8 @@ pub fn parse_delete_bgp_peer_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteBGPPeerError {
-            meta: generic,
-            kind: crate::error::DeleteBGPPeerErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DeleteBGPPeerError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2364,17 +2449,17 @@ pub fn parse_delete_bgp_peer_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBGPPeerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DeleteBGPPeerError {
-            meta: generic,
-            kind: crate::error::DeleteBGPPeerErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteBGPPeerError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2382,14 +2467,15 @@ pub fn parse_delete_bgp_peer_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteBGPPeerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteBGPPeerError::generic(generic),
     })
 }
@@ -2407,6 +2493,9 @@ pub fn parse_delete_bgp_peer_response(
             output,
         )
         .map_err(crate::error::DeleteBGPPeerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2416,8 +2505,11 @@ pub fn parse_delete_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteConnectionOutput, crate::error::DeleteConnectionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteConnectionError::unhandled(generic)),
@@ -2425,9 +2517,8 @@ pub fn parse_delete_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteConnectionError {
-            meta: generic,
-            kind: crate::error::DeleteConnectionErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DeleteConnectionError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2435,17 +2526,17 @@ pub fn parse_delete_connection_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DeleteConnectionError {
-            meta: generic,
-            kind: crate::error::DeleteConnectionErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteConnectionError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2453,14 +2544,15 @@ pub fn parse_delete_connection_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteConnectionError::generic(generic),
     })
 }
@@ -2479,6 +2571,9 @@ pub fn parse_delete_connection_response(
             output,
         )
         .map_err(crate::error::DeleteConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2490,8 +2585,11 @@ pub fn parse_delete_direct_connect_gateway_error(
     crate::output::DeleteDirectConnectGatewayOutput,
     crate::error::DeleteDirectConnectGatewayError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDirectConnectGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2503,46 +2601,42 @@ pub fn parse_delete_direct_connect_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteDirectConnectGatewayError {
-            meta: generic,
-            kind: crate::error::DeleteDirectConnectGatewayErrorKind::DirectConnectClientException(
-                {
+        "DirectConnectClientException" => {
+            crate::error::DeleteDirectConnectGatewayError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DirectConnectServerException" => crate::error::DeleteDirectConnectGatewayError {
-            meta: generic,
-            kind: crate::error::DeleteDirectConnectGatewayErrorKind::DirectConnectServerException(
-                {
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteDirectConnectGatewayError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteDirectConnectGatewayError::generic(generic),
     })
 }
@@ -2563,6 +2657,9 @@ pub fn parse_delete_direct_connect_gateway_response(
             output,
         )
         .map_err(crate::error::DeleteDirectConnectGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2574,8 +2671,11 @@ pub fn parse_delete_direct_connect_gateway_association_error(
     crate::output::DeleteDirectConnectGatewayAssociationOutput,
     crate::error::DeleteDirectConnectGatewayAssociationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDirectConnectGatewayAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2587,39 +2687,47 @@ pub fn parse_delete_direct_connect_gateway_association_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteDirectConnectGatewayAssociationError { meta: generic, kind: crate::error::DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::DeleteDirectConnectGatewayAssociationError::DirectConnectClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::DeleteDirectConnectGatewayAssociationError { meta: generic, kind: crate::error::DeleteDirectConnectGatewayAssociationErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteDirectConnectGatewayAssociationError::DirectConnectServerException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteDirectConnectGatewayAssociationError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::DeleteDirectConnectGatewayAssociationError::generic(generic),
     })
 }
 
@@ -2636,6 +2744,9 @@ pub fn parse_delete_direct_connect_gateway_association_response(
             crate::output::delete_direct_connect_gateway_association_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_delete_direct_connect_gateway_association(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2647,8 +2758,11 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_error(
     crate::output::DeleteDirectConnectGatewayAssociationProposalOutput,
     crate::error::DeleteDirectConnectGatewayAssociationProposalError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDirectConnectGatewayAssociationProposalError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2662,7 +2776,7 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteDirectConnectGatewayAssociationProposalError { meta: generic, kind: crate::error::DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => crate::error::DeleteDirectConnectGatewayAssociationProposalError::DirectConnectClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2670,6 +2784,7 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_error(
                     let mut output = crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationProposalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2677,8 +2792,8 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DirectConnectServerException" => crate::error::DeleteDirectConnectGatewayAssociationProposalError { meta: generic, kind: crate::error::DeleteDirectConnectGatewayAssociationProposalErrorKind::DirectConnectServerException({
+        }),
+        "DirectConnectServerException" => crate::error::DeleteDirectConnectGatewayAssociationProposalError::DirectConnectServerException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2686,6 +2801,7 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_error(
                     let mut output = crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationProposalError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2693,7 +2809,7 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DeleteDirectConnectGatewayAssociationProposalError::generic(generic)
     })
 }
@@ -2710,6 +2826,9 @@ pub fn parse_delete_direct_connect_gateway_association_proposal_response(
         let mut output = crate::output::delete_direct_connect_gateway_association_proposal_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_delete_direct_connect_gateway_association_proposal(response.body().as_ref(), output).map_err(crate::error::DeleteDirectConnectGatewayAssociationProposalError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2721,8 +2840,11 @@ pub fn parse_delete_interconnect_error(
     crate::output::DeleteInterconnectOutput,
     crate::error::DeleteInterconnectError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteInterconnectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteInterconnectError::unhandled(generic)),
@@ -2730,9 +2852,8 @@ pub fn parse_delete_interconnect_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteInterconnectError {
-            meta: generic,
-            kind: crate::error::DeleteInterconnectErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DeleteInterconnectError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2740,17 +2861,17 @@ pub fn parse_delete_interconnect_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DeleteInterconnectError {
-            meta: generic,
-            kind: crate::error::DeleteInterconnectErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteInterconnectError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2758,14 +2879,15 @@ pub fn parse_delete_interconnect_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteInterconnectError::generic(generic),
     })
 }
@@ -2786,6 +2908,9 @@ pub fn parse_delete_interconnect_response(
             output,
         )
         .map_err(crate::error::DeleteInterconnectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2794,8 +2919,11 @@ pub fn parse_delete_interconnect_response(
 pub fn parse_delete_lag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLagOutput, crate::error::DeleteLagError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLagError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLagError::unhandled(generic)),
@@ -2803,9 +2931,8 @@ pub fn parse_delete_lag_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteLagError {
-            meta: generic,
-            kind: crate::error::DeleteLagErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DeleteLagError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2813,17 +2940,17 @@ pub fn parse_delete_lag_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLagError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DeleteLagError {
-            meta: generic,
-            kind: crate::error::DeleteLagErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteLagError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2831,14 +2958,15 @@ pub fn parse_delete_lag_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLagError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteLagError::generic(generic),
     })
 }
@@ -2856,6 +2984,9 @@ pub fn parse_delete_lag_response(
             output,
         )
         .map_err(crate::error::DeleteLagError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2867,8 +2998,11 @@ pub fn parse_delete_virtual_interface_error(
     crate::output::DeleteVirtualInterfaceOutput,
     crate::error::DeleteVirtualInterfaceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVirtualInterfaceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2880,9 +3014,8 @@ pub fn parse_delete_virtual_interface_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DeleteVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::DeleteVirtualInterfaceErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DeleteVirtualInterfaceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2890,17 +3023,17 @@ pub fn parse_delete_virtual_interface_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DeleteVirtualInterfaceError {
-            meta: generic,
-            kind: crate::error::DeleteVirtualInterfaceErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DeleteVirtualInterfaceError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2908,14 +3041,15 @@ pub fn parse_delete_virtual_interface_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVirtualInterfaceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteVirtualInterfaceError::generic(generic),
     })
 }
@@ -2936,6 +3070,9 @@ pub fn parse_delete_virtual_interface_response(
             output,
         )
         .map_err(crate::error::DeleteVirtualInterfaceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2947,8 +3084,11 @@ pub fn parse_describe_connection_loa_error(
     crate::output::DescribeConnectionLoaOutput,
     crate::error::DescribeConnectionLoaError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConnectionLoaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeConnectionLoaError::unhandled(generic)),
@@ -2956,9 +3096,8 @@ pub fn parse_describe_connection_loa_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeConnectionLoaError {
-            meta: generic,
-            kind: crate::error::DescribeConnectionLoaErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeConnectionLoaError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2966,17 +3105,17 @@ pub fn parse_describe_connection_loa_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionLoaError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeConnectionLoaError {
-            meta: generic,
-            kind: crate::error::DescribeConnectionLoaErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeConnectionLoaError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2984,14 +3123,15 @@ pub fn parse_describe_connection_loa_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionLoaError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeConnectionLoaError::generic(generic),
     })
 }
@@ -3012,6 +3152,9 @@ pub fn parse_describe_connection_loa_response(
             output,
         )
         .map_err(crate::error::DescribeConnectionLoaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3023,8 +3166,11 @@ pub fn parse_describe_connections_error(
     crate::output::DescribeConnectionsOutput,
     crate::error::DescribeConnectionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeConnectionsError::unhandled(generic)),
@@ -3032,9 +3178,8 @@ pub fn parse_describe_connections_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeConnectionsError {
-            meta: generic,
-            kind: crate::error::DescribeConnectionsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeConnectionsError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3042,17 +3187,17 @@ pub fn parse_describe_connections_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeConnectionsError {
-            meta: generic,
-            kind: crate::error::DescribeConnectionsErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeConnectionsError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3060,14 +3205,15 @@ pub fn parse_describe_connections_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeConnectionsError::generic(generic),
     })
 }
@@ -3088,6 +3234,9 @@ pub fn parse_describe_connections_response(
             output,
         )
         .map_err(crate::error::DescribeConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3099,8 +3248,11 @@ pub fn parse_describe_connections_on_interconnect_error(
     crate::output::DescribeConnectionsOnInterconnectOutput,
     crate::error::DescribeConnectionsOnInterconnectError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConnectionsOnInterconnectError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3110,39 +3262,43 @@ pub fn parse_describe_connections_on_interconnect_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeConnectionsOnInterconnectError { meta: generic, kind: crate::error::DescribeConnectionsOnInterconnectErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::DescribeConnectionsOnInterconnectError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionsOnInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::DescribeConnectionsOnInterconnectError { meta: generic, kind: crate::error::DescribeConnectionsOnInterconnectErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeConnectionsOnInterconnectError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionsOnInterconnectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeConnectionsOnInterconnectError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeConnectionsOnInterconnectError::generic(generic),
     })
 }
 
@@ -3159,6 +3315,9 @@ pub fn parse_describe_connections_on_interconnect_response(
             crate::output::describe_connections_on_interconnect_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_connections_on_interconnect(response.body().as_ref(), output).map_err(crate::error::DescribeConnectionsOnInterconnectError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3170,8 +3329,11 @@ pub fn parse_describe_customer_metadata_error(
     crate::output::DescribeCustomerMetadataOutput,
     crate::error::DescribeCustomerMetadataError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3183,9 +3345,8 @@ pub fn parse_describe_customer_metadata_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeCustomerMetadataError {
-            meta: generic,
-            kind: crate::error::DescribeCustomerMetadataErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeCustomerMetadataError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3193,17 +3354,17 @@ pub fn parse_describe_customer_metadata_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeCustomerMetadataError {
-            meta: generic,
-            kind: crate::error::DescribeCustomerMetadataErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeCustomerMetadataError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3211,14 +3372,15 @@ pub fn parse_describe_customer_metadata_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeCustomerMetadataError::generic(generic),
     })
 }
@@ -3239,6 +3401,9 @@ pub fn parse_describe_customer_metadata_response(
             output,
         )
         .map_err(crate::error::DescribeCustomerMetadataError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3250,8 +3415,11 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_error(
     crate::output::DescribeDirectConnectGatewayAssociationProposalsOutput,
     crate::error::DescribeDirectConnectGatewayAssociationProposalsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDirectConnectGatewayAssociationProposalsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3265,7 +3433,7 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeDirectConnectGatewayAssociationProposalsError { meta: generic, kind: crate::error::DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => crate::error::DescribeDirectConnectGatewayAssociationProposalsError::DirectConnectClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3273,6 +3441,7 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_error(
                     let mut output = crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAssociationProposalsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3280,8 +3449,8 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DirectConnectServerException" => crate::error::DescribeDirectConnectGatewayAssociationProposalsError { meta: generic, kind: crate::error::DescribeDirectConnectGatewayAssociationProposalsErrorKind::DirectConnectServerException({
+        }),
+        "DirectConnectServerException" => crate::error::DescribeDirectConnectGatewayAssociationProposalsError::DirectConnectServerException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3289,6 +3458,7 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_error(
                     let mut output = crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAssociationProposalsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3296,7 +3466,7 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DescribeDirectConnectGatewayAssociationProposalsError::generic(generic)
     })
 }
@@ -3313,6 +3483,9 @@ pub fn parse_describe_direct_connect_gateway_association_proposals_response(
         let mut output = crate::output::describe_direct_connect_gateway_association_proposals_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_direct_connect_gateway_association_proposals(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAssociationProposalsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3324,8 +3497,11 @@ pub fn parse_describe_direct_connect_gateway_associations_error(
     crate::output::DescribeDirectConnectGatewayAssociationsOutput,
     crate::error::DescribeDirectConnectGatewayAssociationsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3337,7 +3513,7 @@ pub fn parse_describe_direct_connect_gateway_associations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeDirectConnectGatewayAssociationsError { meta: generic, kind: crate::error::DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => crate::error::DescribeDirectConnectGatewayAssociationsError::DirectConnectClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3345,6 +3521,7 @@ pub fn parse_describe_direct_connect_gateway_associations_error(
                     let mut output = crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3352,8 +3529,8 @@ pub fn parse_describe_direct_connect_gateway_associations_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DirectConnectServerException" => crate::error::DescribeDirectConnectGatewayAssociationsError { meta: generic, kind: crate::error::DescribeDirectConnectGatewayAssociationsErrorKind::DirectConnectServerException({
+        }),
+        "DirectConnectServerException" => crate::error::DescribeDirectConnectGatewayAssociationsError::DirectConnectServerException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3361,6 +3538,7 @@ pub fn parse_describe_direct_connect_gateway_associations_error(
                     let mut output = crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3368,7 +3546,7 @@ pub fn parse_describe_direct_connect_gateway_associations_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DescribeDirectConnectGatewayAssociationsError::generic(generic)
     })
 }
@@ -3386,6 +3564,9 @@ pub fn parse_describe_direct_connect_gateway_associations_response(
             crate::output::describe_direct_connect_gateway_associations_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_direct_connect_gateway_associations(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAssociationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3397,8 +3578,11 @@ pub fn parse_describe_direct_connect_gateway_attachments_error(
     crate::output::DescribeDirectConnectGatewayAttachmentsOutput,
     crate::error::DescribeDirectConnectGatewayAttachmentsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDirectConnectGatewayAttachmentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3410,39 +3594,47 @@ pub fn parse_describe_direct_connect_gateway_attachments_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeDirectConnectGatewayAttachmentsError { meta: generic, kind: crate::error::DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::DescribeDirectConnectGatewayAttachmentsError::DirectConnectClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAttachmentsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::DescribeDirectConnectGatewayAttachmentsError { meta: generic, kind: crate::error::DescribeDirectConnectGatewayAttachmentsErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAttachmentsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeDirectConnectGatewayAttachmentsError::DirectConnectServerException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAttachmentsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeDirectConnectGatewayAttachmentsError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAttachmentsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::DescribeDirectConnectGatewayAttachmentsError::generic(generic),
     })
 }
 
@@ -3459,6 +3651,9 @@ pub fn parse_describe_direct_connect_gateway_attachments_response(
             crate::output::describe_direct_connect_gateway_attachments_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_direct_connect_gateway_attachments(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewayAttachmentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3470,8 +3665,11 @@ pub fn parse_describe_direct_connect_gateways_error(
     crate::output::DescribeDirectConnectGatewaysOutput,
     crate::error::DescribeDirectConnectGatewaysError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDirectConnectGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3483,48 +3681,42 @@ pub fn parse_describe_direct_connect_gateways_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeDirectConnectGatewaysError {
-            meta: generic,
-            kind:
-                crate::error::DescribeDirectConnectGatewaysErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewaysError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::DescribeDirectConnectGatewaysError {
-            meta: generic,
-            kind:
-                crate::error::DescribeDirectConnectGatewaysErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewaysError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "DirectConnectClientException" => {
+            crate::error::DescribeDirectConnectGatewaysError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewaysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeDirectConnectGatewaysError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDirectConnectGatewaysError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeDirectConnectGatewaysError::generic(generic),
     })
 }
@@ -3546,6 +3738,9 @@ pub fn parse_describe_direct_connect_gateways_response(
                 output,
             )
             .map_err(crate::error::DescribeDirectConnectGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3557,8 +3752,11 @@ pub fn parse_describe_hosted_connections_error(
     crate::output::DescribeHostedConnectionsOutput,
     crate::error::DescribeHostedConnectionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHostedConnectionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3570,9 +3768,8 @@ pub fn parse_describe_hosted_connections_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeHostedConnectionsError {
-            meta: generic,
-            kind: crate::error::DescribeHostedConnectionsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeHostedConnectionsError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3580,17 +3777,17 @@ pub fn parse_describe_hosted_connections_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHostedConnectionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeHostedConnectionsError {
-            meta: generic,
-            kind: crate::error::DescribeHostedConnectionsErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeHostedConnectionsError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3598,14 +3795,15 @@ pub fn parse_describe_hosted_connections_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHostedConnectionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeHostedConnectionsError::generic(generic),
     })
 }
@@ -3626,6 +3824,9 @@ pub fn parse_describe_hosted_connections_response(
             output,
         )
         .map_err(crate::error::DescribeHostedConnectionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3637,8 +3838,11 @@ pub fn parse_describe_interconnect_loa_error(
     crate::output::DescribeInterconnectLoaOutput,
     crate::error::DescribeInterconnectLoaError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInterconnectLoaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3650,9 +3854,8 @@ pub fn parse_describe_interconnect_loa_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeInterconnectLoaError {
-            meta: generic,
-            kind: crate::error::DescribeInterconnectLoaErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeInterconnectLoaError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3660,17 +3863,17 @@ pub fn parse_describe_interconnect_loa_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInterconnectLoaError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeInterconnectLoaError {
-            meta: generic,
-            kind: crate::error::DescribeInterconnectLoaErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeInterconnectLoaError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3678,14 +3881,15 @@ pub fn parse_describe_interconnect_loa_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInterconnectLoaError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeInterconnectLoaError::generic(generic),
     })
 }
@@ -3706,6 +3910,9 @@ pub fn parse_describe_interconnect_loa_response(
             output,
         )
         .map_err(crate::error::DescribeInterconnectLoaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3717,8 +3924,11 @@ pub fn parse_describe_interconnects_error(
     crate::output::DescribeInterconnectsOutput,
     crate::error::DescribeInterconnectsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInterconnectsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeInterconnectsError::unhandled(generic)),
@@ -3726,9 +3936,8 @@ pub fn parse_describe_interconnects_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeInterconnectsError {
-            meta: generic,
-            kind: crate::error::DescribeInterconnectsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeInterconnectsError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3736,17 +3945,17 @@ pub fn parse_describe_interconnects_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInterconnectsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeInterconnectsError {
-            meta: generic,
-            kind: crate::error::DescribeInterconnectsErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeInterconnectsError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3754,14 +3963,15 @@ pub fn parse_describe_interconnects_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeInterconnectsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeInterconnectsError::generic(generic),
     })
 }
@@ -3782,6 +3992,9 @@ pub fn parse_describe_interconnects_response(
             output,
         )
         .map_err(crate::error::DescribeInterconnectsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3790,8 +4003,11 @@ pub fn parse_describe_interconnects_response(
 pub fn parse_describe_lags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeLagsOutput, crate::error::DescribeLagsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeLagsError::unhandled(generic)),
@@ -3799,9 +4015,8 @@ pub fn parse_describe_lags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeLagsError {
-            meta: generic,
-            kind: crate::error::DescribeLagsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeLagsError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3809,17 +4024,17 @@ pub fn parse_describe_lags_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeLagsError {
-            meta: generic,
-            kind: crate::error::DescribeLagsErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeLagsError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3827,14 +4042,15 @@ pub fn parse_describe_lags_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLagsError::generic(generic),
     })
 }
@@ -3852,6 +4068,9 @@ pub fn parse_describe_lags_response(
             output,
         )
         .map_err(crate::error::DescribeLagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3860,8 +4079,11 @@ pub fn parse_describe_lags_response(
 pub fn parse_describe_loa_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeLoaOutput, crate::error::DescribeLoaError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLoaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeLoaError::unhandled(generic)),
@@ -3869,9 +4091,8 @@ pub fn parse_describe_loa_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeLoaError {
-            meta: generic,
-            kind: crate::error::DescribeLoaErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeLoaError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3879,17 +4100,17 @@ pub fn parse_describe_loa_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoaError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeLoaError {
-            meta: generic,
-            kind: crate::error::DescribeLoaErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeLoaError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3897,14 +4118,15 @@ pub fn parse_describe_loa_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLoaError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLoaError::generic(generic),
     })
 }
@@ -3922,6 +4144,9 @@ pub fn parse_describe_loa_response(
             output,
         )
         .map_err(crate::error::DescribeLoaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3931,8 +4156,11 @@ pub fn parse_describe_locations_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeLocationsOutput, crate::error::DescribeLocationsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLocationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeLocationsError::unhandled(generic)),
@@ -3940,9 +4168,8 @@ pub fn parse_describe_locations_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeLocationsError {
-            meta: generic,
-            kind: crate::error::DescribeLocationsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeLocationsError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3950,17 +4177,17 @@ pub fn parse_describe_locations_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeLocationsError {
-            meta: generic,
-            kind: crate::error::DescribeLocationsErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeLocationsError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3968,14 +4195,15 @@ pub fn parse_describe_locations_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLocationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLocationsError::generic(generic),
     })
 }
@@ -3994,6 +4222,9 @@ pub fn parse_describe_locations_response(
             output,
         )
         .map_err(crate::error::DescribeLocationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4005,8 +4236,11 @@ pub fn parse_describe_router_configuration_error(
     crate::output::DescribeRouterConfigurationOutput,
     crate::error::DescribeRouterConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4018,46 +4252,42 @@ pub fn parse_describe_router_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeRouterConfigurationError {
-            meta: generic,
-            kind: crate::error::DescribeRouterConfigurationErrorKind::DirectConnectClientException(
-                {
+        "DirectConnectClientException" => {
+            crate::error::DescribeRouterConfigurationError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DirectConnectServerException" => crate::error::DescribeRouterConfigurationError {
-            meta: generic,
-            kind: crate::error::DescribeRouterConfigurationErrorKind::DirectConnectServerException(
-                {
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeRouterConfigurationError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeRouterConfigurationError::generic(generic),
     })
 }
@@ -4078,6 +4308,9 @@ pub fn parse_describe_router_configuration_response(
             output,
         )
         .map_err(crate::error::DescribeRouterConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4086,8 +4319,11 @@ pub fn parse_describe_router_configuration_response(
 pub fn parse_describe_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeTagsOutput, crate::error::DescribeTagsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeTagsError::unhandled(generic)),
@@ -4095,9 +4331,8 @@ pub fn parse_describe_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeTagsError {
-            meta: generic,
-            kind: crate::error::DescribeTagsErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeTagsError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4105,17 +4340,17 @@ pub fn parse_describe_tags_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeTagsError {
-            meta: generic,
-            kind: crate::error::DescribeTagsErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeTagsError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4123,14 +4358,15 @@ pub fn parse_describe_tags_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeTagsError::generic(generic),
     })
 }
@@ -4148,6 +4384,9 @@ pub fn parse_describe_tags_response(
             output,
         )
         .map_err(crate::error::DescribeTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4159,8 +4398,11 @@ pub fn parse_describe_virtual_gateways_error(
     crate::output::DescribeVirtualGatewaysOutput,
     crate::error::DescribeVirtualGatewaysError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVirtualGatewaysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4172,9 +4414,8 @@ pub fn parse_describe_virtual_gateways_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeVirtualGatewaysError {
-            meta: generic,
-            kind: crate::error::DescribeVirtualGatewaysErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeVirtualGatewaysError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4182,17 +4423,17 @@ pub fn parse_describe_virtual_gateways_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVirtualGatewaysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeVirtualGatewaysError {
-            meta: generic,
-            kind: crate::error::DescribeVirtualGatewaysErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeVirtualGatewaysError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4200,14 +4441,15 @@ pub fn parse_describe_virtual_gateways_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVirtualGatewaysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeVirtualGatewaysError::generic(generic),
     })
 }
@@ -4228,6 +4470,9 @@ pub fn parse_describe_virtual_gateways_response(
             output,
         )
         .map_err(crate::error::DescribeVirtualGatewaysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4239,8 +4484,11 @@ pub fn parse_describe_virtual_interfaces_error(
     crate::output::DescribeVirtualInterfacesOutput,
     crate::error::DescribeVirtualInterfacesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeVirtualInterfacesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4252,9 +4500,8 @@ pub fn parse_describe_virtual_interfaces_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DescribeVirtualInterfacesError {
-            meta: generic,
-            kind: crate::error::DescribeVirtualInterfacesErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DescribeVirtualInterfacesError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4262,17 +4509,17 @@ pub fn parse_describe_virtual_interfaces_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVirtualInterfacesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DescribeVirtualInterfacesError {
-            meta: generic,
-            kind: crate::error::DescribeVirtualInterfacesErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DescribeVirtualInterfacesError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4280,14 +4527,15 @@ pub fn parse_describe_virtual_interfaces_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeVirtualInterfacesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeVirtualInterfacesError::generic(generic),
     })
 }
@@ -4308,6 +4556,9 @@ pub fn parse_describe_virtual_interfaces_response(
             output,
         )
         .map_err(crate::error::DescribeVirtualInterfacesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4319,8 +4570,11 @@ pub fn parse_disassociate_connection_from_lag_error(
     crate::output::DisassociateConnectionFromLagOutput,
     crate::error::DisassociateConnectionFromLagError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateConnectionFromLagError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4332,48 +4586,42 @@ pub fn parse_disassociate_connection_from_lag_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DisassociateConnectionFromLagError {
-            meta: generic,
-            kind:
-                crate::error::DisassociateConnectionFromLagErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConnectionFromLagError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::DisassociateConnectionFromLagError {
-            meta: generic,
-            kind:
-                crate::error::DisassociateConnectionFromLagErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConnectionFromLagError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "DirectConnectClientException" => {
+            crate::error::DisassociateConnectionFromLagError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConnectionFromLagError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DisassociateConnectionFromLagError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateConnectionFromLagError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DisassociateConnectionFromLagError::generic(generic),
     })
 }
@@ -4395,6 +4643,9 @@ pub fn parse_disassociate_connection_from_lag_response(
                 output,
             )
             .map_err(crate::error::DisassociateConnectionFromLagError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4406,8 +4657,11 @@ pub fn parse_disassociate_mac_sec_key_error(
     crate::output::DisassociateMacSecKeyOutput,
     crate::error::DisassociateMacSecKeyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateMacSecKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DisassociateMacSecKeyError::unhandled(generic)),
@@ -4415,9 +4669,8 @@ pub fn parse_disassociate_mac_sec_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::DisassociateMacSecKeyError {
-            meta: generic,
-            kind: crate::error::DisassociateMacSecKeyErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::DisassociateMacSecKeyError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4425,17 +4678,17 @@ pub fn parse_disassociate_mac_sec_key_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMacSecKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::DisassociateMacSecKeyError {
-            meta: generic,
-            kind: crate::error::DisassociateMacSecKeyErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::DisassociateMacSecKeyError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4443,14 +4696,15 @@ pub fn parse_disassociate_mac_sec_key_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociateMacSecKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisassociateMacSecKeyError::generic(generic),
     })
 }
@@ -4471,6 +4725,9 @@ pub fn parse_disassociate_mac_sec_key_response(
             output,
         )
         .map_err(crate::error::DisassociateMacSecKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4482,8 +4739,11 @@ pub fn parse_list_virtual_interface_test_history_error(
     crate::output::ListVirtualInterfaceTestHistoryOutput,
     crate::error::ListVirtualInterfaceTestHistoryError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled(generic)),
@@ -4491,48 +4751,42 @@ pub fn parse_list_virtual_interface_test_history_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::ListVirtualInterfaceTestHistoryError {
-            meta: generic,
-            kind:
-                crate::error::ListVirtualInterfaceTestHistoryErrorKind::DirectConnectClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DirectConnectServerException" => crate::error::ListVirtualInterfaceTestHistoryError {
-            meta: generic,
-            kind:
-                crate::error::ListVirtualInterfaceTestHistoryErrorKind::DirectConnectServerException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::direct_connect_server_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "DirectConnectClientException" => {
+            crate::error::ListVirtualInterfaceTestHistoryError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::ListVirtualInterfaceTestHistoryError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListVirtualInterfaceTestHistoryError::generic(generic),
     })
 }
@@ -4555,6 +4809,9 @@ pub fn parse_list_virtual_interface_test_history_response(
                 output,
             )
             .map_err(crate::error::ListVirtualInterfaceTestHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4566,8 +4823,11 @@ pub fn parse_start_bgp_failover_test_error(
     crate::output::StartBgpFailoverTestOutput,
     crate::error::StartBgpFailoverTestError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartBgpFailoverTestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartBgpFailoverTestError::unhandled(generic)),
@@ -4575,9 +4835,8 @@ pub fn parse_start_bgp_failover_test_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::StartBgpFailoverTestError {
-            meta: generic,
-            kind: crate::error::StartBgpFailoverTestErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::StartBgpFailoverTestError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4585,17 +4844,17 @@ pub fn parse_start_bgp_failover_test_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBgpFailoverTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::StartBgpFailoverTestError {
-            meta: generic,
-            kind: crate::error::StartBgpFailoverTestErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::StartBgpFailoverTestError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4603,14 +4862,15 @@ pub fn parse_start_bgp_failover_test_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartBgpFailoverTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartBgpFailoverTestError::generic(generic),
     })
 }
@@ -4631,6 +4891,9 @@ pub fn parse_start_bgp_failover_test_response(
             output,
         )
         .map_err(crate::error::StartBgpFailoverTestError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4642,8 +4905,11 @@ pub fn parse_stop_bgp_failover_test_error(
     crate::output::StopBgpFailoverTestOutput,
     crate::error::StopBgpFailoverTestError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StopBgpFailoverTestError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StopBgpFailoverTestError::unhandled(generic)),
@@ -4651,9 +4917,8 @@ pub fn parse_stop_bgp_failover_test_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::StopBgpFailoverTestError {
-            meta: generic,
-            kind: crate::error::StopBgpFailoverTestErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::StopBgpFailoverTestError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4661,17 +4926,17 @@ pub fn parse_stop_bgp_failover_test_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBgpFailoverTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::StopBgpFailoverTestError {
-            meta: generic,
-            kind: crate::error::StopBgpFailoverTestErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::StopBgpFailoverTestError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4679,14 +4944,15 @@ pub fn parse_stop_bgp_failover_test_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopBgpFailoverTestError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StopBgpFailoverTestError::generic(generic),
     })
 }
@@ -4707,6 +4973,9 @@ pub fn parse_stop_bgp_failover_test_response(
             output,
         )
         .map_err(crate::error::StopBgpFailoverTestError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4715,8 +4984,11 @@ pub fn parse_stop_bgp_failover_test_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -4724,9 +4996,8 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::TagResourceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4734,17 +5005,17 @@ pub fn parse_tag_resource_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::TagResourceError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4752,48 +5023,45 @@ pub fn parse_tag_resource_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DuplicateTagKeysException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::DuplicateTagKeysException({
+            })
+        }
+        "DuplicateTagKeysException" => crate::error::TagResourceError::DuplicateTagKeysException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyTagsException({
+                let mut output = crate::error::duplicate_tag_keys_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_duplicate_tag_keys_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTagsException" => crate::error::TagResourceError::TooManyTagsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -4806,6 +5074,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4814,8 +5085,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -4823,9 +5097,8 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::UntagResourceError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4833,17 +5106,17 @@ pub fn parse_untag_resource_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::UntagResourceError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4851,14 +5124,15 @@ pub fn parse_untag_resource_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -4871,6 +5145,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4880,8 +5157,11 @@ pub fn parse_update_connection_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateConnectionOutput, crate::error::UpdateConnectionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateConnectionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateConnectionError::unhandled(generic)),
@@ -4889,9 +5169,8 @@ pub fn parse_update_connection_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::UpdateConnectionError {
-            meta: generic,
-            kind: crate::error::UpdateConnectionErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::UpdateConnectionError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4899,17 +5178,17 @@ pub fn parse_update_connection_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::UpdateConnectionError {
-            meta: generic,
-            kind: crate::error::UpdateConnectionErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::UpdateConnectionError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4917,14 +5196,15 @@ pub fn parse_update_connection_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateConnectionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateConnectionError::generic(generic),
     })
 }
@@ -4943,6 +5223,9 @@ pub fn parse_update_connection_response(
             output,
         )
         .map_err(crate::error::UpdateConnectionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4954,8 +5237,11 @@ pub fn parse_update_direct_connect_gateway_error(
     crate::output::UpdateDirectConnectGatewayOutput,
     crate::error::UpdateDirectConnectGatewayError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4967,46 +5253,42 @@ pub fn parse_update_direct_connect_gateway_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::UpdateDirectConnectGatewayError {
-            meta: generic,
-            kind: crate::error::UpdateDirectConnectGatewayErrorKind::DirectConnectClientException(
-                {
+        "DirectConnectClientException" => {
+            crate::error::UpdateDirectConnectGatewayError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DirectConnectServerException" => crate::error::UpdateDirectConnectGatewayError {
-            meta: generic,
-            kind: crate::error::UpdateDirectConnectGatewayErrorKind::DirectConnectServerException(
-                {
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::UpdateDirectConnectGatewayError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::direct_connect_server_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateDirectConnectGatewayError::generic(generic),
     })
 }
@@ -5027,6 +5309,9 @@ pub fn parse_update_direct_connect_gateway_response(
             output,
         )
         .map_err(crate::error::UpdateDirectConnectGatewayError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5038,8 +5323,11 @@ pub fn parse_update_direct_connect_gateway_association_error(
     crate::output::UpdateDirectConnectGatewayAssociationOutput,
     crate::error::UpdateDirectConnectGatewayAssociationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateDirectConnectGatewayAssociationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5051,39 +5339,47 @@ pub fn parse_update_direct_connect_gateway_association_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::UpdateDirectConnectGatewayAssociationError { meta: generic, kind: crate::error::UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::UpdateDirectConnectGatewayAssociationError::DirectConnectClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayAssociationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::UpdateDirectConnectGatewayAssociationError { meta: generic, kind: crate::error::UpdateDirectConnectGatewayAssociationErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "DirectConnectServerException" => {
+            crate::error::UpdateDirectConnectGatewayAssociationError::DirectConnectServerException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayAssociationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateDirectConnectGatewayAssociationError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::direct_connect_server_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayAssociationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::UpdateDirectConnectGatewayAssociationError::generic(generic),
     })
 }
 
@@ -5100,6 +5396,9 @@ pub fn parse_update_direct_connect_gateway_association_response(
             crate::output::update_direct_connect_gateway_association_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_update_direct_connect_gateway_association(response.body().as_ref(), output).map_err(crate::error::UpdateDirectConnectGatewayAssociationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5108,8 +5407,11 @@ pub fn parse_update_direct_connect_gateway_association_response(
 pub fn parse_update_lag_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateLagOutput, crate::error::UpdateLagError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateLagError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateLagError::unhandled(generic)),
@@ -5117,9 +5419,8 @@ pub fn parse_update_lag_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::UpdateLagError {
-            meta: generic,
-            kind: crate::error::UpdateLagErrorKind::DirectConnectClientException({
+        "DirectConnectClientException" => {
+            crate::error::UpdateLagError::DirectConnectClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5127,17 +5428,17 @@ pub fn parse_update_lag_error(
                         crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLagError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DirectConnectServerException" => crate::error::UpdateLagError {
-            meta: generic,
-            kind: crate::error::UpdateLagErrorKind::DirectConnectServerException({
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::UpdateLagError::DirectConnectServerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5145,14 +5446,15 @@ pub fn parse_update_lag_error(
                         crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateLagError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateLagError::generic(generic),
     })
 }
@@ -5170,6 +5472,9 @@ pub fn parse_update_lag_response(
             output,
         )
         .map_err(crate::error::UpdateLagError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5181,8 +5486,11 @@ pub fn parse_update_virtual_interface_attributes_error(
     crate::output::UpdateVirtualInterfaceAttributesOutput,
     crate::error::UpdateVirtualInterfaceAttributesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateVirtualInterfaceAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5192,39 +5500,43 @@ pub fn parse_update_virtual_interface_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DirectConnectClientException" => crate::error::UpdateVirtualInterfaceAttributesError { meta: generic, kind: crate::error::UpdateVirtualInterfaceAttributesErrorKind::DirectConnectClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DirectConnectClientException" => {
+            crate::error::UpdateVirtualInterfaceAttributesError::DirectConnectClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVirtualInterfaceAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DirectConnectServerException" => crate::error::UpdateVirtualInterfaceAttributesError { meta: generic, kind: crate::error::UpdateVirtualInterfaceAttributesErrorKind::DirectConnectServerException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DirectConnectServerException" => {
+            crate::error::UpdateVirtualInterfaceAttributesError::DirectConnectServerException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::direct_connect_server_exception::Builder::default();
+                    let mut output =
+                        crate::error::direct_connect_server_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_direct_connect_server_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVirtualInterfaceAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateVirtualInterfaceAttributesError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::UpdateVirtualInterfaceAttributesError::generic(generic),
     })
 }
 
@@ -5246,6 +5558,9 @@ pub fn parse_update_virtual_interface_attributes_response(
                 output,
             )
             .map_err(crate::error::UpdateVirtualInterfaceAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

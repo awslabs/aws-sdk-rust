@@ -3,8 +3,11 @@
 pub fn parse_assume_role_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AssumeRoleOutput, crate::error::AssumeRoleError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssumeRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssumeRoleError::unhandled(generic)),
@@ -12,26 +15,25 @@ pub fn parse_assume_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredTokenException" => crate::error::AssumeRoleError {
-            meta: generic,
-            kind: crate::error::AssumeRoleErrorKind::ExpiredTokenException({
+        "ExpiredTokenException" => {
+            crate::error::AssumeRoleError::ExpiredTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::expired_token_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::AssumeRoleError {
-            meta: generic,
-            kind: crate::error::AssumeRoleErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::AssumeRoleError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -39,49 +41,46 @@ pub fn parse_assume_role_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PackedPolicyTooLarge" => crate::error::AssumeRoleError {
-            meta: generic,
-            kind: crate::error::AssumeRoleErrorKind::PackedPolicyTooLargeException({
+            })
+        }
+        "PackedPolicyTooLarge" => crate::error::AssumeRoleError::PackedPolicyTooLargeException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::packed_policy_too_large_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RegionDisabledException" => crate::error::AssumeRoleError {
-            meta: generic,
-            kind: crate::error::AssumeRoleErrorKind::RegionDisabledException({
+                let mut output =
+                    crate::error::packed_policy_too_large_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RegionDisabledException" => crate::error::AssumeRoleError::RegionDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::region_disabled_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::region_disabled_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AssumeRoleError::generic(generic),
     })
 }
@@ -99,6 +98,9 @@ pub fn parse_assume_role_response(
             output,
         )
         .map_err(crate::error::AssumeRoleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -110,8 +112,11 @@ pub fn parse_assume_role_with_saml_error(
     crate::output::AssumeRoleWithSamlOutput,
     crate::error::AssumeRoleWithSAMLError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AssumeRoleWithSAMLError::unhandled(generic)),
@@ -119,43 +124,40 @@ pub fn parse_assume_role_with_saml_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredTokenException" => crate::error::AssumeRoleWithSAMLError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithSAMLErrorKind::ExpiredTokenException({
+        "ExpiredTokenException" => {
+            crate::error::AssumeRoleWithSAMLError::ExpiredTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::expired_token_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IDPRejectedClaim" => crate::error::AssumeRoleWithSAMLError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithSAMLErrorKind::IdpRejectedClaimException({
+            })
+        }
+        "IDPRejectedClaim" => crate::error::AssumeRoleWithSAMLError::IdpRejectedClaimException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::idp_rejected_claim_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidIdentityToken" => crate::error::AssumeRoleWithSAMLError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithSAMLErrorKind::InvalidIdentityTokenException({
+                let mut output = crate::error::idp_rejected_claim_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidIdentityToken" => {
+            crate::error::AssumeRoleWithSAMLError::InvalidIdentityTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -163,17 +165,17 @@ pub fn parse_assume_role_with_saml_error(
                         crate::error::invalid_identity_token_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MalformedPolicyDocument" => crate::error::AssumeRoleWithSAMLError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithSAMLErrorKind::MalformedPolicyDocumentException({
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::AssumeRoleWithSAMLError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -181,17 +183,17 @@ pub fn parse_assume_role_with_saml_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PackedPolicyTooLarge" => crate::error::AssumeRoleWithSAMLError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithSAMLErrorKind::PackedPolicyTooLargeException({
+            })
+        }
+        "PackedPolicyTooLarge" => {
+            crate::error::AssumeRoleWithSAMLError::PackedPolicyTooLargeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -199,31 +201,32 @@ pub fn parse_assume_role_with_saml_error(
                         crate::error::packed_policy_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RegionDisabledException" => crate::error::AssumeRoleWithSAMLError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithSAMLErrorKind::RegionDisabledException({
+            })
+        }
+        "RegionDisabledException" => {
+            crate::error::AssumeRoleWithSAMLError::RegionDisabledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::region_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssumeRoleWithSAMLError::generic(generic),
     })
 }
@@ -244,6 +247,9 @@ pub fn parse_assume_role_with_saml_response(
             output,
         )
         .map_err(crate::error::AssumeRoleWithSAMLError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -255,8 +261,11 @@ pub fn parse_assume_role_with_web_identity_error(
     crate::output::AssumeRoleWithWebIdentityOutput,
     crate::error::AssumeRoleWithWebIdentityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -268,139 +277,129 @@ pub fn parse_assume_role_with_web_identity_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExpiredTokenException" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithWebIdentityErrorKind::ExpiredTokenException({
+        "ExpiredTokenException" => {
+            crate::error::AssumeRoleWithWebIdentityError::ExpiredTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::expired_token_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_expired_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IDPCommunicationError" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithWebIdentityErrorKind::IdpCommunicationErrorException(
-                {
+            })
+        }
+        "IDPCommunicationError" => {
+            crate::error::AssumeRoleWithWebIdentityError::IdpCommunicationErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::idp_communication_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_idp_communication_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "IDPRejectedClaim" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithWebIdentityErrorKind::IdpRejectedClaimException({
+                    let mut output =
+                        crate::error::idp_communication_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_idp_communication_error_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "IDPRejectedClaim" => {
+            crate::error::AssumeRoleWithWebIdentityError::IdpRejectedClaimException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::idp_rejected_claim_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_idp_rejected_claim_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidIdentityToken" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithWebIdentityErrorKind::InvalidIdentityTokenException(
-                {
+            })
+        }
+        "InvalidIdentityToken" => {
+            crate::error::AssumeRoleWithWebIdentityError::InvalidIdentityTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_identity_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "MalformedPolicyDocument" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind:
-                crate::error::AssumeRoleWithWebIdentityErrorKind::MalformedPolicyDocumentException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::malformed_policy_document_exception::Builder::default(
-                                );
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "PackedPolicyTooLarge" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithWebIdentityErrorKind::PackedPolicyTooLargeException(
-                {
+                    let mut output =
+                        crate::error::invalid_identity_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_identity_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "MalformedPolicyDocument" => {
+            crate::error::AssumeRoleWithWebIdentityError::MalformedPolicyDocumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::packed_policy_too_large_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "RegionDisabledException" => crate::error::AssumeRoleWithWebIdentityError {
-            meta: generic,
-            kind: crate::error::AssumeRoleWithWebIdentityErrorKind::RegionDisabledException({
+                    let mut output =
+                        crate::error::malformed_policy_document_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "PackedPolicyTooLarge" => {
+            crate::error::AssumeRoleWithWebIdentityError::PackedPolicyTooLargeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::packed_policy_too_large_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "RegionDisabledException" => {
+            crate::error::AssumeRoleWithWebIdentityError::RegionDisabledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::region_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AssumeRoleWithWebIdentityError::generic(generic),
     })
 }
@@ -421,6 +420,9 @@ pub fn parse_assume_role_with_web_identity_response(
             output,
         )
         .map_err(crate::error::AssumeRoleWithWebIdentityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -432,8 +434,11 @@ pub fn parse_decode_authorization_message_error(
     crate::output::DecodeAuthorizationMessageOutput,
     crate::error::DecodeAuthorizationMessageError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -445,23 +450,25 @@ pub fn parse_decode_authorization_message_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidAuthorizationMessageException" => crate::error::DecodeAuthorizationMessageError { meta: generic, kind: crate::error::DecodeAuthorizationMessageErrorKind::InvalidAuthorizationMessageException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InvalidAuthorizationMessageException" => {
+            crate::error::DecodeAuthorizationMessageError::InvalidAuthorizationMessageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_authorization_message_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_authorization_message_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_authorization_message_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DecodeAuthorizationMessageError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DecodeAuthorizationMessageError::generic(generic),
     })
 }
 
@@ -481,6 +488,9 @@ pub fn parse_decode_authorization_message_response(
             output,
         )
         .map_err(crate::error::DecodeAuthorizationMessageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -490,8 +500,11 @@ pub fn parse_get_access_key_info_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccessKeyInfoOutput, crate::error::GetAccessKeyInfoError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessKeyInfoError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessKeyInfoError::generic(generic))
 }
 
@@ -509,6 +522,9 @@ pub fn parse_get_access_key_info_response(
             output,
         )
         .map_err(crate::error::GetAccessKeyInfoError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -518,8 +534,11 @@ pub fn parse_get_caller_identity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetCallerIdentityOutput, crate::error::GetCallerIdentityError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCallerIdentityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetCallerIdentityError::generic(generic))
 }
 
@@ -537,6 +556,9 @@ pub fn parse_get_caller_identity_response(
             output,
         )
         .map_err(crate::error::GetCallerIdentityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -548,8 +570,11 @@ pub fn parse_get_federation_token_error(
     crate::output::GetFederationTokenOutput,
     crate::error::GetFederationTokenError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetFederationTokenError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetFederationTokenError::unhandled(generic)),
@@ -557,9 +582,8 @@ pub fn parse_get_federation_token_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "MalformedPolicyDocument" => crate::error::GetFederationTokenError {
-            meta: generic,
-            kind: crate::error::GetFederationTokenErrorKind::MalformedPolicyDocumentException({
+        "MalformedPolicyDocument" => {
+            crate::error::GetFederationTokenError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -567,17 +591,17 @@ pub fn parse_get_federation_token_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_malformed_policy_document_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "PackedPolicyTooLarge" => crate::error::GetFederationTokenError {
-            meta: generic,
-            kind: crate::error::GetFederationTokenErrorKind::PackedPolicyTooLargeException({
+            })
+        }
+        "PackedPolicyTooLarge" => {
+            crate::error::GetFederationTokenError::PackedPolicyTooLargeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -585,31 +609,32 @@ pub fn parse_get_federation_token_error(
                         crate::error::packed_policy_too_large_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_packed_policy_too_large_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RegionDisabledException" => crate::error::GetFederationTokenError {
-            meta: generic,
-            kind: crate::error::GetFederationTokenErrorKind::RegionDisabledException({
+            })
+        }
+        "RegionDisabledException" => {
+            crate::error::GetFederationTokenError::RegionDisabledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::region_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetFederationTokenError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetFederationTokenError::generic(generic),
     })
 }
@@ -630,6 +655,9 @@ pub fn parse_get_federation_token_response(
             output,
         )
         .map_err(crate::error::GetFederationTokenError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -638,8 +666,11 @@ pub fn parse_get_federation_token_response(
 pub fn parse_get_session_token_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSessionTokenOutput, crate::error::GetSessionTokenError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSessionTokenError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSessionTokenError::unhandled(generic)),
@@ -647,23 +678,21 @@ pub fn parse_get_session_token_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RegionDisabledException" => crate::error::GetSessionTokenError {
-            meta: generic,
-            kind: crate::error::GetSessionTokenErrorKind::RegionDisabledException({
+        "RegionDisabledException" => crate::error::GetSessionTokenError::RegionDisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::region_disabled_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSessionTokenError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::region_disabled_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_region_disabled_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetSessionTokenError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetSessionTokenError::generic(generic),
     })
 }
@@ -681,6 +710,9 @@ pub fn parse_get_session_token_response(
             output,
         )
         .map_err(crate::error::GetSessionTokenError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

@@ -11,15 +11,8 @@ pub enum Error {
     InvalidInputException(crate::error::InvalidInputException),
     /// <p>(Discontinued) The request was rejected because it attempted to create resources beyond the current Amazon Web Services account quotas. The error code describes the quota exceeded.</p>
     LimitExceededException(crate::error::LimitExceededException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -44,25 +37,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AssociateMemberAccountError> for Error {
     fn from(err: crate::error::AssociateMemberAccountError) -> Self {
-        match err.kind {
-            crate::error::AssociateMemberAccountErrorKind::InternalException(inner) => {
+        match err {
+            crate::error::AssociateMemberAccountError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::AssociateMemberAccountErrorKind::InvalidInputException(inner) => {
+            crate::error::AssociateMemberAccountError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::AssociateMemberAccountErrorKind::LimitExceededException(inner) => {
+            crate::error::AssociateMemberAccountError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::AssociateMemberAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssociateMemberAccountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -78,28 +76,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AssociateS3ResourcesError> for Error {
     fn from(err: crate::error::AssociateS3ResourcesError) -> Self {
-        match err.kind {
-            crate::error::AssociateS3ResourcesErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::AssociateS3ResourcesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::AssociateS3ResourcesErrorKind::InternalException(inner) => {
+            crate::error::AssociateS3ResourcesError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::AssociateS3ResourcesErrorKind::InvalidInputException(inner) => {
+            crate::error::AssociateS3ResourcesError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::AssociateS3ResourcesErrorKind::LimitExceededException(inner) => {
+            crate::error::AssociateS3ResourcesError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::AssociateS3ResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::AssociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -115,21 +118,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DisassociateMemberAccountError> for Error {
     fn from(err: crate::error::DisassociateMemberAccountError) -> Self {
-        match err.kind {
-            crate::error::DisassociateMemberAccountErrorKind::InternalException(inner) => {
+        match err {
+            crate::error::DisassociateMemberAccountError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::DisassociateMemberAccountErrorKind::InvalidInputException(inner) => {
+            crate::error::DisassociateMemberAccountError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::DisassociateMemberAccountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DisassociateMemberAccountError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -146,25 +156,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DisassociateS3ResourcesError> for Error {
     fn from(err: crate::error::DisassociateS3ResourcesError) -> Self {
-        match err.kind {
-            crate::error::DisassociateS3ResourcesErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DisassociateS3ResourcesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DisassociateS3ResourcesErrorKind::InternalException(inner) => {
+            crate::error::DisassociateS3ResourcesError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::DisassociateS3ResourcesErrorKind::InvalidInputException(inner) => {
+            crate::error::DisassociateS3ResourcesError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::DisassociateS3ResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisassociateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -179,22 +194,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListMemberAccountsError> for Error {
     fn from(err: crate::error::ListMemberAccountsError) -> Self {
-        match err.kind {
-            crate::error::ListMemberAccountsErrorKind::InternalException(inner) => {
+        match err {
+            crate::error::ListMemberAccountsError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::ListMemberAccountsErrorKind::InvalidInputException(inner) => {
+            crate::error::ListMemberAccountsError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::ListMemberAccountsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMemberAccountsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -207,25 +227,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListS3ResourcesError> for Error {
     fn from(err: crate::error::ListS3ResourcesError) -> Self {
-        match err.kind {
-            crate::error::ListS3ResourcesErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListS3ResourcesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListS3ResourcesErrorKind::InternalException(inner) => {
+            crate::error::ListS3ResourcesError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::ListS3ResourcesErrorKind::InvalidInputException(inner) => {
+            crate::error::ListS3ResourcesError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::ListS3ResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -240,26 +265,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateS3ResourcesError> for Error {
     fn from(err: crate::error::UpdateS3ResourcesError) -> Self {
-        match err.kind {
-            crate::error::UpdateS3ResourcesErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::UpdateS3ResourcesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateS3ResourcesErrorKind::InternalException(inner) => {
+            crate::error::UpdateS3ResourcesError::InternalException(inner) => {
                 Error::InternalException(inner)
             }
-            crate::error::UpdateS3ResourcesErrorKind::InvalidInputException(inner) => {
+            crate::error::UpdateS3ResourcesError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::UpdateS3ResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateS3ResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::InternalException(e) => e.request_id(),
+            Self::InvalidInputException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

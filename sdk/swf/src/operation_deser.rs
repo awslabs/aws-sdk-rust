@@ -6,8 +6,11 @@ pub fn parse_count_closed_workflow_executions_error(
     crate::output::CountClosedWorkflowExecutionsOutput,
     crate::error::CountClosedWorkflowExecutionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,43 +22,41 @@ pub fn parse_count_closed_workflow_executions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::CountClosedWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::CountClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_not_permitted_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnknownResourceFault" => crate::error::CountClosedWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::CountClosedWorkflowExecutionsErrorKind::UnknownResourceFault({
+        "OperationNotPermittedFault" => {
+            crate::error::CountClosedWorkflowExecutionsError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let mut output =
+                        crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::CountClosedWorkflowExecutionsError::UnknownResourceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CountClosedWorkflowExecutionsError::generic(generic),
     })
 }
@@ -77,6 +78,9 @@ pub fn parse_count_closed_workflow_executions_response(
                 output,
             )
             .map_err(crate::error::CountClosedWorkflowExecutionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -88,8 +92,11 @@ pub fn parse_count_open_workflow_executions_error(
     crate::output::CountOpenWorkflowExecutionsOutput,
     crate::error::CountOpenWorkflowExecutionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CountOpenWorkflowExecutionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -101,9 +108,8 @@ pub fn parse_count_open_workflow_executions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::CountOpenWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::CountOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::CountOpenWorkflowExecutionsError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -111,31 +117,32 @@ pub fn parse_count_open_workflow_executions_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountOpenWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::CountOpenWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::CountOpenWorkflowExecutionsErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::CountOpenWorkflowExecutionsError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountOpenWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CountOpenWorkflowExecutionsError::generic(generic),
     })
 }
@@ -156,6 +163,9 @@ pub fn parse_count_open_workflow_executions_response(
             output,
         )
         .map_err(crate::error::CountOpenWorkflowExecutionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -167,8 +177,11 @@ pub fn parse_count_pending_activity_tasks_error(
     crate::output::CountPendingActivityTasksOutput,
     crate::error::CountPendingActivityTasksError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CountPendingActivityTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -180,9 +193,8 @@ pub fn parse_count_pending_activity_tasks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::CountPendingActivityTasksError {
-            meta: generic,
-            kind: crate::error::CountPendingActivityTasksErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::CountPendingActivityTasksError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -190,31 +202,32 @@ pub fn parse_count_pending_activity_tasks_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingActivityTasksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::CountPendingActivityTasksError {
-            meta: generic,
-            kind: crate::error::CountPendingActivityTasksErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::CountPendingActivityTasksError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingActivityTasksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CountPendingActivityTasksError::generic(generic),
     })
 }
@@ -235,6 +248,9 @@ pub fn parse_count_pending_activity_tasks_response(
             output,
         )
         .map_err(crate::error::CountPendingActivityTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -246,8 +262,11 @@ pub fn parse_count_pending_decision_tasks_error(
     crate::output::CountPendingDecisionTasksOutput,
     crate::error::CountPendingDecisionTasksError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CountPendingDecisionTasksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -259,9 +278,8 @@ pub fn parse_count_pending_decision_tasks_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::CountPendingDecisionTasksError {
-            meta: generic,
-            kind: crate::error::CountPendingDecisionTasksErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::CountPendingDecisionTasksError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -269,31 +287,32 @@ pub fn parse_count_pending_decision_tasks_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingDecisionTasksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::CountPendingDecisionTasksError {
-            meta: generic,
-            kind: crate::error::CountPendingDecisionTasksErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::CountPendingDecisionTasksError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::CountPendingDecisionTasksError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CountPendingDecisionTasksError::generic(generic),
     })
 }
@@ -314,6 +333,9 @@ pub fn parse_count_pending_decision_tasks_response(
             output,
         )
         .map_err(crate::error::CountPendingDecisionTasksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -325,8 +347,11 @@ pub fn parse_deprecate_activity_type_error(
     crate::output::DeprecateActivityTypeOutput,
     crate::error::DeprecateActivityTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeprecateActivityTypeError::unhandled(generic)),
@@ -334,9 +359,8 @@ pub fn parse_deprecate_activity_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::DeprecateActivityTypeError {
-            meta: generic,
-            kind: crate::error::DeprecateActivityTypeErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::DeprecateActivityTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -344,48 +368,49 @@ pub fn parse_deprecate_activity_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeDeprecatedFault" => crate::error::DeprecateActivityTypeError {
-            meta: generic,
-            kind: crate::error::DeprecateActivityTypeErrorKind::TypeDeprecatedFault({
+            })
+        }
+        "TypeDeprecatedFault" => {
+            crate::error::DeprecateActivityTypeError::TypeDeprecatedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_deprecated_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DeprecateActivityTypeError {
-            meta: generic,
-            kind: crate::error::DeprecateActivityTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DeprecateActivityTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeprecateActivityTypeError::generic(generic),
     })
 }
@@ -401,6 +426,9 @@ pub fn parse_deprecate_activity_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deprecate_activity_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -409,8 +437,11 @@ pub fn parse_deprecate_activity_type_response(
 pub fn parse_deprecate_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeprecateDomainOutput, crate::error::DeprecateDomainError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprecateDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeprecateDomainError::unhandled(generic)),
@@ -418,26 +449,23 @@ pub fn parse_deprecate_domain_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DomainDeprecatedFault" => crate::error::DeprecateDomainError {
-            meta: generic,
-            kind: crate::error::DeprecateDomainErrorKind::DomainDeprecatedFault({
+        "DomainDeprecatedFault" => crate::error::DeprecateDomainError::DomainDeprecatedFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::domain_deprecated_fault::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_domain_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::DeprecateDomainError {
-            meta: generic,
-            kind: crate::error::DeprecateDomainErrorKind::OperationNotPermittedFault({
+                let mut output = crate::error::domain_deprecated_fault::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_domain_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "OperationNotPermittedFault" => {
+            crate::error::DeprecateDomainError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -445,31 +473,32 @@ pub fn parse_deprecate_domain_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DeprecateDomainError {
-            meta: generic,
-            kind: crate::error::DeprecateDomainErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DeprecateDomainError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeprecateDomainError::generic(generic),
     })
 }
@@ -482,6 +511,9 @@ pub fn parse_deprecate_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deprecate_domain_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -493,8 +525,11 @@ pub fn parse_deprecate_workflow_type_error(
     crate::output::DeprecateWorkflowTypeOutput,
     crate::error::DeprecateWorkflowTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeprecateWorkflowTypeError::unhandled(generic)),
@@ -502,9 +537,8 @@ pub fn parse_deprecate_workflow_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::DeprecateWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::DeprecateWorkflowTypeErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::DeprecateWorkflowTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -512,48 +546,49 @@ pub fn parse_deprecate_workflow_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeDeprecatedFault" => crate::error::DeprecateWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::DeprecateWorkflowTypeErrorKind::TypeDeprecatedFault({
+            })
+        }
+        "TypeDeprecatedFault" => {
+            crate::error::DeprecateWorkflowTypeError::TypeDeprecatedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_deprecated_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DeprecateWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::DeprecateWorkflowTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DeprecateWorkflowTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DeprecateWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeprecateWorkflowTypeError::generic(generic),
     })
 }
@@ -569,6 +604,9 @@ pub fn parse_deprecate_workflow_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deprecate_workflow_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -580,8 +618,11 @@ pub fn parse_describe_activity_type_error(
     crate::output::DescribeActivityTypeOutput,
     crate::error::DescribeActivityTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeActivityTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeActivityTypeError::unhandled(generic)),
@@ -589,9 +630,8 @@ pub fn parse_describe_activity_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::DescribeActivityTypeError {
-            meta: generic,
-            kind: crate::error::DescribeActivityTypeErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::DescribeActivityTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -599,31 +639,32 @@ pub fn parse_describe_activity_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DescribeActivityTypeError {
-            meta: generic,
-            kind: crate::error::DescribeActivityTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DescribeActivityTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeActivityTypeError::generic(generic),
     })
 }
@@ -644,6 +685,9 @@ pub fn parse_describe_activity_type_response(
             output,
         )
         .map_err(crate::error::DescribeActivityTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -652,8 +696,11 @@ pub fn parse_describe_activity_type_response(
 pub fn parse_describe_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeDomainOutput, crate::error::DescribeDomainError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeDomainError::unhandled(generic)),
@@ -661,9 +708,8 @@ pub fn parse_describe_domain_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::DescribeDomainError {
-            meta: generic,
-            kind: crate::error::DescribeDomainErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::DescribeDomainError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -671,31 +717,32 @@ pub fn parse_describe_domain_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DescribeDomainError {
-            meta: generic,
-            kind: crate::error::DescribeDomainErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DescribeDomainError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeDomainError::generic(generic),
     })
 }
@@ -713,6 +760,9 @@ pub fn parse_describe_domain_response(
             output,
         )
         .map_err(crate::error::DescribeDomainError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -724,8 +774,11 @@ pub fn parse_describe_workflow_execution_error(
     crate::output::DescribeWorkflowExecutionOutput,
     crate::error::DescribeWorkflowExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeWorkflowExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -737,9 +790,8 @@ pub fn parse_describe_workflow_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::DescribeWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeWorkflowExecutionErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::DescribeWorkflowExecutionError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -747,31 +799,32 @@ pub fn parse_describe_workflow_execution_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DescribeWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeWorkflowExecutionErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DescribeWorkflowExecutionError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeWorkflowExecutionError::generic(generic),
     })
 }
@@ -792,6 +845,9 @@ pub fn parse_describe_workflow_execution_response(
             output,
         )
         .map_err(crate::error::DescribeWorkflowExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -803,8 +859,11 @@ pub fn parse_describe_workflow_type_error(
     crate::output::DescribeWorkflowTypeOutput,
     crate::error::DescribeWorkflowTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeWorkflowTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeWorkflowTypeError::unhandled(generic)),
@@ -812,9 +871,8 @@ pub fn parse_describe_workflow_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::DescribeWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::DescribeWorkflowTypeErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::DescribeWorkflowTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -822,31 +880,32 @@ pub fn parse_describe_workflow_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::DescribeWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::DescribeWorkflowTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::DescribeWorkflowTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeWorkflowTypeError::generic(generic),
     })
 }
@@ -867,6 +926,9 @@ pub fn parse_describe_workflow_type_response(
             output,
         )
         .map_err(crate::error::DescribeWorkflowTypeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -878,8 +940,11 @@ pub fn parse_get_workflow_execution_history_error(
     crate::output::GetWorkflowExecutionHistoryOutput,
     crate::error::GetWorkflowExecutionHistoryError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetWorkflowExecutionHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -891,9 +956,8 @@ pub fn parse_get_workflow_execution_history_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::GetWorkflowExecutionHistoryError {
-            meta: generic,
-            kind: crate::error::GetWorkflowExecutionHistoryErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::GetWorkflowExecutionHistoryError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -901,31 +965,32 @@ pub fn parse_get_workflow_execution_history_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowExecutionHistoryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::GetWorkflowExecutionHistoryError {
-            meta: generic,
-            kind: crate::error::GetWorkflowExecutionHistoryErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::GetWorkflowExecutionHistoryError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::GetWorkflowExecutionHistoryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetWorkflowExecutionHistoryError::generic(generic),
     })
 }
@@ -946,6 +1011,9 @@ pub fn parse_get_workflow_execution_history_response(
             output,
         )
         .map_err(crate::error::GetWorkflowExecutionHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -955,8 +1023,11 @@ pub fn parse_list_activity_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListActivityTypesOutput, crate::error::ListActivityTypesError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListActivityTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListActivityTypesError::unhandled(generic)),
@@ -964,9 +1035,8 @@ pub fn parse_list_activity_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::ListActivityTypesError {
-            meta: generic,
-            kind: crate::error::ListActivityTypesErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::ListActivityTypesError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -974,31 +1044,32 @@ pub fn parse_list_activity_types_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivityTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::ListActivityTypesError {
-            meta: generic,
-            kind: crate::error::ListActivityTypesErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::ListActivityTypesError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListActivityTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListActivityTypesError::generic(generic),
     })
 }
@@ -1017,6 +1088,9 @@ pub fn parse_list_activity_types_response(
             output,
         )
         .map_err(crate::error::ListActivityTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1028,8 +1102,11 @@ pub fn parse_list_closed_workflow_executions_error(
     crate::output::ListClosedWorkflowExecutionsOutput,
     crate::error::ListClosedWorkflowExecutionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1041,43 +1118,41 @@ pub fn parse_list_closed_workflow_executions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::ListClosedWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::ListClosedWorkflowExecutionsErrorKind::OperationNotPermittedFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_not_permitted_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnknownResourceFault" => crate::error::ListClosedWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::ListClosedWorkflowExecutionsErrorKind::UnknownResourceFault({
+        "OperationNotPermittedFault" => {
+            crate::error::ListClosedWorkflowExecutionsError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let mut output =
+                        crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::ListClosedWorkflowExecutionsError::UnknownResourceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListClosedWorkflowExecutionsError::generic(generic),
     })
 }
@@ -1099,6 +1174,9 @@ pub fn parse_list_closed_workflow_executions_response(
                 output,
             )
             .map_err(crate::error::ListClosedWorkflowExecutionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1107,8 +1185,11 @@ pub fn parse_list_closed_workflow_executions_response(
 pub fn parse_list_domains_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListDomainsOutput, crate::error::ListDomainsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListDomainsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListDomainsError::unhandled(generic)),
@@ -1116,9 +1197,8 @@ pub fn parse_list_domains_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::ListDomainsError {
-            meta: generic,
-            kind: crate::error::ListDomainsErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::ListDomainsError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1126,14 +1206,15 @@ pub fn parse_list_domains_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListDomainsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListDomainsError::generic(generic),
     })
 }
@@ -1151,6 +1232,9 @@ pub fn parse_list_domains_response(
             output,
         )
         .map_err(crate::error::ListDomainsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1162,8 +1246,11 @@ pub fn parse_list_open_workflow_executions_error(
     crate::output::ListOpenWorkflowExecutionsOutput,
     crate::error::ListOpenWorkflowExecutionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListOpenWorkflowExecutionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1175,9 +1262,8 @@ pub fn parse_list_open_workflow_executions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::ListOpenWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::ListOpenWorkflowExecutionsErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::ListOpenWorkflowExecutionsError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1185,31 +1271,32 @@ pub fn parse_list_open_workflow_executions_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListOpenWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::ListOpenWorkflowExecutionsError {
-            meta: generic,
-            kind: crate::error::ListOpenWorkflowExecutionsErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::ListOpenWorkflowExecutionsError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListOpenWorkflowExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListOpenWorkflowExecutionsError::generic(generic),
     })
 }
@@ -1230,6 +1317,9 @@ pub fn parse_list_open_workflow_executions_response(
             output,
         )
         .map_err(crate::error::ListOpenWorkflowExecutionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1241,8 +1331,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -1250,26 +1343,25 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::ListTagsForResourceError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::ListTagsForResourceError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1277,31 +1369,32 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::ListTagsForResourceError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -1322,6 +1415,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1331,8 +1427,11 @@ pub fn parse_list_workflow_types_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListWorkflowTypesOutput, crate::error::ListWorkflowTypesError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListWorkflowTypesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListWorkflowTypesError::unhandled(generic)),
@@ -1340,9 +1439,8 @@ pub fn parse_list_workflow_types_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::ListWorkflowTypesError {
-            meta: generic,
-            kind: crate::error::ListWorkflowTypesErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::ListWorkflowTypesError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1350,31 +1448,32 @@ pub fn parse_list_workflow_types_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListWorkflowTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::ListWorkflowTypesError {
-            meta: generic,
-            kind: crate::error::ListWorkflowTypesErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::ListWorkflowTypesError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::ListWorkflowTypesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListWorkflowTypesError::generic(generic),
     })
 }
@@ -1393,6 +1492,9 @@ pub fn parse_list_workflow_types_response(
             output,
         )
         .map_err(crate::error::ListWorkflowTypesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1404,8 +1506,11 @@ pub fn parse_poll_for_activity_task_error(
     crate::output::PollForActivityTaskOutput,
     crate::error::PollForActivityTaskError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PollForActivityTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PollForActivityTaskError::unhandled(generic)),
@@ -1413,26 +1518,25 @@ pub fn parse_poll_for_activity_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::PollForActivityTaskError {
-            meta: generic,
-            kind: crate::error::PollForActivityTaskErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::PollForActivityTaskError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForActivityTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::PollForActivityTaskError {
-            meta: generic,
-            kind: crate::error::PollForActivityTaskErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::PollForActivityTaskError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1440,31 +1544,32 @@ pub fn parse_poll_for_activity_task_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForActivityTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::PollForActivityTaskError {
-            meta: generic,
-            kind: crate::error::PollForActivityTaskErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::PollForActivityTaskError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForActivityTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PollForActivityTaskError::generic(generic),
     })
 }
@@ -1485,6 +1590,9 @@ pub fn parse_poll_for_activity_task_response(
             output,
         )
         .map_err(crate::error::PollForActivityTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1496,8 +1604,11 @@ pub fn parse_poll_for_decision_task_error(
     crate::output::PollForDecisionTaskOutput,
     crate::error::PollForDecisionTaskError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PollForDecisionTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PollForDecisionTaskError::unhandled(generic)),
@@ -1505,26 +1616,25 @@ pub fn parse_poll_for_decision_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::PollForDecisionTaskError {
-            meta: generic,
-            kind: crate::error::PollForDecisionTaskErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::PollForDecisionTaskError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForDecisionTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::PollForDecisionTaskError {
-            meta: generic,
-            kind: crate::error::PollForDecisionTaskErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::PollForDecisionTaskError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1532,31 +1642,32 @@ pub fn parse_poll_for_decision_task_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForDecisionTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::PollForDecisionTaskError {
-            meta: generic,
-            kind: crate::error::PollForDecisionTaskErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::PollForDecisionTaskError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::PollForDecisionTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PollForDecisionTaskError::generic(generic),
     })
 }
@@ -1577,6 +1688,9 @@ pub fn parse_poll_for_decision_task_response(
             output,
         )
         .map_err(crate::error::PollForDecisionTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1588,8 +1702,11 @@ pub fn parse_record_activity_task_heartbeat_error(
     crate::output::RecordActivityTaskHeartbeatOutput,
     crate::error::RecordActivityTaskHeartbeatError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RecordActivityTaskHeartbeatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1601,9 +1718,8 @@ pub fn parse_record_activity_task_heartbeat_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::RecordActivityTaskHeartbeatError {
-            meta: generic,
-            kind: crate::error::RecordActivityTaskHeartbeatErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::RecordActivityTaskHeartbeatError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1611,31 +1727,32 @@ pub fn parse_record_activity_task_heartbeat_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RecordActivityTaskHeartbeatError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::RecordActivityTaskHeartbeatError {
-            meta: generic,
-            kind: crate::error::RecordActivityTaskHeartbeatErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RecordActivityTaskHeartbeatError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RecordActivityTaskHeartbeatError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RecordActivityTaskHeartbeatError::generic(generic),
     })
 }
@@ -1656,6 +1773,9 @@ pub fn parse_record_activity_task_heartbeat_response(
             output,
         )
         .map_err(crate::error::RecordActivityTaskHeartbeatError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1667,8 +1787,11 @@ pub fn parse_register_activity_type_error(
     crate::output::RegisterActivityTypeOutput,
     crate::error::RegisterActivityTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterActivityTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RegisterActivityTypeError::unhandled(generic)),
@@ -1676,26 +1799,25 @@ pub fn parse_register_activity_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::RegisterActivityTypeError {
-            meta: generic,
-            kind: crate::error::RegisterActivityTypeErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::RegisterActivityTypeError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::RegisterActivityTypeError {
-            meta: generic,
-            kind: crate::error::RegisterActivityTypeErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::RegisterActivityTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1703,48 +1825,49 @@ pub fn parse_register_activity_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeAlreadyExistsFault" => crate::error::RegisterActivityTypeError {
-            meta: generic,
-            kind: crate::error::RegisterActivityTypeErrorKind::TypeAlreadyExistsFault({
+            })
+        }
+        "TypeAlreadyExistsFault" => {
+            crate::error::RegisterActivityTypeError::TypeAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::RegisterActivityTypeError {
-            meta: generic,
-            kind: crate::error::RegisterActivityTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RegisterActivityTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RegisterActivityTypeError::generic(generic),
     })
 }
@@ -1760,6 +1883,9 @@ pub fn parse_register_activity_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_activity_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1768,8 +1894,11 @@ pub fn parse_register_activity_type_response(
 pub fn parse_register_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterDomainOutput, crate::error::RegisterDomainError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RegisterDomainError::unhandled(generic)),
@@ -1777,43 +1906,42 @@ pub fn parse_register_domain_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DomainAlreadyExistsFault" => crate::error::RegisterDomainError {
-            meta: generic,
-            kind: crate::error::RegisterDomainErrorKind::DomainAlreadyExistsFault({
+        "DomainAlreadyExistsFault" => {
+            crate::error::RegisterDomainError::DomainAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::domain_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_domain_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededFault" => crate::error::RegisterDomainError {
-            meta: generic,
-            kind: crate::error::RegisterDomainErrorKind::LimitExceededFault({
+            })
+        }
+        "LimitExceededFault" => {
+            crate::error::RegisterDomainError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::RegisterDomainError {
-            meta: generic,
-            kind: crate::error::RegisterDomainErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::RegisterDomainError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1821,31 +1949,32 @@ pub fn parse_register_domain_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTagsFault" => crate::error::RegisterDomainError {
-            meta: generic,
-            kind: crate::error::RegisterDomainErrorKind::TooManyTagsFault({
+            })
+        }
+        "TooManyTagsFault" => {
+            crate::error::RegisterDomainError::TooManyTagsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RegisterDomainError::generic(generic),
     })
 }
@@ -1858,6 +1987,9 @@ pub fn parse_register_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_domain_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1869,8 +2001,11 @@ pub fn parse_register_workflow_type_error(
     crate::output::RegisterWorkflowTypeOutput,
     crate::error::RegisterWorkflowTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RegisterWorkflowTypeError::unhandled(generic)),
@@ -1878,26 +2013,25 @@ pub fn parse_register_workflow_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::RegisterWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::RegisterWorkflowTypeErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::RegisterWorkflowTypeError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::RegisterWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::RegisterWorkflowTypeErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::RegisterWorkflowTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1905,48 +2039,49 @@ pub fn parse_register_workflow_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeAlreadyExistsFault" => crate::error::RegisterWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::RegisterWorkflowTypeErrorKind::TypeAlreadyExistsFault({
+            })
+        }
+        "TypeAlreadyExistsFault" => {
+            crate::error::RegisterWorkflowTypeError::TypeAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::RegisterWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::RegisterWorkflowTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RegisterWorkflowTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RegisterWorkflowTypeError::generic(generic),
     })
 }
@@ -1962,6 +2097,9 @@ pub fn parse_register_workflow_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::register_workflow_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1973,8 +2111,11 @@ pub fn parse_request_cancel_workflow_execution_error(
     crate::output::RequestCancelWorkflowExecutionOutput,
     crate::error::RequestCancelWorkflowExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RequestCancelWorkflowExecutionError::unhandled(generic)),
@@ -1982,43 +2123,41 @@ pub fn parse_request_cancel_workflow_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::RequestCancelWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::RequestCancelWorkflowExecutionErrorKind::OperationNotPermittedFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_not_permitted_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnknownResourceFault" => crate::error::RequestCancelWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::RequestCancelWorkflowExecutionErrorKind::UnknownResourceFault({
+        "OperationNotPermittedFault" => {
+            crate::error::RequestCancelWorkflowExecutionError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let mut output =
+                        crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RequestCancelWorkflowExecutionError::UnknownResourceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RequestCancelWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::RequestCancelWorkflowExecutionError::generic(generic),
     })
 }
@@ -2035,6 +2174,9 @@ pub fn parse_request_cancel_workflow_execution_response(
         let mut output =
             crate::output::request_cancel_workflow_execution_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2046,8 +2188,11 @@ pub fn parse_respond_activity_task_canceled_error(
     crate::output::RespondActivityTaskCanceledOutput,
     crate::error::RespondActivityTaskCanceledError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RespondActivityTaskCanceledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2059,9 +2204,8 @@ pub fn parse_respond_activity_task_canceled_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::RespondActivityTaskCanceledError {
-            meta: generic,
-            kind: crate::error::RespondActivityTaskCanceledErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::RespondActivityTaskCanceledError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2069,31 +2213,32 @@ pub fn parse_respond_activity_task_canceled_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCanceledError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::RespondActivityTaskCanceledError {
-            meta: generic,
-            kind: crate::error::RespondActivityTaskCanceledErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RespondActivityTaskCanceledError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCanceledError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RespondActivityTaskCanceledError::generic(generic),
     })
 }
@@ -2109,6 +2254,9 @@ pub fn parse_respond_activity_task_canceled_response(
         #[allow(unused_mut)]
         let mut output = crate::output::respond_activity_task_canceled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2120,8 +2268,11 @@ pub fn parse_respond_activity_task_completed_error(
     crate::output::RespondActivityTaskCompletedOutput,
     crate::error::RespondActivityTaskCompletedError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2133,43 +2284,41 @@ pub fn parse_respond_activity_task_completed_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::RespondActivityTaskCompletedError {
-            meta: generic,
-            kind: crate::error::RespondActivityTaskCompletedErrorKind::OperationNotPermittedFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_not_permitted_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnknownResourceFault" => crate::error::RespondActivityTaskCompletedError {
-            meta: generic,
-            kind: crate::error::RespondActivityTaskCompletedErrorKind::UnknownResourceFault({
+        "OperationNotPermittedFault" => {
+            crate::error::RespondActivityTaskCompletedError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let mut output =
+                        crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RespondActivityTaskCompletedError::UnknownResourceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskCompletedError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::RespondActivityTaskCompletedError::generic(generic),
     })
 }
@@ -2185,6 +2334,9 @@ pub fn parse_respond_activity_task_completed_response(
         #[allow(unused_mut)]
         let mut output = crate::output::respond_activity_task_completed_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2196,8 +2348,11 @@ pub fn parse_respond_activity_task_failed_error(
     crate::output::RespondActivityTaskFailedOutput,
     crate::error::RespondActivityTaskFailedError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RespondActivityTaskFailedError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2209,9 +2364,8 @@ pub fn parse_respond_activity_task_failed_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::RespondActivityTaskFailedError {
-            meta: generic,
-            kind: crate::error::RespondActivityTaskFailedErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::RespondActivityTaskFailedError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2219,31 +2373,32 @@ pub fn parse_respond_activity_task_failed_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskFailedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::RespondActivityTaskFailedError {
-            meta: generic,
-            kind: crate::error::RespondActivityTaskFailedErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RespondActivityTaskFailedError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondActivityTaskFailedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RespondActivityTaskFailedError::generic(generic),
     })
 }
@@ -2259,6 +2414,9 @@ pub fn parse_respond_activity_task_failed_response(
         #[allow(unused_mut)]
         let mut output = crate::output::respond_activity_task_failed_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2270,8 +2428,11 @@ pub fn parse_respond_decision_task_completed_error(
     crate::output::RespondDecisionTaskCompletedOutput,
     crate::error::RespondDecisionTaskCompletedError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2283,43 +2444,41 @@ pub fn parse_respond_decision_task_completed_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::RespondDecisionTaskCompletedError {
-            meta: generic,
-            kind: crate::error::RespondDecisionTaskCompletedErrorKind::OperationNotPermittedFault(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_not_permitted_fault::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnknownResourceFault" => crate::error::RespondDecisionTaskCompletedError {
-            meta: generic,
-            kind: crate::error::RespondDecisionTaskCompletedErrorKind::UnknownResourceFault({
+        "OperationNotPermittedFault" => {
+            crate::error::RespondDecisionTaskCompletedError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let mut output =
+                        crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::RespondDecisionTaskCompletedError::UnknownResourceFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::unknown_resource_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::RespondDecisionTaskCompletedError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::RespondDecisionTaskCompletedError::generic(generic),
     })
 }
@@ -2335,6 +2494,9 @@ pub fn parse_respond_decision_task_completed_response(
         #[allow(unused_mut)]
         let mut output = crate::output::respond_decision_task_completed_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2346,8 +2508,11 @@ pub fn parse_signal_workflow_execution_error(
     crate::output::SignalWorkflowExecutionOutput,
     crate::error::SignalWorkflowExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SignalWorkflowExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2359,9 +2524,8 @@ pub fn parse_signal_workflow_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::SignalWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::SignalWorkflowExecutionErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::SignalWorkflowExecutionError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2369,31 +2533,32 @@ pub fn parse_signal_workflow_execution_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::SignalWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::SignalWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::SignalWorkflowExecutionErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::SignalWorkflowExecutionError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::SignalWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SignalWorkflowExecutionError::generic(generic),
     })
 }
@@ -2409,6 +2574,9 @@ pub fn parse_signal_workflow_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::signal_workflow_execution_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2420,8 +2588,11 @@ pub fn parse_start_workflow_execution_error(
     crate::output::StartWorkflowExecutionOutput,
     crate::error::StartWorkflowExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2433,43 +2604,42 @@ pub fn parse_start_workflow_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DefaultUndefinedFault" => crate::error::StartWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::StartWorkflowExecutionErrorKind::DefaultUndefinedFault({
+        "DefaultUndefinedFault" => {
+            crate::error::StartWorkflowExecutionError::DefaultUndefinedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::default_undefined_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_default_undefined_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededFault" => crate::error::StartWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::StartWorkflowExecutionErrorKind::LimitExceededFault({
+            })
+        }
+        "LimitExceededFault" => {
+            crate::error::StartWorkflowExecutionError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::StartWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::StartWorkflowExecutionErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::StartWorkflowExecutionError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2477,68 +2647,67 @@ pub fn parse_start_workflow_execution_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeDeprecatedFault" => crate::error::StartWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::StartWorkflowExecutionErrorKind::TypeDeprecatedFault({
+            })
+        }
+        "TypeDeprecatedFault" => {
+            crate::error::StartWorkflowExecutionError::TypeDeprecatedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_deprecated_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_deprecated_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::StartWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::StartWorkflowExecutionErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::StartWorkflowExecutionError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "WorkflowExecutionAlreadyStartedFault" => crate::error::StartWorkflowExecutionError {
-            meta: generic,
-            kind:
-                crate::error::StartWorkflowExecutionErrorKind::WorkflowExecutionAlreadyStartedFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::workflow_execution_already_started_fault::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_workflow_execution_already_started_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "WorkflowExecutionAlreadyStartedFault" => {
+            crate::error::StartWorkflowExecutionError::WorkflowExecutionAlreadyStartedFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::workflow_execution_already_started_fault::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_workflow_execution_already_started_fault_json_err(response.body().as_ref(), output).map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::StartWorkflowExecutionError::generic(generic),
     })
 }
@@ -2559,6 +2728,9 @@ pub fn parse_start_workflow_execution_response(
             output,
         )
         .map_err(crate::error::StartWorkflowExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2567,8 +2739,11 @@ pub fn parse_start_workflow_execution_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -2576,26 +2751,25 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::TagResourceError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::TagResourceError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2603,48 +2777,49 @@ pub fn parse_tag_resource_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTagsFault" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyTagsFault({
+            })
+        }
+        "TooManyTagsFault" => {
+            crate::error::TagResourceError::TooManyTagsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_too_many_tags_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::TagResourceError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -2657,6 +2832,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2668,8 +2846,11 @@ pub fn parse_terminate_workflow_execution_error(
     crate::output::TerminateWorkflowExecutionOutput,
     crate::error::TerminateWorkflowExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TerminateWorkflowExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2681,9 +2862,8 @@ pub fn parse_terminate_workflow_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::TerminateWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::TerminateWorkflowExecutionErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::TerminateWorkflowExecutionError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2691,31 +2871,32 @@ pub fn parse_terminate_workflow_execution_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TerminateWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::TerminateWorkflowExecutionError {
-            meta: generic,
-            kind: crate::error::TerminateWorkflowExecutionErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::TerminateWorkflowExecutionError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::TerminateWorkflowExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TerminateWorkflowExecutionError::generic(generic),
     })
 }
@@ -2731,6 +2912,9 @@ pub fn parse_terminate_workflow_execution_response(
         #[allow(unused_mut)]
         let mut output = crate::output::terminate_workflow_execution_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2742,8 +2926,11 @@ pub fn parse_undeprecate_activity_type_error(
     crate::output::UndeprecateActivityTypeOutput,
     crate::error::UndeprecateActivityTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2755,9 +2942,8 @@ pub fn parse_undeprecate_activity_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::UndeprecateActivityTypeError {
-            meta: generic,
-            kind: crate::error::UndeprecateActivityTypeErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::UndeprecateActivityTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2765,48 +2951,49 @@ pub fn parse_undeprecate_activity_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeAlreadyExistsFault" => crate::error::UndeprecateActivityTypeError {
-            meta: generic,
-            kind: crate::error::UndeprecateActivityTypeErrorKind::TypeAlreadyExistsFault({
+            })
+        }
+        "TypeAlreadyExistsFault" => {
+            crate::error::UndeprecateActivityTypeError::TypeAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::UndeprecateActivityTypeError {
-            meta: generic,
-            kind: crate::error::UndeprecateActivityTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::UndeprecateActivityTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateActivityTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UndeprecateActivityTypeError::generic(generic),
     })
 }
@@ -2822,6 +3009,9 @@ pub fn parse_undeprecate_activity_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::undeprecate_activity_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2831,8 +3021,11 @@ pub fn parse_undeprecate_domain_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UndeprecateDomainOutput, crate::error::UndeprecateDomainError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UndeprecateDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UndeprecateDomainError::unhandled(generic)),
@@ -2840,26 +3033,25 @@ pub fn parse_undeprecate_domain_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DomainAlreadyExistsFault" => crate::error::UndeprecateDomainError {
-            meta: generic,
-            kind: crate::error::UndeprecateDomainErrorKind::DomainAlreadyExistsFault({
+        "DomainAlreadyExistsFault" => {
+            crate::error::UndeprecateDomainError::DomainAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::domain_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_domain_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::UndeprecateDomainError {
-            meta: generic,
-            kind: crate::error::UndeprecateDomainErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::UndeprecateDomainError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2867,31 +3059,32 @@ pub fn parse_undeprecate_domain_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::UndeprecateDomainError {
-            meta: generic,
-            kind: crate::error::UndeprecateDomainErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::UndeprecateDomainError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateDomainError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UndeprecateDomainError::generic(generic),
     })
 }
@@ -2905,6 +3098,9 @@ pub fn parse_undeprecate_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::undeprecate_domain_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2916,8 +3112,11 @@ pub fn parse_undeprecate_workflow_type_error(
     crate::output::UndeprecateWorkflowTypeOutput,
     crate::error::UndeprecateWorkflowTypeError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2929,9 +3128,8 @@ pub fn parse_undeprecate_workflow_type_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationNotPermittedFault" => crate::error::UndeprecateWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::UndeprecateWorkflowTypeErrorKind::OperationNotPermittedFault({
+        "OperationNotPermittedFault" => {
+            crate::error::UndeprecateWorkflowTypeError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2939,48 +3137,49 @@ pub fn parse_undeprecate_workflow_type_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TypeAlreadyExistsFault" => crate::error::UndeprecateWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::UndeprecateWorkflowTypeErrorKind::TypeAlreadyExistsFault({
+            })
+        }
+        "TypeAlreadyExistsFault" => {
+            crate::error::UndeprecateWorkflowTypeError::TypeAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::type_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_type_already_exists_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::UndeprecateWorkflowTypeError {
-            meta: generic,
-            kind: crate::error::UndeprecateWorkflowTypeErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::UndeprecateWorkflowTypeError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UndeprecateWorkflowTypeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UndeprecateWorkflowTypeError::generic(generic),
     })
 }
@@ -2996,6 +3195,9 @@ pub fn parse_undeprecate_workflow_type_response(
         #[allow(unused_mut)]
         let mut output = crate::output::undeprecate_workflow_type_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3004,8 +3206,11 @@ pub fn parse_undeprecate_workflow_type_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -3013,26 +3218,25 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "LimitExceededFault" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::LimitExceededFault({
+        "LimitExceededFault" => {
+            crate::error::UntagResourceError::LimitExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationNotPermittedFault" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::OperationNotPermittedFault({
+            })
+        }
+        "OperationNotPermittedFault" => {
+            crate::error::UntagResourceError::OperationNotPermittedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3040,31 +3244,32 @@ pub fn parse_untag_resource_error(
                         crate::error::operation_not_permitted_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_operation_not_permitted_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnknownResourceFault" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::UnknownResourceFault({
+            })
+        }
+        "UnknownResourceFault" => {
+            crate::error::UntagResourceError::UnknownResourceFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::unknown_resource_fault::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unknown_resource_fault_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -3077,6 +3282,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

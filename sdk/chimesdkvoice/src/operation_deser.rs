@@ -6,8 +6,11 @@ pub fn parse_associate_phone_numbers_with_voice_connector_error(
     crate::output::AssociatePhoneNumbersWithVoiceConnectorOutput,
     crate::error::AssociatePhoneNumbersWithVoiceConnectorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,135 +22,149 @@ pub fn parse_associate_phone_numbers_with_voice_connector_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "BadRequestException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "BadRequestException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::AssociatePhoneNumbersWithVoiceConnectorError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::AssociatePhoneNumbersWithVoiceConnectorError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::AssociatePhoneNumbersWithVoiceConnectorError::generic(generic),
     })
 }
 
@@ -164,6 +181,9 @@ pub fn parse_associate_phone_numbers_with_voice_connector_response(
             crate::output::associate_phone_numbers_with_voice_connector_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_associate_phone_numbers_with_voice_connector(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -175,8 +195,11 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
     crate::output::AssociatePhoneNumbersWithVoiceConnectorGroupOutput,
     crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -188,7 +211,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -196,6 +219,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -203,8 +227,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "BadRequestException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::BadRequestException({
+        }),
+        "BadRequestException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -212,6 +236,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -219,8 +244,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -228,6 +253,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -235,8 +261,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -244,6 +270,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -251,8 +278,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -260,6 +287,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -267,8 +295,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -276,6 +304,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -283,8 +312,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -292,6 +321,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -299,8 +329,8 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError { meta: generic, kind: crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -308,6 +338,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -315,7 +346,7 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::generic(generic)
     })
 }
@@ -332,6 +363,9 @@ pub fn parse_associate_phone_numbers_with_voice_connector_group_response(
         let mut output = crate::output::associate_phone_numbers_with_voice_connector_group_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_associate_phone_numbers_with_voice_connector_group(response.body().as_ref(), output).map_err(crate::error::AssociatePhoneNumbersWithVoiceConnectorGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -343,8 +377,11 @@ pub fn parse_batch_delete_phone_number_error(
     crate::output::BatchDeletePhoneNumberOutput,
     crate::error::BatchDeletePhoneNumberError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -356,77 +393,76 @@ pub fn parse_batch_delete_phone_number_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::BatchDeletePhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::BatchDeletePhoneNumberError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::BatchDeletePhoneNumberError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::BatchDeletePhoneNumberError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::BatchDeletePhoneNumberError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -434,34 +470,34 @@ pub fn parse_batch_delete_phone_number_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::BatchDeletePhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::BatchDeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchDeletePhoneNumberErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::BatchDeletePhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -469,14 +505,15 @@ pub fn parse_batch_delete_phone_number_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::BatchDeletePhoneNumberError::generic(generic),
     })
 }
@@ -497,6 +534,9 @@ pub fn parse_batch_delete_phone_number_response(
             output,
         )
         .map_err(crate::error::BatchDeletePhoneNumberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -508,8 +548,11 @@ pub fn parse_batch_update_phone_number_error(
     crate::output::BatchUpdatePhoneNumberOutput,
     crate::error::BatchUpdatePhoneNumberError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -521,77 +564,76 @@ pub fn parse_batch_update_phone_number_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::BatchUpdatePhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::BatchUpdatePhoneNumberError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::BatchUpdatePhoneNumberError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::BatchUpdatePhoneNumberError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::BatchUpdatePhoneNumberError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -599,34 +641,34 @@ pub fn parse_batch_update_phone_number_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::BatchUpdatePhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::BatchUpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::BatchUpdatePhoneNumberErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::BatchUpdatePhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -634,14 +676,15 @@ pub fn parse_batch_update_phone_number_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::BatchUpdatePhoneNumberError::generic(generic),
     })
 }
@@ -662,6 +705,9 @@ pub fn parse_batch_update_phone_number_response(
             output,
         )
         .map_err(crate::error::BatchUpdatePhoneNumberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -673,8 +719,11 @@ pub fn parse_create_phone_number_order_error(
     crate::output::CreatePhoneNumberOrderOutput,
     crate::error::CreatePhoneNumberOrderError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -686,60 +735,59 @@ pub fn parse_create_phone_number_order_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::CreatePhoneNumberOrderError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::CreatePhoneNumberOrderError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::CreatePhoneNumberOrderError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreatePhoneNumberOrderError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -747,34 +795,34 @@ pub fn parse_create_phone_number_order_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreatePhoneNumberOrderError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreatePhoneNumberOrderError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -782,34 +830,34 @@ pub fn parse_create_phone_number_order_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreatePhoneNumberOrderError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreatePhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::CreatePhoneNumberOrderErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreatePhoneNumberOrderError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -817,14 +865,15 @@ pub fn parse_create_phone_number_order_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreatePhoneNumberOrderError::generic(generic),
     })
 }
@@ -845,6 +894,9 @@ pub fn parse_create_phone_number_order_response(
             output,
         )
         .map_err(crate::error::CreatePhoneNumberOrderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -856,8 +908,11 @@ pub fn parse_create_proxy_session_error(
     crate::output::CreateProxySessionOutput,
     crate::error::CreateProxySessionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateProxySessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateProxySessionError::unhandled(generic)),
@@ -865,77 +920,76 @@ pub fn parse_create_proxy_session_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateProxySessionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::CreateProxySessionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::CreateProxySessionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateProxySessionError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateProxySessionError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -943,34 +997,34 @@ pub fn parse_create_proxy_session_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateProxySessionError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateProxySessionError {
-            meta: generic,
-            kind: crate::error::CreateProxySessionErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateProxySessionError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -978,14 +1032,15 @@ pub fn parse_create_proxy_session_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateProxySessionError::generic(generic),
     })
 }
@@ -1006,6 +1061,9 @@ pub fn parse_create_proxy_session_response(
             output,
         )
         .map_err(crate::error::CreateProxySessionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1017,8 +1075,11 @@ pub fn parse_create_sip_media_application_error(
     crate::output::CreateSipMediaApplicationOutput,
     crate::error::CreateSipMediaApplicationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1030,116 +1091,114 @@ pub fn parse_create_sip_media_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::CreateSipMediaApplicationError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::CreateSipMediaApplicationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateSipMediaApplicationError {
-                meta: generic,
-                kind: crate::error::CreateSipMediaApplicationErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateSipMediaApplicationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateSipMediaApplicationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::ResourceLimitExceededException(
-                {
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateSipMediaApplicationError::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceFailureException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::ServiceFailureException({
+                    let mut output =
+                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateSipMediaApplicationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateSipMediaApplicationError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1147,34 +1206,34 @@ pub fn parse_create_sip_media_application_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateSipMediaApplicationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateSipMediaApplicationError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1182,14 +1241,15 @@ pub fn parse_create_sip_media_application_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateSipMediaApplicationError::generic(generic),
     })
 }
@@ -1210,6 +1270,9 @@ pub fn parse_create_sip_media_application_response(
             output,
         )
         .map_err(crate::error::CreateSipMediaApplicationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1221,8 +1284,11 @@ pub fn parse_create_sip_media_application_call_error(
     crate::output::CreateSipMediaApplicationCallOutput,
     crate::error::CreateSipMediaApplicationCallError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1234,152 +1300,145 @@ pub fn parse_create_sip_media_application_call_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::CreateSipMediaApplicationCallError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::CreateSipMediaApplicationCallError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::CreateSipMediaApplicationCallError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind:
-                crate::error::CreateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_limit_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ServiceFailureException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::ServiceFailureException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateSipMediaApplicationCallError::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateSipMediaApplicationCallError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateSipMediaApplicationCallError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateSipMediaApplicationCallError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::CreateSipMediaApplicationCallErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateSipMediaApplicationCallError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateSipMediaApplicationCallError::generic(generic),
     })
 }
@@ -1402,6 +1461,9 @@ pub fn parse_create_sip_media_application_call_response(
                 output,
             )
             .map_err(crate::error::CreateSipMediaApplicationCallError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1410,8 +1472,11 @@ pub fn parse_create_sip_media_application_call_response(
 pub fn parse_create_sip_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateSipRuleOutput, crate::error::CreateSipRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateSipRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateSipRuleError::unhandled(generic)),
@@ -1419,79 +1484,77 @@ pub fn parse_create_sip_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::CreateSipRuleError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "BadRequestException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::BadRequestException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "BadRequestException" => {
+            crate::error::CreateSipRuleError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::CreateSipRuleError {
-                meta: generic,
-                kind: crate::error::CreateSipRuleErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::CreateSipRuleError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::CreateSipRuleError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateSipRuleError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1499,34 +1562,32 @@ pub fn parse_create_sip_rule_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::CreateSipRuleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::CreateSipRuleError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1534,34 +1595,32 @@ pub fn parse_create_sip_rule_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::CreateSipRuleError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateSipRuleError {
-            meta: generic,
-            kind: crate::error::CreateSipRuleErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::CreateSipRuleError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1569,14 +1628,15 @@ pub fn parse_create_sip_rule_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateSipRuleError::generic(generic),
     })
 }
@@ -1594,6 +1654,9 @@ pub fn parse_create_sip_rule_response(
             output,
         )
         .map_err(crate::error::CreateSipRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1605,8 +1668,11 @@ pub fn parse_create_voice_connector_error(
     crate::output::CreateVoiceConnectorOutput,
     crate::error::CreateVoiceConnectorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateVoiceConnectorError::unhandled(generic)),
@@ -1614,60 +1680,59 @@ pub fn parse_create_voice_connector_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::CreateVoiceConnectorError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::CreateVoiceConnectorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::CreateVoiceConnectorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateVoiceConnectorError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1675,34 +1740,34 @@ pub fn parse_create_voice_connector_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateVoiceConnectorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateVoiceConnectorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1710,34 +1775,34 @@ pub fn parse_create_voice_connector_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateVoiceConnectorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateVoiceConnectorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1745,14 +1810,15 @@ pub fn parse_create_voice_connector_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateVoiceConnectorError::generic(generic),
     })
 }
@@ -1773,6 +1839,9 @@ pub fn parse_create_voice_connector_response(
             output,
         )
         .map_err(crate::error::CreateVoiceConnectorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1784,8 +1853,11 @@ pub fn parse_create_voice_connector_group_error(
     crate::output::CreateVoiceConnectorGroupOutput,
     crate::error::CreateVoiceConnectorGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1797,97 +1869,94 @@ pub fn parse_create_voice_connector_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::CreateVoiceConnectorGroupError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::CreateVoiceConnectorGroupError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::CreateVoiceConnectorGroupError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::ResourceLimitExceededException(
-                {
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::CreateVoiceConnectorGroupError::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_limit_exceeded_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceFailureException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::ServiceFailureException({
+                    let mut output =
+                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::CreateVoiceConnectorGroupError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::CreateVoiceConnectorGroupError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1895,34 +1964,34 @@ pub fn parse_create_voice_connector_group_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::CreateVoiceConnectorGroupError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::CreateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::CreateVoiceConnectorGroupErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::CreateVoiceConnectorGroupError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1930,14 +1999,15 @@ pub fn parse_create_voice_connector_group_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateVoiceConnectorGroupError::generic(generic),
     })
 }
@@ -1958,6 +2028,9 @@ pub fn parse_create_voice_connector_group_response(
             output,
         )
         .map_err(crate::error::CreateVoiceConnectorGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1967,8 +2040,11 @@ pub fn parse_delete_phone_number_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeletePhoneNumberOutput, crate::error::DeletePhoneNumberError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeletePhoneNumberError::unhandled(generic)),
@@ -1976,77 +2052,76 @@ pub fn parse_delete_phone_number_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeletePhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeletePhoneNumberError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeletePhoneNumberError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeletePhoneNumberError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeletePhoneNumberError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2054,34 +2129,34 @@ pub fn parse_delete_phone_number_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeletePhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeletePhoneNumberError {
-            meta: generic,
-            kind: crate::error::DeletePhoneNumberErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeletePhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2089,14 +2164,15 @@ pub fn parse_delete_phone_number_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeletePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeletePhoneNumberError::generic(generic),
     })
 }
@@ -2110,6 +2186,9 @@ pub fn parse_delete_phone_number_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_phone_number_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2121,8 +2200,11 @@ pub fn parse_delete_proxy_session_error(
     crate::output::DeleteProxySessionOutput,
     crate::error::DeleteProxySessionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteProxySessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteProxySessionError::unhandled(generic)),
@@ -2130,77 +2212,76 @@ pub fn parse_delete_proxy_session_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteProxySessionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteProxySessionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteProxySessionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteProxySessionError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteProxySessionError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2208,34 +2289,34 @@ pub fn parse_delete_proxy_session_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteProxySessionError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteProxySessionError {
-            meta: generic,
-            kind: crate::error::DeleteProxySessionErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteProxySessionError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2243,14 +2324,15 @@ pub fn parse_delete_proxy_session_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteProxySessionError::generic(generic),
     })
 }
@@ -2266,6 +2348,9 @@ pub fn parse_delete_proxy_session_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_proxy_session_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2277,8 +2362,11 @@ pub fn parse_delete_sip_media_application_error(
     crate::output::DeleteSipMediaApplicationOutput,
     crate::error::DeleteSipMediaApplicationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2290,96 +2378,96 @@ pub fn parse_delete_sip_media_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteSipMediaApplicationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DeleteSipMediaApplicationError {
-                meta: generic,
-                kind: crate::error::DeleteSipMediaApplicationErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DeleteSipMediaApplicationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DeleteSipMediaApplicationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteSipMediaApplicationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteSipMediaApplicationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteSipMediaApplicationError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2387,34 +2475,34 @@ pub fn parse_delete_sip_media_application_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteSipMediaApplicationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteSipMediaApplicationErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteSipMediaApplicationError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2422,14 +2510,15 @@ pub fn parse_delete_sip_media_application_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteSipMediaApplicationError::generic(generic),
     })
 }
@@ -2445,6 +2534,9 @@ pub fn parse_delete_sip_media_application_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_sip_media_application_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2453,8 +2545,11 @@ pub fn parse_delete_sip_media_application_response(
 pub fn parse_delete_sip_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteSipRuleOutput, crate::error::DeleteSipRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteSipRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteSipRuleError::unhandled(generic)),
@@ -2462,96 +2557,94 @@ pub fn parse_delete_sip_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteSipRuleError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DeleteSipRuleError {
-                meta: generic,
-                kind: crate::error::DeleteSipRuleErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DeleteSipRuleError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DeleteSipRuleError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteSipRuleError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::DeleteSipRuleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::DeleteSipRuleError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2559,34 +2652,32 @@ pub fn parse_delete_sip_rule_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::DeleteSipRuleError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteSipRuleError {
-            meta: generic,
-            kind: crate::error::DeleteSipRuleErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::DeleteSipRuleError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2594,14 +2685,15 @@ pub fn parse_delete_sip_rule_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteSipRuleError::generic(generic),
     })
 }
@@ -2614,6 +2706,9 @@ pub fn parse_delete_sip_rule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_sip_rule_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2625,8 +2720,11 @@ pub fn parse_delete_voice_connector_error(
     crate::output::DeleteVoiceConnectorOutput,
     crate::error::DeleteVoiceConnectorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteVoiceConnectorError::unhandled(generic)),
@@ -2634,96 +2732,96 @@ pub fn parse_delete_voice_connector_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteVoiceConnectorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DeleteVoiceConnectorError {
-                meta: generic,
-                kind: crate::error::DeleteVoiceConnectorErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DeleteVoiceConnectorError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DeleteVoiceConnectorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteVoiceConnectorError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteVoiceConnectorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteVoiceConnectorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2731,34 +2829,34 @@ pub fn parse_delete_voice_connector_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteVoiceConnectorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteVoiceConnectorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2766,14 +2864,15 @@ pub fn parse_delete_voice_connector_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteVoiceConnectorError::generic(generic),
     })
 }
@@ -2789,6 +2888,9 @@ pub fn parse_delete_voice_connector_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_voice_connector_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2800,8 +2902,11 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
     crate::output::DeleteVoiceConnectorEmergencyCallingConfigurationOutput,
     crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2815,7 +2920,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2823,6 +2928,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2830,8 +2936,8 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2839,6 +2945,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2846,8 +2953,8 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2855,6 +2962,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2862,8 +2970,8 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2871,6 +2979,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2878,8 +2987,8 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2887,6 +2996,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2894,8 +3004,8 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2903,6 +3013,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2910,8 +3021,8 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2919,6 +3030,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2926,7 +3038,7 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DeleteVoiceConnectorEmergencyCallingConfigurationError::generic(generic)
     })
 }
@@ -2942,6 +3054,9 @@ pub fn parse_delete_voice_connector_emergency_calling_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_voice_connector_emergency_calling_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2953,8 +3068,11 @@ pub fn parse_delete_voice_connector_group_error(
     crate::output::DeleteVoiceConnectorGroupOutput,
     crate::error::DeleteVoiceConnectorGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2966,96 +3084,96 @@ pub fn parse_delete_voice_connector_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteVoiceConnectorGroupError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::DeleteVoiceConnectorGroupError {
-                meta: generic,
-                kind: crate::error::DeleteVoiceConnectorGroupErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::DeleteVoiceConnectorGroupError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::DeleteVoiceConnectorGroupError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteVoiceConnectorGroupError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteVoiceConnectorGroupError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteVoiceConnectorGroupError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3063,34 +3181,34 @@ pub fn parse_delete_voice_connector_group_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteVoiceConnectorGroupError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorGroupErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteVoiceConnectorGroupError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3098,14 +3216,15 @@ pub fn parse_delete_voice_connector_group_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteVoiceConnectorGroupError::generic(generic),
     })
 }
@@ -3121,6 +3240,9 @@ pub fn parse_delete_voice_connector_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_voice_connector_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3132,8 +3254,11 @@ pub fn parse_delete_voice_connector_origination_error(
     crate::output::DeleteVoiceConnectorOriginationOutput,
     crate::error::DeleteVoiceConnectorOriginationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteVoiceConnectorOriginationError::unhandled(generic)),
@@ -3141,139 +3266,127 @@ pub fn parse_delete_voice_connector_origination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorOriginationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorOriginationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorOriginationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorOriginationErrorKind::ServiceFailureException(
-                {
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_failure_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind:
-                crate::error::DeleteVoiceConnectorOriginationErrorKind::ServiceUnavailableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_unavailable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorOriginationErrorKind::ThrottledClientException(
-                {
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::throttled_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorOriginationError {
-            meta: generic,
-            kind:
-                crate::error::DeleteVoiceConnectorOriginationErrorKind::UnauthorizedClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::unauthorized_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteVoiceConnectorOriginationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteVoiceConnectorOriginationError::generic(generic),
     })
 }
@@ -3290,6 +3403,9 @@ pub fn parse_delete_voice_connector_origination_response(
         let mut output =
             crate::output::delete_voice_connector_origination_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3301,8 +3417,11 @@ pub fn parse_delete_voice_connector_proxy_error(
     crate::output::DeleteVoiceConnectorProxyOutput,
     crate::error::DeleteVoiceConnectorProxyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3314,77 +3433,76 @@ pub fn parse_delete_voice_connector_proxy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteVoiceConnectorProxyError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteVoiceConnectorProxyError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteVoiceConnectorProxyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteVoiceConnectorProxyError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteVoiceConnectorProxyError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3392,34 +3510,34 @@ pub fn parse_delete_voice_connector_proxy_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteVoiceConnectorProxyError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorProxyErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteVoiceConnectorProxyError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3427,14 +3545,15 @@ pub fn parse_delete_voice_connector_proxy_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteVoiceConnectorProxyError::generic(generic),
     })
 }
@@ -3450,6 +3569,9 @@ pub fn parse_delete_voice_connector_proxy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_voice_connector_proxy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3461,8 +3583,11 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
     crate::output::DeleteVoiceConnectorStreamingConfigurationOutput,
     crate::error::DeleteVoiceConnectorStreamingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3474,7 +3599,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3482,6 +3607,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3489,8 +3615,8 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3498,6 +3624,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3505,8 +3632,8 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3514,6 +3641,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3521,8 +3649,8 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3530,6 +3658,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3537,8 +3666,8 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3546,6 +3675,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3553,8 +3683,8 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3562,6 +3692,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3569,8 +3700,8 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::DeleteVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorStreamingConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3578,6 +3709,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3585,7 +3717,7 @@ pub fn parse_delete_voice_connector_streaming_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DeleteVoiceConnectorStreamingConfigurationError::generic(generic)
     })
 }
@@ -3603,6 +3735,9 @@ pub fn parse_delete_voice_connector_streaming_configuration_response(
             crate::output::delete_voice_connector_streaming_configuration_output::Builder::default(
             );
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3614,8 +3749,11 @@ pub fn parse_delete_voice_connector_termination_error(
     crate::output::DeleteVoiceConnectorTerminationOutput,
     crate::error::DeleteVoiceConnectorTerminationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteVoiceConnectorTerminationError::unhandled(generic)),
@@ -3623,139 +3761,127 @@ pub fn parse_delete_voice_connector_termination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorTerminationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorTerminationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorTerminationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorTerminationErrorKind::ServiceFailureException(
-                {
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_failure_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind:
-                crate::error::DeleteVoiceConnectorTerminationErrorKind::ServiceUnavailableException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::service_unavailable_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::DeleteVoiceConnectorTerminationErrorKind::ThrottledClientException(
-                {
+                    let mut output = crate::error::service_failure_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::throttled_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorTerminationError {
-            meta: generic,
-            kind:
-                crate::error::DeleteVoiceConnectorTerminationErrorKind::UnauthorizedClientException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::unauthorized_client_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::throttled_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::DeleteVoiceConnectorTerminationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteVoiceConnectorTerminationError::generic(generic),
     })
 }
@@ -3772,6 +3898,9 @@ pub fn parse_delete_voice_connector_termination_response(
         let mut output =
             crate::output::delete_voice_connector_termination_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3783,8 +3912,11 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
     crate::output::DeleteVoiceConnectorTerminationCredentialsOutput,
     crate::error::DeleteVoiceConnectorTerminationCredentialsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3796,7 +3928,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3804,6 +3936,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3811,8 +3944,8 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3820,6 +3953,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3827,8 +3961,8 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3836,6 +3970,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3843,8 +3978,8 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3852,6 +3987,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3859,8 +3995,8 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3868,6 +4004,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3875,8 +4012,8 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3884,6 +4021,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3891,8 +4029,8 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::DeleteVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DeleteVoiceConnectorTerminationCredentialsError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3900,6 +4038,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3907,7 +4046,7 @@ pub fn parse_delete_voice_connector_termination_credentials_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DeleteVoiceConnectorTerminationCredentialsError::generic(generic)
     })
 }
@@ -3925,6 +4064,9 @@ pub fn parse_delete_voice_connector_termination_credentials_response(
             crate::output::delete_voice_connector_termination_credentials_output::Builder::default(
             );
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3936,8 +4078,11 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
     crate::output::DisassociatePhoneNumbersFromVoiceConnectorOutput,
     crate::error::DisassociatePhoneNumbersFromVoiceConnectorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3949,7 +4094,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3957,6 +4102,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3964,8 +4110,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3973,6 +4119,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3980,8 +4127,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3989,6 +4136,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3996,8 +4144,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4005,6 +4153,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4012,8 +4161,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4021,6 +4170,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4028,8 +4178,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4037,6 +4187,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4044,8 +4195,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4053,6 +4204,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4060,7 +4212,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::generic(generic)
     })
 }
@@ -4079,6 +4231,9 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_disassociate_phone_numbers_from_voice_connector(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4090,8 +4245,11 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
     crate::output::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput,
     crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4105,7 +4263,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4113,6 +4271,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4120,8 +4279,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4129,6 +4288,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4136,8 +4296,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4145,6 +4305,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4152,8 +4313,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4161,6 +4322,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4168,8 +4330,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4177,6 +4339,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4184,8 +4347,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4193,6 +4356,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4200,8 +4364,8 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError { meta: generic, kind: crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4209,6 +4373,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4216,7 +4381,7 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::generic(generic)
     })
 }
@@ -4233,6 +4398,9 @@ pub fn parse_disassociate_phone_numbers_from_voice_connector_group_response(
         let mut output = crate::output::disassociate_phone_numbers_from_voice_connector_group_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_disassociate_phone_numbers_from_voice_connector_group(response.body().as_ref(), output).map_err(crate::error::DisassociatePhoneNumbersFromVoiceConnectorGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4242,8 +4410,11 @@ pub fn parse_get_global_settings_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetGlobalSettingsOutput, crate::error::GetGlobalSettingsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetGlobalSettingsError::unhandled(generic)),
@@ -4251,60 +4422,59 @@ pub fn parse_get_global_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::GetGlobalSettingsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetGlobalSettingsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::GetGlobalSettingsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetGlobalSettingsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::GetGlobalSettingsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetGlobalSettingsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::GetGlobalSettingsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetGlobalSettingsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4312,34 +4482,34 @@ pub fn parse_get_global_settings_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::GetGlobalSettingsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetGlobalSettingsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::GetGlobalSettingsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetGlobalSettingsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4347,14 +4517,15 @@ pub fn parse_get_global_settings_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetGlobalSettingsError::generic(generic),
     })
 }
@@ -4373,6 +4544,9 @@ pub fn parse_get_global_settings_response(
             output,
         )
         .map_err(crate::error::GetGlobalSettingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4381,8 +4555,11 @@ pub fn parse_get_global_settings_response(
 pub fn parse_get_phone_number_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPhoneNumberOutput, crate::error::GetPhoneNumberError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPhoneNumberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPhoneNumberError::unhandled(generic)),
@@ -4390,77 +4567,74 @@ pub fn parse_get_phone_number_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetPhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetPhoneNumberError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetPhoneNumberError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::GetPhoneNumberError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::GetPhoneNumberError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4468,34 +4642,34 @@ pub fn parse_get_phone_number_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetPhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetPhoneNumberError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetPhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4503,14 +4677,15 @@ pub fn parse_get_phone_number_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetPhoneNumberError::generic(generic),
     })
 }
@@ -4528,6 +4703,9 @@ pub fn parse_get_phone_number_response(
             output,
         )
         .map_err(crate::error::GetPhoneNumberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4539,8 +4717,11 @@ pub fn parse_get_phone_number_order_error(
     crate::output::GetPhoneNumberOrderOutput,
     crate::error::GetPhoneNumberOrderError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPhoneNumberOrderError::unhandled(generic)),
@@ -4548,77 +4729,76 @@ pub fn parse_get_phone_number_order_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetPhoneNumberOrderError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetPhoneNumberOrderError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetPhoneNumberOrderError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetPhoneNumberOrderError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetPhoneNumberOrderError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4626,34 +4806,34 @@ pub fn parse_get_phone_number_order_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetPhoneNumberOrderError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetPhoneNumberOrderError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberOrderErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetPhoneNumberOrderError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4661,14 +4841,15 @@ pub fn parse_get_phone_number_order_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetPhoneNumberOrderError::generic(generic),
     })
 }
@@ -4689,6 +4870,9 @@ pub fn parse_get_phone_number_order_response(
             output,
         )
         .map_err(crate::error::GetPhoneNumberOrderError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4700,8 +4884,11 @@ pub fn parse_get_phone_number_settings_error(
     crate::output::GetPhoneNumberSettingsOutput,
     crate::error::GetPhoneNumberSettingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4713,60 +4900,59 @@ pub fn parse_get_phone_number_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetPhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberSettingsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetPhoneNumberSettingsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetPhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberSettingsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetPhoneNumberSettingsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetPhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberSettingsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetPhoneNumberSettingsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetPhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberSettingsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetPhoneNumberSettingsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4774,34 +4960,34 @@ pub fn parse_get_phone_number_settings_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetPhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberSettingsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetPhoneNumberSettingsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetPhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::GetPhoneNumberSettingsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetPhoneNumberSettingsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4809,14 +4995,15 @@ pub fn parse_get_phone_number_settings_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetPhoneNumberSettingsError::generic(generic),
     })
 }
@@ -4837,6 +5024,9 @@ pub fn parse_get_phone_number_settings_response(
             output,
         )
         .map_err(crate::error::GetPhoneNumberSettingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4845,8 +5035,11 @@ pub fn parse_get_phone_number_settings_response(
 pub fn parse_get_proxy_session_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetProxySessionOutput, crate::error::GetProxySessionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetProxySessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetProxySessionError::unhandled(generic)),
@@ -4854,77 +5047,74 @@ pub fn parse_get_proxy_session_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetProxySessionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetProxySessionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetProxySessionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::GetProxySessionError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::GetProxySessionError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4932,34 +5122,34 @@ pub fn parse_get_proxy_session_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetProxySessionError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetProxySessionError {
-            meta: generic,
-            kind: crate::error::GetProxySessionErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetProxySessionError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4967,14 +5157,15 @@ pub fn parse_get_proxy_session_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetProxySessionError::generic(generic),
     })
 }
@@ -4992,6 +5183,9 @@ pub fn parse_get_proxy_session_response(
             output,
         )
         .map_err(crate::error::GetProxySessionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5003,8 +5197,11 @@ pub fn parse_get_sip_media_application_error(
     crate::output::GetSipMediaApplicationOutput,
     crate::error::GetSipMediaApplicationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5016,77 +5213,76 @@ pub fn parse_get_sip_media_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetSipMediaApplicationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetSipMediaApplicationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetSipMediaApplicationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetSipMediaApplicationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetSipMediaApplicationError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5094,34 +5290,34 @@ pub fn parse_get_sip_media_application_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetSipMediaApplicationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::GetSipMediaApplicationErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetSipMediaApplicationError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5129,14 +5325,15 @@ pub fn parse_get_sip_media_application_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSipMediaApplicationError::generic(generic),
     })
 }
@@ -5157,6 +5354,9 @@ pub fn parse_get_sip_media_application_response(
             output,
         )
         .map_err(crate::error::GetSipMediaApplicationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5168,8 +5368,11 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
     crate::output::GetSipMediaApplicationAlexaSkillConfigurationOutput,
     crate::error::GetSipMediaApplicationAlexaSkillConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5183,7 +5386,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5191,6 +5394,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5198,8 +5402,8 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5207,6 +5411,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5214,8 +5419,8 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5223,6 +5428,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5230,8 +5436,8 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5239,6 +5445,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5246,8 +5453,8 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5255,6 +5462,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5262,8 +5470,8 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5271,6 +5479,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5278,8 +5487,8 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5287,6 +5496,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5294,7 +5504,7 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::generic(generic)
     })
 }
@@ -5311,6 +5521,9 @@ pub fn parse_get_sip_media_application_alexa_skill_configuration_response(
         let mut output = crate::output::get_sip_media_application_alexa_skill_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_sip_media_application_alexa_skill_configuration(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5322,8 +5535,11 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
     crate::output::GetSipMediaApplicationLoggingConfigurationOutput,
     crate::error::GetSipMediaApplicationLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5335,7 +5551,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5343,6 +5559,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5350,8 +5567,8 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5359,6 +5576,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5366,8 +5584,8 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5375,6 +5593,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5382,8 +5601,8 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5391,6 +5610,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5398,8 +5618,8 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5407,6 +5627,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5414,8 +5635,8 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5423,6 +5644,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5430,8 +5652,8 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::GetSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::GetSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::GetSipMediaApplicationLoggingConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5439,6 +5661,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5446,7 +5669,7 @@ pub fn parse_get_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GetSipMediaApplicationLoggingConfigurationError::generic(generic)
     })
 }
@@ -5465,6 +5688,9 @@ pub fn parse_get_sip_media_application_logging_configuration_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_sip_media_application_logging_configuration(response.body().as_ref(), output).map_err(crate::error::GetSipMediaApplicationLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5473,8 +5699,11 @@ pub fn parse_get_sip_media_application_logging_configuration_response(
 pub fn parse_get_sip_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSipRuleOutput, crate::error::GetSipRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSipRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetSipRuleError::unhandled(generic)),
@@ -5482,77 +5711,74 @@ pub fn parse_get_sip_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetSipRuleError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetSipRuleError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetSipRuleError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::GetSipRuleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::GetSipRuleError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5560,34 +5786,32 @@ pub fn parse_get_sip_rule_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::GetSipRuleError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetSipRuleError {
-            meta: generic,
-            kind: crate::error::GetSipRuleErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::GetSipRuleError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5595,14 +5819,15 @@ pub fn parse_get_sip_rule_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetSipRuleError::generic(generic),
     })
 }
@@ -5620,6 +5845,9 @@ pub fn parse_get_sip_rule_response(
             output,
         )
         .map_err(crate::error::GetSipRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5629,8 +5857,11 @@ pub fn parse_get_voice_connector_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetVoiceConnectorOutput, crate::error::GetVoiceConnectorError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetVoiceConnectorError::unhandled(generic)),
@@ -5638,77 +5869,76 @@ pub fn parse_get_voice_connector_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5716,34 +5946,34 @@ pub fn parse_get_voice_connector_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5751,14 +5981,15 @@ pub fn parse_get_voice_connector_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetVoiceConnectorError::generic(generic),
     })
 }
@@ -5777,6 +6008,9 @@ pub fn parse_get_voice_connector_response(
             output,
         )
         .map_err(crate::error::GetVoiceConnectorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5788,8 +6022,11 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
     crate::output::GetVoiceConnectorEmergencyCallingConfigurationOutput,
     crate::error::GetVoiceConnectorEmergencyCallingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5803,7 +6040,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5811,6 +6048,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5818,8 +6056,8 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5827,6 +6065,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5834,8 +6073,8 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5843,6 +6082,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5850,8 +6090,8 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5859,6 +6099,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5866,8 +6107,8 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5875,6 +6116,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5882,8 +6124,8 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5891,6 +6133,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5898,8 +6141,8 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -5907,6 +6150,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -5914,7 +6158,7 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::generic(generic)
     })
 }
@@ -5931,6 +6175,9 @@ pub fn parse_get_voice_connector_emergency_calling_configuration_response(
         let mut output = crate::output::get_voice_connector_emergency_calling_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_voice_connector_emergency_calling_configuration(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5942,8 +6189,11 @@ pub fn parse_get_voice_connector_group_error(
     crate::output::GetVoiceConnectorGroupOutput,
     crate::error::GetVoiceConnectorGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5955,77 +6205,76 @@ pub fn parse_get_voice_connector_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorGroupError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorGroupError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorGroupError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorGroupError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorGroupError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6033,34 +6282,34 @@ pub fn parse_get_voice_connector_group_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorGroupError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorGroupErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorGroupError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6068,14 +6317,15 @@ pub fn parse_get_voice_connector_group_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetVoiceConnectorGroupError::generic(generic),
     })
 }
@@ -6096,6 +6346,9 @@ pub fn parse_get_voice_connector_group_response(
             output,
         )
         .map_err(crate::error::GetVoiceConnectorGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6107,8 +6360,11 @@ pub fn parse_get_voice_connector_logging_configuration_error(
     crate::output::GetVoiceConnectorLoggingConfigurationOutput,
     crate::error::GetVoiceConnectorLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6120,119 +6376,128 @@ pub fn parse_get_voice_connector_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorLoggingConfigurationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GetVoiceConnectorLoggingConfigurationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::GetVoiceConnectorLoggingConfigurationError::generic(generic),
     })
 }
 
@@ -6249,6 +6514,9 @@ pub fn parse_get_voice_connector_logging_configuration_response(
             crate::output::get_voice_connector_logging_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_voice_connector_logging_configuration(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6260,8 +6528,11 @@ pub fn parse_get_voice_connector_origination_error(
     crate::output::GetVoiceConnectorOriginationOutput,
     crate::error::GetVoiceConnectorOriginationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6273,131 +6544,127 @@ pub fn parse_get_voice_connector_origination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorOriginationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorOriginationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorOriginationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorOriginationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorOriginationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorOriginationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorOriginationErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorOriginationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetVoiceConnectorOriginationError::generic(generic),
     })
 }
@@ -6419,6 +6686,9 @@ pub fn parse_get_voice_connector_origination_response(
                 output,
             )
             .map_err(crate::error::GetVoiceConnectorOriginationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6430,8 +6700,11 @@ pub fn parse_get_voice_connector_proxy_error(
     crate::output::GetVoiceConnectorProxyOutput,
     crate::error::GetVoiceConnectorProxyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6443,77 +6716,76 @@ pub fn parse_get_voice_connector_proxy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorProxyError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorProxyError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorProxyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorProxyError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorProxyError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6521,34 +6793,34 @@ pub fn parse_get_voice_connector_proxy_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorProxyError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorProxyErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorProxyError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6556,14 +6828,15 @@ pub fn parse_get_voice_connector_proxy_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetVoiceConnectorProxyError::generic(generic),
     })
 }
@@ -6584,6 +6857,9 @@ pub fn parse_get_voice_connector_proxy_response(
             output,
         )
         .map_err(crate::error::GetVoiceConnectorProxyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6595,8 +6871,11 @@ pub fn parse_get_voice_connector_streaming_configuration_error(
     crate::output::GetVoiceConnectorStreamingConfigurationOutput,
     crate::error::GetVoiceConnectorStreamingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6608,119 +6887,132 @@ pub fn parse_get_voice_connector_streaming_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::GetVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorStreamingConfigurationError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GetVoiceConnectorStreamingConfigurationError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::GetVoiceConnectorStreamingConfigurationError::generic(generic),
     })
 }
 
@@ -6737,6 +7029,9 @@ pub fn parse_get_voice_connector_streaming_configuration_response(
             crate::output::get_voice_connector_streaming_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_voice_connector_streaming_configuration(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorStreamingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6748,8 +7043,11 @@ pub fn parse_get_voice_connector_termination_error(
     crate::output::GetVoiceConnectorTerminationOutput,
     crate::error::GetVoiceConnectorTerminationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6761,131 +7059,127 @@ pub fn parse_get_voice_connector_termination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorTerminationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorTerminationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorTerminationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorTerminationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorTerminationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorTerminationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::GetVoiceConnectorTerminationErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorTerminationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetVoiceConnectorTerminationError::generic(generic),
     })
 }
@@ -6907,6 +7201,9 @@ pub fn parse_get_voice_connector_termination_response(
                 output,
             )
             .map_err(crate::error::GetVoiceConnectorTerminationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6918,8 +7215,11 @@ pub fn parse_get_voice_connector_termination_health_error(
     crate::output::GetVoiceConnectorTerminationHealthOutput,
     crate::error::GetVoiceConnectorTerminationHealthError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6929,119 +7229,128 @@ pub fn parse_get_voice_connector_termination_health_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::GetVoiceConnectorTerminationHealthError { meta: generic, kind: crate::error::GetVoiceConnectorTerminationHealthErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::GetVoiceConnectorTerminationHealthError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GetVoiceConnectorTerminationHealthError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::GetVoiceConnectorTerminationHealthError::generic(generic),
     })
 }
 
@@ -7058,6 +7367,9 @@ pub fn parse_get_voice_connector_termination_health_response(
             crate::output::get_voice_connector_termination_health_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_get_voice_connector_termination_health(response.body().as_ref(), output).map_err(crate::error::GetVoiceConnectorTerminationHealthError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7069,8 +7381,11 @@ pub fn parse_list_available_voice_connector_regions_error(
     crate::output::ListAvailableVoiceConnectorRegionsOutput,
     crate::error::ListAvailableVoiceConnectorRegionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7080,103 +7395,111 @@ pub fn parse_list_available_voice_connector_regions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListAvailableVoiceConnectorRegionsError { meta: generic, kind: crate::error::ListAvailableVoiceConnectorRegionsErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::ListAvailableVoiceConnectorRegionsError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::ListAvailableVoiceConnectorRegionsError { meta: generic, kind: crate::error::ListAvailableVoiceConnectorRegionsErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListAvailableVoiceConnectorRegionsError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::ListAvailableVoiceConnectorRegionsError { meta: generic, kind: crate::error::ListAvailableVoiceConnectorRegionsErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListAvailableVoiceConnectorRegionsError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::ListAvailableVoiceConnectorRegionsError { meta: generic, kind: crate::error::ListAvailableVoiceConnectorRegionsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListAvailableVoiceConnectorRegionsError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::ListAvailableVoiceConnectorRegionsError { meta: generic, kind: crate::error::ListAvailableVoiceConnectorRegionsErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListAvailableVoiceConnectorRegionsError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::ListAvailableVoiceConnectorRegionsError { meta: generic, kind: crate::error::ListAvailableVoiceConnectorRegionsErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListAvailableVoiceConnectorRegionsError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListAvailableVoiceConnectorRegionsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListAvailableVoiceConnectorRegionsError::generic(generic),
     })
 }
 
@@ -7193,6 +7516,9 @@ pub fn parse_list_available_voice_connector_regions_response(
             crate::output::list_available_voice_connector_regions_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_available_voice_connector_regions(response.body().as_ref(), output).map_err(crate::error::ListAvailableVoiceConnectorRegionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7204,8 +7530,11 @@ pub fn parse_list_phone_number_orders_error(
     crate::output::ListPhoneNumberOrdersOutput,
     crate::error::ListPhoneNumberOrdersError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListPhoneNumberOrdersError::unhandled(generic)),
@@ -7213,60 +7542,59 @@ pub fn parse_list_phone_number_orders_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListPhoneNumberOrdersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumberOrdersErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListPhoneNumberOrdersError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListPhoneNumberOrdersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumberOrdersErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListPhoneNumberOrdersError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListPhoneNumberOrdersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumberOrdersErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListPhoneNumberOrdersError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListPhoneNumberOrdersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumberOrdersErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListPhoneNumberOrdersError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7274,34 +7602,34 @@ pub fn parse_list_phone_number_orders_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListPhoneNumberOrdersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumberOrdersErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListPhoneNumberOrdersError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListPhoneNumberOrdersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumberOrdersErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListPhoneNumberOrdersError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7309,14 +7637,15 @@ pub fn parse_list_phone_number_orders_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListPhoneNumberOrdersError::generic(generic),
     })
 }
@@ -7337,6 +7666,9 @@ pub fn parse_list_phone_number_orders_response(
             output,
         )
         .map_err(crate::error::ListPhoneNumberOrdersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7346,8 +7678,11 @@ pub fn parse_list_phone_numbers_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPhoneNumbersOutput, crate::error::ListPhoneNumbersError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListPhoneNumbersError::unhandled(generic)),
@@ -7355,77 +7690,76 @@ pub fn parse_list_phone_numbers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListPhoneNumbersError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListPhoneNumbersError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListPhoneNumbersError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListPhoneNumbersError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListPhoneNumbersError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7433,34 +7767,34 @@ pub fn parse_list_phone_numbers_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListPhoneNumbersError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListPhoneNumbersError {
-            meta: generic,
-            kind: crate::error::ListPhoneNumbersErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListPhoneNumbersError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7468,14 +7802,15 @@ pub fn parse_list_phone_numbers_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListPhoneNumbersError::generic(generic),
     })
 }
@@ -7494,6 +7829,9 @@ pub fn parse_list_phone_numbers_response(
             output,
         )
         .map_err(crate::error::ListPhoneNumbersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7503,8 +7841,11 @@ pub fn parse_list_proxy_sessions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListProxySessionsOutput, crate::error::ListProxySessionsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListProxySessionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListProxySessionsError::unhandled(generic)),
@@ -7512,77 +7853,76 @@ pub fn parse_list_proxy_sessions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListProxySessionsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListProxySessionsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListProxySessionsError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListProxySessionsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListProxySessionsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7590,34 +7930,34 @@ pub fn parse_list_proxy_sessions_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListProxySessionsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListProxySessionsError {
-            meta: generic,
-            kind: crate::error::ListProxySessionsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListProxySessionsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7625,14 +7965,15 @@ pub fn parse_list_proxy_sessions_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListProxySessionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListProxySessionsError::generic(generic),
     })
 }
@@ -7651,6 +7992,9 @@ pub fn parse_list_proxy_sessions_response(
             output,
         )
         .map_err(crate::error::ListProxySessionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7662,8 +8006,11 @@ pub fn parse_list_sip_media_applications_error(
     crate::output::ListSipMediaApplicationsOutput,
     crate::error::ListSipMediaApplicationsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7675,60 +8022,59 @@ pub fn parse_list_sip_media_applications_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListSipMediaApplicationsError {
-            meta: generic,
-            kind: crate::error::ListSipMediaApplicationsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListSipMediaApplicationsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListSipMediaApplicationsError {
-            meta: generic,
-            kind: crate::error::ListSipMediaApplicationsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListSipMediaApplicationsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListSipMediaApplicationsError {
-            meta: generic,
-            kind: crate::error::ListSipMediaApplicationsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListSipMediaApplicationsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListSipMediaApplicationsError {
-            meta: generic,
-            kind: crate::error::ListSipMediaApplicationsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListSipMediaApplicationsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7736,34 +8082,34 @@ pub fn parse_list_sip_media_applications_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListSipMediaApplicationsError {
-            meta: generic,
-            kind: crate::error::ListSipMediaApplicationsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListSipMediaApplicationsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListSipMediaApplicationsError {
-            meta: generic,
-            kind: crate::error::ListSipMediaApplicationsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListSipMediaApplicationsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7771,14 +8117,15 @@ pub fn parse_list_sip_media_applications_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSipMediaApplicationsError::generic(generic),
     })
 }
@@ -7799,6 +8146,9 @@ pub fn parse_list_sip_media_applications_response(
             output,
         )
         .map_err(crate::error::ListSipMediaApplicationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7807,8 +8157,11 @@ pub fn parse_list_sip_media_applications_response(
 pub fn parse_list_sip_rules_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListSipRulesOutput, crate::error::ListSipRulesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSipRulesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListSipRulesError::unhandled(generic)),
@@ -7816,60 +8169,57 @@ pub fn parse_list_sip_rules_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListSipRulesError {
-            meta: generic,
-            kind: crate::error::ListSipRulesErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListSipRulesError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListSipRulesError {
-            meta: generic,
-            kind: crate::error::ListSipRulesErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListSipRulesError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListSipRulesError {
-            meta: generic,
-            kind: crate::error::ListSipRulesErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::ListSipRulesError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListSipRulesError {
-            meta: generic,
-            kind: crate::error::ListSipRulesErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::ListSipRulesError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7877,34 +8227,32 @@ pub fn parse_list_sip_rules_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListSipRulesError {
-            meta: generic,
-            kind: crate::error::ListSipRulesErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::ListSipRulesError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListSipRulesError {
-            meta: generic,
-            kind: crate::error::ListSipRulesErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::ListSipRulesError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7912,14 +8260,15 @@ pub fn parse_list_sip_rules_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSipRulesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListSipRulesError::generic(generic),
     })
 }
@@ -7937,6 +8286,9 @@ pub fn parse_list_sip_rules_response(
             output,
         )
         .map_err(crate::error::ListSipRulesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7948,8 +8300,11 @@ pub fn parse_list_supported_phone_number_countries_error(
     crate::output::ListSupportedPhoneNumberCountriesOutput,
     crate::error::ListSupportedPhoneNumberCountriesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -7959,119 +8314,128 @@ pub fn parse_list_supported_phone_number_countries_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccessDeniedException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "BadRequestException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "BadRequestException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::ListSupportedPhoneNumberCountriesError { meta: generic, kind: crate::error::ListSupportedPhoneNumberCountriesErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListSupportedPhoneNumberCountriesError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListSupportedPhoneNumberCountriesError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListSupportedPhoneNumberCountriesError::generic(generic),
     })
 }
 
@@ -8088,6 +8452,9 @@ pub fn parse_list_supported_phone_number_countries_response(
             crate::output::list_supported_phone_number_countries_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_supported_phone_number_countries(response.body().as_ref(), output).map_err(crate::error::ListSupportedPhoneNumberCountriesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8099,8 +8466,11 @@ pub fn parse_list_voice_connector_groups_error(
     crate::output::ListVoiceConnectorGroupsOutput,
     crate::error::ListVoiceConnectorGroupsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8112,60 +8482,59 @@ pub fn parse_list_voice_connector_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListVoiceConnectorGroupsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorGroupsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListVoiceConnectorGroupsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListVoiceConnectorGroupsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorGroupsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListVoiceConnectorGroupsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListVoiceConnectorGroupsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorGroupsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListVoiceConnectorGroupsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListVoiceConnectorGroupsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorGroupsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListVoiceConnectorGroupsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8173,34 +8542,34 @@ pub fn parse_list_voice_connector_groups_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListVoiceConnectorGroupsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorGroupsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListVoiceConnectorGroupsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListVoiceConnectorGroupsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorGroupsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListVoiceConnectorGroupsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8208,14 +8577,15 @@ pub fn parse_list_voice_connector_groups_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListVoiceConnectorGroupsError::generic(generic),
     })
 }
@@ -8236,6 +8606,9 @@ pub fn parse_list_voice_connector_groups_response(
             output,
         )
         .map_err(crate::error::ListVoiceConnectorGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8247,8 +8620,11 @@ pub fn parse_list_voice_connectors_error(
     crate::output::ListVoiceConnectorsOutput,
     crate::error::ListVoiceConnectorsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListVoiceConnectorsError::unhandled(generic)),
@@ -8256,60 +8632,59 @@ pub fn parse_list_voice_connectors_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListVoiceConnectorsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ListVoiceConnectorsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ListVoiceConnectorsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListVoiceConnectorsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ListVoiceConnectorsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListVoiceConnectorsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ListVoiceConnectorsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListVoiceConnectorsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8317,34 +8692,34 @@ pub fn parse_list_voice_connectors_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ListVoiceConnectorsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ListVoiceConnectorsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ListVoiceConnectorsError {
-            meta: generic,
-            kind: crate::error::ListVoiceConnectorsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListVoiceConnectorsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -8352,14 +8727,15 @@ pub fn parse_list_voice_connectors_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListVoiceConnectorsError::generic(generic),
     })
 }
@@ -8380,6 +8756,9 @@ pub fn parse_list_voice_connectors_response(
             output,
         )
         .map_err(crate::error::ListVoiceConnectorsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8391,8 +8770,11 @@ pub fn parse_list_voice_connector_termination_credentials_error(
     crate::output::ListVoiceConnectorTerminationCredentialsOutput,
     crate::error::ListVoiceConnectorTerminationCredentialsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8404,119 +8786,132 @@ pub fn parse_list_voice_connector_termination_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::ListVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::ListVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ListVoiceConnectorTerminationCredentialsError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListVoiceConnectorTerminationCredentialsError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::ListVoiceConnectorTerminationCredentialsError::generic(generic),
     })
 }
 
@@ -8533,6 +8928,9 @@ pub fn parse_list_voice_connector_termination_credentials_response(
             crate::output::list_voice_connector_termination_credentials_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_voice_connector_termination_credentials(response.body().as_ref(), output).map_err(crate::error::ListVoiceConnectorTerminationCredentialsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8544,8 +8942,11 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
     crate::output::PutSipMediaApplicationAlexaSkillConfigurationOutput,
     crate::error::PutSipMediaApplicationAlexaSkillConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8559,7 +8960,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8567,6 +8968,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8574,8 +8976,8 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8583,6 +8985,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8590,8 +8993,8 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8599,6 +9002,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8606,8 +9010,8 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8615,6 +9019,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8622,8 +9027,8 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8631,6 +9036,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8638,8 +9044,8 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8647,6 +9053,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8654,8 +9061,8 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationAlexaSkillConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8663,6 +9070,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8670,7 +9078,7 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::generic(generic)
     })
 }
@@ -8687,6 +9095,9 @@ pub fn parse_put_sip_media_application_alexa_skill_configuration_response(
         let mut output = crate::output::put_sip_media_application_alexa_skill_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_put_sip_media_application_alexa_skill_configuration(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationAlexaSkillConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8698,8 +9109,11 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
     crate::output::PutSipMediaApplicationLoggingConfigurationOutput,
     crate::error::PutSipMediaApplicationLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8711,7 +9125,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8719,6 +9133,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8726,8 +9141,8 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8735,6 +9150,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8742,8 +9158,8 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8751,6 +9167,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8758,8 +9175,8 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8767,6 +9184,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8774,8 +9192,8 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8783,6 +9201,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8790,8 +9209,8 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8799,6 +9218,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8806,8 +9226,8 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::PutSipMediaApplicationLoggingConfigurationError { meta: generic, kind: crate::error::PutSipMediaApplicationLoggingConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::PutSipMediaApplicationLoggingConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8815,6 +9235,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8822,7 +9243,7 @@ pub fn parse_put_sip_media_application_logging_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::PutSipMediaApplicationLoggingConfigurationError::generic(generic)
     })
 }
@@ -8841,6 +9262,9 @@ pub fn parse_put_sip_media_application_logging_configuration_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_put_sip_media_application_logging_configuration(response.body().as_ref(), output).map_err(crate::error::PutSipMediaApplicationLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -8852,8 +9276,11 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
     crate::output::PutVoiceConnectorEmergencyCallingConfigurationOutput,
     crate::error::PutVoiceConnectorEmergencyCallingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -8867,7 +9294,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::BadRequestException({
+        "BadRequestException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::BadRequestException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8875,6 +9302,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8882,8 +9310,8 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ForbiddenException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ForbiddenException({
+        }),
+        "ForbiddenException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::ForbiddenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8891,6 +9319,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8898,8 +9327,8 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "NotFoundException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::NotFoundException({
+        }),
+        "NotFoundException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::NotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8907,6 +9336,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8914,8 +9344,8 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceFailureException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceFailureException({
+        }),
+        "ServiceFailureException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::ServiceFailureException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8923,6 +9353,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8930,8 +9361,8 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ServiceUnavailableException({
+        }),
+        "ServiceUnavailableException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::ServiceUnavailableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8939,6 +9370,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8946,8 +9378,8 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ThrottledClientException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::ThrottledClientException({
+        }),
+        "ThrottledClientException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::ThrottledClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8955,6 +9387,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8962,8 +9395,8 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorEmergencyCallingConfigurationErrorKind::UnauthorizedClientException({
+        }),
+        "UnauthorizedClientException" => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::UnauthorizedClientException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -8971,6 +9404,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                     let mut output = crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -8978,7 +9412,7 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::generic(generic)
     })
 }
@@ -8995,6 +9429,9 @@ pub fn parse_put_voice_connector_emergency_calling_configuration_response(
         let mut output = crate::output::put_voice_connector_emergency_calling_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_put_voice_connector_emergency_calling_configuration(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorEmergencyCallingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9006,8 +9443,11 @@ pub fn parse_put_voice_connector_logging_configuration_error(
     crate::output::PutVoiceConnectorLoggingConfigurationOutput,
     crate::error::PutVoiceConnectorLoggingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9019,119 +9459,128 @@ pub fn parse_put_voice_connector_logging_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorLoggingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorLoggingConfigurationErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutVoiceConnectorLoggingConfigurationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::PutVoiceConnectorLoggingConfigurationError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::PutVoiceConnectorLoggingConfigurationError::generic(generic),
     })
 }
 
@@ -9148,6 +9597,9 @@ pub fn parse_put_voice_connector_logging_configuration_response(
             crate::output::put_voice_connector_logging_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_put_voice_connector_logging_configuration(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorLoggingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9159,8 +9611,11 @@ pub fn parse_put_voice_connector_origination_error(
     crate::output::PutVoiceConnectorOriginationOutput,
     crate::error::PutVoiceConnectorOriginationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9172,131 +9627,127 @@ pub fn parse_put_voice_connector_origination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::PutVoiceConnectorOriginationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutVoiceConnectorOriginationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutVoiceConnectorOriginationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutVoiceConnectorOriginationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutVoiceConnectorOriginationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::PutVoiceConnectorOriginationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorOriginationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorOriginationErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutVoiceConnectorOriginationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::PutVoiceConnectorOriginationError::generic(generic),
     })
 }
@@ -9318,6 +9769,9 @@ pub fn parse_put_voice_connector_origination_response(
                 output,
             )
             .map_err(crate::error::PutVoiceConnectorOriginationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9329,8 +9783,11 @@ pub fn parse_put_voice_connector_proxy_error(
     crate::output::PutVoiceConnectorProxyOutput,
     crate::error::PutVoiceConnectorProxyError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9342,94 +9799,93 @@ pub fn parse_put_voice_connector_proxy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::PutVoiceConnectorProxyError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::PutVoiceConnectorProxyError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutVoiceConnectorProxyError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutVoiceConnectorProxyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutVoiceConnectorProxyError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutVoiceConnectorProxyError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9437,34 +9893,34 @@ pub fn parse_put_voice_connector_proxy_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::PutVoiceConnectorProxyError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorProxyError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorProxyErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutVoiceConnectorProxyError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -9472,14 +9928,15 @@ pub fn parse_put_voice_connector_proxy_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutVoiceConnectorProxyError::generic(generic),
     })
 }
@@ -9500,6 +9957,9 @@ pub fn parse_put_voice_connector_proxy_response(
             output,
         )
         .map_err(crate::error::PutVoiceConnectorProxyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9511,8 +9971,11 @@ pub fn parse_put_voice_connector_streaming_configuration_error(
     crate::output::PutVoiceConnectorStreamingConfigurationOutput,
     crate::error::PutVoiceConnectorStreamingConfigurationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9524,119 +9987,132 @@ pub fn parse_put_voice_connector_streaming_configuration_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorStreamingConfigurationError { meta: generic, kind: crate::error::PutVoiceConnectorStreamingConfigurationErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutVoiceConnectorStreamingConfigurationError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::PutVoiceConnectorStreamingConfigurationError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::PutVoiceConnectorStreamingConfigurationError::generic(generic),
     })
 }
 
@@ -9653,6 +10129,9 @@ pub fn parse_put_voice_connector_streaming_configuration_response(
             crate::output::put_voice_connector_streaming_configuration_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_put_voice_connector_streaming_configuration(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorStreamingConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9664,8 +10143,11 @@ pub fn parse_put_voice_connector_termination_error(
     crate::output::PutVoiceConnectorTerminationOutput,
     crate::error::PutVoiceConnectorTerminationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9677,148 +10159,144 @@ pub fn parse_put_voice_connector_termination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::PutVoiceConnectorTerminationError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::PutVoiceConnectorTerminationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutVoiceConnectorTerminationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutVoiceConnectorTerminationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutVoiceConnectorTerminationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutVoiceConnectorTerminationError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::PutVoiceConnectorTerminationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorTerminationError {
-            meta: generic,
-            kind: crate::error::PutVoiceConnectorTerminationErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutVoiceConnectorTerminationError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::PutVoiceConnectorTerminationError::generic(generic),
     })
 }
@@ -9840,6 +10318,9 @@ pub fn parse_put_voice_connector_termination_response(
                 output,
             )
             .map_err(crate::error::PutVoiceConnectorTerminationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -9851,8 +10332,11 @@ pub fn parse_put_voice_connector_termination_credentials_error(
     crate::output::PutVoiceConnectorTerminationCredentialsOutput,
     crate::error::PutVoiceConnectorTerminationCredentialsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -9864,119 +10348,132 @@ pub fn parse_put_voice_connector_termination_credentials_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::BadRequestException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "BadRequestException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::BadRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ForbiddenException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::ForbiddenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::ForbiddenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceFailureException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::ServiceFailureException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::ServiceFailureException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ServiceUnavailableException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::ServiceUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::ServiceUnavailableException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::service_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ThrottledClientException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::ThrottledClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::service_unavailable_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "ThrottledClientException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::ThrottledClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnauthorizedClientException" => crate::error::PutVoiceConnectorTerminationCredentialsError { meta: generic, kind: crate::error::PutVoiceConnectorTerminationCredentialsErrorKind::UnauthorizedClientException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::PutVoiceConnectorTerminationCredentialsError::UnauthorizedClientException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unauthorized_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::PutVoiceConnectorTerminationCredentialsError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::unauthorized_client_exception::Builder::default();
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutVoiceConnectorTerminationCredentialsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::PutVoiceConnectorTerminationCredentialsError::generic(generic),
     })
 }
 
@@ -9992,6 +10489,9 @@ pub fn parse_put_voice_connector_termination_credentials_response(
         let mut output =
             crate::output::put_voice_connector_termination_credentials_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10003,8 +10503,11 @@ pub fn parse_restore_phone_number_error(
     crate::output::RestorePhoneNumberOutput,
     crate::error::RestorePhoneNumberError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RestorePhoneNumberError::unhandled(generic)),
@@ -10012,60 +10515,59 @@ pub fn parse_restore_phone_number_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::RestorePhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::RestorePhoneNumberError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::RestorePhoneNumberError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::RestorePhoneNumberError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10073,34 +10575,34 @@ pub fn parse_restore_phone_number_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::RestorePhoneNumberError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::RestorePhoneNumberError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10108,34 +10610,34 @@ pub fn parse_restore_phone_number_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::RestorePhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::RestorePhoneNumberError {
-            meta: generic,
-            kind: crate::error::RestorePhoneNumberErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::RestorePhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10143,14 +10645,15 @@ pub fn parse_restore_phone_number_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RestorePhoneNumberError::generic(generic),
     })
 }
@@ -10171,6 +10674,9 @@ pub fn parse_restore_phone_number_response(
             output,
         )
         .map_err(crate::error::RestorePhoneNumberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10182,8 +10688,11 @@ pub fn parse_search_available_phone_numbers_error(
     crate::output::SearchAvailablePhoneNumbersOutput,
     crate::error::SearchAvailablePhoneNumbersError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10195,131 +10704,127 @@ pub fn parse_search_available_phone_numbers_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::SearchAvailablePhoneNumbersError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BadRequestException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::BadRequestException({
+            })
+        }
+        "BadRequestException" => {
+            crate::error::SearchAvailablePhoneNumbersError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::SearchAvailablePhoneNumbersError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::SearchAvailablePhoneNumbersError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::SearchAvailablePhoneNumbersError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::SearchAvailablePhoneNumbersError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::SearchAvailablePhoneNumbersError {
-            meta: generic,
-            kind: crate::error::SearchAvailablePhoneNumbersErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::SearchAvailablePhoneNumbersError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::SearchAvailablePhoneNumbersError::generic(generic),
     })
 }
@@ -10340,6 +10845,9 @@ pub fn parse_search_available_phone_numbers_response(
             output,
         )
         .map_err(crate::error::SearchAvailablePhoneNumbersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10351,8 +10859,11 @@ pub fn parse_update_global_settings_error(
     crate::output::UpdateGlobalSettingsOutput,
     crate::error::UpdateGlobalSettingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateGlobalSettingsError::unhandled(generic)),
@@ -10360,60 +10871,59 @@ pub fn parse_update_global_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateGlobalSettingsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateGlobalSettingsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateGlobalSettingsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::UpdateGlobalSettingsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateGlobalSettingsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateGlobalSettingsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateGlobalSettingsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateGlobalSettingsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10421,34 +10931,34 @@ pub fn parse_update_global_settings_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateGlobalSettingsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateGlobalSettingsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateGlobalSettingsError {
-            meta: generic,
-            kind: crate::error::UpdateGlobalSettingsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateGlobalSettingsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10456,14 +10966,15 @@ pub fn parse_update_global_settings_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateGlobalSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateGlobalSettingsError::generic(generic),
     })
 }
@@ -10479,6 +10990,9 @@ pub fn parse_update_global_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_global_settings_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10488,8 +11002,11 @@ pub fn parse_update_phone_number_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdatePhoneNumberOutput, crate::error::UpdatePhoneNumberError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdatePhoneNumberError::unhandled(generic)),
@@ -10497,96 +11014,96 @@ pub fn parse_update_phone_number_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdatePhoneNumberError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdatePhoneNumberError {
-                meta: generic,
-                kind: crate::error::UpdatePhoneNumberErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdatePhoneNumberError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdatePhoneNumberError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdatePhoneNumberError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdatePhoneNumberError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdatePhoneNumberError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10594,34 +11111,34 @@ pub fn parse_update_phone_number_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdatePhoneNumberError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdatePhoneNumberError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdatePhoneNumberError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10629,14 +11146,15 @@ pub fn parse_update_phone_number_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdatePhoneNumberError::generic(generic),
     })
 }
@@ -10655,6 +11173,9 @@ pub fn parse_update_phone_number_response(
             output,
         )
         .map_err(crate::error::UpdatePhoneNumberError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10666,8 +11187,11 @@ pub fn parse_update_phone_number_settings_error(
     crate::output::UpdatePhoneNumberSettingsOutput,
     crate::error::UpdatePhoneNumberSettingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10679,60 +11203,59 @@ pub fn parse_update_phone_number_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdatePhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberSettingsErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdatePhoneNumberSettingsError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdatePhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberSettingsErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::UpdatePhoneNumberSettingsError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdatePhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberSettingsErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdatePhoneNumberSettingsError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdatePhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberSettingsErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdatePhoneNumberSettingsError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10740,34 +11263,34 @@ pub fn parse_update_phone_number_settings_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdatePhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberSettingsErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdatePhoneNumberSettingsError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdatePhoneNumberSettingsError {
-            meta: generic,
-            kind: crate::error::UpdatePhoneNumberSettingsErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdatePhoneNumberSettingsError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10775,14 +11298,15 @@ pub fn parse_update_phone_number_settings_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePhoneNumberSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdatePhoneNumberSettingsError::generic(generic),
     })
 }
@@ -10798,6 +11322,9 @@ pub fn parse_update_phone_number_settings_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_phone_number_settings_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10809,8 +11336,11 @@ pub fn parse_update_proxy_session_error(
     crate::output::UpdateProxySessionOutput,
     crate::error::UpdateProxySessionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateProxySessionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateProxySessionError::unhandled(generic)),
@@ -10818,77 +11348,76 @@ pub fn parse_update_proxy_session_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateProxySessionError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::UpdateProxySessionError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateProxySessionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateProxySessionError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateProxySessionError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10896,34 +11425,34 @@ pub fn parse_update_proxy_session_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateProxySessionError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateProxySessionError {
-            meta: generic,
-            kind: crate::error::UpdateProxySessionErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateProxySessionError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -10931,14 +11460,15 @@ pub fn parse_update_proxy_session_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateProxySessionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateProxySessionError::generic(generic),
     })
 }
@@ -10959,6 +11489,9 @@ pub fn parse_update_proxy_session_response(
             output,
         )
         .map_err(crate::error::UpdateProxySessionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -10970,8 +11503,11 @@ pub fn parse_update_sip_media_application_error(
     crate::output::UpdateSipMediaApplicationOutput,
     crate::error::UpdateSipMediaApplicationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -10983,96 +11519,96 @@ pub fn parse_update_sip_media_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateSipMediaApplicationError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateSipMediaApplicationError {
-                meta: generic,
-                kind: crate::error::UpdateSipMediaApplicationErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateSipMediaApplicationError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateSipMediaApplicationError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateSipMediaApplicationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateSipMediaApplicationError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateSipMediaApplicationError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11080,34 +11616,34 @@ pub fn parse_update_sip_media_application_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateSipMediaApplicationError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateSipMediaApplicationError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateSipMediaApplicationError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11115,14 +11651,15 @@ pub fn parse_update_sip_media_application_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSipMediaApplicationError::generic(generic),
     })
 }
@@ -11143,6 +11680,9 @@ pub fn parse_update_sip_media_application_response(
             output,
         )
         .map_err(crate::error::UpdateSipMediaApplicationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11154,8 +11694,11 @@ pub fn parse_update_sip_media_application_call_error(
     crate::output::UpdateSipMediaApplicationCallOutput,
     crate::error::UpdateSipMediaApplicationCallError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -11167,152 +11710,145 @@ pub fn parse_update_sip_media_application_call_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateSipMediaApplicationCallError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::UpdateSipMediaApplicationCallError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateSipMediaApplicationCallError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind:
-                crate::error::UpdateSipMediaApplicationCallErrorKind::ResourceLimitExceededException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::resource_limit_exceeded_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "ServiceFailureException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::ServiceFailureException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::UpdateSipMediaApplicationCallError::ResourceLimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::resource_limit_exceeded_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateSipMediaApplicationCallError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::ServiceUnavailableException(
-                {
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateSipMediaApplicationCallError::ServiceUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::service_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ThrottledClientException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::ThrottledClientException({
+                    let mut output =
+                        crate::error::service_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateSipMediaApplicationCallError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateSipMediaApplicationCallError {
-            meta: generic,
-            kind: crate::error::UpdateSipMediaApplicationCallErrorKind::UnauthorizedClientException(
-                {
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateSipMediaApplicationCallError::UnauthorizedClientException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unauthorized_client_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unauthorized_client_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateSipMediaApplicationCallError::generic(generic),
     })
 }
@@ -11335,6 +11871,9 @@ pub fn parse_update_sip_media_application_call_response(
                 output,
             )
             .map_err(crate::error::UpdateSipMediaApplicationCallError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11343,8 +11882,11 @@ pub fn parse_update_sip_media_application_call_response(
 pub fn parse_update_sip_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateSipRuleOutput, crate::error::UpdateSipRuleError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateSipRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateSipRuleError::unhandled(generic)),
@@ -11352,79 +11894,79 @@ pub fn parse_update_sip_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateSipRuleError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateSipRuleError {
-                meta: generic,
-                kind: crate::error::UpdateSipRuleErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateSipRuleError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateSipRuleError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateSipRuleError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceLimitExceededException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::ResourceLimitExceededException({
+            })
+        }
+        "ResourceLimitExceededException" => {
+            crate::error::UpdateSipRuleError::ResourceLimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11432,34 +11974,32 @@ pub fn parse_update_sip_rule_error(
                         crate::error::resource_limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_resource_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => crate::error::UpdateSipRuleError::ServiceFailureException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::service_failure_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::ServiceUnavailableException({
+                let mut output = crate::error::service_failure_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailableException" => {
+            crate::error::UpdateSipRuleError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11467,34 +12007,32 @@ pub fn parse_update_sip_rule_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => crate::error::UpdateSipRuleError::ThrottledClientException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::throttled_client_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateSipRuleError {
-            meta: generic,
-            kind: crate::error::UpdateSipRuleErrorKind::UnauthorizedClientException({
+                let mut output = crate::error::throttled_client_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnauthorizedClientException" => {
+            crate::error::UpdateSipRuleError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11502,14 +12040,15 @@ pub fn parse_update_sip_rule_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateSipRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateSipRuleError::generic(generic),
     })
 }
@@ -11527,6 +12066,9 @@ pub fn parse_update_sip_rule_response(
             output,
         )
         .map_err(crate::error::UpdateSipRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11538,8 +12080,11 @@ pub fn parse_update_voice_connector_error(
     crate::output::UpdateVoiceConnectorOutput,
     crate::error::UpdateVoiceConnectorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateVoiceConnectorError::unhandled(generic)),
@@ -11547,77 +12092,76 @@ pub fn parse_update_voice_connector_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateVoiceConnectorError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::UpdateVoiceConnectorError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateVoiceConnectorError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateVoiceConnectorError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateVoiceConnectorError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11625,34 +12169,34 @@ pub fn parse_update_voice_connector_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateVoiceConnectorError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateVoiceConnectorError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateVoiceConnectorError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11660,14 +12204,15 @@ pub fn parse_update_voice_connector_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateVoiceConnectorError::generic(generic),
     })
 }
@@ -11688,6 +12233,9 @@ pub fn parse_update_voice_connector_response(
             output,
         )
         .map_err(crate::error::UpdateVoiceConnectorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11699,8 +12247,11 @@ pub fn parse_update_voice_connector_group_error(
     crate::output::UpdateVoiceConnectorGroupOutput,
     crate::error::UpdateVoiceConnectorGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -11712,96 +12263,96 @@ pub fn parse_update_voice_connector_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateVoiceConnectorGroupError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::UpdateVoiceConnectorGroupError {
-                meta: generic,
-                kind: crate::error::UpdateVoiceConnectorGroupErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ForbiddenException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::ForbiddenException({
+        "ConflictException" => crate::error::UpdateVoiceConnectorGroupError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ForbiddenException" => {
+            crate::error::UpdateVoiceConnectorGroupError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateVoiceConnectorGroupError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::UpdateVoiceConnectorGroupError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::UpdateVoiceConnectorGroupError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11809,34 +12360,34 @@ pub fn parse_update_voice_connector_group_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::UpdateVoiceConnectorGroupError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::UpdateVoiceConnectorGroupError {
-            meta: generic,
-            kind: crate::error::UpdateVoiceConnectorGroupErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::UpdateVoiceConnectorGroupError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11844,14 +12395,15 @@ pub fn parse_update_voice_connector_group_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateVoiceConnectorGroupError::generic(generic),
     })
 }
@@ -11872,6 +12424,9 @@ pub fn parse_update_voice_connector_group_response(
             output,
         )
         .map_err(crate::error::UpdateVoiceConnectorGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -11883,8 +12438,11 @@ pub fn parse_validate_e911_address_error(
     crate::output::ValidateE911AddressOutput,
     crate::error::ValidateE911AddressError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ValidateE911AddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ValidateE911AddressError::unhandled(generic)),
@@ -11892,77 +12450,76 @@ pub fn parse_validate_e911_address_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::ValidateE911AddressError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_bad_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ForbiddenException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::ForbiddenException({
+            })
+        }
+        "ForbiddenException" => {
+            crate::error::ValidateE911AddressError::ForbiddenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::forbidden_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_forbidden_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ValidateE911AddressError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceFailureException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::ServiceFailureException({
+            })
+        }
+        "ServiceFailureException" => {
+            crate::error::ValidateE911AddressError::ServiceFailureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_failure_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_failure_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ServiceUnavailableException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::ServiceUnavailableException({
+            })
+        }
+        "ServiceUnavailableException" => {
+            crate::error::ValidateE911AddressError::ServiceUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -11970,34 +12527,34 @@ pub fn parse_validate_e911_address_error(
                         crate::error::service_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottledClientException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::ThrottledClientException({
+            })
+        }
+        "ThrottledClientException" => {
+            crate::error::ValidateE911AddressError::ThrottledClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttled_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttled_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnauthorizedClientException" => crate::error::ValidateE911AddressError {
-            meta: generic,
-            kind: crate::error::ValidateE911AddressErrorKind::UnauthorizedClientException({
+            })
+        }
+        "UnauthorizedClientException" => {
+            crate::error::ValidateE911AddressError::UnauthorizedClientException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -12005,14 +12562,15 @@ pub fn parse_validate_e911_address_error(
                         crate::error::unauthorized_client_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unauthorized_client_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ValidateE911AddressError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ValidateE911AddressError::generic(generic),
     })
 }
@@ -12033,6 +12591,9 @@ pub fn parse_validate_e911_address_response(
             output,
         )
         .map_err(crate::error::ValidateE911AddressError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

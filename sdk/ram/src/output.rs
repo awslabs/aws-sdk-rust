@@ -9,6 +9,7 @@ pub struct UpdateResourceShareOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateResourceShareOutput {
     /// <p>Information about the resource share.</p>
@@ -20,6 +21,11 @@ impl UpdateResourceShareOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateResourceShareOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
 pub mod update_resource_share_output {
 
@@ -29,6 +35,7 @@ pub mod update_resource_share_output {
     pub struct Builder {
         pub(crate) resource_share: std::option::Option<crate::model::ResourceShare>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the resource share.</p>
@@ -54,11 +61,21 @@ pub mod update_resource_share_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateResourceShareOutput`](crate::output::UpdateResourceShareOutput).
         pub fn build(self) -> crate::output::UpdateResourceShareOutput {
             crate::output::UpdateResourceShareOutput {
                 resource_share: self.resource_share,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -73,18 +90,38 @@ impl UpdateResourceShareOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -98,18 +135,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -130,6 +187,7 @@ pub struct RejectResourceShareInvitationOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RejectResourceShareInvitationOutput {
     /// <p>An object that contains the details about the rejected invitation.</p>
@@ -143,6 +201,11 @@ impl RejectResourceShareInvitationOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RejectResourceShareInvitationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
 pub mod reject_resource_share_invitation_output {
 
@@ -153,6 +216,7 @@ pub mod reject_resource_share_invitation_output {
         pub(crate) resource_share_invitation:
             std::option::Option<crate::model::ResourceShareInvitation>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the details about the rejected invitation.</p>
@@ -181,11 +245,21 @@ pub mod reject_resource_share_invitation_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RejectResourceShareInvitationOutput`](crate::output::RejectResourceShareInvitationOutput).
         pub fn build(self) -> crate::output::RejectResourceShareInvitationOutput {
             crate::output::RejectResourceShareInvitationOutput {
                 resource_share_invitation: self.resource_share_invitation,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -204,11 +278,17 @@ pub struct PromoteResourceShareCreatedFromPolicyOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl PromoteResourceShareCreatedFromPolicyOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
+    }
+}
+impl aws_http::request_id::RequestId for PromoteResourceShareCreatedFromPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
@@ -219,6 +299,7 @@ pub mod promote_resource_share_created_from_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -231,10 +312,20 @@ pub mod promote_resource_share_created_from_policy_output {
             self.return_value = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PromoteResourceShareCreatedFromPolicyOutput`](crate::output::PromoteResourceShareCreatedFromPolicyOutput).
         pub fn build(self) -> crate::output::PromoteResourceShareCreatedFromPolicyOutput {
             crate::output::PromoteResourceShareCreatedFromPolicyOutput {
                 return_value: self.return_value,
+                _request_id: self._request_id,
             }
         }
     }
@@ -257,6 +348,7 @@ pub struct ListResourceTypesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourceTypesOutput {
     /// <p>An array of objects that contain information about the resource types that can be shared using RAM.</p>
@@ -270,6 +362,11 @@ impl ListResourceTypesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourceTypesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
 pub mod list_resource_types_output {
 
@@ -280,6 +377,7 @@ pub mod list_resource_types_output {
         pub(crate) resource_types:
             std::option::Option<std::vec::Vec<crate::model::ServiceNameAndResourceType>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_types`.
@@ -311,11 +409,21 @@ pub mod list_resource_types_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListResourceTypesOutput`](crate::output::ListResourceTypesOutput).
         pub fn build(self) -> crate::output::ListResourceTypesOutput {
             crate::output::ListResourceTypesOutput {
                 resource_types: self.resource_types,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -338,6 +446,7 @@ pub struct ListResourceSharePermissionsOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourceSharePermissionsOutput {
     /// <p>An array of objects that describe the permissions associated with the resource share.</p>
@@ -351,6 +460,11 @@ impl ListResourceSharePermissionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourceSharePermissionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
 pub mod list_resource_share_permissions_output {
 
@@ -361,6 +475,7 @@ pub mod list_resource_share_permissions_output {
         pub(crate) permissions:
             std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `permissions`.
@@ -392,11 +507,21 @@ pub mod list_resource_share_permissions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListResourceSharePermissionsOutput`](crate::output::ListResourceSharePermissionsOutput).
         pub fn build(self) -> crate::output::ListResourceSharePermissionsOutput {
             crate::output::ListResourceSharePermissionsOutput {
                 permissions: self.permissions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -418,6 +543,7 @@ pub struct ListResourcesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListResourcesOutput {
     /// <p>An array of objects that contain information about the resources.</p>
@@ -429,6 +555,11 @@ impl ListResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListResourcesOutput`](crate::output::ListResourcesOutput).
 pub mod list_resources_output {
 
@@ -438,6 +569,7 @@ pub mod list_resources_output {
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resources`.
@@ -469,11 +601,21 @@ pub mod list_resources_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListResourcesOutput`](crate::output::ListResourcesOutput).
         pub fn build(self) -> crate::output::ListResourcesOutput {
             crate::output::ListResourcesOutput {
                 resources: self.resources,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -495,6 +637,7 @@ pub struct ListPrincipalsOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPrincipalsOutput {
     /// <p>An array of objects that contain the details about the principals.</p>
@@ -506,6 +649,11 @@ impl ListPrincipalsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPrincipalsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
 pub mod list_principals_output {
 
@@ -515,6 +663,7 @@ pub mod list_principals_output {
     pub struct Builder {
         pub(crate) principals: std::option::Option<std::vec::Vec<crate::model::Principal>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `principals`.
@@ -546,11 +695,21 @@ pub mod list_principals_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPrincipalsOutput`](crate::output::ListPrincipalsOutput).
         pub fn build(self) -> crate::output::ListPrincipalsOutput {
             crate::output::ListPrincipalsOutput {
                 principals: self.principals,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -573,6 +732,7 @@ pub struct ListPermissionVersionsOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPermissionVersionsOutput {
     /// <p>An array of objects that contain details for each of the available versions.</p>
@@ -586,6 +746,11 @@ impl ListPermissionVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPermissionVersionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
 pub mod list_permission_versions_output {
 
@@ -596,6 +761,7 @@ pub mod list_permission_versions_output {
         pub(crate) permissions:
             std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `permissions`.
@@ -627,11 +793,21 @@ pub mod list_permission_versions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPermissionVersionsOutput`](crate::output::ListPermissionVersionsOutput).
         pub fn build(self) -> crate::output::ListPermissionVersionsOutput {
             crate::output::ListPermissionVersionsOutput {
                 permissions: self.permissions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -654,6 +830,7 @@ pub struct ListPermissionsOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPermissionsOutput {
     /// <p>An array of objects with information about the permissions.</p>
@@ -667,6 +844,11 @@ impl ListPermissionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPermissionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
 pub mod list_permissions_output {
 
@@ -677,6 +859,7 @@ pub mod list_permissions_output {
         pub(crate) permissions:
             std::option::Option<std::vec::Vec<crate::model::ResourceSharePermissionSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `permissions`.
@@ -708,11 +891,21 @@ pub mod list_permissions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPermissionsOutput`](crate::output::ListPermissionsOutput).
         pub fn build(self) -> crate::output::ListPermissionsOutput {
             crate::output::ListPermissionsOutput {
                 permissions: self.permissions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -734,6 +927,7 @@ pub struct ListPendingInvitationResourcesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPendingInvitationResourcesOutput {
     /// <p>An array of objects that contain the information about the resources included the specified resource share.</p>
@@ -745,6 +939,11 @@ impl ListPendingInvitationResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPendingInvitationResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
 pub mod list_pending_invitation_resources_output {
 
@@ -754,6 +953,7 @@ pub mod list_pending_invitation_resources_output {
     pub struct Builder {
         pub(crate) resources: std::option::Option<std::vec::Vec<crate::model::Resource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resources`.
@@ -785,11 +985,21 @@ pub mod list_pending_invitation_resources_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPendingInvitationResourcesOutput`](crate::output::ListPendingInvitationResourcesOutput).
         pub fn build(self) -> crate::output::ListPendingInvitationResourcesOutput {
             crate::output::ListPendingInvitationResourcesOutput {
                 resources: self.resources,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -811,6 +1021,7 @@ pub struct GetResourceSharesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourceSharesOutput {
     /// <p>An array of objects that contain the information about the resource shares.</p>
@@ -822,6 +1033,11 @@ impl GetResourceSharesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceSharesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
 pub mod get_resource_shares_output {
 
@@ -831,6 +1047,7 @@ pub mod get_resource_shares_output {
     pub struct Builder {
         pub(crate) resource_shares: std::option::Option<std::vec::Vec<crate::model::ResourceShare>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_shares`.
@@ -862,11 +1079,21 @@ pub mod get_resource_shares_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResourceSharesOutput`](crate::output::GetResourceSharesOutput).
         pub fn build(self) -> crate::output::GetResourceSharesOutput {
             crate::output::GetResourceSharesOutput {
                 resource_shares: self.resource_shares,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -889,6 +1116,7 @@ pub struct GetResourceShareInvitationsOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourceShareInvitationsOutput {
     /// <p>An array of objects that contain the details about the invitations.</p>
@@ -902,6 +1130,11 @@ impl GetResourceShareInvitationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceShareInvitationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
 pub mod get_resource_share_invitations_output {
 
@@ -912,6 +1145,7 @@ pub mod get_resource_share_invitations_output {
         pub(crate) resource_share_invitations:
             std::option::Option<std::vec::Vec<crate::model::ResourceShareInvitation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_share_invitations`.
@@ -946,11 +1180,21 @@ pub mod get_resource_share_invitations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResourceShareInvitationsOutput`](crate::output::GetResourceShareInvitationsOutput).
         pub fn build(self) -> crate::output::GetResourceShareInvitationsOutput {
             crate::output::GetResourceShareInvitationsOutput {
                 resource_share_invitations: self.resource_share_invitations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -973,6 +1217,7 @@ pub struct GetResourceShareAssociationsOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourceShareAssociationsOutput {
     /// <p>An array of objects that contain the details about the associations.</p>
@@ -986,6 +1231,11 @@ impl GetResourceShareAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourceShareAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
 pub mod get_resource_share_associations_output {
 
@@ -996,6 +1246,7 @@ pub mod get_resource_share_associations_output {
         pub(crate) resource_share_associations:
             std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_share_associations`.
@@ -1030,11 +1281,21 @@ pub mod get_resource_share_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResourceShareAssociationsOutput`](crate::output::GetResourceShareAssociationsOutput).
         pub fn build(self) -> crate::output::GetResourceShareAssociationsOutput {
             crate::output::GetResourceShareAssociationsOutput {
                 resource_share_associations: self.resource_share_associations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1056,6 +1317,7 @@ pub struct GetResourcePoliciesOutput {
     /// <p>If present, this value indicates that more output is available than is included in the current response. Use this value in the <code>NextToken</code> request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the <code>NextToken</code> response element comes back as <code>null</code>. This indicates that this is the last page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourcePoliciesOutput {
     /// <p>An array of resource policy documents in JSON format.</p>
@@ -1067,6 +1329,11 @@ impl GetResourcePoliciesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetResourcePoliciesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
 pub mod get_resource_policies_output {
 
@@ -1076,6 +1343,7 @@ pub mod get_resource_policies_output {
     pub struct Builder {
         pub(crate) policies: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `policies`.
@@ -1107,11 +1375,21 @@ pub mod get_resource_policies_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResourcePoliciesOutput`](crate::output::GetResourcePoliciesOutput).
         pub fn build(self) -> crate::output::GetResourcePoliciesOutput {
             crate::output::GetResourcePoliciesOutput {
                 policies: self.policies,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1130,11 +1408,17 @@ pub struct GetPermissionOutput {
     /// <p>An object that contains information about the permission.</p>
     #[doc(hidden)]
     pub permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
+    _request_id: Option<String>,
 }
 impl GetPermissionOutput {
     /// <p>An object that contains information about the permission.</p>
     pub fn permission(&self) -> std::option::Option<&crate::model::ResourceSharePermissionDetail> {
         self.permission.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetPermissionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetPermissionOutput`](crate::output::GetPermissionOutput).
@@ -1145,6 +1429,7 @@ pub mod get_permission_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) permission: std::option::Option<crate::model::ResourceSharePermissionDetail>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains information about the permission.</p>
@@ -1160,10 +1445,20 @@ pub mod get_permission_output {
             self.permission = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPermissionOutput`](crate::output::GetPermissionOutput).
         pub fn build(self) -> crate::output::GetPermissionOutput {
             crate::output::GetPermissionOutput {
                 permission: self.permission,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1182,11 +1477,17 @@ pub struct EnableSharingWithAwsOrganizationOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     #[doc(hidden)]
     pub return_value: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl EnableSharingWithAwsOrganizationOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
     pub fn return_value(&self) -> std::option::Option<bool> {
         self.return_value
+    }
+}
+impl aws_http::request_id::RequestId for EnableSharingWithAwsOrganizationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
@@ -1197,6 +1498,7 @@ pub mod enable_sharing_with_aws_organization_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1209,10 +1511,20 @@ pub mod enable_sharing_with_aws_organization_output {
             self.return_value = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableSharingWithAwsOrganizationOutput`](crate::output::EnableSharingWithAwsOrganizationOutput).
         pub fn build(self) -> crate::output::EnableSharingWithAwsOrganizationOutput {
             crate::output::EnableSharingWithAwsOrganizationOutput {
                 return_value: self.return_value,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1234,6 +1546,7 @@ pub struct DisassociateResourceSharePermissionOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociateResourceSharePermissionOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1245,6 +1558,11 @@ impl DisassociateResourceSharePermissionOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateResourceSharePermissionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
 pub mod disassociate_resource_share_permission_output {
 
@@ -1254,6 +1572,7 @@ pub mod disassociate_resource_share_permission_output {
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1276,11 +1595,21 @@ pub mod disassociate_resource_share_permission_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateResourceSharePermissionOutput`](crate::output::DisassociateResourceSharePermissionOutput).
         pub fn build(self) -> crate::output::DisassociateResourceSharePermissionOutput {
             crate::output::DisassociateResourceSharePermissionOutput {
                 return_value: self.return_value,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1303,6 +1632,7 @@ pub struct DisassociateResourceShareOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociateResourceShareOutput {
     /// <p>An array of objects that contain information about the updated associations for this resource share.</p>
@@ -1316,6 +1646,11 @@ impl DisassociateResourceShareOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DisassociateResourceShareOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
 pub mod disassociate_resource_share_output {
 
@@ -1326,6 +1661,7 @@ pub mod disassociate_resource_share_output {
         pub(crate) resource_share_associations:
             std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_share_associations`.
@@ -1360,11 +1696,21 @@ pub mod disassociate_resource_share_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateResourceShareOutput`](crate::output::DisassociateResourceShareOutput).
         pub fn build(self) -> crate::output::DisassociateResourceShareOutput {
             crate::output::DisassociateResourceShareOutput {
                 resource_share_associations: self.resource_share_associations,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1386,6 +1732,7 @@ pub struct DeleteResourceShareOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteResourceShareOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1397,6 +1744,11 @@ impl DeleteResourceShareOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteResourceShareOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
 pub mod delete_resource_share_output {
 
@@ -1406,6 +1758,7 @@ pub mod delete_resource_share_output {
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1428,11 +1781,21 @@ pub mod delete_resource_share_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteResourceShareOutput`](crate::output::DeleteResourceShareOutput).
         pub fn build(self) -> crate::output::DeleteResourceShareOutput {
             crate::output::DeleteResourceShareOutput {
                 return_value: self.return_value,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1454,6 +1817,7 @@ pub struct CreateResourceShareOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateResourceShareOutput {
     /// <p>An object with information about the new resource share.</p>
@@ -1465,6 +1829,11 @@ impl CreateResourceShareOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateResourceShareOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
 pub mod create_resource_share_output {
 
@@ -1474,6 +1843,7 @@ pub mod create_resource_share_output {
     pub struct Builder {
         pub(crate) resource_share: std::option::Option<crate::model::ResourceShare>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object with information about the new resource share.</p>
@@ -1499,11 +1869,21 @@ pub mod create_resource_share_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateResourceShareOutput`](crate::output::CreateResourceShareOutput).
         pub fn build(self) -> crate::output::CreateResourceShareOutput {
             crate::output::CreateResourceShareOutput {
                 resource_share: self.resource_share,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1525,6 +1905,7 @@ pub struct AssociateResourceSharePermissionOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateResourceSharePermissionOutput {
     /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1536,6 +1917,11 @@ impl AssociateResourceSharePermissionOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateResourceSharePermissionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
 pub mod associate_resource_share_permission_output {
 
@@ -1545,6 +1931,7 @@ pub mod associate_resource_share_permission_output {
     pub struct Builder {
         pub(crate) return_value: std::option::Option<bool>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A return value of <code>true</code> indicates that the request succeeded. A value of <code>false</code> indicates that the request failed.</p>
@@ -1567,11 +1954,21 @@ pub mod associate_resource_share_permission_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateResourceSharePermissionOutput`](crate::output::AssociateResourceSharePermissionOutput).
         pub fn build(self) -> crate::output::AssociateResourceSharePermissionOutput {
             crate::output::AssociateResourceSharePermissionOutput {
                 return_value: self.return_value,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1594,6 +1991,7 @@ pub struct AssociateResourceShareOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateResourceShareOutput {
     /// <p>An array of objects that contain information about the associations.</p>
@@ -1607,6 +2005,11 @@ impl AssociateResourceShareOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AssociateResourceShareOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
 pub mod associate_resource_share_output {
 
@@ -1617,6 +2020,7 @@ pub mod associate_resource_share_output {
         pub(crate) resource_share_associations:
             std::option::Option<std::vec::Vec<crate::model::ResourceShareAssociation>>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_share_associations`.
@@ -1651,11 +2055,21 @@ pub mod associate_resource_share_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateResourceShareOutput`](crate::output::AssociateResourceShareOutput).
         pub fn build(self) -> crate::output::AssociateResourceShareOutput {
             crate::output::AssociateResourceShareOutput {
                 resource_share_associations: self.resource_share_associations,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1677,6 +2091,7 @@ pub struct AcceptResourceShareInvitationOutput {
     /// <p>The idempotency identifier associated with this request. If you want to repeat the same operation in an idempotent manner then you must include this value in the <code>clientToken</code> request parameter of that later call. All other parameters must also have the same values that you used in the first call.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AcceptResourceShareInvitationOutput {
     /// <p>An object that contains information about the specified invitation.</p>
@@ -1690,6 +2105,11 @@ impl AcceptResourceShareInvitationOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for AcceptResourceShareInvitationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
 pub mod accept_resource_share_invitation_output {
 
@@ -1700,6 +2120,7 @@ pub mod accept_resource_share_invitation_output {
         pub(crate) resource_share_invitation:
             std::option::Option<crate::model::ResourceShareInvitation>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains information about the specified invitation.</p>
@@ -1728,11 +2149,21 @@ pub mod accept_resource_share_invitation_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AcceptResourceShareInvitationOutput`](crate::output::AcceptResourceShareInvitationOutput).
         pub fn build(self) -> crate::output::AcceptResourceShareInvitationOutput {
             crate::output::AcceptResourceShareInvitationOutput {
                 resource_share_invitation: self.resource_share_invitation,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }

@@ -7,15 +7,8 @@ pub enum Error {
     DocumentServiceException(crate::error::DocumentServiceException),
     /// <p>Information about any problems encountered while processing a search request.</p>
     SearchException(crate::error::SearchException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -35,17 +28,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::SearchError> for Error {
     fn from(err: crate::error::SearchError) -> Self {
-        match err.kind {
-            crate::error::SearchErrorKind::SearchException(inner) => Error::SearchException(inner),
-            crate::error::SearchErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::SearchError::SearchException(inner) => Error::SearchException(inner),
+            crate::error::SearchError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -58,17 +56,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::SuggestError> for Error {
     fn from(err: crate::error::SuggestError) -> Self {
-        match err.kind {
-            crate::error::SuggestErrorKind::SearchException(inner) => Error::SearchException(inner),
-            crate::error::SuggestErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::SuggestError::SearchException(inner) => Error::SearchException(inner),
+            crate::error::SuggestError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -81,20 +84,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UploadDocumentsError> for Error {
     fn from(err: crate::error::UploadDocumentsError) -> Self {
-        match err.kind {
-            crate::error::UploadDocumentsErrorKind::DocumentServiceException(inner) => {
+        match err {
+            crate::error::UploadDocumentsError::DocumentServiceException(inner) => {
                 Error::DocumentServiceException(inner)
             }
-            crate::error::UploadDocumentsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UploadDocumentsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::DocumentServiceException(e) => e.request_id(),
+            Self::SearchException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

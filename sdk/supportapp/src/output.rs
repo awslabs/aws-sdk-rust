@@ -27,6 +27,7 @@ pub struct UpdateSlackChannelConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of an IAM role that you want to use to perform operations on Amazon Web Services. For more information, see <a href="https://docs.aws.amazon.com/awssupport/latest/user/support-app-permissions.html">Managing access to the Amazon Web Services Support App</a> in the <i>Amazon Web Services Support User Guide</i>.</p>
     #[doc(hidden)]
     pub channel_role_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateSlackChannelConfigurationOutput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
@@ -64,6 +65,11 @@ impl UpdateSlackChannelConfigurationOutput {
         self.channel_role_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSlackChannelConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
 pub mod update_slack_channel_configuration_output {
 
@@ -80,6 +86,7 @@ pub mod update_slack_channel_configuration_output {
         pub(crate) notify_on_case_severity:
             std::option::Option<crate::model::NotificationSeverityLevel>,
         pub(crate) channel_role_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
@@ -177,6 +184,15 @@ pub mod update_slack_channel_configuration_output {
             self.channel_role_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSlackChannelConfigurationOutput`](crate::output::UpdateSlackChannelConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateSlackChannelConfigurationOutput {
             crate::output::UpdateSlackChannelConfigurationOutput {
@@ -188,6 +204,7 @@ pub mod update_slack_channel_configuration_output {
                 notify_on_resolve_case: self.notify_on_resolve_case,
                 notify_on_case_severity: self.notify_on_case_severity,
                 channel_role_arn: self.channel_role_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -212,6 +229,7 @@ pub struct RegisterSlackWorkspaceForOrganizationOutput {
     /// <p>Whether the Amazon Web Services account is a management or member account that's part of an organization in Organizations.</p>
     #[doc(hidden)]
     pub account_type: std::option::Option<crate::model::AccountType>,
+    _request_id: Option<String>,
 }
 impl RegisterSlackWorkspaceForOrganizationOutput {
     /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
@@ -227,6 +245,11 @@ impl RegisterSlackWorkspaceForOrganizationOutput {
         self.account_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for RegisterSlackWorkspaceForOrganizationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
 pub mod register_slack_workspace_for_organization_output {
 
@@ -237,6 +260,7 @@ pub mod register_slack_workspace_for_organization_output {
         pub(crate) team_id: std::option::Option<std::string::String>,
         pub(crate) team_name: std::option::Option<std::string::String>,
         pub(crate) account_type: std::option::Option<crate::model::AccountType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.</p>
@@ -272,12 +296,22 @@ pub mod register_slack_workspace_for_organization_output {
             self.account_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterSlackWorkspaceForOrganizationOutput`](crate::output::RegisterSlackWorkspaceForOrganizationOutput).
         pub fn build(self) -> crate::output::RegisterSlackWorkspaceForOrganizationOutput {
             crate::output::RegisterSlackWorkspaceForOrganizationOutput {
                 team_id: self.team_id,
                 team_name: self.team_name,
                 account_type: self.account_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -292,18 +326,38 @@ impl RegisterSlackWorkspaceForOrganizationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountAliasOutput {}
+pub struct PutAccountAliasOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutAccountAliasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
 pub mod put_account_alias_output {
 
     /// A builder for [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAccountAliasOutput`](crate::output::PutAccountAliasOutput).
         pub fn build(self) -> crate::output::PutAccountAliasOutput {
-            crate::output::PutAccountAliasOutput {}
+            crate::output::PutAccountAliasOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -325,6 +379,7 @@ pub struct ListSlackWorkspaceConfigurationsOutput {
     #[doc(hidden)]
     pub slack_workspace_configurations:
         std::option::Option<std::vec::Vec<crate::model::SlackWorkspaceConfiguration>>,
+    _request_id: Option<String>,
 }
 impl ListSlackWorkspaceConfigurationsOutput {
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
@@ -338,6 +393,11 @@ impl ListSlackWorkspaceConfigurationsOutput {
         self.slack_workspace_configurations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSlackWorkspaceConfigurationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSlackWorkspaceConfigurationsOutput`](crate::output::ListSlackWorkspaceConfigurationsOutput).
 pub mod list_slack_workspace_configurations_output {
 
@@ -348,6 +408,7 @@ pub mod list_slack_workspace_configurations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) slack_workspace_configurations:
             std::option::Option<std::vec::Vec<crate::model::SlackWorkspaceConfiguration>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The point where pagination should resume when the response returns only partial results.</p>
@@ -382,11 +443,21 @@ pub mod list_slack_workspace_configurations_output {
             self.slack_workspace_configurations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSlackWorkspaceConfigurationsOutput`](crate::output::ListSlackWorkspaceConfigurationsOutput).
         pub fn build(self) -> crate::output::ListSlackWorkspaceConfigurationsOutput {
             crate::output::ListSlackWorkspaceConfigurationsOutput {
                 next_token: self.next_token,
                 slack_workspace_configurations: self.slack_workspace_configurations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,6 +480,7 @@ pub struct ListSlackChannelConfigurationsOutput {
     #[doc(hidden)]
     pub slack_channel_configurations:
         std::option::Option<std::vec::Vec<crate::model::SlackChannelConfiguration>>,
+    _request_id: Option<String>,
 }
 impl ListSlackChannelConfigurationsOutput {
     /// <p>The point where pagination should resume when the response returns only partial results.</p>
@@ -422,6 +494,11 @@ impl ListSlackChannelConfigurationsOutput {
         self.slack_channel_configurations.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSlackChannelConfigurationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSlackChannelConfigurationsOutput`](crate::output::ListSlackChannelConfigurationsOutput).
 pub mod list_slack_channel_configurations_output {
 
@@ -432,6 +509,7 @@ pub mod list_slack_channel_configurations_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) slack_channel_configurations:
             std::option::Option<std::vec::Vec<crate::model::SlackChannelConfiguration>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The point where pagination should resume when the response returns only partial results.</p>
@@ -466,11 +544,21 @@ pub mod list_slack_channel_configurations_output {
             self.slack_channel_configurations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSlackChannelConfigurationsOutput`](crate::output::ListSlackChannelConfigurationsOutput).
         pub fn build(self) -> crate::output::ListSlackChannelConfigurationsOutput {
             crate::output::ListSlackChannelConfigurationsOutput {
                 next_token: self.next_token,
                 slack_channel_configurations: self.slack_channel_configurations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -489,11 +577,17 @@ pub struct GetAccountAliasOutput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub account_alias: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAccountAliasOutput {
     /// <p>An alias or short name for an Amazon Web Services account.</p>
     pub fn account_alias(&self) -> std::option::Option<&str> {
         self.account_alias.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAccountAliasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAccountAliasOutput`](crate::output::GetAccountAliasOutput).
@@ -504,6 +598,7 @@ pub mod get_account_alias_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) account_alias: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An alias or short name for an Amazon Web Services account.</p>
@@ -519,10 +614,20 @@ pub mod get_account_alias_output {
             self.account_alias = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccountAliasOutput`](crate::output::GetAccountAliasOutput).
         pub fn build(self) -> crate::output::GetAccountAliasOutput {
             crate::output::GetAccountAliasOutput {
                 account_alias: self.account_alias,
+                _request_id: self._request_id,
             }
         }
     }
@@ -537,18 +642,38 @@ impl GetAccountAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlackWorkspaceConfigurationOutput {}
+pub struct DeleteSlackWorkspaceConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteSlackWorkspaceConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
 pub mod delete_slack_workspace_configuration_output {
 
     /// A builder for [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSlackWorkspaceConfigurationOutput`](crate::output::DeleteSlackWorkspaceConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteSlackWorkspaceConfigurationOutput {
-            crate::output::DeleteSlackWorkspaceConfigurationOutput {}
+            crate::output::DeleteSlackWorkspaceConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -562,18 +687,38 @@ impl DeleteSlackWorkspaceConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSlackChannelConfigurationOutput {}
+pub struct DeleteSlackChannelConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteSlackChannelConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
 pub mod delete_slack_channel_configuration_output {
 
     /// A builder for [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSlackChannelConfigurationOutput`](crate::output::DeleteSlackChannelConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteSlackChannelConfigurationOutput {
-            crate::output::DeleteSlackChannelConfigurationOutput {}
+            crate::output::DeleteSlackChannelConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -587,18 +732,38 @@ impl DeleteSlackChannelConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAccountAliasOutput {}
+pub struct DeleteAccountAliasOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAccountAliasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
 pub mod delete_account_alias_output {
 
     /// A builder for [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAccountAliasOutput`](crate::output::DeleteAccountAliasOutput).
         pub fn build(self) -> crate::output::DeleteAccountAliasOutput {
-            crate::output::DeleteAccountAliasOutput {}
+            crate::output::DeleteAccountAliasOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -612,18 +777,38 @@ impl DeleteAccountAliasOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateSlackChannelConfigurationOutput {}
+pub struct CreateSlackChannelConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateSlackChannelConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
 pub mod create_slack_channel_configuration_output {
 
     /// A builder for [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSlackChannelConfigurationOutput`](crate::output::CreateSlackChannelConfigurationOutput).
         pub fn build(self) -> crate::output::CreateSlackChannelConfigurationOutput {
-            crate::output::CreateSlackChannelConfigurationOutput {}
+            crate::output::CreateSlackChannelConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

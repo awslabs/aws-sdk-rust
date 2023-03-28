@@ -15,6 +15,7 @@ pub struct UpdateParallelDataOutput {
     /// <p>The time that the most recent update was attempted.</p>
     #[doc(hidden)]
     pub latest_update_attempt_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateParallelDataOutput {
     /// <p>The name of the parallel data resource being updated.</p>
@@ -36,6 +37,11 @@ impl UpdateParallelDataOutput {
         self.latest_update_attempt_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateParallelDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
 pub mod update_parallel_data_output {
 
@@ -48,6 +54,7 @@ pub mod update_parallel_data_output {
         pub(crate) latest_update_attempt_status:
             std::option::Option<crate::model::ParallelDataStatus>,
         pub(crate) latest_update_attempt_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the parallel data resource being updated.</p>
@@ -102,6 +109,15 @@ pub mod update_parallel_data_output {
             self.latest_update_attempt_at = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateParallelDataOutput`](crate::output::UpdateParallelDataOutput).
         pub fn build(self) -> crate::output::UpdateParallelDataOutput {
             crate::output::UpdateParallelDataOutput {
@@ -109,6 +125,7 @@ pub mod update_parallel_data_output {
                 status: self.status,
                 latest_update_attempt_status: self.latest_update_attempt_status,
                 latest_update_attempt_at: self.latest_update_attempt_at,
+                _request_id: self._request_id,
             }
         }
     }
@@ -123,18 +140,38 @@ impl UpdateParallelDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -164,6 +201,7 @@ pub struct TranslateTextOutput {
     /// <p>Settings that configure the translation output.</p>
     #[doc(hidden)]
     pub applied_settings: std::option::Option<crate::model::TranslationSettings>,
+    _request_id: Option<String>,
 }
 impl TranslateTextOutput {
     /// <p>The translated text.</p>
@@ -189,6 +227,11 @@ impl TranslateTextOutput {
         self.applied_settings.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for TranslateTextOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TranslateTextOutput`](crate::output::TranslateTextOutput).
 pub mod translate_text_output {
 
@@ -202,6 +245,7 @@ pub mod translate_text_output {
         pub(crate) applied_terminologies:
             std::option::Option<std::vec::Vec<crate::model::AppliedTerminology>>,
         pub(crate) applied_settings: std::option::Option<crate::model::TranslationSettings>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The translated text.</p>
@@ -275,6 +319,15 @@ pub mod translate_text_output {
             self.applied_settings = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TranslateTextOutput`](crate::output::TranslateTextOutput).
         pub fn build(self) -> crate::output::TranslateTextOutput {
             crate::output::TranslateTextOutput {
@@ -283,6 +336,7 @@ pub mod translate_text_output {
                 target_language_code: self.target_language_code,
                 applied_terminologies: self.applied_terminologies,
                 applied_settings: self.applied_settings,
+                _request_id: self._request_id,
             }
         }
     }
@@ -297,18 +351,38 @@ impl TranslateTextOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -329,6 +403,7 @@ pub struct StopTextTranslationJobOutput {
     /// <p>The status of the designated job. Upon successful completion, the job's status will be <code>STOPPED</code>.</p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StopTextTranslationJobOutput {
     /// <p>The job ID of the stopped batch translation job.</p>
@@ -340,6 +415,11 @@ impl StopTextTranslationJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StopTextTranslationJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
 pub mod stop_text_translation_job_output {
 
@@ -349,6 +429,7 @@ pub mod stop_text_translation_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The job ID of the stopped batch translation job.</p>
@@ -374,11 +455,21 @@ pub mod stop_text_translation_job_output {
             self.job_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopTextTranslationJobOutput`](crate::output::StopTextTranslationJobOutput).
         pub fn build(self) -> crate::output::StopTextTranslationJobOutput {
             crate::output::StopTextTranslationJobOutput {
                 job_id: self.job_id,
                 job_status: self.job_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,6 +500,7 @@ pub struct StartTextTranslationJobOutput {
     /// </ul>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::JobStatus>,
+    _request_id: Option<String>,
 }
 impl StartTextTranslationJobOutput {
     /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
@@ -429,6 +521,11 @@ impl StartTextTranslationJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartTextTranslationJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
 pub mod start_text_translation_job_output {
 
@@ -438,6 +535,7 @@ pub mod start_text_translation_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::JobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier generated for the job. To get the status of a job, use this ID with the <code>DescribeTextTranslationJob</code> operation.</p>
@@ -481,11 +579,21 @@ pub mod start_text_translation_job_output {
             self.job_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartTextTranslationJobOutput`](crate::output::StartTextTranslationJobOutput).
         pub fn build(self) -> crate::output::StartTextTranslationJobOutput {
             crate::output::StartTextTranslationJobOutput {
                 job_id: self.job_id,
                 job_status: self.job_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -508,6 +616,7 @@ pub struct ListTextTranslationJobsOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTextTranslationJobsOutput {
     /// <p>A list containing the properties of each job that is returned.</p>
@@ -521,6 +630,11 @@ impl ListTextTranslationJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTextTranslationJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
 pub mod list_text_translation_jobs_output {
 
@@ -531,6 +645,7 @@ pub mod list_text_translation_jobs_output {
         pub(crate) text_translation_job_properties_list:
             std::option::Option<std::vec::Vec<crate::model::TextTranslationJobProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `text_translation_job_properties_list`.
@@ -567,11 +682,21 @@ pub mod list_text_translation_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTextTranslationJobsOutput`](crate::output::ListTextTranslationJobsOutput).
         pub fn build(self) -> crate::output::ListTextTranslationJobsOutput {
             crate::output::ListTextTranslationJobsOutput {
                 text_translation_job_properties_list: self.text_translation_job_properties_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -594,6 +719,7 @@ pub struct ListTerminologiesOutput {
     /// <p> If the response to the ListTerminologies was truncated, the NextToken fetches the next group of custom terminologies.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTerminologiesOutput {
     /// <p>The properties list of the custom terminologies returned on the list request.</p>
@@ -607,6 +733,11 @@ impl ListTerminologiesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTerminologiesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
 pub mod list_terminologies_output {
 
@@ -617,6 +748,7 @@ pub mod list_terminologies_output {
         pub(crate) terminology_properties_list:
             std::option::Option<std::vec::Vec<crate::model::TerminologyProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `terminology_properties_list`.
@@ -651,11 +783,21 @@ pub mod list_terminologies_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTerminologiesOutput`](crate::output::ListTerminologiesOutput).
         pub fn build(self) -> crate::output::ListTerminologiesOutput {
             crate::output::ListTerminologiesOutput {
                 terminology_properties_list: self.terminology_properties_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -674,11 +816,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Tags associated with the Amazon Translate resource being queried. A tag is a key-value pair that adds as a metadata to a resource used by Amazon Translate. For example, a tag with "Sales" as the key might be added to a resource to indicate its use by the sales department. </p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -689,6 +837,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -710,9 +859,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -734,6 +895,7 @@ pub struct ListParallelDataOutput {
     /// <p>The string to use in a subsequent request to get the next page of results in a paginated response. This value is null if there are no additional pages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListParallelDataOutput {
     /// <p>The properties of the parallel data resources returned by this request.</p>
@@ -747,6 +909,11 @@ impl ListParallelDataOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListParallelDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
 pub mod list_parallel_data_output {
 
@@ -757,6 +924,7 @@ pub mod list_parallel_data_output {
         pub(crate) parallel_data_properties_list:
             std::option::Option<std::vec::Vec<crate::model::ParallelDataProperties>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `parallel_data_properties_list`.
@@ -791,11 +959,21 @@ pub mod list_parallel_data_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListParallelDataOutput`](crate::output::ListParallelDataOutput).
         pub fn build(self) -> crate::output::ListParallelDataOutput {
             crate::output::ListParallelDataOutput {
                 parallel_data_properties_list: self.parallel_data_properties_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -820,6 +998,7 @@ pub struct ListLanguagesOutput {
     /// <p> If the response does not include all remaining results, use the NextToken in the next request to fetch the next group of supported languages.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLanguagesOutput {
     /// <p>The list of supported languages.</p>
@@ -835,6 +1014,11 @@ impl ListLanguagesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLanguagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
 pub mod list_languages_output {
 
@@ -845,6 +1029,7 @@ pub mod list_languages_output {
         pub(crate) languages: std::option::Option<std::vec::Vec<crate::model::Language>>,
         pub(crate) display_language_code: std::option::Option<crate::model::DisplayLanguageCode>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `languages`.
@@ -889,12 +1074,22 @@ pub mod list_languages_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLanguagesOutput`](crate::output::ListLanguagesOutput).
         pub fn build(self) -> crate::output::ListLanguagesOutput {
             crate::output::ListLanguagesOutput {
                 languages: self.languages,
                 display_language_code: self.display_language_code,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -916,6 +1111,7 @@ pub struct ImportTerminologyOutput {
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30 minute expiration.</p>
     #[doc(hidden)]
     pub auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
+    _request_id: Option<String>,
 }
 impl ImportTerminologyOutput {
     /// <p>The properties of the custom terminology being imported.</p>
@@ -931,6 +1127,11 @@ impl ImportTerminologyOutput {
         self.auxiliary_data_location.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ImportTerminologyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
 pub mod import_terminology_output {
 
@@ -941,6 +1142,7 @@ pub mod import_terminology_output {
         pub(crate) terminology_properties: std::option::Option<crate::model::TerminologyProperties>,
         pub(crate) auxiliary_data_location:
             std::option::Option<crate::model::TerminologyDataLocation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The properties of the custom terminology being imported.</p>
@@ -975,11 +1177,21 @@ pub mod import_terminology_output {
             self.auxiliary_data_location = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportTerminologyOutput`](crate::output::ImportTerminologyOutput).
         pub fn build(self) -> crate::output::ImportTerminologyOutput {
             crate::output::ImportTerminologyOutput {
                 terminology_properties: self.terminology_properties,
                 auxiliary_data_location: self.auxiliary_data_location,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1008,6 +1220,7 @@ pub struct GetTerminologyOutput {
     /// <p>The Amazon S3 location of a file that provides any errors or warnings that were produced by your input file. This file was created when Amazon Translate attempted to create a terminology resource. The location is returned as a presigned URL to that has a 30-minute expiration.</p>
     #[doc(hidden)]
     pub auxiliary_data_location: std::option::Option<crate::model::TerminologyDataLocation>,
+    _request_id: Option<String>,
 }
 impl GetTerminologyOutput {
     /// <p>The properties of the custom terminology being retrieved.</p>
@@ -1033,6 +1246,11 @@ impl GetTerminologyOutput {
         self.auxiliary_data_location.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetTerminologyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
 pub mod get_terminology_output {
 
@@ -1045,6 +1263,7 @@ pub mod get_terminology_output {
             std::option::Option<crate::model::TerminologyDataLocation>,
         pub(crate) auxiliary_data_location:
             std::option::Option<crate::model::TerminologyDataLocation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The properties of the custom terminology being retrieved.</p>
@@ -1103,12 +1322,22 @@ pub mod get_terminology_output {
             self.auxiliary_data_location = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTerminologyOutput`](crate::output::GetTerminologyOutput).
         pub fn build(self) -> crate::output::GetTerminologyOutput {
             crate::output::GetTerminologyOutput {
                 terminology_properties: self.terminology_properties,
                 terminology_data_location: self.terminology_data_location,
                 auxiliary_data_location: self.auxiliary_data_location,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1141,6 +1370,7 @@ pub struct GetParallelDataOutput {
     #[doc(hidden)]
     pub latest_update_attempt_auxiliary_data_location:
         std::option::Option<crate::model::ParallelDataDataLocation>,
+    _request_id: Option<String>,
 }
 impl GetParallelDataOutput {
     /// <p>The properties of the parallel data resource that is being retrieved.</p>
@@ -1170,6 +1400,11 @@ impl GetParallelDataOutput {
         self.latest_update_attempt_auxiliary_data_location.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetParallelDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
 pub mod get_parallel_data_output {
 
@@ -1184,6 +1419,7 @@ pub mod get_parallel_data_output {
             std::option::Option<crate::model::ParallelDataDataLocation>,
         pub(crate) latest_update_attempt_auxiliary_data_location:
             std::option::Option<crate::model::ParallelDataDataLocation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The properties of the parallel data resource that is being retrieved.</p>
@@ -1255,6 +1491,15 @@ pub mod get_parallel_data_output {
             self.latest_update_attempt_auxiliary_data_location = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetParallelDataOutput`](crate::output::GetParallelDataOutput).
         pub fn build(self) -> crate::output::GetParallelDataOutput {
             crate::output::GetParallelDataOutput {
@@ -1263,6 +1508,7 @@ pub mod get_parallel_data_output {
                 auxiliary_data_location: self.auxiliary_data_location,
                 latest_update_attempt_auxiliary_data_location: self
                     .latest_update_attempt_auxiliary_data_location,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1282,6 +1528,7 @@ pub struct DescribeTextTranslationJobOutput {
     #[doc(hidden)]
     pub text_translation_job_properties:
         std::option::Option<crate::model::TextTranslationJobProperties>,
+    _request_id: Option<String>,
 }
 impl DescribeTextTranslationJobOutput {
     /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
@@ -1289,6 +1536,11 @@ impl DescribeTextTranslationJobOutput {
         &self,
     ) -> std::option::Option<&crate::model::TextTranslationJobProperties> {
         self.text_translation_job_properties.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeTextTranslationJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
@@ -1300,6 +1552,7 @@ pub mod describe_text_translation_job_output {
     pub struct Builder {
         pub(crate) text_translation_job_properties:
             std::option::Option<crate::model::TextTranslationJobProperties>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the properties associated with an asynchronous batch translation job.</p>
@@ -1318,10 +1571,20 @@ pub mod describe_text_translation_job_output {
             self.text_translation_job_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTextTranslationJobOutput`](crate::output::DescribeTextTranslationJobOutput).
         pub fn build(self) -> crate::output::DescribeTextTranslationJobOutput {
             crate::output::DescribeTextTranslationJobOutput {
                 text_translation_job_properties: self.text_translation_job_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1336,18 +1599,38 @@ impl DescribeTextTranslationJobOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTerminologyOutput {}
+pub struct DeleteTerminologyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteTerminologyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
 pub mod delete_terminology_output {
 
     /// A builder for [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteTerminologyOutput`](crate::output::DeleteTerminologyOutput).
         pub fn build(self) -> crate::output::DeleteTerminologyOutput {
-            crate::output::DeleteTerminologyOutput {}
+            crate::output::DeleteTerminologyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1368,6 +1651,7 @@ pub struct DeleteParallelDataOutput {
     /// <p>The status of the parallel data deletion.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
+    _request_id: Option<String>,
 }
 impl DeleteParallelDataOutput {
     /// <p>The name of the parallel data resource that is being deleted.</p>
@@ -1379,6 +1663,11 @@ impl DeleteParallelDataOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteParallelDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
 pub mod delete_parallel_data_output {
 
@@ -1388,6 +1677,7 @@ pub mod delete_parallel_data_output {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ParallelDataStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the parallel data resource that is being deleted.</p>
@@ -1413,11 +1703,21 @@ pub mod delete_parallel_data_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteParallelDataOutput`](crate::output::DeleteParallelDataOutput).
         pub fn build(self) -> crate::output::DeleteParallelDataOutput {
             crate::output::DeleteParallelDataOutput {
                 name: self.name,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1439,6 +1739,7 @@ pub struct CreateParallelDataOutput {
     /// <p>The status of the parallel data resource. When the resource is ready for you to use, the status is <code>ACTIVE</code>.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ParallelDataStatus>,
+    _request_id: Option<String>,
 }
 impl CreateParallelDataOutput {
     /// <p>The custom name that you assigned to the parallel data resource.</p>
@@ -1450,6 +1751,11 @@ impl CreateParallelDataOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateParallelDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
 pub mod create_parallel_data_output {
 
@@ -1459,6 +1765,7 @@ pub mod create_parallel_data_output {
     pub struct Builder {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ParallelDataStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The custom name that you assigned to the parallel data resource.</p>
@@ -1484,11 +1791,21 @@ pub mod create_parallel_data_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateParallelDataOutput`](crate::output::CreateParallelDataOutput).
         pub fn build(self) -> crate::output::CreateParallelDataOutput {
             crate::output::CreateParallelDataOutput {
                 name: self.name,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }

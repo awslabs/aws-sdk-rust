@@ -9,6 +9,7 @@ pub struct ListTrackerConsumersOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTrackerConsumersOutput {
     /// <p>Contains the list of geofence collection ARNs associated to the tracker resource.</p>
@@ -20,6 +21,11 @@ impl ListTrackerConsumersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTrackerConsumersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
 pub mod list_tracker_consumers_output {
 
@@ -29,6 +35,7 @@ pub mod list_tracker_consumers_output {
     pub struct Builder {
         pub(crate) consumer_arns: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `consumer_arns`.
@@ -60,11 +67,21 @@ pub mod list_tracker_consumers_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTrackerConsumersOutput`](crate::output::ListTrackerConsumersOutput).
         pub fn build(self) -> crate::output::ListTrackerConsumersOutput {
             crate::output::ListTrackerConsumersOutput {
                 consumer_arns: self.consumer_arns,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -86,6 +103,7 @@ pub struct ListDevicePositionsOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDevicePositionsOutput {
     /// <p>Contains details about each device's last known position. These details includes the device ID, the time when the position was sampled on the device, the time that the service received the update, and the most recent coordinates.</p>
@@ -99,6 +117,11 @@ impl ListDevicePositionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDevicePositionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
 pub mod list_device_positions_output {
 
@@ -109,6 +132,7 @@ pub mod list_device_positions_output {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::ListDevicePositionsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -142,11 +166,21 @@ pub mod list_device_positions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDevicePositionsOutput`](crate::output::ListDevicePositionsOutput).
         pub fn build(self) -> crate::output::ListDevicePositionsOutput {
             crate::output::ListDevicePositionsOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -168,6 +202,7 @@ pub struct GetDevicePositionHistoryOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDevicePositionHistoryOutput {
     /// <p>Contains the position history details for the requested device.</p>
@@ -177,6 +212,11 @@ impl GetDevicePositionHistoryOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDevicePositionHistoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
@@ -189,6 +229,7 @@ pub mod get_device_position_history_output {
         pub(crate) device_positions:
             std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `device_positions`.
@@ -220,11 +261,21 @@ pub mod get_device_position_history_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDevicePositionHistoryOutput`](crate::output::GetDevicePositionHistoryOutput).
         pub fn build(self) -> crate::output::GetDevicePositionHistoryOutput {
             crate::output::GetDevicePositionHistoryOutput {
                 device_positions: self.device_positions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -259,6 +310,7 @@ pub struct GetDevicePositionOutput {
     #[doc(hidden)]
     pub position_properties:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetDevicePositionOutput {
     /// <p>The device whose position you retrieved.</p>
@@ -298,7 +350,13 @@ impl std::fmt::Debug for GetDevicePositionOutput {
         formatter.field("position", &"*** Sensitive Data Redacted ***");
         formatter.field("accuracy", &self.accuracy);
         formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetDevicePositionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
@@ -316,6 +374,7 @@ pub mod get_device_position_output {
         pub(crate) position_properties: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The device whose position you retrieved.</p>
@@ -408,6 +467,15 @@ pub mod get_device_position_output {
             self.position_properties = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDevicePositionOutput`](crate::output::GetDevicePositionOutput).
         pub fn build(self) -> crate::output::GetDevicePositionOutput {
             crate::output::GetDevicePositionOutput {
@@ -417,6 +485,7 @@ pub mod get_device_position_output {
                 position: self.position,
                 accuracy: self.accuracy,
                 position_properties: self.position_properties,
+                _request_id: self._request_id,
             }
         }
     }
@@ -429,6 +498,7 @@ pub mod get_device_position_output {
             formatter.field("position", &"*** Sensitive Data Redacted ***");
             formatter.field("accuracy", &self.accuracy);
             formatter.field("position_properties", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -443,18 +513,38 @@ impl GetDevicePositionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateTrackerConsumerOutput {}
+pub struct DisassociateTrackerConsumerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisassociateTrackerConsumerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
 pub mod disassociate_tracker_consumer_output {
 
     /// A builder for [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateTrackerConsumerOutput`](crate::output::DisassociateTrackerConsumerOutput).
         pub fn build(self) -> crate::output::DisassociateTrackerConsumerOutput {
-            crate::output::DisassociateTrackerConsumerOutput {}
+            crate::output::DisassociateTrackerConsumerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -472,11 +562,17 @@ pub struct BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
+    _request_id: Option<String>,
 }
 impl BatchUpdateDevicePositionOutput {
     /// <p>Contains error details for each device that failed to update its position.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchUpdateDevicePositionError]> {
         self.errors.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchUpdateDevicePositionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
@@ -488,6 +584,7 @@ pub mod batch_update_device_position_output {
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchUpdateDevicePositionError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -509,10 +606,20 @@ pub mod batch_update_device_position_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchUpdateDevicePositionOutput`](crate::output::BatchUpdateDevicePositionOutput).
         pub fn build(self) -> crate::output::BatchUpdateDevicePositionOutput {
             crate::output::BatchUpdateDevicePositionOutput {
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -534,6 +641,7 @@ pub struct BatchGetDevicePositionOutput {
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
     #[doc(hidden)]
     pub device_positions: std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
+    _request_id: Option<String>,
 }
 impl BatchGetDevicePositionOutput {
     /// <p>Contains error details for each device that failed to send its position to the tracker resource.</p>
@@ -543,6 +651,11 @@ impl BatchGetDevicePositionOutput {
     /// <p>Contains device position details such as the device ID, position, and timestamps for when the position was received and sampled.</p>
     pub fn device_positions(&self) -> std::option::Option<&[crate::model::DevicePosition]> {
         self.device_positions.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchGetDevicePositionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
@@ -556,6 +669,7 @@ pub mod batch_get_device_position_output {
             std::option::Option<std::vec::Vec<crate::model::BatchGetDevicePositionError>>,
         pub(crate) device_positions:
             std::option::Option<std::vec::Vec<crate::model::DevicePosition>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -596,11 +710,21 @@ pub mod batch_get_device_position_output {
             self.device_positions = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchGetDevicePositionOutput`](crate::output::BatchGetDevicePositionOutput).
         pub fn build(self) -> crate::output::BatchGetDevicePositionOutput {
             crate::output::BatchGetDevicePositionOutput {
                 errors: self.errors,
                 device_positions: self.device_positions,
+                _request_id: self._request_id,
             }
         }
     }
@@ -620,6 +744,7 @@ pub struct BatchDeleteDevicePositionHistoryOutput {
     #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
+    _request_id: Option<String>,
 }
 impl BatchDeleteDevicePositionHistoryOutput {
     /// <p>Contains error details for each device history that failed to delete.</p>
@@ -627,6 +752,11 @@ impl BatchDeleteDevicePositionHistoryOutput {
         &self,
     ) -> std::option::Option<&[crate::model::BatchDeleteDevicePositionHistoryError]> {
         self.errors.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchDeleteDevicePositionHistoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
@@ -638,6 +768,7 @@ pub mod batch_delete_device_position_history_output {
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchDeleteDevicePositionHistoryError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -664,10 +795,20 @@ pub mod batch_delete_device_position_history_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDeleteDevicePositionHistoryOutput`](crate::output::BatchDeleteDevicePositionHistoryOutput).
         pub fn build(self) -> crate::output::BatchDeleteDevicePositionHistoryOutput {
             crate::output::BatchDeleteDevicePositionHistoryOutput {
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -682,18 +823,38 @@ impl BatchDeleteDevicePositionHistoryOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateTrackerConsumerOutput {}
+pub struct AssociateTrackerConsumerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AssociateTrackerConsumerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
 pub mod associate_tracker_consumer_output {
 
     /// A builder for [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateTrackerConsumerOutput`](crate::output::AssociateTrackerConsumerOutput).
         pub fn build(self) -> crate::output::AssociateTrackerConsumerOutput {
-            crate::output::AssociateTrackerConsumerOutput {}
+            crate::output::AssociateTrackerConsumerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -714,6 +875,7 @@ pub struct ListTrackersOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTrackersOutput {
     /// <p>Contains tracker resources in your AWS account. Details include tracker name, description and timestamps for when the tracker was created and last updated.</p>
@@ -723,6 +885,11 @@ impl ListTrackersOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTrackersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTrackersOutput`](crate::output::ListTrackersOutput).
@@ -735,6 +902,7 @@ pub mod list_trackers_output {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::ListTrackersResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -766,11 +934,21 @@ pub mod list_trackers_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTrackersOutput`](crate::output::ListTrackersOutput).
         pub fn build(self) -> crate::output::ListTrackersOutput {
             crate::output::ListTrackersOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -798,6 +976,7 @@ pub struct CreateTrackerOutput {
     /// <p>The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateTrackerOutput {
     /// <p>The name of the tracker resource.</p>
@@ -816,6 +995,11 @@ impl CreateTrackerOutput {
         self.create_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTrackerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
 pub mod create_tracker_output {
 
@@ -826,6 +1010,7 @@ pub mod create_tracker_output {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) tracker_arn: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the tracker resource.</p>
@@ -867,12 +1052,22 @@ pub mod create_tracker_output {
             self.create_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTrackerOutput`](crate::output::CreateTrackerOutput).
         pub fn build(self) -> crate::output::CreateTrackerOutput {
             crate::output::CreateTrackerOutput {
                 tracker_name: self.tracker_name,
                 tracker_arn: self.tracker_arn,
                 create_time: self.create_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -887,18 +1082,38 @@ impl CreateTrackerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTrackerOutput {}
+pub struct DeleteTrackerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteTrackerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
 pub mod delete_tracker_output {
 
     /// A builder for [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteTrackerOutput`](crate::output::DeleteTrackerOutput).
         pub fn build(self) -> crate::output::DeleteTrackerOutput {
-            crate::output::DeleteTrackerOutput {}
+            crate::output::DeleteTrackerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -925,6 +1140,7 @@ pub struct UpdateTrackerOutput {
     /// <p>The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateTrackerOutput {
     /// <p>The name of the updated tracker resource.</p>
@@ -943,6 +1159,11 @@ impl UpdateTrackerOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateTrackerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
 pub mod update_tracker_output {
 
@@ -953,6 +1174,7 @@ pub mod update_tracker_output {
         pub(crate) tracker_name: std::option::Option<std::string::String>,
         pub(crate) tracker_arn: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated tracker resource.</p>
@@ -994,12 +1216,22 @@ pub mod update_tracker_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTrackerOutput`](crate::output::UpdateTrackerOutput).
         pub fn build(self) -> crate::output::UpdateTrackerOutput {
             crate::output::UpdateTrackerOutput {
                 tracker_name: self.tracker_name,
                 tracker_arn: self.tracker_arn,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1054,6 +1286,7 @@ pub struct DescribeTrackerOutput {
     /// <p>The position filtering method of the tracker resource.</p>
     #[doc(hidden)]
     pub position_filtering: std::option::Option<crate::model::PositionFiltering>,
+    _request_id: Option<String>,
 }
 impl DescribeTrackerOutput {
     /// <p>The name of the tracker resource.</p>
@@ -1108,6 +1341,11 @@ impl DescribeTrackerOutput {
         self.position_filtering.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTrackerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
 pub mod describe_tracker_output {
 
@@ -1127,6 +1365,7 @@ pub mod describe_tracker_output {
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) kms_key_id: std::option::Option<std::string::String>,
         pub(crate) position_filtering: std::option::Option<crate::model::PositionFiltering>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the tracker resource.</p>
@@ -1275,6 +1514,15 @@ pub mod describe_tracker_output {
             self.position_filtering = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTrackerOutput`](crate::output::DescribeTrackerOutput).
         pub fn build(self) -> crate::output::DescribeTrackerOutput {
             crate::output::DescribeTrackerOutput {
@@ -1288,6 +1536,7 @@ pub mod describe_tracker_output {
                 update_time: self.update_time,
                 kms_key_id: self.kms_key_id,
                 position_filtering: self.position_filtering,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1316,6 +1565,7 @@ pub struct CalculateRouteMatrixOutput {
     /// <p>Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>, <code>RouteCount</code> and <code>ErrorCount</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
+    _request_id: Option<String>,
 }
 impl CalculateRouteMatrixOutput {
     /// <p>The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code> to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>. Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code> to an entry in <code>DestinationPositions</code>. </p>
@@ -1337,6 +1587,11 @@ impl CalculateRouteMatrixOutput {
         self.summary.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CalculateRouteMatrixOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
 pub mod calculate_route_matrix_output {
 
@@ -1351,6 +1606,7 @@ pub mod calculate_route_matrix_output {
         pub(crate) snapped_destination_positions:
             std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
         pub(crate) summary: std::option::Option<crate::model::CalculateRouteMatrixSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `route_matrix`.
@@ -1428,6 +1684,15 @@ pub mod calculate_route_matrix_output {
             self.summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CalculateRouteMatrixOutput`](crate::output::CalculateRouteMatrixOutput).
         pub fn build(self) -> crate::output::CalculateRouteMatrixOutput {
             crate::output::CalculateRouteMatrixOutput {
@@ -1435,6 +1700,7 @@ pub mod calculate_route_matrix_output {
                 snapped_departure_positions: self.snapped_departure_positions,
                 snapped_destination_positions: self.snapped_destination_positions,
                 summary: self.summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1466,6 +1732,7 @@ pub struct CalculateRouteOutput {
     /// <p>Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>, <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.</p>
     #[doc(hidden)]
     pub summary: std::option::Option<crate::model::CalculateRouteSummary>,
+    _request_id: Option<String>,
 }
 impl CalculateRouteOutput {
     /// <p>Contains details about each path between a pair of positions included along a route such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>, <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number of legs returned corresponds to one fewer than the total number of positions in the request. </p>
@@ -1487,6 +1754,11 @@ impl CalculateRouteOutput {
         self.summary.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CalculateRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
 pub mod calculate_route_output {
 
@@ -1496,6 +1768,7 @@ pub mod calculate_route_output {
     pub struct Builder {
         pub(crate) legs: std::option::Option<std::vec::Vec<crate::model::Leg>>,
         pub(crate) summary: std::option::Option<crate::model::CalculateRouteSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `legs`.
@@ -1550,11 +1823,21 @@ pub mod calculate_route_output {
             self.summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CalculateRouteOutput`](crate::output::CalculateRouteOutput).
         pub fn build(self) -> crate::output::CalculateRouteOutput {
             crate::output::CalculateRouteOutput {
                 legs: self.legs,
                 summary: self.summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1577,6 +1860,7 @@ pub struct ListRouteCalculatorsOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a subsequent request to fetch the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRouteCalculatorsOutput {
     /// <p>Lists the route calculator resources that exist in your AWS account</p>
@@ -1590,6 +1874,11 @@ impl ListRouteCalculatorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRouteCalculatorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
 pub mod list_route_calculators_output {
 
@@ -1600,6 +1889,7 @@ pub mod list_route_calculators_output {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::ListRouteCalculatorsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -1633,11 +1923,21 @@ pub mod list_route_calculators_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRouteCalculatorsOutput`](crate::output::ListRouteCalculatorsOutput).
         pub fn build(self) -> crate::output::ListRouteCalculatorsOutput {
             crate::output::ListRouteCalculatorsOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1671,6 +1971,7 @@ pub struct CreateRouteCalculatorOutput {
     /// </ul>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateRouteCalculatorOutput {
     /// <p>The name of the route calculator resource. </p>
@@ -1695,6 +1996,11 @@ impl CreateRouteCalculatorOutput {
         self.create_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRouteCalculatorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
 pub mod create_route_calculator_output {
 
@@ -1705,6 +2011,7 @@ pub mod create_route_calculator_output {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
         pub(crate) calculator_arn: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the route calculator resource. </p>
@@ -1764,12 +2071,22 @@ pub mod create_route_calculator_output {
             self.create_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRouteCalculatorOutput`](crate::output::CreateRouteCalculatorOutput).
         pub fn build(self) -> crate::output::CreateRouteCalculatorOutput {
             crate::output::CreateRouteCalculatorOutput {
                 calculator_name: self.calculator_name,
                 calculator_arn: self.calculator_arn,
                 create_time: self.create_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1784,18 +2101,38 @@ impl CreateRouteCalculatorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRouteCalculatorOutput {}
+pub struct DeleteRouteCalculatorOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteRouteCalculatorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
 pub mod delete_route_calculator_output {
 
     /// A builder for [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRouteCalculatorOutput`](crate::output::DeleteRouteCalculatorOutput).
         pub fn build(self) -> crate::output::DeleteRouteCalculatorOutput {
-            crate::output::DeleteRouteCalculatorOutput {}
+            crate::output::DeleteRouteCalculatorOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1822,6 +2159,7 @@ pub struct UpdateRouteCalculatorOutput {
     /// <p>The timestamp for when the route calculator was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateRouteCalculatorOutput {
     /// <p>The name of the updated route calculator resource.</p>
@@ -1840,6 +2178,11 @@ impl UpdateRouteCalculatorOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRouteCalculatorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
 pub mod update_route_calculator_output {
 
@@ -1850,6 +2193,7 @@ pub mod update_route_calculator_output {
         pub(crate) calculator_name: std::option::Option<std::string::String>,
         pub(crate) calculator_arn: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated route calculator resource.</p>
@@ -1897,12 +2241,22 @@ pub mod update_route_calculator_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRouteCalculatorOutput`](crate::output::UpdateRouteCalculatorOutput).
         pub fn build(self) -> crate::output::UpdateRouteCalculatorOutput {
             crate::output::UpdateRouteCalculatorOutput {
                 calculator_name: self.calculator_name,
                 calculator_arn: self.calculator_arn,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1962,6 +2316,7 @@ pub struct DescribeRouteCalculatorOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeRouteCalculatorOutput {
     /// <p>The name of the route calculator resource being described.</p>
@@ -2019,6 +2374,11 @@ impl DescribeRouteCalculatorOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeRouteCalculatorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
 pub mod describe_route_calculator_output {
 
@@ -2036,6 +2396,7 @@ pub mod describe_route_calculator_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the route calculator resource being described.</p>
@@ -2186,6 +2547,15 @@ pub mod describe_route_calculator_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeRouteCalculatorOutput`](crate::output::DescribeRouteCalculatorOutput).
         pub fn build(self) -> crate::output::DescribeRouteCalculatorOutput {
             crate::output::DescribeRouteCalculatorOutput {
@@ -2197,6 +2567,7 @@ pub mod describe_route_calculator_output {
                 update_time: self.update_time,
                 data_source: self.data_source,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2219,6 +2590,7 @@ pub struct SearchPlaceIndexForTextOutput {
     /// <p>Not all response properties are included with all responses. Some properties may only be returned by specific data partners.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
+    _request_id: Option<String>,
 }
 impl SearchPlaceIndexForTextOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
@@ -2231,6 +2603,11 @@ impl SearchPlaceIndexForTextOutput {
         self.results.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchPlaceIndexForTextOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
 pub mod search_place_index_for_text_output {
 
@@ -2240,6 +2617,7 @@ pub mod search_place_index_for_text_output {
     pub struct Builder {
         pub(crate) summary: std::option::Option<crate::model::SearchPlaceIndexForTextSummary>,
         pub(crate) results: std::option::Option<std::vec::Vec<crate::model::SearchForTextResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index and the bounding box, <code>ResultBBox</code>, which surrounds the search results. </p>
@@ -2276,11 +2654,21 @@ pub mod search_place_index_for_text_output {
             self.results = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForTextOutput`](crate::output::SearchPlaceIndexForTextOutput).
         pub fn build(self) -> crate::output::SearchPlaceIndexForTextOutput {
             crate::output::SearchPlaceIndexForTextOutput {
                 summary: self.summary,
                 results: self.results,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2302,6 +2690,7 @@ pub struct SearchPlaceIndexForSuggestionsOutput {
     /// <p>A list of place suggestions that best match the search text.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
+    _request_id: Option<String>,
 }
 impl SearchPlaceIndexForSuggestionsOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
@@ -2315,6 +2704,11 @@ impl SearchPlaceIndexForSuggestionsOutput {
         self.results.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchPlaceIndexForSuggestionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
 pub mod search_place_index_for_suggestions_output {
 
@@ -2326,6 +2720,7 @@ pub mod search_place_index_for_suggestions_output {
             std::option::Option<crate::model::SearchPlaceIndexForSuggestionsSummary>,
         pub(crate) results:
             std::option::Option<std::vec::Vec<crate::model::SearchForSuggestionsResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>, <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>, and <code>Text</code>. Also includes the <code>DataSource</code> of the place index. </p>
@@ -2363,11 +2758,21 @@ pub mod search_place_index_for_suggestions_output {
             self.results = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForSuggestionsOutput`](crate::output::SearchPlaceIndexForSuggestionsOutput).
         pub fn build(self) -> crate::output::SearchPlaceIndexForSuggestionsOutput {
             crate::output::SearchPlaceIndexForSuggestionsOutput {
                 summary: self.summary,
                 results: self.results,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2389,6 +2794,7 @@ pub struct SearchPlaceIndexForPositionOutput {
     /// <p>Returns a list of Places closest to the specified position. Each result contains additional information about the Places returned.</p>
     #[doc(hidden)]
     pub results: std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
+    _request_id: Option<String>,
 }
 impl SearchPlaceIndexForPositionOutput {
     /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
@@ -2402,6 +2808,11 @@ impl SearchPlaceIndexForPositionOutput {
         self.results.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SearchPlaceIndexForPositionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
 pub mod search_place_index_for_position_output {
 
@@ -2412,6 +2823,7 @@ pub mod search_place_index_for_position_output {
         pub(crate) summary: std::option::Option<crate::model::SearchPlaceIndexForPositionSummary>,
         pub(crate) results:
             std::option::Option<std::vec::Vec<crate::model::SearchForPositionResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains a summary of the request. Echoes the input values for <code>Position</code>, <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of the place index. </p>
@@ -2446,11 +2858,21 @@ pub mod search_place_index_for_position_output {
             self.results = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchPlaceIndexForPositionOutput`](crate::output::SearchPlaceIndexForPositionOutput).
         pub fn build(self) -> crate::output::SearchPlaceIndexForPositionOutput {
             crate::output::SearchPlaceIndexForPositionOutput {
                 summary: self.summary,
                 results: self.results,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2469,11 +2891,17 @@ pub struct GetPlaceOutput {
     /// <p>Details about the result, such as its address and position.</p>
     #[doc(hidden)]
     pub place: std::option::Option<crate::model::Place>,
+    _request_id: Option<String>,
 }
 impl GetPlaceOutput {
     /// <p>Details about the result, such as its address and position.</p>
     pub fn place(&self) -> std::option::Option<&crate::model::Place> {
         self.place.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetPlaceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetPlaceOutput`](crate::output::GetPlaceOutput).
@@ -2484,6 +2912,7 @@ pub mod get_place_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) place: std::option::Option<crate::model::Place>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Details about the result, such as its address and position.</p>
@@ -2496,9 +2925,21 @@ pub mod get_place_output {
             self.place = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPlaceOutput`](crate::output::GetPlaceOutput).
         pub fn build(self) -> crate::output::GetPlaceOutput {
-            crate::output::GetPlaceOutput { place: self.place }
+            crate::output::GetPlaceOutput {
+                place: self.place,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2519,6 +2960,7 @@ pub struct ListPlaceIndexesOutput {
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPlaceIndexesOutput {
     /// <p>Lists the place index resources that exist in your AWS account</p>
@@ -2528,6 +2970,11 @@ impl ListPlaceIndexesOutput {
     /// <p>A pagination token indicating that there are additional pages available. You can use the token in a new request to fetch the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListPlaceIndexesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
@@ -2540,6 +2987,7 @@ pub mod list_place_indexes_output {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::ListPlaceIndexesResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -2571,11 +3019,21 @@ pub mod list_place_indexes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPlaceIndexesOutput`](crate::output::ListPlaceIndexesOutput).
         pub fn build(self) -> crate::output::ListPlaceIndexesOutput {
             crate::output::ListPlaceIndexesOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2603,6 +3061,7 @@ pub struct CreatePlaceIndexOutput {
     /// <p>The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreatePlaceIndexOutput {
     /// <p>The name for the place index resource.</p>
@@ -2621,6 +3080,11 @@ impl CreatePlaceIndexOutput {
         self.create_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePlaceIndexOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
 pub mod create_place_index_output {
 
@@ -2631,6 +3095,7 @@ pub mod create_place_index_output {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) index_arn: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name for the place index resource.</p>
@@ -2672,12 +3137,22 @@ pub mod create_place_index_output {
             self.create_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePlaceIndexOutput`](crate::output::CreatePlaceIndexOutput).
         pub fn build(self) -> crate::output::CreatePlaceIndexOutput {
             crate::output::CreatePlaceIndexOutput {
                 index_name: self.index_name,
                 index_arn: self.index_arn,
                 create_time: self.create_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2692,18 +3167,38 @@ impl CreatePlaceIndexOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaceIndexOutput {}
+pub struct DeletePlaceIndexOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeletePlaceIndexOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
 pub mod delete_place_index_output {
 
     /// A builder for [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePlaceIndexOutput`](crate::output::DeletePlaceIndexOutput).
         pub fn build(self) -> crate::output::DeletePlaceIndexOutput {
-            crate::output::DeletePlaceIndexOutput {}
+            crate::output::DeletePlaceIndexOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2730,6 +3225,7 @@ pub struct UpdatePlaceIndexOutput {
     /// <p>The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdatePlaceIndexOutput {
     /// <p>The name of the updated place index resource.</p>
@@ -2748,6 +3244,11 @@ impl UpdatePlaceIndexOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdatePlaceIndexOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
 pub mod update_place_index_output {
 
@@ -2758,6 +3259,7 @@ pub mod update_place_index_output {
         pub(crate) index_name: std::option::Option<std::string::String>,
         pub(crate) index_arn: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated place index resource.</p>
@@ -2799,12 +3301,22 @@ pub mod update_place_index_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdatePlaceIndexOutput`](crate::output::UpdatePlaceIndexOutput).
         pub fn build(self) -> crate::output::UpdatePlaceIndexOutput {
             crate::output::UpdatePlaceIndexOutput {
                 index_name: self.index_name,
                 index_arn: self.index_arn,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2861,6 +3373,7 @@ pub struct DescribePlaceIndexOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribePlaceIndexOutput {
     /// <p>The name of the place index resource being described.</p>
@@ -2918,6 +3431,11 @@ impl DescribePlaceIndexOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribePlaceIndexOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
 pub mod describe_place_index_output {
 
@@ -2937,6 +3455,7 @@ pub mod describe_place_index_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the place index resource being described.</p>
@@ -3085,6 +3604,15 @@ pub mod describe_place_index_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribePlaceIndexOutput`](crate::output::DescribePlaceIndexOutput).
         pub fn build(self) -> crate::output::DescribePlaceIndexOutput {
             crate::output::DescribePlaceIndexOutput {
@@ -3097,6 +3625,7 @@ pub mod describe_place_index_output {
                 data_source: self.data_source,
                 data_source_configuration: self.data_source_configuration,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3118,6 +3647,7 @@ pub struct GetMapTileOutput {
     /// <p>The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMapTileOutput {
     /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
@@ -3129,6 +3659,11 @@ impl GetMapTileOutput {
         self.content_type.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMapTileOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMapTileOutput`](crate::output::GetMapTileOutput).
 pub mod get_map_tile_output {
 
@@ -3138,6 +3673,7 @@ pub mod get_map_tile_output {
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains Mapbox Vector Tile (MVT) data.</p>
@@ -3160,11 +3696,21 @@ pub mod get_map_tile_output {
             self.content_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMapTileOutput`](crate::output::GetMapTileOutput).
         pub fn build(self) -> crate::output::GetMapTileOutput {
             crate::output::GetMapTileOutput {
                 blob: self.blob,
                 content_type: self.content_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3186,6 +3732,7 @@ pub struct GetMapStyleDescriptorOutput {
     /// <p>The style descriptor's content type. For example, <code>application/json</code>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMapStyleDescriptorOutput {
     /// <p>Contains the body of the style descriptor.</p>
@@ -3197,6 +3744,11 @@ impl GetMapStyleDescriptorOutput {
         self.content_type.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMapStyleDescriptorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
 pub mod get_map_style_descriptor_output {
 
@@ -3206,6 +3758,7 @@ pub mod get_map_style_descriptor_output {
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the body of the style descriptor.</p>
@@ -3228,11 +3781,21 @@ pub mod get_map_style_descriptor_output {
             self.content_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMapStyleDescriptorOutput`](crate::output::GetMapStyleDescriptorOutput).
         pub fn build(self) -> crate::output::GetMapStyleDescriptorOutput {
             crate::output::GetMapStyleDescriptorOutput {
                 blob: self.blob,
                 content_type: self.content_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3254,6 +3817,7 @@ pub struct GetMapSpritesOutput {
     /// <p>The content type of the sprite sheet and offsets. For example, the sprite sheet content type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>. </p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMapSpritesOutput {
     /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
@@ -3265,6 +3829,11 @@ impl GetMapSpritesOutput {
         self.content_type.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMapSpritesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
 pub mod get_map_sprites_output {
 
@@ -3274,6 +3843,7 @@ pub mod get_map_sprites_output {
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the body of the sprite sheet or JSON offset ﬁle.</p>
@@ -3296,11 +3866,21 @@ pub mod get_map_sprites_output {
             self.content_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMapSpritesOutput`](crate::output::GetMapSpritesOutput).
         pub fn build(self) -> crate::output::GetMapSpritesOutput {
             crate::output::GetMapSpritesOutput {
                 blob: self.blob,
                 content_type: self.content_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3322,6 +3902,7 @@ pub struct GetMapGlyphsOutput {
     /// <p>The map glyph content type. For example, <code>application/octet-stream</code>.</p>
     #[doc(hidden)]
     pub content_type: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetMapGlyphsOutput {
     /// <p>The blob's content type.</p>
@@ -3333,6 +3914,11 @@ impl GetMapGlyphsOutput {
         self.content_type.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetMapGlyphsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
 pub mod get_map_glyphs_output {
 
@@ -3342,6 +3928,7 @@ pub mod get_map_glyphs_output {
     pub struct Builder {
         pub(crate) blob: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) content_type: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The blob's content type.</p>
@@ -3364,11 +3951,21 @@ pub mod get_map_glyphs_output {
             self.content_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMapGlyphsOutput`](crate::output::GetMapGlyphsOutput).
         pub fn build(self) -> crate::output::GetMapGlyphsOutput {
             crate::output::GetMapGlyphsOutput {
                 blob: self.blob,
                 content_type: self.content_type,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3390,6 +3987,7 @@ pub struct ListMapsOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListMapsOutput {
     /// <p>Contains a list of maps in your AWS account</p>
@@ -3401,6 +3999,11 @@ impl ListMapsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListMapsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListMapsOutput`](crate::output::ListMapsOutput).
 pub mod list_maps_output {
 
@@ -3410,6 +4013,7 @@ pub mod list_maps_output {
     pub struct Builder {
         pub(crate) entries: std::option::Option<std::vec::Vec<crate::model::ListMapsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -3441,11 +4045,21 @@ pub mod list_maps_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListMapsOutput`](crate::output::ListMapsOutput).
         pub fn build(self) -> crate::output::ListMapsOutput {
             crate::output::ListMapsOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3473,6 +4087,7 @@ pub struct CreateMapOutput {
     /// <p>The timestamp for when the map resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateMapOutput {
     /// <p>The name of the map resource.</p>
@@ -3491,6 +4106,11 @@ impl CreateMapOutput {
         self.create_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateMapOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateMapOutput`](crate::output::CreateMapOutput).
 pub mod create_map_output {
 
@@ -3501,6 +4121,7 @@ pub mod create_map_output {
         pub(crate) map_name: std::option::Option<std::string::String>,
         pub(crate) map_arn: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the map resource.</p>
@@ -3542,12 +4163,22 @@ pub mod create_map_output {
             self.create_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateMapOutput`](crate::output::CreateMapOutput).
         pub fn build(self) -> crate::output::CreateMapOutput {
             crate::output::CreateMapOutput {
                 map_name: self.map_name,
                 map_arn: self.map_arn,
                 create_time: self.create_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3562,18 +4193,38 @@ impl CreateMapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteMapOutput {}
+pub struct DeleteMapOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteMapOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteMapOutput`](crate::output::DeleteMapOutput).
 pub mod delete_map_output {
 
     /// A builder for [`DeleteMapOutput`](crate::output::DeleteMapOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteMapOutput`](crate::output::DeleteMapOutput).
         pub fn build(self) -> crate::output::DeleteMapOutput {
-            crate::output::DeleteMapOutput {}
+            crate::output::DeleteMapOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3600,6 +4251,7 @@ pub struct UpdateMapOutput {
     /// <p>The timestamp for when the map resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateMapOutput {
     /// <p>The name of the updated map resource.</p>
@@ -3618,6 +4270,11 @@ impl UpdateMapOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateMapOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateMapOutput`](crate::output::UpdateMapOutput).
 pub mod update_map_output {
 
@@ -3628,6 +4285,7 @@ pub mod update_map_output {
         pub(crate) map_name: std::option::Option<std::string::String>,
         pub(crate) map_arn: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated map resource.</p>
@@ -3669,12 +4327,22 @@ pub mod update_map_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateMapOutput`](crate::output::UpdateMapOutput).
         pub fn build(self) -> crate::output::UpdateMapOutput {
             crate::output::UpdateMapOutput {
                 map_name: self.map_name,
                 map_arn: self.map_arn,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3725,6 +4393,7 @@ pub struct DescribeMapOutput {
     /// <p>The timestamp for when the map resource was last update in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeMapOutput {
     /// <p>The map style selected from an available provider.</p>
@@ -3774,6 +4443,11 @@ impl DescribeMapOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeMapOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeMapOutput`](crate::output::DescribeMapOutput).
 pub mod describe_map_output {
 
@@ -3792,6 +4466,7 @@ pub mod describe_map_output {
         >,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The map style selected from an available provider.</p>
@@ -3925,6 +4600,15 @@ pub mod describe_map_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeMapOutput`](crate::output::DescribeMapOutput).
         pub fn build(self) -> crate::output::DescribeMapOutput {
             crate::output::DescribeMapOutput {
@@ -3937,6 +4621,7 @@ pub mod describe_map_output {
                 tags: self.tags,
                 create_time: self.create_time,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3961,6 +4646,7 @@ pub struct PutGeofenceOutput {
     /// <p>The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl PutGeofenceOutput {
     /// <p>The geofence identifier entered in the request.</p>
@@ -3976,6 +4662,11 @@ impl PutGeofenceOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutGeofenceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
 pub mod put_geofence_output {
 
@@ -3986,6 +4677,7 @@ pub mod put_geofence_output {
         pub(crate) geofence_id: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The geofence identifier entered in the request.</p>
@@ -4024,12 +4716,22 @@ pub mod put_geofence_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutGeofenceOutput`](crate::output::PutGeofenceOutput).
         pub fn build(self) -> crate::output::PutGeofenceOutput {
             crate::output::PutGeofenceOutput {
                 geofence_id: self.geofence_id,
                 create_time: self.create_time,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4051,6 +4753,7 @@ pub struct ListGeofencesOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGeofencesOutput {
     /// <p>Contains a list of geofences stored in the geofence collection.</p>
@@ -4060,6 +4763,11 @@ impl ListGeofencesOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListGeofencesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
@@ -4072,6 +4780,7 @@ pub mod list_geofences_output {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::ListGeofenceResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -4103,11 +4812,21 @@ pub mod list_geofences_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGeofencesOutput`](crate::output::ListGeofencesOutput).
         pub fn build(self) -> crate::output::ListGeofencesOutput {
             crate::output::ListGeofencesOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4145,6 +4864,7 @@ pub struct GetGeofenceOutput {
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetGeofenceOutput {
     /// <p>The geofence identifier.</p>
@@ -4175,6 +4895,11 @@ impl GetGeofenceOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetGeofenceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
 pub mod get_geofence_output {
 
@@ -4187,6 +4912,7 @@ pub mod get_geofence_output {
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The geofence identifier.</p>
@@ -4262,6 +4988,15 @@ pub mod get_geofence_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetGeofenceOutput`](crate::output::GetGeofenceOutput).
         pub fn build(self) -> crate::output::GetGeofenceOutput {
             crate::output::GetGeofenceOutput {
@@ -4270,6 +5005,7 @@ pub mod get_geofence_output {
                 status: self.status,
                 create_time: self.create_time,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4291,6 +5027,7 @@ pub struct BatchPutGeofenceOutput {
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
+    _request_id: Option<String>,
 }
 impl BatchPutGeofenceOutput {
     /// <p>Contains each geofence that was successfully stored in a geofence collection.</p>
@@ -4300,6 +5037,11 @@ impl BatchPutGeofenceOutput {
     /// <p>Contains additional error details for each geofence that failed to be stored in a geofence collection.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchPutGeofenceError]> {
         self.errors.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchPutGeofenceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
@@ -4312,6 +5054,7 @@ pub mod batch_put_geofence_output {
         pub(crate) successes:
             std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceSuccess>>,
         pub(crate) errors: std::option::Option<std::vec::Vec<crate::model::BatchPutGeofenceError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `successes`.
@@ -4352,11 +5095,21 @@ pub mod batch_put_geofence_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchPutGeofenceOutput`](crate::output::BatchPutGeofenceOutput).
         pub fn build(self) -> crate::output::BatchPutGeofenceOutput {
             crate::output::BatchPutGeofenceOutput {
                 successes: self.successes,
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4375,11 +5128,17 @@ pub struct BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
+    _request_id: Option<String>,
 }
 impl BatchEvaluateGeofencesOutput {
     /// <p>Contains error details for each device that failed to evaluate its position against the given geofence collection.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchEvaluateGeofencesError]> {
         self.errors.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchEvaluateGeofencesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
@@ -4391,6 +5150,7 @@ pub mod batch_evaluate_geofences_output {
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchEvaluateGeofencesError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -4412,10 +5172,20 @@ pub mod batch_evaluate_geofences_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchEvaluateGeofencesOutput`](crate::output::BatchEvaluateGeofencesOutput).
         pub fn build(self) -> crate::output::BatchEvaluateGeofencesOutput {
             crate::output::BatchEvaluateGeofencesOutput {
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4434,11 +5204,17 @@ pub struct BatchDeleteGeofenceOutput {
     /// <p>Contains error details for each geofence that failed to delete.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
+    _request_id: Option<String>,
 }
 impl BatchDeleteGeofenceOutput {
     /// <p>Contains error details for each geofence that failed to delete.</p>
     pub fn errors(&self) -> std::option::Option<&[crate::model::BatchDeleteGeofenceError]> {
         self.errors.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchDeleteGeofenceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
@@ -4450,6 +5226,7 @@ pub mod batch_delete_geofence_output {
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchDeleteGeofenceError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -4471,10 +5248,20 @@ pub mod batch_delete_geofence_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDeleteGeofenceOutput`](crate::output::BatchDeleteGeofenceOutput).
         pub fn build(self) -> crate::output::BatchDeleteGeofenceOutput {
             crate::output::BatchDeleteGeofenceOutput {
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4497,6 +5284,7 @@ pub struct ListGeofenceCollectionsOutput {
     /// <p>A pagination token indicating there are additional pages available. You can use the token in a following request to fetch the next set of results. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGeofenceCollectionsOutput {
     /// <p>Lists the geofence collections that exist in your AWS account.</p>
@@ -4510,6 +5298,11 @@ impl ListGeofenceCollectionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGeofenceCollectionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
 pub mod list_geofence_collections_output {
 
@@ -4520,6 +5313,7 @@ pub mod list_geofence_collections_output {
         pub(crate) entries:
             std::option::Option<std::vec::Vec<crate::model::ListGeofenceCollectionsResponseEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entries`.
@@ -4556,11 +5350,21 @@ pub mod list_geofence_collections_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGeofenceCollectionsOutput`](crate::output::ListGeofenceCollectionsOutput).
         pub fn build(self) -> crate::output::ListGeofenceCollectionsOutput {
             crate::output::ListGeofenceCollectionsOutput {
                 entries: self.entries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4588,6 +5392,7 @@ pub struct CreateGeofenceCollectionOutput {
     /// <p>The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub create_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateGeofenceCollectionOutput {
     /// <p>The name for the geofence collection.</p>
@@ -4606,6 +5411,11 @@ impl CreateGeofenceCollectionOutput {
         self.create_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateGeofenceCollectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
 pub mod create_geofence_collection_output {
 
@@ -4616,6 +5426,7 @@ pub mod create_geofence_collection_output {
         pub(crate) collection_name: std::option::Option<std::string::String>,
         pub(crate) collection_arn: std::option::Option<std::string::String>,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name for the geofence collection.</p>
@@ -4663,12 +5474,22 @@ pub mod create_geofence_collection_output {
             self.create_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateGeofenceCollectionOutput`](crate::output::CreateGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::CreateGeofenceCollectionOutput {
             crate::output::CreateGeofenceCollectionOutput {
                 collection_name: self.collection_name,
                 collection_arn: self.collection_arn,
                 create_time: self.create_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4683,18 +5504,38 @@ impl CreateGeofenceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteGeofenceCollectionOutput {}
+pub struct DeleteGeofenceCollectionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteGeofenceCollectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
 pub mod delete_geofence_collection_output {
 
     /// A builder for [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteGeofenceCollectionOutput`](crate::output::DeleteGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::DeleteGeofenceCollectionOutput {
-            crate::output::DeleteGeofenceCollectionOutput {}
+            crate::output::DeleteGeofenceCollectionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -4721,6 +5562,7 @@ pub struct UpdateGeofenceCollectionOutput {
     /// <p>The time when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateGeofenceCollectionOutput {
     /// <p>The name of the updated geofence collection.</p>
@@ -4739,6 +5581,11 @@ impl UpdateGeofenceCollectionOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateGeofenceCollectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
 pub mod update_geofence_collection_output {
 
@@ -4749,6 +5596,7 @@ pub mod update_geofence_collection_output {
         pub(crate) collection_name: std::option::Option<std::string::String>,
         pub(crate) collection_arn: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the updated geofence collection.</p>
@@ -4796,12 +5644,22 @@ pub mod update_geofence_collection_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGeofenceCollectionOutput`](crate::output::UpdateGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::UpdateGeofenceCollectionOutput {
             crate::output::UpdateGeofenceCollectionOutput {
                 collection_name: self.collection_name,
                 collection_arn: self.collection_arn,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4853,6 +5711,7 @@ pub struct DescribeGeofenceCollectionOutput {
     /// <p>The timestamp for when the geofence collection was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> </p>
     #[doc(hidden)]
     pub update_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeGeofenceCollectionOutput {
     /// <p>The name of the geofence collection.</p>
@@ -4903,6 +5762,11 @@ impl DescribeGeofenceCollectionOutput {
         self.update_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeGeofenceCollectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
 pub mod describe_geofence_collection_output {
 
@@ -4921,6 +5785,7 @@ pub mod describe_geofence_collection_output {
         >,
         pub(crate) create_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) update_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the geofence collection.</p>
@@ -5062,6 +5927,15 @@ pub mod describe_geofence_collection_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeGeofenceCollectionOutput`](crate::output::DescribeGeofenceCollectionOutput).
         pub fn build(self) -> crate::output::DescribeGeofenceCollectionOutput {
             crate::output::DescribeGeofenceCollectionOutput {
@@ -5074,6 +5948,7 @@ pub mod describe_geofence_collection_output {
                 tags: self.tags,
                 create_time: self.create_time,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5088,18 +5963,38 @@ impl DescribeGeofenceCollectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5113,18 +6008,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5146,6 +6061,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Tags that have been applied to the specified resource. Tags are mapped from the tag key to the tag value: <code>"TagKey" : "TagValue"</code>.</p>
@@ -5159,6 +6075,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -5169,6 +6090,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -5202,9 +6124,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }

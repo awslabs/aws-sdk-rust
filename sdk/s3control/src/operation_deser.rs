@@ -4,8 +4,11 @@ pub fn parse_create_access_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAccessPointOutput, crate::error::CreateAccessPointError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAccessPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateAccessPointError::generic(generic))
 }
 
@@ -23,6 +26,9 @@ pub fn parse_create_access_point_response(
             output,
         )
         .map_err(crate::error::CreateAccessPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -34,8 +40,11 @@ pub fn parse_create_access_point_for_object_lambda_error(
     crate::output::CreateAccessPointForObjectLambdaOutput,
     crate::error::CreateAccessPointForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAccessPointForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateAccessPointForObjectLambdaError::generic(generic))
 }
 
@@ -52,6 +61,9 @@ pub fn parse_create_access_point_for_object_lambda_response(
             crate::output::create_access_point_for_object_lambda_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_create_access_point_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::CreateAccessPointForObjectLambdaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -60,8 +72,11 @@ pub fn parse_create_access_point_for_object_lambda_response(
 pub fn parse_create_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateBucketError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateBucketError::unhandled(generic)),
@@ -69,40 +84,38 @@ pub fn parse_create_bucket_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BucketAlreadyExists" => crate::error::CreateBucketError {
-            meta: generic,
-            kind: crate::error::CreateBucketErrorKind::BucketAlreadyExists({
+        "BucketAlreadyExists" => {
+            crate::error::CreateBucketError::BucketAlreadyExists({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bucket_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_bucket_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError {
-            meta: generic,
-            kind: crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou({
+            })
+        }
+        "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError::BucketAlreadyOwnedByYou({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateBucketError::generic(generic),
     })
 }
@@ -130,6 +143,9 @@ pub fn parse_create_bucket_response(
                 )
             })?,
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -138,8 +154,11 @@ pub fn parse_create_bucket_response(
 pub fn parse_create_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateJobError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateJobError::unhandled(generic)),
@@ -147,74 +166,70 @@ pub fn parse_create_job_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::CreateJobError {
-            meta: generic,
-            kind: crate::error::CreateJobErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::CreateJobError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IdempotencyException" => crate::error::CreateJobError {
-            meta: generic,
-            kind: crate::error::CreateJobErrorKind::IdempotencyException({
+            })
+        }
+        "IdempotencyException" => {
+            crate::error::CreateJobError::IdempotencyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::idempotency_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_idempotency_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceException" => crate::error::CreateJobError {
-            meta: generic,
-            kind: crate::error::CreateJobErrorKind::InternalServiceException({
+            })
+        }
+        "InternalServiceException" => crate::error::CreateJobError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyRequestsException" => crate::error::CreateJobError {
-            meta: generic,
-            kind: crate::error::CreateJobErrorKind::TooManyRequestsException({
+                let mut output = crate::error::internal_service_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::CreateJobError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateJobError::generic(generic),
     })
 }
@@ -232,6 +247,9 @@ pub fn parse_create_job_response(
             output,
         )
         .map_err(crate::error::CreateJobError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -243,8 +261,11 @@ pub fn parse_create_multi_region_access_point_error(
     crate::output::CreateMultiRegionAccessPointOutput,
     crate::error::CreateMultiRegionAccessPointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateMultiRegionAccessPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateMultiRegionAccessPointError::generic(
         generic,
     ))
@@ -267,6 +288,9 @@ pub fn parse_create_multi_region_access_point_response(
                 output,
             )
             .map_err(crate::error::CreateMultiRegionAccessPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -276,8 +300,11 @@ pub fn parse_delete_access_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAccessPointOutput, crate::error::DeleteAccessPointError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccessPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteAccessPointError::generic(generic))
 }
 
@@ -290,6 +317,9 @@ pub fn parse_delete_access_point_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_access_point_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -301,8 +331,11 @@ pub fn parse_delete_access_point_for_object_lambda_error(
     crate::output::DeleteAccessPointForObjectLambdaOutput,
     crate::error::DeleteAccessPointForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccessPointForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteAccessPointForObjectLambdaError::generic(generic))
 }
 
@@ -318,6 +351,9 @@ pub fn parse_delete_access_point_for_object_lambda_response(
         let mut output =
             crate::output::delete_access_point_for_object_lambda_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -329,8 +365,11 @@ pub fn parse_delete_access_point_policy_error(
     crate::output::DeleteAccessPointPolicyOutput,
     crate::error::DeleteAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccessPointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteAccessPointPolicyError::generic(generic))
 }
 
@@ -345,6 +384,9 @@ pub fn parse_delete_access_point_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_access_point_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -356,8 +398,11 @@ pub fn parse_delete_access_point_policy_for_object_lambda_error(
     crate::output::DeleteAccessPointPolicyForObjectLambdaOutput,
     crate::error::DeleteAccessPointPolicyForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAccessPointPolicyForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteAccessPointPolicyForObjectLambdaError::generic(generic))
 }
 
@@ -373,6 +418,9 @@ pub fn parse_delete_access_point_policy_for_object_lambda_response(
         let mut output =
             crate::output::delete_access_point_policy_for_object_lambda_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -381,8 +429,11 @@ pub fn parse_delete_access_point_policy_for_object_lambda_response(
 pub fn parse_delete_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketError::generic(generic))
 }
 
@@ -394,6 +445,9 @@ pub fn parse_delete_bucket_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -405,8 +459,11 @@ pub fn parse_delete_bucket_lifecycle_configuration_error(
     crate::output::DeleteBucketLifecycleConfigurationOutput,
     crate::error::DeleteBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketLifecycleConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketLifecycleConfigurationError::generic(generic))
 }
 
@@ -422,6 +479,9 @@ pub fn parse_delete_bucket_lifecycle_configuration_response(
         let mut output =
             crate::output::delete_bucket_lifecycle_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -433,8 +493,11 @@ pub fn parse_delete_bucket_policy_error(
     crate::output::DeleteBucketPolicyOutput,
     crate::error::DeleteBucketPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketPolicyError::generic(generic))
 }
 
@@ -449,6 +512,9 @@ pub fn parse_delete_bucket_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -460,8 +526,11 @@ pub fn parse_delete_bucket_tagging_error(
     crate::output::DeleteBucketTaggingOutput,
     crate::error::DeleteBucketTaggingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketTaggingError::generic(generic))
 }
 
@@ -476,6 +545,9 @@ pub fn parse_delete_bucket_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_tagging_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -485,8 +557,11 @@ pub fn parse_delete_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteJobTaggingOutput, crate::error::DeleteJobTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteJobTaggingError::unhandled(generic)),
@@ -494,59 +569,59 @@ pub fn parse_delete_job_tagging_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::DeleteJobTaggingError {
-            meta: generic,
-            kind: crate::error::DeleteJobTaggingErrorKind::InternalServiceException({
+        "InternalServiceException" => {
+            crate::error::DeleteJobTaggingError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => {
-            crate::error::DeleteJobTaggingError {
-                meta: generic,
-                kind: crate::error::DeleteJobTaggingErrorKind::NotFoundException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DeleteJobTaggingError {
-            meta: generic,
-            kind: crate::error::DeleteJobTaggingErrorKind::TooManyRequestsException({
+        "NotFoundException" => crate::error::DeleteJobTaggingError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::DeleteJobTaggingError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteJobTaggingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteJobTaggingError::generic(generic),
     })
 }
@@ -560,6 +635,9 @@ pub fn parse_delete_job_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_job_tagging_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -571,8 +649,11 @@ pub fn parse_delete_multi_region_access_point_error(
     crate::output::DeleteMultiRegionAccessPointOutput,
     crate::error::DeleteMultiRegionAccessPointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteMultiRegionAccessPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteMultiRegionAccessPointError::generic(
         generic,
     ))
@@ -595,6 +676,9 @@ pub fn parse_delete_multi_region_access_point_response(
                 output,
             )
             .map_err(crate::error::DeleteMultiRegionAccessPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -606,8 +690,11 @@ pub fn parse_delete_public_access_block_error(
     crate::output::DeletePublicAccessBlockOutput,
     crate::error::DeletePublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePublicAccessBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeletePublicAccessBlockError::generic(generic))
 }
 
@@ -622,6 +709,9 @@ pub fn parse_delete_public_access_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_public_access_block_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -633,8 +723,11 @@ pub fn parse_delete_storage_lens_configuration_error(
     crate::output::DeleteStorageLensConfigurationOutput,
     crate::error::DeleteStorageLensConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteStorageLensConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteStorageLensConfigurationError::generic(
         generic,
     ))
@@ -652,6 +745,9 @@ pub fn parse_delete_storage_lens_configuration_response(
         let mut output =
             crate::output::delete_storage_lens_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -663,8 +759,11 @@ pub fn parse_delete_storage_lens_configuration_tagging_error(
     crate::output::DeleteStorageLensConfigurationTaggingOutput,
     crate::error::DeleteStorageLensConfigurationTaggingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteStorageLensConfigurationTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteStorageLensConfigurationTaggingError::generic(generic))
 }
 
@@ -680,6 +779,9 @@ pub fn parse_delete_storage_lens_configuration_tagging_response(
         let mut output =
             crate::output::delete_storage_lens_configuration_tagging_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -688,8 +790,11 @@ pub fn parse_delete_storage_lens_configuration_tagging_response(
 pub fn parse_describe_job_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeJobOutput, crate::error::DescribeJobError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeJobError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeJobError::unhandled(generic)),
@@ -697,76 +802,72 @@ pub fn parse_describe_job_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::DescribeJobError {
-            meta: generic,
-            kind: crate::error::DescribeJobErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::DescribeJobError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceException" => crate::error::DescribeJobError {
-            meta: generic,
-            kind: crate::error::DescribeJobErrorKind::InternalServiceException({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => {
-            crate::error::DescribeJobError {
-                meta: generic,
-                kind: crate::error::DescribeJobErrorKind::NotFoundException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::DescribeJobError {
-            meta: generic,
-            kind: crate::error::DescribeJobErrorKind::TooManyRequestsException({
+        "InternalServiceException" => crate::error::DescribeJobError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::internal_service_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => crate::error::DescribeJobError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::DescribeJobError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeJobError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeJobError::generic(generic),
     })
 }
@@ -784,6 +885,9 @@ pub fn parse_describe_job_response(
             output,
         )
         .map_err(crate::error::DescribeJobError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -795,8 +899,11 @@ pub fn parse_describe_multi_region_access_point_operation_error(
     crate::output::DescribeMultiRegionAccessPointOperationOutput,
     crate::error::DescribeMultiRegionAccessPointOperationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeMultiRegionAccessPointOperationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeMultiRegionAccessPointOperationError::generic(generic))
 }
 
@@ -813,6 +920,9 @@ pub fn parse_describe_multi_region_access_point_operation_response(
             crate::output::describe_multi_region_access_point_operation_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_multi_region_access_point_operation(response.body().as_ref(), output).map_err(crate::error::DescribeMultiRegionAccessPointOperationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -821,8 +931,11 @@ pub fn parse_describe_multi_region_access_point_operation_response(
 pub fn parse_get_access_point_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetAccessPointOutput, crate::error::GetAccessPointError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointError::generic(generic))
 }
 
@@ -839,6 +952,9 @@ pub fn parse_get_access_point_response(
             output,
         )
         .map_err(crate::error::GetAccessPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -850,8 +966,11 @@ pub fn parse_get_access_point_configuration_for_object_lambda_error(
     crate::output::GetAccessPointConfigurationForObjectLambdaOutput,
     crate::error::GetAccessPointConfigurationForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointConfigurationForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointConfigurationForObjectLambdaError::generic(generic))
 }
 
@@ -867,6 +986,9 @@ pub fn parse_get_access_point_configuration_for_object_lambda_response(
         let mut output = crate::output::get_access_point_configuration_for_object_lambda_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_access_point_configuration_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointConfigurationForObjectLambdaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -878,8 +1000,11 @@ pub fn parse_get_access_point_for_object_lambda_error(
     crate::output::GetAccessPointForObjectLambdaOutput,
     crate::error::GetAccessPointForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointForObjectLambdaError::generic(
         generic,
     ))
@@ -903,6 +1028,9 @@ pub fn parse_get_access_point_for_object_lambda_response(
                 output,
             )
             .map_err(crate::error::GetAccessPointForObjectLambdaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -914,8 +1042,11 @@ pub fn parse_get_access_point_policy_error(
     crate::output::GetAccessPointPolicyOutput,
     crate::error::GetAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointPolicyError::generic(generic))
 }
 
@@ -935,6 +1066,9 @@ pub fn parse_get_access_point_policy_response(
             output,
         )
         .map_err(crate::error::GetAccessPointPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -946,8 +1080,11 @@ pub fn parse_get_access_point_policy_for_object_lambda_error(
     crate::output::GetAccessPointPolicyForObjectLambdaOutput,
     crate::error::GetAccessPointPolicyForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointPolicyForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointPolicyForObjectLambdaError::generic(generic))
 }
 
@@ -964,6 +1101,9 @@ pub fn parse_get_access_point_policy_for_object_lambda_response(
             crate::output::get_access_point_policy_for_object_lambda_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointPolicyForObjectLambdaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -975,8 +1115,11 @@ pub fn parse_get_access_point_policy_status_error(
     crate::output::GetAccessPointPolicyStatusOutput,
     crate::error::GetAccessPointPolicyStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointPolicyStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointPolicyStatusError::generic(
         generic,
     ))
@@ -998,6 +1141,9 @@ pub fn parse_get_access_point_policy_status_response(
             output,
         )
         .map_err(crate::error::GetAccessPointPolicyStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1009,8 +1155,11 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_error(
     crate::output::GetAccessPointPolicyStatusForObjectLambdaOutput,
     crate::error::GetAccessPointPolicyStatusForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::generic(generic))
 }
 
@@ -1026,6 +1175,9 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_response(
         let mut output = crate::output::get_access_point_policy_status_for_object_lambda_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_access_point_policy_status_for_object_lambda(response.body().as_ref(), output).map_err(crate::error::GetAccessPointPolicyStatusForObjectLambdaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1034,8 +1186,11 @@ pub fn parse_get_access_point_policy_status_for_object_lambda_response(
 pub fn parse_get_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketOutput, crate::error::GetBucketError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketError::generic(generic))
 }
 
@@ -1052,6 +1207,9 @@ pub fn parse_get_bucket_response(
             output,
         )
         .map_err(crate::error::GetBucketError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1063,8 +1221,11 @@ pub fn parse_get_bucket_lifecycle_configuration_error(
     crate::output::GetBucketLifecycleConfigurationOutput,
     crate::error::GetBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketLifecycleConfigurationError::generic(
         generic,
     ))
@@ -1088,6 +1249,9 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
                 output,
             )
             .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1096,8 +1260,11 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
 pub fn parse_get_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketPolicyError::generic(generic))
 }
 
@@ -1114,6 +1281,9 @@ pub fn parse_get_bucket_policy_response(
             output,
         )
         .map_err(crate::error::GetBucketPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1123,8 +1293,11 @@ pub fn parse_get_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketTaggingError::generic(generic))
 }
 
@@ -1142,6 +1315,9 @@ pub fn parse_get_bucket_tagging_response(
             output,
         )
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1153,8 +1329,11 @@ pub fn parse_get_bucket_versioning_error(
     crate::output::GetBucketVersioningOutput,
     crate::error::GetBucketVersioningError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketVersioningError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketVersioningError::generic(generic))
 }
 
@@ -1174,6 +1353,9 @@ pub fn parse_get_bucket_versioning_response(
             output,
         )
         .map_err(crate::error::GetBucketVersioningError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1182,8 +1364,11 @@ pub fn parse_get_bucket_versioning_response(
 pub fn parse_get_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetJobTaggingOutput, crate::error::GetJobTaggingError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetJobTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetJobTaggingError::unhandled(generic)),
@@ -1191,59 +1376,55 @@ pub fn parse_get_job_tagging_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::GetJobTaggingError {
-            meta: generic,
-            kind: crate::error::GetJobTaggingErrorKind::InternalServiceException({
+        "InternalServiceException" => crate::error::GetJobTaggingError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => {
-            crate::error::GetJobTaggingError {
-                meta: generic,
-                kind: crate::error::GetJobTaggingErrorKind::NotFoundException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::internal_service_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "TooManyRequestsException" => crate::error::GetJobTaggingError {
-            meta: generic,
-            kind: crate::error::GetJobTaggingErrorKind::TooManyRequestsException({
+            tmp
+        }),
+        "NotFoundException" => crate::error::GetJobTaggingError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::GetJobTaggingError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetJobTaggingError::generic(generic),
     })
 }
@@ -1261,6 +1442,9 @@ pub fn parse_get_job_tagging_response(
             output,
         )
         .map_err(crate::error::GetJobTaggingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1272,8 +1456,11 @@ pub fn parse_get_multi_region_access_point_error(
     crate::output::GetMultiRegionAccessPointOutput,
     crate::error::GetMultiRegionAccessPointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetMultiRegionAccessPointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetMultiRegionAccessPointError::generic(
         generic,
     ))
@@ -1295,6 +1482,9 @@ pub fn parse_get_multi_region_access_point_response(
             output,
         )
         .map_err(crate::error::GetMultiRegionAccessPointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1306,8 +1496,11 @@ pub fn parse_get_multi_region_access_point_policy_error(
     crate::output::GetMultiRegionAccessPointPolicyOutput,
     crate::error::GetMultiRegionAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetMultiRegionAccessPointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetMultiRegionAccessPointPolicyError::generic(
         generic,
     ))
@@ -1331,6 +1524,9 @@ pub fn parse_get_multi_region_access_point_policy_response(
                 output,
             )
             .map_err(crate::error::GetMultiRegionAccessPointPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1342,8 +1538,11 @@ pub fn parse_get_multi_region_access_point_policy_status_error(
     crate::output::GetMultiRegionAccessPointPolicyStatusOutput,
     crate::error::GetMultiRegionAccessPointPolicyStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetMultiRegionAccessPointPolicyStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetMultiRegionAccessPointPolicyStatusError::generic(generic))
 }
 
@@ -1360,6 +1559,9 @@ pub fn parse_get_multi_region_access_point_policy_status_response(
             crate::output::get_multi_region_access_point_policy_status_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_multi_region_access_point_policy_status(response.body().as_ref(), output).map_err(crate::error::GetMultiRegionAccessPointPolicyStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1371,8 +1573,11 @@ pub fn parse_get_multi_region_access_point_routes_error(
     crate::output::GetMultiRegionAccessPointRoutesOutput,
     crate::error::GetMultiRegionAccessPointRoutesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetMultiRegionAccessPointRoutesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetMultiRegionAccessPointRoutesError::generic(
         generic,
     ))
@@ -1396,6 +1601,9 @@ pub fn parse_get_multi_region_access_point_routes_response(
                 output,
             )
             .map_err(crate::error::GetMultiRegionAccessPointRoutesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1407,8 +1615,11 @@ pub fn parse_get_public_access_block_error(
     crate::output::GetPublicAccessBlockOutput,
     crate::error::GetPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPublicAccessBlockError::unhandled(generic)),
@@ -1416,25 +1627,24 @@ pub fn parse_get_public_access_block_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchPublicAccessBlockConfiguration" => crate::error::GetPublicAccessBlockError {
-            meta: generic,
-            kind: crate::error::GetPublicAccessBlockErrorKind::NoSuchPublicAccessBlockConfiguration(
-                {
+        "NoSuchPublicAccessBlockConfiguration" => {
+            crate::error::GetPublicAccessBlockError::NoSuchPublicAccessBlockConfiguration({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_public_access_block_configuration::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_no_such_public_access_block_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::no_such_public_access_block_configuration::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_no_such_public_access_block_configuration_xml_err(response.body().as_ref(), output).map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::GetPublicAccessBlockError::generic(generic),
     })
 }
@@ -1453,6 +1663,9 @@ pub fn parse_get_public_access_block_response(
         output = output.set_public_access_block_configuration(
             crate::http_serde::deser_payload_get_public_access_block_get_public_access_block_output_public_access_block_configuration(response.body().as_ref())?
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1464,8 +1677,11 @@ pub fn parse_get_storage_lens_configuration_error(
     crate::output::GetStorageLensConfigurationOutput,
     crate::error::GetStorageLensConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetStorageLensConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetStorageLensConfigurationError::generic(
         generic,
     ))
@@ -1485,6 +1701,9 @@ pub fn parse_get_storage_lens_configuration_response(
         output = output.set_storage_lens_configuration(
             crate::http_serde::deser_payload_get_storage_lens_configuration_get_storage_lens_configuration_output_storage_lens_configuration(response.body().as_ref())?
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1496,8 +1715,11 @@ pub fn parse_get_storage_lens_configuration_tagging_error(
     crate::output::GetStorageLensConfigurationTaggingOutput,
     crate::error::GetStorageLensConfigurationTaggingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetStorageLensConfigurationTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetStorageLensConfigurationTaggingError::generic(generic))
 }
 
@@ -1514,6 +1736,9 @@ pub fn parse_get_storage_lens_configuration_tagging_response(
             crate::output::get_storage_lens_configuration_tagging_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_storage_lens_configuration_tagging(response.body().as_ref(), output).map_err(crate::error::GetStorageLensConfigurationTaggingError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1523,8 +1748,11 @@ pub fn parse_list_access_points_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAccessPointsOutput, crate::error::ListAccessPointsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAccessPointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListAccessPointsError::generic(generic))
 }
 
@@ -1542,6 +1770,9 @@ pub fn parse_list_access_points_response(
             output,
         )
         .map_err(crate::error::ListAccessPointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1553,8 +1784,11 @@ pub fn parse_list_access_points_for_object_lambda_error(
     crate::output::ListAccessPointsForObjectLambdaOutput,
     crate::error::ListAccessPointsForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAccessPointsForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListAccessPointsForObjectLambdaError::generic(
         generic,
     ))
@@ -1578,6 +1812,9 @@ pub fn parse_list_access_points_for_object_lambda_response(
                 output,
             )
             .map_err(crate::error::ListAccessPointsForObjectLambdaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1586,8 +1823,11 @@ pub fn parse_list_access_points_for_object_lambda_response(
 pub fn parse_list_jobs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListJobsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListJobsError::unhandled(generic)),
@@ -1595,57 +1835,51 @@ pub fn parse_list_jobs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::ListJobsError {
-            meta: generic,
-            kind: crate::error::ListJobsErrorKind::InternalServiceException({
+        "InternalServiceException" => crate::error::ListJobsError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListJobsError {
-            meta: generic,
-            kind: crate::error::ListJobsErrorKind::InvalidNextTokenException({
+                let mut output = crate::error::internal_service_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidNextTokenException" => crate::error::ListJobsError::InvalidNextTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ListJobsError {
-            meta: generic,
-            kind: crate::error::ListJobsErrorKind::InvalidRequestException({
+                let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_next_token_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::ListJobsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListJobsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListJobsError::generic(generic),
     })
 }
@@ -1663,6 +1897,9 @@ pub fn parse_list_jobs_response(
             output,
         )
         .map_err(crate::error::ListJobsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1674,8 +1911,11 @@ pub fn parse_list_multi_region_access_points_error(
     crate::output::ListMultiRegionAccessPointsOutput,
     crate::error::ListMultiRegionAccessPointsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListMultiRegionAccessPointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListMultiRegionAccessPointsError::generic(
         generic,
     ))
@@ -1697,6 +1937,9 @@ pub fn parse_list_multi_region_access_points_response(
             output,
         )
         .map_err(crate::error::ListMultiRegionAccessPointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1708,8 +1951,11 @@ pub fn parse_list_regional_buckets_error(
     crate::output::ListRegionalBucketsOutput,
     crate::error::ListRegionalBucketsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRegionalBucketsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListRegionalBucketsError::generic(generic))
 }
 
@@ -1729,6 +1975,9 @@ pub fn parse_list_regional_buckets_response(
             output,
         )
         .map_err(crate::error::ListRegionalBucketsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1740,8 +1989,11 @@ pub fn parse_list_storage_lens_configurations_error(
     crate::output::ListStorageLensConfigurationsOutput,
     crate::error::ListStorageLensConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListStorageLensConfigurationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListStorageLensConfigurationsError::generic(
         generic,
     ))
@@ -1764,6 +2016,9 @@ pub fn parse_list_storage_lens_configurations_response(
                 output,
             )
             .map_err(crate::error::ListStorageLensConfigurationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1775,8 +2030,11 @@ pub fn parse_put_access_point_configuration_for_object_lambda_error(
     crate::output::PutAccessPointConfigurationForObjectLambdaOutput,
     crate::error::PutAccessPointConfigurationForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutAccessPointConfigurationForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutAccessPointConfigurationForObjectLambdaError::generic(generic))
 }
 
@@ -1791,6 +2049,9 @@ pub fn parse_put_access_point_configuration_for_object_lambda_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_access_point_configuration_for_object_lambda_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1802,8 +2063,11 @@ pub fn parse_put_access_point_policy_error(
     crate::output::PutAccessPointPolicyOutput,
     crate::error::PutAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutAccessPointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutAccessPointPolicyError::generic(generic))
 }
 
@@ -1818,6 +2082,9 @@ pub fn parse_put_access_point_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_access_point_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1829,8 +2096,11 @@ pub fn parse_put_access_point_policy_for_object_lambda_error(
     crate::output::PutAccessPointPolicyForObjectLambdaOutput,
     crate::error::PutAccessPointPolicyForObjectLambdaError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutAccessPointPolicyForObjectLambdaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutAccessPointPolicyForObjectLambdaError::generic(generic))
 }
 
@@ -1846,6 +2116,9 @@ pub fn parse_put_access_point_policy_for_object_lambda_response(
         let mut output =
             crate::output::put_access_point_policy_for_object_lambda_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1857,8 +2130,11 @@ pub fn parse_put_bucket_lifecycle_configuration_error(
     crate::output::PutBucketLifecycleConfigurationOutput,
     crate::error::PutBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketLifecycleConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketLifecycleConfigurationError::generic(
         generic,
     ))
@@ -1876,6 +2152,9 @@ pub fn parse_put_bucket_lifecycle_configuration_response(
         let mut output =
             crate::output::put_bucket_lifecycle_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1884,8 +2163,11 @@ pub fn parse_put_bucket_lifecycle_configuration_response(
 pub fn parse_put_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketPolicyError::generic(generic))
 }
 
@@ -1897,6 +2179,9 @@ pub fn parse_put_bucket_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1906,8 +2191,11 @@ pub fn parse_put_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketTaggingError::generic(generic))
 }
 
@@ -1920,6 +2208,9 @@ pub fn parse_put_bucket_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_tagging_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1931,8 +2222,11 @@ pub fn parse_put_bucket_versioning_error(
     crate::output::PutBucketVersioningOutput,
     crate::error::PutBucketVersioningError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketVersioningError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketVersioningError::generic(generic))
 }
 
@@ -1947,6 +2241,9 @@ pub fn parse_put_bucket_versioning_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_versioning_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1955,8 +2252,11 @@ pub fn parse_put_bucket_versioning_response(
 pub fn parse_put_job_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutJobTaggingOutput, crate::error::PutJobTaggingError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutJobTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutJobTaggingError::unhandled(generic)),
@@ -1964,76 +2264,72 @@ pub fn parse_put_job_tagging_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceException" => crate::error::PutJobTaggingError {
-            meta: generic,
-            kind: crate::error::PutJobTaggingErrorKind::InternalServiceException({
+        "InternalServiceException" => crate::error::PutJobTaggingError::InternalServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => {
-            crate::error::PutJobTaggingError {
-                meta: generic,
-                kind: crate::error::PutJobTaggingErrorKind::NotFoundException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::internal_service_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "TooManyRequestsException" => crate::error::PutJobTaggingError {
-            meta: generic,
-            kind: crate::error::PutJobTaggingErrorKind::TooManyRequestsException({
+            tmp
+        }),
+        "NotFoundException" => crate::error::PutJobTaggingError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_requests_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyTagsException" => crate::error::PutJobTaggingError {
-            meta: generic,
-            kind: crate::error::PutJobTaggingErrorKind::TooManyTagsException({
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => crate::error::PutJobTaggingError::TooManyRequestsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_requests_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTagsException" => {
+            crate::error::PutJobTaggingError::TooManyTagsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutJobTaggingError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutJobTaggingError::generic(generic),
     })
 }
@@ -2046,6 +2342,9 @@ pub fn parse_put_job_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_job_tagging_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2057,8 +2356,11 @@ pub fn parse_put_multi_region_access_point_policy_error(
     crate::output::PutMultiRegionAccessPointPolicyOutput,
     crate::error::PutMultiRegionAccessPointPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutMultiRegionAccessPointPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutMultiRegionAccessPointPolicyError::generic(
         generic,
     ))
@@ -2082,6 +2384,9 @@ pub fn parse_put_multi_region_access_point_policy_response(
                 output,
             )
             .map_err(crate::error::PutMultiRegionAccessPointPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2093,8 +2398,11 @@ pub fn parse_put_public_access_block_error(
     crate::output::PutPublicAccessBlockOutput,
     crate::error::PutPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutPublicAccessBlockError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutPublicAccessBlockError::generic(generic))
 }
 
@@ -2109,6 +2417,9 @@ pub fn parse_put_public_access_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_public_access_block_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2120,8 +2431,11 @@ pub fn parse_put_storage_lens_configuration_error(
     crate::output::PutStorageLensConfigurationOutput,
     crate::error::PutStorageLensConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutStorageLensConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutStorageLensConfigurationError::generic(
         generic,
     ))
@@ -2138,6 +2452,9 @@ pub fn parse_put_storage_lens_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_storage_lens_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2149,8 +2466,11 @@ pub fn parse_put_storage_lens_configuration_tagging_error(
     crate::output::PutStorageLensConfigurationTaggingOutput,
     crate::error::PutStorageLensConfigurationTaggingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutStorageLensConfigurationTaggingError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutStorageLensConfigurationTaggingError::generic(generic))
 }
 
@@ -2166,6 +2486,9 @@ pub fn parse_put_storage_lens_configuration_tagging_response(
         let mut output =
             crate::output::put_storage_lens_configuration_tagging_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2177,8 +2500,11 @@ pub fn parse_submit_multi_region_access_point_routes_error(
     crate::output::SubmitMultiRegionAccessPointRoutesOutput,
     crate::error::SubmitMultiRegionAccessPointRoutesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SubmitMultiRegionAccessPointRoutesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SubmitMultiRegionAccessPointRoutesError::generic(generic))
 }
 
@@ -2194,6 +2520,9 @@ pub fn parse_submit_multi_region_access_point_routes_response(
         let mut output =
             crate::output::submit_multi_region_access_point_routes_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2203,8 +2532,11 @@ pub fn parse_update_job_priority_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateJobPriorityOutput, crate::error::UpdateJobPriorityError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateJobPriorityError::unhandled(generic)),
@@ -2212,76 +2544,76 @@ pub fn parse_update_job_priority_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateJobPriorityError {
-            meta: generic,
-            kind: crate::error::UpdateJobPriorityErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateJobPriorityError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceException" => crate::error::UpdateJobPriorityError {
-            meta: generic,
-            kind: crate::error::UpdateJobPriorityErrorKind::InternalServiceException({
+            })
+        }
+        "InternalServiceException" => {
+            crate::error::UpdateJobPriorityError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => {
-            crate::error::UpdateJobPriorityError {
-                meta: generic,
-                kind: crate::error::UpdateJobPriorityErrorKind::NotFoundException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "TooManyRequestsException" => crate::error::UpdateJobPriorityError {
-            meta: generic,
-            kind: crate::error::UpdateJobPriorityErrorKind::TooManyRequestsException({
+        "NotFoundException" => crate::error::UpdateJobPriorityError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::UpdateJobPriorityError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateJobPriorityError::generic(generic),
     })
 }
@@ -2300,6 +2632,9 @@ pub fn parse_update_job_priority_response(
             output,
         )
         .map_err(crate::error::UpdateJobPriorityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2308,8 +2643,11 @@ pub fn parse_update_job_priority_response(
 pub fn parse_update_job_status_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateJobStatusOutput, crate::error::UpdateJobStatusError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateJobStatusError::unhandled(generic)),
@@ -2317,95 +2655,96 @@ pub fn parse_update_job_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BadRequestException" => crate::error::UpdateJobStatusError {
-            meta: generic,
-            kind: crate::error::UpdateJobStatusErrorKind::BadRequestException({
+        "BadRequestException" => {
+            crate::error::UpdateJobStatusError::BadRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bad_request_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_bad_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceException" => crate::error::UpdateJobStatusError {
-            meta: generic,
-            kind: crate::error::UpdateJobStatusErrorKind::InternalServiceException({
+            })
+        }
+        "InternalServiceException" => {
+            crate::error::UpdateJobStatusError::InternalServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_internal_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "JobStatusException" => {
-            crate::error::UpdateJobStatusError {
-                meta: generic,
-                kind: crate::error::UpdateJobStatusErrorKind::JobStatusException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::job_status_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_job_status_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "NotFoundException" => {
-            crate::error::UpdateJobStatusError {
-                meta: generic,
-                kind: crate::error::UpdateJobStatusErrorKind::NotFoundException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "JobStatusException" => crate::error::UpdateJobStatusError::JobStatusException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::job_status_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_job_status_exception_xml_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "TooManyRequestsException" => crate::error::UpdateJobStatusError {
-            meta: generic,
-            kind: crate::error::UpdateJobStatusErrorKind::TooManyRequestsException({
+            tmp
+        }),
+        "NotFoundException" => crate::error::UpdateJobStatusError::NotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_exception_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyRequestsException" => {
+            crate::error::UpdateJobStatusError::TooManyRequestsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_requests_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_requests_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateJobStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateJobStatusError::generic(generic),
     })
 }
@@ -2423,6 +2762,9 @@ pub fn parse_update_job_status_response(
             output,
         )
         .map_err(crate::error::UpdateJobStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

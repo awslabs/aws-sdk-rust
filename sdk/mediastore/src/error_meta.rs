@@ -15,15 +15,8 @@ pub enum Error {
     LimitExceededException(crate::error::LimitExceededException),
     /// <p>The policy that you specified in the request does not exist.</p>
     PolicyNotFoundException(crate::error::PolicyNotFoundException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -47,25 +40,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateContainerError> for Error {
     fn from(err: crate::error::CreateContainerError) -> Self {
-        match err.kind {
-            crate::error::CreateContainerErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::CreateContainerError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::CreateContainerErrorKind::InternalServerError(inner) => {
+            crate::error::CreateContainerError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::CreateContainerErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateContainerError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateContainerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateContainerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -78,25 +76,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteContainerError> for Error {
     fn from(err: crate::error::DeleteContainerError) -> Self {
-        match err.kind {
-            crate::error::DeleteContainerErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::DeleteContainerError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::DeleteContainerErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::DeleteContainerError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::DeleteContainerErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteContainerError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteContainerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteContainerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -112,28 +115,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteContainerPolicyError> for Error {
     fn from(err: crate::error::DeleteContainerPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteContainerPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::DeleteContainerPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::DeleteContainerPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::DeleteContainerPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::DeleteContainerPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteContainerPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteContainerPolicyErrorKind::PolicyNotFoundException(inner) => {
+            crate::error::DeleteContainerPolicyError::PolicyNotFoundException(inner) => {
                 Error::PolicyNotFoundException(inner)
             }
-            crate::error::DeleteContainerPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -148,28 +156,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteCorsPolicyError> for Error {
     fn from(err: crate::error::DeleteCorsPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteCorsPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::DeleteCorsPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::DeleteCorsPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::DeleteCorsPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::DeleteCorsPolicyErrorKind::CorsPolicyNotFoundException(inner) => {
+            crate::error::DeleteCorsPolicyError::CorsPolicyNotFoundException(inner) => {
                 Error::CorsPolicyNotFoundException(inner)
             }
-            crate::error::DeleteCorsPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteCorsPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteCorsPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -185,28 +198,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteLifecyclePolicyError> for Error {
     fn from(err: crate::error::DeleteLifecyclePolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteLifecyclePolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::DeleteLifecyclePolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::DeleteLifecyclePolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::DeleteLifecyclePolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::DeleteLifecyclePolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteLifecyclePolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteLifecyclePolicyErrorKind::PolicyNotFoundException(inner) => {
+            crate::error::DeleteLifecyclePolicyError::PolicyNotFoundException(inner) => {
                 Error::PolicyNotFoundException(inner)
             }
-            crate::error::DeleteLifecyclePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -221,28 +239,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteMetricPolicyError> for Error {
     fn from(err: crate::error::DeleteMetricPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteMetricPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::DeleteMetricPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::DeleteMetricPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::DeleteMetricPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::DeleteMetricPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteMetricPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteMetricPolicyErrorKind::PolicyNotFoundException(inner) => {
+            crate::error::DeleteMetricPolicyError::PolicyNotFoundException(inner) => {
                 Error::PolicyNotFoundException(inner)
             }
-            crate::error::DeleteMetricPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -257,22 +280,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeContainerError> for Error {
     fn from(err: crate::error::DescribeContainerError) -> Self {
-        match err.kind {
-            crate::error::DescribeContainerErrorKind::ContainerNotFoundException(inner) => {
+        match err {
+            crate::error::DescribeContainerError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::DescribeContainerErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeContainerError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeContainerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeContainerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -287,28 +315,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetContainerPolicyError> for Error {
     fn from(err: crate::error::GetContainerPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetContainerPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::GetContainerPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::GetContainerPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::GetContainerPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::GetContainerPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::GetContainerPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::GetContainerPolicyErrorKind::PolicyNotFoundException(inner) => {
+            crate::error::GetContainerPolicyError::PolicyNotFoundException(inner) => {
                 Error::PolicyNotFoundException(inner)
             }
-            crate::error::GetContainerPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -321,28 +354,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetCorsPolicyError> for Error {
     fn from(err: crate::error::GetCorsPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetCorsPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::GetCorsPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::GetCorsPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::GetCorsPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::GetCorsPolicyErrorKind::CorsPolicyNotFoundException(inner) => {
+            crate::error::GetCorsPolicyError::CorsPolicyNotFoundException(inner) => {
                 Error::CorsPolicyNotFoundException(inner)
             }
-            crate::error::GetCorsPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::GetCorsPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::GetCorsPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -357,28 +395,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetLifecyclePolicyError> for Error {
     fn from(err: crate::error::GetLifecyclePolicyError) -> Self {
-        match err.kind {
-            crate::error::GetLifecyclePolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::GetLifecyclePolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::GetLifecyclePolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::GetLifecyclePolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::GetLifecyclePolicyErrorKind::InternalServerError(inner) => {
+            crate::error::GetLifecyclePolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::GetLifecyclePolicyErrorKind::PolicyNotFoundException(inner) => {
+            crate::error::GetLifecyclePolicyError::PolicyNotFoundException(inner) => {
                 Error::PolicyNotFoundException(inner)
             }
-            crate::error::GetLifecyclePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -391,28 +434,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetMetricPolicyError> for Error {
     fn from(err: crate::error::GetMetricPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetMetricPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::GetMetricPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::GetMetricPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::GetMetricPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::GetMetricPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::GetMetricPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::GetMetricPolicyErrorKind::PolicyNotFoundException(inner) => {
+            crate::error::GetMetricPolicyError::PolicyNotFoundException(inner) => {
                 Error::PolicyNotFoundException(inner)
             }
-            crate::error::GetMetricPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -425,19 +473,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListContainersError> for Error {
     fn from(err: crate::error::ListContainersError) -> Self {
-        match err.kind {
-            crate::error::ListContainersErrorKind::InternalServerError(inner) => {
+        match err {
+            crate::error::ListContainersError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::ListContainersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListContainersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -452,25 +505,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::ListTagsForResourceError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
+            crate::error::ListTagsForResourceError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -485,25 +543,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutContainerPolicyError> for Error {
     fn from(err: crate::error::PutContainerPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutContainerPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::PutContainerPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::PutContainerPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::PutContainerPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::PutContainerPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::PutContainerPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutContainerPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutContainerPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -516,25 +579,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutCorsPolicyError> for Error {
     fn from(err: crate::error::PutCorsPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutCorsPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::PutCorsPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::PutCorsPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::PutCorsPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::PutCorsPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::PutCorsPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutCorsPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutCorsPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -549,25 +617,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutLifecyclePolicyError> for Error {
     fn from(err: crate::error::PutLifecyclePolicyError) -> Self {
-        match err.kind {
-            crate::error::PutLifecyclePolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::PutLifecyclePolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::PutLifecyclePolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::PutLifecyclePolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::PutLifecyclePolicyErrorKind::InternalServerError(inner) => {
+            crate::error::PutLifecyclePolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutLifecyclePolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutLifecyclePolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -580,25 +653,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutMetricPolicyError> for Error {
     fn from(err: crate::error::PutMetricPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutMetricPolicyErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::PutMetricPolicyError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::PutMetricPolicyErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::PutMetricPolicyError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::PutMetricPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::PutMetricPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutMetricPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutMetricPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -613,25 +691,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StartAccessLoggingError> for Error {
     fn from(err: crate::error::StartAccessLoggingError) -> Self {
-        match err.kind {
-            crate::error::StartAccessLoggingErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::StartAccessLoggingError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::StartAccessLoggingErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::StartAccessLoggingError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::StartAccessLoggingErrorKind::InternalServerError(inner) => {
+            crate::error::StartAccessLoggingError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::StartAccessLoggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartAccessLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -646,25 +729,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopAccessLoggingError> for Error {
     fn from(err: crate::error::StopAccessLoggingError) -> Self {
-        match err.kind {
-            crate::error::StopAccessLoggingErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::StopAccessLoggingError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::StopAccessLoggingErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::StopAccessLoggingError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::StopAccessLoggingErrorKind::InternalServerError(inner) => {
+            crate::error::StopAccessLoggingError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::StopAccessLoggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopAccessLoggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -677,25 +765,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::TagResourceError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::TagResourceErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::TagResourceError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::InternalServerError(inner) => {
+            crate::error::TagResourceError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -708,26 +801,44 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::ContainerInUseException(inner) => {
+        match err {
+            crate::error::UntagResourceError::ContainerInUseException(inner) => {
                 Error::ContainerInUseException(inner)
             }
-            crate::error::UntagResourceErrorKind::ContainerNotFoundException(inner) => {
+            crate::error::UntagResourceError::ContainerNotFoundException(inner) => {
                 Error::ContainerNotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
+            crate::error::UntagResourceError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ContainerInUseException(e) => e.request_id(),
+            Self::ContainerNotFoundException(e) => e.request_id(),
+            Self::CorsPolicyNotFoundException(e) => e.request_id(),
+            Self::InternalServerError(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::PolicyNotFoundException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

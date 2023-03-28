@@ -23,15 +23,8 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user tags per resource. You must reduce the number of tags in the request. None of the tags in this request were applied.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -61,40 +54,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateGatewayRouteError> for Error {
     fn from(err: crate::error::CreateGatewayRouteError) -> Self {
-        match err.kind {
-            crate::error::CreateGatewayRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateGatewayRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::ConflictException(inner) => {
+            crate::error::CreateGatewayRouteError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateGatewayRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateGatewayRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateGatewayRouteError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::NotFoundException(inner) => {
+            crate::error::CreateGatewayRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateGatewayRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateGatewayRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateGatewayRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -107,40 +105,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateMeshError> for Error {
     fn from(err: crate::error::CreateMeshError) -> Self {
-        match err.kind {
-            crate::error::CreateMeshErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateMeshErrorKind::ConflictException(inner) => {
+            crate::error::CreateMeshError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateMeshErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateMeshErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateMeshErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateMeshError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateMeshErrorKind::NotFoundException(inner) => {
+            crate::error::CreateMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateMeshErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateMeshErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateMeshErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMeshError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -153,40 +156,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateRouteError> for Error {
     fn from(err: crate::error::CreateRouteError) -> Self {
-        match err.kind {
-            crate::error::CreateRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateRouteErrorKind::ConflictException(inner) => {
+            crate::error::CreateRouteError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateRouteErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateRouteError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateRouteErrorKind::NotFoundException(inner) => {
+            crate::error::CreateRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -202,40 +210,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateVirtualGatewayError> for Error {
     fn from(err: crate::error::CreateVirtualGatewayError) -> Self {
-        match err.kind {
-            crate::error::CreateVirtualGatewayErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateVirtualGatewayError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::ConflictException(inner) => {
+            crate::error::CreateVirtualGatewayError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateVirtualGatewayError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateVirtualGatewayError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateVirtualGatewayError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::NotFoundException(inner) => {
+            crate::error::CreateVirtualGatewayError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateVirtualGatewayError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateVirtualGatewayError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateVirtualGatewayErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -250,40 +263,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateVirtualNodeError> for Error {
     fn from(err: crate::error::CreateVirtualNodeError) -> Self {
-        match err.kind {
-            crate::error::CreateVirtualNodeErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateVirtualNodeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::ConflictException(inner) => {
+            crate::error::CreateVirtualNodeError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateVirtualNodeError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateVirtualNodeError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateVirtualNodeError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::NotFoundException(inner) => {
+            crate::error::CreateVirtualNodeError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateVirtualNodeError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateVirtualNodeError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateVirtualNodeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -298,40 +316,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateVirtualRouterError> for Error {
     fn from(err: crate::error::CreateVirtualRouterError) -> Self {
-        match err.kind {
-            crate::error::CreateVirtualRouterErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateVirtualRouterError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::ConflictException(inner) => {
+            crate::error::CreateVirtualRouterError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateVirtualRouterError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateVirtualRouterError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateVirtualRouterError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::NotFoundException(inner) => {
+            crate::error::CreateVirtualRouterError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateVirtualRouterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateVirtualRouterError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateVirtualRouterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -347,40 +370,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateVirtualServiceError> for Error {
     fn from(err: crate::error::CreateVirtualServiceError) -> Self {
-        match err.kind {
-            crate::error::CreateVirtualServiceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateVirtualServiceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::ConflictException(inner) => {
+            crate::error::CreateVirtualServiceError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateVirtualServiceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateVirtualServiceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::LimitExceededException(inner) => {
+            crate::error::CreateVirtualServiceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::NotFoundException(inner) => {
+            crate::error::CreateVirtualServiceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::CreateVirtualServiceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateVirtualServiceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateVirtualServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -395,37 +423,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteGatewayRouteError> for Error {
     fn from(err: crate::error::DeleteGatewayRouteError) -> Self {
-        match err.kind {
-            crate::error::DeleteGatewayRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteGatewayRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteGatewayRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteGatewayRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteGatewayRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteGatewayRouteError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteGatewayRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteGatewayRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteGatewayRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -438,37 +471,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteMeshError> for Error {
     fn from(err: crate::error::DeleteMeshError) -> Self {
-        match err.kind {
-            crate::error::DeleteMeshErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteMeshErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteMeshErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteMeshErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteMeshErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteMeshError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteMeshErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteMeshErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteMeshErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMeshError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -481,37 +519,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteRouteError> for Error {
     fn from(err: crate::error::DeleteRouteError) -> Self {
-        match err.kind {
-            crate::error::DeleteRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteRouteErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteRouteErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteRouteError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -527,37 +570,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteVirtualGatewayError> for Error {
     fn from(err: crate::error::DeleteVirtualGatewayError) -> Self {
-        match err.kind {
-            crate::error::DeleteVirtualGatewayErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteVirtualGatewayError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteVirtualGatewayError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteVirtualGatewayError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteVirtualGatewayError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteVirtualGatewayError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteVirtualGatewayError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteVirtualGatewayError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteVirtualGatewayErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -572,37 +620,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteVirtualNodeError> for Error {
     fn from(err: crate::error::DeleteVirtualNodeError) -> Self {
-        match err.kind {
-            crate::error::DeleteVirtualNodeErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteVirtualNodeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteVirtualNodeError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteVirtualNodeError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteVirtualNodeError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteVirtualNodeError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteVirtualNodeError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteVirtualNodeError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteVirtualNodeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -617,37 +670,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteVirtualRouterError> for Error {
     fn from(err: crate::error::DeleteVirtualRouterError) -> Self {
-        match err.kind {
-            crate::error::DeleteVirtualRouterErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteVirtualRouterError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteVirtualRouterError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteVirtualRouterError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteVirtualRouterError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteVirtualRouterError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteVirtualRouterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteVirtualRouterError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteVirtualRouterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -663,37 +721,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteVirtualServiceError> for Error {
     fn from(err: crate::error::DeleteVirtualServiceError) -> Self {
-        match err.kind {
-            crate::error::DeleteVirtualServiceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteVirtualServiceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteVirtualServiceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteVirtualServiceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteVirtualServiceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::ResourceInUseException(inner) => {
+            crate::error::DeleteVirtualServiceError::ResourceInUseException(inner) => {
                 Error::ResourceInUseException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DeleteVirtualServiceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteVirtualServiceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteVirtualServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -709,34 +772,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeGatewayRouteError> for Error {
     fn from(err: crate::error::DescribeGatewayRouteError) -> Self {
-        match err.kind {
-            crate::error::DescribeGatewayRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeGatewayRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeGatewayRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeGatewayRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeGatewayRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeGatewayRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeGatewayRouteErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeGatewayRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeGatewayRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeGatewayRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeGatewayRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeGatewayRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -749,34 +817,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeMeshError> for Error {
     fn from(err: crate::error::DescribeMeshError) -> Self {
-        match err.kind {
-            crate::error::DescribeMeshErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeMeshErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeMeshErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeMeshErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeMeshErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeMeshErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeMeshErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeMeshError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -789,34 +862,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeRouteError> for Error {
     fn from(err: crate::error::DescribeRouteError) -> Self {
-        match err.kind {
-            crate::error::DescribeRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeRouteErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -832,34 +910,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeVirtualGatewayError> for Error {
     fn from(err: crate::error::DescribeVirtualGatewayError) -> Self {
-        match err.kind {
-            crate::error::DescribeVirtualGatewayErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeVirtualGatewayError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualGatewayErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeVirtualGatewayError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeVirtualGatewayError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeVirtualGatewayErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeVirtualGatewayError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeVirtualGatewayError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeVirtualGatewayError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualGatewayErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -874,34 +957,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeVirtualNodeError> for Error {
     fn from(err: crate::error::DescribeVirtualNodeError) -> Self {
-        match err.kind {
-            crate::error::DescribeVirtualNodeErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeVirtualNodeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualNodeErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeVirtualNodeError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualNodeErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeVirtualNodeError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeVirtualNodeErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeVirtualNodeError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeVirtualNodeError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeVirtualNodeErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeVirtualNodeError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualNodeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -917,34 +1005,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeVirtualRouterError> for Error {
     fn from(err: crate::error::DescribeVirtualRouterError) -> Self {
-        match err.kind {
-            crate::error::DescribeVirtualRouterErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeVirtualRouterError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualRouterErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeVirtualRouterError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualRouterErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeVirtualRouterError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeVirtualRouterErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeVirtualRouterError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeVirtualRouterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeVirtualRouterErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeVirtualRouterError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualRouterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -960,34 +1053,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeVirtualServiceError> for Error {
     fn from(err: crate::error::DescribeVirtualServiceError) -> Self {
-        match err.kind {
-            crate::error::DescribeVirtualServiceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeVirtualServiceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeVirtualServiceErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeVirtualServiceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeVirtualServiceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeVirtualServiceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeVirtualServiceErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeVirtualServiceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::DescribeVirtualServiceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::DescribeVirtualServiceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeVirtualServiceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeVirtualServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1002,34 +1100,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListGatewayRoutesError> for Error {
     fn from(err: crate::error::ListGatewayRoutesError) -> Self {
-        match err.kind {
-            crate::error::ListGatewayRoutesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListGatewayRoutesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListGatewayRoutesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListGatewayRoutesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListGatewayRoutesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListGatewayRoutesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListGatewayRoutesErrorKind::NotFoundException(inner) => {
+            crate::error::ListGatewayRoutesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListGatewayRoutesErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListGatewayRoutesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListGatewayRoutesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListGatewayRoutesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListGatewayRoutesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGatewayRoutesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1042,34 +1145,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListMeshesError> for Error {
     fn from(err: crate::error::ListMeshesError) -> Self {
-        match err.kind {
-            crate::error::ListMeshesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListMeshesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListMeshesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListMeshesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListMeshesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListMeshesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListMeshesErrorKind::NotFoundException(inner) => {
+            crate::error::ListMeshesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListMeshesErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListMeshesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListMeshesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListMeshesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListMeshesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMeshesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1082,34 +1190,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListRoutesError> for Error {
     fn from(err: crate::error::ListRoutesError) -> Self {
-        match err.kind {
-            crate::error::ListRoutesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListRoutesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListRoutesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListRoutesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListRoutesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListRoutesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListRoutesErrorKind::NotFoundException(inner) => {
+            crate::error::ListRoutesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListRoutesErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListRoutesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListRoutesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListRoutesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListRoutesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListRoutesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1124,34 +1237,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
+            crate::error::ListTagsForResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListTagsForResourceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+            crate::error::ListTagsForResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListTagsForResourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListTagsForResourceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1166,34 +1284,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListVirtualGatewaysError> for Error {
     fn from(err: crate::error::ListVirtualGatewaysError) -> Self {
-        match err.kind {
-            crate::error::ListVirtualGatewaysErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListVirtualGatewaysError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListVirtualGatewaysErrorKind::ForbiddenException(inner) => {
+            crate::error::ListVirtualGatewaysError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListVirtualGatewaysErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListVirtualGatewaysError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListVirtualGatewaysErrorKind::NotFoundException(inner) => {
+            crate::error::ListVirtualGatewaysError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListVirtualGatewaysErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListVirtualGatewaysError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListVirtualGatewaysErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListVirtualGatewaysError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListVirtualGatewaysErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVirtualGatewaysError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1208,34 +1331,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListVirtualNodesError> for Error {
     fn from(err: crate::error::ListVirtualNodesError) -> Self {
-        match err.kind {
-            crate::error::ListVirtualNodesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListVirtualNodesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListVirtualNodesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListVirtualNodesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListVirtualNodesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListVirtualNodesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListVirtualNodesErrorKind::NotFoundException(inner) => {
+            crate::error::ListVirtualNodesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListVirtualNodesErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListVirtualNodesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListVirtualNodesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListVirtualNodesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListVirtualNodesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVirtualNodesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1250,34 +1378,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListVirtualRoutersError> for Error {
     fn from(err: crate::error::ListVirtualRoutersError) -> Self {
-        match err.kind {
-            crate::error::ListVirtualRoutersErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListVirtualRoutersError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListVirtualRoutersErrorKind::ForbiddenException(inner) => {
+            crate::error::ListVirtualRoutersError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListVirtualRoutersErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListVirtualRoutersError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListVirtualRoutersErrorKind::NotFoundException(inner) => {
+            crate::error::ListVirtualRoutersError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListVirtualRoutersErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListVirtualRoutersError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListVirtualRoutersErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListVirtualRoutersError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListVirtualRoutersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVirtualRoutersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1292,34 +1425,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListVirtualServicesError> for Error {
     fn from(err: crate::error::ListVirtualServicesError) -> Self {
-        match err.kind {
-            crate::error::ListVirtualServicesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListVirtualServicesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListVirtualServicesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListVirtualServicesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListVirtualServicesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListVirtualServicesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListVirtualServicesErrorKind::NotFoundException(inner) => {
+            crate::error::ListVirtualServicesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListVirtualServicesErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::ListVirtualServicesError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::ListVirtualServicesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListVirtualServicesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListVirtualServicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListVirtualServicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1332,37 +1470,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::TagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::TagResourceErrorKind::ForbiddenException(inner) => {
+            crate::error::TagResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::TagResourceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::TagResourceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::TagResourceErrorKind::NotFoundException(inner) => {
+            crate::error::TagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::TagResourceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::TagResourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::TagResourceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::TagResourceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::TagResourceErrorKind::TooManyTagsException(inner) => {
+            crate::error::TagResourceError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1375,34 +1518,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UntagResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UntagResourceErrorKind::ForbiddenException(inner) => {
+            crate::error::UntagResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UntagResourceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UntagResourceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UntagResourceErrorKind::NotFoundException(inner) => {
+            crate::error::UntagResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UntagResourceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UntagResourceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UntagResourceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UntagResourceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1417,40 +1565,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateGatewayRouteError> for Error {
     fn from(err: crate::error::UpdateGatewayRouteError) -> Self {
-        match err.kind {
-            crate::error::UpdateGatewayRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateGatewayRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::ConflictException(inner) => {
+            crate::error::UpdateGatewayRouteError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateGatewayRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateGatewayRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateGatewayRouteError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateGatewayRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateGatewayRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateGatewayRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateGatewayRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGatewayRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1463,37 +1616,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateMeshError> for Error {
     fn from(err: crate::error::UpdateMeshError) -> Self {
-        match err.kind {
-            crate::error::UpdateMeshErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateMeshError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateMeshErrorKind::ConflictException(inner) => {
+            crate::error::UpdateMeshError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateMeshErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateMeshError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateMeshErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateMeshError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateMeshErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateMeshError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateMeshErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateMeshError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateMeshErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateMeshError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateMeshErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateMeshError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1506,40 +1664,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateRouteError> for Error {
     fn from(err: crate::error::UpdateRouteError) -> Self {
-        match err.kind {
-            crate::error::UpdateRouteErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateRouteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateRouteErrorKind::ConflictException(inner) => {
+            crate::error::UpdateRouteError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateRouteErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateRouteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateRouteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateRouteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateRouteErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateRouteError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateRouteErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateRouteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateRouteErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateRouteError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateRouteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateRouteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateRouteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateRouteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1555,40 +1718,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateVirtualGatewayError> for Error {
     fn from(err: crate::error::UpdateVirtualGatewayError) -> Self {
-        match err.kind {
-            crate::error::UpdateVirtualGatewayErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateVirtualGatewayError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::ConflictException(inner) => {
+            crate::error::UpdateVirtualGatewayError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateVirtualGatewayError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateVirtualGatewayError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateVirtualGatewayError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateVirtualGatewayError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateVirtualGatewayError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateVirtualGatewayError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateVirtualGatewayErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVirtualGatewayError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1603,40 +1771,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateVirtualNodeError> for Error {
     fn from(err: crate::error::UpdateVirtualNodeError) -> Self {
-        match err.kind {
-            crate::error::UpdateVirtualNodeErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateVirtualNodeError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::ConflictException(inner) => {
+            crate::error::UpdateVirtualNodeError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateVirtualNodeError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateVirtualNodeError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateVirtualNodeError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateVirtualNodeError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateVirtualNodeError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateVirtualNodeError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateVirtualNodeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVirtualNodeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1651,40 +1824,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateVirtualRouterError> for Error {
     fn from(err: crate::error::UpdateVirtualRouterError) -> Self {
-        match err.kind {
-            crate::error::UpdateVirtualRouterErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateVirtualRouterError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::ConflictException(inner) => {
+            crate::error::UpdateVirtualRouterError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateVirtualRouterError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateVirtualRouterError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateVirtualRouterError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateVirtualRouterError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateVirtualRouterError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateVirtualRouterError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateVirtualRouterErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVirtualRouterError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1700,41 +1878,63 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateVirtualServiceError> for Error {
     fn from(err: crate::error::UpdateVirtualServiceError) -> Self {
-        match err.kind {
-            crate::error::UpdateVirtualServiceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateVirtualServiceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::ConflictException(inner) => {
+            crate::error::UpdateVirtualServiceError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateVirtualServiceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateVirtualServiceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::LimitExceededException(inner) => {
+            crate::error::UpdateVirtualServiceError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateVirtualServiceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::ServiceUnavailableException(inner) => {
+            crate::error::UpdateVirtualServiceError::ServiceUnavailableException(inner) => {
                 Error::ServiceUnavailableException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateVirtualServiceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateVirtualServiceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateVirtualServiceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::InternalServerErrorException(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::ResourceInUseException(e) => e.request_id(),
+            Self::ServiceUnavailableException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

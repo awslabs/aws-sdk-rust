@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateComponent {
         crate::error::CreateComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_component_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateForm {
     type Output =
         std::result::Result<crate::output::CreateFormOutput, crate::error::CreateFormError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_form_error(response)
         } else {
@@ -89,6 +91,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTheme {
     type Output =
         std::result::Result<crate::output::CreateThemeOutput, crate::error::CreateThemeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_theme_error(response)
         } else {
@@ -123,6 +126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteComponent {
         crate::error::DeleteComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_component_error(response)
         } else {
@@ -155,6 +159,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteForm {
     type Output =
         std::result::Result<crate::output::DeleteFormOutput, crate::error::DeleteFormError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_form_error(response)
         } else {
@@ -187,6 +192,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTheme {
     type Output =
         std::result::Result<crate::output::DeleteThemeOutput, crate::error::DeleteThemeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_theme_error(response)
         } else {
@@ -221,6 +227,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExchangeCodeForToken {
         crate::error::ExchangeCodeForTokenError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_exchange_code_for_token_error(response)
         } else {
@@ -255,6 +262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportComponents {
         crate::error::ExportComponentsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_components_error(response)
         } else {
@@ -287,6 +295,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportForms {
     type Output =
         std::result::Result<crate::output::ExportFormsOutput, crate::error::ExportFormsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_forms_error(response)
         } else {
@@ -319,6 +328,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportThemes {
     type Output =
         std::result::Result<crate::output::ExportThemesOutput, crate::error::ExportThemesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_themes_error(response)
         } else {
@@ -351,6 +361,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetComponent {
     type Output =
         std::result::Result<crate::output::GetComponentOutput, crate::error::GetComponentError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_component_error(response)
         } else {
@@ -382,6 +393,7 @@ impl GetForm {
 impl aws_smithy_http::response::ParseStrictResponse for GetForm {
     type Output = std::result::Result<crate::output::GetFormOutput, crate::error::GetFormError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_form_error(response)
         } else {
@@ -414,6 +426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetadata {
     type Output =
         std::result::Result<crate::output::GetMetadataOutput, crate::error::GetMetadataError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_metadata_error(response)
         } else {
@@ -445,6 +458,7 @@ impl GetTheme {
 impl aws_smithy_http::response::ParseStrictResponse for GetTheme {
     type Output = std::result::Result<crate::output::GetThemeOutput, crate::error::GetThemeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_theme_error(response)
         } else {
@@ -477,6 +491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListComponents {
     type Output =
         std::result::Result<crate::output::ListComponentsOutput, crate::error::ListComponentsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_components_error(response)
         } else {
@@ -508,6 +523,7 @@ impl ListForms {
 impl aws_smithy_http::response::ParseStrictResponse for ListForms {
     type Output = std::result::Result<crate::output::ListFormsOutput, crate::error::ListFormsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_forms_error(response)
         } else {
@@ -540,6 +556,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListThemes {
     type Output =
         std::result::Result<crate::output::ListThemesOutput, crate::error::ListThemesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_themes_error(response)
         } else {
@@ -574,6 +591,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMetadataFlag {
         crate::error::PutMetadataFlagError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_metadata_flag_error(response)
         } else {
@@ -606,6 +624,7 @@ impl aws_smithy_http::response::ParseStrictResponse for RefreshToken {
     type Output =
         std::result::Result<crate::output::RefreshTokenOutput, crate::error::RefreshTokenError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_refresh_token_error(response)
         } else {
@@ -640,6 +659,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateComponent {
         crate::error::UpdateComponentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_component_error(response)
         } else {
@@ -672,6 +692,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateForm {
     type Output =
         std::result::Result<crate::output::UpdateFormOutput, crate::error::UpdateFormError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_form_error(response)
         } else {
@@ -704,6 +725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTheme {
     type Output =
         std::result::Result<crate::output::UpdateThemeOutput, crate::error::UpdateThemeError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_theme_error(response)
         } else {

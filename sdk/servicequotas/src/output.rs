@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -56,6 +96,7 @@ pub struct RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
+    _request_id: Option<String>,
 }
 impl RequestServiceQuotaIncreaseOutput {
     /// <p>Information about the quota increase request.</p>
@@ -63,6 +104,11 @@ impl RequestServiceQuotaIncreaseOutput {
         &self,
     ) -> std::option::Option<&crate::model::RequestedServiceQuotaChange> {
         self.requested_quota.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for RequestServiceQuotaIncreaseOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
@@ -73,6 +119,7 @@ pub mod request_service_quota_increase_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the quota increase request.</p>
@@ -88,10 +135,20 @@ pub mod request_service_quota_increase_output {
             self.requested_quota = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RequestServiceQuotaIncreaseOutput`](crate::output::RequestServiceQuotaIncreaseOutput).
         pub fn build(self) -> crate::output::RequestServiceQuotaIncreaseOutput {
             crate::output::RequestServiceQuotaIncreaseOutput {
                 requested_quota: self.requested_quota,
+                _request_id: self._request_id,
             }
         }
     }
@@ -111,6 +168,7 @@ pub struct PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     #[doc(hidden)]
     pub service_quota_increase_request_in_template:
         std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+    _request_id: Option<String>,
 }
 impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
     /// <p>Information about the quota increase request.</p>
@@ -118,6 +176,11 @@ impl PutServiceQuotaIncreaseRequestIntoTemplateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceQuotaIncreaseRequestInTemplate> {
         self.service_quota_increase_request_in_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for PutServiceQuotaIncreaseRequestIntoTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
@@ -129,6 +192,7 @@ pub mod put_service_quota_increase_request_into_template_output {
     pub struct Builder {
         pub(crate) service_quota_increase_request_in_template:
             std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the quota increase request.</p>
@@ -147,11 +211,21 @@ pub mod put_service_quota_increase_request_into_template_output {
             self.service_quota_increase_request_in_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutServiceQuotaIncreaseRequestIntoTemplateOutput`](crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput).
         pub fn build(self) -> crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput {
             crate::output::PutServiceQuotaIncreaseRequestIntoTemplateOutput {
                 service_quota_increase_request_in_template: self
                     .service_quota_increase_request_in_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -171,11 +245,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>A complex data type that contains zero or more tag elements.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A complex data type that contains zero or more tag elements.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -186,6 +266,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -207,9 +288,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -230,6 +323,7 @@ pub struct ListServicesOutput {
     /// <p>Information about the services.</p>
     #[doc(hidden)]
     pub services: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
+    _request_id: Option<String>,
 }
 impl ListServicesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -241,6 +335,11 @@ impl ListServicesOutput {
         self.services.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListServicesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
 pub mod list_services_output {
 
@@ -250,6 +349,7 @@ pub mod list_services_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) services: std::option::Option<std::vec::Vec<crate::model::ServiceInfo>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -281,11 +381,21 @@ pub mod list_services_output {
             self.services = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
                 next_token: self.next_token,
                 services: self.services,
+                _request_id: self._request_id,
             }
         }
     }
@@ -307,6 +417,7 @@ pub struct ListServiceQuotasOutput {
     /// <p>Information about the quotas.</p>
     #[doc(hidden)]
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
+    _request_id: Option<String>,
 }
 impl ListServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -318,6 +429,11 @@ impl ListServiceQuotasOutput {
         self.quotas.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListServiceQuotasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
 pub mod list_service_quotas_output {
 
@@ -327,6 +443,7 @@ pub mod list_service_quotas_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -358,11 +475,21 @@ pub mod list_service_quotas_output {
             self.quotas = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListServiceQuotasOutput`](crate::output::ListServiceQuotasOutput).
         pub fn build(self) -> crate::output::ListServiceQuotasOutput {
             crate::output::ListServiceQuotasOutput {
                 next_token: self.next_token,
                 quotas: self.quotas,
+                _request_id: self._request_id,
             }
         }
     }
@@ -385,6 +512,7 @@ pub struct ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
     /// <p>Information about the quota increase requests.</p>
@@ -399,6 +527,11 @@ impl ListServiceQuotaIncreaseRequestsInTemplateOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListServiceQuotaIncreaseRequestsInTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
 pub mod list_service_quota_increase_requests_in_template_output {
 
@@ -409,6 +542,7 @@ pub mod list_service_quota_increase_requests_in_template_output {
         pub(crate) service_quota_increase_request_in_template_list:
             std::option::Option<std::vec::Vec<crate::model::ServiceQuotaIncreaseRequestInTemplate>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `service_quota_increase_request_in_template_list`.
@@ -447,12 +581,22 @@ pub mod list_service_quota_increase_requests_in_template_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListServiceQuotaIncreaseRequestsInTemplateOutput`](crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput).
         pub fn build(self) -> crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput {
             crate::output::ListServiceQuotaIncreaseRequestsInTemplateOutput {
                 service_quota_increase_request_in_template_list: self
                     .service_quota_increase_request_in_template_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -476,6 +620,7 @@ pub struct ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     #[doc(hidden)]
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+    _request_id: Option<String>,
 }
 impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -489,6 +634,11 @@ impl ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
         self.requested_quotas.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
 pub mod list_requested_service_quota_change_history_by_quota_output {
 
@@ -499,6 +649,7 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) requested_quotas:
             std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -533,11 +684,21 @@ pub mod list_requested_service_quota_change_history_by_quota_output {
             self.requested_quotas = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryByQuotaOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput).
         pub fn build(self) -> crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
             crate::output::ListRequestedServiceQuotaChangeHistoryByQuotaOutput {
                 next_token: self.next_token,
                 requested_quotas: self.requested_quotas,
+                _request_id: self._request_id,
             }
         }
     }
@@ -562,6 +723,7 @@ pub struct ListRequestedServiceQuotaChangeHistoryOutput {
     #[doc(hidden)]
     pub requested_quotas:
         std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+    _request_id: Option<String>,
 }
 impl ListRequestedServiceQuotaChangeHistoryOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -575,6 +737,11 @@ impl ListRequestedServiceQuotaChangeHistoryOutput {
         self.requested_quotas.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRequestedServiceQuotaChangeHistoryOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
 pub mod list_requested_service_quota_change_history_output {
 
@@ -585,6 +752,7 @@ pub mod list_requested_service_quota_change_history_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) requested_quotas:
             std::option::Option<std::vec::Vec<crate::model::RequestedServiceQuotaChange>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -619,11 +787,21 @@ pub mod list_requested_service_quota_change_history_output {
             self.requested_quotas = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRequestedServiceQuotaChangeHistoryOutput`](crate::output::ListRequestedServiceQuotaChangeHistoryOutput).
         pub fn build(self) -> crate::output::ListRequestedServiceQuotaChangeHistoryOutput {
             crate::output::ListRequestedServiceQuotaChangeHistoryOutput {
                 next_token: self.next_token,
                 requested_quotas: self.requested_quotas,
+                _request_id: self._request_id,
             }
         }
     }
@@ -645,6 +823,7 @@ pub struct ListAwsDefaultServiceQuotasOutput {
     /// <p>Information about the quotas.</p>
     #[doc(hidden)]
     pub quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
+    _request_id: Option<String>,
 }
 impl ListAwsDefaultServiceQuotasOutput {
     /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -656,6 +835,11 @@ impl ListAwsDefaultServiceQuotasOutput {
         self.quotas.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAwsDefaultServiceQuotasOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
 pub mod list_aws_default_service_quotas_output {
 
@@ -665,6 +849,7 @@ pub mod list_aws_default_service_quotas_output {
     pub struct Builder {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) quotas: std::option::Option<std::vec::Vec<crate::model::ServiceQuota>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token to use to retrieve the next page of results. This value is null when there are no more results to return.</p>
@@ -696,11 +881,21 @@ pub mod list_aws_default_service_quotas_output {
             self.quotas = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAwsDefaultServiceQuotasOutput`](crate::output::ListAwsDefaultServiceQuotasOutput).
         pub fn build(self) -> crate::output::ListAwsDefaultServiceQuotasOutput {
             crate::output::ListAwsDefaultServiceQuotasOutput {
                 next_token: self.next_token,
                 quotas: self.quotas,
+                _request_id: self._request_id,
             }
         }
     }
@@ -720,6 +915,7 @@ pub struct GetServiceQuotaIncreaseRequestFromTemplateOutput {
     #[doc(hidden)]
     pub service_quota_increase_request_in_template:
         std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+    _request_id: Option<String>,
 }
 impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
     /// <p>Information about the quota increase request.</p>
@@ -727,6 +923,11 @@ impl GetServiceQuotaIncreaseRequestFromTemplateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceQuotaIncreaseRequestInTemplate> {
         self.service_quota_increase_request_in_template.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetServiceQuotaIncreaseRequestFromTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
@@ -738,6 +939,7 @@ pub mod get_service_quota_increase_request_from_template_output {
     pub struct Builder {
         pub(crate) service_quota_increase_request_in_template:
             std::option::Option<crate::model::ServiceQuotaIncreaseRequestInTemplate>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the quota increase request.</p>
@@ -756,11 +958,21 @@ pub mod get_service_quota_increase_request_from_template_output {
             self.service_quota_increase_request_in_template = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput).
         pub fn build(self) -> crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput {
             crate::output::GetServiceQuotaIncreaseRequestFromTemplateOutput {
                 service_quota_increase_request_in_template: self
                     .service_quota_increase_request_in_template,
+                _request_id: self._request_id,
             }
         }
     }
@@ -780,11 +992,17 @@ pub struct GetServiceQuotaOutput {
     /// <p>Information about the quota.</p>
     #[doc(hidden)]
     pub quota: std::option::Option<crate::model::ServiceQuota>,
+    _request_id: Option<String>,
 }
 impl GetServiceQuotaOutput {
     /// <p>Information about the quota.</p>
     pub fn quota(&self) -> std::option::Option<&crate::model::ServiceQuota> {
         self.quota.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetServiceQuotaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
@@ -795,6 +1013,7 @@ pub mod get_service_quota_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quota: std::option::Option<crate::model::ServiceQuota>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the quota.</p>
@@ -807,9 +1026,21 @@ pub mod get_service_quota_output {
             self.quota = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetServiceQuotaOutput`](crate::output::GetServiceQuotaOutput).
         pub fn build(self) -> crate::output::GetServiceQuotaOutput {
-            crate::output::GetServiceQuotaOutput { quota: self.quota }
+            crate::output::GetServiceQuotaOutput {
+                quota: self.quota,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -827,6 +1058,7 @@ pub struct GetRequestedServiceQuotaChangeOutput {
     /// <p>Information about the quota increase request.</p>
     #[doc(hidden)]
     pub requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
+    _request_id: Option<String>,
 }
 impl GetRequestedServiceQuotaChangeOutput {
     /// <p>Information about the quota increase request.</p>
@@ -834,6 +1066,11 @@ impl GetRequestedServiceQuotaChangeOutput {
         &self,
     ) -> std::option::Option<&crate::model::RequestedServiceQuotaChange> {
         self.requested_quota.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetRequestedServiceQuotaChangeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
@@ -844,6 +1081,7 @@ pub mod get_requested_service_quota_change_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) requested_quota: std::option::Option<crate::model::RequestedServiceQuotaChange>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the quota increase request.</p>
@@ -859,10 +1097,20 @@ pub mod get_requested_service_quota_change_output {
             self.requested_quota = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRequestedServiceQuotaChangeOutput`](crate::output::GetRequestedServiceQuotaChangeOutput).
         pub fn build(self) -> crate::output::GetRequestedServiceQuotaChangeOutput {
             crate::output::GetRequestedServiceQuotaChangeOutput {
                 requested_quota: self.requested_quota,
+                _request_id: self._request_id,
             }
         }
     }
@@ -881,11 +1129,17 @@ pub struct GetAwsDefaultServiceQuotaOutput {
     /// <p>Information about the quota.</p>
     #[doc(hidden)]
     pub quota: std::option::Option<crate::model::ServiceQuota>,
+    _request_id: Option<String>,
 }
 impl GetAwsDefaultServiceQuotaOutput {
     /// <p>Information about the quota.</p>
     pub fn quota(&self) -> std::option::Option<&crate::model::ServiceQuota> {
         self.quota.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAwsDefaultServiceQuotaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
@@ -896,6 +1150,7 @@ pub mod get_aws_default_service_quota_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) quota: std::option::Option<crate::model::ServiceQuota>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the quota.</p>
@@ -908,9 +1163,21 @@ pub mod get_aws_default_service_quota_output {
             self.quota = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAwsDefaultServiceQuotaOutput`](crate::output::GetAwsDefaultServiceQuotaOutput).
         pub fn build(self) -> crate::output::GetAwsDefaultServiceQuotaOutput {
-            crate::output::GetAwsDefaultServiceQuotaOutput { quota: self.quota }
+            crate::output::GetAwsDefaultServiceQuotaOutput {
+                quota: self.quota,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -929,6 +1196,7 @@ pub struct GetAssociationForServiceQuotaTemplateOutput {
     #[doc(hidden)]
     pub service_quota_template_association_status:
         std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
+    _request_id: Option<String>,
 }
 impl GetAssociationForServiceQuotaTemplateOutput {
     /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
@@ -936,6 +1204,11 @@ impl GetAssociationForServiceQuotaTemplateOutput {
         &self,
     ) -> std::option::Option<&crate::model::ServiceQuotaTemplateAssociationStatus> {
         self.service_quota_template_association_status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAssociationForServiceQuotaTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
@@ -947,6 +1220,7 @@ pub mod get_association_for_service_quota_template_output {
     pub struct Builder {
         pub(crate) service_quota_template_association_status:
             std::option::Option<crate::model::ServiceQuotaTemplateAssociationStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The association status. If the status is <code>ASSOCIATED</code>, the quota increase requests in the template are automatically applied to new accounts in your organization.</p>
@@ -965,11 +1239,21 @@ pub mod get_association_for_service_quota_template_output {
             self.service_quota_template_association_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAssociationForServiceQuotaTemplateOutput`](crate::output::GetAssociationForServiceQuotaTemplateOutput).
         pub fn build(self) -> crate::output::GetAssociationForServiceQuotaTemplateOutput {
             crate::output::GetAssociationForServiceQuotaTemplateOutput {
                 service_quota_template_association_status: self
                     .service_quota_template_association_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -984,18 +1268,38 @@ impl GetAssociationForServiceQuotaTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateServiceQuotaTemplateOutput {}
+pub struct DisassociateServiceQuotaTemplateOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisassociateServiceQuotaTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
 pub mod disassociate_service_quota_template_output {
 
     /// A builder for [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateServiceQuotaTemplateOutput`](crate::output::DisassociateServiceQuotaTemplateOutput).
         pub fn build(self) -> crate::output::DisassociateServiceQuotaTemplateOutput {
-            crate::output::DisassociateServiceQuotaTemplateOutput {}
+            crate::output::DisassociateServiceQuotaTemplateOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1009,18 +1313,38 @@ impl DisassociateServiceQuotaTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutput {}
+pub struct DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
 pub mod delete_service_quota_increase_request_from_template_output {
 
     /// A builder for [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteServiceQuotaIncreaseRequestFromTemplateOutput`](crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput).
         pub fn build(self) -> crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
-            crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {}
+            crate::output::DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1036,18 +1360,38 @@ impl DeleteServiceQuotaIncreaseRequestFromTemplateOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateServiceQuotaTemplateOutput {}
+pub struct AssociateServiceQuotaTemplateOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AssociateServiceQuotaTemplateOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
 pub mod associate_service_quota_template_output {
 
     /// A builder for [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateServiceQuotaTemplateOutput`](crate::output::AssociateServiceQuotaTemplateOutput).
         pub fn build(self) -> crate::output::AssociateServiceQuotaTemplateOutput {
-            crate::output::AssociateServiceQuotaTemplateOutput {}
+            crate::output::AssociateServiceQuotaTemplateOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

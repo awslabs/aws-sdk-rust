@@ -23,6 +23,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpoint {
     type Output =
         std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_invoke_endpoint_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for InvokeEndpointAsync {
         crate::error::InvokeEndpointAsyncError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 202 {
             crate::operation_deser::parse_invoke_endpoint_async_error(response)
         } else {

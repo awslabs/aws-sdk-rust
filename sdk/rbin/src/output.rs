@@ -33,6 +33,7 @@ pub struct UpdateRuleOutput {
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     #[doc(hidden)]
     pub lock_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
@@ -74,6 +75,11 @@ impl UpdateRuleOutput {
         self.lock_end_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
 pub mod update_rule_output {
 
@@ -89,6 +95,7 @@ pub mod update_rule_output {
         pub(crate) status: std::option::Option<crate::model::RuleStatus>,
         pub(crate) lock_state: std::option::Option<crate::model::LockState>,
         pub(crate) lock_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the retention rule.</p>
@@ -204,6 +211,15 @@ pub mod update_rule_output {
             self.lock_end_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRuleOutput`](crate::output::UpdateRuleOutput).
         pub fn build(self) -> crate::output::UpdateRuleOutput {
             crate::output::UpdateRuleOutput {
@@ -215,6 +231,7 @@ pub mod update_rule_output {
                 status: self.status,
                 lock_state: self.lock_state,
                 lock_end_time: self.lock_end_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -229,18 +246,38 @@ impl UpdateRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -288,6 +325,7 @@ pub struct UnlockRuleOutput {
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     #[doc(hidden)]
     pub lock_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UnlockRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
@@ -333,6 +371,11 @@ impl UnlockRuleOutput {
         self.lock_end_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UnlockRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UnlockRuleOutput`](crate::output::UnlockRuleOutput).
 pub mod unlock_rule_output {
 
@@ -349,6 +392,7 @@ pub mod unlock_rule_output {
         pub(crate) lock_configuration: std::option::Option<crate::model::LockConfiguration>,
         pub(crate) lock_state: std::option::Option<crate::model::LockState>,
         pub(crate) lock_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the retention rule.</p>
@@ -477,6 +521,15 @@ pub mod unlock_rule_output {
             self.lock_end_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UnlockRuleOutput`](crate::output::UnlockRuleOutput).
         pub fn build(self) -> crate::output::UnlockRuleOutput {
             crate::output::UnlockRuleOutput {
@@ -489,6 +542,7 @@ pub mod unlock_rule_output {
                 lock_configuration: self.lock_configuration,
                 lock_state: self.lock_state,
                 lock_end_time: self.lock_end_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -503,18 +557,38 @@ impl UnlockRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -559,6 +633,7 @@ pub struct LockRuleOutput {
     /// </ul>
     #[doc(hidden)]
     pub lock_state: std::option::Option<crate::model::LockState>,
+    _request_id: Option<String>,
 }
 impl LockRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
@@ -600,6 +675,11 @@ impl LockRuleOutput {
         self.lock_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for LockRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`LockRuleOutput`](crate::output::LockRuleOutput).
 pub mod lock_rule_output {
 
@@ -615,6 +695,7 @@ pub mod lock_rule_output {
         pub(crate) status: std::option::Option<crate::model::RuleStatus>,
         pub(crate) lock_configuration: std::option::Option<crate::model::LockConfiguration>,
         pub(crate) lock_state: std::option::Option<crate::model::LockState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the retention rule.</p>
@@ -730,6 +811,15 @@ pub mod lock_rule_output {
             self.lock_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`LockRuleOutput`](crate::output::LockRuleOutput).
         pub fn build(self) -> crate::output::LockRuleOutput {
             crate::output::LockRuleOutput {
@@ -741,6 +831,7 @@ pub mod lock_rule_output {
                 status: self.status,
                 lock_configuration: self.lock_configuration,
                 lock_state: self.lock_state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -759,11 +850,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>Information about the tags assigned to the retention rule.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags assigned to the retention rule.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -774,6 +871,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -795,9 +893,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -818,6 +928,7 @@ pub struct ListRulesOutput {
     /// <p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRulesOutput {
     /// <p>Information about the retention rules.</p>
@@ -829,6 +940,11 @@ impl ListRulesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRulesOutput`](crate::output::ListRulesOutput).
 pub mod list_rules_output {
 
@@ -838,6 +954,7 @@ pub mod list_rules_output {
     pub struct Builder {
         pub(crate) rules: std::option::Option<std::vec::Vec<crate::model::RuleSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `rules`.
@@ -869,11 +986,21 @@ pub mod list_rules_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRulesOutput`](crate::output::ListRulesOutput).
         pub fn build(self) -> crate::output::ListRulesOutput {
             crate::output::ListRulesOutput {
                 rules: self.rules,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -922,6 +1049,7 @@ pub struct GetRuleOutput {
     /// <p>The date and time at which the unlock delay is set to expire. Only returned for retention rules that have been unlocked and that are still within the unlock delay period.</p>
     #[doc(hidden)]
     pub lock_end_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
@@ -967,6 +1095,11 @@ impl GetRuleOutput {
         self.lock_end_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetRuleOutput`](crate::output::GetRuleOutput).
 pub mod get_rule_output {
 
@@ -983,6 +1116,7 @@ pub mod get_rule_output {
         pub(crate) lock_configuration: std::option::Option<crate::model::LockConfiguration>,
         pub(crate) lock_state: std::option::Option<crate::model::LockState>,
         pub(crate) lock_end_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the retention rule.</p>
@@ -1111,6 +1245,15 @@ pub mod get_rule_output {
             self.lock_end_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRuleOutput`](crate::output::GetRuleOutput).
         pub fn build(self) -> crate::output::GetRuleOutput {
             crate::output::GetRuleOutput {
@@ -1123,6 +1266,7 @@ pub mod get_rule_output {
                 lock_configuration: self.lock_configuration,
                 lock_state: self.lock_state,
                 lock_end_time: self.lock_end_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1137,18 +1281,38 @@ impl GetRuleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRuleOutput {}
+pub struct DeleteRuleOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
 pub mod delete_rule_output {
 
     /// A builder for [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRuleOutput`](crate::output::DeleteRuleOutput).
         pub fn build(self) -> crate::output::DeleteRuleOutput {
-            crate::output::DeleteRuleOutput {}
+            crate::output::DeleteRuleOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1196,6 +1360,7 @@ pub struct CreateRuleOutput {
     /// </ul>
     #[doc(hidden)]
     pub lock_state: std::option::Option<crate::model::LockState>,
+    _request_id: Option<String>,
 }
 impl CreateRuleOutput {
     /// <p>The unique ID of the retention rule.</p>
@@ -1241,6 +1406,11 @@ impl CreateRuleOutput {
         self.lock_state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateRuleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateRuleOutput`](crate::output::CreateRuleOutput).
 pub mod create_rule_output {
 
@@ -1257,6 +1427,7 @@ pub mod create_rule_output {
         pub(crate) status: std::option::Option<crate::model::RuleStatus>,
         pub(crate) lock_configuration: std::option::Option<crate::model::LockConfiguration>,
         pub(crate) lock_state: std::option::Option<crate::model::LockState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the retention rule.</p>
@@ -1391,6 +1562,15 @@ pub mod create_rule_output {
             self.lock_state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRuleOutput`](crate::output::CreateRuleOutput).
         pub fn build(self) -> crate::output::CreateRuleOutput {
             crate::output::CreateRuleOutput {
@@ -1403,6 +1583,7 @@ pub mod create_rule_output {
                 status: self.status,
                 lock_configuration: self.lock_configuration,
                 lock_state: self.lock_state,
+                _request_id: self._request_id,
             }
         }
     }

@@ -9,6 +9,7 @@ pub struct ListVodSourcesOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVodSourcesOutput {
     /// <p>Lists the VOD sources.</p>
@@ -20,6 +21,11 @@ impl ListVodSourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListVodSourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
 pub mod list_vod_sources_output {
 
@@ -29,6 +35,7 @@ pub mod list_vod_sources_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::VodSource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -60,11 +67,21 @@ pub mod list_vod_sources_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVodSourcesOutput`](crate::output::ListVodSourcesOutput).
         pub fn build(self) -> crate::output::ListVodSourcesOutput {
             crate::output::ListVodSourcesOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -103,6 +120,7 @@ pub struct CreateVodSourceOutput {
     /// <p>The name to assign to the VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateVodSourceOutput {
     /// <p>The ARN to assign to this VOD source.</p>
@@ -139,6 +157,11 @@ impl CreateVodSourceOutput {
         self.vod_source_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateVodSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
 pub mod create_vod_source_output {
 
@@ -156,6 +179,7 @@ pub mod create_vod_source_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN to assign to this VOD source.</p>
@@ -267,6 +291,15 @@ pub mod create_vod_source_output {
             self.vod_source_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateVodSourceOutput`](crate::output::CreateVodSourceOutput).
         pub fn build(self) -> crate::output::CreateVodSourceOutput {
             crate::output::CreateVodSourceOutput {
@@ -277,6 +310,7 @@ pub mod create_vod_source_output {
                 source_location_name: self.source_location_name,
                 tags: self.tags,
                 vod_source_name: self.vod_source_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -291,18 +325,38 @@ impl CreateVodSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteVodSourceOutput {}
+pub struct DeleteVodSourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteVodSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
 pub mod delete_vod_source_output {
 
     /// A builder for [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteVodSourceOutput`](crate::output::DeleteVodSourceOutput).
         pub fn build(self) -> crate::output::DeleteVodSourceOutput {
-            crate::output::DeleteVodSourceOutput {}
+            crate::output::DeleteVodSourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -340,6 +394,7 @@ pub struct UpdateVodSourceOutput {
     /// <p>The name of the VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateVodSourceOutput {
     /// <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
@@ -376,6 +431,11 @@ impl UpdateVodSourceOutput {
         self.vod_source_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateVodSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
 pub mod update_vod_source_output {
 
@@ -393,6 +453,7 @@ pub mod update_vod_source_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the VOD source.</p>
@@ -504,6 +565,15 @@ pub mod update_vod_source_output {
             self.vod_source_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateVodSourceOutput`](crate::output::UpdateVodSourceOutput).
         pub fn build(self) -> crate::output::UpdateVodSourceOutput {
             crate::output::UpdateVodSourceOutput {
@@ -514,6 +584,7 @@ pub mod update_vod_source_output {
                 source_location_name: self.source_location_name,
                 tags: self.tags,
                 vod_source_name: self.vod_source_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -552,6 +623,7 @@ pub struct DescribeVodSourceOutput {
     /// <p>The name of the VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeVodSourceOutput {
     /// <p>The ARN of the VOD source.</p>
@@ -588,6 +660,11 @@ impl DescribeVodSourceOutput {
         self.vod_source_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeVodSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
 pub mod describe_vod_source_output {
 
@@ -605,6 +682,7 @@ pub mod describe_vod_source_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the VOD source.</p>
@@ -716,6 +794,15 @@ pub mod describe_vod_source_output {
             self.vod_source_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeVodSourceOutput`](crate::output::DescribeVodSourceOutput).
         pub fn build(self) -> crate::output::DescribeVodSourceOutput {
             crate::output::DescribeVodSourceOutput {
@@ -726,6 +813,7 @@ pub mod describe_vod_source_output {
                 source_location_name: self.source_location_name,
                 tags: self.tags,
                 vod_source_name: self.vod_source_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -747,6 +835,7 @@ pub struct ListSourceLocationsOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSourceLocationsOutput {
     /// <p>A list of source locations.</p>
@@ -758,6 +847,11 @@ impl ListSourceLocationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSourceLocationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
 pub mod list_source_locations_output {
 
@@ -767,6 +861,7 @@ pub mod list_source_locations_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::SourceLocation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -798,11 +893,21 @@ pub mod list_source_locations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSourceLocationsOutput`](crate::output::ListSourceLocationsOutput).
         pub fn build(self) -> crate::output::ListSourceLocationsOutput {
             crate::output::ListSourceLocationsOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -848,6 +953,7 @@ pub struct CreateSourceLocationOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateSourceLocationOutput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -894,6 +1000,11 @@ impl CreateSourceLocationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSourceLocationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
 pub mod create_source_location_output {
 
@@ -914,6 +1025,7 @@ pub mod create_source_location_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -1054,6 +1166,15 @@ pub mod create_source_location_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSourceLocationOutput`](crate::output::CreateSourceLocationOutput).
         pub fn build(self) -> crate::output::CreateSourceLocationOutput {
             crate::output::CreateSourceLocationOutput {
@@ -1066,6 +1187,7 @@ pub mod create_source_location_output {
                 segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1080,18 +1202,38 @@ impl CreateSourceLocationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSourceLocationOutput {}
+pub struct DeleteSourceLocationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteSourceLocationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
 pub mod delete_source_location_output {
 
     /// A builder for [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSourceLocationOutput`](crate::output::DeleteSourceLocationOutput).
         pub fn build(self) -> crate::output::DeleteSourceLocationOutput {
-            crate::output::DeleteSourceLocationOutput {}
+            crate::output::DeleteSourceLocationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1136,6 +1278,7 @@ pub struct UpdateSourceLocationOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateSourceLocationOutput {
     /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -1182,6 +1325,11 @@ impl UpdateSourceLocationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateSourceLocationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
 pub mod update_source_location_output {
 
@@ -1202,6 +1350,7 @@ pub mod update_source_location_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Access configuration parameters. Configures the type of authentication used to access content from your source location.</p>
@@ -1342,6 +1491,15 @@ pub mod update_source_location_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateSourceLocationOutput`](crate::output::UpdateSourceLocationOutput).
         pub fn build(self) -> crate::output::UpdateSourceLocationOutput {
             crate::output::UpdateSourceLocationOutput {
@@ -1354,6 +1512,7 @@ pub mod update_source_location_output {
                 segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1399,6 +1558,7 @@ pub struct DescribeSourceLocationOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeSourceLocationOutput {
     /// <p>The access configuration for the source location.</p>
@@ -1445,6 +1605,11 @@ impl DescribeSourceLocationOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeSourceLocationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
 pub mod describe_source_location_output {
 
@@ -1465,6 +1630,7 @@ pub mod describe_source_location_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The access configuration for the source location.</p>
@@ -1605,6 +1771,15 @@ pub mod describe_source_location_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeSourceLocationOutput`](crate::output::DescribeSourceLocationOutput).
         pub fn build(self) -> crate::output::DescribeSourceLocationOutput {
             crate::output::DescribeSourceLocationOutput {
@@ -1617,6 +1792,7 @@ pub mod describe_source_location_output {
                 segment_delivery_configurations: self.segment_delivery_configurations,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1638,6 +1814,7 @@ pub struct ListPrefetchSchedulesOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPrefetchSchedulesOutput {
     /// <p>Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there aren't more items to fetch, just that that page was empty.</p>
@@ -1649,6 +1826,11 @@ impl ListPrefetchSchedulesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPrefetchSchedulesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
 pub mod list_prefetch_schedules_output {
 
@@ -1658,6 +1840,7 @@ pub mod list_prefetch_schedules_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PrefetchSchedule>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -1689,11 +1872,21 @@ pub mod list_prefetch_schedules_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPrefetchSchedulesOutput`](crate::output::ListPrefetchSchedulesOutput).
         pub fn build(self) -> crate::output::ListPrefetchSchedulesOutput {
             crate::output::ListPrefetchSchedulesOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1727,6 +1920,7 @@ pub struct CreatePrefetchScheduleOutput {
     /// <p>An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor returns all of the prefetch schedules with an exact match on <code>StreamId</code>. If not specified, MediaTailor returns all of the prefetch schedules for the playback configuration, regardless of <code>StreamId</code>.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreatePrefetchScheduleOutput {
     /// <p>The ARN to assign to the prefetch schedule.</p>
@@ -1754,6 +1948,11 @@ impl CreatePrefetchScheduleOutput {
         self.stream_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreatePrefetchScheduleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
 pub mod create_prefetch_schedule_output {
 
@@ -1767,6 +1966,7 @@ pub mod create_prefetch_schedule_output {
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
         pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN to assign to the prefetch schedule.</p>
@@ -1841,6 +2041,15 @@ pub mod create_prefetch_schedule_output {
             self.stream_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreatePrefetchScheduleOutput`](crate::output::CreatePrefetchScheduleOutput).
         pub fn build(self) -> crate::output::CreatePrefetchScheduleOutput {
             crate::output::CreatePrefetchScheduleOutput {
@@ -1850,6 +2059,7 @@ pub mod create_prefetch_schedule_output {
                 playback_configuration_name: self.playback_configuration_name,
                 retrieval: self.retrieval,
                 stream_id: self.stream_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1864,18 +2074,38 @@ impl CreatePrefetchScheduleOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePrefetchScheduleOutput {}
+pub struct DeletePrefetchScheduleOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeletePrefetchScheduleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
 pub mod delete_prefetch_schedule_output {
 
     /// A builder for [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePrefetchScheduleOutput`](crate::output::DeletePrefetchScheduleOutput).
         pub fn build(self) -> crate::output::DeletePrefetchScheduleOutput {
-            crate::output::DeletePrefetchScheduleOutput {}
+            crate::output::DeletePrefetchScheduleOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1908,6 +2138,7 @@ pub struct GetPrefetchScheduleOutput {
     /// <p>An optional stream identifier that you can specify in order to prefetch for multiple streams that use the same playback configuration.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetPrefetchScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
@@ -1935,6 +2166,11 @@ impl GetPrefetchScheduleOutput {
         self.stream_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPrefetchScheduleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
 pub mod get_prefetch_schedule_output {
 
@@ -1948,6 +2184,7 @@ pub mod get_prefetch_schedule_output {
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
         pub(crate) retrieval: std::option::Option<crate::model::PrefetchRetrieval>,
         pub(crate) stream_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the prefetch schedule.</p>
@@ -2022,6 +2259,15 @@ pub mod get_prefetch_schedule_output {
             self.stream_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPrefetchScheduleOutput`](crate::output::GetPrefetchScheduleOutput).
         pub fn build(self) -> crate::output::GetPrefetchScheduleOutput {
             crate::output::GetPrefetchScheduleOutput {
@@ -2031,6 +2277,7 @@ pub mod get_prefetch_schedule_output {
                 playback_configuration_name: self.playback_configuration_name,
                 retrieval: self.retrieval,
                 stream_id: self.stream_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2052,6 +2299,7 @@ pub struct ListPlaybackConfigurationsOutput {
     /// <p>Pagination token returned by the GET list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPlaybackConfigurationsOutput {
     /// <p>Array of playback configurations. This might be all the available configurations or a subset, depending on the settings that you provide and the total number of configurations stored.</p>
@@ -2063,6 +2311,11 @@ impl ListPlaybackConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPlaybackConfigurationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
 pub mod list_playback_configurations_output {
 
@@ -2072,6 +2325,7 @@ pub mod list_playback_configurations_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::PlaybackConfiguration>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -2103,11 +2357,21 @@ pub mod list_playback_configurations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPlaybackConfigurationsOutput`](crate::output::ListPlaybackConfigurationsOutput).
         pub fn build(self) -> crate::output::ListPlaybackConfigurationsOutput {
             crate::output::ListPlaybackConfigurationsOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2186,6 +2450,7 @@ pub struct PutPlaybackConfigurationOutput {
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     #[doc(hidden)]
     pub video_content_source_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutPlaybackConfigurationOutput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -2279,6 +2544,11 @@ impl PutPlaybackConfigurationOutput {
         self.video_content_source_url.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutPlaybackConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput).
 pub mod put_playback_configuration_output {
 
@@ -2314,6 +2584,7 @@ pub mod put_playback_configuration_output {
         >,
         pub(crate) transcode_profile_name: std::option::Option<std::string::String>,
         pub(crate) video_content_source_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -2590,6 +2861,15 @@ pub mod put_playback_configuration_output {
             self.video_content_source_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutPlaybackConfigurationOutput`](crate::output::PutPlaybackConfigurationOutput).
         pub fn build(self) -> crate::output::PutPlaybackConfigurationOutput {
             crate::output::PutPlaybackConfigurationOutput {
@@ -2614,6 +2894,7 @@ pub mod put_playback_configuration_output {
                 tags: self.tags,
                 transcode_profile_name: self.transcode_profile_name,
                 video_content_source_url: self.video_content_source_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2628,18 +2909,38 @@ impl PutPlaybackConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeletePlaybackConfigurationOutput {}
+pub struct DeletePlaybackConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeletePlaybackConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
 pub mod delete_playback_configuration_output {
 
     /// A builder for [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeletePlaybackConfigurationOutput`](crate::output::DeletePlaybackConfigurationOutput).
         pub fn build(self) -> crate::output::DeletePlaybackConfigurationOutput {
-            crate::output::DeletePlaybackConfigurationOutput {}
+            crate::output::DeletePlaybackConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2717,6 +3018,7 @@ pub struct GetPlaybackConfigurationOutput {
     /// <p>The URL prefix for the parent manifest for the stream, minus the asset ID. The maximum length is 512 characters.</p>
     #[doc(hidden)]
     pub video_content_source_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetPlaybackConfigurationOutput {
     /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -2810,6 +3112,11 @@ impl GetPlaybackConfigurationOutput {
         self.video_content_source_url.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetPlaybackConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetPlaybackConfigurationOutput`](crate::output::GetPlaybackConfigurationOutput).
 pub mod get_playback_configuration_output {
 
@@ -2845,6 +3152,7 @@ pub mod get_playback_configuration_output {
         >,
         pub(crate) transcode_profile_name: std::option::Option<std::string::String>,
         pub(crate) video_content_source_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25,000 characters.</p>
@@ -3121,6 +3429,15 @@ pub mod get_playback_configuration_output {
             self.video_content_source_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPlaybackConfigurationOutput`](crate::output::GetPlaybackConfigurationOutput).
         pub fn build(self) -> crate::output::GetPlaybackConfigurationOutput {
             crate::output::GetPlaybackConfigurationOutput {
@@ -3145,6 +3462,7 @@ pub mod get_playback_configuration_output {
                 tags: self.tags,
                 transcode_profile_name: self.transcode_profile_name,
                 video_content_source_url: self.video_content_source_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3166,6 +3484,7 @@ pub struct ListLiveSourcesOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLiveSourcesOutput {
     /// <p>Lists the live sources.</p>
@@ -3177,6 +3496,11 @@ impl ListLiveSourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLiveSourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
 pub mod list_live_sources_output {
 
@@ -3186,6 +3510,7 @@ pub mod list_live_sources_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::LiveSource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -3217,11 +3542,21 @@ pub mod list_live_sources_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLiveSourcesOutput`](crate::output::ListLiveSourcesOutput).
         pub fn build(self) -> crate::output::ListLiveSourcesOutput {
             crate::output::ListLiveSourcesOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3260,6 +3595,7 @@ pub struct CreateLiveSourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateLiveSourceOutput {
     /// <p>The ARN to assign to the live source.</p>
@@ -3296,6 +3632,11 @@ impl CreateLiveSourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLiveSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
 pub mod create_live_source_output {
 
@@ -3313,6 +3654,7 @@ pub mod create_live_source_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN to assign to the live source.</p>
@@ -3424,6 +3766,15 @@ pub mod create_live_source_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLiveSourceOutput`](crate::output::CreateLiveSourceOutput).
         pub fn build(self) -> crate::output::CreateLiveSourceOutput {
             crate::output::CreateLiveSourceOutput {
@@ -3434,6 +3785,7 @@ pub mod create_live_source_output {
                 live_source_name: self.live_source_name,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3448,18 +3800,38 @@ impl CreateLiveSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLiveSourceOutput {}
+pub struct DeleteLiveSourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteLiveSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
 pub mod delete_live_source_output {
 
     /// A builder for [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLiveSourceOutput`](crate::output::DeleteLiveSourceOutput).
         pub fn build(self) -> crate::output::DeleteLiveSourceOutput {
-            crate::output::DeleteLiveSourceOutput {}
+            crate::output::DeleteLiveSourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3497,6 +3869,7 @@ pub struct UpdateLiveSourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateLiveSourceOutput {
     /// <p>The Amazon Resource Name (ARN) associated with this live source.</p>
@@ -3533,6 +3906,11 @@ impl UpdateLiveSourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLiveSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
 pub mod update_live_source_output {
 
@@ -3550,6 +3928,7 @@ pub mod update_live_source_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with this live source.</p>
@@ -3661,6 +4040,15 @@ pub mod update_live_source_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLiveSourceOutput`](crate::output::UpdateLiveSourceOutput).
         pub fn build(self) -> crate::output::UpdateLiveSourceOutput {
             crate::output::UpdateLiveSourceOutput {
@@ -3671,6 +4059,7 @@ pub mod update_live_source_output {
                 live_source_name: self.live_source_name,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3709,6 +4098,7 @@ pub struct DescribeLiveSourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeLiveSourceOutput {
     /// <p>The ARN of the live source.</p>
@@ -3745,6 +4135,11 @@ impl DescribeLiveSourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLiveSourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
 pub mod describe_live_source_output {
 
@@ -3762,6 +4157,7 @@ pub mod describe_live_source_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the live source.</p>
@@ -3873,6 +4269,15 @@ pub mod describe_live_source_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLiveSourceOutput`](crate::output::DescribeLiveSourceOutput).
         pub fn build(self) -> crate::output::DescribeLiveSourceOutput {
             crate::output::DescribeLiveSourceOutput {
@@ -3883,6 +4288,7 @@ pub mod describe_live_source_output {
                 live_source_name: self.live_source_name,
                 source_location_name: self.source_location_name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3897,18 +4303,38 @@ impl DescribeLiveSourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StopChannelOutput {}
+pub struct StopChannelOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for StopChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StopChannelOutput`](crate::output::StopChannelOutput).
 pub mod stop_channel_output {
 
     /// A builder for [`StopChannelOutput`](crate::output::StopChannelOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopChannelOutput`](crate::output::StopChannelOutput).
         pub fn build(self) -> crate::output::StopChannelOutput {
-            crate::output::StopChannelOutput {}
+            crate::output::StopChannelOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3922,18 +4348,38 @@ impl StopChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct StartChannelOutput {}
+pub struct StartChannelOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for StartChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartChannelOutput`](crate::output::StartChannelOutput).
 pub mod start_channel_output {
 
     /// A builder for [`StartChannelOutput`](crate::output::StartChannelOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartChannelOutput`](crate::output::StartChannelOutput).
         pub fn build(self) -> crate::output::StartChannelOutput {
-            crate::output::StartChannelOutput {}
+            crate::output::StartChannelOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3954,6 +4400,7 @@ pub struct GetChannelScheduleOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetChannelScheduleOutput {
     /// <p>A list of schedule entries for the channel.</p>
@@ -3965,6 +4412,11 @@ impl GetChannelScheduleOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetChannelScheduleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput).
 pub mod get_channel_schedule_output {
 
@@ -3974,6 +4426,7 @@ pub mod get_channel_schedule_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ScheduleEntry>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -4005,11 +4458,21 @@ pub mod get_channel_schedule_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetChannelScheduleOutput`](crate::output::GetChannelScheduleOutput).
         pub fn build(self) -> crate::output::GetChannelScheduleOutput {
             crate::output::GetChannelScheduleOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4056,6 +4519,7 @@ pub struct CreateChannelOutput {
     /// <p>The tier of the channel.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateChannelOutput {
     /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
@@ -4102,6 +4566,11 @@ impl CreateChannelOutput {
         self.tier.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
 pub mod create_channel_output {
 
@@ -4121,6 +4590,7 @@ pub mod create_channel_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) tier: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) to assign to the channel.</p>
@@ -4262,6 +4732,15 @@ pub mod create_channel_output {
             self.tier = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
@@ -4275,6 +4754,7 @@ pub mod create_channel_output {
                 playback_mode: self.playback_mode,
                 tags: self.tags,
                 tier: self.tier,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4296,6 +4776,7 @@ pub struct ListChannelsOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelsOutput {
     /// <p>A list of channels that are associated with this account.</p>
@@ -4307,6 +4788,11 @@ impl ListChannelsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListChannelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
 pub mod list_channels_output {
 
@@ -4316,6 +4802,7 @@ pub mod list_channels_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Channel>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -4347,11 +4834,21 @@ pub mod list_channels_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
         pub fn build(self) -> crate::output::ListChannelsOutput {
             crate::output::ListChannelsOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4366,18 +4863,38 @@ impl ListChannelsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {}
+pub struct DeleteChannelOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
         pub fn build(self) -> crate::output::DeleteChannelOutput {
-            crate::output::DeleteChannelOutput {}
+            crate::output::DeleteChannelOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -4425,6 +4942,7 @@ pub struct UpdateChannelOutput {
     /// <p>The tier associated with this Channel.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateChannelOutput {
     /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
@@ -4473,6 +4991,11 @@ impl UpdateChannelOutput {
         self.tier.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
 pub mod update_channel_output {
 
@@ -4492,6 +5015,7 @@ pub mod update_channel_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) tier: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) associated with the channel.</p>
@@ -4637,6 +5161,15 @@ pub mod update_channel_output {
             self.tier = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
@@ -4650,6 +5183,7 @@ pub mod update_channel_output {
                 playback_mode: self.playback_mode,
                 tags: self.tags,
                 tier: self.tier,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4696,6 +5230,7 @@ pub struct DescribeChannelOutput {
     /// <p>The channel's tier.</p>
     #[doc(hidden)]
     pub tier: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelOutput {
     /// <p>The ARN of the channel.</p>
@@ -4742,6 +5277,11 @@ impl DescribeChannelOutput {
         self.tier.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
 pub mod describe_channel_output {
 
@@ -4761,6 +5301,7 @@ pub mod describe_channel_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) tier: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -4902,6 +5443,15 @@ pub mod describe_channel_output {
             self.tier = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
         pub fn build(self) -> crate::output::DescribeChannelOutput {
             crate::output::DescribeChannelOutput {
@@ -4915,6 +5465,7 @@ pub mod describe_channel_output {
                 playback_mode: self.playback_mode,
                 tags: self.tags,
                 tier: self.tier,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4957,6 +5508,7 @@ pub struct CreateProgramOutput {
     /// <p>The name that's used to refer to a VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateProgramOutput {
     /// <p>The ad break configuration settings.</p>
@@ -4996,6 +5548,11 @@ impl CreateProgramOutput {
         self.vod_source_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateProgramOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateProgramOutput`](crate::output::CreateProgramOutput).
 pub mod create_program_output {
 
@@ -5012,6 +5569,7 @@ pub mod create_program_output {
         pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `ad_breaks`.
@@ -5128,6 +5686,15 @@ pub mod create_program_output {
             self.vod_source_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateProgramOutput`](crate::output::CreateProgramOutput).
         pub fn build(self) -> crate::output::CreateProgramOutput {
             crate::output::CreateProgramOutput {
@@ -5140,6 +5707,7 @@ pub mod create_program_output {
                 scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
                 vod_source_name: self.vod_source_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5154,18 +5722,38 @@ impl CreateProgramOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteProgramOutput {}
+pub struct DeleteProgramOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteProgramOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
 pub mod delete_program_output {
 
     /// A builder for [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteProgramOutput`](crate::output::DeleteProgramOutput).
         pub fn build(self) -> crate::output::DeleteProgramOutput {
-            crate::output::DeleteProgramOutput {}
+            crate::output::DeleteProgramOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5207,6 +5795,7 @@ pub struct DescribeProgramOutput {
     /// <p>The name that's used to refer to a VOD source.</p>
     #[doc(hidden)]
     pub vod_source_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeProgramOutput {
     /// <p>The ad break configuration settings.</p>
@@ -5246,6 +5835,11 @@ impl DescribeProgramOutput {
         self.vod_source_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeProgramOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeProgramOutput`](crate::output::DescribeProgramOutput).
 pub mod describe_program_output {
 
@@ -5262,6 +5856,7 @@ pub mod describe_program_output {
         pub(crate) scheduled_start_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) source_location_name: std::option::Option<std::string::String>,
         pub(crate) vod_source_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `ad_breaks`.
@@ -5378,6 +5973,15 @@ pub mod describe_program_output {
             self.vod_source_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeProgramOutput`](crate::output::DescribeProgramOutput).
         pub fn build(self) -> crate::output::DescribeProgramOutput {
             crate::output::DescribeProgramOutput {
@@ -5390,6 +5994,7 @@ pub mod describe_program_output {
                 scheduled_start_time: self.scheduled_start_time,
                 source_location_name: self.source_location_name,
                 vod_source_name: self.vod_source_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5404,18 +6009,38 @@ impl DescribeProgramOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutChannelPolicyOutput {}
+pub struct PutChannelPolicyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutChannelPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
 pub mod put_channel_policy_output {
 
     /// A builder for [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutChannelPolicyOutput`](crate::output::PutChannelPolicyOutput).
         pub fn build(self) -> crate::output::PutChannelPolicyOutput {
-            crate::output::PutChannelPolicyOutput {}
+            crate::output::PutChannelPolicyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5429,18 +6054,38 @@ impl PutChannelPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelPolicyOutput {}
+pub struct DeleteChannelPolicyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput).
 pub mod delete_channel_policy_output {
 
     /// A builder for [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelPolicyOutput`](crate::output::DeleteChannelPolicyOutput).
         pub fn build(self) -> crate::output::DeleteChannelPolicyOutput {
-            crate::output::DeleteChannelPolicyOutput {}
+            crate::output::DeleteChannelPolicyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5458,11 +6103,17 @@ pub struct GetChannelPolicyOutput {
     /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetChannelPolicyOutput {
     /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetChannelPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
@@ -5473,6 +6124,7 @@ pub mod get_channel_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The IAM policy for the channel. IAM policies are used to control access to your channel.</p>
@@ -5485,10 +6137,20 @@ pub mod get_channel_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetChannelPolicyOutput`](crate::output::GetChannelPolicyOutput).
         pub fn build(self) -> crate::output::GetChannelPolicyOutput {
             crate::output::GetChannelPolicyOutput {
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5503,18 +6165,38 @@ impl GetChannelPolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5528,18 +6210,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5558,6 +6260,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags associated with this resource. Tags are key-value pairs that you can associate with Amazon resources to help with organization, access control, and cost tracking. For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/tagging.html">Tagging AWS Elemental MediaTailor Resources</a>.</p>
@@ -5566,6 +6269,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -5578,6 +6286,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -5605,9 +6314,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -5628,6 +6349,7 @@ pub struct ListAlertsOutput {
     /// <p>Pagination token returned by the list request when results exceed the maximum allowed. Use the token to fetch the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAlertsOutput {
     /// <p>A list of alerts that are associated with this resource.</p>
@@ -5639,6 +6361,11 @@ impl ListAlertsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAlertsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAlertsOutput`](crate::output::ListAlertsOutput).
 pub mod list_alerts_output {
 
@@ -5648,6 +6375,7 @@ pub mod list_alerts_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::Alert>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -5679,11 +6407,21 @@ pub mod list_alerts_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAlertsOutput`](crate::output::ListAlertsOutput).
         pub fn build(self) -> crate::output::ListAlertsOutput {
             crate::output::ListAlertsOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -5705,6 +6443,7 @@ pub struct ConfigureLogsForPlaybackConfigurationOutput {
     /// <p>The name of the playback configuration.</p>
     #[doc(hidden)]
     pub playback_configuration_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ConfigureLogsForPlaybackConfigurationOutput {
     /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
@@ -5716,6 +6455,11 @@ impl ConfigureLogsForPlaybackConfigurationOutput {
         self.playback_configuration_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ConfigureLogsForPlaybackConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput).
 pub mod configure_logs_for_playback_configuration_output {
 
@@ -5725,6 +6469,7 @@ pub mod configure_logs_for_playback_configuration_output {
     pub struct Builder {
         pub(crate) percent_enabled: std::option::Option<i32>,
         pub(crate) playback_configuration_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.</p>
@@ -5753,11 +6498,21 @@ pub mod configure_logs_for_playback_configuration_output {
             self.playback_configuration_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ConfigureLogsForPlaybackConfigurationOutput`](crate::output::ConfigureLogsForPlaybackConfigurationOutput).
         pub fn build(self) -> crate::output::ConfigureLogsForPlaybackConfigurationOutput {
             crate::output::ConfigureLogsForPlaybackConfigurationOutput {
                 percent_enabled: self.percent_enabled.unwrap_or_default(),
                 playback_configuration_name: self.playback_configuration_name,
+                _request_id: self._request_id,
             }
         }
     }

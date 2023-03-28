@@ -6,11 +6,17 @@ pub struct UpdateReportDefinitionOutput {
     /// <p>ID of the report.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateReportDefinitionOutput {
     /// <p>ID of the report.</p>
     pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateReportDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
@@ -21,6 +27,7 @@ pub mod update_report_definition_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>ID of the report.</p>
@@ -33,10 +40,20 @@ pub mod update_report_definition_output {
             self.report_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateReportDefinitionOutput`](crate::output::UpdateReportDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateReportDefinitionOutput {
             crate::output::UpdateReportDefinitionOutput {
                 report_id: self.report_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -55,11 +72,17 @@ pub struct PutReportDefinitionOutput {
     /// <p>ID of the report.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutReportDefinitionOutput {
     /// <p>ID of the report.</p>
     pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for PutReportDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
@@ -70,6 +93,7 @@ pub mod put_report_definition_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>ID of the report.</p>
@@ -82,10 +106,20 @@ pub mod put_report_definition_output {
             self.report_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutReportDefinitionOutput`](crate::output::PutReportDefinitionOutput).
         pub fn build(self) -> crate::output::PutReportDefinitionOutput {
             crate::output::PutReportDefinitionOutput {
                 report_id: self.report_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -107,6 +141,7 @@ pub struct ListReportDefinitionsOutput {
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListReportDefinitionsOutput {
     /// <p>The retrieved reports.</p>
@@ -116,6 +151,11 @@ impl ListReportDefinitionsOutput {
     /// <p>The value of the next token, if it exists. Null if there are no more results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListReportDefinitionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
@@ -128,6 +168,7 @@ pub mod list_report_definitions_output {
         pub(crate) report_definitions:
             std::option::Option<std::vec::Vec<crate::model::ReportDefinition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `report_definitions`.
@@ -159,11 +200,21 @@ pub mod list_report_definitions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListReportDefinitionsOutput`](crate::output::ListReportDefinitionsOutput).
         pub fn build(self) -> crate::output::ListReportDefinitionsOutput {
             crate::output::ListReportDefinitionsOutput {
                 report_definitions: self.report_definitions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -182,11 +233,17 @@ pub struct ImportApplicationUsageOutput {
     /// <p>ID of the import request.</p>
     #[doc(hidden)]
     pub import_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportApplicationUsageOutput {
     /// <p>ID of the import request.</p>
     pub fn import_id(&self) -> std::option::Option<&str> {
         self.import_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ImportApplicationUsageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
@@ -197,6 +254,7 @@ pub mod import_application_usage_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) import_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>ID of the import request.</p>
@@ -209,10 +267,20 @@ pub mod import_application_usage_output {
             self.import_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportApplicationUsageOutput`](crate::output::ImportApplicationUsageOutput).
         pub fn build(self) -> crate::output::ImportApplicationUsageOutput {
             crate::output::ImportApplicationUsageOutput {
                 import_id: self.import_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -249,6 +317,7 @@ pub struct GetReportDefinitionOutput {
     /// <p>Timestamp (milliseconds) when this report definition was last updated.</p>
     #[doc(hidden)]
     pub last_updated: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetReportDefinitionOutput {
     /// <p>ID of the report retrieved.</p>
@@ -280,6 +349,11 @@ impl GetReportDefinitionOutput {
         self.last_updated.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetReportDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
 pub mod get_report_definition_output {
 
@@ -294,6 +368,7 @@ pub mod get_report_definition_output {
         pub(crate) destination_s3_location: std::option::Option<crate::model::S3Location>,
         pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>ID of the report retrieved.</p>
@@ -381,6 +456,15 @@ pub mod get_report_definition_output {
             self.last_updated = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetReportDefinitionOutput`](crate::output::GetReportDefinitionOutput).
         pub fn build(self) -> crate::output::GetReportDefinitionOutput {
             crate::output::GetReportDefinitionOutput {
@@ -391,6 +475,7 @@ pub mod get_report_definition_output {
                 destination_s3_location: self.destination_s3_location,
                 created_at: self.created_at,
                 last_updated: self.last_updated,
+                _request_id: self._request_id,
             }
         }
     }
@@ -409,11 +494,17 @@ pub struct DeleteReportDefinitionOutput {
     /// <p>ID of the report that was deleted.</p>
     #[doc(hidden)]
     pub report_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteReportDefinitionOutput {
     /// <p>ID of the report that was deleted.</p>
     pub fn report_id(&self) -> std::option::Option<&str> {
         self.report_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteReportDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
@@ -424,6 +515,7 @@ pub mod delete_report_definition_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) report_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>ID of the report that was deleted.</p>
@@ -436,10 +528,20 @@ pub mod delete_report_definition_output {
             self.report_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteReportDefinitionOutput`](crate::output::DeleteReportDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteReportDefinitionOutput {
             crate::output::DeleteReportDefinitionOutput {
                 report_id: self.report_id,
+                _request_id: self._request_id,
             }
         }
     }

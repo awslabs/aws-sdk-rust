@@ -33,15 +33,8 @@ pub enum Error {
     ThrottlingException(crate::error::ThrottlingException),
     /// <p>Your signing certificate could not be validated. </p>
     ValidationException(crate::error::ValidationException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -76,34 +69,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateAwsLogSourceError> for Error {
     fn from(err: crate::error::CreateAwsLogSourceError) -> Self {
-        match err.kind {
-            crate::error::CreateAwsLogSourceErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CreateAwsLogSourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateAwsLogSourceErrorKind::AccountNotFoundException(inner) => {
+            crate::error::CreateAwsLogSourceError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::CreateAwsLogSourceErrorKind::InternalServerException(inner) => {
+            crate::error::CreateAwsLogSourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateAwsLogSourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::CreateAwsLogSourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::CreateAwsLogSourceErrorKind::S3Exception(inner) => {
-                Error::S3Exception(inner)
-            }
-            crate::error::CreateAwsLogSourceErrorKind::ValidationException(inner) => {
+            crate::error::CreateAwsLogSourceError::S3Exception(inner) => Error::S3Exception(inner),
+            crate::error::CreateAwsLogSourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateAwsLogSourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAwsLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -119,37 +115,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateCustomLogSourceError> for Error {
     fn from(err: crate::error::CreateCustomLogSourceError) -> Self {
-        match err.kind {
-            crate::error::CreateCustomLogSourceErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CreateCustomLogSourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::AccountNotFoundException(inner) => {
+            crate::error::CreateCustomLogSourceError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::BucketNotFoundException(inner) => {
+            crate::error::CreateCustomLogSourceError::BucketNotFoundException(inner) => {
                 Error::BucketNotFoundException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::ConflictSourceNamesException(inner) => {
+            crate::error::CreateCustomLogSourceError::ConflictSourceNamesException(inner) => {
                 Error::ConflictSourceNamesException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::InternalServerException(inner) => {
+            crate::error::CreateCustomLogSourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::CreateCustomLogSourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::ValidationException(inner) => {
+            crate::error::CreateCustomLogSourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateCustomLogSourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateCustomLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -162,37 +163,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDatalakeError> for Error {
     fn from(err: crate::error::CreateDatalakeError) -> Self {
-        match err.kind {
-            crate::error::CreateDatalakeErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CreateDatalakeError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::ConflictException(inner) => {
+            crate::error::CreateDatalakeError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::InternalServerException(inner) => {
+            crate::error::CreateDatalakeError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::CreateDatalakeError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::CreateDatalakeError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::ThrottlingException(inner) => {
+            crate::error::CreateDatalakeError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::ValidationException(inner) => {
+            crate::error::CreateDatalakeError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateDatalakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -208,27 +214,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDatalakeAutoEnableError> for Error {
     fn from(err: crate::error::CreateDatalakeAutoEnableError) -> Self {
-        match err.kind {
-            crate::error::CreateDatalakeAutoEnableErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CreateDatalakeAutoEnableError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateDatalakeAutoEnableErrorKind::AccountNotFoundException(inner) => {
+            crate::error::CreateDatalakeAutoEnableError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::CreateDatalakeAutoEnableErrorKind::InternalServerException(inner) => {
+            crate::error::CreateDatalakeAutoEnableError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateDatalakeAutoEnableErrorKind::ValidationException(inner) => {
+            crate::error::CreateDatalakeAutoEnableError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateDatalakeAutoEnableErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreateDatalakeAutoEnableError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -245,27 +258,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDatalakeDelegatedAdminError> for Error {
     fn from(err: crate::error::CreateDatalakeDelegatedAdminError) -> Self {
-        match err.kind {
-            crate::error::CreateDatalakeDelegatedAdminErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CreateDatalakeDelegatedAdminError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateDatalakeDelegatedAdminErrorKind::InternalServerException(inner) => {
+            crate::error::CreateDatalakeDelegatedAdminError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateDatalakeDelegatedAdminErrorKind::ThrottlingException(inner) => {
+            crate::error::CreateDatalakeDelegatedAdminError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::CreateDatalakeDelegatedAdminErrorKind::ValidationException(inner) => {
+            crate::error::CreateDatalakeDelegatedAdminError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateDatalakeDelegatedAdminErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreateDatalakeDelegatedAdminError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -290,18 +310,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateDatalakeExceptionsSubscriptionError> for Error {
     fn from(err: crate::error::CreateDatalakeExceptionsSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateDatalakeExceptionsSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateDatalakeExceptionsSubscriptionError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::error::CreateDatalakeExceptionsSubscriptionError::AccountNotFoundException(
+                inner,
+            ) => Error::AccountNotFoundException(inner),
+            crate::error::CreateDatalakeExceptionsSubscriptionError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::error::CreateDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::CreateDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -316,40 +353,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateSubscriberError> for Error {
     fn from(err: crate::error::CreateSubscriberError) -> Self {
-        match err.kind {
-            crate::error::CreateSubscriberErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CreateSubscriberError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::AccountNotFoundException(inner) => {
+            crate::error::CreateSubscriberError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::BucketNotFoundException(inner) => {
+            crate::error::CreateSubscriberError::BucketNotFoundException(inner) => {
                 Error::BucketNotFoundException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::ConflictSubscriptionException(inner) => {
+            crate::error::CreateSubscriberError::ConflictSubscriptionException(inner) => {
                 Error::ConflictSubscriptionException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::InternalServerException(inner) => {
+            crate::error::CreateSubscriberError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::InvalidInputException(inner) => {
+            crate::error::CreateSubscriberError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::CreateSubscriberError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::ValidationException(inner) => {
+            crate::error::CreateSubscriberError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CreateSubscriberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -373,21 +415,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateSubscriptionNotificationConfigurationError> for Error {
     fn from(err: crate::error::CreateSubscriptionNotificationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateSubscriptionNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -402,28 +451,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAwsLogSourceError> for Error {
     fn from(err: crate::error::DeleteAwsLogSourceError) -> Self {
-        match err.kind {
-            crate::error::DeleteAwsLogSourceErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeleteAwsLogSourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteAwsLogSourceErrorKind::AccountNotFoundException(inner) => {
+            crate::error::DeleteAwsLogSourceError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::DeleteAwsLogSourceErrorKind::InternalServerException(inner) => {
+            crate::error::DeleteAwsLogSourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteAwsLogSourceErrorKind::ValidationException(inner) => {
+            crate::error::DeleteAwsLogSourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteAwsLogSourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAwsLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -439,37 +493,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteCustomLogSourceError> for Error {
     fn from(err: crate::error::DeleteCustomLogSourceError) -> Self {
-        match err.kind {
-            crate::error::DeleteCustomLogSourceErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeleteCustomLogSourceError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::AccountNotFoundException(inner) => {
+            crate::error::DeleteCustomLogSourceError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::BucketNotFoundException(inner) => {
+            crate::error::DeleteCustomLogSourceError::BucketNotFoundException(inner) => {
                 Error::BucketNotFoundException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::ConflictSourceNamesException(inner) => {
+            crate::error::DeleteCustomLogSourceError::ConflictSourceNamesException(inner) => {
                 Error::ConflictSourceNamesException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::InternalServerException(inner) => {
+            crate::error::DeleteCustomLogSourceError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::DeleteCustomLogSourceError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::ValidationException(inner) => {
+            crate::error::DeleteCustomLogSourceError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteCustomLogSourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteCustomLogSourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -482,37 +541,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDatalakeError> for Error {
     fn from(err: crate::error::DeleteDatalakeError) -> Self {
-        match err.kind {
-            crate::error::DeleteDatalakeErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeleteDatalakeError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::ConflictException(inner) => {
+            crate::error::DeleteDatalakeError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::InternalServerException(inner) => {
+            crate::error::DeleteDatalakeError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::DeleteDatalakeError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::DeleteDatalakeError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::ThrottlingException(inner) => {
+            crate::error::DeleteDatalakeError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::ValidationException(inner) => {
+            crate::error::DeleteDatalakeError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteDatalakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -528,27 +592,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDatalakeAutoEnableError> for Error {
     fn from(err: crate::error::DeleteDatalakeAutoEnableError) -> Self {
-        match err.kind {
-            crate::error::DeleteDatalakeAutoEnableErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeleteDatalakeAutoEnableError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteDatalakeAutoEnableErrorKind::AccountNotFoundException(inner) => {
+            crate::error::DeleteDatalakeAutoEnableError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::DeleteDatalakeAutoEnableErrorKind::InternalServerException(inner) => {
+            crate::error::DeleteDatalakeAutoEnableError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteDatalakeAutoEnableErrorKind::ValidationException(inner) => {
+            crate::error::DeleteDatalakeAutoEnableError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteDatalakeAutoEnableErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteDatalakeAutoEnableError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -565,27 +636,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDatalakeDelegatedAdminError> for Error {
     fn from(err: crate::error::DeleteDatalakeDelegatedAdminError) -> Self {
-        match err.kind {
-            crate::error::DeleteDatalakeDelegatedAdminErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeleteDatalakeDelegatedAdminError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteDatalakeDelegatedAdminErrorKind::InternalServerException(inner) => {
+            crate::error::DeleteDatalakeDelegatedAdminError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteDatalakeDelegatedAdminErrorKind::ThrottlingException(inner) => {
+            crate::error::DeleteDatalakeDelegatedAdminError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::DeleteDatalakeDelegatedAdminErrorKind::ValidationException(inner) => {
+            crate::error::DeleteDatalakeDelegatedAdminError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteDatalakeDelegatedAdminErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteDatalakeDelegatedAdminError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -610,18 +688,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteDatalakeExceptionsSubscriptionError> for Error {
     fn from(err: crate::error::DeleteDatalakeExceptionsSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteDatalakeExceptionsSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteDatalakeExceptionsSubscriptionError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::error::DeleteDatalakeExceptionsSubscriptionError::AccountNotFoundException(
+                inner,
+            ) => Error::AccountNotFoundException(inner),
+            crate::error::DeleteDatalakeExceptionsSubscriptionError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::error::DeleteDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DeleteDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -636,40 +731,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteSubscriberError> for Error {
     fn from(err: crate::error::DeleteSubscriberError) -> Self {
-        match err.kind {
-            crate::error::DeleteSubscriberErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::DeleteSubscriberError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::AccountNotFoundException(inner) => {
+            crate::error::DeleteSubscriberError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::BucketNotFoundException(inner) => {
+            crate::error::DeleteSubscriberError::BucketNotFoundException(inner) => {
                 Error::BucketNotFoundException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::ConcurrentModificationException(inner) => {
+            crate::error::DeleteSubscriberError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::InternalServerException(inner) => {
+            crate::error::DeleteSubscriberError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::InvalidInputException(inner) => {
+            crate::error::DeleteSubscriberError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::DeleteSubscriberError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::ValidationException(inner) => {
+            crate::error::DeleteSubscriberError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DeleteSubscriberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -693,21 +793,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteSubscriptionNotificationConfigurationError> for Error {
     fn from(err: crate::error::DeleteSubscriptionNotificationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::DeleteSubscriptionNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::DeleteSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -720,31 +827,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDatalakeError> for Error {
     fn from(err: crate::error::GetDatalakeError) -> Self {
-        match err.kind {
-            crate::error::GetDatalakeErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::GetDatalakeError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetDatalakeErrorKind::AccountNotFoundException(inner) => {
+            crate::error::GetDatalakeError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::GetDatalakeErrorKind::InternalServerException(inner) => {
+            crate::error::GetDatalakeError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetDatalakeErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetDatalakeError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetDatalakeErrorKind::ValidationException(inner) => {
+            crate::error::GetDatalakeError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetDatalakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -760,28 +872,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDatalakeAutoEnableError> for Error {
     fn from(err: crate::error::GetDatalakeAutoEnableError) -> Self {
-        match err.kind {
-            crate::error::GetDatalakeAutoEnableErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::GetDatalakeAutoEnableError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetDatalakeAutoEnableErrorKind::AccountNotFoundException(inner) => {
+            crate::error::GetDatalakeAutoEnableError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::GetDatalakeAutoEnableErrorKind::InternalServerException(inner) => {
+            crate::error::GetDatalakeAutoEnableError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetDatalakeAutoEnableErrorKind::ValidationException(inner) => {
+            crate::error::GetDatalakeAutoEnableError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetDatalakeAutoEnableErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDatalakeAutoEnableError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -797,27 +914,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDatalakeExceptionsExpiryError> for Error {
     fn from(err: crate::error::GetDatalakeExceptionsExpiryError) -> Self {
-        match err.kind {
-            crate::error::GetDatalakeExceptionsExpiryErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::GetDatalakeExceptionsExpiryError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetDatalakeExceptionsExpiryErrorKind::AccountNotFoundException(inner) => {
+            crate::error::GetDatalakeExceptionsExpiryError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::GetDatalakeExceptionsExpiryErrorKind::InternalServerException(inner) => {
+            crate::error::GetDatalakeExceptionsExpiryError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetDatalakeExceptionsExpiryErrorKind::ValidationException(inner) => {
+            crate::error::GetDatalakeExceptionsExpiryError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetDatalakeExceptionsExpiryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetDatalakeExceptionsExpiryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -838,27 +962,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDatalakeExceptionsSubscriptionError> for Error {
     fn from(err: crate::error::GetDatalakeExceptionsSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::GetDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException(
-                inner,
-            ) => Error::AccessDeniedException(inner),
-            crate::error::GetDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException(
+        match err {
+            crate::error::GetDatalakeExceptionsSubscriptionError::AccessDeniedException(inner) => {
+                Error::AccessDeniedException(inner)
+            }
+            crate::error::GetDatalakeExceptionsSubscriptionError::AccountNotFoundException(
                 inner,
             ) => Error::AccountNotFoundException(inner),
-            crate::error::GetDatalakeExceptionsSubscriptionErrorKind::InternalServerException(
+            crate::error::GetDatalakeExceptionsSubscriptionError::InternalServerException(
                 inner,
             ) => Error::InternalServerException(inner),
-            crate::error::GetDatalakeExceptionsSubscriptionErrorKind::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::error::GetDatalakeExceptionsSubscriptionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::GetDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -874,28 +1005,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDatalakeStatusError> for Error {
     fn from(err: crate::error::GetDatalakeStatusError) -> Self {
-        match err.kind {
-            crate::error::GetDatalakeStatusErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::GetDatalakeStatusError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetDatalakeStatusErrorKind::AccountNotFoundException(inner) => {
+            crate::error::GetDatalakeStatusError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::GetDatalakeStatusErrorKind::InternalServerException(inner) => {
+            crate::error::GetDatalakeStatusError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetDatalakeStatusErrorKind::ValidationException(inner) => {
+            crate::error::GetDatalakeStatusError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetDatalakeStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetDatalakeStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -908,31 +1044,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSubscriberError> for Error {
     fn from(err: crate::error::GetSubscriberError) -> Self {
-        match err.kind {
-            crate::error::GetSubscriberErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::GetSubscriberError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetSubscriberErrorKind::AccountNotFoundException(inner) => {
+            crate::error::GetSubscriberError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::GetSubscriberErrorKind::InternalServerException(inner) => {
+            crate::error::GetSubscriberError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetSubscriberErrorKind::InvalidInputException(inner) => {
+            crate::error::GetSubscriberError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::GetSubscriberErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetSubscriberError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetSubscriberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -948,28 +1089,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListDatalakeExceptionsError> for Error {
     fn from(err: crate::error::ListDatalakeExceptionsError) -> Self {
-        match err.kind {
-            crate::error::ListDatalakeExceptionsErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListDatalakeExceptionsError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListDatalakeExceptionsErrorKind::AccountNotFoundException(inner) => {
+            crate::error::ListDatalakeExceptionsError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::ListDatalakeExceptionsErrorKind::InternalServerException(inner) => {
+            crate::error::ListDatalakeExceptionsError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListDatalakeExceptionsErrorKind::ValidationException(inner) => {
+            crate::error::ListDatalakeExceptionsError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListDatalakeExceptionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListDatalakeExceptionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -982,31 +1128,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListLogSourcesError> for Error {
     fn from(err: crate::error::ListLogSourcesError) -> Self {
-        match err.kind {
-            crate::error::ListLogSourcesErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListLogSourcesError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListLogSourcesErrorKind::AccountNotFoundException(inner) => {
+            crate::error::ListLogSourcesError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::ListLogSourcesErrorKind::InternalServerException(inner) => {
+            crate::error::ListLogSourcesError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListLogSourcesErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListLogSourcesError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListLogSourcesErrorKind::ValidationException(inner) => {
+            crate::error::ListLogSourcesError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListLogSourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListLogSourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1019,34 +1170,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListSubscribersError> for Error {
     fn from(err: crate::error::ListSubscribersError) -> Self {
-        match err.kind {
-            crate::error::ListSubscribersErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListSubscribersError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListSubscribersErrorKind::AccountNotFoundException(inner) => {
+            crate::error::ListSubscribersError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::ListSubscribersErrorKind::InternalServerException(inner) => {
+            crate::error::ListSubscribersError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListSubscribersErrorKind::InvalidInputException(inner) => {
+            crate::error::ListSubscribersError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::ListSubscribersErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListSubscribersError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListSubscribersErrorKind::ValidationException(inner) => {
+            crate::error::ListSubscribersError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListSubscribersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSubscribersError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1059,31 +1215,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateDatalakeError> for Error {
     fn from(err: crate::error::UpdateDatalakeError) -> Self {
-        match err.kind {
-            crate::error::UpdateDatalakeErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::UpdateDatalakeError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateDatalakeErrorKind::EventBridgeException(inner) => {
+            crate::error::UpdateDatalakeError::EventBridgeException(inner) => {
                 Error::EventBridgeException(inner)
             }
-            crate::error::UpdateDatalakeErrorKind::InternalServerException(inner) => {
+            crate::error::UpdateDatalakeError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::UpdateDatalakeErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::UpdateDatalakeError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::UpdateDatalakeErrorKind::ValidationException(inner) => {
+            crate::error::UpdateDatalakeError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UpdateDatalakeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateDatalakeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1103,27 +1264,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateDatalakeExceptionsExpiryError> for Error {
     fn from(err: crate::error::UpdateDatalakeExceptionsExpiryError) -> Self {
-        match err.kind {
-            crate::error::UpdateDatalakeExceptionsExpiryErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::UpdateDatalakeExceptionsExpiryError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateDatalakeExceptionsExpiryErrorKind::AccountNotFoundException(
-                inner,
-            ) => Error::AccountNotFoundException(inner),
-            crate::error::UpdateDatalakeExceptionsExpiryErrorKind::InternalServerException(
-                inner,
-            ) => Error::InternalServerException(inner),
-            crate::error::UpdateDatalakeExceptionsExpiryErrorKind::ValidationException(inner) => {
+            crate::error::UpdateDatalakeExceptionsExpiryError::AccountNotFoundException(inner) => {
+                Error::AccountNotFoundException(inner)
+            }
+            crate::error::UpdateDatalakeExceptionsExpiryError::InternalServerException(inner) => {
+                Error::InternalServerException(inner)
+            }
+            crate::error::UpdateDatalakeExceptionsExpiryError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UpdateDatalakeExceptionsExpiryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateDatalakeExceptionsExpiryError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1148,18 +1316,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateDatalakeExceptionsSubscriptionError> for Error {
     fn from(err: crate::error::UpdateDatalakeExceptionsSubscriptionError) -> Self {
-        match err.kind {
-            crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateDatalakeExceptionsSubscriptionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateDatalakeExceptionsSubscriptionError::AccessDeniedException(
+                inner,
+            ) => Error::AccessDeniedException(inner),
+            crate::error::UpdateDatalakeExceptionsSubscriptionError::AccountNotFoundException(
+                inner,
+            ) => Error::AccountNotFoundException(inner),
+            crate::error::UpdateDatalakeExceptionsSubscriptionError::InternalServerException(
+                inner,
+            ) => Error::InternalServerException(inner),
+            crate::error::UpdateDatalakeExceptionsSubscriptionError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::UpdateDatalakeExceptionsSubscriptionError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -1174,37 +1359,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateSubscriberError> for Error {
     fn from(err: crate::error::UpdateSubscriberError) -> Self {
-        match err.kind {
-            crate::error::UpdateSubscriberErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::UpdateSubscriberError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::AccountNotFoundException(inner) => {
+            crate::error::UpdateSubscriberError::AccountNotFoundException(inner) => {
                 Error::AccountNotFoundException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::ConcurrentModificationException(inner) => {
+            crate::error::UpdateSubscriberError::ConcurrentModificationException(inner) => {
                 Error::ConcurrentModificationException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::ConflictSubscriptionException(inner) => {
+            crate::error::UpdateSubscriberError::ConflictSubscriptionException(inner) => {
                 Error::ConflictSubscriptionException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::InternalServerException(inner) => {
+            crate::error::UpdateSubscriberError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::InvalidInputException(inner) => {
+            crate::error::UpdateSubscriberError::InvalidInputException(inner) => {
                 Error::InvalidInputException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::ValidationException(inner) => {
+            crate::error::UpdateSubscriberError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::UpdateSubscriberErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateSubscriberError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1228,22 +1418,51 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateSubscriptionNotificationConfigurationError> for Error {
     fn from(err: crate::error::UpdateSubscriptionNotificationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::InternalServerException(inner) => Error::InternalServerException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::InvalidInputException(inner) => Error::InvalidInputException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::UpdateSubscriptionNotificationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::UpdateSubscriptionNotificationConfigurationError::AccessDeniedException(inner) => Error::AccessDeniedException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::AccountNotFoundException(inner) => Error::AccountNotFoundException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::ConcurrentModificationException(inner) => Error::ConcurrentModificationException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::InternalServerException(inner) => Error::InternalServerException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::InvalidInputException(inner) => Error::InvalidInputException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::ResourceNotFoundException(inner) => Error::ResourceNotFoundException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::UpdateSubscriptionNotificationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::AccountNotFoundException(e) => e.request_id(),
+            Self::BucketNotFoundException(e) => e.request_id(),
+            Self::ConcurrentModificationException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::ConflictSourceNamesException(e) => e.request_id(),
+            Self::ConflictSubscriptionException(e) => e.request_id(),
+            Self::EventBridgeException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::InvalidInputException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::S3Exception(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

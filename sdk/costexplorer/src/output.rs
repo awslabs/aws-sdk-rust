@@ -9,6 +9,7 @@ pub struct UpdateCostCategoryDefinitionOutput {
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
@@ -20,6 +21,11 @@ impl UpdateCostCategoryDefinitionOutput {
         self.effective_start.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateCostCategoryDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
 pub mod update_cost_category_definition_output {
 
@@ -29,6 +35,7 @@ pub mod update_cost_category_definition_output {
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_start: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier for your Cost Category. </p>
@@ -57,11 +64,21 @@ pub mod update_cost_category_definition_output {
             self.effective_start = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateCostCategoryDefinitionOutput`](crate::output::UpdateCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateCostCategoryDefinitionOutput {
             crate::output::UpdateCostCategoryDefinitionOutput {
                 cost_category_arn: self.cost_category_arn,
                 effective_start: self.effective_start,
+                _request_id: self._request_id,
             }
         }
     }
@@ -81,6 +98,7 @@ pub struct UpdateCostAllocationTagsStatusOutput {
     #[doc(hidden)]
     pub errors:
         std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+    _request_id: Option<String>,
 }
 impl UpdateCostAllocationTagsStatusOutput {
     /// <p>A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details about each cost allocation tag that can't be updated. If there's no failure, an empty array returns. </p>
@@ -88,6 +106,11 @@ impl UpdateCostAllocationTagsStatusOutput {
         &self,
     ) -> std::option::Option<&[crate::model::UpdateCostAllocationTagsStatusError]> {
         self.errors.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateCostAllocationTagsStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
@@ -99,6 +122,7 @@ pub mod update_cost_allocation_tags_status_output {
     pub struct Builder {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::UpdateCostAllocationTagsStatusError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -122,10 +146,20 @@ pub mod update_cost_allocation_tags_status_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateCostAllocationTagsStatusOutput`](crate::output::UpdateCostAllocationTagsStatusOutput).
         pub fn build(self) -> crate::output::UpdateCostAllocationTagsStatusOutput {
             crate::output::UpdateCostAllocationTagsStatusOutput {
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -144,11 +178,17 @@ pub struct UpdateAnomalySubscriptionOutput {
     /// <p>A cost anomaly subscription ARN. </p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAnomalySubscriptionOutput {
     /// <p>A cost anomaly subscription ARN. </p>
     pub fn subscription_arn(&self) -> std::option::Option<&str> {
         self.subscription_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAnomalySubscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
@@ -159,6 +199,7 @@ pub mod update_anomaly_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A cost anomaly subscription ARN. </p>
@@ -174,10 +215,20 @@ pub mod update_anomaly_subscription_output {
             self.subscription_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAnomalySubscriptionOutput`](crate::output::UpdateAnomalySubscriptionOutput).
         pub fn build(self) -> crate::output::UpdateAnomalySubscriptionOutput {
             crate::output::UpdateAnomalySubscriptionOutput {
                 subscription_arn: self.subscription_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -196,11 +247,17 @@ pub struct UpdateAnomalyMonitorOutput {
     /// <p>A cost anomaly monitor ARN. </p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateAnomalyMonitorOutput {
     /// <p>A cost anomaly monitor ARN. </p>
     pub fn monitor_arn(&self) -> std::option::Option<&str> {
         self.monitor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAnomalyMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
@@ -211,6 +268,7 @@ pub mod update_anomaly_monitor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A cost anomaly monitor ARN. </p>
@@ -223,10 +281,20 @@ pub mod update_anomaly_monitor_output {
             self.monitor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAnomalyMonitorOutput`](crate::output::UpdateAnomalyMonitorOutput).
         pub fn build(self) -> crate::output::UpdateAnomalyMonitorOutput {
             crate::output::UpdateAnomalyMonitorOutput {
                 monitor_arn: self.monitor_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -241,18 +309,38 @@ impl UpdateAnomalyMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -266,18 +354,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -301,6 +409,7 @@ pub struct StartSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The estimated time for when the recommendation generation will complete.</p>
     #[doc(hidden)]
     pub estimated_completion_time: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The ID for this specific recommendation.</p>
@@ -316,6 +425,11 @@ impl StartSavingsPlansPurchaseRecommendationGenerationOutput {
         self.estimated_completion_time.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartSavingsPlansPurchaseRecommendationGenerationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
 pub mod start_savings_plans_purchase_recommendation_generation_output {
 
@@ -326,6 +440,7 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
         pub(crate) recommendation_id: std::option::Option<std::string::String>,
         pub(crate) generation_started_time: std::option::Option<std::string::String>,
         pub(crate) estimated_completion_time: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID for this specific recommendation.</p>
@@ -367,6 +482,15 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
             self.estimated_completion_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::StartSavingsPlansPurchaseRecommendationGenerationOutput).
         pub fn build(
             self,
@@ -375,6 +499,7 @@ pub mod start_savings_plans_purchase_recommendation_generation_output {
                 recommendation_id: self.recommendation_id,
                 generation_started_time: self.generation_started_time,
                 estimated_completion_time: self.estimated_completion_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -394,11 +519,17 @@ pub struct ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
     #[doc(hidden)]
     pub anomaly_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ProvideAnomalyFeedbackOutput {
     /// <p>The ID of the modified cost anomaly. </p>
     pub fn anomaly_id(&self) -> std::option::Option<&str> {
         self.anomaly_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ProvideAnomalyFeedbackOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
@@ -409,6 +540,7 @@ pub mod provide_anomaly_feedback_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) anomaly_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the modified cost anomaly. </p>
@@ -421,10 +553,20 @@ pub mod provide_anomaly_feedback_output {
             self.anomaly_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ProvideAnomalyFeedbackOutput`](crate::output::ProvideAnomalyFeedbackOutput).
         pub fn build(self) -> crate::output::ProvideAnomalyFeedbackOutput {
             crate::output::ProvideAnomalyFeedbackOutput {
                 anomaly_id: self.anomaly_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -443,11 +585,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the resource. </p>
     #[doc(hidden)]
     pub resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>A list of tag key value pairs that are associated with the resource. </p>
     pub fn resource_tags(&self) -> std::option::Option<&[crate::model::ResourceTag]> {
         self.resource_tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -458,6 +606,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_tags: std::option::Option<std::vec::Vec<crate::model::ResourceTag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `resource_tags`.
@@ -479,10 +628,20 @@ pub mod list_tags_for_resource_output {
             self.resource_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 resource_tags: self.resource_tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -505,6 +664,7 @@ pub struct ListSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The token to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
     /// <p>The list of historical recommendation generations.</p>
@@ -518,6 +678,11 @@ impl ListSavingsPlansPurchaseRecommendationGenerationOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSavingsPlansPurchaseRecommendationGenerationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
 pub mod list_savings_plans_purchase_recommendation_generation_output {
 
@@ -528,6 +693,7 @@ pub mod list_savings_plans_purchase_recommendation_generation_output {
         pub(crate) generation_summary_list:
             std::option::Option<std::vec::Vec<crate::model::GenerationSummary>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `generation_summary_list`.
@@ -562,6 +728,15 @@ pub mod list_savings_plans_purchase_recommendation_generation_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSavingsPlansPurchaseRecommendationGenerationOutput`](crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput).
         pub fn build(
             self,
@@ -569,6 +744,7 @@ pub mod list_savings_plans_purchase_recommendation_generation_output {
             crate::output::ListSavingsPlansPurchaseRecommendationGenerationOutput {
                 generation_summary_list: self.generation_summary_list,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -592,6 +768,7 @@ pub struct ListCostCategoryDefinitionsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCostCategoryDefinitionsOutput {
     /// <p>A reference to a Cost Category that contains enough information to identify the Cost Category. </p>
@@ -605,6 +782,11 @@ impl ListCostCategoryDefinitionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListCostCategoryDefinitionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
 pub mod list_cost_category_definitions_output {
 
@@ -615,6 +797,7 @@ pub mod list_cost_category_definitions_output {
         pub(crate) cost_category_references:
             std::option::Option<std::vec::Vec<crate::model::CostCategoryReference>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cost_category_references`.
@@ -649,11 +832,21 @@ pub mod list_cost_category_definitions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCostCategoryDefinitionsOutput`](crate::output::ListCostCategoryDefinitionsOutput).
         pub fn build(self) -> crate::output::ListCostCategoryDefinitionsOutput {
             crate::output::ListCostCategoryDefinitionsOutput {
                 cost_category_references: self.cost_category_references,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -675,6 +868,7 @@ pub struct ListCostAllocationTagsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListCostAllocationTagsOutput {
     /// <p>A list of cost allocation tags that includes the detailed metadata for each one. </p>
@@ -684,6 +878,11 @@ impl ListCostAllocationTagsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListCostAllocationTagsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
@@ -696,6 +895,7 @@ pub mod list_cost_allocation_tags_output {
         pub(crate) cost_allocation_tags:
             std::option::Option<std::vec::Vec<crate::model::CostAllocationTag>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `cost_allocation_tags`.
@@ -727,11 +927,21 @@ pub mod list_cost_allocation_tags_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListCostAllocationTagsOutput`](crate::output::ListCostAllocationTagsOutput).
         pub fn build(self) -> crate::output::ListCostAllocationTagsOutput {
             crate::output::ListCostAllocationTagsOutput {
                 cost_allocation_tags: self.cost_allocation_tags,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -753,6 +963,7 @@ pub struct GetUsageForecastOutput {
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     #[doc(hidden)]
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
+    _request_id: Option<String>,
 }
 impl GetUsageForecastOutput {
     /// <p>How much you're forecasted to use over the forecast period.</p>
@@ -762,6 +973,11 @@ impl GetUsageForecastOutput {
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetUsageForecastOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
@@ -774,6 +990,7 @@ pub mod get_usage_forecast_output {
         pub(crate) total: std::option::Option<crate::model::MetricValue>,
         pub(crate) forecast_results_by_time:
             std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>How much you're forecasted to use over the forecast period.</p>
@@ -805,11 +1022,21 @@ pub mod get_usage_forecast_output {
             self.forecast_results_by_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetUsageForecastOutput`](crate::output::GetUsageForecastOutput).
         pub fn build(self) -> crate::output::GetUsageForecastOutput {
             crate::output::GetUsageForecastOutput {
                 total: self.total,
                 forecast_results_by_time: self.forecast_results_by_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -837,6 +1064,7 @@ pub struct GetTagsOutput {
     /// <p>The total number of query results.</p>
     #[doc(hidden)]
     pub total_size: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl GetTagsOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -856,6 +1084,11 @@ impl GetTagsOutput {
         self.total_size
     }
 }
+impl aws_http::request_id::RequestId for GetTagsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTagsOutput`](crate::output::GetTagsOutput).
 pub mod get_tags_output {
 
@@ -867,6 +1100,7 @@ pub mod get_tags_output {
         pub(crate) tags: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) return_size: std::option::Option<i32>,
         pub(crate) total_size: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -921,6 +1155,15 @@ pub mod get_tags_output {
             self.total_size = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTagsOutput`](crate::output::GetTagsOutput).
         pub fn build(self) -> crate::output::GetTagsOutput {
             crate::output::GetTagsOutput {
@@ -928,6 +1171,7 @@ pub mod get_tags_output {
                 tags: self.tags,
                 return_size: self.return_size,
                 total_size: self.total_size,
+                _request_id: self._request_id,
             }
         }
     }
@@ -956,6 +1200,7 @@ pub struct GetSavingsPlansUtilizationDetailsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetSavingsPlansUtilizationDetailsOutput {
     /// <p>Retrieves a single daily or monthly Savings Plans utilization rate and details for your account.</p>
@@ -977,6 +1222,11 @@ impl GetSavingsPlansUtilizationDetailsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetSavingsPlansUtilizationDetailsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
 pub mod get_savings_plans_utilization_details_output {
 
@@ -989,6 +1239,7 @@ pub mod get_savings_plans_utilization_details_output {
         pub(crate) total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
         pub(crate) time_period: std::option::Option<crate::model::DateInterval>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `savings_plans_utilization_details`.
@@ -1049,6 +1300,15 @@ pub mod get_savings_plans_utilization_details_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationDetailsOutput`](crate::output::GetSavingsPlansUtilizationDetailsOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansUtilizationDetailsOutput {
             crate::output::GetSavingsPlansUtilizationDetailsOutput {
@@ -1056,6 +1316,7 @@ pub mod get_savings_plans_utilization_details_output {
                 total: self.total,
                 time_period: self.time_period,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1078,6 +1339,7 @@ pub struct GetSavingsPlansUtilizationOutput {
     /// <p>The total amount of cost/commitment that you used your Savings Plans, regardless of date ranges.</p>
     #[doc(hidden)]
     pub total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
+    _request_id: Option<String>,
 }
 impl GetSavingsPlansUtilizationOutput {
     /// <p>The amount of cost/commitment that you used your Savings Plans. You can use it to specify date ranges.</p>
@@ -1091,6 +1353,11 @@ impl GetSavingsPlansUtilizationOutput {
         self.total.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSavingsPlansUtilizationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
 pub mod get_savings_plans_utilization_output {
 
@@ -1101,6 +1368,7 @@ pub mod get_savings_plans_utilization_output {
         pub(crate) savings_plans_utilizations_by_time:
             std::option::Option<std::vec::Vec<crate::model::SavingsPlansUtilizationByTime>>,
         pub(crate) total: std::option::Option<crate::model::SavingsPlansUtilizationAggregates>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `savings_plans_utilizations_by_time`.
@@ -1138,11 +1406,21 @@ pub mod get_savings_plans_utilization_output {
             self.total = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSavingsPlansUtilizationOutput`](crate::output::GetSavingsPlansUtilizationOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansUtilizationOutput {
             crate::output::GetSavingsPlansUtilizationOutput {
                 savings_plans_utilizations_by_time: self.savings_plans_utilizations_by_time,
                 total: self.total,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1168,6 +1446,7 @@ pub struct GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetSavingsPlansPurchaseRecommendationOutput {
     /// <p>Information that regards this specific recommendation set.</p>
@@ -1187,6 +1466,11 @@ impl GetSavingsPlansPurchaseRecommendationOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetSavingsPlansPurchaseRecommendationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
 pub mod get_savings_plans_purchase_recommendation_output {
 
@@ -1199,6 +1483,7 @@ pub mod get_savings_plans_purchase_recommendation_output {
         pub(crate) savings_plans_purchase_recommendation:
             std::option::Option<crate::model::SavingsPlansPurchaseRecommendation>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information that regards this specific recommendation set.</p>
@@ -1246,12 +1531,22 @@ pub mod get_savings_plans_purchase_recommendation_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSavingsPlansPurchaseRecommendationOutput`](crate::output::GetSavingsPlansPurchaseRecommendationOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansPurchaseRecommendationOutput {
             crate::output::GetSavingsPlansPurchaseRecommendationOutput {
                 metadata: self.metadata,
                 savings_plans_purchase_recommendation: self.savings_plans_purchase_recommendation,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1274,6 +1569,7 @@ pub struct GetSavingsPlansCoverageOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetSavingsPlansCoverageOutput {
     /// <p>The amount of spend that your Savings Plans covered.</p>
@@ -1287,6 +1583,11 @@ impl GetSavingsPlansCoverageOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetSavingsPlansCoverageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
 pub mod get_savings_plans_coverage_output {
 
@@ -1297,6 +1598,7 @@ pub mod get_savings_plans_coverage_output {
         pub(crate) savings_plans_coverages:
             std::option::Option<std::vec::Vec<crate::model::SavingsPlansCoverage>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `savings_plans_coverages`.
@@ -1331,11 +1633,21 @@ pub mod get_savings_plans_coverage_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSavingsPlansCoverageOutput`](crate::output::GetSavingsPlansCoverageOutput).
         pub fn build(self) -> crate::output::GetSavingsPlansCoverageOutput {
             crate::output::GetSavingsPlansCoverageOutput {
                 savings_plans_coverages: self.savings_plans_coverages,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1367,6 +1679,7 @@ pub struct GetRightsizingRecommendationOutput {
     /// <p>You can use Configuration to customize recommendations across two attributes. You can choose to view recommendations for instances within the same instance families or across different instance families. You can also choose to view your estimated savings that are associated with recommendations with consideration of existing Savings Plans or RI benefits, or neither. </p>
     #[doc(hidden)]
     pub configuration: std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetRightsizingRecommendationOutput {
     /// <p>Information regarding this specific recommendation set.</p>
@@ -1396,6 +1709,11 @@ impl GetRightsizingRecommendationOutput {
         self.configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetRightsizingRecommendationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
 pub mod get_rightsizing_recommendation_output {
 
@@ -1410,6 +1728,7 @@ pub mod get_rightsizing_recommendation_output {
         pub(crate) next_page_token: std::option::Option<std::string::String>,
         pub(crate) configuration:
             std::option::Option<crate::model::RightsizingRecommendationConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information regarding this specific recommendation set.</p>
@@ -1489,6 +1808,15 @@ pub mod get_rightsizing_recommendation_output {
             self.configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRightsizingRecommendationOutput`](crate::output::GetRightsizingRecommendationOutput).
         pub fn build(self) -> crate::output::GetRightsizingRecommendationOutput {
             crate::output::GetRightsizingRecommendationOutput {
@@ -1497,6 +1825,7 @@ pub mod get_rightsizing_recommendation_output {
                 rightsizing_recommendations: self.rightsizing_recommendations,
                 next_page_token: self.next_page_token,
                 configuration: self.configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1521,6 +1850,7 @@ pub struct GetReservationUtilizationOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetReservationUtilizationOutput {
     /// <p>The amount of time that you used your Reserved Instances (RIs).</p>
@@ -1536,6 +1866,11 @@ impl GetReservationUtilizationOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetReservationUtilizationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
 pub mod get_reservation_utilization_output {
 
@@ -1547,6 +1882,7 @@ pub mod get_reservation_utilization_output {
             std::option::Option<std::vec::Vec<crate::model::UtilizationByTime>>,
         pub(crate) total: std::option::Option<crate::model::ReservationAggregates>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `utilizations_by_time`.
@@ -1594,12 +1930,22 @@ pub mod get_reservation_utilization_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetReservationUtilizationOutput`](crate::output::GetReservationUtilizationOutput).
         pub fn build(self) -> crate::output::GetReservationUtilizationOutput {
             crate::output::GetReservationUtilizationOutput {
                 utilizations_by_time: self.utilizations_by_time,
                 total: self.total,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1625,6 +1971,7 @@ pub struct GetReservationPurchaseRecommendationOutput {
     /// <p>The pagination token for the next set of retrievable results.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetReservationPurchaseRecommendationOutput {
     /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
@@ -1644,6 +1991,11 @@ impl GetReservationPurchaseRecommendationOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetReservationPurchaseRecommendationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
 pub mod get_reservation_purchase_recommendation_output {
 
@@ -1656,6 +2008,7 @@ pub mod get_reservation_purchase_recommendation_output {
         pub(crate) recommendations:
             std::option::Option<std::vec::Vec<crate::model::ReservationPurchaseRecommendation>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about this specific recommendation call, such as the time stamp for when Cost Explorer generated this recommendation.</p>
@@ -1711,12 +2064,22 @@ pub mod get_reservation_purchase_recommendation_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetReservationPurchaseRecommendationOutput`](crate::output::GetReservationPurchaseRecommendationOutput).
         pub fn build(self) -> crate::output::GetReservationPurchaseRecommendationOutput {
             crate::output::GetReservationPurchaseRecommendationOutput {
                 metadata: self.metadata,
                 recommendations: self.recommendations,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1741,6 +2104,7 @@ pub struct GetReservationCoverageOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetReservationCoverageOutput {
     /// <p>The amount of time that your reservations covered.</p>
@@ -1756,6 +2120,11 @@ impl GetReservationCoverageOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetReservationCoverageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
 pub mod get_reservation_coverage_output {
 
@@ -1767,6 +2136,7 @@ pub mod get_reservation_coverage_output {
             std::option::Option<std::vec::Vec<crate::model::CoverageByTime>>,
         pub(crate) total: std::option::Option<crate::model::Coverage>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `coverages_by_time`.
@@ -1811,12 +2181,22 @@ pub mod get_reservation_coverage_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetReservationCoverageOutput`](crate::output::GetReservationCoverageOutput).
         pub fn build(self) -> crate::output::GetReservationCoverageOutput {
             crate::output::GetReservationCoverageOutput {
                 coverages_by_time: self.coverages_by_time,
                 total: self.total,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1884,6 +2264,7 @@ pub struct GetDimensionValuesOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDimensionValuesOutput {
     /// <p>The filters that you used to filter your request. Some dimensions are available only for a specific context.</p>
@@ -1944,6 +2325,11 @@ impl GetDimensionValuesOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDimensionValuesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
 pub mod get_dimension_values_output {
 
@@ -1956,6 +2342,7 @@ pub mod get_dimension_values_output {
         pub(crate) return_size: std::option::Option<i32>,
         pub(crate) total_size: std::option::Option<i32>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `dimension_values`.
@@ -2091,6 +2478,15 @@ pub mod get_dimension_values_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDimensionValuesOutput`](crate::output::GetDimensionValuesOutput).
         pub fn build(self) -> crate::output::GetDimensionValuesOutput {
             crate::output::GetDimensionValuesOutput {
@@ -2098,6 +2494,7 @@ pub mod get_dimension_values_output {
                 return_size: self.return_size,
                 total_size: self.total_size,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2119,6 +2516,7 @@ pub struct GetCostForecastOutput {
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     #[doc(hidden)]
     pub forecast_results_by_time: std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
+    _request_id: Option<String>,
 }
 impl GetCostForecastOutput {
     /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
@@ -2128,6 +2526,11 @@ impl GetCostForecastOutput {
     /// <p>The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.</p>
     pub fn forecast_results_by_time(&self) -> std::option::Option<&[crate::model::ForecastResult]> {
         self.forecast_results_by_time.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetCostForecastOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
@@ -2140,6 +2543,7 @@ pub mod get_cost_forecast_output {
         pub(crate) total: std::option::Option<crate::model::MetricValue>,
         pub(crate) forecast_results_by_time:
             std::option::Option<std::vec::Vec<crate::model::ForecastResult>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>How much you are forecasted to spend over the forecast period, in <code>USD</code>.</p>
@@ -2171,11 +2575,21 @@ pub mod get_cost_forecast_output {
             self.forecast_results_by_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCostForecastOutput`](crate::output::GetCostForecastOutput).
         pub fn build(self) -> crate::output::GetCostForecastOutput {
             crate::output::GetCostForecastOutput {
                 total: self.total,
                 forecast_results_by_time: self.forecast_results_by_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2207,6 +2621,7 @@ pub struct GetCostCategoriesOutput {
     /// <p>The total number of objects.</p>
     #[doc(hidden)]
     pub total_size: std::option::Option<i32>,
+    _request_id: Option<String>,
 }
 impl GetCostCategoriesOutput {
     /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -2231,6 +2646,11 @@ impl GetCostCategoriesOutput {
         self.total_size
     }
 }
+impl aws_http::request_id::RequestId for GetCostCategoriesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
 pub mod get_cost_categories_output {
 
@@ -2243,6 +2663,7 @@ pub mod get_cost_categories_output {
         pub(crate) cost_category_values: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) return_size: std::option::Option<i32>,
         pub(crate) total_size: std::option::Option<i32>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the number of objects that are still available for retrieval exceeds the quota, Amazon Web Services returns a NextPageToken value in the response. To retrieve the next batch of objects, provide the marker from the prior call in your next request.</p>
@@ -2318,6 +2739,15 @@ pub mod get_cost_categories_output {
             self.total_size = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCostCategoriesOutput`](crate::output::GetCostCategoriesOutput).
         pub fn build(self) -> crate::output::GetCostCategoriesOutput {
             crate::output::GetCostCategoriesOutput {
@@ -2326,6 +2756,7 @@ pub mod get_cost_categories_output {
                 cost_category_values: self.cost_category_values,
                 return_size: self.return_size,
                 total_size: self.total_size,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2354,6 +2785,7 @@ pub struct GetCostAndUsageWithResourcesOutput {
     #[doc(hidden)]
     pub dimension_value_attributes:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+    _request_id: Option<String>,
 }
 impl GetCostAndUsageWithResourcesOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -2375,6 +2807,11 @@ impl GetCostAndUsageWithResourcesOutput {
         self.dimension_value_attributes.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCostAndUsageWithResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
 pub mod get_cost_and_usage_with_resources_output {
 
@@ -2388,6 +2825,7 @@ pub mod get_cost_and_usage_with_resources_output {
         pub(crate) results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
         pub(crate) dimension_value_attributes:
             std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -2463,6 +2901,15 @@ pub mod get_cost_and_usage_with_resources_output {
             self.dimension_value_attributes = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCostAndUsageWithResourcesOutput`](crate::output::GetCostAndUsageWithResourcesOutput).
         pub fn build(self) -> crate::output::GetCostAndUsageWithResourcesOutput {
             crate::output::GetCostAndUsageWithResourcesOutput {
@@ -2470,6 +2917,7 @@ pub mod get_cost_and_usage_with_resources_output {
                 group_definitions: self.group_definitions,
                 results_by_time: self.results_by_time,
                 dimension_value_attributes: self.dimension_value_attributes,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2498,6 +2946,7 @@ pub struct GetCostAndUsageOutput {
     #[doc(hidden)]
     pub dimension_value_attributes:
         std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+    _request_id: Option<String>,
 }
 impl GetCostAndUsageOutput {
     /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -2519,6 +2968,11 @@ impl GetCostAndUsageOutput {
         self.dimension_value_attributes.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetCostAndUsageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
 pub mod get_cost_and_usage_output {
 
@@ -2532,6 +2986,7 @@ pub mod get_cost_and_usage_output {
         pub(crate) results_by_time: std::option::Option<std::vec::Vec<crate::model::ResultByTime>>,
         pub(crate) dimension_value_attributes:
             std::option::Option<std::vec::Vec<crate::model::DimensionValuesWithAttributes>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The token for the next set of retrievable results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size.</p>
@@ -2607,6 +3062,15 @@ pub mod get_cost_and_usage_output {
             self.dimension_value_attributes = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCostAndUsageOutput`](crate::output::GetCostAndUsageOutput).
         pub fn build(self) -> crate::output::GetCostAndUsageOutput {
             crate::output::GetCostAndUsageOutput {
@@ -2614,6 +3078,7 @@ pub mod get_cost_and_usage_output {
                 group_definitions: self.group_definitions,
                 results_by_time: self.results_by_time,
                 dimension_value_attributes: self.dimension_value_attributes,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2636,6 +3101,7 @@ pub struct GetAnomalySubscriptionsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAnomalySubscriptionsOutput {
     /// <p>A list of cost anomaly subscriptions that includes the detailed metadata for each one. </p>
@@ -2649,6 +3115,11 @@ impl GetAnomalySubscriptionsOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAnomalySubscriptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
 pub mod get_anomaly_subscriptions_output {
 
@@ -2659,6 +3130,7 @@ pub mod get_anomaly_subscriptions_output {
         pub(crate) anomaly_subscriptions:
             std::option::Option<std::vec::Vec<crate::model::AnomalySubscription>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomaly_subscriptions`.
@@ -2693,11 +3165,21 @@ pub mod get_anomaly_subscriptions_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAnomalySubscriptionsOutput`](crate::output::GetAnomalySubscriptionsOutput).
         pub fn build(self) -> crate::output::GetAnomalySubscriptionsOutput {
             crate::output::GetAnomalySubscriptionsOutput {
                 anomaly_subscriptions: self.anomaly_subscriptions,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2719,6 +3201,7 @@ pub struct GetAnomalyMonitorsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAnomalyMonitorsOutput {
     /// <p>A list of cost anomaly monitors that includes the detailed metadata for each monitor. </p>
@@ -2728,6 +3211,11 @@ impl GetAnomalyMonitorsOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     pub fn next_page_token(&self) -> std::option::Option<&str> {
         self.next_page_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAnomalyMonitorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
@@ -2740,6 +3228,7 @@ pub mod get_anomaly_monitors_output {
         pub(crate) anomaly_monitors:
             std::option::Option<std::vec::Vec<crate::model::AnomalyMonitor>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomaly_monitors`.
@@ -2774,11 +3263,21 @@ pub mod get_anomaly_monitors_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAnomalyMonitorsOutput`](crate::output::GetAnomalyMonitorsOutput).
         pub fn build(self) -> crate::output::GetAnomalyMonitorsOutput {
             crate::output::GetAnomalyMonitorsOutput {
                 anomaly_monitors: self.anomaly_monitors,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2800,6 +3299,7 @@ pub struct GetAnomaliesOutput {
     /// <p>The token to retrieve the next set of results. Amazon Web Services provides the token when the response from a previous call has more results than the maximum page size. </p>
     #[doc(hidden)]
     pub next_page_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAnomaliesOutput {
     /// <p>A list of cost anomalies. </p>
@@ -2811,6 +3311,11 @@ impl GetAnomaliesOutput {
         self.next_page_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAnomaliesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
 pub mod get_anomalies_output {
 
@@ -2820,6 +3325,7 @@ pub mod get_anomalies_output {
     pub struct Builder {
         pub(crate) anomalies: std::option::Option<std::vec::Vec<crate::model::Anomaly>>,
         pub(crate) next_page_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `anomalies`.
@@ -2854,11 +3360,21 @@ pub mod get_anomalies_output {
             self.next_page_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAnomaliesOutput`](crate::output::GetAnomaliesOutput).
         pub fn build(self) -> crate::output::GetAnomaliesOutput {
             crate::output::GetAnomaliesOutput {
                 anomalies: self.anomalies,
                 next_page_token: self.next_page_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2877,11 +3393,17 @@ pub struct DescribeCostCategoryDefinitionOutput {
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
     #[doc(hidden)]
     pub cost_category: std::option::Option<crate::model::CostCategory>,
+    _request_id: Option<String>,
 }
 impl DescribeCostCategoryDefinitionOutput {
     /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
     pub fn cost_category(&self) -> std::option::Option<&crate::model::CostCategory> {
         self.cost_category.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeCostCategoryDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
@@ -2892,6 +3414,7 @@ pub mod describe_cost_category_definition_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cost_category: std::option::Option<crate::model::CostCategory>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The structure of Cost Categories. This includes detailed metadata and the set of rules for the <code>CostCategory</code> object.</p>
@@ -2907,10 +3430,20 @@ pub mod describe_cost_category_definition_output {
             self.cost_category = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeCostCategoryDefinitionOutput`](crate::output::DescribeCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::DescribeCostCategoryDefinitionOutput {
             crate::output::DescribeCostCategoryDefinitionOutput {
                 cost_category: self.cost_category,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2932,6 +3465,7 @@ pub struct DeleteCostCategoryDefinitionOutput {
     /// <p>The effective end date of the Cost Category as a result of deleting it. No costs after this date is categorized by the deleted Cost Category. </p>
     #[doc(hidden)]
     pub effective_end: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your Cost Category. </p>
@@ -2943,6 +3477,11 @@ impl DeleteCostCategoryDefinitionOutput {
         self.effective_end.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteCostCategoryDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
 pub mod delete_cost_category_definition_output {
 
@@ -2952,6 +3491,7 @@ pub mod delete_cost_category_definition_output {
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_end: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier for your Cost Category. </p>
@@ -2980,11 +3520,21 @@ pub mod delete_cost_category_definition_output {
             self.effective_end = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteCostCategoryDefinitionOutput`](crate::output::DeleteCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::DeleteCostCategoryDefinitionOutput {
             crate::output::DeleteCostCategoryDefinitionOutput {
                 cost_category_arn: self.cost_category_arn,
                 effective_end: self.effective_end,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2999,18 +3549,38 @@ impl DeleteCostCategoryDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalySubscriptionOutput {}
+pub struct DeleteAnomalySubscriptionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAnomalySubscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
 pub mod delete_anomaly_subscription_output {
 
     /// A builder for [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAnomalySubscriptionOutput`](crate::output::DeleteAnomalySubscriptionOutput).
         pub fn build(self) -> crate::output::DeleteAnomalySubscriptionOutput {
-            crate::output::DeleteAnomalySubscriptionOutput {}
+            crate::output::DeleteAnomalySubscriptionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3024,18 +3594,38 @@ impl DeleteAnomalySubscriptionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAnomalyMonitorOutput {}
+pub struct DeleteAnomalyMonitorOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAnomalyMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
 pub mod delete_anomaly_monitor_output {
 
     /// A builder for [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAnomalyMonitorOutput`](crate::output::DeleteAnomalyMonitorOutput).
         pub fn build(self) -> crate::output::DeleteAnomalyMonitorOutput {
-            crate::output::DeleteAnomalyMonitorOutput {}
+            crate::output::DeleteAnomalyMonitorOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -3056,6 +3646,7 @@ pub struct CreateCostCategoryDefinitionOutput {
     /// <p>The Cost Category's effective start date. It can only be a billing start date (first day of the month).</p>
     #[doc(hidden)]
     pub effective_start: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateCostCategoryDefinitionOutput {
     /// <p>The unique identifier for your newly created Cost Category. </p>
@@ -3067,6 +3658,11 @@ impl CreateCostCategoryDefinitionOutput {
         self.effective_start.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateCostCategoryDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
 pub mod create_cost_category_definition_output {
 
@@ -3076,6 +3672,7 @@ pub mod create_cost_category_definition_output {
     pub struct Builder {
         pub(crate) cost_category_arn: std::option::Option<std::string::String>,
         pub(crate) effective_start: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier for your newly created Cost Category. </p>
@@ -3104,11 +3701,21 @@ pub mod create_cost_category_definition_output {
             self.effective_start = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateCostCategoryDefinitionOutput`](crate::output::CreateCostCategoryDefinitionOutput).
         pub fn build(self) -> crate::output::CreateCostCategoryDefinitionOutput {
             crate::output::CreateCostCategoryDefinitionOutput {
                 cost_category_arn: self.cost_category_arn,
                 effective_start: self.effective_start,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3127,11 +3734,17 @@ pub struct CreateAnomalySubscriptionOutput {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
     #[doc(hidden)]
     pub subscription_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAnomalySubscriptionOutput {
     /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
     pub fn subscription_arn(&self) -> std::option::Option<&str> {
         self.subscription_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAnomalySubscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
@@ -3142,6 +3755,7 @@ pub mod create_anomaly_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) subscription_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of your newly created cost anomaly subscription. </p>
@@ -3157,10 +3771,20 @@ pub mod create_anomaly_subscription_output {
             self.subscription_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAnomalySubscriptionOutput`](crate::output::CreateAnomalySubscriptionOutput).
         pub fn build(self) -> crate::output::CreateAnomalySubscriptionOutput {
             crate::output::CreateAnomalySubscriptionOutput {
                 subscription_arn: self.subscription_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3179,11 +3803,17 @@ pub struct CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     #[doc(hidden)]
     pub monitor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAnomalyMonitorOutput {
     /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
     pub fn monitor_arn(&self) -> std::option::Option<&str> {
         self.monitor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAnomalyMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
@@ -3194,6 +3824,7 @@ pub mod create_anomaly_monitor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) monitor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of your newly created cost anomaly detection monitor.</p>
@@ -3206,10 +3837,20 @@ pub mod create_anomaly_monitor_output {
             self.monitor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAnomalyMonitorOutput`](crate::output::CreateAnomalyMonitorOutput).
         pub fn build(self) -> crate::output::CreateAnomalyMonitorOutput {
             crate::output::CreateAnomalyMonitorOutput {
                 monitor_arn: self.monitor_arn,
+                _request_id: self._request_id,
             }
         }
     }

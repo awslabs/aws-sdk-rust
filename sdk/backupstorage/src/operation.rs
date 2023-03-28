@@ -23,6 +23,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
     type Output =
         std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_object_error(response)
         } else {
@@ -134,6 +135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListChunks {
     type Output =
         std::result::Result<crate::output::ListChunksOutput, crate::error::ListChunksError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_chunks_error(response)
         } else {
@@ -166,6 +168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjects {
     type Output =
         std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_objects_error(response)
         } else {
@@ -200,6 +203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for NotifyObjectComplete {
         crate::error::NotifyObjectCompleteError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_notify_object_complete_error(response)
         } else {
@@ -231,6 +235,7 @@ impl PutChunk {
 impl aws_smithy_http::response::ParseStrictResponse for PutChunk {
     type Output = std::result::Result<crate::output::PutChunkOutput, crate::error::PutChunkError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_chunk_error(response)
         } else {
@@ -262,6 +267,7 @@ impl PutObject {
 impl aws_smithy_http::response::ParseStrictResponse for PutObject {
     type Output = std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_error(response)
         } else {
@@ -294,6 +300,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartObject {
     type Output =
         std::result::Result<crate::output::StartObjectOutput, crate::error::StartObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_object_error(response)
         } else {

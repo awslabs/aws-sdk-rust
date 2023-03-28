@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateAccounts {
         crate::error::AssociateAccountsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_accounts_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePricingRules {
         crate::error::AssociatePricingRulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_pricing_rules_error(response)
         } else {
@@ -93,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchAssociateResourcesT
         crate::error::BatchAssociateResourcesToCustomLineItemError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_batch_associate_resources_to_custom_line_item_error(
                 response,
@@ -134,6 +137,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::BatchDisassociateResourcesFromCustomLineItemError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_batch_disassociate_resources_from_custom_line_item_error(
                 response,
@@ -170,6 +174,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBillingGroup {
         crate::error::CreateBillingGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_billing_group_error(response)
         } else {
@@ -204,6 +209,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomLineItem {
         crate::error::CreateCustomLineItemError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_custom_line_item_error(response)
         } else {
@@ -238,6 +244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingPlan {
         crate::error::CreatePricingPlanError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_pricing_plan_error(response)
         } else {
@@ -272,6 +279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreatePricingRule {
         crate::error::CreatePricingRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_pricing_rule_error(response)
         } else {
@@ -306,6 +314,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBillingGroup {
         crate::error::DeleteBillingGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_billing_group_error(response)
         } else {
@@ -340,6 +349,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomLineItem {
         crate::error::DeleteCustomLineItemError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_custom_line_item_error(response)
         } else {
@@ -374,6 +384,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingPlan {
         crate::error::DeletePricingPlanError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_pricing_plan_error(response)
         } else {
@@ -408,6 +419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePricingRule {
         crate::error::DeletePricingRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_pricing_rule_error(response)
         } else {
@@ -442,6 +454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateAccounts {
         crate::error::DisassociateAccountsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_accounts_error(response)
         } else {
@@ -476,6 +489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePricingRules
         crate::error::DisassociatePricingRulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_pricing_rules_error(response)
         } else {
@@ -510,6 +524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccountAssociations 
         crate::error::ListAccountAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_account_associations_error(response)
         } else {
@@ -544,6 +559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroupCostRepo
         crate::error::ListBillingGroupCostReportsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_billing_group_cost_reports_error(response)
         } else {
@@ -578,6 +594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBillingGroups {
         crate::error::ListBillingGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_billing_groups_error(response)
         } else {
@@ -612,6 +629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItems {
         crate::error::ListCustomLineItemsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_custom_line_items_error(response)
         } else {
@@ -646,6 +664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomLineItemVersio
         crate::error::ListCustomLineItemVersionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_custom_line_item_versions_error(response)
         } else {
@@ -680,6 +699,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlans {
         crate::error::ListPricingPlansError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_pricing_plans_error(response)
         } else {
@@ -715,6 +735,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingPlansAssociat
         crate::error::ListPricingPlansAssociatedWithPricingRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_pricing_plans_associated_with_pricing_rule_error(
                 response,
@@ -753,6 +774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRules {
         crate::error::ListPricingRulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_pricing_rules_error(response)
         } else {
@@ -787,6 +809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPricingRulesAssociat
         crate::error::ListPricingRulesAssociatedToPricingPlanError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_pricing_rules_associated_to_pricing_plan_error(
                 response,
@@ -825,6 +848,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourcesAssociatedT
         crate::error::ListResourcesAssociatedToCustomLineItemError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resources_associated_to_custom_line_item_error(
                 response,
@@ -863,6 +887,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
         crate::error::ListTagsForResourceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
@@ -895,6 +920,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -927,6 +953,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -961,6 +988,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateBillingGroup {
         crate::error::UpdateBillingGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_billing_group_error(response)
         } else {
@@ -995,6 +1023,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateCustomLineItem {
         crate::error::UpdateCustomLineItemError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_custom_line_item_error(response)
         } else {
@@ -1029,6 +1058,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingPlan {
         crate::error::UpdatePricingPlanError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_pricing_plan_error(response)
         } else {
@@ -1063,6 +1093,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePricingRule {
         crate::error::UpdatePricingRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_pricing_rule_error(response)
         } else {

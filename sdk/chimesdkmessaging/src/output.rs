@@ -9,6 +9,7 @@ pub struct UpdateChannelReadMarkerOutput {
     /// <p>The ID of the SubChannel in the response.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateChannelReadMarkerOutput {
     /// <p>The ARN of the channel.</p>
@@ -20,6 +21,11 @@ impl UpdateChannelReadMarkerOutput {
         self.sub_channel_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateChannelReadMarkerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
 pub mod update_channel_read_marker_output {
 
@@ -29,6 +35,7 @@ pub mod update_channel_read_marker_output {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -54,11 +61,21 @@ pub mod update_channel_read_marker_output {
             self.sub_channel_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelReadMarkerOutput`](crate::output::UpdateChannelReadMarkerOutput).
         pub fn build(self) -> crate::output::UpdateChannelReadMarkerOutput {
             crate::output::UpdateChannelReadMarkerOutput {
                 channel_arn: self.channel_arn,
                 sub_channel_id: self.sub_channel_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -86,6 +103,7 @@ pub struct UpdateChannelMessageOutput {
     /// <p>The ID of the SubChannel in the response.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
@@ -105,6 +123,11 @@ impl UpdateChannelMessageOutput {
         self.sub_channel_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateChannelMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
 pub mod update_channel_message_output {
 
@@ -116,6 +139,7 @@ pub mod update_channel_message_output {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
         pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -164,6 +188,15 @@ pub mod update_channel_message_output {
             self.sub_channel_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelMessageOutput`](crate::output::UpdateChannelMessageOutput).
         pub fn build(self) -> crate::output::UpdateChannelMessageOutput {
             crate::output::UpdateChannelMessageOutput {
@@ -171,6 +204,7 @@ pub mod update_channel_message_output {
                 message_id: self.message_id,
                 status: self.status,
                 sub_channel_id: self.sub_channel_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -189,11 +223,17 @@ pub struct UpdateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
     pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput).
@@ -204,6 +244,7 @@ pub mod update_channel_flow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel flow.</p>
@@ -219,10 +260,20 @@ pub mod update_channel_flow_output {
             self.channel_flow_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelFlowOutput`](crate::output::UpdateChannelFlowOutput).
         pub fn build(self) -> crate::output::UpdateChannelFlowOutput {
             crate::output::UpdateChannelFlowOutput {
                 channel_flow_arn: self.channel_flow_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -241,11 +292,17 @@ pub struct UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
@@ -256,6 +313,7 @@ pub mod update_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -268,10 +326,20 @@ pub mod update_channel_output {
             self.channel_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateChannelOutput`](crate::output::UpdateChannelOutput).
         pub fn build(self) -> crate::output::UpdateChannelOutput {
             crate::output::UpdateChannelOutput {
                 channel_arn: self.channel_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -286,18 +354,38 @@ impl UpdateChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -311,18 +399,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -349,6 +457,7 @@ pub struct SendChannelMessageOutput {
     /// <p>The ID of the SubChannel in the response.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SendChannelMessageOutput {
     /// <p>The ARN of the channel.</p>
@@ -368,6 +477,11 @@ impl SendChannelMessageOutput {
         self.sub_channel_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for SendChannelMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
 pub mod send_channel_message_output {
 
@@ -379,6 +493,7 @@ pub mod send_channel_message_output {
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
         pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -427,6 +542,15 @@ pub mod send_channel_message_output {
             self.sub_channel_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendChannelMessageOutput`](crate::output::SendChannelMessageOutput).
         pub fn build(self) -> crate::output::SendChannelMessageOutput {
             crate::output::SendChannelMessageOutput {
@@ -434,6 +558,7 @@ pub mod send_channel_message_output {
                 message_id: self.message_id,
                 status: self.status,
                 sub_channel_id: self.sub_channel_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -455,6 +580,7 @@ pub struct SearchChannelsOutput {
     /// <p>The token returned from previous API responses until the number of channels is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SearchChannelsOutput {
     /// <p>A list of the channels in the request.</p>
@@ -471,7 +597,13 @@ impl std::fmt::Debug for SearchChannelsOutput {
         let mut formatter = f.debug_struct("SearchChannelsOutput");
         formatter.field("channels", &self.channels);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for SearchChannelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`SearchChannelsOutput`](crate::output::SearchChannelsOutput).
@@ -483,6 +615,7 @@ pub mod search_channels_output {
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channels`.
@@ -514,11 +647,21 @@ pub mod search_channels_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SearchChannelsOutput`](crate::output::SearchChannelsOutput).
         pub fn build(self) -> crate::output::SearchChannelsOutput {
             crate::output::SearchChannelsOutput {
                 channels: self.channels,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -527,6 +670,7 @@ pub mod search_channels_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("channels", &self.channels);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -553,6 +697,7 @@ pub struct RedactChannelMessageOutput {
     /// </note>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RedactChannelMessageOutput {
     /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -570,6 +715,11 @@ impl RedactChannelMessageOutput {
         self.sub_channel_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RedactChannelMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
 pub mod redact_channel_message_output {
 
@@ -580,6 +730,7 @@ pub mod redact_channel_message_output {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) message_id: std::option::Option<std::string::String>,
         pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel containing the messages that you want to redact.</p>
@@ -619,12 +770,22 @@ pub mod redact_channel_message_output {
             self.sub_channel_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RedactChannelMessageOutput`](crate::output::RedactChannelMessageOutput).
         pub fn build(self) -> crate::output::RedactChannelMessageOutput {
             crate::output::RedactChannelMessageOutput {
                 channel_arn: self.channel_arn,
                 message_id: self.message_id,
                 sub_channel_id: self.sub_channel_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -649,6 +810,7 @@ pub struct PutChannelMembershipPreferencesOutput {
     /// <p>The ARN and metadata of the member being added.</p>
     #[doc(hidden)]
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+    _request_id: Option<String>,
 }
 impl PutChannelMembershipPreferencesOutput {
     /// <p>The ARN of the channel.</p>
@@ -664,6 +826,11 @@ impl PutChannelMembershipPreferencesOutput {
         self.preferences.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for PutChannelMembershipPreferencesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput).
 pub mod put_channel_membership_preferences_output {
 
@@ -674,6 +841,7 @@ pub mod put_channel_membership_preferences_output {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -709,12 +877,22 @@ pub mod put_channel_membership_preferences_output {
             self.preferences = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutChannelMembershipPreferencesOutput`](crate::output::PutChannelMembershipPreferencesOutput).
         pub fn build(self) -> crate::output::PutChannelMembershipPreferencesOutput {
             crate::output::PutChannelMembershipPreferencesOutput {
                 channel_arn: self.channel_arn,
                 member: self.member,
                 preferences: self.preferences,
+                _request_id: self._request_id,
             }
         }
     }
@@ -733,11 +911,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tag key-value pairs.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -748,6 +932,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -769,9 +954,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -795,6 +992,7 @@ pub struct ListSubChannelsOutput {
     /// <p>The token passed by previous API calls until all requested sub-channels are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSubChannelsOutput {
     /// <p>The ARN of elastic channel.</p>
@@ -816,7 +1014,13 @@ impl std::fmt::Debug for ListSubChannelsOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("sub_channels", &self.sub_channels);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListSubChannelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
@@ -830,6 +1034,7 @@ pub mod list_sub_channels_output {
         pub(crate) sub_channels:
             std::option::Option<std::vec::Vec<crate::model::SubChannelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of elastic channel.</p>
@@ -871,12 +1076,22 @@ pub mod list_sub_channels_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSubChannelsOutput`](crate::output::ListSubChannelsOutput).
         pub fn build(self) -> crate::output::ListSubChannelsOutput {
             crate::output::ListSubChannelsOutput {
                 channel_arn: self.channel_arn,
                 sub_channels: self.sub_channels,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -886,6 +1101,7 @@ pub mod list_sub_channels_output {
             formatter.field("channel_arn", &self.channel_arn);
             formatter.field("sub_channels", &self.sub_channels);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -908,6 +1124,7 @@ pub struct ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The token returned from previous API requests until the number of channels moderated by the user is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelsModeratedByAppInstanceUserOutput {
     /// <p>The moderated channels in the request.</p>
@@ -926,7 +1143,13 @@ impl std::fmt::Debug for ListChannelsModeratedByAppInstanceUserOutput {
         let mut formatter = f.debug_struct("ListChannelsModeratedByAppInstanceUserOutput");
         formatter.field("channels", &self.channels);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelsModeratedByAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput).
@@ -940,6 +1163,7 @@ pub mod list_channels_moderated_by_app_instance_user_output {
             std::vec::Vec<crate::model::ChannelModeratedByAppInstanceUserSummary>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channels`.
@@ -976,11 +1200,21 @@ pub mod list_channels_moderated_by_app_instance_user_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelsModeratedByAppInstanceUserOutput`](crate::output::ListChannelsModeratedByAppInstanceUserOutput).
         pub fn build(self) -> crate::output::ListChannelsModeratedByAppInstanceUserOutput {
             crate::output::ListChannelsModeratedByAppInstanceUserOutput {
                 channels: self.channels,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -989,6 +1223,7 @@ pub mod list_channels_moderated_by_app_instance_user_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("channels", &self.channels);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1012,6 +1247,7 @@ pub struct ListChannelsAssociatedWithChannelFlowOutput {
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelsAssociatedWithChannelFlowOutput {
     /// <p>The information about each channel.</p>
@@ -1030,7 +1266,13 @@ impl std::fmt::Debug for ListChannelsAssociatedWithChannelFlowOutput {
         let mut formatter = f.debug_struct("ListChannelsAssociatedWithChannelFlowOutput");
         formatter.field("channels", &self.channels);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelsAssociatedWithChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput).
@@ -1043,6 +1285,7 @@ pub mod list_channels_associated_with_channel_flow_output {
         pub(crate) channels:
             std::option::Option<std::vec::Vec<crate::model::ChannelAssociatedWithFlowSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channels`.
@@ -1076,11 +1319,21 @@ pub mod list_channels_associated_with_channel_flow_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelsAssociatedWithChannelFlowOutput`](crate::output::ListChannelsAssociatedWithChannelFlowOutput).
         pub fn build(self) -> crate::output::ListChannelsAssociatedWithChannelFlowOutput {
             crate::output::ListChannelsAssociatedWithChannelFlowOutput {
                 channels: self.channels,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1089,6 +1342,7 @@ pub mod list_channels_associated_with_channel_flow_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("channels", &self.channels);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1110,6 +1364,7 @@ pub struct ListChannelsOutput {
     /// <p>The token returned from previous API requests until the number of channels is reached.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelsOutput {
     /// <p>The information about each channel.</p>
@@ -1126,7 +1381,13 @@ impl std::fmt::Debug for ListChannelsOutput {
         let mut formatter = f.debug_struct("ListChannelsOutput");
         formatter.field("channels", &self.channels);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelsOutput`](crate::output::ListChannelsOutput).
@@ -1138,6 +1399,7 @@ pub mod list_channels_output {
     pub struct Builder {
         pub(crate) channels: std::option::Option<std::vec::Vec<crate::model::ChannelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channels`.
@@ -1169,11 +1431,21 @@ pub mod list_channels_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelsOutput`](crate::output::ListChannelsOutput).
         pub fn build(self) -> crate::output::ListChannelsOutput {
             crate::output::ListChannelsOutput {
                 channels: self.channels,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1182,6 +1454,7 @@ pub mod list_channels_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("channels", &self.channels);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1207,6 +1480,7 @@ pub struct ListChannelModeratorsOutput {
     #[doc(hidden)]
     pub channel_moderators:
         std::option::Option<std::vec::Vec<crate::model::ChannelModeratorSummary>>,
+    _request_id: Option<String>,
 }
 impl ListChannelModeratorsOutput {
     /// <p>The ARN of the channel.</p>
@@ -1230,7 +1504,13 @@ impl std::fmt::Debug for ListChannelModeratorsOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("channel_moderators", &self.channel_moderators);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelModeratorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput).
@@ -1244,6 +1524,7 @@ pub mod list_channel_moderators_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) channel_moderators:
             std::option::Option<std::vec::Vec<crate::model::ChannelModeratorSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -1285,12 +1566,22 @@ pub mod list_channel_moderators_output {
             self.channel_moderators = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelModeratorsOutput`](crate::output::ListChannelModeratorsOutput).
         pub fn build(self) -> crate::output::ListChannelModeratorsOutput {
             crate::output::ListChannelModeratorsOutput {
                 channel_arn: self.channel_arn,
                 next_token: self.next_token,
                 channel_moderators: self.channel_moderators,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1300,6 +1591,7 @@ pub mod list_channel_moderators_output {
             formatter.field("channel_arn", &self.channel_arn);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.field("channel_moderators", &self.channel_moderators);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1327,6 +1619,7 @@ pub struct ListChannelMessagesOutput {
     /// <p>The ID of the SubChannel in the response.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelMessagesOutput {
     /// <p>The ARN of the channel containing the requested messages.</p>
@@ -1353,7 +1646,13 @@ impl std::fmt::Debug for ListChannelMessagesOutput {
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("channel_messages", &self.channel_messages);
         formatter.field("sub_channel_id", &self.sub_channel_id);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelMessagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
@@ -1368,6 +1667,7 @@ pub mod list_channel_messages_output {
         pub(crate) channel_messages:
             std::option::Option<std::vec::Vec<crate::model::ChannelMessageSummary>>,
         pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel containing the requested messages.</p>
@@ -1422,6 +1722,15 @@ pub mod list_channel_messages_output {
             self.sub_channel_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelMessagesOutput`](crate::output::ListChannelMessagesOutput).
         pub fn build(self) -> crate::output::ListChannelMessagesOutput {
             crate::output::ListChannelMessagesOutput {
@@ -1429,6 +1738,7 @@ pub mod list_channel_messages_output {
                 next_token: self.next_token,
                 channel_messages: self.channel_messages,
                 sub_channel_id: self.sub_channel_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1439,6 +1749,7 @@ pub mod list_channel_messages_output {
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.field("channel_messages", &self.channel_messages);
             formatter.field("sub_channel_id", &self.sub_channel_id);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1462,6 +1773,7 @@ pub struct ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The token passed by previous API calls until all requested users are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelMembershipsForAppInstanceUserOutput {
     /// <p>The information for the requested channel memberships.</p>
@@ -1480,7 +1792,13 @@ impl std::fmt::Debug for ListChannelMembershipsForAppInstanceUserOutput {
         let mut formatter = f.debug_struct("ListChannelMembershipsForAppInstanceUserOutput");
         formatter.field("channel_memberships", &self.channel_memberships);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelMembershipsForAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput).
@@ -1494,6 +1812,7 @@ pub mod list_channel_memberships_for_app_instance_user_output {
             std::vec::Vec<crate::model::ChannelMembershipForAppInstanceUserSummary>,
         >,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channel_memberships`.
@@ -1530,11 +1849,21 @@ pub mod list_channel_memberships_for_app_instance_user_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelMembershipsForAppInstanceUserOutput`](crate::output::ListChannelMembershipsForAppInstanceUserOutput).
         pub fn build(self) -> crate::output::ListChannelMembershipsForAppInstanceUserOutput {
             crate::output::ListChannelMembershipsForAppInstanceUserOutput {
                 channel_memberships: self.channel_memberships,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1543,6 +1872,7 @@ pub mod list_channel_memberships_for_app_instance_user_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("channel_memberships", &self.channel_memberships);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1569,6 +1899,7 @@ pub struct ListChannelMembershipsOutput {
     /// <p>The token passed by previous API calls until all requested channel memberships are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelMembershipsOutput {
     /// <p>The ARN of the channel.</p>
@@ -1592,7 +1923,13 @@ impl std::fmt::Debug for ListChannelMembershipsOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("channel_memberships", &self.channel_memberships);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelMembershipsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput).
@@ -1606,6 +1943,7 @@ pub mod list_channel_memberships_output {
         pub(crate) channel_memberships:
             std::option::Option<std::vec::Vec<crate::model::ChannelMembershipSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -1650,12 +1988,22 @@ pub mod list_channel_memberships_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelMembershipsOutput`](crate::output::ListChannelMembershipsOutput).
         pub fn build(self) -> crate::output::ListChannelMembershipsOutput {
             crate::output::ListChannelMembershipsOutput {
                 channel_arn: self.channel_arn,
                 channel_memberships: self.channel_memberships,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1665,6 +2013,7 @@ pub mod list_channel_memberships_output {
             formatter.field("channel_arn", &self.channel_arn);
             formatter.field("channel_memberships", &self.channel_memberships);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1686,6 +2035,7 @@ pub struct ListChannelFlowsOutput {
     /// <p>The token passed by previous API calls until all requested channels are returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListChannelFlowsOutput {
     /// <p>The information about each channel flow.</p>
@@ -1702,7 +2052,13 @@ impl std::fmt::Debug for ListChannelFlowsOutput {
         let mut formatter = f.debug_struct("ListChannelFlowsOutput");
         formatter.field("channel_flows", &self.channel_flows);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelFlowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput).
@@ -1715,6 +2071,7 @@ pub mod list_channel_flows_output {
         pub(crate) channel_flows:
             std::option::Option<std::vec::Vec<crate::model::ChannelFlowSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `channel_flows`.
@@ -1746,11 +2103,21 @@ pub mod list_channel_flows_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelFlowsOutput`](crate::output::ListChannelFlowsOutput).
         pub fn build(self) -> crate::output::ListChannelFlowsOutput {
             crate::output::ListChannelFlowsOutput {
                 channel_flows: self.channel_flows,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1759,6 +2126,7 @@ pub mod list_channel_flows_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("channel_flows", &self.channel_flows);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1783,6 +2151,7 @@ pub struct ListChannelBansOutput {
     /// <p>The information for each requested ban.</p>
     #[doc(hidden)]
     pub channel_bans: std::option::Option<std::vec::Vec<crate::model::ChannelBanSummary>>,
+    _request_id: Option<String>,
 }
 impl ListChannelBansOutput {
     /// <p>The ARN of the channel.</p>
@@ -1804,7 +2173,13 @@ impl std::fmt::Debug for ListChannelBansOutput {
         formatter.field("channel_arn", &self.channel_arn);
         formatter.field("next_token", &"*** Sensitive Data Redacted ***");
         formatter.field("channel_bans", &self.channel_bans);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListChannelBansOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListChannelBansOutput`](crate::output::ListChannelBansOutput).
@@ -1818,6 +2193,7 @@ pub mod list_channel_bans_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) channel_bans:
             std::option::Option<std::vec::Vec<crate::model::ChannelBanSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -1859,12 +2235,22 @@ pub mod list_channel_bans_output {
             self.channel_bans = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListChannelBansOutput`](crate::output::ListChannelBansOutput).
         pub fn build(self) -> crate::output::ListChannelBansOutput {
             crate::output::ListChannelBansOutput {
                 channel_arn: self.channel_arn,
                 next_token: self.next_token,
                 channel_bans: self.channel_bans,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1874,6 +2260,7 @@ pub mod list_channel_bans_output {
             formatter.field("channel_arn", &self.channel_arn);
             formatter.field("next_token", &"*** Sensitive Data Redacted ***");
             formatter.field("channel_bans", &self.channel_bans);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1892,11 +2279,17 @@ pub struct GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
     #[doc(hidden)]
     pub endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
+    _request_id: Option<String>,
 }
 impl GetMessagingSessionEndpointOutput {
     /// <p>The endpoint returned in the response.</p>
     pub fn endpoint(&self) -> std::option::Option<&crate::model::MessagingSessionEndpoint> {
         self.endpoint.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetMessagingSessionEndpointOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput).
@@ -1907,6 +2300,7 @@ pub mod get_messaging_session_endpoint_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) endpoint: std::option::Option<crate::model::MessagingSessionEndpoint>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The endpoint returned in the response.</p>
@@ -1922,10 +2316,20 @@ pub mod get_messaging_session_endpoint_output {
             self.endpoint = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMessagingSessionEndpointOutput`](crate::output::GetMessagingSessionEndpointOutput).
         pub fn build(self) -> crate::output::GetMessagingSessionEndpointOutput {
             crate::output::GetMessagingSessionEndpointOutput {
                 endpoint: self.endpoint,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1944,11 +2348,17 @@ pub struct GetChannelMessageStatusOutput {
     /// <p>The message status and details.</p>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+    _request_id: Option<String>,
 }
 impl GetChannelMessageStatusOutput {
     /// <p>The message status and details.</p>
     pub fn status(&self) -> std::option::Option<&crate::model::ChannelMessageStatusStructure> {
         self.status.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetChannelMessageStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput).
@@ -1959,6 +2369,7 @@ pub mod get_channel_message_status_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<crate::model::ChannelMessageStatusStructure>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The message status and details.</p>
@@ -1974,10 +2385,20 @@ pub mod get_channel_message_status_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetChannelMessageStatusOutput`](crate::output::GetChannelMessageStatusOutput).
         pub fn build(self) -> crate::output::GetChannelMessageStatusOutput {
             crate::output::GetChannelMessageStatusOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1996,11 +2417,17 @@ pub struct GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
     #[doc(hidden)]
     pub channel_message: std::option::Option<crate::model::ChannelMessage>,
+    _request_id: Option<String>,
 }
 impl GetChannelMessageOutput {
     /// <p>The details of and content in the message.</p>
     pub fn channel_message(&self) -> std::option::Option<&crate::model::ChannelMessage> {
         self.channel_message.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetChannelMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput).
@@ -2011,6 +2438,7 @@ pub mod get_channel_message_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_message: std::option::Option<crate::model::ChannelMessage>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The details of and content in the message.</p>
@@ -2026,10 +2454,20 @@ pub mod get_channel_message_output {
             self.channel_message = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetChannelMessageOutput`](crate::output::GetChannelMessageOutput).
         pub fn build(self) -> crate::output::GetChannelMessageOutput {
             crate::output::GetChannelMessageOutput {
                 channel_message: self.channel_message,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2054,6 +2492,7 @@ pub struct GetChannelMembershipPreferencesOutput {
     /// <p>The channel membership preferences for an <code>AppInstanceUser</code> .</p>
     #[doc(hidden)]
     pub preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+    _request_id: Option<String>,
 }
 impl GetChannelMembershipPreferencesOutput {
     /// <p>The ARN of the channel.</p>
@@ -2069,6 +2508,11 @@ impl GetChannelMembershipPreferencesOutput {
         self.preferences.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetChannelMembershipPreferencesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput).
 pub mod get_channel_membership_preferences_output {
 
@@ -2079,6 +2523,7 @@ pub mod get_channel_membership_preferences_output {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) preferences: std::option::Option<crate::model::ChannelMembershipPreferences>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -2114,12 +2559,22 @@ pub mod get_channel_membership_preferences_output {
             self.preferences = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetChannelMembershipPreferencesOutput`](crate::output::GetChannelMembershipPreferencesOutput).
         pub fn build(self) -> crate::output::GetChannelMembershipPreferencesOutput {
             crate::output::GetChannelMembershipPreferencesOutput {
                 channel_arn: self.channel_arn,
                 member: self.member,
                 preferences: self.preferences,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2134,18 +2589,38 @@ impl GetChannelMembershipPreferencesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisassociateChannelFlowOutput {}
+pub struct DisassociateChannelFlowOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisassociateChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput).
 pub mod disassociate_channel_flow_output {
 
     /// A builder for [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateChannelFlowOutput`](crate::output::DisassociateChannelFlowOutput).
         pub fn build(self) -> crate::output::DisassociateChannelFlowOutput {
-            crate::output::DisassociateChannelFlowOutput {}
+            crate::output::DisassociateChannelFlowOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2163,11 +2638,17 @@ pub struct DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
     #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::model::ChannelModerator>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelModeratorOutput {
     /// <p>The details of the channel moderator.</p>
     pub fn channel_moderator(&self) -> std::option::Option<&crate::model::ChannelModerator> {
         self.channel_moderator.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelModeratorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput).
@@ -2178,6 +2659,7 @@ pub mod describe_channel_moderator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_moderator: std::option::Option<crate::model::ChannelModerator>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The details of the channel moderator.</p>
@@ -2193,10 +2675,20 @@ pub mod describe_channel_moderator_output {
             self.channel_moderator = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelModeratorOutput`](crate::output::DescribeChannelModeratorOutput).
         pub fn build(self) -> crate::output::DescribeChannelModeratorOutput {
             crate::output::DescribeChannelModeratorOutput {
                 channel_moderator: self.channel_moderator,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2215,6 +2707,7 @@ pub struct DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelModeratedByAppInstanceUserOutput {
     /// <p>The moderated channel.</p>
@@ -2222,6 +2715,11 @@ impl DescribeChannelModeratedByAppInstanceUserOutput {
         &self,
     ) -> std::option::Option<&crate::model::ChannelModeratedByAppInstanceUserSummary> {
         self.channel.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelModeratedByAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput).
@@ -2233,6 +2731,7 @@ pub mod describe_channel_moderated_by_app_instance_user_output {
     pub struct Builder {
         pub(crate) channel:
             std::option::Option<crate::model::ChannelModeratedByAppInstanceUserSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The moderated channel.</p>
@@ -2251,10 +2750,20 @@ pub mod describe_channel_moderated_by_app_instance_user_output {
             self.channel = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelModeratedByAppInstanceUserOutput`](crate::output::DescribeChannelModeratedByAppInstanceUserOutput).
         pub fn build(self) -> crate::output::DescribeChannelModeratedByAppInstanceUserOutput {
             crate::output::DescribeChannelModeratedByAppInstanceUserOutput {
                 channel: self.channel,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2275,6 +2784,7 @@ pub struct DescribeChannelMembershipForAppInstanceUserOutput {
     #[doc(hidden)]
     pub channel_membership:
         std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelMembershipForAppInstanceUserOutput {
     /// <p>The channel to which a user belongs.</p>
@@ -2282,6 +2792,11 @@ impl DescribeChannelMembershipForAppInstanceUserOutput {
         &self,
     ) -> std::option::Option<&crate::model::ChannelMembershipForAppInstanceUserSummary> {
         self.channel_membership.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelMembershipForAppInstanceUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput).
@@ -2293,6 +2808,7 @@ pub mod describe_channel_membership_for_app_instance_user_output {
     pub struct Builder {
         pub(crate) channel_membership:
             std::option::Option<crate::model::ChannelMembershipForAppInstanceUserSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The channel to which a user belongs.</p>
@@ -2311,10 +2827,20 @@ pub mod describe_channel_membership_for_app_instance_user_output {
             self.channel_membership = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelMembershipForAppInstanceUserOutput`](crate::output::DescribeChannelMembershipForAppInstanceUserOutput).
         pub fn build(self) -> crate::output::DescribeChannelMembershipForAppInstanceUserOutput {
             crate::output::DescribeChannelMembershipForAppInstanceUserOutput {
                 channel_membership: self.channel_membership,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2334,11 +2860,17 @@ pub struct DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
     #[doc(hidden)]
     pub channel_membership: std::option::Option<crate::model::ChannelMembership>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelMembershipOutput {
     /// <p>The details of the membership.</p>
     pub fn channel_membership(&self) -> std::option::Option<&crate::model::ChannelMembership> {
         self.channel_membership.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelMembershipOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput).
@@ -2349,6 +2881,7 @@ pub mod describe_channel_membership_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_membership: std::option::Option<crate::model::ChannelMembership>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The details of the membership.</p>
@@ -2364,10 +2897,20 @@ pub mod describe_channel_membership_output {
             self.channel_membership = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelMembershipOutput`](crate::output::DescribeChannelMembershipOutput).
         pub fn build(self) -> crate::output::DescribeChannelMembershipOutput {
             crate::output::DescribeChannelMembershipOutput {
                 channel_membership: self.channel_membership,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2386,11 +2929,17 @@ pub struct DescribeChannelFlowOutput {
     /// <p>The channel flow details.</p>
     #[doc(hidden)]
     pub channel_flow: std::option::Option<crate::model::ChannelFlow>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelFlowOutput {
     /// <p>The channel flow details.</p>
     pub fn channel_flow(&self) -> std::option::Option<&crate::model::ChannelFlow> {
         self.channel_flow.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput).
@@ -2401,6 +2950,7 @@ pub mod describe_channel_flow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow: std::option::Option<crate::model::ChannelFlow>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The channel flow details.</p>
@@ -2416,10 +2966,20 @@ pub mod describe_channel_flow_output {
             self.channel_flow = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelFlowOutput`](crate::output::DescribeChannelFlowOutput).
         pub fn build(self) -> crate::output::DescribeChannelFlowOutput {
             crate::output::DescribeChannelFlowOutput {
                 channel_flow: self.channel_flow,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2438,11 +2998,17 @@ pub struct DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
     #[doc(hidden)]
     pub channel_ban: std::option::Option<crate::model::ChannelBan>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelBanOutput {
     /// <p>The details of the ban.</p>
     pub fn channel_ban(&self) -> std::option::Option<&crate::model::ChannelBan> {
         self.channel_ban.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelBanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput).
@@ -2453,6 +3019,7 @@ pub mod describe_channel_ban_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_ban: std::option::Option<crate::model::ChannelBan>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The details of the ban.</p>
@@ -2468,10 +3035,20 @@ pub mod describe_channel_ban_output {
             self.channel_ban = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelBanOutput`](crate::output::DescribeChannelBanOutput).
         pub fn build(self) -> crate::output::DescribeChannelBanOutput {
             crate::output::DescribeChannelBanOutput {
                 channel_ban: self.channel_ban,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2490,11 +3067,17 @@ pub struct DescribeChannelOutput {
     /// <p>The channel details.</p>
     #[doc(hidden)]
     pub channel: std::option::Option<crate::model::Channel>,
+    _request_id: Option<String>,
 }
 impl DescribeChannelOutput {
     /// <p>The channel details.</p>
     pub fn channel(&self) -> std::option::Option<&crate::model::Channel> {
         self.channel.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
@@ -2505,6 +3088,7 @@ pub mod describe_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel: std::option::Option<crate::model::Channel>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The channel details.</p>
@@ -2517,10 +3101,20 @@ pub mod describe_channel_output {
             self.channel = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeChannelOutput`](crate::output::DescribeChannelOutput).
         pub fn build(self) -> crate::output::DescribeChannelOutput {
             crate::output::DescribeChannelOutput {
                 channel: self.channel,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2535,18 +3129,38 @@ impl DescribeChannelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelModeratorOutput {}
+pub struct DeleteChannelModeratorOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelModeratorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
 pub mod delete_channel_moderator_output {
 
     /// A builder for [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelModeratorOutput`](crate::output::DeleteChannelModeratorOutput).
         pub fn build(self) -> crate::output::DeleteChannelModeratorOutput {
-            crate::output::DeleteChannelModeratorOutput {}
+            crate::output::DeleteChannelModeratorOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2560,18 +3174,38 @@ impl DeleteChannelModeratorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelMessageOutput {}
+pub struct DeleteChannelMessageOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelMessageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
 pub mod delete_channel_message_output {
 
     /// A builder for [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelMessageOutput`](crate::output::DeleteChannelMessageOutput).
         pub fn build(self) -> crate::output::DeleteChannelMessageOutput {
-            crate::output::DeleteChannelMessageOutput {}
+            crate::output::DeleteChannelMessageOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2585,18 +3219,38 @@ impl DeleteChannelMessageOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelMembershipOutput {}
+pub struct DeleteChannelMembershipOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelMembershipOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
 pub mod delete_channel_membership_output {
 
     /// A builder for [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelMembershipOutput`](crate::output::DeleteChannelMembershipOutput).
         pub fn build(self) -> crate::output::DeleteChannelMembershipOutput {
-            crate::output::DeleteChannelMembershipOutput {}
+            crate::output::DeleteChannelMembershipOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2610,18 +3264,38 @@ impl DeleteChannelMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelFlowOutput {}
+pub struct DeleteChannelFlowOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput).
 pub mod delete_channel_flow_output {
 
     /// A builder for [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelFlowOutput`](crate::output::DeleteChannelFlowOutput).
         pub fn build(self) -> crate::output::DeleteChannelFlowOutput {
-            crate::output::DeleteChannelFlowOutput {}
+            crate::output::DeleteChannelFlowOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2635,18 +3309,38 @@ impl DeleteChannelFlowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelBanOutput {}
+pub struct DeleteChannelBanOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelBanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
 pub mod delete_channel_ban_output {
 
     /// A builder for [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelBanOutput`](crate::output::DeleteChannelBanOutput).
         pub fn build(self) -> crate::output::DeleteChannelBanOutput {
-            crate::output::DeleteChannelBanOutput {}
+            crate::output::DeleteChannelBanOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2660,18 +3354,38 @@ impl DeleteChannelBanOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteChannelOutput {}
+pub struct DeleteChannelOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
 pub mod delete_channel_output {
 
     /// A builder for [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteChannelOutput`](crate::output::DeleteChannelOutput).
         pub fn build(self) -> crate::output::DeleteChannelOutput {
-            crate::output::DeleteChannelOutput {}
+            crate::output::DeleteChannelOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2692,6 +3406,7 @@ pub struct CreateChannelModeratorOutput {
     /// <p>The ARNs of the channel and the moderator.</p>
     #[doc(hidden)]
     pub channel_moderator: std::option::Option<crate::model::Identity>,
+    _request_id: Option<String>,
 }
 impl CreateChannelModeratorOutput {
     /// <p>The ARN of the channel.</p>
@@ -2703,6 +3418,11 @@ impl CreateChannelModeratorOutput {
         self.channel_moderator.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateChannelModeratorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput).
 pub mod create_channel_moderator_output {
 
@@ -2712,6 +3432,7 @@ pub mod create_channel_moderator_output {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) channel_moderator: std::option::Option<crate::model::Identity>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -2737,11 +3458,21 @@ pub mod create_channel_moderator_output {
             self.channel_moderator = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelModeratorOutput`](crate::output::CreateChannelModeratorOutput).
         pub fn build(self) -> crate::output::CreateChannelModeratorOutput {
             crate::output::CreateChannelModeratorOutput {
                 channel_arn: self.channel_arn,
                 channel_moderator: self.channel_moderator,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2766,6 +3497,7 @@ pub struct CreateChannelMembershipOutput {
     /// <p>The ID of the SubChannel in the response.</p>
     #[doc(hidden)]
     pub sub_channel_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateChannelMembershipOutput {
     /// <p>The ARN of the channel.</p>
@@ -2781,6 +3513,11 @@ impl CreateChannelMembershipOutput {
         self.sub_channel_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateChannelMembershipOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
 pub mod create_channel_membership_output {
 
@@ -2791,6 +3528,7 @@ pub mod create_channel_membership_output {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
         pub(crate) sub_channel_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -2826,12 +3564,22 @@ pub mod create_channel_membership_output {
             self.sub_channel_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelMembershipOutput`](crate::output::CreateChannelMembershipOutput).
         pub fn build(self) -> crate::output::CreateChannelMembershipOutput {
             crate::output::CreateChannelMembershipOutput {
                 channel_arn: self.channel_arn,
                 member: self.member,
                 sub_channel_id: self.sub_channel_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2850,11 +3598,17 @@ pub struct CreateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
     #[doc(hidden)]
     pub channel_flow_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateChannelFlowOutput {
     /// <p>The ARN of the channel flow.</p>
     pub fn channel_flow_arn(&self) -> std::option::Option<&str> {
         self.channel_flow_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput).
@@ -2865,6 +3619,7 @@ pub mod create_channel_flow_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_flow_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel flow.</p>
@@ -2880,10 +3635,20 @@ pub mod create_channel_flow_output {
             self.channel_flow_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelFlowOutput`](crate::output::CreateChannelFlowOutput).
         pub fn build(self) -> crate::output::CreateChannelFlowOutput {
             crate::output::CreateChannelFlowOutput {
                 channel_flow_arn: self.channel_flow_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2905,6 +3670,7 @@ pub struct CreateChannelBanOutput {
     /// <p>The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban response.</p>
     #[doc(hidden)]
     pub member: std::option::Option<crate::model::Identity>,
+    _request_id: Option<String>,
 }
 impl CreateChannelBanOutput {
     /// <p>The ARN of the response to the ban request.</p>
@@ -2916,6 +3682,11 @@ impl CreateChannelBanOutput {
         self.member.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateChannelBanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput).
 pub mod create_channel_ban_output {
 
@@ -2925,6 +3696,7 @@ pub mod create_channel_ban_output {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) member: std::option::Option<crate::model::Identity>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the response to the ban request.</p>
@@ -2947,11 +3719,21 @@ pub mod create_channel_ban_output {
             self.member = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelBanOutput`](crate::output::CreateChannelBanOutput).
         pub fn build(self) -> crate::output::CreateChannelBanOutput {
             crate::output::CreateChannelBanOutput {
                 channel_arn: self.channel_arn,
                 member: self.member,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2970,11 +3752,17 @@ pub struct CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
     #[doc(hidden)]
     pub channel_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateChannelOutput {
     /// <p>The ARN of the channel.</p>
     pub fn channel_arn(&self) -> std::option::Option<&str> {
         self.channel_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateChannelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateChannelOutput`](crate::output::CreateChannelOutput).
@@ -2985,6 +3773,7 @@ pub mod create_channel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -2997,10 +3786,20 @@ pub mod create_channel_output {
             self.channel_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateChannelOutput`](crate::output::CreateChannelOutput).
         pub fn build(self) -> crate::output::CreateChannelOutput {
             crate::output::CreateChannelOutput {
                 channel_arn: self.channel_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3022,6 +3821,7 @@ pub struct ChannelFlowCallbackOutput {
     /// <p>The call back ID passed in the request.</p>
     #[doc(hidden)]
     pub callback_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ChannelFlowCallbackOutput {
     /// <p>The ARN of the channel.</p>
@@ -3033,6 +3833,11 @@ impl ChannelFlowCallbackOutput {
         self.callback_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ChannelFlowCallbackOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput).
 pub mod channel_flow_callback_output {
 
@@ -3042,6 +3847,7 @@ pub mod channel_flow_callback_output {
     pub struct Builder {
         pub(crate) channel_arn: std::option::Option<std::string::String>,
         pub(crate) callback_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the channel.</p>
@@ -3064,11 +3870,21 @@ pub mod channel_flow_callback_output {
             self.callback_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ChannelFlowCallbackOutput`](crate::output::ChannelFlowCallbackOutput).
         pub fn build(self) -> crate::output::ChannelFlowCallbackOutput {
             crate::output::ChannelFlowCallbackOutput {
                 channel_arn: self.channel_arn,
                 callback_id: self.callback_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3090,6 +3906,7 @@ pub struct BatchCreateChannelMembershipOutput {
     /// <p>If the action fails for one or more of the memberships in the request, a list of the memberships is returned, along with error codes and error messages.</p>
     #[doc(hidden)]
     pub errors: std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
+    _request_id: Option<String>,
 }
 impl BatchCreateChannelMembershipOutput {
     /// <p>The list of channel memberships in the response.</p>
@@ -3105,6 +3922,11 @@ impl BatchCreateChannelMembershipOutput {
         self.errors.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchCreateChannelMembershipOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput).
 pub mod batch_create_channel_membership_output {
 
@@ -3116,6 +3938,7 @@ pub mod batch_create_channel_membership_output {
             std::option::Option<crate::model::BatchChannelMemberships>,
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchCreateChannelMembershipError>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The list of channel memberships in the response.</p>
@@ -3155,11 +3978,21 @@ pub mod batch_create_channel_membership_output {
             self.errors = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchCreateChannelMembershipOutput`](crate::output::BatchCreateChannelMembershipOutput).
         pub fn build(self) -> crate::output::BatchCreateChannelMembershipOutput {
             crate::output::BatchCreateChannelMembershipOutput {
                 batch_channel_memberships: self.batch_channel_memberships,
                 errors: self.errors,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3174,18 +4007,38 @@ impl BatchCreateChannelMembershipOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct AssociateChannelFlowOutput {}
+pub struct AssociateChannelFlowOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for AssociateChannelFlowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput).
 pub mod associate_channel_flow_output {
 
     /// A builder for [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateChannelFlowOutput`](crate::output::AssociateChannelFlowOutput).
         pub fn build(self) -> crate::output::AssociateChannelFlowOutput {
-            crate::output::AssociateChannelFlowOutput {}
+            crate::output::AssociateChannelFlowOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

@@ -19,12 +19,17 @@ use kms::types::Blob;
 
 #[test]
 fn validate_sensitive_trait() {
+    let builder = GenerateRandomOutput::builder().plaintext(Blob::new("some output"));
+    assert_eq!(
+        format!("{:?}", builder),
+        "Builder { plaintext: \"*** Sensitive Data Redacted ***\", _request_id: None }"
+    );
     let output = GenerateRandomOutput::builder()
         .plaintext(Blob::new("some output"))
         .build();
     assert_eq!(
         format!("{:?}", output),
-        "GenerateRandomOutput { plaintext: \"*** Sensitive Data Redacted ***\" }"
+        "GenerateRandomOutput { plaintext: \"*** Sensitive Data Redacted ***\", _request_id: None }"
     );
 }
 

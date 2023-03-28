@@ -33,6 +33,7 @@ pub struct GetMediaOutput {
     /// <li> <p>5000 - Internal error</p> </li>
     /// </ul>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl GetMediaOutput {
     /// <p>The content type of the requested media.</p>
@@ -69,6 +70,11 @@ impl GetMediaOutput {
         &self.payload
     }
 }
+impl aws_http::request_id::RequestId for GetMediaOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMediaOutput`](crate::output::GetMediaOutput).
 pub mod get_media_output {
 
@@ -78,6 +84,7 @@ pub mod get_media_output {
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The content type of the requested media.</p>
@@ -153,11 +160,21 @@ pub mod get_media_output {
             self.payload = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMediaOutput`](crate::output::GetMediaOutput).
         pub fn build(self) -> crate::output::GetMediaOutput {
             crate::output::GetMediaOutput {
                 content_type: self.content_type,
                 payload: self.payload.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }

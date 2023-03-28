@@ -21,6 +21,7 @@ pub struct UpdateRouteOutput {
     /// <p> A timestamp that indicates when the route was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl UpdateRouteOutput {
     /// <p> The unique identifier of the route. </p>
@@ -48,6 +49,11 @@ impl UpdateRouteOutput {
         self.last_updated_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
 pub mod update_route_output {
 
@@ -61,6 +67,7 @@ pub mod update_route_output {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::RouteState>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The unique identifier of the route. </p>
@@ -129,6 +136,15 @@ pub mod update_route_output {
             self.last_updated_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRouteOutput`](crate::output::UpdateRouteOutput).
         pub fn build(self) -> crate::output::UpdateRouteOutput {
             crate::output::UpdateRouteOutput {
@@ -138,6 +154,7 @@ pub mod update_route_output {
                 application_id: self.application_id,
                 state: self.state,
                 last_updated_time: self.last_updated_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -152,18 +169,38 @@ impl UpdateRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -177,18 +214,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -202,18 +259,38 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutResourcePolicyOutput {}
+pub struct PutResourcePolicyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutResourcePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
 pub mod put_resource_policy_output {
 
     /// A builder for [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutResourcePolicyOutput`](crate::output::PutResourcePolicyOutput).
         pub fn build(self) -> crate::output::PutResourcePolicyOutput {
-            crate::output::PutResourcePolicyOutput {}
+            crate::output::PutResourcePolicyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -232,6 +309,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags assigned to the resource. </p>
@@ -246,7 +324,13 @@ impl std::fmt::Debug for ListTagsForResourceOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("ListTagsForResourceOutput");
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -259,6 +343,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -286,15 +371,28 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
     impl std::fmt::Debug for Builder {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -316,6 +414,7 @@ pub struct ListServicesOutput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListServicesOutput {
     /// <p> The list of <code>ServiceSummary</code> objects. </p>
@@ -325,6 +424,11 @@ impl ListServicesOutput {
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListServicesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListServicesOutput`](crate::output::ListServicesOutput).
@@ -337,6 +441,7 @@ pub mod list_services_output {
         pub(crate) service_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ServiceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `service_summary_list`.
@@ -368,11 +473,21 @@ pub mod list_services_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListServicesOutput`](crate::output::ListServicesOutput).
         pub fn build(self) -> crate::output::ListServicesOutput {
             crate::output::ListServicesOutput {
                 service_summary_list: self.service_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -394,6 +509,7 @@ pub struct ListRoutesOutput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRoutesOutput {
     /// <p>The list of <code>RouteSummary</code> objects. </p>
@@ -403,6 +519,11 @@ impl ListRoutesOutput {
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListRoutesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListRoutesOutput`](crate::output::ListRoutesOutput).
@@ -415,6 +536,7 @@ pub mod list_routes_output {
         pub(crate) route_summary_list:
             std::option::Option<std::vec::Vec<crate::model::RouteSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `route_summary_list`.
@@ -446,11 +568,21 @@ pub mod list_routes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRoutesOutput`](crate::output::ListRoutesOutput).
         pub fn build(self) -> crate::output::ListRoutesOutput {
             crate::output::ListRoutesOutput {
                 route_summary_list: self.route_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -472,6 +604,7 @@ pub struct ListEnvironmentVpcsOutput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEnvironmentVpcsOutput {
     /// <p>The list of <code>EnvironmentVpc</code> objects. </p>
@@ -481,6 +614,11 @@ impl ListEnvironmentVpcsOutput {
     /// <p>The token for the next page of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListEnvironmentVpcsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput).
@@ -493,6 +631,7 @@ pub mod list_environment_vpcs_output {
         pub(crate) environment_vpc_list:
             std::option::Option<std::vec::Vec<crate::model::EnvironmentVpc>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `environment_vpc_list`.
@@ -524,11 +663,21 @@ pub mod list_environment_vpcs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEnvironmentVpcsOutput`](crate::output::ListEnvironmentVpcsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentVpcsOutput {
             crate::output::ListEnvironmentVpcsOutput {
                 environment_vpc_list: self.environment_vpc_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -551,6 +700,7 @@ pub struct ListEnvironmentsOutput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEnvironmentsOutput {
     /// <p>The list of <code>EnvironmentSummary</code> objects. </p>
@@ -564,6 +714,11 @@ impl ListEnvironmentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEnvironmentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
 pub mod list_environments_output {
 
@@ -574,6 +729,7 @@ pub mod list_environments_output {
         pub(crate) environment_summary_list:
             std::option::Option<std::vec::Vec<crate::model::EnvironmentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `environment_summary_list`.
@@ -605,11 +761,21 @@ pub mod list_environments_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEnvironmentsOutput`](crate::output::ListEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListEnvironmentsOutput {
             crate::output::ListEnvironmentsOutput {
                 environment_summary_list: self.environment_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -632,6 +798,7 @@ pub struct ListApplicationsOutput {
     /// <p>The token for the next page of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListApplicationsOutput {
     /// <p>The list of <code>ApplicationSummary</code> objects. </p>
@@ -645,6 +812,11 @@ impl ListApplicationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListApplicationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
 pub mod list_applications_output {
 
@@ -655,6 +827,7 @@ pub mod list_applications_output {
         pub(crate) application_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ApplicationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `application_summary_list`.
@@ -686,11 +859,21 @@ pub mod list_applications_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListApplicationsOutput`](crate::output::ListApplicationsOutput).
         pub fn build(self) -> crate::output::ListApplicationsOutput {
             crate::output::ListApplicationsOutput {
                 application_summary_list: self.application_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -761,6 +944,7 @@ pub struct GetServiceOutput {
     /// <p>The timestamp of when the service is created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetServiceOutput {
     /// <p>The unique identifier of the service.</p>
@@ -858,7 +1042,13 @@ impl std::fmt::Debug for GetServiceOutput {
         formatter.field("error", &self.error);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetServiceOutput`](crate::output::GetServiceOutput).
@@ -887,6 +1077,7 @@ pub mod get_service_output {
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the service.</p>
@@ -1110,6 +1301,15 @@ pub mod get_service_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetServiceOutput`](crate::output::GetServiceOutput).
         pub fn build(self) -> crate::output::GetServiceOutput {
             crate::output::GetServiceOutput {
@@ -1130,6 +1330,7 @@ pub mod get_service_output {
                 error: self.error,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1153,6 +1354,7 @@ pub mod get_service_output {
             formatter.field("error", &self.error);
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1223,6 +1425,7 @@ pub struct GetRouteOutput {
     /// <p>The timestamp of when the route is created. </p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetRouteOutput {
     /// <p>The unique identifier of the route.</p>
@@ -1322,7 +1525,13 @@ impl std::fmt::Debug for GetRouteOutput {
         formatter.field("error", &self.error);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetRouteOutput`](crate::output::GetRouteOutput).
@@ -1353,6 +1562,7 @@ pub mod get_route_output {
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the route.</p>
@@ -1592,6 +1802,15 @@ pub mod get_route_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRouteOutput`](crate::output::GetRouteOutput).
         pub fn build(self) -> crate::output::GetRouteOutput {
             crate::output::GetRouteOutput {
@@ -1612,6 +1831,7 @@ pub mod get_route_output {
                 error: self.error,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1635,6 +1855,7 @@ pub mod get_route_output {
             formatter.field("error", &self.error);
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1653,11 +1874,17 @@ pub struct GetResourcePolicyOutput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetResourcePolicyOutput {
     /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
     pub fn policy(&self) -> std::option::Option<&str> {
         self.policy.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetResourcePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
@@ -1668,6 +1895,7 @@ pub mod get_resource_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A JSON-formatted string for an Amazon Web Services resource-based policy. </p>
@@ -1680,10 +1908,20 @@ pub mod get_resource_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetResourcePolicyOutput`](crate::output::GetResourcePolicyOutput).
         pub fn build(self) -> crate::output::GetResourcePolicyOutput {
             crate::output::GetResourcePolicyOutput {
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1736,6 +1974,7 @@ pub struct GetEnvironmentOutput {
     /// <p>A timestamp that indicates when the environment is created. </p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetEnvironmentOutput {
     /// <p>The name of the environment.</p>
@@ -1805,7 +2044,13 @@ impl std::fmt::Debug for GetEnvironmentOutput {
         formatter.field("error", &self.error);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetEnvironmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
@@ -1829,6 +2074,7 @@ pub mod get_environment_output {
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -1990,6 +2236,15 @@ pub mod get_environment_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEnvironmentOutput`](crate::output::GetEnvironmentOutput).
         pub fn build(self) -> crate::output::GetEnvironmentOutput {
             crate::output::GetEnvironmentOutput {
@@ -2005,6 +2260,7 @@ pub mod get_environment_output {
                 error: self.error,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2023,6 +2279,7 @@ pub mod get_environment_output {
             formatter.field("error", &self.error);
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2081,6 +2338,7 @@ pub struct GetApplicationOutput {
     /// <p>A timestamp that indicates when the application is created. </p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetApplicationOutput {
     /// <p>The name of the application.</p>
@@ -2160,7 +2418,13 @@ impl std::fmt::Debug for GetApplicationOutput {
         formatter.field("error", &self.error);
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetApplicationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetApplicationOutput`](crate::output::GetApplicationOutput).
@@ -2186,6 +2450,7 @@ pub mod get_application_output {
         pub(crate) error: std::option::Option<crate::model::ErrorResponse>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the application.</p>
@@ -2373,6 +2638,15 @@ pub mod get_application_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetApplicationOutput`](crate::output::GetApplicationOutput).
         pub fn build(self) -> crate::output::GetApplicationOutput {
             crate::output::GetApplicationOutput {
@@ -2390,6 +2664,7 @@ pub mod get_application_output {
                 error: self.error,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2410,6 +2685,7 @@ pub mod get_application_output {
             formatter.field("error", &self.error);
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -2446,6 +2722,7 @@ pub struct DeleteServiceOutput {
     /// <p>A timestamp that indicates when the service was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeleteServiceOutput {
     /// <p>The unique identifier of the service.</p>
@@ -2477,6 +2754,11 @@ impl DeleteServiceOutput {
         self.last_updated_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
 pub mod delete_service_output {
 
@@ -2491,6 +2773,7 @@ pub mod delete_service_output {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ServiceState>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the service.</p>
@@ -2572,6 +2855,15 @@ pub mod delete_service_output {
             self.last_updated_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteServiceOutput`](crate::output::DeleteServiceOutput).
         pub fn build(self) -> crate::output::DeleteServiceOutput {
             crate::output::DeleteServiceOutput {
@@ -2582,6 +2874,7 @@ pub mod delete_service_output {
                 application_id: self.application_id,
                 state: self.state,
                 last_updated_time: self.last_updated_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2615,6 +2908,7 @@ pub struct DeleteRouteOutput {
     /// <p>A timestamp that indicates when the route was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeleteRouteOutput {
     /// <p>The ID of the route to delete.</p>
@@ -2642,6 +2936,11 @@ impl DeleteRouteOutput {
         self.last_updated_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
 pub mod delete_route_output {
 
@@ -2655,6 +2954,7 @@ pub mod delete_route_output {
         pub(crate) application_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::RouteState>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the route to delete.</p>
@@ -2723,6 +3023,15 @@ pub mod delete_route_output {
             self.last_updated_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRouteOutput`](crate::output::DeleteRouteOutput).
         pub fn build(self) -> crate::output::DeleteRouteOutput {
             crate::output::DeleteRouteOutput {
@@ -2732,6 +3041,7 @@ pub mod delete_route_output {
                 application_id: self.application_id,
                 state: self.state,
                 last_updated_time: self.last_updated_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2746,18 +3056,38 @@ impl DeleteRouteOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteResourcePolicyOutput {}
+pub struct DeleteResourcePolicyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteResourcePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
 pub mod delete_resource_policy_output {
 
     /// A builder for [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteResourcePolicyOutput`](crate::output::DeleteResourcePolicyOutput).
         pub fn build(self) -> crate::output::DeleteResourcePolicyOutput {
-            crate::output::DeleteResourcePolicyOutput {}
+            crate::output::DeleteResourcePolicyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2787,6 +3117,7 @@ pub struct DeleteEnvironmentOutput {
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeleteEnvironmentOutput {
     /// <p>The name of the environment.</p>
@@ -2810,6 +3141,11 @@ impl DeleteEnvironmentOutput {
         self.last_updated_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteEnvironmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
 pub mod delete_environment_output {
 
@@ -2822,6 +3158,7 @@ pub mod delete_environment_output {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::EnvironmentState>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -2883,6 +3220,15 @@ pub mod delete_environment_output {
             self.last_updated_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteEnvironmentOutput`](crate::output::DeleteEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteEnvironmentOutput {
             crate::output::DeleteEnvironmentOutput {
@@ -2891,6 +3237,7 @@ pub mod delete_environment_output {
                 environment_id: self.environment_id,
                 state: self.state,
                 last_updated_time: self.last_updated_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2924,6 +3271,7 @@ pub struct DeleteApplicationOutput {
     /// <p>A timestamp that indicates when the environment was last updated. </p>
     #[doc(hidden)]
     pub last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DeleteApplicationOutput {
     /// <p>The name of the application.</p>
@@ -2951,6 +3299,11 @@ impl DeleteApplicationOutput {
         self.last_updated_time.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteApplicationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
 pub mod delete_application_output {
 
@@ -2964,6 +3317,7 @@ pub mod delete_application_output {
         pub(crate) environment_id: std::option::Option<std::string::String>,
         pub(crate) state: std::option::Option<crate::model::ApplicationState>,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the application.</p>
@@ -3038,6 +3392,15 @@ pub mod delete_application_output {
             self.last_updated_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteApplicationOutput`](crate::output::DeleteApplicationOutput).
         pub fn build(self) -> crate::output::DeleteApplicationOutput {
             crate::output::DeleteApplicationOutput {
@@ -3047,6 +3410,7 @@ pub mod delete_application_output {
                 environment_id: self.environment_id,
                 state: self.state,
                 last_updated_time: self.last_updated_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3111,6 +3475,7 @@ pub struct CreateServiceOutput {
     /// <p>A timestamp that indicates when the service is created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateServiceOutput {
     /// <p>The unique identifier of the service.</p>
@@ -3200,7 +3565,13 @@ impl std::fmt::Debug for CreateServiceOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for CreateServiceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateServiceOutput`](crate::output::CreateServiceOutput).
@@ -3228,6 +3599,7 @@ pub mod create_service_output {
         >,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the service.</p>
@@ -3432,6 +3804,15 @@ pub mod create_service_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateServiceOutput`](crate::output::CreateServiceOutput).
         pub fn build(self) -> crate::output::CreateServiceOutput {
             crate::output::CreateServiceOutput {
@@ -3451,6 +3832,7 @@ pub mod create_service_output {
                 tags: self.tags,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3473,6 +3855,7 @@ pub mod create_service_output {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3525,6 +3908,7 @@ pub struct CreateRouteOutput {
     /// <p>A timestamp that indicates when the route is created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateRouteOutput {
     /// <p>The unique identifier of the route.</p>
@@ -3594,7 +3978,13 @@ impl std::fmt::Debug for CreateRouteOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for CreateRouteOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateRouteOutput`](crate::output::CreateRouteOutput).
@@ -3618,6 +4008,7 @@ pub mod create_route_output {
         >,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique identifier of the route.</p>
@@ -3776,6 +4167,15 @@ pub mod create_route_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateRouteOutput`](crate::output::CreateRouteOutput).
         pub fn build(self) -> crate::output::CreateRouteOutput {
             crate::output::CreateRouteOutput {
@@ -3791,6 +4191,7 @@ pub mod create_route_output {
                 tags: self.tags,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3809,6 +4210,7 @@ pub mod create_route_output {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -3855,6 +4257,7 @@ pub struct CreateEnvironmentOutput {
     /// <p>A timestamp that indicates when the environment is created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateEnvironmentOutput {
     /// <p>The name of the environment.</p>
@@ -3914,7 +4317,13 @@ impl std::fmt::Debug for CreateEnvironmentOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for CreateEnvironmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
@@ -3936,6 +4345,7 @@ pub mod create_environment_output {
         >,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the environment.</p>
@@ -4071,6 +4481,15 @@ pub mod create_environment_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEnvironmentOutput`](crate::output::CreateEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateEnvironmentOutput {
             crate::output::CreateEnvironmentOutput {
@@ -4084,6 +4503,7 @@ pub mod create_environment_output {
                 tags: self.tags,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4100,6 +4520,7 @@ pub mod create_environment_output {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -4155,6 +4576,7 @@ pub struct CreateApplicationOutput {
     /// <p>A timestamp that indicates when the application is created.</p>
     #[doc(hidden)]
     pub created_time: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl CreateApplicationOutput {
     /// <p>The name of the application.</p>
@@ -4229,7 +4651,13 @@ impl std::fmt::Debug for CreateApplicationOutput {
         formatter.field("tags", &"*** Sensitive Data Redacted ***");
         formatter.field("last_updated_time", &self.last_updated_time);
         formatter.field("created_time", &self.created_time);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for CreateApplicationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
@@ -4254,6 +4682,7 @@ pub mod create_application_output {
         >,
         pub(crate) last_updated_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) created_time: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the application.</p>
@@ -4428,6 +4857,15 @@ pub mod create_application_output {
             self.created_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateApplicationOutput`](crate::output::CreateApplicationOutput).
         pub fn build(self) -> crate::output::CreateApplicationOutput {
             crate::output::CreateApplicationOutput {
@@ -4444,6 +4882,7 @@ pub mod create_application_output {
                 tags: self.tags,
                 last_updated_time: self.last_updated_time,
                 created_time: self.created_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4463,6 +4902,7 @@ pub mod create_application_output {
             formatter.field("tags", &"*** Sensitive Data Redacted ***");
             formatter.field("last_updated_time", &self.last_updated_time);
             formatter.field("created_time", &self.created_time);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }

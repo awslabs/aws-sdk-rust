@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AcceptInvitation {
         crate::error::AcceptInvitationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_accept_invitation_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for BatchGetCustomDataIdenti
         crate::error::BatchGetCustomDataIdentifiersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_batch_get_custom_data_identifiers_error(response)
         } else {
@@ -93,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAllowList {
         crate::error::CreateAllowListError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_allow_list_error(response)
         } else {
@@ -127,6 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateClassificationJob 
         crate::error::CreateClassificationJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_classification_job_error(response)
         } else {
@@ -161,6 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateCustomDataIdentifi
         crate::error::CreateCustomDataIdentifierError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_custom_data_identifier_error(response)
         } else {
@@ -195,6 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFindingsFilter {
         crate::error::CreateFindingsFilterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_findings_filter_error(response)
         } else {
@@ -229,6 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInvitations {
         crate::error::CreateInvitationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_invitations_error(response)
         } else {
@@ -261,6 +268,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMember {
     type Output =
         std::result::Result<crate::output::CreateMemberOutput, crate::error::CreateMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_member_error(response)
         } else {
@@ -295,6 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSampleFindings {
         crate::error::CreateSampleFindingsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_sample_findings_error(response)
         } else {
@@ -329,6 +338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeclineInvitations {
         crate::error::DeclineInvitationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_decline_invitations_error(response)
         } else {
@@ -363,6 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAllowList {
         crate::error::DeleteAllowListError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_allow_list_error(response)
         } else {
@@ -397,6 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteCustomDataIdentifi
         crate::error::DeleteCustomDataIdentifierError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_custom_data_identifier_error(response)
         } else {
@@ -431,6 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFindingsFilter {
         crate::error::DeleteFindingsFilterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_findings_filter_error(response)
         } else {
@@ -465,6 +478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInvitations {
         crate::error::DeleteInvitationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_invitations_error(response)
         } else {
@@ -497,6 +511,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMember {
     type Output =
         std::result::Result<crate::output::DeleteMemberOutput, crate::error::DeleteMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_member_error(response)
         } else {
@@ -531,6 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeBuckets {
         crate::error::DescribeBucketsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_buckets_error(response)
         } else {
@@ -565,6 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeClassificationJo
         crate::error::DescribeClassificationJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_classification_job_error(response)
         } else {
@@ -599,6 +616,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeOrganizationConf
         crate::error::DescribeOrganizationConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_organization_configuration_error(response)
         } else {
@@ -631,6 +649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableMacie {
     type Output =
         std::result::Result<crate::output::DisableMacieOutput, crate::error::DisableMacieError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disable_macie_error(response)
         } else {
@@ -665,6 +684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisableOrganizationAdmin
         crate::error::DisableOrganizationAdminAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disable_organization_admin_account_error(response)
         } else {
@@ -699,6 +719,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFromAdminist
         crate::error::DisassociateFromAdministratorAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_from_administrator_account_error(response)
         } else {
@@ -733,6 +754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFromMasterAc
         crate::error::DisassociateFromMasterAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_from_master_account_error(response)
         } else {
@@ -767,6 +789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateMember {
         crate::error::DisassociateMemberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_member_error(response)
         } else {
@@ -799,6 +822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableMacie {
     type Output =
         std::result::Result<crate::output::EnableMacieOutput, crate::error::EnableMacieError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_macie_error(response)
         } else {
@@ -833,6 +857,7 @@ impl aws_smithy_http::response::ParseStrictResponse for EnableOrganizationAdminA
         crate::error::EnableOrganizationAdminAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_enable_organization_admin_account_error(response)
         } else {
@@ -867,6 +892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAdministratorAccount 
         crate::error::GetAdministratorAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_administrator_account_error(response)
         } else {
@@ -899,6 +925,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAllowList {
     type Output =
         std::result::Result<crate::output::GetAllowListOutput, crate::error::GetAllowListError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_allow_list_error(response)
         } else {
@@ -933,6 +960,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutomatedDiscoveryCon
         crate::error::GetAutomatedDiscoveryConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_automated_discovery_configuration_error(response)
         } else {
@@ -967,6 +995,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketStatistics {
         crate::error::GetBucketStatisticsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_statistics_error(response)
         } else {
@@ -1001,6 +1030,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClassificationExportC
         crate::error::GetClassificationExportConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_classification_export_configuration_error(response)
         } else {
@@ -1035,6 +1065,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetClassificationScope {
         crate::error::GetClassificationScopeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_classification_scope_error(response)
         } else {
@@ -1069,6 +1100,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCustomDataIdentifier 
         crate::error::GetCustomDataIdentifierError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_custom_data_identifier_error(response)
         } else {
@@ -1101,6 +1133,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFindings {
     type Output =
         std::result::Result<crate::output::GetFindingsOutput, crate::error::GetFindingsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_findings_error(response)
         } else {
@@ -1135,6 +1168,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFindingsFilter {
         crate::error::GetFindingsFilterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_findings_filter_error(response)
         } else {
@@ -1169,6 +1203,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFindingsPublicationCo
         crate::error::GetFindingsPublicationConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_findings_publication_configuration_error(response)
         } else {
@@ -1203,6 +1238,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFindingStatistics {
         crate::error::GetFindingStatisticsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_finding_statistics_error(response)
         } else {
@@ -1237,6 +1273,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetInvitationsCount {
         crate::error::GetInvitationsCountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_invitations_count_error(response)
         } else {
@@ -1271,6 +1308,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMacieSession {
         crate::error::GetMacieSessionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_macie_session_error(response)
         } else {
@@ -1305,6 +1343,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMasterAccount {
         crate::error::GetMasterAccountError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_master_account_error(response)
         } else {
@@ -1336,6 +1375,7 @@ impl GetMember {
 impl aws_smithy_http::response::ParseStrictResponse for GetMember {
     type Output = std::result::Result<crate::output::GetMemberOutput, crate::error::GetMemberError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_member_error(response)
         } else {
@@ -1370,6 +1410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResourceProfile {
         crate::error::GetResourceProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resource_profile_error(response)
         } else {
@@ -1404,6 +1445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRevealConfiguration {
         crate::error::GetRevealConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_reveal_configuration_error(response)
         } else {
@@ -1438,6 +1480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSensitiveDataOccurren
         crate::error::GetSensitiveDataOccurrencesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_sensitive_data_occurrences_error(response)
         } else {
@@ -1472,6 +1515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSensitiveDataOccurren
         crate::error::GetSensitiveDataOccurrencesAvailabilityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_sensitive_data_occurrences_availability_error(
                 response,
@@ -1510,6 +1554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetSensitivityInspection
         crate::error::GetSensitivityInspectionTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_sensitivity_inspection_template_error(response)
         } else {
@@ -1544,6 +1589,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageStatistics {
         crate::error::GetUsageStatisticsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_usage_statistics_error(response)
         } else {
@@ -1576,6 +1622,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetUsageTotals {
     type Output =
         std::result::Result<crate::output::GetUsageTotalsOutput, crate::error::GetUsageTotalsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_usage_totals_error(response)
         } else {
@@ -1608,6 +1655,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAllowLists {
     type Output =
         std::result::Result<crate::output::ListAllowListsOutput, crate::error::ListAllowListsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_allow_lists_error(response)
         } else {
@@ -1642,6 +1690,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClassificationJobs {
         crate::error::ListClassificationJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_classification_jobs_error(response)
         } else {
@@ -1676,6 +1725,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListClassificationScopes
         crate::error::ListClassificationScopesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_classification_scopes_error(response)
         } else {
@@ -1710,6 +1760,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListCustomDataIdentifier
         crate::error::ListCustomDataIdentifiersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_custom_data_identifiers_error(response)
         } else {
@@ -1742,6 +1793,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFindings {
     type Output =
         std::result::Result<crate::output::ListFindingsOutput, crate::error::ListFindingsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_findings_error(response)
         } else {
@@ -1776,6 +1828,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFindingsFilters {
         crate::error::ListFindingsFiltersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_findings_filters_error(response)
         } else {
@@ -1810,6 +1863,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInvitations {
         crate::error::ListInvitationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_invitations_error(response)
         } else {
@@ -1844,6 +1898,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListManagedDataIdentifie
         crate::error::ListManagedDataIdentifiersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_managed_data_identifiers_error(response)
         } else {
@@ -1876,6 +1931,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMembers {
     type Output =
         std::result::Result<crate::output::ListMembersOutput, crate::error::ListMembersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_members_error(response)
         } else {
@@ -1910,6 +1966,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListOrganizationAdminAcc
         crate::error::ListOrganizationAdminAccountsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_organization_admin_accounts_error(response)
         } else {
@@ -1944,6 +2001,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceProfileArtif
         crate::error::ListResourceProfileArtifactsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resource_profile_artifacts_error(response)
         } else {
@@ -1978,6 +2036,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResourceProfileDetec
         crate::error::ListResourceProfileDetectionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resource_profile_detections_error(response)
         } else {
@@ -2012,6 +2071,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSensitivityInspectio
         crate::error::ListSensitivityInspectionTemplatesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_sensitivity_inspection_templates_error(response)
         } else {
@@ -2046,6 +2106,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
         crate::error::ListTagsForResourceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
@@ -2080,6 +2141,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutClassificationExportC
         crate::error::PutClassificationExportConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_classification_export_configuration_error(response)
         } else {
@@ -2114,6 +2176,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFindingsPublicationCo
         crate::error::PutFindingsPublicationConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_findings_publication_configuration_error(response)
         } else {
@@ -2148,6 +2211,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchResources {
         crate::error::SearchResourcesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_resources_error(response)
         } else {
@@ -2180,6 +2244,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -2214,6 +2279,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TestCustomDataIdentifier
         crate::error::TestCustomDataIdentifierError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_test_custom_data_identifier_error(response)
         } else {
@@ -2246,6 +2312,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -2280,6 +2347,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAllowList {
         crate::error::UpdateAllowListError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_allow_list_error(response)
         } else {
@@ -2314,6 +2382,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAutomatedDiscovery
         crate::error::UpdateAutomatedDiscoveryConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_automated_discovery_configuration_error(response)
         } else {
@@ -2350,6 +2419,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateClassificationJob 
         crate::error::UpdateClassificationJobError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_classification_job_error(response)
         } else {
@@ -2384,6 +2454,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateClassificationScop
         crate::error::UpdateClassificationScopeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_classification_scope_error(response)
         } else {
@@ -2418,6 +2489,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFindingsFilter {
         crate::error::UpdateFindingsFilterError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_findings_filter_error(response)
         } else {
@@ -2452,6 +2524,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMacieSession {
         crate::error::UpdateMacieSessionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_macie_session_error(response)
         } else {
@@ -2486,6 +2559,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateMemberSession {
         crate::error::UpdateMemberSessionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_member_session_error(response)
         } else {
@@ -2520,6 +2594,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateOrganizationConfig
         crate::error::UpdateOrganizationConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_organization_configuration_error(response)
         } else {
@@ -2554,6 +2629,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceProfile {
         crate::error::UpdateResourceProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_resource_profile_error(response)
         } else {
@@ -2588,6 +2664,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResourceProfileDet
         crate::error::UpdateResourceProfileDetectionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_resource_profile_detections_error(response)
         } else {
@@ -2622,6 +2699,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRevealConfiguratio
         crate::error::UpdateRevealConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_reveal_configuration_error(response)
         } else {
@@ -2656,6 +2734,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSensitivityInspect
         crate::error::UpdateSensitivityInspectionTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_sensitivity_inspection_template_error(response)
         } else {

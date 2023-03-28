@@ -7,11 +7,17 @@ pub struct UpdateRecordsOutput {
     /// A list of records that have been updated.
     #[doc(hidden)]
     pub records: std::option::Option<std::vec::Vec<crate::model::Record>>,
+    _request_id: Option<String>,
 }
 impl UpdateRecordsOutput {
     /// A list of records that have been updated.
     pub fn records(&self) -> std::option::Option<&[crate::model::Record]> {
         self.records.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateRecordsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
@@ -22,6 +28,7 @@ pub mod update_records_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -43,10 +50,20 @@ pub mod update_records_output {
             self.records = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRecordsOutput`](crate::output::UpdateRecordsOutput).
         pub fn build(self) -> crate::output::UpdateRecordsOutput {
             crate::output::UpdateRecordsOutput {
                 records: self.records,
+                _request_id: self._request_id,
             }
         }
     }
@@ -61,18 +78,38 @@ impl UpdateRecordsOutput {
 /// <p>Response to an UnsubscribeFromDataset request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnsubscribeFromDatasetOutput {}
+pub struct UnsubscribeFromDatasetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UnsubscribeFromDatasetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
 pub mod unsubscribe_from_dataset_output {
 
     /// A builder for [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UnsubscribeFromDatasetOutput`](crate::output::UnsubscribeFromDatasetOutput).
         pub fn build(self) -> crate::output::UnsubscribeFromDatasetOutput {
-            crate::output::UnsubscribeFromDatasetOutput {}
+            crate::output::UnsubscribeFromDatasetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -86,18 +123,38 @@ impl UnsubscribeFromDatasetOutput {
 /// <p>Response to a SubscribeToDataset request.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SubscribeToDatasetOutput {}
+pub struct SubscribeToDatasetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for SubscribeToDatasetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
 pub mod subscribe_to_dataset_output {
 
     /// A builder for [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SubscribeToDatasetOutput`](crate::output::SubscribeToDatasetOutput).
         pub fn build(self) -> crate::output::SubscribeToDatasetOutput {
-            crate::output::SubscribeToDatasetOutput {}
+            crate::output::SubscribeToDatasetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -121,6 +178,7 @@ pub struct SetIdentityPoolConfigurationOutput {
     /// Options to apply to this identity pool for Amazon Cognito streams.
     #[doc(hidden)]
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
+    _request_id: Option<String>,
 }
 impl SetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
@@ -136,6 +194,11 @@ impl SetIdentityPoolConfigurationOutput {
         self.cognito_streams.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SetIdentityPoolConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
 pub mod set_identity_pool_configuration_output {
 
@@ -146,6 +209,7 @@ pub mod set_identity_pool_configuration_output {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) push_sync: std::option::Option<crate::model::PushSync>,
         pub(crate) cognito_streams: std::option::Option<crate::model::CognitoStreams>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
@@ -184,12 +248,22 @@ pub mod set_identity_pool_configuration_output {
             self.cognito_streams = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SetIdentityPoolConfigurationOutput`](crate::output::SetIdentityPoolConfigurationOutput).
         pub fn build(self) -> crate::output::SetIdentityPoolConfigurationOutput {
             crate::output::SetIdentityPoolConfigurationOutput {
                 identity_pool_id: self.identity_pool_id,
                 push_sync: self.push_sync,
                 cognito_streams: self.cognito_streams,
+                _request_id: self._request_id,
             }
         }
     }
@@ -204,18 +278,38 @@ impl SetIdentityPoolConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetCognitoEventsOutput {}
+pub struct SetCognitoEventsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for SetCognitoEventsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
 pub mod set_cognito_events_output {
 
     /// A builder for [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SetCognitoEventsOutput`](crate::output::SetCognitoEventsOutput).
         pub fn build(self) -> crate::output::SetCognitoEventsOutput {
-            crate::output::SetCognitoEventsOutput {}
+            crate::output::SetCognitoEventsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -233,11 +327,17 @@ pub struct RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     #[doc(hidden)]
     pub device_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RegisterDeviceOutput {
     /// <p>The unique ID generated for this device by Cognito.</p>
     pub fn device_id(&self) -> std::option::Option<&str> {
         self.device_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for RegisterDeviceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
@@ -248,6 +348,7 @@ pub mod register_device_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) device_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID generated for this device by Cognito.</p>
@@ -260,10 +361,20 @@ pub mod register_device_output {
             self.device_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterDeviceOutput`](crate::output::RegisterDeviceOutput).
         pub fn build(self) -> crate::output::RegisterDeviceOutput {
             crate::output::RegisterDeviceOutput {
                 device_id: self.device_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -306,6 +417,7 @@ pub struct ListRecordsOutput {
     /// A token containing a session ID, identity ID, and expiration.
     #[doc(hidden)]
     pub sync_session_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRecordsOutput {
     /// A list of all records.
@@ -345,6 +457,11 @@ impl ListRecordsOutput {
         self.sync_session_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRecordsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRecordsOutput`](crate::output::ListRecordsOutput).
 pub mod list_records_output {
 
@@ -361,6 +478,7 @@ pub mod list_records_output {
         pub(crate) dataset_exists: std::option::Option<bool>,
         pub(crate) dataset_deleted_after_requested_sync_count: std::option::Option<bool>,
         pub(crate) sync_session_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -480,6 +598,15 @@ pub mod list_records_output {
             self.sync_session_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRecordsOutput`](crate::output::ListRecordsOutput).
         pub fn build(self) -> crate::output::ListRecordsOutput {
             crate::output::ListRecordsOutput {
@@ -494,6 +621,7 @@ pub mod list_records_output {
                     .dataset_deleted_after_requested_sync_count
                     .unwrap_or_default(),
                 sync_session_token: self.sync_session_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -521,6 +649,7 @@ pub struct ListIdentityPoolUsageOutput {
     /// A pagination token for obtaining the next page of results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListIdentityPoolUsageOutput {
     /// Usage information for the identity pools.
@@ -540,6 +669,11 @@ impl ListIdentityPoolUsageOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIdentityPoolUsageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
 pub mod list_identity_pool_usage_output {
 
@@ -552,6 +686,7 @@ pub mod list_identity_pool_usage_output {
         pub(crate) max_results: std::option::Option<i32>,
         pub(crate) count: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `identity_pool_usages`.
@@ -603,6 +738,15 @@ pub mod list_identity_pool_usage_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIdentityPoolUsageOutput`](crate::output::ListIdentityPoolUsageOutput).
         pub fn build(self) -> crate::output::ListIdentityPoolUsageOutput {
             crate::output::ListIdentityPoolUsageOutput {
@@ -610,6 +754,7 @@ pub mod list_identity_pool_usage_output {
                 max_results: self.max_results.unwrap_or_default(),
                 count: self.count.unwrap_or_default(),
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -634,6 +779,7 @@ pub struct ListDatasetsOutput {
     /// A pagination token for obtaining the next page of results.
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDatasetsOutput {
     /// A set of datasets.
@@ -649,6 +795,11 @@ impl ListDatasetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDatasetsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
 pub mod list_datasets_output {
 
@@ -659,6 +810,7 @@ pub mod list_datasets_output {
         pub(crate) datasets: std::option::Option<std::vec::Vec<crate::model::Dataset>>,
         pub(crate) count: std::option::Option<i32>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `datasets`.
@@ -700,12 +852,22 @@ pub mod list_datasets_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDatasetsOutput`](crate::output::ListDatasetsOutput).
         pub fn build(self) -> crate::output::ListDatasetsOutput {
             crate::output::ListDatasetsOutput {
                 datasets: self.datasets,
                 count: self.count.unwrap_or_default(),
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -730,6 +892,7 @@ pub struct GetIdentityPoolConfigurationOutput {
     /// Options to apply to this identity pool for Amazon Cognito streams.
     #[doc(hidden)]
     pub cognito_streams: std::option::Option<crate::model::CognitoStreams>,
+    _request_id: Option<String>,
 }
 impl GetIdentityPoolConfigurationOutput {
     /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
@@ -745,6 +908,11 @@ impl GetIdentityPoolConfigurationOutput {
         self.cognito_streams.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetIdentityPoolConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
 pub mod get_identity_pool_configuration_output {
 
@@ -755,6 +923,7 @@ pub mod get_identity_pool_configuration_output {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
         pub(crate) push_sync: std::option::Option<crate::model::PushSync>,
         pub(crate) cognito_streams: std::option::Option<crate::model::CognitoStreams>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>
@@ -793,12 +962,22 @@ pub mod get_identity_pool_configuration_output {
             self.cognito_streams = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetIdentityPoolConfigurationOutput`](crate::output::GetIdentityPoolConfigurationOutput).
         pub fn build(self) -> crate::output::GetIdentityPoolConfigurationOutput {
             crate::output::GetIdentityPoolConfigurationOutput {
                 identity_pool_id: self.identity_pool_id,
                 push_sync: self.push_sync,
                 cognito_streams: self.cognito_streams,
+                _request_id: self._request_id,
             }
         }
     }
@@ -818,6 +997,7 @@ pub struct GetCognitoEventsOutput {
     #[doc(hidden)]
     pub events:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetCognitoEventsOutput {
     /// <p>The Cognito Events returned from the GetCognitoEvents request</p>
@@ -826,6 +1006,11 @@ impl GetCognitoEventsOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.events.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetCognitoEventsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
@@ -838,6 +1023,7 @@ pub mod get_cognito_events_output {
         pub(crate) events: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `events`.
@@ -865,10 +1051,20 @@ pub mod get_cognito_events_output {
             self.events = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCognitoEventsOutput`](crate::output::GetCognitoEventsOutput).
         pub fn build(self) -> crate::output::GetCognitoEventsOutput {
             crate::output::GetCognitoEventsOutput {
                 events: self.events,
+                _request_id: self._request_id,
             }
         }
     }
@@ -903,6 +1099,7 @@ pub struct GetBulkPublishDetailsOutput {
     /// If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.
     #[doc(hidden)]
     pub failure_message: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBulkPublishDetailsOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -930,6 +1127,11 @@ impl GetBulkPublishDetailsOutput {
         self.failure_message.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBulkPublishDetailsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
 pub mod get_bulk_publish_details_output {
 
@@ -942,6 +1144,7 @@ pub mod get_bulk_publish_details_output {
         pub(crate) bulk_publish_complete_time: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) bulk_publish_status: std::option::Option<crate::model::BulkPublishStatus>,
         pub(crate) failure_message: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -1017,6 +1220,15 @@ pub mod get_bulk_publish_details_output {
             self.failure_message = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBulkPublishDetailsOutput`](crate::output::GetBulkPublishDetailsOutput).
         pub fn build(self) -> crate::output::GetBulkPublishDetailsOutput {
             crate::output::GetBulkPublishDetailsOutput {
@@ -1025,6 +1237,7 @@ pub mod get_bulk_publish_details_output {
                 bulk_publish_complete_time: self.bulk_publish_complete_time,
                 bulk_publish_status: self.bulk_publish_status,
                 failure_message: self.failure_message,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1043,11 +1256,17 @@ pub struct DescribeIdentityUsageOutput {
     /// Usage information for the identity.
     #[doc(hidden)]
     pub identity_usage: std::option::Option<crate::model::IdentityUsage>,
+    _request_id: Option<String>,
 }
 impl DescribeIdentityUsageOutput {
     /// Usage information for the identity.
     pub fn identity_usage(&self) -> std::option::Option<&crate::model::IdentityUsage> {
         self.identity_usage.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeIdentityUsageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
@@ -1058,6 +1277,7 @@ pub mod describe_identity_usage_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_usage: std::option::Option<crate::model::IdentityUsage>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Usage information for the identity.
@@ -1073,10 +1293,20 @@ pub mod describe_identity_usage_output {
             self.identity_usage = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeIdentityUsageOutput`](crate::output::DescribeIdentityUsageOutput).
         pub fn build(self) -> crate::output::DescribeIdentityUsageOutput {
             crate::output::DescribeIdentityUsageOutput {
                 identity_usage: self.identity_usage,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1095,11 +1325,17 @@ pub struct DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
     #[doc(hidden)]
     pub identity_pool_usage: std::option::Option<crate::model::IdentityPoolUsage>,
+    _request_id: Option<String>,
 }
 impl DescribeIdentityPoolUsageOutput {
     /// Information about the usage of the identity pool.
     pub fn identity_pool_usage(&self) -> std::option::Option<&crate::model::IdentityPoolUsage> {
         self.identity_pool_usage.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeIdentityPoolUsageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
@@ -1110,6 +1346,7 @@ pub mod describe_identity_pool_usage_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_usage: std::option::Option<crate::model::IdentityPoolUsage>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Information about the usage of the identity pool.
@@ -1125,10 +1362,20 @@ pub mod describe_identity_pool_usage_output {
             self.identity_pool_usage = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeIdentityPoolUsageOutput`](crate::output::DescribeIdentityPoolUsageOutput).
         pub fn build(self) -> crate::output::DescribeIdentityPoolUsageOutput {
             crate::output::DescribeIdentityPoolUsageOutput {
                 identity_pool_usage: self.identity_pool_usage,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1147,11 +1394,17 @@ pub struct DescribeDatasetOutput {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::Dataset>,
+    _request_id: Option<String>,
 }
 impl DescribeDatasetOutput {
     /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     pub fn dataset(&self) -> std::option::Option<&crate::model::Dataset> {
         self.dataset.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeDatasetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
@@ -1162,6 +1415,7 @@ pub mod describe_dataset_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
@@ -1174,10 +1428,20 @@ pub mod describe_dataset_output {
             self.dataset = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeDatasetOutput`](crate::output::DescribeDatasetOutput).
         pub fn build(self) -> crate::output::DescribeDatasetOutput {
             crate::output::DescribeDatasetOutput {
                 dataset: self.dataset,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1196,11 +1460,17 @@ pub struct DeleteDatasetOutput {
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     #[doc(hidden)]
     pub dataset: std::option::Option<crate::model::Dataset>,
+    _request_id: Option<String>,
 }
 impl DeleteDatasetOutput {
     /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
     pub fn dataset(&self) -> std::option::Option<&crate::model::Dataset> {
         self.dataset.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteDatasetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
@@ -1211,6 +1481,7 @@ pub mod delete_dataset_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dataset: std::option::Option<crate::model::Dataset>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.
@@ -1223,10 +1494,20 @@ pub mod delete_dataset_output {
             self.dataset = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDatasetOutput`](crate::output::DeleteDatasetOutput).
         pub fn build(self) -> crate::output::DeleteDatasetOutput {
             crate::output::DeleteDatasetOutput {
                 dataset: self.dataset,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1245,11 +1526,17 @@ pub struct BulkPublishOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     #[doc(hidden)]
     pub identity_pool_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl BulkPublishOutput {
     /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
     pub fn identity_pool_id(&self) -> std::option::Option<&str> {
         self.identity_pool_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BulkPublishOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BulkPublishOutput`](crate::output::BulkPublishOutput).
@@ -1260,6 +1547,7 @@ pub mod bulk_publish_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_pool_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
@@ -1275,10 +1563,20 @@ pub mod bulk_publish_output {
             self.identity_pool_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BulkPublishOutput`](crate::output::BulkPublishOutput).
         pub fn build(self) -> crate::output::BulkPublishOutput {
             crate::output::BulkPublishOutput {
                 identity_pool_id: self.identity_pool_id,
+                _request_id: self._request_id,
             }
         }
     }

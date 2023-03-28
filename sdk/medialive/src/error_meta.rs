@@ -21,15 +21,8 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// Placeholder documentation for UnprocessableEntityException
     UnprocessableEntityException(crate::error::UnprocessableEntityException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -59,42 +52,49 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AcceptInputDeviceTransferError> for Error {
     fn from(err: crate::error::AcceptInputDeviceTransferError) -> Self {
-        match err.kind {
-            crate::error::AcceptInputDeviceTransferErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::AcceptInputDeviceTransferError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::BadRequestException(inner) => {
+            crate::error::AcceptInputDeviceTransferError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::ConflictException(inner) => {
+            crate::error::AcceptInputDeviceTransferError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::ForbiddenException(inner) => {
+            crate::error::AcceptInputDeviceTransferError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::AcceptInputDeviceTransferError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::AcceptInputDeviceTransferErrorKind::NotFoundException(inner) => {
+            crate::error::AcceptInputDeviceTransferError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::AcceptInputDeviceTransferError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::TooManyRequestsException(inner) => {
+            crate::error::AcceptInputDeviceTransferError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::AcceptInputDeviceTransferErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::AcceptInputDeviceTransferErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::AcceptInputDeviceTransferError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::error::AcceptInputDeviceTransferError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -108,40 +108,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchDeleteError> for Error {
     fn from(err: crate::error::BatchDeleteError) -> Self {
-        match err.kind {
-            crate::error::BatchDeleteErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::BatchDeleteError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::BatchDeleteErrorKind::BadRequestException(inner) => {
+            crate::error::BatchDeleteError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::BatchDeleteErrorKind::ConflictException(inner) => {
+            crate::error::BatchDeleteError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::BatchDeleteErrorKind::ForbiddenException(inner) => {
+            crate::error::BatchDeleteError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::BatchDeleteErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::BatchDeleteError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::BatchDeleteErrorKind::InternalServerErrorException(inner) => {
+            crate::error::BatchDeleteError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::BatchDeleteErrorKind::NotFoundException(inner) => {
+            crate::error::BatchDeleteError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::BatchDeleteErrorKind::TooManyRequestsException(inner) => {
+            crate::error::BatchDeleteError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::BatchDeleteErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchDeleteError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -154,40 +159,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchStartError> for Error {
     fn from(err: crate::error::BatchStartError) -> Self {
-        match err.kind {
-            crate::error::BatchStartErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::BatchStartError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::BatchStartErrorKind::BadRequestException(inner) => {
+            crate::error::BatchStartError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::BatchStartErrorKind::ConflictException(inner) => {
+            crate::error::BatchStartError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::BatchStartErrorKind::ForbiddenException(inner) => {
+            crate::error::BatchStartError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::BatchStartErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::BatchStartError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::BatchStartErrorKind::InternalServerErrorException(inner) => {
+            crate::error::BatchStartError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::BatchStartErrorKind::NotFoundException(inner) => {
+            crate::error::BatchStartError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::BatchStartErrorKind::TooManyRequestsException(inner) => {
+            crate::error::BatchStartError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::BatchStartErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchStartError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -200,40 +210,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchStopError> for Error {
     fn from(err: crate::error::BatchStopError) -> Self {
-        match err.kind {
-            crate::error::BatchStopErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::BatchStopError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::BatchStopErrorKind::BadRequestException(inner) => {
+            crate::error::BatchStopError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::BatchStopErrorKind::ConflictException(inner) => {
+            crate::error::BatchStopError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::BatchStopErrorKind::ForbiddenException(inner) => {
+            crate::error::BatchStopError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::BatchStopErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::BatchStopError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::BatchStopErrorKind::InternalServerErrorException(inner) => {
+            crate::error::BatchStopError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::BatchStopErrorKind::NotFoundException(inner) => {
+            crate::error::BatchStopError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::BatchStopErrorKind::TooManyRequestsException(inner) => {
+            crate::error::BatchStopError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::BatchStopErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchStopError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -248,40 +263,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::BatchUpdateScheduleError> for Error {
     fn from(err: crate::error::BatchUpdateScheduleError) -> Self {
-        match err.kind {
-            crate::error::BatchUpdateScheduleErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::BatchUpdateScheduleError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::BadRequestException(inner) => {
+            crate::error::BatchUpdateScheduleError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::ForbiddenException(inner) => {
+            crate::error::BatchUpdateScheduleError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::BatchUpdateScheduleError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::InternalServerErrorException(inner) => {
+            crate::error::BatchUpdateScheduleError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::NotFoundException(inner) => {
+            crate::error::BatchUpdateScheduleError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::TooManyRequestsException(inner) => {
+            crate::error::BatchUpdateScheduleError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::BatchUpdateScheduleError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::BatchUpdateScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::BatchUpdateScheduleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -297,42 +317,49 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CancelInputDeviceTransferError> for Error {
     fn from(err: crate::error::CancelInputDeviceTransferError) -> Self {
-        match err.kind {
-            crate::error::CancelInputDeviceTransferErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CancelInputDeviceTransferError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::BadRequestException(inner) => {
+            crate::error::CancelInputDeviceTransferError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::ConflictException(inner) => {
+            crate::error::CancelInputDeviceTransferError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::ForbiddenException(inner) => {
+            crate::error::CancelInputDeviceTransferError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CancelInputDeviceTransferError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::CancelInputDeviceTransferErrorKind::NotFoundException(inner) => {
+            crate::error::CancelInputDeviceTransferError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::CancelInputDeviceTransferError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CancelInputDeviceTransferError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CancelInputDeviceTransferErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::CancelInputDeviceTransferErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CancelInputDeviceTransferError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::error::CancelInputDeviceTransferError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -346,40 +373,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ClaimDeviceError> for Error {
     fn from(err: crate::error::ClaimDeviceError) -> Self {
-        match err.kind {
-            crate::error::ClaimDeviceErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ClaimDeviceError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::BadRequestException(inner) => {
+            crate::error::ClaimDeviceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::ForbiddenException(inner) => {
+            crate::error::ClaimDeviceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ClaimDeviceError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ClaimDeviceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::NotFoundException(inner) => {
+            crate::error::ClaimDeviceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ClaimDeviceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::ClaimDeviceError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::ClaimDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ClaimDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -392,40 +424,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateChannelError> for Error {
     fn from(err: crate::error::CreateChannelError) -> Self {
-        match err.kind {
-            crate::error::CreateChannelErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CreateChannelError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CreateChannelErrorKind::BadRequestException(inner) => {
+            crate::error::CreateChannelError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateChannelErrorKind::ConflictException(inner) => {
+            crate::error::CreateChannelError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateChannelErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateChannelError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateChannelErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateChannelError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateChannelErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateChannelError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateChannelErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateChannelError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateChannelErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::CreateChannelError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::CreateChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -438,34 +475,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateInputError> for Error {
     fn from(err: crate::error::CreateInputError) -> Self {
-        match err.kind {
-            crate::error::CreateInputErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CreateInputError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CreateInputErrorKind::BadRequestException(inner) => {
+            crate::error::CreateInputError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateInputErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateInputError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateInputErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateInputError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateInputErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateInputError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateInputErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateInputError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateInputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateInputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -481,33 +523,40 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateInputSecurityGroupError> for Error {
     fn from(err: crate::error::CreateInputSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateInputSecurityGroupErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CreateInputSecurityGroupError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CreateInputSecurityGroupErrorKind::BadRequestException(inner) => {
+            crate::error::CreateInputSecurityGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateInputSecurityGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateInputSecurityGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateInputSecurityGroupErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateInputSecurityGroupError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateInputSecurityGroupErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::CreateInputSecurityGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateInputSecurityGroupError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::CreateInputSecurityGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateInputSecurityGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreateInputSecurityGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -521,40 +570,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateMultiplexError> for Error {
     fn from(err: crate::error::CreateMultiplexError) -> Self {
-        match err.kind {
-            crate::error::CreateMultiplexErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CreateMultiplexError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::BadRequestException(inner) => {
+            crate::error::CreateMultiplexError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::ConflictException(inner) => {
+            crate::error::CreateMultiplexError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateMultiplexError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateMultiplexError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateMultiplexError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateMultiplexError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::CreateMultiplexError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::CreateMultiplexErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -570,40 +624,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateMultiplexProgramError> for Error {
     fn from(err: crate::error::CreateMultiplexProgramError) -> Self {
-        match err.kind {
-            crate::error::CreateMultiplexProgramErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CreateMultiplexProgramError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::BadRequestException(inner) => {
+            crate::error::CreateMultiplexProgramError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::ConflictException(inner) => {
+            crate::error::CreateMultiplexProgramError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateMultiplexProgramError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateMultiplexProgramError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateMultiplexProgramError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateMultiplexProgramError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::CreateMultiplexProgramError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::CreateMultiplexProgramErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMultiplexProgramError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -618,34 +677,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreatePartnerInputError> for Error {
     fn from(err: crate::error::CreatePartnerInputError) -> Self {
-        match err.kind {
-            crate::error::CreatePartnerInputErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::CreatePartnerInputError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::CreatePartnerInputErrorKind::BadRequestException(inner) => {
+            crate::error::CreatePartnerInputError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreatePartnerInputErrorKind::ForbiddenException(inner) => {
+            crate::error::CreatePartnerInputError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreatePartnerInputErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreatePartnerInputError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreatePartnerInputErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreatePartnerInputError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreatePartnerInputErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreatePartnerInputError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreatePartnerInputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreatePartnerInputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -658,28 +722,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTagsError> for Error {
     fn from(err: crate::error::CreateTagsError) -> Self {
-        match err.kind {
-            crate::error::CreateTagsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateTagsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateTagsErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateTagsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateTagsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateTagsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateTagsErrorKind::NotFoundException(inner) => {
+            crate::error::CreateTagsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -692,40 +761,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteChannelError> for Error {
     fn from(err: crate::error::DeleteChannelError) -> Self {
-        match err.kind {
-            crate::error::DeleteChannelErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteChannelError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteChannelErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteChannelError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteChannelErrorKind::ConflictException(inner) => {
+            crate::error::DeleteChannelError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteChannelErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteChannelError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteChannelErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteChannelError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteChannelErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteChannelError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteChannelErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteChannelError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteChannelErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteChannelError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -738,40 +812,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteInputError> for Error {
     fn from(err: crate::error::DeleteInputError) -> Self {
-        match err.kind {
-            crate::error::DeleteInputErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteInputError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteInputErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteInputError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteInputErrorKind::ConflictException(inner) => {
+            crate::error::DeleteInputError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteInputErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteInputError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteInputErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteInputError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteInputErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteInputError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteInputErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteInputError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteInputErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteInputError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteInputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteInputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -787,36 +866,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteInputSecurityGroupError> for Error {
     fn from(err: crate::error::DeleteInputSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteInputSecurityGroupErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteInputSecurityGroupError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteInputSecurityGroupErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteInputSecurityGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteInputSecurityGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteInputSecurityGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteInputSecurityGroupErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteInputSecurityGroupError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteInputSecurityGroupErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DeleteInputSecurityGroupErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteInputSecurityGroupError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::DeleteInputSecurityGroupError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteInputSecurityGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteInputSecurityGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteInputSecurityGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteInputSecurityGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -830,40 +916,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteMultiplexError> for Error {
     fn from(err: crate::error::DeleteMultiplexError) -> Self {
-        match err.kind {
-            crate::error::DeleteMultiplexErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteMultiplexError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteMultiplexError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::ConflictException(inner) => {
+            crate::error::DeleteMultiplexError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteMultiplexError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteMultiplexError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteMultiplexError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteMultiplexError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteMultiplexError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteMultiplexErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -879,40 +970,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteMultiplexProgramError> for Error {
     fn from(err: crate::error::DeleteMultiplexProgramError) -> Self {
-        match err.kind {
-            crate::error::DeleteMultiplexProgramErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteMultiplexProgramError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteMultiplexProgramError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::ConflictException(inner) => {
+            crate::error::DeleteMultiplexProgramError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteMultiplexProgramError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteMultiplexProgramError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteMultiplexProgramError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteMultiplexProgramError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteMultiplexProgramError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteMultiplexProgramErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMultiplexProgramError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -927,40 +1023,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteReservationError> for Error {
     fn from(err: crate::error::DeleteReservationError) -> Self {
-        match err.kind {
-            crate::error::DeleteReservationErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteReservationError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteReservationErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteReservationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteReservationErrorKind::ConflictException(inner) => {
+            crate::error::DeleteReservationError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::DeleteReservationErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteReservationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteReservationErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteReservationError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteReservationErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteReservationError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteReservationErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteReservationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteReservationErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteReservationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteReservationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteReservationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -973,37 +1074,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteScheduleError> for Error {
     fn from(err: crate::error::DeleteScheduleError) -> Self {
-        match err.kind {
-            crate::error::DeleteScheduleErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DeleteScheduleError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::BadRequestException(inner) => {
+            crate::error::DeleteScheduleError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteScheduleError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteScheduleError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteScheduleError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteScheduleError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteScheduleError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteScheduleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1016,28 +1122,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteTagsError> for Error {
     fn from(err: crate::error::DeleteTagsError) -> Self {
-        match err.kind {
-            crate::error::DeleteTagsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteTagsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteTagsErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteTagsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteTagsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteTagsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteTagsErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteTagsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1050,37 +1161,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeChannelError> for Error {
     fn from(err: crate::error::DescribeChannelError) -> Self {
-        match err.kind {
-            crate::error::DescribeChannelErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeChannelError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeChannelErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeChannelError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeChannelErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeChannelError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeChannelErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeChannelError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeChannelErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeChannelError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeChannelErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeChannelError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeChannelErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeChannelError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1093,37 +1209,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeInputError> for Error {
     fn from(err: crate::error::DescribeInputError) -> Self {
-        match err.kind {
-            crate::error::DescribeInputErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeInputError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeInputErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeInputError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeInputErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeInputError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeInputErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeInputError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeInputErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeInputError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeInputErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeInputError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeInputErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeInputError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeInputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeInputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1138,37 +1259,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeInputDeviceError> for Error {
     fn from(err: crate::error::DescribeInputDeviceError) -> Self {
-        match err.kind {
-            crate::error::DescribeInputDeviceErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeInputDeviceError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeInputDeviceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeInputDeviceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeInputDeviceError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeInputDeviceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeInputDeviceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeInputDeviceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeInputDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1184,36 +1310,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeInputDeviceThumbnailError> for Error {
     fn from(err: crate::error::DescribeInputDeviceThumbnailError) -> Self {
-        match err.kind {
-            crate::error::DescribeInputDeviceThumbnailErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeInputDeviceThumbnailError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeInputDeviceThumbnailErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeInputDeviceThumbnailError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeInputDeviceThumbnailErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeInputDeviceThumbnailError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeInputDeviceThumbnailErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeInputDeviceThumbnailError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeInputDeviceThumbnailErrorKind::InternalServerErrorException(
+            crate::error::DescribeInputDeviceThumbnailError::InternalServerErrorException(
                 inner,
             ) => Error::InternalServerErrorException(inner),
-            crate::error::DescribeInputDeviceThumbnailErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeInputDeviceThumbnailError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeInputDeviceThumbnailErrorKind::TooManyRequestsException(
-                inner,
-            ) => Error::TooManyRequestsException(inner),
-            crate::error::DescribeInputDeviceThumbnailErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeInputDeviceThumbnailError::TooManyRequestsException(inner) => {
+                Error::TooManyRequestsException(inner)
+            }
+            crate::error::DescribeInputDeviceThumbnailError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1230,36 +1363,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeInputSecurityGroupError> for Error {
     fn from(err: crate::error::DescribeInputSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::DescribeInputSecurityGroupErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeInputSecurityGroupError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeInputSecurityGroupErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeInputSecurityGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeInputSecurityGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeInputSecurityGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeInputSecurityGroupErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeInputSecurityGroupError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeInputSecurityGroupErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DescribeInputSecurityGroupErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeInputSecurityGroupError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::DescribeInputSecurityGroupError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeInputSecurityGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeInputSecurityGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeInputSecurityGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeInputSecurityGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1275,37 +1415,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeMultiplexError> for Error {
     fn from(err: crate::error::DescribeMultiplexError) -> Self {
-        match err.kind {
-            crate::error::DescribeMultiplexErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeMultiplexError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeMultiplexError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeMultiplexError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeMultiplexError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeMultiplexError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeMultiplexError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeMultiplexError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeMultiplexErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1321,36 +1466,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeMultiplexProgramError> for Error {
     fn from(err: crate::error::DescribeMultiplexProgramError) -> Self {
-        match err.kind {
-            crate::error::DescribeMultiplexProgramErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeMultiplexProgramError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeMultiplexProgramErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeMultiplexProgramError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeMultiplexProgramErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeMultiplexProgramError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeMultiplexProgramErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeMultiplexProgramError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeMultiplexProgramErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::DescribeMultiplexProgramErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeMultiplexProgramError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::DescribeMultiplexProgramError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeMultiplexProgramErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeMultiplexProgramError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeMultiplexProgramErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeMultiplexProgramError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1366,37 +1518,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeOfferingError> for Error {
     fn from(err: crate::error::DescribeOfferingError) -> Self {
-        match err.kind {
-            crate::error::DescribeOfferingErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeOfferingError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeOfferingError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeOfferingError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeOfferingError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeOfferingError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeOfferingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeOfferingError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeOfferingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeOfferingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1411,37 +1568,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeReservationError> for Error {
     fn from(err: crate::error::DescribeReservationError) -> Self {
-        match err.kind {
-            crate::error::DescribeReservationErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeReservationError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeReservationErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeReservationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeReservationErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeReservationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeReservationErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeReservationError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeReservationErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeReservationError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeReservationErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeReservationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeReservationErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeReservationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeReservationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeReservationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1456,37 +1618,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeScheduleError> for Error {
     fn from(err: crate::error::DescribeScheduleError) -> Self {
-        match err.kind {
-            crate::error::DescribeScheduleErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::DescribeScheduleError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::BadRequestException(inner) => {
+            crate::error::DescribeScheduleError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::ForbiddenException(inner) => {
+            crate::error::DescribeScheduleError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DescribeScheduleError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DescribeScheduleError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeScheduleError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeScheduleError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeScheduleErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeScheduleError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1499,34 +1666,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListChannelsError> for Error {
     fn from(err: crate::error::ListChannelsError) -> Self {
-        match err.kind {
-            crate::error::ListChannelsErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListChannelsError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListChannelsErrorKind::BadRequestException(inner) => {
+            crate::error::ListChannelsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListChannelsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListChannelsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListChannelsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListChannelsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListChannelsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListChannelsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListChannelsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListChannelsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListChannelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChannelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1541,34 +1713,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListInputDevicesError> for Error {
     fn from(err: crate::error::ListInputDevicesError) -> Self {
-        match err.kind {
-            crate::error::ListInputDevicesErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListInputDevicesError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListInputDevicesErrorKind::BadRequestException(inner) => {
+            crate::error::ListInputDevicesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListInputDevicesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListInputDevicesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListInputDevicesErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListInputDevicesError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListInputDevicesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListInputDevicesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListInputDevicesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListInputDevicesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListInputDevicesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInputDevicesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1584,36 +1761,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListInputDeviceTransfersError> for Error {
     fn from(err: crate::error::ListInputDeviceTransfersError) -> Self {
-        match err.kind {
-            crate::error::ListInputDeviceTransfersErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListInputDeviceTransfersError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListInputDeviceTransfersErrorKind::BadRequestException(inner) => {
+            crate::error::ListInputDeviceTransfersError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListInputDeviceTransfersErrorKind::ForbiddenException(inner) => {
+            crate::error::ListInputDeviceTransfersError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListInputDeviceTransfersErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListInputDeviceTransfersError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListInputDeviceTransfersErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::ListInputDeviceTransfersErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListInputDeviceTransfersError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::ListInputDeviceTransfersError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListInputDeviceTransfersErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::ListInputDeviceTransfersErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListInputDeviceTransfersError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::error::ListInputDeviceTransfersError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1627,34 +1811,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListInputsError> for Error {
     fn from(err: crate::error::ListInputsError) -> Self {
-        match err.kind {
-            crate::error::ListInputsErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListInputsError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListInputsErrorKind::BadRequestException(inner) => {
+            crate::error::ListInputsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListInputsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListInputsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListInputsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListInputsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListInputsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListInputsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListInputsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListInputsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListInputsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInputsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1670,34 +1859,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListInputSecurityGroupsError> for Error {
     fn from(err: crate::error::ListInputSecurityGroupsError) -> Self {
-        match err.kind {
-            crate::error::ListInputSecurityGroupsErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListInputSecurityGroupsError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListInputSecurityGroupsErrorKind::BadRequestException(inner) => {
+            crate::error::ListInputSecurityGroupsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListInputSecurityGroupsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListInputSecurityGroupsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListInputSecurityGroupsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListInputSecurityGroupsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListInputSecurityGroupsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListInputSecurityGroupsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListInputSecurityGroupsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListInputSecurityGroupsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListInputSecurityGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListInputSecurityGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1710,34 +1904,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListMultiplexesError> for Error {
     fn from(err: crate::error::ListMultiplexesError) -> Self {
-        match err.kind {
-            crate::error::ListMultiplexesErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListMultiplexesError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListMultiplexesErrorKind::BadRequestException(inner) => {
+            crate::error::ListMultiplexesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListMultiplexesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListMultiplexesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListMultiplexesErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListMultiplexesError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListMultiplexesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListMultiplexesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListMultiplexesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListMultiplexesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListMultiplexesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMultiplexesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1753,37 +1952,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListMultiplexProgramsError> for Error {
     fn from(err: crate::error::ListMultiplexProgramsError) -> Self {
-        match err.kind {
-            crate::error::ListMultiplexProgramsErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListMultiplexProgramsError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::BadRequestException(inner) => {
+            crate::error::ListMultiplexProgramsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListMultiplexProgramsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListMultiplexProgramsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListMultiplexProgramsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::NotFoundException(inner) => {
+            crate::error::ListMultiplexProgramsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListMultiplexProgramsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListMultiplexProgramsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListMultiplexProgramsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1796,34 +2000,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListOfferingsError> for Error {
     fn from(err: crate::error::ListOfferingsError) -> Self {
-        match err.kind {
-            crate::error::ListOfferingsErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListOfferingsError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListOfferingsErrorKind::BadRequestException(inner) => {
+            crate::error::ListOfferingsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListOfferingsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListOfferingsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListOfferingsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListOfferingsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListOfferingsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListOfferingsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListOfferingsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListOfferingsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListOfferingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListOfferingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1838,34 +2047,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListReservationsError> for Error {
     fn from(err: crate::error::ListReservationsError) -> Self {
-        match err.kind {
-            crate::error::ListReservationsErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::ListReservationsError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::ListReservationsErrorKind::BadRequestException(inner) => {
+            crate::error::ListReservationsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListReservationsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListReservationsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListReservationsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListReservationsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListReservationsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListReservationsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListReservationsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListReservationsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListReservationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListReservationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1880,28 +2094,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ForbiddenException(inner) => {
+            crate::error::ListTagsForResourceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListTagsForResourceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::NotFoundException(inner) => {
+            crate::error::ListTagsForResourceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1916,40 +2135,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PurchaseOfferingError> for Error {
     fn from(err: crate::error::PurchaseOfferingError) -> Self {
-        match err.kind {
-            crate::error::PurchaseOfferingErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::PurchaseOfferingError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::BadRequestException(inner) => {
+            crate::error::PurchaseOfferingError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::ConflictException(inner) => {
+            crate::error::PurchaseOfferingError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::ForbiddenException(inner) => {
+            crate::error::PurchaseOfferingError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::PurchaseOfferingError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::InternalServerErrorException(inner) => {
+            crate::error::PurchaseOfferingError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::NotFoundException(inner) => {
+            crate::error::PurchaseOfferingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::TooManyRequestsException(inner) => {
+            crate::error::PurchaseOfferingError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::PurchaseOfferingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PurchaseOfferingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1964,40 +2188,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RebootInputDeviceError> for Error {
     fn from(err: crate::error::RebootInputDeviceError) -> Self {
-        match err.kind {
-            crate::error::RebootInputDeviceErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::RebootInputDeviceError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::BadRequestException(inner) => {
+            crate::error::RebootInputDeviceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::ForbiddenException(inner) => {
+            crate::error::RebootInputDeviceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::RebootInputDeviceError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::RebootInputDeviceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::NotFoundException(inner) => {
+            crate::error::RebootInputDeviceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::RebootInputDeviceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::RebootInputDeviceError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::RebootInputDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RebootInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2013,42 +2242,49 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RejectInputDeviceTransferError> for Error {
     fn from(err: crate::error::RejectInputDeviceTransferError) -> Self {
-        match err.kind {
-            crate::error::RejectInputDeviceTransferErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::RejectInputDeviceTransferError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::BadRequestException(inner) => {
+            crate::error::RejectInputDeviceTransferError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::ConflictException(inner) => {
+            crate::error::RejectInputDeviceTransferError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::ForbiddenException(inner) => {
+            crate::error::RejectInputDeviceTransferError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::RejectInputDeviceTransferError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::RejectInputDeviceTransferErrorKind::NotFoundException(inner) => {
+            crate::error::RejectInputDeviceTransferError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::RejectInputDeviceTransferError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::TooManyRequestsException(inner) => {
+            crate::error::RejectInputDeviceTransferError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::RejectInputDeviceTransferErrorKind::UnprocessableEntityException(
-                inner,
-            ) => Error::UnprocessableEntityException(inner),
-            crate::error::RejectInputDeviceTransferErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::RejectInputDeviceTransferError::UnprocessableEntityException(inner) => {
+                Error::UnprocessableEntityException(inner)
+            }
+            crate::error::RejectInputDeviceTransferError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2062,40 +2298,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StartChannelError> for Error {
     fn from(err: crate::error::StartChannelError) -> Self {
-        match err.kind {
-            crate::error::StartChannelErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::StartChannelError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::StartChannelErrorKind::BadRequestException(inner) => {
+            crate::error::StartChannelError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::StartChannelErrorKind::ConflictException(inner) => {
+            crate::error::StartChannelError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::StartChannelErrorKind::ForbiddenException(inner) => {
+            crate::error::StartChannelError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::StartChannelErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::StartChannelError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::StartChannelErrorKind::InternalServerErrorException(inner) => {
+            crate::error::StartChannelError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::StartChannelErrorKind::NotFoundException(inner) => {
+            crate::error::StartChannelError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::StartChannelErrorKind::TooManyRequestsException(inner) => {
+            crate::error::StartChannelError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::StartChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2115,22 +2356,47 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StartInputDeviceMaintenanceWindowError> for Error {
     fn from(err: crate::error::StartInputDeviceMaintenanceWindowError) -> Self {
-        match err.kind {
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::BadGatewayException(inner) => Error::BadGatewayException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::BadRequestException(inner) => Error::BadRequestException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::ForbiddenException(inner) => Error::ForbiddenException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::GatewayTimeoutException(inner) => Error::GatewayTimeoutException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::InternalServerErrorException(inner) => Error::InternalServerErrorException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::TooManyRequestsException(inner) => Error::TooManyRequestsException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::UnprocessableEntityException(inner) => Error::UnprocessableEntityException(inner),
-            crate::error::StartInputDeviceMaintenanceWindowErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::StartInputDeviceMaintenanceWindowError::BadGatewayException(inner) => {
+                Error::BadGatewayException(inner)
+            }
+            crate::error::StartInputDeviceMaintenanceWindowError::BadRequestException(inner) => {
+                Error::BadRequestException(inner)
+            }
+            crate::error::StartInputDeviceMaintenanceWindowError::ForbiddenException(inner) => {
+                Error::ForbiddenException(inner)
+            }
+            crate::error::StartInputDeviceMaintenanceWindowError::GatewayTimeoutException(
+                inner,
+            ) => Error::GatewayTimeoutException(inner),
+            crate::error::StartInputDeviceMaintenanceWindowError::InternalServerErrorException(
+                inner,
+            ) => Error::InternalServerErrorException(inner),
+            crate::error::StartInputDeviceMaintenanceWindowError::NotFoundException(inner) => {
+                Error::NotFoundException(inner)
+            }
+            crate::error::StartInputDeviceMaintenanceWindowError::TooManyRequestsException(
+                inner,
+            ) => Error::TooManyRequestsException(inner),
+            crate::error::StartInputDeviceMaintenanceWindowError::UnprocessableEntityException(
+                inner,
+            ) => Error::UnprocessableEntityException(inner),
+            crate::error::StartInputDeviceMaintenanceWindowError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2143,40 +2409,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StartMultiplexError> for Error {
     fn from(err: crate::error::StartMultiplexError) -> Self {
-        match err.kind {
-            crate::error::StartMultiplexErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::StartMultiplexError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::StartMultiplexErrorKind::BadRequestException(inner) => {
+            crate::error::StartMultiplexError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::StartMultiplexErrorKind::ConflictException(inner) => {
+            crate::error::StartMultiplexError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::StartMultiplexErrorKind::ForbiddenException(inner) => {
+            crate::error::StartMultiplexError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::StartMultiplexErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::StartMultiplexError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::StartMultiplexErrorKind::InternalServerErrorException(inner) => {
+            crate::error::StartMultiplexError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::StartMultiplexErrorKind::NotFoundException(inner) => {
+            crate::error::StartMultiplexError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::StartMultiplexErrorKind::TooManyRequestsException(inner) => {
+            crate::error::StartMultiplexError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::StartMultiplexErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2189,40 +2460,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopChannelError> for Error {
     fn from(err: crate::error::StopChannelError) -> Self {
-        match err.kind {
-            crate::error::StopChannelErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::StopChannelError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::StopChannelErrorKind::BadRequestException(inner) => {
+            crate::error::StopChannelError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::StopChannelErrorKind::ConflictException(inner) => {
+            crate::error::StopChannelError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::StopChannelErrorKind::ForbiddenException(inner) => {
+            crate::error::StopChannelError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::StopChannelErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::StopChannelError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::StopChannelErrorKind::InternalServerErrorException(inner) => {
+            crate::error::StopChannelError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::StopChannelErrorKind::NotFoundException(inner) => {
+            crate::error::StopChannelError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::StopChannelErrorKind::TooManyRequestsException(inner) => {
+            crate::error::StopChannelError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::StopChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2235,40 +2511,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StopMultiplexError> for Error {
     fn from(err: crate::error::StopMultiplexError) -> Self {
-        match err.kind {
-            crate::error::StopMultiplexErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::StopMultiplexError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::StopMultiplexErrorKind::BadRequestException(inner) => {
+            crate::error::StopMultiplexError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::StopMultiplexErrorKind::ConflictException(inner) => {
+            crate::error::StopMultiplexError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::StopMultiplexErrorKind::ForbiddenException(inner) => {
+            crate::error::StopMultiplexError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::StopMultiplexErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::StopMultiplexError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::StopMultiplexErrorKind::InternalServerErrorException(inner) => {
+            crate::error::StopMultiplexError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::StopMultiplexErrorKind::NotFoundException(inner) => {
+            crate::error::StopMultiplexError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::StopMultiplexErrorKind::TooManyRequestsException(inner) => {
+            crate::error::StopMultiplexError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::StopMultiplexErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StopMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2283,43 +2564,48 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TransferInputDeviceError> for Error {
     fn from(err: crate::error::TransferInputDeviceError) -> Self {
-        match err.kind {
-            crate::error::TransferInputDeviceErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::TransferInputDeviceError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::BadRequestException(inner) => {
+            crate::error::TransferInputDeviceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::ConflictException(inner) => {
+            crate::error::TransferInputDeviceError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::ForbiddenException(inner) => {
+            crate::error::TransferInputDeviceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::TransferInputDeviceError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::TransferInputDeviceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::NotFoundException(inner) => {
+            crate::error::TransferInputDeviceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::TransferInputDeviceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::TransferInputDeviceError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::TransferInputDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TransferInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2332,37 +2618,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateChannelError> for Error {
     fn from(err: crate::error::UpdateChannelError) -> Self {
-        match err.kind {
-            crate::error::UpdateChannelErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateChannelError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateChannelErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateChannelError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateChannelErrorKind::ConflictException(inner) => {
+            crate::error::UpdateChannelError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateChannelErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateChannelError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateChannelErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateChannelError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateChannelErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateChannelError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateChannelErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::UpdateChannelError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::UpdateChannelErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateChannelError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2377,43 +2668,48 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateChannelClassError> for Error {
     fn from(err: crate::error::UpdateChannelClassError) -> Self {
-        match err.kind {
-            crate::error::UpdateChannelClassErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateChannelClassError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateChannelClassError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::ConflictException(inner) => {
+            crate::error::UpdateChannelClassError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateChannelClassError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateChannelClassError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateChannelClassError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateChannelClassError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateChannelClassError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::UpdateChannelClassError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::UpdateChannelClassErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateChannelClassError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2426,37 +2722,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateInputError> for Error {
     fn from(err: crate::error::UpdateInputError) -> Self {
-        match err.kind {
-            crate::error::UpdateInputErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateInputError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateInputErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateInputError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateInputErrorKind::ConflictException(inner) => {
+            crate::error::UpdateInputError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateInputErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateInputError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateInputErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateInputError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateInputErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateInputError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateInputErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateInputError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateInputErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateInputError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2471,40 +2772,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateInputDeviceError> for Error {
     fn from(err: crate::error::UpdateInputDeviceError) -> Self {
-        match err.kind {
-            crate::error::UpdateInputDeviceErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateInputDeviceError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateInputDeviceError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateInputDeviceError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateInputDeviceError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateInputDeviceError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateInputDeviceError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateInputDeviceError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::UpdateInputDeviceError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::UpdateInputDeviceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateInputDeviceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2520,36 +2826,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateInputSecurityGroupError> for Error {
     fn from(err: crate::error::UpdateInputSecurityGroupError) -> Self {
-        match err.kind {
-            crate::error::UpdateInputSecurityGroupErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateInputSecurityGroupError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateInputSecurityGroupErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateInputSecurityGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateInputSecurityGroupErrorKind::ConflictException(inner) => {
+            crate::error::UpdateInputSecurityGroupError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateInputSecurityGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateInputSecurityGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateInputSecurityGroupErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateInputSecurityGroupError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateInputSecurityGroupErrorKind::InternalServerErrorException(
-                inner,
-            ) => Error::InternalServerErrorException(inner),
-            crate::error::UpdateInputSecurityGroupErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateInputSecurityGroupError::InternalServerErrorException(inner) => {
+                Error::InternalServerErrorException(inner)
+            }
+            crate::error::UpdateInputSecurityGroupError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateInputSecurityGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateInputSecurityGroupError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2563,40 +2876,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateMultiplexError> for Error {
     fn from(err: crate::error::UpdateMultiplexError) -> Self {
-        match err.kind {
-            crate::error::UpdateMultiplexErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateMultiplexError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateMultiplexError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::ConflictException(inner) => {
+            crate::error::UpdateMultiplexError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateMultiplexError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateMultiplexError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateMultiplexError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateMultiplexError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::UpdateMultiplexError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::UpdateMultiplexErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateMultiplexError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2612,40 +2930,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateMultiplexProgramError> for Error {
     fn from(err: crate::error::UpdateMultiplexProgramError) -> Self {
-        match err.kind {
-            crate::error::UpdateMultiplexProgramErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateMultiplexProgramError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateMultiplexProgramError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::ConflictException(inner) => {
+            crate::error::UpdateMultiplexProgramError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateMultiplexProgramError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateMultiplexProgramError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateMultiplexProgramError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateMultiplexProgramError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::UnprocessableEntityException(inner) => {
+            crate::error::UpdateMultiplexProgramError::UnprocessableEntityException(inner) => {
                 Error::UnprocessableEntityException(inner)
             }
-            crate::error::UpdateMultiplexProgramErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateMultiplexProgramError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2660,41 +2983,62 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateReservationError> for Error {
     fn from(err: crate::error::UpdateReservationError) -> Self {
-        match err.kind {
-            crate::error::UpdateReservationErrorKind::BadGatewayException(inner) => {
+        match err {
+            crate::error::UpdateReservationError::BadGatewayException(inner) => {
                 Error::BadGatewayException(inner)
             }
-            crate::error::UpdateReservationErrorKind::BadRequestException(inner) => {
+            crate::error::UpdateReservationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateReservationErrorKind::ConflictException(inner) => {
+            crate::error::UpdateReservationError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::UpdateReservationErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateReservationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateReservationErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateReservationError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateReservationErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateReservationError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateReservationErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateReservationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateReservationErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateReservationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateReservationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateReservationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadGatewayException(e) => e.request_id(),
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::GatewayTimeoutException(e) => e.request_id(),
+            Self::InternalServerErrorException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::UnprocessableEntityException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -9,6 +9,7 @@ pub struct ListFragmentsOutput {
     /// <p>If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListFragmentsOutput {
     /// <p>A list of archived <code>Fragment</code> objects from the stream that meet the selector criteria. Results are in no specific order, even across pages.</p>
@@ -20,6 +21,11 @@ impl ListFragmentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListFragmentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
 pub mod list_fragments_output {
 
@@ -29,6 +35,7 @@ pub mod list_fragments_output {
     pub struct Builder {
         pub(crate) fragments: std::option::Option<std::vec::Vec<crate::model::Fragment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `fragments`.
@@ -60,11 +67,21 @@ pub mod list_fragments_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListFragmentsOutput`](crate::output::ListFragmentsOutput).
         pub fn build(self) -> crate::output::ListFragmentsOutput {
             crate::output::ListFragmentsOutput {
                 fragments: self.fragments,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -96,6 +113,7 @@ pub struct GetMediaForFragmentListOutput {
     /// <li> <p>AWS_KINESISVIDEO_EXCEPTION_MESSAGE - A text description of the exception</p> </li>
     /// </ul>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl GetMediaForFragmentListOutput {
     /// <p>The content type of the requested media.</p>
@@ -118,6 +136,11 @@ impl GetMediaForFragmentListOutput {
         &self.payload
     }
 }
+impl aws_http::request_id::RequestId for GetMediaForFragmentListOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
 pub mod get_media_for_fragment_list_output {
 
@@ -127,6 +150,7 @@ pub mod get_media_for_fragment_list_output {
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The content type of the requested media.</p>
@@ -174,11 +198,21 @@ pub mod get_media_for_fragment_list_output {
             self.payload = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetMediaForFragmentListOutput`](crate::output::GetMediaForFragmentListOutput).
         pub fn build(self) -> crate::output::GetMediaForFragmentListOutput {
             crate::output::GetMediaForFragmentListOutput {
                 content_type: self.content_type,
                 payload: self.payload.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -200,6 +234,7 @@ pub struct GetImagesOutput {
     /// <p>The encrypted token that was used in the request to get more images.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetImagesOutput {
     /// <p>The list of images generated from the video stream. If there is no media available for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output. If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code> will be listed in the output as the cause of the missing image. </p>
@@ -211,6 +246,11 @@ impl GetImagesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetImagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetImagesOutput`](crate::output::GetImagesOutput).
 pub mod get_images_output {
 
@@ -220,6 +260,7 @@ pub mod get_images_output {
     pub struct Builder {
         pub(crate) images: std::option::Option<std::vec::Vec<crate::model::Image>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `images`.
@@ -251,11 +292,21 @@ pub mod get_images_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetImagesOutput`](crate::output::GetImagesOutput).
         pub fn build(self) -> crate::output::GetImagesOutput {
             crate::output::GetImagesOutput {
                 images: self.images,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -274,11 +325,17 @@ pub struct GetHlsStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
     #[doc(hidden)]
     pub hls_streaming_session_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetHlsStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
     pub fn hls_streaming_session_url(&self) -> std::option::Option<&str> {
         self.hls_streaming_session_url.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetHlsStreamingSessionUrlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
@@ -289,6 +346,7 @@ pub mod get_hls_streaming_session_url_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hls_streaming_session_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The URL (containing the session token) that a media player can use to retrieve the HLS master playlist.</p>
@@ -304,10 +362,20 @@ pub mod get_hls_streaming_session_url_output {
             self.hls_streaming_session_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetHlsStreamingSessionUrlOutput`](crate::output::GetHlsStreamingSessionUrlOutput).
         pub fn build(self) -> crate::output::GetHlsStreamingSessionUrlOutput {
             crate::output::GetHlsStreamingSessionUrlOutput {
                 hls_streaming_session_url: self.hls_streaming_session_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -326,11 +394,17 @@ pub struct GetDashStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
     #[doc(hidden)]
     pub dash_streaming_session_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDashStreamingSessionUrlOutput {
     /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
     pub fn dash_streaming_session_url(&self) -> std::option::Option<&str> {
         self.dash_streaming_session_url.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDashStreamingSessionUrlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
@@ -341,6 +415,7 @@ pub mod get_dash_streaming_session_url_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dash_streaming_session_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The URL (containing the session token) that a media player can use to retrieve the MPEG-DASH manifest.</p>
@@ -356,10 +431,20 @@ pub mod get_dash_streaming_session_url_output {
             self.dash_streaming_session_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDashStreamingSessionUrlOutput`](crate::output::GetDashStreamingSessionUrlOutput).
         pub fn build(self) -> crate::output::GetDashStreamingSessionUrlOutput {
             crate::output::GetDashStreamingSessionUrlOutput {
                 dash_streaming_session_url: self.dash_streaming_session_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -380,6 +465,7 @@ pub struct GetClipOutput {
     pub content_type: std::option::Option<std::string::String>,
     /// <p>Traditional MP4 file that contains the media clip from the specified video stream. The output will contain the first 100 MB or the first 200 fragments from the specified start timestamp. For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/limits.html">Kinesis Video Streams Limits</a>. </p>
     pub payload: aws_smithy_http::byte_stream::ByteStream,
+    _request_id: Option<String>,
 }
 impl GetClipOutput {
     /// <p>The content type of the media in the requested clip.</p>
@@ -391,6 +477,11 @@ impl GetClipOutput {
         &self.payload
     }
 }
+impl aws_http::request_id::RequestId for GetClipOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetClipOutput`](crate::output::GetClipOutput).
 pub mod get_clip_output {
 
@@ -400,6 +491,7 @@ pub mod get_clip_output {
     pub struct Builder {
         pub(crate) content_type: std::option::Option<std::string::String>,
         pub(crate) payload: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The content type of the media in the requested clip.</p>
@@ -425,11 +517,21 @@ pub mod get_clip_output {
             self.payload = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetClipOutput`](crate::output::GetClipOutput).
         pub fn build(self) -> crate::output::GetClipOutput {
             crate::output::GetClipOutput {
                 content_type: self.content_type,
                 payload: self.payload.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }

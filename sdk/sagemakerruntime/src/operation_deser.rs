@@ -3,8 +3,11 @@
 pub fn parse_invoke_endpoint_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::InvokeEndpointOutput, crate::error::InvokeEndpointError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::InvokeEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::InvokeEndpointError::unhandled(generic)),
@@ -12,9 +15,8 @@ pub fn parse_invoke_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalDependencyException" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::InternalDependencyException({
+        "InternalDependencyException" => {
+            crate::error::InvokeEndpointError::InternalDependencyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -22,107 +24,104 @@ pub fn parse_invoke_endpoint_error(
                         crate::error::internal_dependency_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_dependency_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalFailure" => {
-            crate::error::InvokeEndpointError {
-                meta: generic,
-                kind: crate::error::InvokeEndpointErrorKind::InternalFailure({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::internal_failure::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ModelError" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::ModelError({
+        "InternalFailure" => crate::error::InvokeEndpointError::InternalFailure({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::model_error::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_model_error_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::InvokeEndpointError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ModelNotReadyException" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::ModelNotReadyException({
+                let mut output = crate::error::internal_failure::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModelError" => crate::error::InvokeEndpointError::ModelError({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::model_not_ready_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_model_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ServiceUnavailable" => crate::error::InvokeEndpointError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointErrorKind::ServiceUnavailable({
+                let mut output = crate::error::model_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_model_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ModelNotReadyException" => crate::error::InvokeEndpointError::ModelNotReadyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::model_not_ready_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_model_not_ready_exception_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ServiceUnavailable" => {
+            crate::error::InvokeEndpointError::ServiceUnavailable({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationError" => {
-            crate::error::InvokeEndpointError {
-                meta: generic,
-                kind: crate::error::InvokeEndpointErrorKind::ValidationError({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::validation_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ValidationError" => crate::error::InvokeEndpointError::ValidationError({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::validation_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeEndpointError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::InvokeEndpointError::generic(generic),
     })
 }
@@ -158,6 +157,9 @@ pub fn parse_invoke_endpoint_response(
             crate::http_serde::deser_header_invoke_endpoint_invoke_endpoint_output_invoked_production_variant(response.headers())
                                     .map_err(|_|crate::error::InvokeEndpointError::unhandled("Failed to parse InvokedProductionVariant from header `x-Amzn-Invoked-Production-Variant"))?
         );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -169,8 +171,11 @@ pub fn parse_invoke_endpoint_async_error(
     crate::output::InvokeEndpointAsyncOutput,
     crate::error::InvokeEndpointAsyncError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::InvokeEndpointAsyncError::unhandled(generic)),
@@ -178,61 +183,61 @@ pub fn parse_invoke_endpoint_async_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalFailure" => {
-            crate::error::InvokeEndpointAsyncError {
-                meta: generic,
-                kind: crate::error::InvokeEndpointAsyncErrorKind::InternalFailure({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::internal_failure::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "InternalFailure" => crate::error::InvokeEndpointAsyncError::InternalFailure({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::internal_failure::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_internal_failure_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ServiceUnavailable" => crate::error::InvokeEndpointAsyncError {
-            meta: generic,
-            kind: crate::error::InvokeEndpointAsyncErrorKind::ServiceUnavailable({
+            tmp
+        }),
+        "ServiceUnavailable" => {
+            crate::error::InvokeEndpointAsyncError::ServiceUnavailable({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::service_unavailable::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_service_unavailable_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationError" => {
-            crate::error::InvokeEndpointAsyncError {
-                meta: generic,
-                kind: crate::error::InvokeEndpointAsyncErrorKind::ValidationError({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::validation_error::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(response.body().as_ref(), output).map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
+        "ValidationError" => crate::error::InvokeEndpointAsyncError::ValidationError({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::validation_error::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_validation_error_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::InvokeEndpointAsyncError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::InvokeEndpointAsyncError::generic(generic),
     })
 }
@@ -256,6 +261,9 @@ pub fn parse_invoke_endpoint_async_response(
         output = output.set_output_location(
             crate::http_serde::deser_header_invoke_endpoint_async_invoke_endpoint_async_output_output_location(response.headers())
                                     .map_err(|_|crate::error::InvokeEndpointAsyncError::unhandled("Failed to parse OutputLocation from header `X-Amzn-SageMaker-OutputLocation"))?
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
         output.build()
     })

@@ -74,6 +74,7 @@ pub struct StartStreamTranscriptionOutput {
     /// <p>Provides the names of the custom vocabulary filters that you specified in your request.</p>
     #[doc(hidden)]
     pub vocabulary_filter_names: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
@@ -182,6 +183,11 @@ impl StartStreamTranscriptionOutput {
         self.vocabulary_filter_names.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartStreamTranscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
 pub mod start_stream_transcription_output {
 
@@ -220,6 +226,7 @@ pub mod start_stream_transcription_output {
         pub(crate) preferred_language: std::option::Option<crate::model::LanguageCode>,
         pub(crate) vocabulary_names: std::option::Option<std::string::String>,
         pub(crate) vocabulary_filter_names: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the identifier for your streaming request.</p>
@@ -523,6 +530,15 @@ pub mod start_stream_transcription_output {
             self.vocabulary_filter_names = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartStreamTranscriptionOutput`](crate::output::StartStreamTranscriptionOutput).
         pub fn build(
             self,
@@ -585,6 +601,7 @@ pub mod start_stream_transcription_output {
                     ,
                     vocabulary_filter_names: self.vocabulary_filter_names
                     ,
+                    _request_id: self._request_id,
                 }
             )
         }
@@ -643,6 +660,7 @@ pub struct StartMedicalStreamTranscriptionOutput {
     #[doc(hidden)]
     pub content_identification_type:
         std::option::Option<crate::model::MedicalContentIdentificationType>,
+    _request_id: Option<String>,
 }
 impl StartMedicalStreamTranscriptionOutput {
     /// <p>Provides the identifier for your streaming request.</p>
@@ -705,6 +723,11 @@ impl StartMedicalStreamTranscriptionOutput {
         self.content_identification_type.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartMedicalStreamTranscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
 pub mod start_medical_stream_transcription_output {
 
@@ -731,6 +754,7 @@ pub mod start_medical_stream_transcription_output {
         pub(crate) number_of_channels: std::option::Option<i32>,
         pub(crate) content_identification_type:
             std::option::Option<crate::model::MedicalContentIdentificationType>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the identifier for your streaming request.</p>
@@ -898,6 +922,15 @@ pub mod start_medical_stream_transcription_output {
             self.content_identification_type = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartMedicalStreamTranscriptionOutput`](crate::output::StartMedicalStreamTranscriptionOutput).
         pub fn build(
             self,
@@ -938,6 +971,7 @@ pub mod start_medical_stream_transcription_output {
                     ,
                     content_identification_type: self.content_identification_type
                     ,
+                    _request_id: self._request_id,
                 }
             )
         }
@@ -1001,6 +1035,7 @@ pub struct StartCallAnalyticsStreamTranscriptionOutput {
     /// <p>Lists the PII entity types you specified in your Call Analytics request.</p>
     #[doc(hidden)]
     pub pii_entity_types: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartCallAnalyticsStreamTranscriptionOutput {
     /// <p>Provides the identifier for your Call Analytics streaming request.</p>
@@ -1077,6 +1112,11 @@ impl StartCallAnalyticsStreamTranscriptionOutput {
         self.pii_entity_types.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartCallAnalyticsStreamTranscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
 pub mod start_call_analytics_stream_transcription_output {
 
@@ -1107,6 +1147,7 @@ pub mod start_call_analytics_stream_transcription_output {
             std::option::Option<crate::model::ContentIdentificationType>,
         pub(crate) content_redaction_type: std::option::Option<crate::model::ContentRedactionType>,
         pub(crate) pii_entity_types: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Provides the identifier for your Call Analytics streaming request.</p>
@@ -1315,6 +1356,15 @@ pub mod start_call_analytics_stream_transcription_output {
             self.pii_entity_types = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartCallAnalyticsStreamTranscriptionOutput`](crate::output::StartCallAnalyticsStreamTranscriptionOutput).
         pub fn build(
             self,
@@ -1358,6 +1408,7 @@ pub mod start_call_analytics_stream_transcription_output {
                     ,
                     pii_entity_types: self.pii_entity_types
                     ,
+                    _request_id: self._request_id,
                 }
             )
         }

@@ -10,6 +10,7 @@ pub struct ViewBillingOutput {
     /// <p>A summary of billing records.</p>
     #[doc(hidden)]
     pub billing_records: std::option::Option<std::vec::Vec<crate::model::BillingRecord>>,
+    _request_id: Option<String>,
 }
 impl ViewBillingOutput {
     /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
@@ -21,6 +22,11 @@ impl ViewBillingOutput {
         self.billing_records.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ViewBillingOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ViewBillingOutput`](crate::output::ViewBillingOutput).
 pub mod view_billing_output {
 
@@ -30,6 +36,7 @@ pub mod view_billing_output {
     pub struct Builder {
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
         pub(crate) billing_records: std::option::Option<std::vec::Vec<crate::model::BillingRecord>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If there are more billing records than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
@@ -64,11 +71,21 @@ pub mod view_billing_output {
             self.billing_records = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ViewBillingOutput`](crate::output::ViewBillingOutput).
         pub fn build(self) -> crate::output::ViewBillingOutput {
             crate::output::ViewBillingOutput {
                 next_page_marker: self.next_page_marker,
                 billing_records: self.billing_records,
+                _request_id: self._request_id,
             }
         }
     }
@@ -83,18 +100,38 @@ impl ViewBillingOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateTagsForDomainOutput {}
+pub struct UpdateTagsForDomainOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateTagsForDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
 pub mod update_tags_for_domain_output {
 
     /// A builder for [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateTagsForDomainOutput`](crate::output::UpdateTagsForDomainOutput).
         pub fn build(self) -> crate::output::UpdateTagsForDomainOutput {
-            crate::output::UpdateTagsForDomainOutput {}
+            crate::output::UpdateTagsForDomainOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -112,11 +149,17 @@ pub struct UpdateDomainNameserversOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateDomainNameserversOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateDomainNameserversOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
@@ -127,6 +170,7 @@ pub mod update_domain_nameservers_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -139,10 +183,20 @@ pub mod update_domain_nameservers_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainNameserversOutput`](crate::output::UpdateDomainNameserversOutput).
         pub fn build(self) -> crate::output::UpdateDomainNameserversOutput {
             crate::output::UpdateDomainNameserversOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -161,11 +215,17 @@ pub struct UpdateDomainContactPrivacyOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateDomainContactPrivacyOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateDomainContactPrivacyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
@@ -176,6 +236,7 @@ pub mod update_domain_contact_privacy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
@@ -188,10 +249,20 @@ pub mod update_domain_contact_privacy_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainContactPrivacyOutput`](crate::output::UpdateDomainContactPrivacyOutput).
         pub fn build(self) -> crate::output::UpdateDomainContactPrivacyOutput {
             crate::output::UpdateDomainContactPrivacyOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -210,11 +281,17 @@ pub struct UpdateDomainContactOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateDomainContactOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateDomainContactOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
@@ -225,6 +302,7 @@ pub mod update_domain_contact_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -237,10 +315,20 @@ pub mod update_domain_contact_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainContactOutput`](crate::output::UpdateDomainContactOutput).
         pub fn build(self) -> crate::output::UpdateDomainContactOutput {
             crate::output::UpdateDomainContactOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -262,6 +350,7 @@ pub struct TransferDomainToAnotherAwsAccountOutput {
     /// <p>To finish transferring a domain to another Amazon Web Services account, the account that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a> request. The request must include the value of the <code>Password</code> element that was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.</p>
     #[doc(hidden)]
     pub password: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl TransferDomainToAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -273,6 +362,11 @@ impl TransferDomainToAnotherAwsAccountOutput {
         self.password.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for TransferDomainToAnotherAwsAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
 pub mod transfer_domain_to_another_aws_account_output {
 
@@ -282,6 +376,7 @@ pub mod transfer_domain_to_another_aws_account_output {
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
         pub(crate) password: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -304,11 +399,21 @@ pub mod transfer_domain_to_another_aws_account_output {
             self.password = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TransferDomainToAnotherAwsAccountOutput`](crate::output::TransferDomainToAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::TransferDomainToAnotherAwsAccountOutput {
             crate::output::TransferDomainToAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
                 password: self.password,
+                _request_id: self._request_id,
             }
         }
     }
@@ -327,11 +432,17 @@ pub struct TransferDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl TransferDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for TransferDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`TransferDomainOutput`](crate::output::TransferDomainOutput).
@@ -342,6 +453,7 @@ pub mod transfer_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -354,10 +466,20 @@ pub mod transfer_domain_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TransferDomainOutput`](crate::output::TransferDomainOutput).
         pub fn build(self) -> crate::output::TransferDomainOutput {
             crate::output::TransferDomainOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -376,6 +498,7 @@ pub struct RetrieveDomainAuthCodeOutput {
     /// <p>The authorization code for the domain.</p>
     #[doc(hidden)]
     pub auth_code: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RetrieveDomainAuthCodeOutput {
     /// <p>The authorization code for the domain.</p>
@@ -387,7 +510,13 @@ impl std::fmt::Debug for RetrieveDomainAuthCodeOutput {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let mut formatter = f.debug_struct("RetrieveDomainAuthCodeOutput");
         formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for RetrieveDomainAuthCodeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
@@ -398,6 +527,7 @@ pub mod retrieve_domain_auth_code_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
     pub struct Builder {
         pub(crate) auth_code: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The authorization code for the domain.</p>
@@ -410,10 +540,20 @@ pub mod retrieve_domain_auth_code_output {
             self.auth_code = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RetrieveDomainAuthCodeOutput`](crate::output::RetrieveDomainAuthCodeOutput).
         pub fn build(self) -> crate::output::RetrieveDomainAuthCodeOutput {
             crate::output::RetrieveDomainAuthCodeOutput {
                 auth_code: self.auth_code,
+                _request_id: self._request_id,
             }
         }
     }
@@ -421,6 +561,7 @@ pub mod retrieve_domain_auth_code_output {
         fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("auth_code", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -435,18 +576,38 @@ impl RetrieveDomainAuthCodeOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct ResendOperationAuthorizationOutput {}
+pub struct ResendOperationAuthorizationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for ResendOperationAuthorizationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
 pub mod resend_operation_authorization_output {
 
     /// A builder for [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ResendOperationAuthorizationOutput`](crate::output::ResendOperationAuthorizationOutput).
         pub fn build(self) -> crate::output::ResendOperationAuthorizationOutput {
-            crate::output::ResendOperationAuthorizationOutput {}
+            crate::output::ResendOperationAuthorizationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -470,6 +631,7 @@ pub struct ResendContactReachabilityEmailOutput {
     /// <p> <code>True</code> if the email address for the registrant contact has already been verified, and <code>false</code> otherwise. If the email address has already been verified, we don't send another confirmation email.</p>
     #[doc(hidden)]
     pub is_already_verified: std::option::Option<bool>,
+    _request_id: Option<String>,
 }
 impl ResendContactReachabilityEmailOutput {
     /// <p>The domain name for which you requested a confirmation email.</p>
@@ -485,6 +647,11 @@ impl ResendContactReachabilityEmailOutput {
         self.is_already_verified
     }
 }
+impl aws_http::request_id::RequestId for ResendContactReachabilityEmailOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
 pub mod resend_contact_reachability_email_output {
 
@@ -495,6 +662,7 @@ pub mod resend_contact_reachability_email_output {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) email_address: std::option::Option<std::string::String>,
         pub(crate) is_already_verified: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The domain name for which you requested a confirmation email.</p>
@@ -530,12 +698,22 @@ pub mod resend_contact_reachability_email_output {
             self.is_already_verified = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ResendContactReachabilityEmailOutput`](crate::output::ResendContactReachabilityEmailOutput).
         pub fn build(self) -> crate::output::ResendContactReachabilityEmailOutput {
             crate::output::ResendContactReachabilityEmailOutput {
                 domain_name: self.domain_name,
                 email_address: self.email_address,
                 is_already_verified: self.is_already_verified,
+                _request_id: self._request_id,
             }
         }
     }
@@ -554,11 +732,17 @@ pub struct RenewDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RenewDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for RenewDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RenewDomainOutput`](crate::output::RenewDomainOutput).
@@ -569,6 +753,7 @@ pub mod renew_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -581,10 +766,20 @@ pub mod renew_domain_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RenewDomainOutput`](crate::output::RenewDomainOutput).
         pub fn build(self) -> crate::output::RenewDomainOutput {
             crate::output::RenewDomainOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -603,11 +798,17 @@ pub struct RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RejectDomainTransferFromAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for RejectDomainTransferFromAnotherAwsAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
@@ -618,6 +819,7 @@ pub mod reject_domain_transfer_from_another_aws_account_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was rejected, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
@@ -630,10 +832,20 @@ pub mod reject_domain_transfer_from_another_aws_account_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RejectDomainTransferFromAnotherAwsAccountOutput`](crate::output::RejectDomainTransferFromAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::RejectDomainTransferFromAnotherAwsAccountOutput {
             crate::output::RejectDomainTransferFromAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -653,11 +865,17 @@ pub struct RegisterDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RegisterDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for RegisterDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
@@ -668,6 +886,7 @@ pub mod register_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -680,10 +899,20 @@ pub mod register_domain_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterDomainOutput`](crate::output::RegisterDomainOutput).
         pub fn build(self) -> crate::output::RegisterDomainOutput {
             crate::output::RegisterDomainOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -698,18 +927,38 @@ impl RegisterDomainOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PushDomainOutput {}
+pub struct PushDomainOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PushDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PushDomainOutput`](crate::output::PushDomainOutput).
 pub mod push_domain_output {
 
     /// A builder for [`PushDomainOutput`](crate::output::PushDomainOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PushDomainOutput`](crate::output::PushDomainOutput).
         pub fn build(self) -> crate::output::PushDomainOutput {
-            crate::output::PushDomainOutput {}
+            crate::output::PushDomainOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -727,11 +976,17 @@ pub struct ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForDomainOutput {
     /// <p>A list of the tags that are associated with the specified domain.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
@@ -742,6 +997,7 @@ pub mod list_tags_for_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tag_list`.
@@ -763,10 +1019,20 @@ pub mod list_tags_for_domain_output {
             self.tag_list = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForDomainOutput`](crate::output::ListTagsForDomainOutput).
         pub fn build(self) -> crate::output::ListTagsForDomainOutput {
             crate::output::ListTagsForDomainOutput {
                 tag_list: self.tag_list,
+                _request_id: self._request_id,
             }
         }
     }
@@ -789,6 +1055,7 @@ pub struct ListPricesOutput {
     /// <p>Used only for all TLDs. If you specify a TLD, don't specify a <code>NextPageMarker</code>.</p>
     #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListPricesOutput {
     /// <p>A complex type that includes all the pricing information. If you specify a TLD, this array contains only the pricing for that TLD.</p>
@@ -801,6 +1068,11 @@ impl ListPricesOutput {
         self.next_page_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListPricesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListPricesOutput`](crate::output::ListPricesOutput).
 pub mod list_prices_output {
 
@@ -810,6 +1082,7 @@ pub mod list_prices_output {
     pub struct Builder {
         pub(crate) prices: std::option::Option<std::vec::Vec<crate::model::DomainPrice>>,
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `prices`.
@@ -846,11 +1119,21 @@ pub mod list_prices_output {
             self.next_page_marker = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListPricesOutput`](crate::output::ListPricesOutput).
         pub fn build(self) -> crate::output::ListPricesOutput {
             crate::output::ListPricesOutput {
                 prices: self.prices,
                 next_page_marker: self.next_page_marker,
+                _request_id: self._request_id,
             }
         }
     }
@@ -872,6 +1155,7 @@ pub struct ListOperationsOutput {
     /// <p>If there are more operations than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListOperationsOutput {
     /// <p>Lists summaries of the operations.</p>
@@ -883,6 +1167,11 @@ impl ListOperationsOutput {
         self.next_page_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListOperationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListOperationsOutput`](crate::output::ListOperationsOutput).
 pub mod list_operations_output {
 
@@ -892,6 +1181,7 @@ pub mod list_operations_output {
     pub struct Builder {
         pub(crate) operations: std::option::Option<std::vec::Vec<crate::model::OperationSummary>>,
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `operations`.
@@ -926,11 +1216,21 @@ pub mod list_operations_output {
             self.next_page_marker = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListOperationsOutput`](crate::output::ListOperationsOutput).
         pub fn build(self) -> crate::output::ListOperationsOutput {
             crate::output::ListOperationsOutput {
                 operations: self.operations,
                 next_page_marker: self.next_page_marker,
+                _request_id: self._request_id,
             }
         }
     }
@@ -952,6 +1252,7 @@ pub struct ListDomainsOutput {
     /// <p>If there are more domains than you specified for <code>MaxItems</code> in the request, submit another request and include the value of <code>NextPageMarker</code> in the value of <code>Marker</code>.</p>
     #[doc(hidden)]
     pub next_page_marker: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDomainsOutput {
     /// <p>A list of domains.</p>
@@ -963,6 +1264,11 @@ impl ListDomainsOutput {
         self.next_page_marker.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDomainsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDomainsOutput`](crate::output::ListDomainsOutput).
 pub mod list_domains_output {
 
@@ -972,6 +1278,7 @@ pub mod list_domains_output {
     pub struct Builder {
         pub(crate) domains: std::option::Option<std::vec::Vec<crate::model::DomainSummary>>,
         pub(crate) next_page_marker: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `domains`.
@@ -1006,11 +1313,21 @@ pub mod list_domains_output {
             self.next_page_marker = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDomainsOutput`](crate::output::ListDomainsOutput).
         pub fn build(self) -> crate::output::ListDomainsOutput {
             crate::output::ListDomainsOutput {
                 domains: self.domains,
                 next_page_marker: self.next_page_marker,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1057,6 +1374,7 @@ pub struct GetOperationDetailOutput {
     /// </ul>
     #[doc(hidden)]
     pub status_flag: std::option::Option<crate::model::StatusFlag>,
+    _request_id: Option<String>,
 }
 impl GetOperationDetailOutput {
     /// <p>The identifier for the operation.</p>
@@ -1099,6 +1417,11 @@ impl GetOperationDetailOutput {
         self.status_flag.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetOperationDetailOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
 pub mod get_operation_detail_output {
 
@@ -1114,6 +1437,7 @@ pub mod get_operation_detail_output {
         pub(crate) submitted_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_updated_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) status_flag: std::option::Option<crate::model::StatusFlag>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier for the operation.</p>
@@ -1222,6 +1546,15 @@ pub mod get_operation_detail_output {
             self.status_flag = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetOperationDetailOutput`](crate::output::GetOperationDetailOutput).
         pub fn build(self) -> crate::output::GetOperationDetailOutput {
             crate::output::GetOperationDetailOutput {
@@ -1233,6 +1566,7 @@ pub mod get_operation_detail_output {
                 submitted_date: self.submitted_date,
                 last_updated_date: self.last_updated_date,
                 status_flag: self.status_flag,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1251,11 +1585,17 @@ pub struct GetDomainSuggestionsOutput {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
     #[doc(hidden)]
     pub suggestions_list: std::option::Option<std::vec::Vec<crate::model::DomainSuggestion>>,
+    _request_id: Option<String>,
 }
 impl GetDomainSuggestionsOutput {
     /// <p>A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code> in the request, the list contains only domains that are available for registration.</p>
     pub fn suggestions_list(&self) -> std::option::Option<&[crate::model::DomainSuggestion]> {
         self.suggestions_list.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDomainSuggestionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
@@ -1267,6 +1607,7 @@ pub mod get_domain_suggestions_output {
     pub struct Builder {
         pub(crate) suggestions_list:
             std::option::Option<std::vec::Vec<crate::model::DomainSuggestion>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `suggestions_list`.
@@ -1288,10 +1629,20 @@ pub mod get_domain_suggestions_output {
             self.suggestions_list = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainSuggestionsOutput`](crate::output::GetDomainSuggestionsOutput).
         pub fn build(self) -> crate::output::GetDomainSuggestionsOutput {
             crate::output::GetDomainSuggestionsOutput {
                 suggestions_list: self.suggestions_list,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1375,6 +1726,7 @@ pub struct GetDomainDetailOutput {
     /// <p>A complex type that contains information about the DNSSEC configuration.</p>
     #[doc(hidden)]
     pub dnssec_keys: std::option::Option<std::vec::Vec<crate::model::DnssecKey>>,
+    _request_id: Option<String>,
 }
 impl GetDomainDetailOutput {
     /// <p>The name of a domain.</p>
@@ -1493,7 +1845,13 @@ impl std::fmt::Debug for GetDomainDetailOutput {
         formatter.field("dns_sec", &self.dns_sec);
         formatter.field("status_list", &self.status_list);
         formatter.field("dnssec_keys", &self.dnssec_keys);
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetDomainDetailOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
@@ -1525,6 +1883,7 @@ pub mod get_domain_detail_output {
         pub(crate) dns_sec: std::option::Option<std::string::String>,
         pub(crate) status_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) dnssec_keys: std::option::Option<std::vec::Vec<crate::model::DnssecKey>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of a domain.</p>
@@ -1814,6 +2173,15 @@ pub mod get_domain_detail_output {
             self.dnssec_keys = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainDetailOutput`](crate::output::GetDomainDetailOutput).
         pub fn build(self) -> crate::output::GetDomainDetailOutput {
             crate::output::GetDomainDetailOutput {
@@ -1839,6 +2207,7 @@ pub mod get_domain_detail_output {
                 dns_sec: self.dns_sec,
                 status_list: self.status_list,
                 dnssec_keys: self.dnssec_keys,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1867,6 +2236,7 @@ pub mod get_domain_detail_output {
             formatter.field("dns_sec", &self.dns_sec);
             formatter.field("status_list", &self.status_list);
             formatter.field("dnssec_keys", &self.dnssec_keys);
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1908,6 +2278,7 @@ pub struct GetContactReachabilityStatusOutput {
     /// </dl>
     #[doc(hidden)]
     pub status: std::option::Option<crate::model::ReachabilityStatus>,
+    _request_id: Option<String>,
 }
 impl GetContactReachabilityStatusOutput {
     /// <p>The domain name for which you requested the reachability status.</p>
@@ -1939,6 +2310,11 @@ impl GetContactReachabilityStatusOutput {
         self.status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetContactReachabilityStatusOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
 pub mod get_contact_reachability_status_output {
 
@@ -1948,6 +2324,7 @@ pub mod get_contact_reachability_status_output {
     pub struct Builder {
         pub(crate) domain_name: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::ReachabilityStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The domain name for which you requested the reachability status.</p>
@@ -2013,11 +2390,21 @@ pub mod get_contact_reachability_status_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetContactReachabilityStatusOutput`](crate::output::GetContactReachabilityStatusOutput).
         pub fn build(self) -> crate::output::GetContactReachabilityStatusOutput {
             crate::output::GetContactReachabilityStatusOutput {
                 domain_name: self.domain_name,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2036,11 +2423,17 @@ pub struct EnableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl EnableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for EnableDomainTransferLockOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
@@ -2051,6 +2444,7 @@ pub mod enable_domain_transfer_lock_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.</p>
@@ -2063,10 +2457,20 @@ pub mod enable_domain_transfer_lock_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableDomainTransferLockOutput`](crate::output::EnableDomainTransferLockOutput).
         pub fn build(self) -> crate::output::EnableDomainTransferLockOutput {
             crate::output::EnableDomainTransferLockOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2081,18 +2485,38 @@ impl EnableDomainTransferLockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct EnableDomainAutoRenewOutput {}
+pub struct EnableDomainAutoRenewOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for EnableDomainAutoRenewOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
 pub mod enable_domain_auto_renew_output {
 
     /// A builder for [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`EnableDomainAutoRenewOutput`](crate::output::EnableDomainAutoRenewOutput).
         pub fn build(self) -> crate::output::EnableDomainAutoRenewOutput {
-            crate::output::EnableDomainAutoRenewOutput {}
+            crate::output::EnableDomainAutoRenewOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2110,11 +2534,17 @@ pub struct DisassociateDelegationSignerFromDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociateDelegationSignerFromDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DisassociateDelegationSignerFromDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
@@ -2125,6 +2555,7 @@ pub mod disassociate_delegation_signer_from_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -2137,10 +2568,20 @@ pub mod disassociate_delegation_signer_from_domain_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateDelegationSignerFromDomainOutput`](crate::output::DisassociateDelegationSignerFromDomainOutput).
         pub fn build(self) -> crate::output::DisassociateDelegationSignerFromDomainOutput {
             crate::output::DisassociateDelegationSignerFromDomainOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2159,11 +2600,17 @@ pub struct DisableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisableDomainTransferLockOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DisableDomainTransferLockOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
@@ -2174,6 +2621,7 @@ pub mod disable_domain_transfer_lock_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -2186,10 +2634,20 @@ pub mod disable_domain_transfer_lock_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableDomainTransferLockOutput`](crate::output::DisableDomainTransferLockOutput).
         pub fn build(self) -> crate::output::DisableDomainTransferLockOutput {
             crate::output::DisableDomainTransferLockOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2204,18 +2662,38 @@ impl DisableDomainTransferLockOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DisableDomainAutoRenewOutput {}
+pub struct DisableDomainAutoRenewOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DisableDomainAutoRenewOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
 pub mod disable_domain_auto_renew_output {
 
     /// A builder for [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisableDomainAutoRenewOutput`](crate::output::DisableDomainAutoRenewOutput).
         pub fn build(self) -> crate::output::DisableDomainAutoRenewOutput {
-            crate::output::DisableDomainAutoRenewOutput {}
+            crate::output::DisableDomainAutoRenewOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2229,18 +2707,38 @@ impl DisableDomainAutoRenewOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteTagsForDomainOutput {}
+pub struct DeleteTagsForDomainOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteTagsForDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
 pub mod delete_tags_for_domain_output {
 
     /// A builder for [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteTagsForDomainOutput`](crate::output::DeleteTagsForDomainOutput).
         pub fn build(self) -> crate::output::DeleteTagsForDomainOutput {
-            crate::output::DeleteTagsForDomainOutput {}
+            crate::output::DeleteTagsForDomainOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2258,11 +2756,17 @@ pub struct DeleteDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteDomainOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
@@ -2273,6 +2777,7 @@ pub mod delete_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -2285,10 +2790,20 @@ pub mod delete_domain_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDomainOutput`](crate::output::DeleteDomainOutput).
         pub fn build(self) -> crate::output::DeleteDomainOutput {
             crate::output::DeleteDomainOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2307,11 +2822,17 @@ pub struct CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     #[doc(hidden)]
     pub transferability: std::option::Option<crate::model::DomainTransferability>,
+    _request_id: Option<String>,
 }
 impl CheckDomainTransferabilityOutput {
     /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
     pub fn transferability(&self) -> std::option::Option<&crate::model::DomainTransferability> {
         self.transferability.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CheckDomainTransferabilityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
@@ -2322,6 +2843,7 @@ pub mod check_domain_transferability_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) transferability: std::option::Option<crate::model::DomainTransferability>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A complex type that contains information about whether the specified domain can be transferred to Route 53.</p>
@@ -2337,10 +2859,20 @@ pub mod check_domain_transferability_output {
             self.transferability = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CheckDomainTransferabilityOutput`](crate::output::CheckDomainTransferabilityOutput).
         pub fn build(self) -> crate::output::CheckDomainTransferabilityOutput {
             crate::output::CheckDomainTransferabilityOutput {
                 transferability: self.transferability,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2418,6 +2950,7 @@ pub struct CheckDomainAvailabilityOutput {
     /// </dl>
     #[doc(hidden)]
     pub availability: std::option::Option<crate::model::DomainAvailability>,
+    _request_id: Option<String>,
 }
 impl CheckDomainAvailabilityOutput {
     /// <p>Whether the domain name is available for registering.</p> <note>
@@ -2484,6 +3017,11 @@ impl CheckDomainAvailabilityOutput {
         self.availability.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CheckDomainAvailabilityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
 pub mod check_domain_availability_output {
 
@@ -2492,6 +3030,7 @@ pub mod check_domain_availability_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) availability: std::option::Option<crate::model::DomainAvailability>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Whether the domain name is available for registering.</p> <note>
@@ -2625,10 +3164,20 @@ pub mod check_domain_availability_output {
             self.availability = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CheckDomainAvailabilityOutput`](crate::output::CheckDomainAvailabilityOutput).
         pub fn build(self) -> crate::output::CheckDomainAvailabilityOutput {
             crate::output::CheckDomainAvailabilityOutput {
                 availability: self.availability,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2647,11 +3196,17 @@ pub struct CancelDomainTransferToAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelDomainTransferToAnotherAwsAccountOutput {
     /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CancelDomainTransferToAnotherAwsAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
@@ -2662,6 +3217,7 @@ pub mod cancel_domain_transfer_to_another_aws_account_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track the progress of the request. Because the transfer request was canceled, the value is no longer valid, and you can't use <code>GetOperationDetail</code> to query the operation status.</p>
@@ -2674,10 +3230,20 @@ pub mod cancel_domain_transfer_to_another_aws_account_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelDomainTransferToAnotherAwsAccountOutput`](crate::output::CancelDomainTransferToAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::CancelDomainTransferToAnotherAwsAccountOutput {
             crate::output::CancelDomainTransferToAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2697,11 +3263,17 @@ pub struct AssociateDelegationSignerToDomainOutput {
     /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateDelegationSignerToDomainOutput {
     /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AssociateDelegationSignerToDomainOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
@@ -2712,6 +3284,7 @@ pub mod associate_delegation_signer_to_domain_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -2724,10 +3297,20 @@ pub mod associate_delegation_signer_to_domain_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateDelegationSignerToDomainOutput`](crate::output::AssociateDelegationSignerToDomainOutput).
         pub fn build(self) -> crate::output::AssociateDelegationSignerToDomainOutput {
             crate::output::AssociateDelegationSignerToDomainOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2746,11 +3329,17 @@ pub struct AcceptDomainTransferFromAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     #[doc(hidden)]
     pub operation_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AcceptDomainTransferFromAnotherAwsAccountOutput {
     /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
     pub fn operation_id(&self) -> std::option::Option<&str> {
         self.operation_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AcceptDomainTransferFromAnotherAwsAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
@@ -2761,6 +3350,7 @@ pub mod accept_domain_transfer_from_another_aws_account_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) operation_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Identifier for tracking the progress of the request. To query the operation status, use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
@@ -2773,10 +3363,20 @@ pub mod accept_domain_transfer_from_another_aws_account_output {
             self.operation_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AcceptDomainTransferFromAnotherAwsAccountOutput`](crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput).
         pub fn build(self) -> crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput {
             crate::output::AcceptDomainTransferFromAnotherAwsAccountOutput {
                 operation_id: self.operation_id,
+                _request_id: self._request_id,
             }
         }
     }

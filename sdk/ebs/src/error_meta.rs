@@ -19,15 +19,8 @@ pub enum Error {
     ServiceQuotaExceededException(crate::error::ServiceQuotaExceededException),
     /// <p>The input fails to satisfy the constraints of the EBS direct APIs.</p>
     ValidationException(crate::error::ValidationException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -55,34 +48,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CompleteSnapshotError> for Error {
     fn from(err: crate::error::CompleteSnapshotError) -> Self {
-        match err.kind {
-            crate::error::CompleteSnapshotErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::CompleteSnapshotError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::CompleteSnapshotErrorKind::InternalServerException(inner) => {
+            crate::error::CompleteSnapshotError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::CompleteSnapshotErrorKind::RequestThrottledException(inner) => {
+            crate::error::CompleteSnapshotError::RequestThrottledException(inner) => {
                 Error::RequestThrottledException(inner)
             }
-            crate::error::CompleteSnapshotErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::CompleteSnapshotError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::CompleteSnapshotErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::CompleteSnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::CompleteSnapshotErrorKind::ValidationException(inner) => {
+            crate::error::CompleteSnapshotError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::CompleteSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CompleteSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -97,34 +95,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetSnapshotBlockError> for Error {
     fn from(err: crate::error::GetSnapshotBlockError) -> Self {
-        match err.kind {
-            crate::error::GetSnapshotBlockErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::GetSnapshotBlockError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::GetSnapshotBlockErrorKind::InternalServerException(inner) => {
+            crate::error::GetSnapshotBlockError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::GetSnapshotBlockErrorKind::RequestThrottledException(inner) => {
+            crate::error::GetSnapshotBlockError::RequestThrottledException(inner) => {
                 Error::RequestThrottledException(inner)
             }
-            crate::error::GetSnapshotBlockErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetSnapshotBlockError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetSnapshotBlockErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::GetSnapshotBlockError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::GetSnapshotBlockErrorKind::ValidationException(inner) => {
+            crate::error::GetSnapshotBlockError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::GetSnapshotBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetSnapshotBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -139,34 +142,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListChangedBlocksError> for Error {
     fn from(err: crate::error::ListChangedBlocksError) -> Self {
-        match err.kind {
-            crate::error::ListChangedBlocksErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListChangedBlocksError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListChangedBlocksErrorKind::InternalServerException(inner) => {
+            crate::error::ListChangedBlocksError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListChangedBlocksErrorKind::RequestThrottledException(inner) => {
+            crate::error::ListChangedBlocksError::RequestThrottledException(inner) => {
                 Error::RequestThrottledException(inner)
             }
-            crate::error::ListChangedBlocksErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListChangedBlocksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListChangedBlocksErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::ListChangedBlocksError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::ListChangedBlocksErrorKind::ValidationException(inner) => {
+            crate::error::ListChangedBlocksError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListChangedBlocksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListChangedBlocksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -181,34 +189,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListSnapshotBlocksError> for Error {
     fn from(err: crate::error::ListSnapshotBlocksError) -> Self {
-        match err.kind {
-            crate::error::ListSnapshotBlocksErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::ListSnapshotBlocksError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::ListSnapshotBlocksErrorKind::InternalServerException(inner) => {
+            crate::error::ListSnapshotBlocksError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::ListSnapshotBlocksErrorKind::RequestThrottledException(inner) => {
+            crate::error::ListSnapshotBlocksError::RequestThrottledException(inner) => {
                 Error::RequestThrottledException(inner)
             }
-            crate::error::ListSnapshotBlocksErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListSnapshotBlocksError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListSnapshotBlocksErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::ListSnapshotBlocksError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::ListSnapshotBlocksErrorKind::ValidationException(inner) => {
+            crate::error::ListSnapshotBlocksError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::ListSnapshotBlocksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListSnapshotBlocksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -223,34 +236,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutSnapshotBlockError> for Error {
     fn from(err: crate::error::PutSnapshotBlockError) -> Self {
-        match err.kind {
-            crate::error::PutSnapshotBlockErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::PutSnapshotBlockError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::PutSnapshotBlockErrorKind::InternalServerException(inner) => {
+            crate::error::PutSnapshotBlockError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::PutSnapshotBlockErrorKind::RequestThrottledException(inner) => {
+            crate::error::PutSnapshotBlockError::RequestThrottledException(inner) => {
                 Error::RequestThrottledException(inner)
             }
-            crate::error::PutSnapshotBlockErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::PutSnapshotBlockError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::PutSnapshotBlockErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::PutSnapshotBlockError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::PutSnapshotBlockErrorKind::ValidationException(inner) => {
+            crate::error::PutSnapshotBlockError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::PutSnapshotBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutSnapshotBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -263,41 +281,61 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::StartSnapshotError> for Error {
     fn from(err: crate::error::StartSnapshotError) -> Self {
-        match err.kind {
-            crate::error::StartSnapshotErrorKind::AccessDeniedException(inner) => {
+        match err {
+            crate::error::StartSnapshotError::AccessDeniedException(inner) => {
                 Error::AccessDeniedException(inner)
             }
-            crate::error::StartSnapshotErrorKind::ConcurrentLimitExceededException(inner) => {
+            crate::error::StartSnapshotError::ConcurrentLimitExceededException(inner) => {
                 Error::ConcurrentLimitExceededException(inner)
             }
-            crate::error::StartSnapshotErrorKind::ConflictException(inner) => {
+            crate::error::StartSnapshotError::ConflictException(inner) => {
                 Error::ConflictException(inner)
             }
-            crate::error::StartSnapshotErrorKind::InternalServerException(inner) => {
+            crate::error::StartSnapshotError::InternalServerException(inner) => {
                 Error::InternalServerException(inner)
             }
-            crate::error::StartSnapshotErrorKind::RequestThrottledException(inner) => {
+            crate::error::StartSnapshotError::RequestThrottledException(inner) => {
                 Error::RequestThrottledException(inner)
             }
-            crate::error::StartSnapshotErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::StartSnapshotError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::StartSnapshotErrorKind::ServiceQuotaExceededException(inner) => {
+            crate::error::StartSnapshotError::ServiceQuotaExceededException(inner) => {
                 Error::ServiceQuotaExceededException(inner)
             }
-            crate::error::StartSnapshotErrorKind::ValidationException(inner) => {
+            crate::error::StartSnapshotError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::StartSnapshotErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::StartSnapshotError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessDeniedException(e) => e.request_id(),
+            Self::ConcurrentLimitExceededException(e) => e.request_id(),
+            Self::ConflictException(e) => e.request_id(),
+            Self::InternalServerException(e) => e.request_id(),
+            Self::RequestThrottledException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::ServiceQuotaExceededException(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

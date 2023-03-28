@@ -12,6 +12,7 @@ pub struct UpdateInfrastructureConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was updated by this request.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -27,6 +28,11 @@ impl UpdateInfrastructureConfigurationOutput {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateInfrastructureConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateInfrastructureConfigurationOutput`](crate::output::UpdateInfrastructureConfigurationOutput).
 pub mod update_infrastructure_configuration_output {
 
@@ -37,6 +43,7 @@ pub mod update_infrastructure_configuration_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -75,12 +82,22 @@ pub mod update_infrastructure_configuration_output {
             self.infrastructure_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateInfrastructureConfigurationOutput`](crate::output::UpdateInfrastructureConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateInfrastructureConfigurationOutput {
             crate::output::UpdateInfrastructureConfigurationOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 infrastructure_configuration_arn: self.infrastructure_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -105,6 +122,7 @@ pub struct UpdateImagePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was updated by this request.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -120,6 +138,11 @@ impl UpdateImagePipelineOutput {
         self.image_pipeline_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateImagePipelineOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateImagePipelineOutput`](crate::output::UpdateImagePipelineOutput).
 pub mod update_image_pipeline_output {
 
@@ -130,6 +153,7 @@ pub mod update_image_pipeline_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -165,12 +189,22 @@ pub mod update_image_pipeline_output {
             self.image_pipeline_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateImagePipelineOutput`](crate::output::UpdateImagePipelineOutput).
         pub fn build(self) -> crate::output::UpdateImagePipelineOutput {
             crate::output::UpdateImagePipelineOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 image_pipeline_arn: self.image_pipeline_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -195,6 +229,7 @@ pub struct UpdateDistributionConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was updated by this request.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -210,6 +245,11 @@ impl UpdateDistributionConfigurationOutput {
         self.distribution_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateDistributionConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateDistributionConfigurationOutput`](crate::output::UpdateDistributionConfigurationOutput).
 pub mod update_distribution_configuration_output {
 
@@ -220,6 +260,7 @@ pub mod update_distribution_configuration_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -258,12 +299,22 @@ pub mod update_distribution_configuration_output {
             self.distribution_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDistributionConfigurationOutput`](crate::output::UpdateDistributionConfigurationOutput).
         pub fn build(self) -> crate::output::UpdateDistributionConfigurationOutput {
             crate::output::UpdateDistributionConfigurationOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 distribution_configuration_arn: self.distribution_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -278,18 +329,38 @@ impl UpdateDistributionConfigurationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -303,18 +374,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -338,6 +429,7 @@ pub struct StartImagePipelineExecutionOutput {
     /// <p>The Amazon Resource Name (ARN) of the image that was created by this request.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartImagePipelineExecutionOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -353,6 +445,11 @@ impl StartImagePipelineExecutionOutput {
         self.image_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for StartImagePipelineExecutionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartImagePipelineExecutionOutput`](crate::output::StartImagePipelineExecutionOutput).
 pub mod start_image_pipeline_execution_output {
 
@@ -363,6 +460,7 @@ pub mod start_image_pipeline_execution_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -398,12 +496,22 @@ pub mod start_image_pipeline_execution_output {
             self.image_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartImagePipelineExecutionOutput`](crate::output::StartImagePipelineExecutionOutput).
         pub fn build(self) -> crate::output::StartImagePipelineExecutionOutput {
             crate::output::StartImagePipelineExecutionOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 image_build_version_arn: self.image_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -425,6 +533,7 @@ pub struct PutImageRecipePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that this policy was applied to.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutImageRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -436,6 +545,11 @@ impl PutImageRecipePolicyOutput {
         self.image_recipe_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutImageRecipePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutImageRecipePolicyOutput`](crate::output::PutImageRecipePolicyOutput).
 pub mod put_image_recipe_policy_output {
 
@@ -445,6 +559,7 @@ pub mod put_image_recipe_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -470,11 +585,21 @@ pub mod put_image_recipe_policy_output {
             self.image_recipe_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutImageRecipePolicyOutput`](crate::output::PutImageRecipePolicyOutput).
         pub fn build(self) -> crate::output::PutImageRecipePolicyOutput {
             crate::output::PutImageRecipePolicyOutput {
                 request_id: self.request_id,
                 image_recipe_arn: self.image_recipe_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -496,6 +621,7 @@ pub struct PutImagePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the image that this policy was applied to.</p>
     #[doc(hidden)]
     pub image_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutImagePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -507,6 +633,11 @@ impl PutImagePolicyOutput {
         self.image_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutImagePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutImagePolicyOutput`](crate::output::PutImagePolicyOutput).
 pub mod put_image_policy_output {
 
@@ -516,6 +647,7 @@ pub mod put_image_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -538,11 +670,21 @@ pub mod put_image_policy_output {
             self.image_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutImagePolicyOutput`](crate::output::PutImagePolicyOutput).
         pub fn build(self) -> crate::output::PutImagePolicyOutput {
             crate::output::PutImagePolicyOutput {
                 request_id: self.request_id,
                 image_arn: self.image_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -564,6 +706,7 @@ pub struct PutContainerRecipePolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that this policy was applied to.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutContainerRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -575,6 +718,11 @@ impl PutContainerRecipePolicyOutput {
         self.container_recipe_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutContainerRecipePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutContainerRecipePolicyOutput`](crate::output::PutContainerRecipePolicyOutput).
 pub mod put_container_recipe_policy_output {
 
@@ -584,6 +732,7 @@ pub mod put_container_recipe_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -609,11 +758,21 @@ pub mod put_container_recipe_policy_output {
             self.container_recipe_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutContainerRecipePolicyOutput`](crate::output::PutContainerRecipePolicyOutput).
         pub fn build(self) -> crate::output::PutContainerRecipePolicyOutput {
             crate::output::PutContainerRecipePolicyOutput {
                 request_id: self.request_id,
                 container_recipe_arn: self.container_recipe_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -635,6 +794,7 @@ pub struct PutComponentPolicyOutput {
     /// <p>The Amazon Resource Name (ARN) of the component that this policy was applied to.</p>
     #[doc(hidden)]
     pub component_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutComponentPolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -646,6 +806,11 @@ impl PutComponentPolicyOutput {
         self.component_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutComponentPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutComponentPolicyOutput`](crate::output::PutComponentPolicyOutput).
 pub mod put_component_policy_output {
 
@@ -655,6 +820,7 @@ pub mod put_component_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -680,11 +846,21 @@ pub mod put_component_policy_output {
             self.component_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutComponentPolicyOutput`](crate::output::PutComponentPolicyOutput).
         pub fn build(self) -> crate::output::PutComponentPolicyOutput {
             crate::output::PutComponentPolicyOutput {
                 request_id: self.request_id,
                 component_arn: self.component_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -704,6 +880,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
@@ -712,6 +889,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -724,6 +906,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -751,9 +934,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -778,6 +973,7 @@ pub struct ListInfrastructureConfigurationsOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListInfrastructureConfigurationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -795,6 +991,11 @@ impl ListInfrastructureConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListInfrastructureConfigurationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListInfrastructureConfigurationsOutput`](crate::output::ListInfrastructureConfigurationsOutput).
 pub mod list_infrastructure_configurations_output {
 
@@ -806,6 +1007,7 @@ pub mod list_infrastructure_configurations_output {
         pub(crate) infrastructure_configuration_summary_list:
             std::option::Option<std::vec::Vec<crate::model::InfrastructureConfigurationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -854,6 +1056,15 @@ pub mod list_infrastructure_configurations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListInfrastructureConfigurationsOutput`](crate::output::ListInfrastructureConfigurationsOutput).
         pub fn build(self) -> crate::output::ListInfrastructureConfigurationsOutput {
             crate::output::ListInfrastructureConfigurationsOutput {
@@ -861,6 +1072,7 @@ pub mod list_infrastructure_configurations_output {
                 infrastructure_configuration_summary_list: self
                     .infrastructure_configuration_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -899,6 +1111,7 @@ pub struct ListImagesOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -928,6 +1141,11 @@ impl ListImagesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListImagesOutput`](crate::output::ListImagesOutput).
 pub mod list_images_output {
 
@@ -939,6 +1157,7 @@ pub mod list_images_output {
         pub(crate) image_version_list:
             std::option::Option<std::vec::Vec<crate::model::ImageVersion>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1008,12 +1227,22 @@ pub mod list_images_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImagesOutput`](crate::output::ListImagesOutput).
         pub fn build(self) -> crate::output::ListImagesOutput {
             crate::output::ListImagesOutput {
                 request_id: self.request_id,
                 image_version_list: self.image_version_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1039,6 +1268,7 @@ pub struct ListImageRecipesOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImageRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1056,6 +1286,11 @@ impl ListImageRecipesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImageRecipesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListImageRecipesOutput`](crate::output::ListImageRecipesOutput).
 pub mod list_image_recipes_output {
 
@@ -1067,6 +1302,7 @@ pub mod list_image_recipes_output {
         pub(crate) image_recipe_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ImageRecipeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1111,12 +1347,22 @@ pub mod list_image_recipes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImageRecipesOutput`](crate::output::ListImageRecipesOutput).
         pub fn build(self) -> crate::output::ListImageRecipesOutput {
             crate::output::ListImageRecipesOutput {
                 request_id: self.request_id,
                 image_recipe_summary_list: self.image_recipe_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1141,6 +1387,7 @@ pub struct ListImagePipelinesOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImagePipelinesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1156,6 +1403,11 @@ impl ListImagePipelinesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImagePipelinesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListImagePipelinesOutput`](crate::output::ListImagePipelinesOutput).
 pub mod list_image_pipelines_output {
 
@@ -1167,6 +1419,7 @@ pub mod list_image_pipelines_output {
         pub(crate) image_pipeline_list:
             std::option::Option<std::vec::Vec<crate::model::ImagePipeline>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1208,12 +1461,22 @@ pub mod list_image_pipelines_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImagePipelinesOutput`](crate::output::ListImagePipelinesOutput).
         pub fn build(self) -> crate::output::ListImagePipelinesOutput {
             crate::output::ListImagePipelinesOutput {
                 request_id: self.request_id,
                 image_pipeline_list: self.image_pipeline_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1238,6 +1501,7 @@ pub struct ListImagePipelineImagesOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImagePipelineImagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1253,6 +1517,11 @@ impl ListImagePipelineImagesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImagePipelineImagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListImagePipelineImagesOutput`](crate::output::ListImagePipelineImagesOutput).
 pub mod list_image_pipeline_images_output {
 
@@ -1264,6 +1533,7 @@ pub mod list_image_pipeline_images_output {
         pub(crate) image_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ImageSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1305,12 +1575,22 @@ pub mod list_image_pipeline_images_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImagePipelineImagesOutput`](crate::output::ListImagePipelineImagesOutput).
         pub fn build(self) -> crate::output::ListImagePipelineImagesOutput {
             crate::output::ListImagePipelineImagesOutput {
                 request_id: self.request_id,
                 image_summary_list: self.image_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1335,6 +1615,7 @@ pub struct ListImagePackagesOutput {
     /// <p>A token to specify where to start paginating. This is the NextToken from a previously truncated response.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImagePackagesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1350,6 +1631,11 @@ impl ListImagePackagesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImagePackagesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListImagePackagesOutput`](crate::output::ListImagePackagesOutput).
 pub mod list_image_packages_output {
 
@@ -1361,6 +1647,7 @@ pub mod list_image_packages_output {
         pub(crate) image_package_list:
             std::option::Option<std::vec::Vec<crate::model::ImagePackage>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1402,12 +1689,22 @@ pub mod list_image_packages_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImagePackagesOutput`](crate::output::ListImagePackagesOutput).
         pub fn build(self) -> crate::output::ListImagePackagesOutput {
             crate::output::ListImagePackagesOutput {
                 request_id: self.request_id,
                 image_package_list: self.image_package_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1432,6 +1729,7 @@ pub struct ListImageBuildVersionsOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListImageBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1447,6 +1745,11 @@ impl ListImageBuildVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListImageBuildVersionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListImageBuildVersionsOutput`](crate::output::ListImageBuildVersionsOutput).
 pub mod list_image_build_versions_output {
 
@@ -1458,6 +1761,7 @@ pub mod list_image_build_versions_output {
         pub(crate) image_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ImageSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1499,12 +1803,22 @@ pub mod list_image_build_versions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListImageBuildVersionsOutput`](crate::output::ListImageBuildVersionsOutput).
         pub fn build(self) -> crate::output::ListImageBuildVersionsOutput {
             crate::output::ListImageBuildVersionsOutput {
                 request_id: self.request_id,
                 image_summary_list: self.image_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1530,6 +1844,7 @@ pub struct ListDistributionConfigurationsOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDistributionConfigurationsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1547,6 +1862,11 @@ impl ListDistributionConfigurationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDistributionConfigurationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDistributionConfigurationsOutput`](crate::output::ListDistributionConfigurationsOutput).
 pub mod list_distribution_configurations_output {
 
@@ -1558,6 +1878,7 @@ pub mod list_distribution_configurations_output {
         pub(crate) distribution_configuration_summary_list:
             std::option::Option<std::vec::Vec<crate::model::DistributionConfigurationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1606,6 +1927,15 @@ pub mod list_distribution_configurations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDistributionConfigurationsOutput`](crate::output::ListDistributionConfigurationsOutput).
         pub fn build(self) -> crate::output::ListDistributionConfigurationsOutput {
             crate::output::ListDistributionConfigurationsOutput {
@@ -1613,6 +1943,7 @@ pub mod list_distribution_configurations_output {
                 distribution_configuration_summary_list: self
                     .distribution_configuration_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1638,6 +1969,7 @@ pub struct ListContainerRecipesOutput {
     /// <p>The next token field is used for paginated responses. When this is not empty, there are additional container recipes that the service has not included in this response. Use this token with the next request to retrieve additional list items.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListContainerRecipesOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1655,6 +1987,11 @@ impl ListContainerRecipesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListContainerRecipesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListContainerRecipesOutput`](crate::output::ListContainerRecipesOutput).
 pub mod list_container_recipes_output {
 
@@ -1666,6 +2003,7 @@ pub mod list_container_recipes_output {
         pub(crate) container_recipe_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ContainerRecipeSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1710,12 +2048,22 @@ pub mod list_container_recipes_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListContainerRecipesOutput`](crate::output::ListContainerRecipesOutput).
         pub fn build(self) -> crate::output::ListContainerRecipesOutput {
             crate::output::ListContainerRecipesOutput {
                 request_id: self.request_id,
                 container_recipe_summary_list: self.container_recipe_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1753,6 +2101,7 @@ pub struct ListComponentsOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListComponentsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1781,6 +2130,11 @@ impl ListComponentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListComponentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListComponentsOutput`](crate::output::ListComponentsOutput).
 pub mod list_components_output {
 
@@ -1792,6 +2146,7 @@ pub mod list_components_output {
         pub(crate) component_version_list:
             std::option::Option<std::vec::Vec<crate::model::ComponentVersion>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1859,12 +2214,22 @@ pub mod list_components_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListComponentsOutput`](crate::output::ListComponentsOutput).
         pub fn build(self) -> crate::output::ListComponentsOutput {
             crate::output::ListComponentsOutput {
                 request_id: self.request_id,
                 component_version_list: self.component_version_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1889,6 +2254,7 @@ pub struct ListComponentBuildVersionsOutput {
     /// <p>The next token used for paginated responses. When this is not empty, there are additional elements that the service has not included in this request. Use this token with the next request to retrieve additional objects.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListComponentBuildVersionsOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -1904,6 +2270,11 @@ impl ListComponentBuildVersionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListComponentBuildVersionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListComponentBuildVersionsOutput`](crate::output::ListComponentBuildVersionsOutput).
 pub mod list_component_build_versions_output {
 
@@ -1915,6 +2286,7 @@ pub mod list_component_build_versions_output {
         pub(crate) component_summary_list:
             std::option::Option<std::vec::Vec<crate::model::ComponentSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -1956,12 +2328,22 @@ pub mod list_component_build_versions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListComponentBuildVersionsOutput`](crate::output::ListComponentBuildVersionsOutput).
         pub fn build(self) -> crate::output::ListComponentBuildVersionsOutput {
             crate::output::ListComponentBuildVersionsOutput {
                 request_id: self.request_id,
                 component_summary_list: self.component_summary_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1986,6 +2368,7 @@ pub struct ImportVmImageOutput {
     /// <p>The idempotency token that was used for this request.</p>
     #[doc(hidden)]
     pub client_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportVmImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2001,6 +2384,11 @@ impl ImportVmImageOutput {
         self.client_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportVmImageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ImportVmImageOutput`](crate::output::ImportVmImageOutput).
 pub mod import_vm_image_output {
 
@@ -2011,6 +2399,7 @@ pub mod import_vm_image_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_arn: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2043,12 +2432,22 @@ pub mod import_vm_image_output {
             self.client_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportVmImageOutput`](crate::output::ImportVmImageOutput).
         pub fn build(self) -> crate::output::ImportVmImageOutput {
             crate::output::ImportVmImageOutput {
                 request_id: self.request_id,
                 image_arn: self.image_arn,
                 client_token: self.client_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2073,6 +2472,7 @@ pub struct ImportComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the imported component.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2088,6 +2488,11 @@ impl ImportComponentOutput {
         self.component_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportComponentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ImportComponentOutput`](crate::output::ImportComponentOutput).
 pub mod import_component_output {
 
@@ -2098,6 +2503,7 @@ pub mod import_component_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2136,12 +2542,22 @@ pub mod import_component_output {
             self.component_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportComponentOutput`](crate::output::ImportComponentOutput).
         pub fn build(self) -> crate::output::ImportComponentOutput {
             crate::output::ImportComponentOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 component_build_version_arn: self.component_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2164,6 +2580,7 @@ pub struct GetInfrastructureConfigurationOutput {
     #[doc(hidden)]
     pub infrastructure_configuration:
         std::option::Option<crate::model::InfrastructureConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2177,6 +2594,11 @@ impl GetInfrastructureConfigurationOutput {
         self.infrastructure_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetInfrastructureConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetInfrastructureConfigurationOutput`](crate::output::GetInfrastructureConfigurationOutput).
 pub mod get_infrastructure_configuration_output {
 
@@ -2187,6 +2609,7 @@ pub mod get_infrastructure_configuration_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration:
             std::option::Option<crate::model::InfrastructureConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2215,11 +2638,21 @@ pub mod get_infrastructure_configuration_output {
             self.infrastructure_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetInfrastructureConfigurationOutput`](crate::output::GetInfrastructureConfigurationOutput).
         pub fn build(self) -> crate::output::GetInfrastructureConfigurationOutput {
             crate::output::GetInfrastructureConfigurationOutput {
                 request_id: self.request_id,
                 infrastructure_configuration: self.infrastructure_configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2241,6 +2674,7 @@ pub struct GetImageRecipePolicyOutput {
     /// <p>The image recipe policy object.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetImageRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2252,6 +2686,11 @@ impl GetImageRecipePolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetImageRecipePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetImageRecipePolicyOutput`](crate::output::GetImageRecipePolicyOutput).
 pub mod get_image_recipe_policy_output {
 
@@ -2261,6 +2700,7 @@ pub mod get_image_recipe_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2283,11 +2723,21 @@ pub mod get_image_recipe_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetImageRecipePolicyOutput`](crate::output::GetImageRecipePolicyOutput).
         pub fn build(self) -> crate::output::GetImageRecipePolicyOutput {
             crate::output::GetImageRecipePolicyOutput {
                 request_id: self.request_id,
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2309,6 +2759,7 @@ pub struct GetImageRecipeOutput {
     /// <p>The image recipe object.</p>
     #[doc(hidden)]
     pub image_recipe: std::option::Option<crate::model::ImageRecipe>,
+    _request_id: Option<String>,
 }
 impl GetImageRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2320,6 +2771,11 @@ impl GetImageRecipeOutput {
         self.image_recipe.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetImageRecipeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetImageRecipeOutput`](crate::output::GetImageRecipeOutput).
 pub mod get_image_recipe_output {
 
@@ -2329,6 +2785,7 @@ pub mod get_image_recipe_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe: std::option::Option<crate::model::ImageRecipe>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2354,11 +2811,21 @@ pub mod get_image_recipe_output {
             self.image_recipe = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetImageRecipeOutput`](crate::output::GetImageRecipeOutput).
         pub fn build(self) -> crate::output::GetImageRecipeOutput {
             crate::output::GetImageRecipeOutput {
                 request_id: self.request_id,
                 image_recipe: self.image_recipe,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2380,6 +2847,7 @@ pub struct GetImagePolicyOutput {
     /// <p>The image policy object.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetImagePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2391,6 +2859,11 @@ impl GetImagePolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetImagePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetImagePolicyOutput`](crate::output::GetImagePolicyOutput).
 pub mod get_image_policy_output {
 
@@ -2400,6 +2873,7 @@ pub mod get_image_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2422,11 +2896,21 @@ pub mod get_image_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetImagePolicyOutput`](crate::output::GetImagePolicyOutput).
         pub fn build(self) -> crate::output::GetImagePolicyOutput {
             crate::output::GetImagePolicyOutput {
                 request_id: self.request_id,
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2448,6 +2932,7 @@ pub struct GetImagePipelineOutput {
     /// <p>The image pipeline object.</p>
     #[doc(hidden)]
     pub image_pipeline: std::option::Option<crate::model::ImagePipeline>,
+    _request_id: Option<String>,
 }
 impl GetImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2459,6 +2944,11 @@ impl GetImagePipelineOutput {
         self.image_pipeline.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetImagePipelineOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetImagePipelineOutput`](crate::output::GetImagePipelineOutput).
 pub mod get_image_pipeline_output {
 
@@ -2468,6 +2958,7 @@ pub mod get_image_pipeline_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_pipeline: std::option::Option<crate::model::ImagePipeline>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2493,11 +2984,21 @@ pub mod get_image_pipeline_output {
             self.image_pipeline = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetImagePipelineOutput`](crate::output::GetImagePipelineOutput).
         pub fn build(self) -> crate::output::GetImagePipelineOutput {
             crate::output::GetImagePipelineOutput {
                 request_id: self.request_id,
                 image_pipeline: self.image_pipeline,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2519,6 +3020,7 @@ pub struct GetImageOutput {
     /// <p>The image object.</p>
     #[doc(hidden)]
     pub image: std::option::Option<crate::model::Image>,
+    _request_id: Option<String>,
 }
 impl GetImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2530,6 +3032,11 @@ impl GetImageOutput {
         self.image.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetImageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetImageOutput`](crate::output::GetImageOutput).
 pub mod get_image_output {
 
@@ -2539,6 +3046,7 @@ pub mod get_image_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image: std::option::Option<crate::model::Image>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2561,11 +3069,21 @@ pub mod get_image_output {
             self.image = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetImageOutput`](crate::output::GetImageOutput).
         pub fn build(self) -> crate::output::GetImageOutput {
             crate::output::GetImageOutput {
                 request_id: self.request_id,
                 image: self.image,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2587,6 +3105,7 @@ pub struct GetDistributionConfigurationOutput {
     /// <p>The distribution configuration object.</p>
     #[doc(hidden)]
     pub distribution_configuration: std::option::Option<crate::model::DistributionConfiguration>,
+    _request_id: Option<String>,
 }
 impl GetDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2600,6 +3119,11 @@ impl GetDistributionConfigurationOutput {
         self.distribution_configuration.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetDistributionConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDistributionConfigurationOutput`](crate::output::GetDistributionConfigurationOutput).
 pub mod get_distribution_configuration_output {
 
@@ -2610,6 +3134,7 @@ pub mod get_distribution_configuration_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration:
             std::option::Option<crate::model::DistributionConfiguration>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2638,11 +3163,21 @@ pub mod get_distribution_configuration_output {
             self.distribution_configuration = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDistributionConfigurationOutput`](crate::output::GetDistributionConfigurationOutput).
         pub fn build(self) -> crate::output::GetDistributionConfigurationOutput {
             crate::output::GetDistributionConfigurationOutput {
                 request_id: self.request_id,
                 distribution_configuration: self.distribution_configuration,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2664,6 +3199,7 @@ pub struct GetContainerRecipePolicyOutput {
     /// <p>The container recipe policy object that is returned.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetContainerRecipePolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2675,6 +3211,11 @@ impl GetContainerRecipePolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetContainerRecipePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetContainerRecipePolicyOutput`](crate::output::GetContainerRecipePolicyOutput).
 pub mod get_container_recipe_policy_output {
 
@@ -2684,6 +3225,7 @@ pub mod get_container_recipe_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2706,11 +3248,21 @@ pub mod get_container_recipe_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetContainerRecipePolicyOutput`](crate::output::GetContainerRecipePolicyOutput).
         pub fn build(self) -> crate::output::GetContainerRecipePolicyOutput {
             crate::output::GetContainerRecipePolicyOutput {
                 request_id: self.request_id,
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2732,6 +3284,7 @@ pub struct GetContainerRecipeOutput {
     /// <p>The container recipe object that is returned.</p>
     #[doc(hidden)]
     pub container_recipe: std::option::Option<crate::model::ContainerRecipe>,
+    _request_id: Option<String>,
 }
 impl GetContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2743,6 +3296,11 @@ impl GetContainerRecipeOutput {
         self.container_recipe.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetContainerRecipeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetContainerRecipeOutput`](crate::output::GetContainerRecipeOutput).
 pub mod get_container_recipe_output {
 
@@ -2752,6 +3310,7 @@ pub mod get_container_recipe_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe: std::option::Option<crate::model::ContainerRecipe>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2777,11 +3336,21 @@ pub mod get_container_recipe_output {
             self.container_recipe = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetContainerRecipeOutput`](crate::output::GetContainerRecipeOutput).
         pub fn build(self) -> crate::output::GetContainerRecipeOutput {
             crate::output::GetContainerRecipeOutput {
                 request_id: self.request_id,
                 container_recipe: self.container_recipe,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2803,6 +3372,7 @@ pub struct GetComponentPolicyOutput {
     /// <p>The component policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetComponentPolicyOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2814,6 +3384,11 @@ impl GetComponentPolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetComponentPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetComponentPolicyOutput`](crate::output::GetComponentPolicyOutput).
 pub mod get_component_policy_output {
 
@@ -2823,6 +3398,7 @@ pub mod get_component_policy_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2845,11 +3421,21 @@ pub mod get_component_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetComponentPolicyOutput`](crate::output::GetComponentPolicyOutput).
         pub fn build(self) -> crate::output::GetComponentPolicyOutput {
             crate::output::GetComponentPolicyOutput {
                 request_id: self.request_id,
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2871,6 +3457,7 @@ pub struct GetComponentOutput {
     /// <p>The component object associated with the specified ARN.</p>
     #[doc(hidden)]
     pub component: std::option::Option<crate::model::Component>,
+    _request_id: Option<String>,
 }
 impl GetComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2882,6 +3469,11 @@ impl GetComponentOutput {
         self.component.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetComponentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetComponentOutput`](crate::output::GetComponentOutput).
 pub mod get_component_output {
 
@@ -2891,6 +3483,7 @@ pub mod get_component_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component: std::option::Option<crate::model::Component>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2916,11 +3509,21 @@ pub mod get_component_output {
             self.component = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetComponentOutput`](crate::output::GetComponentOutput).
         pub fn build(self) -> crate::output::GetComponentOutput {
             crate::output::GetComponentOutput {
                 request_id: self.request_id,
                 component: self.component,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2942,6 +3545,7 @@ pub struct DeleteInfrastructureConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was deleted.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -2953,6 +3557,11 @@ impl DeleteInfrastructureConfigurationOutput {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteInfrastructureConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteInfrastructureConfigurationOutput`](crate::output::DeleteInfrastructureConfigurationOutput).
 pub mod delete_infrastructure_configuration_output {
 
@@ -2962,6 +3571,7 @@ pub mod delete_infrastructure_configuration_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -2990,11 +3600,21 @@ pub mod delete_infrastructure_configuration_output {
             self.infrastructure_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteInfrastructureConfigurationOutput`](crate::output::DeleteInfrastructureConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteInfrastructureConfigurationOutput {
             crate::output::DeleteInfrastructureConfigurationOutput {
                 request_id: self.request_id,
                 infrastructure_configuration_arn: self.infrastructure_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3016,6 +3636,7 @@ pub struct DeleteImageRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was deleted.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteImageRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3027,6 +3648,11 @@ impl DeleteImageRecipeOutput {
         self.image_recipe_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteImageRecipeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteImageRecipeOutput`](crate::output::DeleteImageRecipeOutput).
 pub mod delete_image_recipe_output {
 
@@ -3036,6 +3662,7 @@ pub mod delete_image_recipe_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3061,11 +3688,21 @@ pub mod delete_image_recipe_output {
             self.image_recipe_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteImageRecipeOutput`](crate::output::DeleteImageRecipeOutput).
         pub fn build(self) -> crate::output::DeleteImageRecipeOutput {
             crate::output::DeleteImageRecipeOutput {
                 request_id: self.request_id,
                 image_recipe_arn: self.image_recipe_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3087,6 +3724,7 @@ pub struct DeleteImagePipelineOutput {
     /// <p>The Amazon Resource Name (ARN) of the image pipeline that was deleted.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteImagePipelineOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3098,6 +3736,11 @@ impl DeleteImagePipelineOutput {
         self.image_pipeline_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteImagePipelineOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteImagePipelineOutput`](crate::output::DeleteImagePipelineOutput).
 pub mod delete_image_pipeline_output {
 
@@ -3107,6 +3750,7 @@ pub mod delete_image_pipeline_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3132,11 +3776,21 @@ pub mod delete_image_pipeline_output {
             self.image_pipeline_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteImagePipelineOutput`](crate::output::DeleteImagePipelineOutput).
         pub fn build(self) -> crate::output::DeleteImagePipelineOutput {
             crate::output::DeleteImagePipelineOutput {
                 request_id: self.request_id,
                 image_pipeline_arn: self.image_pipeline_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3158,6 +3812,7 @@ pub struct DeleteImageOutput {
     /// <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was deleted.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteImageOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3169,6 +3824,11 @@ impl DeleteImageOutput {
         self.image_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteImageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteImageOutput`](crate::output::DeleteImageOutput).
 pub mod delete_image_output {
 
@@ -3178,6 +3838,7 @@ pub mod delete_image_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3203,11 +3864,21 @@ pub mod delete_image_output {
             self.image_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteImageOutput`](crate::output::DeleteImageOutput).
         pub fn build(self) -> crate::output::DeleteImageOutput {
             crate::output::DeleteImageOutput {
                 request_id: self.request_id,
                 image_build_version_arn: self.image_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3229,6 +3900,7 @@ pub struct DeleteDistributionConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the distribution configuration that was deleted.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteDistributionConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3240,6 +3912,11 @@ impl DeleteDistributionConfigurationOutput {
         self.distribution_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteDistributionConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteDistributionConfigurationOutput`](crate::output::DeleteDistributionConfigurationOutput).
 pub mod delete_distribution_configuration_output {
 
@@ -3249,6 +3926,7 @@ pub mod delete_distribution_configuration_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3277,11 +3955,21 @@ pub mod delete_distribution_configuration_output {
             self.distribution_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDistributionConfigurationOutput`](crate::output::DeleteDistributionConfigurationOutput).
         pub fn build(self) -> crate::output::DeleteDistributionConfigurationOutput {
             crate::output::DeleteDistributionConfigurationOutput {
                 request_id: self.request_id,
                 distribution_configuration_arn: self.distribution_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3303,6 +3991,7 @@ pub struct DeleteContainerRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the container recipe that was deleted.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3314,6 +4003,11 @@ impl DeleteContainerRecipeOutput {
         self.container_recipe_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteContainerRecipeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteContainerRecipeOutput`](crate::output::DeleteContainerRecipeOutput).
 pub mod delete_container_recipe_output {
 
@@ -3323,6 +4017,7 @@ pub mod delete_container_recipe_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3348,11 +4043,21 @@ pub mod delete_container_recipe_output {
             self.container_recipe_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteContainerRecipeOutput`](crate::output::DeleteContainerRecipeOutput).
         pub fn build(self) -> crate::output::DeleteContainerRecipeOutput {
             crate::output::DeleteContainerRecipeOutput {
                 request_id: self.request_id,
                 container_recipe_arn: self.container_recipe_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3374,6 +4079,7 @@ pub struct DeleteComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the component build version that was deleted.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3385,6 +4091,11 @@ impl DeleteComponentOutput {
         self.component_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteComponentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
 pub mod delete_component_output {
 
@@ -3394,6 +4105,7 @@ pub mod delete_component_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3422,11 +4134,21 @@ pub mod delete_component_output {
             self.component_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteComponentOutput`](crate::output::DeleteComponentOutput).
         pub fn build(self) -> crate::output::DeleteComponentOutput {
             crate::output::DeleteComponentOutput {
                 request_id: self.request_id,
                 component_build_version_arn: self.component_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3451,6 +4173,7 @@ pub struct CreateInfrastructureConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the infrastructure configuration that was created by this request.</p>
     #[doc(hidden)]
     pub infrastructure_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateInfrastructureConfigurationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3466,6 +4189,11 @@ impl CreateInfrastructureConfigurationOutput {
         self.infrastructure_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateInfrastructureConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateInfrastructureConfigurationOutput`](crate::output::CreateInfrastructureConfigurationOutput).
 pub mod create_infrastructure_configuration_output {
 
@@ -3476,6 +4204,7 @@ pub mod create_infrastructure_configuration_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) infrastructure_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3514,12 +4243,22 @@ pub mod create_infrastructure_configuration_output {
             self.infrastructure_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateInfrastructureConfigurationOutput`](crate::output::CreateInfrastructureConfigurationOutput).
         pub fn build(self) -> crate::output::CreateInfrastructureConfigurationOutput {
             crate::output::CreateInfrastructureConfigurationOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 infrastructure_configuration_arn: self.infrastructure_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3544,6 +4283,7 @@ pub struct CreateImageRecipeOutput {
     /// <p>The Amazon Resource Name (ARN) of the image recipe that was created by this request.</p>
     #[doc(hidden)]
     pub image_recipe_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateImageRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3559,6 +4299,11 @@ impl CreateImageRecipeOutput {
         self.image_recipe_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateImageRecipeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateImageRecipeOutput`](crate::output::CreateImageRecipeOutput).
 pub mod create_image_recipe_output {
 
@@ -3569,6 +4314,7 @@ pub mod create_image_recipe_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_recipe_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3604,12 +4350,22 @@ pub mod create_image_recipe_output {
             self.image_recipe_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateImageRecipeOutput`](crate::output::CreateImageRecipeOutput).
         pub fn build(self) -> crate::output::CreateImageRecipeOutput {
             crate::output::CreateImageRecipeOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 image_recipe_arn: self.image_recipe_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3634,6 +4390,7 @@ pub struct CreateImagePipelineOutput {
     /// <p> The Amazon Resource Name (ARN) of the image pipeline that was created by this request.</p>
     #[doc(hidden)]
     pub image_pipeline_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateImagePipelineOutput {
     /// <p> The request ID that uniquely identifies this request.</p>
@@ -3649,6 +4406,11 @@ impl CreateImagePipelineOutput {
         self.image_pipeline_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateImagePipelineOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateImagePipelineOutput`](crate::output::CreateImagePipelineOutput).
 pub mod create_image_pipeline_output {
 
@@ -3659,6 +4421,7 @@ pub mod create_image_pipeline_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_pipeline_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The request ID that uniquely identifies this request.</p>
@@ -3694,12 +4457,22 @@ pub mod create_image_pipeline_output {
             self.image_pipeline_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateImagePipelineOutput`](crate::output::CreateImagePipelineOutput).
         pub fn build(self) -> crate::output::CreateImagePipelineOutput {
             crate::output::CreateImagePipelineOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 image_pipeline_arn: self.image_pipeline_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3724,6 +4497,7 @@ pub struct CreateImageOutput {
     /// <p> The Amazon Resource Name (ARN) of the image that was created by this request.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateImageOutput {
     /// <p> The request ID that uniquely identifies this request.</p>
@@ -3739,6 +4513,11 @@ impl CreateImageOutput {
         self.image_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateImageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateImageOutput`](crate::output::CreateImageOutput).
 pub mod create_image_output {
 
@@ -3749,6 +4528,7 @@ pub mod create_image_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The request ID that uniquely identifies this request.</p>
@@ -3784,12 +4564,22 @@ pub mod create_image_output {
             self.image_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateImageOutput`](crate::output::CreateImageOutput).
         pub fn build(self) -> crate::output::CreateImageOutput {
             crate::output::CreateImageOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 image_build_version_arn: self.image_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3814,6 +4604,7 @@ pub struct CreateDistributionConfigurationOutput {
     /// <p> The Amazon Resource Name (ARN) of the distribution configuration that was created by this request.</p>
     #[doc(hidden)]
     pub distribution_configuration_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateDistributionConfigurationOutput {
     /// <p> The request ID that uniquely identifies this request.</p>
@@ -3829,6 +4620,11 @@ impl CreateDistributionConfigurationOutput {
         self.distribution_configuration_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDistributionConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateDistributionConfigurationOutput`](crate::output::CreateDistributionConfigurationOutput).
 pub mod create_distribution_configuration_output {
 
@@ -3839,6 +4635,7 @@ pub mod create_distribution_configuration_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) distribution_configuration_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The request ID that uniquely identifies this request.</p>
@@ -3877,12 +4674,22 @@ pub mod create_distribution_configuration_output {
             self.distribution_configuration_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDistributionConfigurationOutput`](crate::output::CreateDistributionConfigurationOutput).
         pub fn build(self) -> crate::output::CreateDistributionConfigurationOutput {
             crate::output::CreateDistributionConfigurationOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 distribution_configuration_arn: self.distribution_configuration_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3907,6 +4714,7 @@ pub struct CreateContainerRecipeOutput {
     /// <p>Returns the Amazon Resource Name (ARN) of the container recipe that the request created.</p>
     #[doc(hidden)]
     pub container_recipe_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateContainerRecipeOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -3922,6 +4730,11 @@ impl CreateContainerRecipeOutput {
         self.container_recipe_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateContainerRecipeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateContainerRecipeOutput`](crate::output::CreateContainerRecipeOutput).
 pub mod create_container_recipe_output {
 
@@ -3932,6 +4745,7 @@ pub mod create_container_recipe_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) container_recipe_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -3967,12 +4781,22 @@ pub mod create_container_recipe_output {
             self.container_recipe_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateContainerRecipeOutput`](crate::output::CreateContainerRecipeOutput).
         pub fn build(self) -> crate::output::CreateContainerRecipeOutput {
             crate::output::CreateContainerRecipeOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 container_recipe_arn: self.container_recipe_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3997,6 +4821,7 @@ pub struct CreateComponentOutput {
     /// <p>The Amazon Resource Name (ARN) of the component that was created by this request.</p>
     #[doc(hidden)]
     pub component_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateComponentOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -4012,6 +4837,11 @@ impl CreateComponentOutput {
         self.component_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateComponentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateComponentOutput`](crate::output::CreateComponentOutput).
 pub mod create_component_output {
 
@@ -4022,6 +4852,7 @@ pub mod create_component_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) component_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -4060,12 +4891,22 @@ pub mod create_component_output {
             self.component_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateComponentOutput`](crate::output::CreateComponentOutput).
         pub fn build(self) -> crate::output::CreateComponentOutput {
             crate::output::CreateComponentOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 component_build_version_arn: self.component_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -4090,6 +4931,7 @@ pub struct CancelImageCreationOutput {
     /// <p>The Amazon Resource Name (ARN) of the image whose creation has been cancelled.</p>
     #[doc(hidden)]
     pub image_build_version_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelImageCreationOutput {
     /// <p>The request ID that uniquely identifies this request.</p>
@@ -4105,6 +4947,11 @@ impl CancelImageCreationOutput {
         self.image_build_version_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CancelImageCreationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CancelImageCreationOutput`](crate::output::CancelImageCreationOutput).
 pub mod cancel_image_creation_output {
 
@@ -4115,6 +4962,7 @@ pub mod cancel_image_creation_output {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) client_token: std::option::Option<std::string::String>,
         pub(crate) image_build_version_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The request ID that uniquely identifies this request.</p>
@@ -4150,12 +4998,22 @@ pub mod cancel_image_creation_output {
             self.image_build_version_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelImageCreationOutput`](crate::output::CancelImageCreationOutput).
         pub fn build(self) -> crate::output::CancelImageCreationOutput {
             crate::output::CancelImageCreationOutput {
                 request_id: self.request_id,
                 client_token: self.client_token,
                 image_build_version_arn: self.image_build_version_arn,
+                _request_id: self._request_id,
             }
         }
     }

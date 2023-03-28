@@ -6,11 +6,17 @@ pub struct RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveTagsFromResourceOutput {
     /// <p>The status of the operation.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for RemoveTagsFromResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
@@ -21,6 +27,7 @@ pub mod remove_tags_from_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the operation.</p>
@@ -33,10 +40,20 @@ pub mod remove_tags_from_resource_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveTagsFromResourceOutput`](crate::output::RemoveTagsFromResourceOutput).
         pub fn build(self) -> crate::output::RemoveTagsFromResourceOutput {
             crate::output::RemoveTagsFromResourceOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -55,11 +72,17 @@ pub struct ModifyLunaClientOutput {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ModifyLunaClientOutput {
     /// <p>The ARN of the client.</p>
     pub fn client_arn(&self) -> std::option::Option<&str> {
         self.client_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ModifyLunaClientOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
@@ -70,6 +93,7 @@ pub mod modify_luna_client_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the client.</p>
@@ -82,10 +106,20 @@ pub mod modify_luna_client_output {
             self.client_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyLunaClientOutput`](crate::output::ModifyLunaClientOutput).
         pub fn build(self) -> crate::output::ModifyLunaClientOutput {
             crate::output::ModifyLunaClientOutput {
                 client_arn: self.client_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -104,11 +138,17 @@ pub struct ModifyHsmOutput {
     /// <p>The ARN of the HSM.</p>
     #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ModifyHsmOutput {
     /// <p>The ARN of the HSM.</p>
     pub fn hsm_arn(&self) -> std::option::Option<&str> {
         self.hsm_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ModifyHsmOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
@@ -119,6 +159,7 @@ pub mod modify_hsm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the HSM.</p>
@@ -131,10 +172,20 @@ pub mod modify_hsm_output {
             self.hsm_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyHsmOutput`](crate::output::ModifyHsmOutput).
         pub fn build(self) -> crate::output::ModifyHsmOutput {
             crate::output::ModifyHsmOutput {
                 hsm_arn: self.hsm_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -153,11 +204,17 @@ pub struct ModifyHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ModifyHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     pub fn hapg_arn(&self) -> std::option::Option<&str> {
         self.hapg_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ModifyHapgOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
@@ -168,6 +225,7 @@ pub mod modify_hapg_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the high-availability partition group.</p>
@@ -180,10 +238,20 @@ pub mod modify_hapg_output {
             self.hapg_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ModifyHapgOutput`](crate::output::ModifyHapgOutput).
         pub fn build(self) -> crate::output::ModifyHapgOutput {
             crate::output::ModifyHapgOutput {
                 hapg_arn: self.hapg_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -202,11 +270,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
     #[doc(hidden)]
     pub tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>One or more tags.</p>
     pub fn tag_list(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tag_list.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -217,6 +291,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tag_list: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tag_list`.
@@ -238,10 +313,20 @@ pub mod list_tags_for_resource_output {
             self.tag_list = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 tag_list: self.tag_list,
+                _request_id: self._request_id,
             }
         }
     }
@@ -263,6 +348,7 @@ pub struct ListLunaClientsOutput {
     /// <p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLunaClientsOutput {
     /// <p>The list of clients.</p>
@@ -274,6 +360,11 @@ impl ListLunaClientsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLunaClientsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
 pub mod list_luna_clients_output {
 
@@ -283,6 +374,7 @@ pub mod list_luna_clients_output {
     pub struct Builder {
         pub(crate) client_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `client_list`.
@@ -314,11 +406,21 @@ pub mod list_luna_clients_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLunaClientsOutput`](crate::output::ListLunaClientsOutput).
         pub fn build(self) -> crate::output::ListLunaClientsOutput {
             crate::output::ListLunaClientsOutput {
                 client_list: self.client_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -340,6 +442,7 @@ pub struct ListHsmsOutput {
     /// <p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListHsmsOutput {
     /// <p>The list of ARNs that identify the HSMs.</p>
@@ -351,6 +454,11 @@ impl ListHsmsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHsmsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListHsmsOutput`](crate::output::ListHsmsOutput).
 pub mod list_hsms_output {
 
@@ -360,6 +468,7 @@ pub mod list_hsms_output {
     pub struct Builder {
         pub(crate) hsm_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `hsm_list`.
@@ -391,11 +500,21 @@ pub mod list_hsms_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListHsmsOutput`](crate::output::ListHsmsOutput).
         pub fn build(self) -> crate::output::ListHsmsOutput {
             crate::output::ListHsmsOutput {
                 hsm_list: self.hsm_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -417,6 +536,7 @@ pub struct ListHapgsOutput {
     /// <p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListHapgsOutput {
     /// <p>The list of high-availability partition groups.</p>
@@ -428,6 +548,11 @@ impl ListHapgsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHapgsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListHapgsOutput`](crate::output::ListHapgsOutput).
 pub mod list_hapgs_output {
 
@@ -437,6 +562,7 @@ pub mod list_hapgs_output {
     pub struct Builder {
         pub(crate) hapg_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `hapg_list`.
@@ -468,11 +594,21 @@ pub mod list_hapgs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListHapgsOutput`](crate::output::ListHapgsOutput).
         pub fn build(self) -> crate::output::ListHapgsOutput {
             crate::output::ListHapgsOutput {
                 hapg_list: self.hapg_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -491,11 +627,17 @@ pub struct ListAvailableZonesOutput {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
     #[doc(hidden)]
     pub az_list: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListAvailableZonesOutput {
     /// <p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>
     pub fn az_list(&self) -> std::option::Option<&[std::string::String]> {
         self.az_list.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListAvailableZonesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
@@ -506,6 +648,7 @@ pub mod list_available_zones_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) az_list: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `az_list`.
@@ -527,10 +670,20 @@ pub mod list_available_zones_output {
             self.az_list = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAvailableZonesOutput`](crate::output::ListAvailableZonesOutput).
         pub fn build(self) -> crate::output::ListAvailableZonesOutput {
             crate::output::ListAvailableZonesOutput {
                 az_list: self.az_list,
+                _request_id: self._request_id,
             }
         }
     }
@@ -555,6 +708,7 @@ pub struct GetConfigOutput {
     /// <p>The certificate file containing the server.pem files of the HSMs.</p>
     #[doc(hidden)]
     pub config_cred: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetConfigOutput {
     /// <p>The type of credentials.</p>
@@ -570,6 +724,11 @@ impl GetConfigOutput {
         self.config_cred.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetConfigOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetConfigOutput`](crate::output::GetConfigOutput).
 pub mod get_config_output {
 
@@ -580,6 +739,7 @@ pub mod get_config_output {
         pub(crate) config_type: std::option::Option<std::string::String>,
         pub(crate) config_file: std::option::Option<std::string::String>,
         pub(crate) config_cred: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The type of credentials.</p>
@@ -612,12 +772,22 @@ pub mod get_config_output {
             self.config_cred = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetConfigOutput`](crate::output::GetConfigOutput).
         pub fn build(self) -> crate::output::GetConfigOutput {
             crate::output::GetConfigOutput {
                 config_type: self.config_type,
                 config_file: self.config_file,
                 config_cred: self.config_cred,
+                _request_id: self._request_id,
             }
         }
     }
@@ -648,6 +818,7 @@ pub struct DescribeLunaClientOutput {
     /// <p>The label of the client.</p>
     #[doc(hidden)]
     pub label: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeLunaClientOutput {
     /// <p>The ARN of the client.</p>
@@ -671,6 +842,11 @@ impl DescribeLunaClientOutput {
         self.label.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLunaClientOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
 pub mod describe_luna_client_output {
 
@@ -683,6 +859,7 @@ pub mod describe_luna_client_output {
         pub(crate) certificate_fingerprint: std::option::Option<std::string::String>,
         pub(crate) last_modified_timestamp: std::option::Option<std::string::String>,
         pub(crate) label: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the client.</p>
@@ -741,6 +918,15 @@ pub mod describe_luna_client_output {
             self.label = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLunaClientOutput`](crate::output::DescribeLunaClientOutput).
         pub fn build(self) -> crate::output::DescribeLunaClientOutput {
             crate::output::DescribeLunaClientOutput {
@@ -749,6 +935,7 @@ pub mod describe_luna_client_output {
                 certificate_fingerprint: self.certificate_fingerprint,
                 last_modified_timestamp: self.last_modified_timestamp,
                 label: self.label,
+                _request_id: self._request_id,
             }
         }
     }
@@ -831,6 +1018,7 @@ pub struct DescribeHsmOutput {
     /// <p>The list of partitions on the HSM.</p>
     #[doc(hidden)]
     pub partitions: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeHsmOutput {
     /// <p>The ARN of the HSM.</p>
@@ -922,6 +1110,11 @@ impl DescribeHsmOutput {
         self.partitions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeHsmOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
 pub mod describe_hsm_output {
 
@@ -950,6 +1143,7 @@ pub mod describe_hsm_output {
         pub(crate) server_cert_uri: std::option::Option<std::string::String>,
         pub(crate) server_cert_last_updated: std::option::Option<std::string::String>,
         pub(crate) partitions: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the HSM.</p>
@@ -1212,6 +1406,15 @@ pub mod describe_hsm_output {
             self.partitions = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeHsmOutput`](crate::output::DescribeHsmOutput).
         pub fn build(self) -> crate::output::DescribeHsmOutput {
             crate::output::DescribeHsmOutput {
@@ -1236,6 +1439,7 @@ pub mod describe_hsm_output {
                 server_cert_uri: self.server_cert_uri,
                 server_cert_last_updated: self.server_cert_last_updated,
                 partitions: self.partitions,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1278,6 +1482,7 @@ pub struct DescribeHapgOutput {
     /// <p>The state of the high-availability partition group.</p>
     #[doc(hidden)]
     pub state: std::option::Option<crate::model::CloudHsmObjectState>,
+    _request_id: Option<String>,
 }
 impl DescribeHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
@@ -1317,6 +1522,11 @@ impl DescribeHapgOutput {
         self.state.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeHapgOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
 pub mod describe_hapg_output {
 
@@ -1334,6 +1544,7 @@ pub mod describe_hapg_output {
         pub(crate) last_modified_timestamp: std::option::Option<std::string::String>,
         pub(crate) partition_serial_list: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) state: std::option::Option<crate::model::CloudHsmObjectState>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the high-availability partition group.</p>
@@ -1468,6 +1679,15 @@ pub mod describe_hapg_output {
             self.state = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeHapgOutput`](crate::output::DescribeHapgOutput).
         pub fn build(self) -> crate::output::DescribeHapgOutput {
             crate::output::DescribeHapgOutput {
@@ -1480,6 +1700,7 @@ pub mod describe_hapg_output {
                 last_modified_timestamp: self.last_modified_timestamp,
                 partition_serial_list: self.partition_serial_list,
                 state: self.state,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1498,11 +1719,17 @@ pub struct DeleteLunaClientOutput {
     /// <p>The status of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteLunaClientOutput {
     /// <p>The status of the action.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteLunaClientOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
@@ -1513,6 +1740,7 @@ pub mod delete_luna_client_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the action.</p>
@@ -1525,10 +1753,20 @@ pub mod delete_luna_client_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLunaClientOutput`](crate::output::DeleteLunaClientOutput).
         pub fn build(self) -> crate::output::DeleteLunaClientOutput {
             crate::output::DeleteLunaClientOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1547,11 +1785,17 @@ pub struct DeleteHsmOutput {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteHsmOutput {
     /// <p>The status of the operation.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteHsmOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
@@ -1562,6 +1806,7 @@ pub mod delete_hsm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the operation.</p>
@@ -1574,10 +1819,20 @@ pub mod delete_hsm_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteHsmOutput`](crate::output::DeleteHsmOutput).
         pub fn build(self) -> crate::output::DeleteHsmOutput {
             crate::output::DeleteHsmOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1596,11 +1851,17 @@ pub struct DeleteHapgOutput {
     /// <p>The status of the action.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteHapgOutput {
     /// <p>The status of the action.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteHapgOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
@@ -1611,6 +1872,7 @@ pub mod delete_hapg_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the action.</p>
@@ -1623,10 +1885,20 @@ pub mod delete_hapg_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteHapgOutput`](crate::output::DeleteHapgOutput).
         pub fn build(self) -> crate::output::DeleteHapgOutput {
             crate::output::DeleteHapgOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1645,11 +1917,17 @@ pub struct CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
     #[doc(hidden)]
     pub client_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLunaClientOutput {
     /// <p>The ARN of the client.</p>
     pub fn client_arn(&self) -> std::option::Option<&str> {
         self.client_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateLunaClientOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
@@ -1660,6 +1938,7 @@ pub mod create_luna_client_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) client_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the client.</p>
@@ -1672,10 +1951,20 @@ pub mod create_luna_client_output {
             self.client_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLunaClientOutput`](crate::output::CreateLunaClientOutput).
         pub fn build(self) -> crate::output::CreateLunaClientOutput {
             crate::output::CreateLunaClientOutput {
                 client_arn: self.client_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1694,11 +1983,17 @@ pub struct CreateHsmOutput {
     /// <p>The ARN of the HSM.</p>
     #[doc(hidden)]
     pub hsm_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateHsmOutput {
     /// <p>The ARN of the HSM.</p>
     pub fn hsm_arn(&self) -> std::option::Option<&str> {
         self.hsm_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateHsmOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateHsmOutput`](crate::output::CreateHsmOutput).
@@ -1709,6 +2004,7 @@ pub mod create_hsm_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hsm_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the HSM.</p>
@@ -1721,10 +2017,20 @@ pub mod create_hsm_output {
             self.hsm_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateHsmOutput`](crate::output::CreateHsmOutput).
         pub fn build(self) -> crate::output::CreateHsmOutput {
             crate::output::CreateHsmOutput {
                 hsm_arn: self.hsm_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1743,11 +2049,17 @@ pub struct CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     #[doc(hidden)]
     pub hapg_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateHapgOutput {
     /// <p>The ARN of the high-availability partition group.</p>
     pub fn hapg_arn(&self) -> std::option::Option<&str> {
         self.hapg_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateHapgOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateHapgOutput`](crate::output::CreateHapgOutput).
@@ -1758,6 +2070,7 @@ pub mod create_hapg_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hapg_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the high-availability partition group.</p>
@@ -1770,10 +2083,20 @@ pub mod create_hapg_output {
             self.hapg_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateHapgOutput`](crate::output::CreateHapgOutput).
         pub fn build(self) -> crate::output::CreateHapgOutput {
             crate::output::CreateHapgOutput {
                 hapg_arn: self.hapg_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1792,11 +2115,17 @@ pub struct AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AddTagsToResourceOutput {
     /// <p>The status of the operation.</p>
     pub fn status(&self) -> std::option::Option<&str> {
         self.status.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AddTagsToResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
@@ -1807,6 +2136,7 @@ pub mod add_tags_to_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The status of the operation.</p>
@@ -1819,10 +2149,20 @@ pub mod add_tags_to_resource_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AddTagsToResourceOutput`](crate::output::AddTagsToResourceOutput).
         pub fn build(self) -> crate::output::AddTagsToResourceOutput {
             crate::output::AddTagsToResourceOutput {
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }

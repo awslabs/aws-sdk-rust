@@ -6,8 +6,11 @@ pub fn parse_clone_receipt_rule_set_error(
     crate::output::CloneReceiptRuleSetOutput,
     crate::error::CloneReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CloneReceiptRuleSetError::unhandled(generic)),
@@ -15,43 +18,42 @@ pub fn parse_clone_receipt_rule_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CloneReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::CloneReceiptRuleSetErrorKind::AlreadyExistsException({
+        "AlreadyExists" => {
+            crate::error::CloneReceiptRuleSetError::AlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CloneReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::CloneReceiptRuleSetErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CloneReceiptRuleSetError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RuleSetDoesNotExist" => crate::error::CloneReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::CloneReceiptRuleSetErrorKind::RuleSetDoesNotExistException({
+            })
+        }
+        "RuleSetDoesNotExist" => {
+            crate::error::CloneReceiptRuleSetError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -59,14 +61,15 @@ pub fn parse_clone_receipt_rule_set_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CloneReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CloneReceiptRuleSetError::generic(generic),
     })
 }
@@ -82,6 +85,9 @@ pub fn parse_clone_receipt_rule_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::clone_receipt_rule_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -93,8 +99,11 @@ pub fn parse_create_configuration_set_error(
     crate::output::CreateConfigurationSetOutput,
     crate::error::CreateConfigurationSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -106,55 +115,61 @@ pub fn parse_create_configuration_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetAlreadyExists" => crate::error::CreateConfigurationSetError { meta: generic, kind: crate::error::CreateConfigurationSetErrorKind::ConfigurationSetAlreadyExistsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConfigurationSetAlreadyExists" => {
+            crate::error::CreateConfigurationSetError::ConfigurationSetAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_already_exists_exception::Builder::default();
+                    let mut output =
+                        crate::error::configuration_set_already_exists_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidConfigurationSet" => crate::error::CreateConfigurationSetError { meta: generic, kind: crate::error::CreateConfigurationSetErrorKind::InvalidConfigurationSetException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidConfigurationSet" => {
+            crate::error::CreateConfigurationSetError::InvalidConfigurationSetException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_configuration_set_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_configuration_set_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_configuration_set_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "LimitExceeded" => crate::error::CreateConfigurationSetError { meta: generic, kind: crate::error::CreateConfigurationSetErrorKind::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateConfigurationSetError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateConfigurationSetError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::CreateConfigurationSetError::generic(generic),
     })
 }
 
@@ -169,6 +184,9 @@ pub fn parse_create_configuration_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_configuration_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -180,8 +198,11 @@ pub fn parse_create_configuration_set_event_destination_error(
     crate::output::CreateConfigurationSetEventDestinationOutput,
     crate::error::CreateConfigurationSetEventDestinationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -193,7 +214,7 @@ pub fn parse_create_configuration_set_event_destination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::CreateConfigurationSetEventDestinationError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -201,6 +222,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -208,8 +230,8 @@ pub fn parse_create_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "EventDestinationAlreadyExists" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::EventDestinationAlreadyExistsException({
+        }),
+        "EventDestinationAlreadyExists" => crate::error::CreateConfigurationSetEventDestinationError::EventDestinationAlreadyExistsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -217,6 +239,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     let mut output = crate::error::event_destination_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_event_destination_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -224,8 +247,8 @@ pub fn parse_create_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidCloudWatchDestination" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException({
+        }),
+        "InvalidCloudWatchDestination" => crate::error::CreateConfigurationSetEventDestinationError::InvalidCloudWatchDestinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -233,6 +256,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     let mut output = crate::error::invalid_cloud_watch_destination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cloud_watch_destination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -240,8 +264,8 @@ pub fn parse_create_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidFirehoseDestination" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException({
+        }),
+        "InvalidFirehoseDestination" => crate::error::CreateConfigurationSetEventDestinationError::InvalidFirehoseDestinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -249,6 +273,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     let mut output = crate::error::invalid_firehose_destination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_firehose_destination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -256,8 +281,8 @@ pub fn parse_create_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidSNSDestination" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException({
+        }),
+        "InvalidSNSDestination" => crate::error::CreateConfigurationSetEventDestinationError::InvalidSnsDestinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -265,6 +290,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     let mut output = crate::error::invalid_sns_destination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_sns_destination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -272,8 +298,8 @@ pub fn parse_create_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "LimitExceeded" => crate::error::CreateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::CreateConfigurationSetEventDestinationErrorKind::LimitExceededException({
+        }),
+        "LimitExceeded" => crate::error::CreateConfigurationSetEventDestinationError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -281,6 +307,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -288,7 +315,7 @@ pub fn parse_create_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::CreateConfigurationSetEventDestinationError::generic(generic)
     })
 }
@@ -305,6 +332,9 @@ pub fn parse_create_configuration_set_event_destination_response(
         let mut output =
             crate::output::create_configuration_set_event_destination_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -316,8 +346,11 @@ pub fn parse_create_configuration_set_tracking_options_error(
     crate::output::CreateConfigurationSetTrackingOptionsOutput,
     crate::error::CreateConfigurationSetTrackingOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateConfigurationSetTrackingOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -329,7 +362,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::CreateConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::CreateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::CreateConfigurationSetTrackingOptionsError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -337,6 +370,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -344,8 +378,8 @@ pub fn parse_create_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidTrackingOptions" => crate::error::CreateConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::CreateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException({
+        }),
+        "InvalidTrackingOptions" => crate::error::CreateConfigurationSetTrackingOptionsError::InvalidTrackingOptionsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -353,6 +387,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                     let mut output = crate::error::invalid_tracking_options_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_tracking_options_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -360,8 +395,8 @@ pub fn parse_create_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "TrackingOptionsAlreadyExistsException" => crate::error::CreateConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::CreateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsAlreadyExistsException({
+        }),
+        "TrackingOptionsAlreadyExistsException" => crate::error::CreateConfigurationSetTrackingOptionsError::TrackingOptionsAlreadyExistsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -369,6 +404,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                     let mut output = crate::error::tracking_options_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tracking_options_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -376,7 +412,7 @@ pub fn parse_create_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::CreateConfigurationSetTrackingOptionsError::generic(generic)
     })
 }
@@ -393,6 +429,9 @@ pub fn parse_create_configuration_set_tracking_options_response(
         let mut output =
             crate::output::create_configuration_set_tracking_options_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -404,8 +443,11 @@ pub fn parse_create_custom_verification_email_template_error(
     crate::output::CreateCustomVerificationEmailTemplateOutput,
     crate::error::CreateCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -417,7 +459,7 @@ pub fn parse_create_custom_verification_email_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomVerificationEmailInvalidContent" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException({
+        "CustomVerificationEmailInvalidContent" => crate::error::CreateCustomVerificationEmailTemplateError::CustomVerificationEmailInvalidContentException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -425,6 +467,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     let mut output = crate::error::custom_verification_email_invalid_content_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_custom_verification_email_invalid_content_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -432,8 +475,8 @@ pub fn parse_create_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomVerificationEmailTemplateAlreadyExists" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateAlreadyExistsException({
+        }),
+        "CustomVerificationEmailTemplateAlreadyExists" => crate::error::CreateCustomVerificationEmailTemplateError::CustomVerificationEmailTemplateAlreadyExistsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -441,6 +484,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     let mut output = crate::error::custom_verification_email_template_already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_custom_verification_email_template_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -448,8 +492,8 @@ pub fn parse_create_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "FromEmailAddressNotVerified" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException({
+        }),
+        "FromEmailAddressNotVerified" => crate::error::CreateCustomVerificationEmailTemplateError::FromEmailAddressNotVerifiedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -457,6 +501,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     let mut output = crate::error::from_email_address_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_from_email_address_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -464,8 +509,8 @@ pub fn parse_create_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "LimitExceeded" => crate::error::CreateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::CreateCustomVerificationEmailTemplateErrorKind::LimitExceededException({
+        }),
+        "LimitExceeded" => crate::error::CreateCustomVerificationEmailTemplateError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -473,6 +518,7 @@ pub fn parse_create_custom_verification_email_template_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -480,7 +526,7 @@ pub fn parse_create_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::CreateCustomVerificationEmailTemplateError::generic(generic)
     })
 }
@@ -497,6 +543,9 @@ pub fn parse_create_custom_verification_email_template_response(
         let mut output =
             crate::output::create_custom_verification_email_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -508,8 +557,11 @@ pub fn parse_create_receipt_filter_error(
     crate::output::CreateReceiptFilterOutput,
     crate::error::CreateReceiptFilterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateReceiptFilterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateReceiptFilterError::unhandled(generic)),
@@ -517,40 +569,40 @@ pub fn parse_create_receipt_filter_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateReceiptFilterError {
-            meta: generic,
-            kind: crate::error::CreateReceiptFilterErrorKind::AlreadyExistsException({
+        "AlreadyExists" => {
+            crate::error::CreateReceiptFilterError::AlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptFilterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateReceiptFilterError {
-            meta: generic,
-            kind: crate::error::CreateReceiptFilterErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateReceiptFilterError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptFilterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateReceiptFilterError::generic(generic),
     })
 }
@@ -566,6 +618,9 @@ pub fn parse_create_receipt_filter_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_receipt_filter_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -575,8 +630,11 @@ pub fn parse_create_receipt_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateReceiptRuleOutput, crate::error::CreateReceiptRuleError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateReceiptRuleError::unhandled(generic)),
@@ -584,26 +642,25 @@ pub fn parse_create_receipt_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::AlreadyExistsException({
+        "AlreadyExists" => {
+            crate::error::CreateReceiptRuleError::AlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidLambdaFunction" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::InvalidLambdaFunctionException({
+            })
+        }
+        "InvalidLambdaFunction" => {
+            crate::error::CreateReceiptRuleError::InvalidLambdaFunctionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -611,17 +668,17 @@ pub fn parse_create_receipt_rule_error(
                         crate::error::invalid_lambda_function_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidS3Configuration" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::InvalidS3ConfigurationException({
+            })
+        }
+        "InvalidS3Configuration" => {
+            crate::error::CreateReceiptRuleError::InvalidS3ConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -629,69 +686,64 @@ pub fn parse_create_receipt_rule_error(
                         crate::error::invalid_s3_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_s3_configuration_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSnsTopic" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::InvalidSnsTopicException({
+            })
+        }
+        "InvalidSnsTopic" => crate::error::CreateReceiptRuleError::InvalidSnsTopicException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_sns_topic_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_sns_topic_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::CreateReceiptRuleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RuleDoesNotExist" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::RuleDoesNotExistException({
+            })
+        }
+        "RuleDoesNotExist" => crate::error::CreateReceiptRuleError::RuleDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::rule_does_not_exist_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RuleSetDoesNotExist" => crate::error::CreateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleErrorKind::RuleSetDoesNotExistException({
+                let mut output = crate::error::rule_does_not_exist_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RuleSetDoesNotExist" => {
+            crate::error::CreateReceiptRuleError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -699,14 +751,15 @@ pub fn parse_create_receipt_rule_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateReceiptRuleError::generic(generic),
     })
 }
@@ -720,6 +773,9 @@ pub fn parse_create_receipt_rule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_receipt_rule_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -731,8 +787,11 @@ pub fn parse_create_receipt_rule_set_error(
     crate::output::CreateReceiptRuleSetOutput,
     crate::error::CreateReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateReceiptRuleSetError::unhandled(generic)),
@@ -740,40 +799,40 @@ pub fn parse_create_receipt_rule_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleSetErrorKind::AlreadyExistsException({
+        "AlreadyExists" => {
+            crate::error::CreateReceiptRuleSetError::AlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::CreateReceiptRuleSetErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceeded" => {
+            crate::error::CreateReceiptRuleSetError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateReceiptRuleSetError::generic(generic),
     })
 }
@@ -789,6 +848,9 @@ pub fn parse_create_receipt_rule_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_receipt_rule_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -797,8 +859,11 @@ pub fn parse_create_receipt_rule_set_response(
 pub fn parse_create_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateTemplateOutput, crate::error::CreateTemplateError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateTemplateError::unhandled(generic)),
@@ -806,57 +871,55 @@ pub fn parse_create_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExists" => crate::error::CreateTemplateError {
-            meta: generic,
-            kind: crate::error::CreateTemplateErrorKind::AlreadyExistsException({
+        "AlreadyExists" => {
+            crate::error::CreateTemplateError::AlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::already_exists_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_already_exists_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidTemplate" => crate::error::CreateTemplateError {
-            meta: generic,
-            kind: crate::error::CreateTemplateErrorKind::InvalidTemplateException({
+            })
+        }
+        "InvalidTemplate" => crate::error::CreateTemplateError::InvalidTemplateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_template_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::CreateTemplateError {
-            meta: generic,
-            kind: crate::error::CreateTemplateErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_template_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::CreateTemplateError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateTemplateError::generic(generic),
     })
 }
@@ -869,6 +932,9 @@ pub fn parse_create_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -880,8 +946,11 @@ pub fn parse_delete_configuration_set_error(
     crate::output::DeleteConfigurationSetOutput,
     crate::error::DeleteConfigurationSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -893,26 +962,25 @@ pub fn parse_delete_configuration_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::DeleteConfigurationSetError {
-            meta: generic,
-            kind:
-                crate::error::DeleteConfigurationSetErrorKind::ConfigurationSetDoesNotExistException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "ConfigurationSetDoesNotExist" => {
+            crate::error::DeleteConfigurationSetError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteConfigurationSetError::generic(generic),
     })
 }
@@ -928,6 +996,9 @@ pub fn parse_delete_configuration_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_configuration_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -939,8 +1010,11 @@ pub fn parse_delete_configuration_set_event_destination_error(
     crate::output::DeleteConfigurationSetEventDestinationOutput,
     crate::error::DeleteConfigurationSetEventDestinationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -952,7 +1026,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::DeleteConfigurationSetEventDestinationError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -960,6 +1034,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -967,8 +1042,8 @@ pub fn parse_delete_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "EventDestinationDoesNotExist" => crate::error::DeleteConfigurationSetEventDestinationError { meta: generic, kind: crate::error::DeleteConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException({
+        }),
+        "EventDestinationDoesNotExist" => crate::error::DeleteConfigurationSetEventDestinationError::EventDestinationDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -976,6 +1051,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
                     let mut output = crate::error::event_destination_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_event_destination_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -983,7 +1059,7 @@ pub fn parse_delete_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DeleteConfigurationSetEventDestinationError::generic(generic)
     })
 }
@@ -1000,6 +1076,9 @@ pub fn parse_delete_configuration_set_event_destination_response(
         let mut output =
             crate::output::delete_configuration_set_event_destination_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1011,8 +1090,11 @@ pub fn parse_delete_configuration_set_tracking_options_error(
     crate::output::DeleteConfigurationSetTrackingOptionsOutput,
     crate::error::DeleteConfigurationSetTrackingOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteConfigurationSetTrackingOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1024,7 +1106,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::DeleteConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::DeleteConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::DeleteConfigurationSetTrackingOptionsError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1032,6 +1114,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1039,8 +1122,8 @@ pub fn parse_delete_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "TrackingOptionsDoesNotExistException" => crate::error::DeleteConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::DeleteConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException({
+        }),
+        "TrackingOptionsDoesNotExistException" => crate::error::DeleteConfigurationSetTrackingOptionsError::TrackingOptionsDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1048,6 +1131,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
                     let mut output = crate::error::tracking_options_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tracking_options_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1055,7 +1139,7 @@ pub fn parse_delete_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DeleteConfigurationSetTrackingOptionsError::generic(generic)
     })
 }
@@ -1072,6 +1156,9 @@ pub fn parse_delete_configuration_set_tracking_options_response(
         let mut output =
             crate::output::delete_configuration_set_tracking_options_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1083,8 +1170,11 @@ pub fn parse_delete_custom_verification_email_template_error(
     crate::output::DeleteCustomVerificationEmailTemplateOutput,
     crate::error::DeleteCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCustomVerificationEmailTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteCustomVerificationEmailTemplateError::generic(generic))
 }
 
@@ -1100,6 +1190,9 @@ pub fn parse_delete_custom_verification_email_template_response(
         let mut output =
             crate::output::delete_custom_verification_email_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1108,8 +1201,11 @@ pub fn parse_delete_custom_verification_email_template_response(
 pub fn parse_delete_identity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteIdentityOutput, crate::error::DeleteIdentityError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteIdentityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteIdentityError::generic(generic))
 }
 
@@ -1121,6 +1217,9 @@ pub fn parse_delete_identity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_identity_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1132,8 +1231,11 @@ pub fn parse_delete_identity_policy_error(
     crate::output::DeleteIdentityPolicyOutput,
     crate::error::DeleteIdentityPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteIdentityPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteIdentityPolicyError::generic(generic))
 }
 
@@ -1148,6 +1250,9 @@ pub fn parse_delete_identity_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_identity_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1159,8 +1264,11 @@ pub fn parse_delete_receipt_filter_error(
     crate::output::DeleteReceiptFilterOutput,
     crate::error::DeleteReceiptFilterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteReceiptFilterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteReceiptFilterError::generic(generic))
 }
 
@@ -1175,6 +1283,9 @@ pub fn parse_delete_receipt_filter_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_receipt_filter_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1184,8 +1295,11 @@ pub fn parse_delete_receipt_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteReceiptRuleOutput, crate::error::DeleteReceiptRuleError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteReceiptRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteReceiptRuleError::unhandled(generic)),
@@ -1193,9 +1307,8 @@ pub fn parse_delete_receipt_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleSetDoesNotExist" => crate::error::DeleteReceiptRuleError {
-            meta: generic,
-            kind: crate::error::DeleteReceiptRuleErrorKind::RuleSetDoesNotExistException({
+        "RuleSetDoesNotExist" => {
+            crate::error::DeleteReceiptRuleError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1203,14 +1316,15 @@ pub fn parse_delete_receipt_rule_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteReceiptRuleError::generic(generic),
     })
 }
@@ -1224,6 +1338,9 @@ pub fn parse_delete_receipt_rule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_receipt_rule_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1235,8 +1352,11 @@ pub fn parse_delete_receipt_rule_set_error(
     crate::output::DeleteReceiptRuleSetOutput,
     crate::error::DeleteReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteReceiptRuleSetError::unhandled(generic)),
@@ -1244,23 +1364,23 @@ pub fn parse_delete_receipt_rule_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CannotDelete" => crate::error::DeleteReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::DeleteReceiptRuleSetErrorKind::CannotDeleteException({
+        "CannotDelete" => {
+            crate::error::DeleteReceiptRuleSetError::CannotDeleteException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cannot_delete_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_cannot_delete_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteReceiptRuleSetError::generic(generic),
     })
 }
@@ -1276,6 +1396,9 @@ pub fn parse_delete_receipt_rule_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_receipt_rule_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1284,8 +1407,11 @@ pub fn parse_delete_receipt_rule_set_response(
 pub fn parse_delete_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteTemplateOutput, crate::error::DeleteTemplateError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteTemplateError::generic(generic))
 }
 
@@ -1297,6 +1423,9 @@ pub fn parse_delete_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1308,8 +1437,11 @@ pub fn parse_delete_verified_email_address_error(
     crate::output::DeleteVerifiedEmailAddressOutput,
     crate::error::DeleteVerifiedEmailAddressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteVerifiedEmailAddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteVerifiedEmailAddressError::generic(
         generic,
     ))
@@ -1326,6 +1458,9 @@ pub fn parse_delete_verified_email_address_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_verified_email_address_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1337,8 +1472,11 @@ pub fn parse_describe_active_receipt_rule_set_error(
     crate::output::DescribeActiveReceiptRuleSetOutput,
     crate::error::DescribeActiveReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeActiveReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeActiveReceiptRuleSetError::generic(
         generic,
     ))
@@ -1361,6 +1499,9 @@ pub fn parse_describe_active_receipt_rule_set_response(
                 output,
             )
             .map_err(crate::error::DescribeActiveReceiptRuleSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1372,8 +1513,11 @@ pub fn parse_describe_configuration_set_error(
     crate::output::DescribeConfigurationSetOutput,
     crate::error::DescribeConfigurationSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConfigurationSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1385,23 +1529,26 @@ pub fn parse_describe_configuration_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::DescribeConfigurationSetError { meta: generic, kind: crate::error::DescribeConfigurationSetErrorKind::ConfigurationSetDoesNotExistException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ConfigurationSetDoesNotExist" => {
+            crate::error::DescribeConfigurationSetError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
+                    let mut output =
+                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeConfigurationSetError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeConfigurationSetError::generic(generic),
     })
 }
 
@@ -1421,6 +1568,9 @@ pub fn parse_describe_configuration_set_response(
             output,
         )
         .map_err(crate::error::DescribeConfigurationSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1432,8 +1582,11 @@ pub fn parse_describe_receipt_rule_error(
     crate::output::DescribeReceiptRuleOutput,
     crate::error::DescribeReceiptRuleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeReceiptRuleError::unhandled(generic)),
@@ -1441,27 +1594,23 @@ pub fn parse_describe_receipt_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleDoesNotExist" => crate::error::DescribeReceiptRuleError {
-            meta: generic,
-            kind: crate::error::DescribeReceiptRuleErrorKind::RuleDoesNotExistException({
+        "RuleDoesNotExist" => crate::error::DescribeReceiptRuleError::RuleDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::rule_does_not_exist_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RuleSetDoesNotExist" => crate::error::DescribeReceiptRuleError {
-            meta: generic,
-            kind: crate::error::DescribeReceiptRuleErrorKind::RuleSetDoesNotExistException({
+                let mut output = crate::error::rule_does_not_exist_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RuleSetDoesNotExist" => {
+            crate::error::DescribeReceiptRuleError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1469,14 +1618,15 @@ pub fn parse_describe_receipt_rule_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeReceiptRuleError::generic(generic),
     })
 }
@@ -1497,6 +1647,9 @@ pub fn parse_describe_receipt_rule_response(
             output,
         )
         .map_err(crate::error::DescribeReceiptRuleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1508,8 +1661,11 @@ pub fn parse_describe_receipt_rule_set_error(
     crate::output::DescribeReceiptRuleSetOutput,
     crate::error::DescribeReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1521,9 +1677,8 @@ pub fn parse_describe_receipt_rule_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleSetDoesNotExist" => crate::error::DescribeReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::DescribeReceiptRuleSetErrorKind::RuleSetDoesNotExistException({
+        "RuleSetDoesNotExist" => {
+            crate::error::DescribeReceiptRuleSetError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1531,14 +1686,15 @@ pub fn parse_describe_receipt_rule_set_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeReceiptRuleSetError::generic(generic),
     })
 }
@@ -1559,6 +1715,9 @@ pub fn parse_describe_receipt_rule_set_response(
             output,
         )
         .map_err(crate::error::DescribeReceiptRuleSetError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1570,8 +1729,11 @@ pub fn parse_get_account_sending_enabled_error(
     crate::output::GetAccountSendingEnabledOutput,
     crate::error::GetAccountSendingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetAccountSendingEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetAccountSendingEnabledError::generic(
         generic,
     ))
@@ -1593,6 +1755,9 @@ pub fn parse_get_account_sending_enabled_response(
             output,
         )
         .map_err(crate::error::GetAccountSendingEnabledError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1604,8 +1769,11 @@ pub fn parse_get_custom_verification_email_template_error(
     crate::output::GetCustomVerificationEmailTemplateOutput,
     crate::error::GetCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1615,7 +1783,7 @@ pub fn parse_get_custom_verification_email_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomVerificationEmailTemplateDoesNotExist" => crate::error::GetCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::GetCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException({
+        "CustomVerificationEmailTemplateDoesNotExist" => crate::error::GetCustomVerificationEmailTemplateError::CustomVerificationEmailTemplateDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1623,6 +1791,7 @@ pub fn parse_get_custom_verification_email_template_error(
                     let mut output = crate::error::custom_verification_email_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_custom_verification_email_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1630,7 +1799,7 @@ pub fn parse_get_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::GetCustomVerificationEmailTemplateError::generic(generic)
     })
 }
@@ -1648,6 +1817,9 @@ pub fn parse_get_custom_verification_email_template_response(
             crate::output::get_custom_verification_email_template_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_custom_verification_email_template(response.body().as_ref(), output).map_err(crate::error::GetCustomVerificationEmailTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1659,8 +1831,11 @@ pub fn parse_get_identity_dkim_attributes_error(
     crate::output::GetIdentityDkimAttributesOutput,
     crate::error::GetIdentityDkimAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIdentityDkimAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIdentityDkimAttributesError::generic(
         generic,
     ))
@@ -1682,6 +1857,9 @@ pub fn parse_get_identity_dkim_attributes_response(
             output,
         )
         .map_err(crate::error::GetIdentityDkimAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1693,8 +1871,11 @@ pub fn parse_get_identity_mail_from_domain_attributes_error(
     crate::output::GetIdentityMailFromDomainAttributesOutput,
     crate::error::GetIdentityMailFromDomainAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIdentityMailFromDomainAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIdentityMailFromDomainAttributesError::generic(generic))
 }
 
@@ -1711,6 +1892,9 @@ pub fn parse_get_identity_mail_from_domain_attributes_response(
             crate::output::get_identity_mail_from_domain_attributes_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_identity_mail_from_domain_attributes(response.body().as_ref(), output).map_err(crate::error::GetIdentityMailFromDomainAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1722,8 +1906,11 @@ pub fn parse_get_identity_notification_attributes_error(
     crate::output::GetIdentityNotificationAttributesOutput,
     crate::error::GetIdentityNotificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIdentityNotificationAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIdentityNotificationAttributesError::generic(generic))
 }
 
@@ -1745,6 +1932,9 @@ pub fn parse_get_identity_notification_attributes_response(
                 output,
             )
             .map_err(crate::error::GetIdentityNotificationAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1756,8 +1946,11 @@ pub fn parse_get_identity_policies_error(
     crate::output::GetIdentityPoliciesOutput,
     crate::error::GetIdentityPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIdentityPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIdentityPoliciesError::generic(generic))
 }
 
@@ -1777,6 +1970,9 @@ pub fn parse_get_identity_policies_response(
             output,
         )
         .map_err(crate::error::GetIdentityPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1788,8 +1984,11 @@ pub fn parse_get_identity_verification_attributes_error(
     crate::output::GetIdentityVerificationAttributesOutput,
     crate::error::GetIdentityVerificationAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetIdentityVerificationAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetIdentityVerificationAttributesError::generic(generic))
 }
 
@@ -1811,6 +2010,9 @@ pub fn parse_get_identity_verification_attributes_response(
                 output,
             )
             .map_err(crate::error::GetIdentityVerificationAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1819,8 +2021,11 @@ pub fn parse_get_identity_verification_attributes_response(
 pub fn parse_get_send_quota_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSendQuotaOutput, crate::error::GetSendQuotaError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSendQuotaError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetSendQuotaError::generic(generic))
 }
 
@@ -1837,6 +2042,9 @@ pub fn parse_get_send_quota_response(
             output,
         )
         .map_err(crate::error::GetSendQuotaError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1846,8 +2054,11 @@ pub fn parse_get_send_statistics_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetSendStatisticsOutput, crate::error::GetSendStatisticsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetSendStatisticsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetSendStatisticsError::generic(generic))
 }
 
@@ -1865,6 +2076,9 @@ pub fn parse_get_send_statistics_response(
             output,
         )
         .map_err(crate::error::GetSendStatisticsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1873,8 +2087,11 @@ pub fn parse_get_send_statistics_response(
 pub fn parse_get_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetTemplateOutput, crate::error::GetTemplateError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetTemplateError::unhandled(generic)),
@@ -1882,24 +2099,22 @@ pub fn parse_get_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TemplateDoesNotExist" => crate::error::GetTemplateError {
-            meta: generic,
-            kind: crate::error::GetTemplateErrorKind::TemplateDoesNotExistException({
+        "TemplateDoesNotExist" => crate::error::GetTemplateError::TemplateDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::template_does_not_exist_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output =
+                    crate::error::template_does_not_exist_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::GetTemplateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetTemplateError::generic(generic),
     })
 }
@@ -1917,6 +2132,9 @@ pub fn parse_get_template_response(
             output,
         )
         .map_err(crate::error::GetTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1928,8 +2146,11 @@ pub fn parse_list_configuration_sets_error(
     crate::output::ListConfigurationSetsOutput,
     crate::error::ListConfigurationSetsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListConfigurationSetsError::generic(generic))
 }
 
@@ -1949,6 +2170,9 @@ pub fn parse_list_configuration_sets_response(
             output,
         )
         .map_err(crate::error::ListConfigurationSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1960,8 +2184,11 @@ pub fn parse_list_custom_verification_email_templates_error(
     crate::output::ListCustomVerificationEmailTemplatesOutput,
     crate::error::ListCustomVerificationEmailTemplatesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListCustomVerificationEmailTemplatesError::generic(generic))
 }
 
@@ -1978,6 +2205,9 @@ pub fn parse_list_custom_verification_email_templates_response(
             crate::output::list_custom_verification_email_templates_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_list_custom_verification_email_templates(response.body().as_ref(), output).map_err(crate::error::ListCustomVerificationEmailTemplatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1986,8 +2216,11 @@ pub fn parse_list_custom_verification_email_templates_response(
 pub fn parse_list_identities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListIdentitiesOutput, crate::error::ListIdentitiesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListIdentitiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListIdentitiesError::generic(generic))
 }
 
@@ -2004,6 +2237,9 @@ pub fn parse_list_identities_response(
             output,
         )
         .map_err(crate::error::ListIdentitiesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2015,8 +2251,11 @@ pub fn parse_list_identity_policies_error(
     crate::output::ListIdentityPoliciesOutput,
     crate::error::ListIdentityPoliciesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListIdentityPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListIdentityPoliciesError::generic(generic))
 }
 
@@ -2036,6 +2275,9 @@ pub fn parse_list_identity_policies_response(
             output,
         )
         .map_err(crate::error::ListIdentityPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2047,8 +2289,11 @@ pub fn parse_list_receipt_filters_error(
     crate::output::ListReceiptFiltersOutput,
     crate::error::ListReceiptFiltersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListReceiptFiltersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListReceiptFiltersError::generic(generic))
 }
 
@@ -2068,6 +2313,9 @@ pub fn parse_list_receipt_filters_response(
             output,
         )
         .map_err(crate::error::ListReceiptFiltersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2079,8 +2327,11 @@ pub fn parse_list_receipt_rule_sets_error(
     crate::output::ListReceiptRuleSetsOutput,
     crate::error::ListReceiptRuleSetsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListReceiptRuleSetsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListReceiptRuleSetsError::generic(generic))
 }
 
@@ -2100,6 +2351,9 @@ pub fn parse_list_receipt_rule_sets_response(
             output,
         )
         .map_err(crate::error::ListReceiptRuleSetsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2108,8 +2362,11 @@ pub fn parse_list_receipt_rule_sets_response(
 pub fn parse_list_templates_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListTemplatesOutput, crate::error::ListTemplatesError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTemplatesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListTemplatesError::generic(generic))
 }
 
@@ -2126,6 +2383,9 @@ pub fn parse_list_templates_response(
             output,
         )
         .map_err(crate::error::ListTemplatesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2137,8 +2397,11 @@ pub fn parse_list_verified_email_addresses_error(
     crate::output::ListVerifiedEmailAddressesOutput,
     crate::error::ListVerifiedEmailAddressesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListVerifiedEmailAddressesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListVerifiedEmailAddressesError::generic(
         generic,
     ))
@@ -2160,6 +2423,9 @@ pub fn parse_list_verified_email_addresses_response(
             output,
         )
         .map_err(crate::error::ListVerifiedEmailAddressesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2171,8 +2437,11 @@ pub fn parse_put_configuration_set_delivery_options_error(
     crate::output::PutConfigurationSetDeliveryOptionsOutput,
     crate::error::PutConfigurationSetDeliveryOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2182,7 +2451,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::PutConfigurationSetDeliveryOptionsError { meta: generic, kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::PutConfigurationSetDeliveryOptionsError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2190,6 +2459,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2197,8 +2467,8 @@ pub fn parse_put_configuration_set_delivery_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidDeliveryOptions" => crate::error::PutConfigurationSetDeliveryOptionsError { meta: generic, kind: crate::error::PutConfigurationSetDeliveryOptionsErrorKind::InvalidDeliveryOptionsException({
+        }),
+        "InvalidDeliveryOptions" => crate::error::PutConfigurationSetDeliveryOptionsError::InvalidDeliveryOptionsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2206,6 +2476,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
                     let mut output = crate::error::invalid_delivery_options_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_delivery_options_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutConfigurationSetDeliveryOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2213,7 +2484,7 @@ pub fn parse_put_configuration_set_delivery_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::PutConfigurationSetDeliveryOptionsError::generic(generic)
     })
 }
@@ -2230,6 +2501,9 @@ pub fn parse_put_configuration_set_delivery_options_response(
         let mut output =
             crate::output::put_configuration_set_delivery_options_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2239,8 +2513,11 @@ pub fn parse_put_identity_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutIdentityPolicyOutput, crate::error::PutIdentityPolicyError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutIdentityPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutIdentityPolicyError::unhandled(generic)),
@@ -2248,23 +2525,23 @@ pub fn parse_put_identity_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidPolicy" => crate::error::PutIdentityPolicyError {
-            meta: generic,
-            kind: crate::error::PutIdentityPolicyErrorKind::InvalidPolicyException({
+        "InvalidPolicy" => {
+            crate::error::PutIdentityPolicyError::InvalidPolicyException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_policy_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_policy_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::PutIdentityPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutIdentityPolicyError::generic(generic),
     })
 }
@@ -2278,6 +2555,9 @@ pub fn parse_put_identity_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_identity_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2289,8 +2569,11 @@ pub fn parse_reorder_receipt_rule_set_error(
     crate::output::ReorderReceiptRuleSetOutput,
     crate::error::ReorderReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReorderReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ReorderReceiptRuleSetError::unhandled(generic)),
@@ -2298,9 +2581,8 @@ pub fn parse_reorder_receipt_rule_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleDoesNotExist" => crate::error::ReorderReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::ReorderReceiptRuleSetErrorKind::RuleDoesNotExistException({
+        "RuleDoesNotExist" => {
+            crate::error::ReorderReceiptRuleSetError::RuleDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2308,17 +2590,17 @@ pub fn parse_reorder_receipt_rule_set_error(
                         crate::error::rule_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ReorderReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RuleSetDoesNotExist" => crate::error::ReorderReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::ReorderReceiptRuleSetErrorKind::RuleSetDoesNotExistException({
+            })
+        }
+        "RuleSetDoesNotExist" => {
+            crate::error::ReorderReceiptRuleSetError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2326,14 +2608,15 @@ pub fn parse_reorder_receipt_rule_set_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ReorderReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ReorderReceiptRuleSetError::generic(generic),
     })
 }
@@ -2349,6 +2632,9 @@ pub fn parse_reorder_receipt_rule_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::reorder_receipt_rule_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2357,8 +2643,11 @@ pub fn parse_reorder_receipt_rule_set_response(
 pub fn parse_send_bounce_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendBounceOutput, crate::error::SendBounceError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendBounceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendBounceError::unhandled(generic)),
@@ -2366,28 +2655,25 @@ pub fn parse_send_bounce_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "MessageRejected" => crate::error::SendBounceError {
-            meta: generic,
-            kind: crate::error::SendBounceErrorKind::MessageRejected({
+        "MessageRejected" => crate::error::SendBounceError::MessageRejected({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::message_rejected::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendBounceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::message_rejected::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBounceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendBounceError::generic(generic),
     })
 }
@@ -2405,6 +2691,9 @@ pub fn parse_send_bounce_response(
             output,
         )
         .map_err(crate::error::SendBounceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2416,8 +2705,11 @@ pub fn parse_send_bulk_templated_email_error(
     crate::output::SendBulkTemplatedEmailOutput,
     crate::error::SendBulkTemplatedEmailError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2429,103 +2721,118 @@ pub fn parse_send_bulk_templated_email_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccountSendingPausedException" => crate::error::SendBulkTemplatedEmailError { meta: generic, kind: crate::error::SendBulkTemplatedEmailErrorKind::AccountSendingPausedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AccountSendingPausedException" => {
+            crate::error::SendBulkTemplatedEmailError::AccountSendingPausedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::account_sending_paused_exception::Builder::default();
+                    let mut output =
+                        crate::error::account_sending_paused_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ConfigurationSetDoesNotExist" => crate::error::SendBulkTemplatedEmailError { meta: generic, kind: crate::error::SendBulkTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ConfigurationSetDoesNotExist" => {
+            crate::error::SendBulkTemplatedEmailError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
+                    let mut output =
+                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ConfigurationSetSendingPausedException" => crate::error::SendBulkTemplatedEmailError { meta: generic, kind: crate::error::SendBulkTemplatedEmailErrorKind::ConfigurationSetSendingPausedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ConfigurationSetSendingPausedException" => {
+            crate::error::SendBulkTemplatedEmailError::ConfigurationSetSendingPausedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_sending_paused_exception::Builder::default();
+                    let mut output =
+                        crate::error::configuration_set_sending_paused_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "MailFromDomainNotVerifiedException" => crate::error::SendBulkTemplatedEmailError { meta: generic, kind: crate::error::SendBulkTemplatedEmailErrorKind::MailFromDomainNotVerifiedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "MailFromDomainNotVerifiedException" => {
+            crate::error::SendBulkTemplatedEmailError::MailFromDomainNotVerifiedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::mail_from_domain_not_verified_exception::Builder::default();
+                    let mut output =
+                        crate::error::mail_from_domain_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "MessageRejected" => crate::error::SendBulkTemplatedEmailError { meta: generic, kind: crate::error::SendBulkTemplatedEmailErrorKind::MessageRejected({
+                tmp
+            })
+        }
+        "MessageRejected" => crate::error::SendBulkTemplatedEmailError::MessageRejected({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::message_rejected::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::message_rejected::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
-        })},
-        "TemplateDoesNotExist" => crate::error::SendBulkTemplatedEmailError { meta: generic, kind: crate::error::SendBulkTemplatedEmailErrorKind::TemplateDoesNotExistException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        }),
+        "TemplateDoesNotExist" => {
+            crate::error::SendBulkTemplatedEmailError::TemplateDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::template_does_not_exist_exception::Builder::default();
+                    let mut output =
+                        crate::error::template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::SendBulkTemplatedEmailError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::SendBulkTemplatedEmailError::generic(generic),
     })
 }
 
@@ -2545,6 +2852,9 @@ pub fn parse_send_bulk_templated_email_response(
             output,
         )
         .map_err(crate::error::SendBulkTemplatedEmailError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2556,8 +2866,11 @@ pub fn parse_send_custom_verification_email_error(
     crate::output::SendCustomVerificationEmailOutput,
     crate::error::SendCustomVerificationEmailError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2569,7 +2882,7 @@ pub fn parse_send_custom_verification_email_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::SendCustomVerificationEmailError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2577,6 +2890,7 @@ pub fn parse_send_custom_verification_email_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2584,8 +2898,8 @@ pub fn parse_send_custom_verification_email_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomVerificationEmailTemplateDoesNotExist" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::CustomVerificationEmailTemplateDoesNotExistException({
+        }),
+        "CustomVerificationEmailTemplateDoesNotExist" => crate::error::SendCustomVerificationEmailError::CustomVerificationEmailTemplateDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2593,6 +2907,7 @@ pub fn parse_send_custom_verification_email_error(
                     let mut output = crate::error::custom_verification_email_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_custom_verification_email_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2600,8 +2915,8 @@ pub fn parse_send_custom_verification_email_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "FromEmailAddressNotVerified" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::FromEmailAddressNotVerifiedException({
+        }),
+        "FromEmailAddressNotVerified" => crate::error::SendCustomVerificationEmailError::FromEmailAddressNotVerifiedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2609,6 +2924,7 @@ pub fn parse_send_custom_verification_email_error(
                     let mut output = crate::error::from_email_address_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_from_email_address_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2616,8 +2932,8 @@ pub fn parse_send_custom_verification_email_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "MessageRejected" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::MessageRejected({
+        }),
+        "MessageRejected" => crate::error::SendCustomVerificationEmailError::MessageRejected({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2625,6 +2941,7 @@ pub fn parse_send_custom_verification_email_error(
                     let mut output = crate::error::message_rejected::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2632,8 +2949,8 @@ pub fn parse_send_custom_verification_email_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "ProductionAccessNotGranted" => crate::error::SendCustomVerificationEmailError { meta: generic, kind: crate::error::SendCustomVerificationEmailErrorKind::ProductionAccessNotGrantedException({
+        }),
+        "ProductionAccessNotGranted" => crate::error::SendCustomVerificationEmailError::ProductionAccessNotGrantedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2641,6 +2958,7 @@ pub fn parse_send_custom_verification_email_error(
                     let mut output = crate::error::production_access_not_granted_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_production_access_not_granted_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2648,7 +2966,7 @@ pub fn parse_send_custom_verification_email_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::SendCustomVerificationEmailError::generic(generic)
     })
 }
@@ -2669,6 +2987,9 @@ pub fn parse_send_custom_verification_email_response(
             output,
         )
         .map_err(crate::error::SendCustomVerificationEmailError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2677,8 +2998,11 @@ pub fn parse_send_custom_verification_email_response(
 pub fn parse_send_email_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendEmailOutput, crate::error::SendEmailError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendEmailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendEmailError::unhandled(generic)),
@@ -2686,9 +3010,8 @@ pub fn parse_send_email_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccountSendingPausedException" => crate::error::SendEmailError {
-            meta: generic,
-            kind: crate::error::SendEmailErrorKind::AccountSendingPausedException({
+        "AccountSendingPausedException" => {
+            crate::error::SendEmailError::AccountSendingPausedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2696,55 +3019,55 @@ pub fn parse_send_email_error(
                         crate::error::account_sending_paused_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         "ConfigurationSetDoesNotExist" => {
-            crate::error::SendEmailError {
-                meta: generic,
-                kind: crate::error::SendEmailErrorKind::ConfigurationSetDoesNotExistException({
+            crate::error::SendEmailError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let mut output =
+                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
         "ConfigurationSetSendingPausedException" => {
-            crate::error::SendEmailError {
-                meta: generic,
-                kind: crate::error::SendEmailErrorKind::ConfigurationSetSendingPausedException({
+            crate::error::SendEmailError::ConfigurationSetSendingPausedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_sending_paused_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let mut output =
+                        crate::error::configuration_set_sending_paused_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "MailFromDomainNotVerifiedException" => crate::error::SendEmailError {
-            meta: generic,
-            kind: crate::error::SendEmailErrorKind::MailFromDomainNotVerifiedException({
+        "MailFromDomainNotVerifiedException" => {
+            crate::error::SendEmailError::MailFromDomainNotVerifiedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2752,36 +3075,34 @@ pub fn parse_send_email_error(
                         crate::error::mail_from_domain_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MessageRejected" => crate::error::SendEmailError {
-            meta: generic,
-            kind: crate::error::SendEmailErrorKind::MessageRejected({
+            })
+        }
+        "MessageRejected" => crate::error::SendEmailError::MessageRejected({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::message_rejected::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendEmailError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::message_rejected::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendEmailError::generic(generic),
     })
 }
@@ -2799,6 +3120,9 @@ pub fn parse_send_email_response(
             output,
         )
         .map_err(crate::error::SendEmailError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2807,8 +3131,11 @@ pub fn parse_send_email_response(
 pub fn parse_send_raw_email_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendRawEmailOutput, crate::error::SendRawEmailError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendRawEmailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendRawEmailError::unhandled(generic)),
@@ -2816,9 +3143,8 @@ pub fn parse_send_raw_email_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccountSendingPausedException" => crate::error::SendRawEmailError {
-            meta: generic,
-            kind: crate::error::SendRawEmailErrorKind::AccountSendingPausedException({
+        "AccountSendingPausedException" => {
+            crate::error::SendRawEmailError::AccountSendingPausedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2826,36 +3152,36 @@ pub fn parse_send_raw_email_error(
                         crate::error::account_sending_paused_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConfigurationSetDoesNotExist" => {
-            crate::error::SendRawEmailError {
-                meta: generic,
-                kind: crate::error::SendRawEmailErrorKind::ConfigurationSetDoesNotExistException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "ConfigurationSetSendingPausedException" => crate::error::SendRawEmailError {
-            meta: generic,
-            kind: crate::error::SendRawEmailErrorKind::ConfigurationSetSendingPausedException({
+        "ConfigurationSetDoesNotExist" => {
+            crate::error::SendRawEmailError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConfigurationSetSendingPausedException" => {
+            crate::error::SendRawEmailError::ConfigurationSetSendingPausedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2864,17 +3190,17 @@ pub fn parse_send_raw_email_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MailFromDomainNotVerifiedException" => crate::error::SendRawEmailError {
-            meta: generic,
-            kind: crate::error::SendRawEmailErrorKind::MailFromDomainNotVerifiedException({
+            })
+        }
+        "MailFromDomainNotVerifiedException" => {
+            crate::error::SendRawEmailError::MailFromDomainNotVerifiedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2882,36 +3208,34 @@ pub fn parse_send_raw_email_error(
                         crate::error::mail_from_domain_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendRawEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MessageRejected" => crate::error::SendRawEmailError {
-            meta: generic,
-            kind: crate::error::SendRawEmailErrorKind::MessageRejected({
+            })
+        }
+        "MessageRejected" => crate::error::SendRawEmailError::MessageRejected({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::message_rejected::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendRawEmailError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::message_rejected::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendRawEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendRawEmailError::generic(generic),
     })
 }
@@ -2929,6 +3253,9 @@ pub fn parse_send_raw_email_response(
             output,
         )
         .map_err(crate::error::SendRawEmailError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2940,8 +3267,11 @@ pub fn parse_send_templated_email_error(
     crate::output::SendTemplatedEmailOutput,
     crate::error::SendTemplatedEmailError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendTemplatedEmailError::unhandled(generic)),
@@ -2949,9 +3279,8 @@ pub fn parse_send_templated_email_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccountSendingPausedException" => crate::error::SendTemplatedEmailError {
-            meta: generic,
-            kind: crate::error::SendTemplatedEmailErrorKind::AccountSendingPausedException({
+        "AccountSendingPausedException" => {
+            crate::error::SendTemplatedEmailError::AccountSendingPausedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2959,55 +3288,55 @@ pub fn parse_send_templated_email_error(
                         crate::error::account_sending_paused_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_account_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConfigurationSetDoesNotExist" => crate::error::SendTemplatedEmailError {
-            meta: generic,
-            kind: crate::error::SendTemplatedEmailErrorKind::ConfigurationSetDoesNotExistException(
-                {
+            })
+        }
+        "ConfigurationSetDoesNotExist" => {
+            crate::error::SendTemplatedEmailError::ConfigurationSetDoesNotExistException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "ConfigurationSetSendingPausedException" => crate::error::SendTemplatedEmailError {
-            meta: generic,
-            kind: crate::error::SendTemplatedEmailErrorKind::ConfigurationSetSendingPausedException(
-                {
+                    let mut output =
+                        crate::error::configuration_set_does_not_exist_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ConfigurationSetSendingPausedException" => {
+            crate::error::SendTemplatedEmailError::ConfigurationSetSendingPausedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::configuration_set_sending_paused_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "MailFromDomainNotVerifiedException" => crate::error::SendTemplatedEmailError {
-            meta: generic,
-            kind: crate::error::SendTemplatedEmailErrorKind::MailFromDomainNotVerifiedException({
+                    let mut output =
+                        crate::error::configuration_set_sending_paused_exception::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_configuration_set_sending_paused_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "MailFromDomainNotVerifiedException" => {
+            crate::error::SendTemplatedEmailError::MailFromDomainNotVerifiedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3015,39 +3344,36 @@ pub fn parse_send_templated_email_error(
                         crate::error::mail_from_domain_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_mail_from_domain_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MessageRejected" => crate::error::SendTemplatedEmailError {
-            meta: generic,
-            kind: crate::error::SendTemplatedEmailErrorKind::MessageRejected({
+            })
+        }
+        "MessageRejected" => crate::error::SendTemplatedEmailError::MessageRejected({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::message_rejected::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendTemplatedEmailError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TemplateDoesNotExist" => crate::error::SendTemplatedEmailError {
-            meta: generic,
-            kind: crate::error::SendTemplatedEmailErrorKind::TemplateDoesNotExistException({
+                let mut output = crate::error::message_rejected::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_message_rejected_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TemplateDoesNotExist" => {
+            crate::error::SendTemplatedEmailError::TemplateDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3055,14 +3381,15 @@ pub fn parse_send_templated_email_error(
                         crate::error::template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SendTemplatedEmailError::generic(generic),
     })
 }
@@ -3083,6 +3410,9 @@ pub fn parse_send_templated_email_response(
             output,
         )
         .map_err(crate::error::SendTemplatedEmailError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3094,8 +3424,11 @@ pub fn parse_set_active_receipt_rule_set_error(
     crate::output::SetActiveReceiptRuleSetOutput,
     crate::error::SetActiveReceiptRuleSetError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetActiveReceiptRuleSetError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3107,9 +3440,8 @@ pub fn parse_set_active_receipt_rule_set_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleSetDoesNotExist" => crate::error::SetActiveReceiptRuleSetError {
-            meta: generic,
-            kind: crate::error::SetActiveReceiptRuleSetErrorKind::RuleSetDoesNotExistException({
+        "RuleSetDoesNotExist" => {
+            crate::error::SetActiveReceiptRuleSetError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3117,14 +3449,15 @@ pub fn parse_set_active_receipt_rule_set_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetActiveReceiptRuleSetError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SetActiveReceiptRuleSetError::generic(generic),
     })
 }
@@ -3140,6 +3473,9 @@ pub fn parse_set_active_receipt_rule_set_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_active_receipt_rule_set_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3151,8 +3487,11 @@ pub fn parse_set_identity_dkim_enabled_error(
     crate::output::SetIdentityDkimEnabledOutput,
     crate::error::SetIdentityDkimEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetIdentityDkimEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SetIdentityDkimEnabledError::generic(generic))
 }
 
@@ -3167,6 +3506,9 @@ pub fn parse_set_identity_dkim_enabled_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_identity_dkim_enabled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3178,8 +3520,11 @@ pub fn parse_set_identity_feedback_forwarding_enabled_error(
     crate::output::SetIdentityFeedbackForwardingEnabledOutput,
     crate::error::SetIdentityFeedbackForwardingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetIdentityFeedbackForwardingEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SetIdentityFeedbackForwardingEnabledError::generic(generic))
 }
 
@@ -3195,6 +3540,9 @@ pub fn parse_set_identity_feedback_forwarding_enabled_response(
         let mut output =
             crate::output::set_identity_feedback_forwarding_enabled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3206,8 +3554,11 @@ pub fn parse_set_identity_headers_in_notifications_enabled_error(
     crate::output::SetIdentityHeadersInNotificationsEnabledOutput,
     crate::error::SetIdentityHeadersInNotificationsEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetIdentityHeadersInNotificationsEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SetIdentityHeadersInNotificationsEnabledError::generic(generic))
 }
 
@@ -3223,6 +3574,9 @@ pub fn parse_set_identity_headers_in_notifications_enabled_response(
         let mut output =
             crate::output::set_identity_headers_in_notifications_enabled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3234,8 +3588,11 @@ pub fn parse_set_identity_mail_from_domain_error(
     crate::output::SetIdentityMailFromDomainOutput,
     crate::error::SetIdentityMailFromDomainError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetIdentityMailFromDomainError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SetIdentityMailFromDomainError::generic(
         generic,
     ))
@@ -3252,6 +3609,9 @@ pub fn parse_set_identity_mail_from_domain_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_identity_mail_from_domain_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3263,8 +3623,11 @@ pub fn parse_set_identity_notification_topic_error(
     crate::output::SetIdentityNotificationTopicOutput,
     crate::error::SetIdentityNotificationTopicError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetIdentityNotificationTopicError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SetIdentityNotificationTopicError::generic(
         generic,
     ))
@@ -3281,6 +3644,9 @@ pub fn parse_set_identity_notification_topic_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_identity_notification_topic_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3292,8 +3658,11 @@ pub fn parse_set_receipt_rule_position_error(
     crate::output::SetReceiptRulePositionOutput,
     crate::error::SetReceiptRulePositionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SetReceiptRulePositionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3305,9 +3674,8 @@ pub fn parse_set_receipt_rule_position_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "RuleDoesNotExist" => crate::error::SetReceiptRulePositionError {
-            meta: generic,
-            kind: crate::error::SetReceiptRulePositionErrorKind::RuleDoesNotExistException({
+        "RuleDoesNotExist" => {
+            crate::error::SetReceiptRulePositionError::RuleDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3315,17 +3683,17 @@ pub fn parse_set_receipt_rule_position_error(
                         crate::error::rule_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetReceiptRulePositionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RuleSetDoesNotExist" => crate::error::SetReceiptRulePositionError {
-            meta: generic,
-            kind: crate::error::SetReceiptRulePositionErrorKind::RuleSetDoesNotExistException({
+            })
+        }
+        "RuleSetDoesNotExist" => {
+            crate::error::SetReceiptRulePositionError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3333,14 +3701,15 @@ pub fn parse_set_receipt_rule_position_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::SetReceiptRulePositionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SetReceiptRulePositionError::generic(generic),
     })
 }
@@ -3356,6 +3725,9 @@ pub fn parse_set_receipt_rule_position_response(
         #[allow(unused_mut)]
         let mut output = crate::output::set_receipt_rule_position_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3367,8 +3739,11 @@ pub fn parse_test_render_template_error(
     crate::output::TestRenderTemplateOutput,
     crate::error::TestRenderTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TestRenderTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TestRenderTemplateError::unhandled(generic)),
@@ -3376,9 +3751,8 @@ pub fn parse_test_render_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidRenderingParameter" => crate::error::TestRenderTemplateError {
-            meta: generic,
-            kind: crate::error::TestRenderTemplateErrorKind::InvalidRenderingParameterException({
+        "InvalidRenderingParameter" => {
+            crate::error::TestRenderTemplateError::InvalidRenderingParameterException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3386,17 +3760,17 @@ pub fn parse_test_render_template_error(
                         crate::error::invalid_rendering_parameter_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_rendering_parameter_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MissingRenderingAttribute" => crate::error::TestRenderTemplateError {
-            meta: generic,
-            kind: crate::error::TestRenderTemplateErrorKind::MissingRenderingAttributeException({
+            })
+        }
+        "MissingRenderingAttribute" => {
+            crate::error::TestRenderTemplateError::MissingRenderingAttributeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3404,17 +3778,17 @@ pub fn parse_test_render_template_error(
                         crate::error::missing_rendering_attribute_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_missing_rendering_attribute_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TemplateDoesNotExist" => crate::error::TestRenderTemplateError {
-            meta: generic,
-            kind: crate::error::TestRenderTemplateErrorKind::TemplateDoesNotExistException({
+            })
+        }
+        "TemplateDoesNotExist" => {
+            crate::error::TestRenderTemplateError::TemplateDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3422,14 +3796,15 @@ pub fn parse_test_render_template_error(
                         crate::error::template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TestRenderTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TestRenderTemplateError::generic(generic),
     })
 }
@@ -3450,6 +3825,9 @@ pub fn parse_test_render_template_response(
             output,
         )
         .map_err(crate::error::TestRenderTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3461,8 +3839,11 @@ pub fn parse_update_account_sending_enabled_error(
     crate::output::UpdateAccountSendingEnabledOutput,
     crate::error::UpdateAccountSendingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAccountSendingEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UpdateAccountSendingEnabledError::generic(
         generic,
     ))
@@ -3479,6 +3860,9 @@ pub fn parse_update_account_sending_enabled_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_account_sending_enabled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3490,8 +3874,11 @@ pub fn parse_update_configuration_set_event_destination_error(
     crate::output::UpdateConfigurationSetEventDestinationOutput,
     crate::error::UpdateConfigurationSetEventDestinationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3503,7 +3890,7 @@ pub fn parse_update_configuration_set_event_destination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetEventDestinationError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3511,6 +3898,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3518,8 +3906,8 @@ pub fn parse_update_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "EventDestinationDoesNotExist" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::EventDestinationDoesNotExistException({
+        }),
+        "EventDestinationDoesNotExist" => crate::error::UpdateConfigurationSetEventDestinationError::EventDestinationDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3527,6 +3915,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     let mut output = crate::error::event_destination_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_event_destination_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3534,8 +3923,8 @@ pub fn parse_update_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidCloudWatchDestination" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::InvalidCloudWatchDestinationException({
+        }),
+        "InvalidCloudWatchDestination" => crate::error::UpdateConfigurationSetEventDestinationError::InvalidCloudWatchDestinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3543,6 +3932,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     let mut output = crate::error::invalid_cloud_watch_destination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_cloud_watch_destination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3550,8 +3940,8 @@ pub fn parse_update_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidFirehoseDestination" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::InvalidFirehoseDestinationException({
+        }),
+        "InvalidFirehoseDestination" => crate::error::UpdateConfigurationSetEventDestinationError::InvalidFirehoseDestinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3559,6 +3949,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     let mut output = crate::error::invalid_firehose_destination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_firehose_destination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3566,8 +3957,8 @@ pub fn parse_update_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidSNSDestination" => crate::error::UpdateConfigurationSetEventDestinationError { meta: generic, kind: crate::error::UpdateConfigurationSetEventDestinationErrorKind::InvalidSnsDestinationException({
+        }),
+        "InvalidSNSDestination" => crate::error::UpdateConfigurationSetEventDestinationError::InvalidSnsDestinationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3575,6 +3966,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                     let mut output = crate::error::invalid_sns_destination_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_sns_destination_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetEventDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3582,7 +3974,7 @@ pub fn parse_update_configuration_set_event_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateConfigurationSetEventDestinationError::generic(generic)
     })
 }
@@ -3599,6 +3991,9 @@ pub fn parse_update_configuration_set_event_destination_response(
         let mut output =
             crate::output::update_configuration_set_event_destination_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3610,8 +4005,11 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_error(
     crate::output::UpdateConfigurationSetReputationMetricsEnabledOutput,
     crate::error::UpdateConfigurationSetReputationMetricsEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateConfigurationSetReputationMetricsEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3625,7 +4023,7 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetReputationMetricsEnabledError { meta: generic, kind: crate::error::UpdateConfigurationSetReputationMetricsEnabledErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetReputationMetricsEnabledError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3633,6 +4031,7 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetReputationMetricsEnabledError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3640,7 +4039,7 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateConfigurationSetReputationMetricsEnabledError::generic(generic)
     })
 }
@@ -3656,6 +4055,9 @@ pub fn parse_update_configuration_set_reputation_metrics_enabled_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_configuration_set_reputation_metrics_enabled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3667,8 +4069,11 @@ pub fn parse_update_configuration_set_sending_enabled_error(
     crate::output::UpdateConfigurationSetSendingEnabledOutput,
     crate::error::UpdateConfigurationSetSendingEnabledError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateConfigurationSetSendingEnabledError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3678,7 +4083,7 @@ pub fn parse_update_configuration_set_sending_enabled_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetSendingEnabledError { meta: generic, kind: crate::error::UpdateConfigurationSetSendingEnabledErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetSendingEnabledError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3686,6 +4091,7 @@ pub fn parse_update_configuration_set_sending_enabled_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetSendingEnabledError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3693,7 +4099,7 @@ pub fn parse_update_configuration_set_sending_enabled_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateConfigurationSetSendingEnabledError::generic(generic)
     })
 }
@@ -3710,6 +4116,9 @@ pub fn parse_update_configuration_set_sending_enabled_response(
         let mut output =
             crate::output::update_configuration_set_sending_enabled_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3721,8 +4130,11 @@ pub fn parse_update_configuration_set_tracking_options_error(
     crate::output::UpdateConfigurationSetTrackingOptionsOutput,
     crate::error::UpdateConfigurationSetTrackingOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateConfigurationSetTrackingOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3734,7 +4146,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::UpdateConfigurationSetTrackingOptionsErrorKind::ConfigurationSetDoesNotExistException({
+        "ConfigurationSetDoesNotExist" => crate::error::UpdateConfigurationSetTrackingOptionsError::ConfigurationSetDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3742,6 +4154,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                     let mut output = crate::error::configuration_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_configuration_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3749,8 +4162,8 @@ pub fn parse_update_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidTrackingOptions" => crate::error::UpdateConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::UpdateConfigurationSetTrackingOptionsErrorKind::InvalidTrackingOptionsException({
+        }),
+        "InvalidTrackingOptions" => crate::error::UpdateConfigurationSetTrackingOptionsError::InvalidTrackingOptionsException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3758,6 +4171,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                     let mut output = crate::error::invalid_tracking_options_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_tracking_options_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3765,8 +4179,8 @@ pub fn parse_update_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "TrackingOptionsDoesNotExistException" => crate::error::UpdateConfigurationSetTrackingOptionsError { meta: generic, kind: crate::error::UpdateConfigurationSetTrackingOptionsErrorKind::TrackingOptionsDoesNotExistException({
+        }),
+        "TrackingOptionsDoesNotExistException" => crate::error::UpdateConfigurationSetTrackingOptionsError::TrackingOptionsDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3774,6 +4188,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                     let mut output = crate::error::tracking_options_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_tracking_options_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationSetTrackingOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3781,7 +4196,7 @@ pub fn parse_update_configuration_set_tracking_options_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateConfigurationSetTrackingOptionsError::generic(generic)
     })
 }
@@ -3798,6 +4213,9 @@ pub fn parse_update_configuration_set_tracking_options_response(
         let mut output =
             crate::output::update_configuration_set_tracking_options_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3809,8 +4227,11 @@ pub fn parse_update_custom_verification_email_template_error(
     crate::output::UpdateCustomVerificationEmailTemplateOutput,
     crate::error::UpdateCustomVerificationEmailTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3822,7 +4243,7 @@ pub fn parse_update_custom_verification_email_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomVerificationEmailInvalidContent" => crate::error::UpdateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailInvalidContentException({
+        "CustomVerificationEmailInvalidContent" => crate::error::UpdateCustomVerificationEmailTemplateError::CustomVerificationEmailInvalidContentException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3830,6 +4251,7 @@ pub fn parse_update_custom_verification_email_template_error(
                     let mut output = crate::error::custom_verification_email_invalid_content_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_custom_verification_email_invalid_content_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3837,8 +4259,8 @@ pub fn parse_update_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomVerificationEmailTemplateDoesNotExist" => crate::error::UpdateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::CustomVerificationEmailTemplateDoesNotExistException({
+        }),
+        "CustomVerificationEmailTemplateDoesNotExist" => crate::error::UpdateCustomVerificationEmailTemplateError::CustomVerificationEmailTemplateDoesNotExistException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3846,6 +4268,7 @@ pub fn parse_update_custom_verification_email_template_error(
                     let mut output = crate::error::custom_verification_email_template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_custom_verification_email_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3853,8 +4276,8 @@ pub fn parse_update_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "FromEmailAddressNotVerified" => crate::error::UpdateCustomVerificationEmailTemplateError { meta: generic, kind: crate::error::UpdateCustomVerificationEmailTemplateErrorKind::FromEmailAddressNotVerifiedException({
+        }),
+        "FromEmailAddressNotVerified" => crate::error::UpdateCustomVerificationEmailTemplateError::FromEmailAddressNotVerifiedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3862,6 +4285,7 @@ pub fn parse_update_custom_verification_email_template_error(
                     let mut output = crate::error::from_email_address_not_verified_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_from_email_address_not_verified_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomVerificationEmailTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3869,7 +4293,7 @@ pub fn parse_update_custom_verification_email_template_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateCustomVerificationEmailTemplateError::generic(generic)
     })
 }
@@ -3886,6 +4310,9 @@ pub fn parse_update_custom_verification_email_template_response(
         let mut output =
             crate::output::update_custom_verification_email_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3895,8 +4322,11 @@ pub fn parse_update_receipt_rule_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateReceiptRuleOutput, crate::error::UpdateReceiptRuleError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateReceiptRuleError::unhandled(generic)),
@@ -3904,9 +4334,8 @@ pub fn parse_update_receipt_rule_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidLambdaFunction" => crate::error::UpdateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::UpdateReceiptRuleErrorKind::InvalidLambdaFunctionException({
+        "InvalidLambdaFunction" => {
+            crate::error::UpdateReceiptRuleError::InvalidLambdaFunctionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3914,17 +4343,17 @@ pub fn parse_update_receipt_rule_error(
                         crate::error::invalid_lambda_function_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_lambda_function_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidS3Configuration" => crate::error::UpdateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::UpdateReceiptRuleErrorKind::InvalidS3ConfigurationException({
+            })
+        }
+        "InvalidS3Configuration" => {
+            crate::error::UpdateReceiptRuleError::InvalidS3ConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3932,69 +4361,64 @@ pub fn parse_update_receipt_rule_error(
                         crate::error::invalid_s3_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_s3_configuration_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSnsTopic" => crate::error::UpdateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::UpdateReceiptRuleErrorKind::InvalidSnsTopicException({
+            })
+        }
+        "InvalidSnsTopic" => crate::error::UpdateReceiptRuleError::InvalidSnsTopicException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_sns_topic_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceeded" => crate::error::UpdateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::UpdateReceiptRuleErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_sns_topic_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_sns_topic_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceeded" => {
+            crate::error::UpdateReceiptRuleError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_limit_exceeded_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "RuleDoesNotExist" => crate::error::UpdateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::UpdateReceiptRuleErrorKind::RuleDoesNotExistException({
+            })
+        }
+        "RuleDoesNotExist" => crate::error::UpdateReceiptRuleError::RuleDoesNotExistException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::rule_does_not_exist_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "RuleSetDoesNotExist" => crate::error::UpdateReceiptRuleError {
-            meta: generic,
-            kind: crate::error::UpdateReceiptRuleErrorKind::RuleSetDoesNotExistException({
+                let mut output = crate::error::rule_does_not_exist_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_rule_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "RuleSetDoesNotExist" => {
+            crate::error::UpdateReceiptRuleError::RuleSetDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4002,14 +4426,15 @@ pub fn parse_update_receipt_rule_error(
                         crate::error::rule_set_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_rule_set_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateReceiptRuleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateReceiptRuleError::generic(generic),
     })
 }
@@ -4023,6 +4448,9 @@ pub fn parse_update_receipt_rule_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_receipt_rule_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4031,8 +4459,11 @@ pub fn parse_update_receipt_rule_response(
 pub fn parse_update_template_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateTemplateOutput, crate::error::UpdateTemplateError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateTemplateError::unhandled(generic)),
@@ -4040,26 +4471,23 @@ pub fn parse_update_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidTemplate" => crate::error::UpdateTemplateError {
-            meta: generic,
-            kind: crate::error::UpdateTemplateErrorKind::InvalidTemplateException({
+        "InvalidTemplate" => crate::error::UpdateTemplateError::InvalidTemplateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_template_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TemplateDoesNotExist" => crate::error::UpdateTemplateError {
-            meta: generic,
-            kind: crate::error::UpdateTemplateErrorKind::TemplateDoesNotExistException({
+                let mut output = crate::error::invalid_template_exception::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_template_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TemplateDoesNotExist" => {
+            crate::error::UpdateTemplateError::TemplateDoesNotExistException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4067,14 +4495,15 @@ pub fn parse_update_template_error(
                         crate::error::template_does_not_exist_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_template_does_not_exist_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateTemplateError::generic(generic),
     })
 }
@@ -4087,6 +4516,9 @@ pub fn parse_update_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4096,8 +4528,11 @@ pub fn parse_verify_domain_dkim_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::VerifyDomainDkimOutput, crate::error::VerifyDomainDkimError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::VerifyDomainDkimError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::VerifyDomainDkimError::generic(generic))
 }
 
@@ -4115,6 +4550,9 @@ pub fn parse_verify_domain_dkim_response(
             output,
         )
         .map_err(crate::error::VerifyDomainDkimError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4126,8 +4564,11 @@ pub fn parse_verify_domain_identity_error(
     crate::output::VerifyDomainIdentityOutput,
     crate::error::VerifyDomainIdentityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::VerifyDomainIdentityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::VerifyDomainIdentityError::generic(generic))
 }
 
@@ -4147,6 +4588,9 @@ pub fn parse_verify_domain_identity_response(
             output,
         )
         .map_err(crate::error::VerifyDomainIdentityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4158,8 +4602,11 @@ pub fn parse_verify_email_address_error(
     crate::output::VerifyEmailAddressOutput,
     crate::error::VerifyEmailAddressError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::VerifyEmailAddressError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::VerifyEmailAddressError::generic(generic))
 }
 
@@ -4174,6 +4621,9 @@ pub fn parse_verify_email_address_response(
         #[allow(unused_mut)]
         let mut output = crate::output::verify_email_address_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4185,8 +4635,11 @@ pub fn parse_verify_email_identity_error(
     crate::output::VerifyEmailIdentityOutput,
     crate::error::VerifyEmailIdentityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::VerifyEmailIdentityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::VerifyEmailIdentityError::generic(generic))
 }
 
@@ -4201,6 +4654,9 @@ pub fn parse_verify_email_identity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::verify_email_identity_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

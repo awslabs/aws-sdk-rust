@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -62,6 +102,7 @@ pub struct RotateTunnelAccessTokenOutput {
     /// <p>The client access token that the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     #[doc(hidden)]
     pub destination_access_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RotateTunnelAccessTokenOutput {
     /// <p>The Amazon Resource Name for the tunnel.</p>
@@ -86,7 +127,13 @@ impl std::fmt::Debug for RotateTunnelAccessTokenOutput {
             "destination_access_token",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for RotateTunnelAccessTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
@@ -99,6 +146,7 @@ pub mod rotate_tunnel_access_token_output {
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
         pub(crate) source_access_token: std::option::Option<std::string::String>,
         pub(crate) destination_access_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name for the tunnel.</p>
@@ -137,12 +185,22 @@ pub mod rotate_tunnel_access_token_output {
             self.destination_access_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RotateTunnelAccessTokenOutput`](crate::output::RotateTunnelAccessTokenOutput).
         pub fn build(self) -> crate::output::RotateTunnelAccessTokenOutput {
             crate::output::RotateTunnelAccessTokenOutput {
                 tunnel_arn: self.tunnel_arn,
                 source_access_token: self.source_access_token,
                 destination_access_token: self.destination_access_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -155,6 +213,7 @@ pub mod rotate_tunnel_access_token_output {
                 "destination_access_token",
                 &"*** Sensitive Data Redacted ***",
             );
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -182,6 +241,7 @@ pub struct OpenTunnelOutput {
     /// <p>The access token the destination local proxy uses to connect to IoT Secure Tunneling.</p>
     #[doc(hidden)]
     pub destination_access_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl OpenTunnelOutput {
     /// <p>A unique alpha-numeric tunnel ID.</p>
@@ -211,7 +271,13 @@ impl std::fmt::Debug for OpenTunnelOutput {
             "destination_access_token",
             &"*** Sensitive Data Redacted ***",
         );
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for OpenTunnelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
@@ -225,6 +291,7 @@ pub mod open_tunnel_output {
         pub(crate) tunnel_arn: std::option::Option<std::string::String>,
         pub(crate) source_access_token: std::option::Option<std::string::String>,
         pub(crate) destination_access_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique alpha-numeric tunnel ID.</p>
@@ -273,6 +340,15 @@ pub mod open_tunnel_output {
             self.destination_access_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`OpenTunnelOutput`](crate::output::OpenTunnelOutput).
         pub fn build(self) -> crate::output::OpenTunnelOutput {
             crate::output::OpenTunnelOutput {
@@ -280,6 +356,7 @@ pub mod open_tunnel_output {
                 tunnel_arn: self.tunnel_arn,
                 source_access_token: self.source_access_token,
                 destination_access_token: self.destination_access_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -293,6 +370,7 @@ pub mod open_tunnel_output {
                 "destination_access_token",
                 &"*** Sensitive Data Redacted ***",
             );
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -314,6 +392,7 @@ pub struct ListTunnelsOutput {
     /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListTunnelsOutput {
     /// <p>A short description of the tunnels in an Amazon Web Services account.</p>
@@ -323,6 +402,11 @@ impl ListTunnelsOutput {
     /// <p>The token to use to get the next set of results, or null if there are no additional results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTunnelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
@@ -335,6 +419,7 @@ pub mod list_tunnels_output {
         pub(crate) tunnel_summaries:
             std::option::Option<std::vec::Vec<crate::model::TunnelSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tunnel_summaries`.
@@ -366,11 +451,21 @@ pub mod list_tunnels_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTunnelsOutput`](crate::output::ListTunnelsOutput).
         pub fn build(self) -> crate::output::ListTunnelsOutput {
             crate::output::ListTunnelsOutput {
                 tunnel_summaries: self.tunnel_summaries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -389,11 +484,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags for the specified resource.</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -404,6 +505,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -425,9 +527,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -445,11 +559,17 @@ pub struct DescribeTunnelOutput {
     /// <p>The tunnel being described.</p>
     #[doc(hidden)]
     pub tunnel: std::option::Option<crate::model::Tunnel>,
+    _request_id: Option<String>,
 }
 impl DescribeTunnelOutput {
     /// <p>The tunnel being described.</p>
     pub fn tunnel(&self) -> std::option::Option<&crate::model::Tunnel> {
         self.tunnel.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeTunnelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
@@ -460,6 +580,7 @@ pub mod describe_tunnel_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tunnel: std::option::Option<crate::model::Tunnel>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The tunnel being described.</p>
@@ -472,10 +593,20 @@ pub mod describe_tunnel_output {
             self.tunnel = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTunnelOutput`](crate::output::DescribeTunnelOutput).
         pub fn build(self) -> crate::output::DescribeTunnelOutput {
             crate::output::DescribeTunnelOutput {
                 tunnel: self.tunnel,
+                _request_id: self._request_id,
             }
         }
     }
@@ -490,18 +621,38 @@ impl DescribeTunnelOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CloseTunnelOutput {}
+pub struct CloseTunnelOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CloseTunnelOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
 pub mod close_tunnel_output {
 
     /// A builder for [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CloseTunnelOutput`](crate::output::CloseTunnelOutput).
         pub fn build(self) -> crate::output::CloseTunnelOutput {
-            crate::output::CloseTunnelOutput {}
+            crate::output::CloseTunnelOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

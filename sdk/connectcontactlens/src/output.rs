@@ -14,6 +14,7 @@ pub struct ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>If response does not include <code>nextToken</code>, the analysis is completed (successfully or failed) and there are no more segments to retrieve.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRealtimeContactAnalysisSegmentsOutput {
     /// <p>An analyzed transcript or category.</p>
@@ -30,6 +31,11 @@ impl ListRealtimeContactAnalysisSegmentsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListRealtimeContactAnalysisSegmentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
 pub mod list_realtime_contact_analysis_segments_output {
 
@@ -40,6 +46,7 @@ pub mod list_realtime_contact_analysis_segments_output {
         pub(crate) segments:
             std::option::Option<std::vec::Vec<crate::model::RealtimeContactAnalysisSegment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `segments`.
@@ -81,11 +88,21 @@ pub mod list_realtime_contact_analysis_segments_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRealtimeContactAnalysisSegmentsOutput`](crate::output::ListRealtimeContactAnalysisSegmentsOutput).
         pub fn build(self) -> crate::output::ListRealtimeContactAnalysisSegmentsOutput {
             crate::output::ListRealtimeContactAnalysisSegmentsOutput {
                 segments: self.segments,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }

@@ -6,8 +6,13 @@ pub fn parse_abort_multipart_upload_error(
     crate::output::AbortMultipartUploadOutput,
     crate::error::AbortMultipartUploadError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AbortMultipartUploadError::unhandled(generic)),
@@ -15,27 +20,25 @@ pub fn parse_abort_multipart_upload_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchUpload" => crate::error::AbortMultipartUploadError {
-            meta: generic,
-            kind: crate::error::AbortMultipartUploadErrorKind::NoSuchUpload({
+        "NoSuchUpload" => crate::error::AbortMultipartUploadError::NoSuchUpload({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_upload::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_upload_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::no_such_upload::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_upload_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::AbortMultipartUploadError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AbortMultipartUploadError::generic(generic),
     })
 }
@@ -55,6 +58,12 @@ pub fn parse_abort_multipart_upload_response(
             crate::http_serde::deser_header_abort_multipart_upload_abort_multipart_upload_output_request_charged(response.headers())
                                     .map_err(|_|crate::error::AbortMultipartUploadError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -66,8 +75,13 @@ pub fn parse_complete_multipart_upload_error(
     crate::output::CompleteMultipartUploadOutput,
     crate::error::CompleteMultipartUploadError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CompleteMultipartUploadError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CompleteMultipartUploadError::generic(generic))
 }
 
@@ -111,6 +125,12 @@ pub fn parse_complete_multipart_upload_response(
             crate::http_serde::deser_header_complete_multipart_upload_complete_multipart_upload_output_version_id(response.headers())
                                     .map_err(|_|crate::error::CompleteMultipartUploadError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -119,8 +139,13 @@ pub fn parse_complete_multipart_upload_response(
 pub fn parse_copy_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopyObjectError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CopyObjectError::unhandled(generic)),
@@ -128,9 +153,8 @@ pub fn parse_copy_object_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ObjectNotInActiveTierError" => crate::error::CopyObjectError {
-            meta: generic,
-            kind: crate::error::CopyObjectErrorKind::ObjectNotInActiveTierError({
+        "ObjectNotInActiveTierError" => {
+            crate::error::CopyObjectError::ObjectNotInActiveTierError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -138,14 +162,15 @@ pub fn parse_copy_object_error(
                         crate::error::object_not_in_active_tier_error::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_object_not_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyObjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CopyObjectError::generic(generic),
     })
 }
@@ -227,6 +252,12 @@ pub fn parse_copy_object_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -235,8 +266,13 @@ pub fn parse_copy_object_response(
 pub fn parse_create_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateBucketError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateBucketError::unhandled(generic)),
@@ -244,40 +280,38 @@ pub fn parse_create_bucket_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "BucketAlreadyExists" => crate::error::CreateBucketError {
-            meta: generic,
-            kind: crate::error::CreateBucketErrorKind::BucketAlreadyExists({
+        "BucketAlreadyExists" => {
+            crate::error::CreateBucketError::BucketAlreadyExists({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::bucket_already_exists::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_bucket_already_exists_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError {
-            meta: generic,
-            kind: crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou({
+            })
+        }
+        "BucketAlreadyOwnedByYou" => crate::error::CreateBucketError::BucketAlreadyOwnedByYou({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::bucket_already_owned_by_you::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_bucket_already_owned_by_you_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateBucketError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateBucketError::generic(generic),
     })
 }
@@ -300,6 +334,12 @@ pub fn parse_create_bucket_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -311,8 +351,13 @@ pub fn parse_create_multipart_upload_error(
     crate::output::CreateMultipartUploadOutput,
     crate::error::CreateMultipartUploadError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateMultipartUploadError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CreateMultipartUploadError::generic(generic))
 }
 
@@ -372,6 +417,12 @@ pub fn parse_create_multipart_upload_response(
             crate::http_serde::deser_header_create_multipart_upload_create_multipart_upload_output_server_side_encryption(response.headers())
                                     .map_err(|_|crate::error::CreateMultipartUploadError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -380,8 +431,13 @@ pub fn parse_create_multipart_upload_response(
 pub fn parse_delete_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketError::generic(generic))
 }
 
@@ -393,6 +449,12 @@ pub fn parse_delete_bucket_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -404,8 +466,13 @@ pub fn parse_delete_bucket_analytics_configuration_error(
     crate::output::DeleteBucketAnalyticsConfigurationOutput,
     crate::error::DeleteBucketAnalyticsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketAnalyticsConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketAnalyticsConfigurationError::generic(generic))
 }
 
@@ -421,6 +488,12 @@ pub fn parse_delete_bucket_analytics_configuration_response(
         let mut output =
             crate::output::delete_bucket_analytics_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -430,8 +503,13 @@ pub fn parse_delete_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteBucketCorsOutput, crate::error::DeleteBucketCorsError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketCorsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketCorsError::generic(generic))
 }
 
@@ -444,6 +522,12 @@ pub fn parse_delete_bucket_cors_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_cors_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -455,8 +539,13 @@ pub fn parse_delete_bucket_encryption_error(
     crate::output::DeleteBucketEncryptionOutput,
     crate::error::DeleteBucketEncryptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketEncryptionError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketEncryptionError::generic(generic))
 }
 
@@ -471,6 +560,12 @@ pub fn parse_delete_bucket_encryption_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_encryption_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -482,8 +577,13 @@ pub fn parse_delete_bucket_intelligent_tiering_configuration_error(
     crate::output::DeleteBucketIntelligentTieringConfigurationOutput,
     crate::error::DeleteBucketIntelligentTieringConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketIntelligentTieringConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketIntelligentTieringConfigurationError::generic(generic))
 }
 
@@ -500,6 +600,12 @@ pub fn parse_delete_bucket_intelligent_tiering_configuration_response(
             crate::output::delete_bucket_intelligent_tiering_configuration_output::Builder::default(
             );
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -511,8 +617,13 @@ pub fn parse_delete_bucket_inventory_configuration_error(
     crate::output::DeleteBucketInventoryConfigurationOutput,
     crate::error::DeleteBucketInventoryConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketInventoryConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketInventoryConfigurationError::generic(generic))
 }
 
@@ -528,6 +639,12 @@ pub fn parse_delete_bucket_inventory_configuration_response(
         let mut output =
             crate::output::delete_bucket_inventory_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -539,8 +656,13 @@ pub fn parse_delete_bucket_lifecycle_error(
     crate::output::DeleteBucketLifecycleOutput,
     crate::error::DeleteBucketLifecycleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketLifecycleError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketLifecycleError::generic(generic))
 }
 
@@ -555,6 +677,12 @@ pub fn parse_delete_bucket_lifecycle_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_lifecycle_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -566,8 +694,13 @@ pub fn parse_delete_bucket_metrics_configuration_error(
     crate::output::DeleteBucketMetricsConfigurationOutput,
     crate::error::DeleteBucketMetricsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketMetricsConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketMetricsConfigurationError::generic(generic))
 }
 
@@ -583,6 +716,12 @@ pub fn parse_delete_bucket_metrics_configuration_response(
         let mut output =
             crate::output::delete_bucket_metrics_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -594,8 +733,13 @@ pub fn parse_delete_bucket_ownership_controls_error(
     crate::output::DeleteBucketOwnershipControlsOutput,
     crate::error::DeleteBucketOwnershipControlsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketOwnershipControlsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketOwnershipControlsError::generic(
         generic,
     ))
@@ -612,6 +756,12 @@ pub fn parse_delete_bucket_ownership_controls_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_ownership_controls_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -623,8 +773,13 @@ pub fn parse_delete_bucket_policy_error(
     crate::output::DeleteBucketPolicyOutput,
     crate::error::DeleteBucketPolicyError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketPolicyError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketPolicyError::generic(generic))
 }
 
@@ -639,6 +794,12 @@ pub fn parse_delete_bucket_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_policy_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -650,8 +811,13 @@ pub fn parse_delete_bucket_replication_error(
     crate::output::DeleteBucketReplicationOutput,
     crate::error::DeleteBucketReplicationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketReplicationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketReplicationError::generic(generic))
 }
 
@@ -666,6 +832,12 @@ pub fn parse_delete_bucket_replication_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_replication_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -677,8 +849,13 @@ pub fn parse_delete_bucket_tagging_error(
     crate::output::DeleteBucketTaggingOutput,
     crate::error::DeleteBucketTaggingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketTaggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketTaggingError::generic(generic))
 }
 
@@ -693,6 +870,12 @@ pub fn parse_delete_bucket_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_tagging_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -704,8 +887,13 @@ pub fn parse_delete_bucket_website_error(
     crate::output::DeleteBucketWebsiteOutput,
     crate::error::DeleteBucketWebsiteError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteBucketWebsiteError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteBucketWebsiteError::generic(generic))
 }
 
@@ -720,6 +908,12 @@ pub fn parse_delete_bucket_website_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_bucket_website_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -728,8 +922,13 @@ pub fn parse_delete_bucket_website_response(
 pub fn parse_delete_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteObjectError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteObjectError::generic(generic))
 }
 
@@ -771,6 +970,12 @@ pub fn parse_delete_object_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -779,8 +984,13 @@ pub fn parse_delete_object_response(
 pub fn parse_delete_objects_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteObjectsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteObjectsError::generic(generic))
 }
 
@@ -807,6 +1017,12 @@ pub fn parse_delete_objects_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -818,8 +1034,13 @@ pub fn parse_delete_object_tagging_error(
     crate::output::DeleteObjectTaggingOutput,
     crate::error::DeleteObjectTaggingError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteObjectTaggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteObjectTaggingError::generic(generic))
 }
 
@@ -838,6 +1059,12 @@ pub fn parse_delete_object_tagging_response(
             crate::http_serde::deser_header_delete_object_tagging_delete_object_tagging_output_version_id(response.headers())
                                     .map_err(|_|crate::error::DeleteObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -849,8 +1076,13 @@ pub fn parse_delete_public_access_block_error(
     crate::output::DeletePublicAccessBlockOutput,
     crate::error::DeletePublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePublicAccessBlockError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeletePublicAccessBlockError::generic(generic))
 }
 
@@ -865,6 +1097,12 @@ pub fn parse_delete_public_access_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_public_access_block_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -876,8 +1114,13 @@ pub fn parse_get_bucket_accelerate_configuration_error(
     crate::output::GetBucketAccelerateConfigurationOutput,
     crate::error::GetBucketAccelerateConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketAccelerateConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketAccelerateConfigurationError::generic(generic))
 }
 
@@ -899,6 +1142,12 @@ pub fn parse_get_bucket_accelerate_configuration_response(
                 output,
             )
             .map_err(crate::error::GetBucketAccelerateConfigurationError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -907,8 +1156,13 @@ pub fn parse_get_bucket_accelerate_configuration_response(
 pub fn parse_get_bucket_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketAclError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketAclError::generic(generic))
 }
 
@@ -925,6 +1179,12 @@ pub fn parse_get_bucket_acl_response(
             output,
         )
         .map_err(crate::error::GetBucketAclError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -936,8 +1196,13 @@ pub fn parse_get_bucket_analytics_configuration_error(
     crate::output::GetBucketAnalyticsConfigurationOutput,
     crate::error::GetBucketAnalyticsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketAnalyticsConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketAnalyticsConfigurationError::generic(
         generic,
     ))
@@ -958,6 +1223,12 @@ pub fn parse_get_bucket_analytics_configuration_response(
         output = output.set_analytics_configuration(
             crate::http_serde::deser_payload_get_bucket_analytics_configuration_get_bucket_analytics_configuration_output_analytics_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -966,8 +1237,13 @@ pub fn parse_get_bucket_analytics_configuration_response(
 pub fn parse_get_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketCorsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketCorsError::generic(generic))
 }
 
@@ -984,6 +1260,12 @@ pub fn parse_get_bucket_cors_response(
             output,
         )
         .map_err(crate::error::GetBucketCorsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -995,8 +1277,13 @@ pub fn parse_get_bucket_encryption_error(
     crate::output::GetBucketEncryptionOutput,
     crate::error::GetBucketEncryptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketEncryptionError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketEncryptionError::generic(generic))
 }
 
@@ -1014,6 +1301,12 @@ pub fn parse_get_bucket_encryption_response(
         output = output.set_server_side_encryption_configuration(
             crate::http_serde::deser_payload_get_bucket_encryption_get_bucket_encryption_output_server_side_encryption_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1025,8 +1318,13 @@ pub fn parse_get_bucket_intelligent_tiering_configuration_error(
     crate::output::GetBucketIntelligentTieringConfigurationOutput,
     crate::error::GetBucketIntelligentTieringConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketIntelligentTieringConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketIntelligentTieringConfigurationError::generic(generic))
 }
 
@@ -1045,6 +1343,12 @@ pub fn parse_get_bucket_intelligent_tiering_configuration_response(
         output = output.set_intelligent_tiering_configuration(
             crate::http_serde::deser_payload_get_bucket_intelligent_tiering_configuration_get_bucket_intelligent_tiering_configuration_output_intelligent_tiering_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1056,8 +1360,13 @@ pub fn parse_get_bucket_inventory_configuration_error(
     crate::output::GetBucketInventoryConfigurationOutput,
     crate::error::GetBucketInventoryConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketInventoryConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketInventoryConfigurationError::generic(
         generic,
     ))
@@ -1078,6 +1387,12 @@ pub fn parse_get_bucket_inventory_configuration_response(
         output = output.set_inventory_configuration(
             crate::http_serde::deser_payload_get_bucket_inventory_configuration_get_bucket_inventory_configuration_output_inventory_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1089,8 +1404,13 @@ pub fn parse_get_bucket_lifecycle_configuration_error(
     crate::output::GetBucketLifecycleConfigurationOutput,
     crate::error::GetBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketLifecycleConfigurationError::generic(
         generic,
     ))
@@ -1114,6 +1434,12 @@ pub fn parse_get_bucket_lifecycle_configuration_response(
                 output,
             )
             .map_err(crate::error::GetBucketLifecycleConfigurationError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1123,8 +1449,13 @@ pub fn parse_get_bucket_location_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketLocationOutput, crate::error::GetBucketLocationError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketLocationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketLocationError::generic(generic))
 }
 
@@ -1142,6 +1473,12 @@ pub fn parse_get_bucket_location_response(
             output,
         )
         .map_err(crate::error::GetBucketLocationError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1151,8 +1488,13 @@ pub fn parse_get_bucket_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketLoggingOutput, crate::error::GetBucketLoggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketLoggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketLoggingError::generic(generic))
 }
 
@@ -1170,6 +1512,12 @@ pub fn parse_get_bucket_logging_response(
             output,
         )
         .map_err(crate::error::GetBucketLoggingError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1181,8 +1529,13 @@ pub fn parse_get_bucket_metrics_configuration_error(
     crate::output::GetBucketMetricsConfigurationOutput,
     crate::error::GetBucketMetricsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketMetricsConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketMetricsConfigurationError::generic(
         generic,
     ))
@@ -1202,6 +1555,12 @@ pub fn parse_get_bucket_metrics_configuration_response(
         output = output.set_metrics_configuration(
             crate::http_serde::deser_payload_get_bucket_metrics_configuration_get_bucket_metrics_configuration_output_metrics_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1213,8 +1572,13 @@ pub fn parse_get_bucket_notification_configuration_error(
     crate::output::GetBucketNotificationConfigurationOutput,
     crate::error::GetBucketNotificationConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketNotificationConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketNotificationConfigurationError::generic(generic))
 }
 
@@ -1231,6 +1595,12 @@ pub fn parse_get_bucket_notification_configuration_response(
             crate::output::get_bucket_notification_configuration_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_get_bucket_notification_configuration(response.body().as_ref(), output).map_err(crate::error::GetBucketNotificationConfigurationError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1242,8 +1612,13 @@ pub fn parse_get_bucket_ownership_controls_error(
     crate::output::GetBucketOwnershipControlsOutput,
     crate::error::GetBucketOwnershipControlsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketOwnershipControlsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketOwnershipControlsError::generic(
         generic,
     ))
@@ -1263,6 +1638,12 @@ pub fn parse_get_bucket_ownership_controls_response(
         output = output.set_ownership_controls(
             crate::http_serde::deser_payload_get_bucket_ownership_controls_get_bucket_ownership_controls_output_ownership_controls(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1271,8 +1652,13 @@ pub fn parse_get_bucket_ownership_controls_response(
 pub fn parse_get_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketPolicyOutput, crate::error::GetBucketPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketPolicyError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketPolicyError::generic(generic))
 }
 
@@ -1289,6 +1675,12 @@ pub fn parse_get_bucket_policy_response(
                 response.body().as_ref(),
             )?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1300,8 +1692,13 @@ pub fn parse_get_bucket_policy_status_error(
     crate::output::GetBucketPolicyStatusOutput,
     crate::error::GetBucketPolicyStatusError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketPolicyStatusError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketPolicyStatusError::generic(generic))
 }
 
@@ -1319,6 +1716,12 @@ pub fn parse_get_bucket_policy_status_response(
         output = output.set_policy_status(
             crate::http_serde::deser_payload_get_bucket_policy_status_get_bucket_policy_status_output_policy_status(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1330,8 +1733,13 @@ pub fn parse_get_bucket_replication_error(
     crate::output::GetBucketReplicationOutput,
     crate::error::GetBucketReplicationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketReplicationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketReplicationError::generic(generic))
 }
 
@@ -1349,6 +1757,12 @@ pub fn parse_get_bucket_replication_response(
         output = output.set_replication_configuration(
             crate::http_serde::deser_payload_get_bucket_replication_get_bucket_replication_output_replication_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1360,8 +1774,13 @@ pub fn parse_get_bucket_request_payment_error(
     crate::output::GetBucketRequestPaymentOutput,
     crate::error::GetBucketRequestPaymentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketRequestPaymentError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketRequestPaymentError::generic(generic))
 }
 
@@ -1381,6 +1800,12 @@ pub fn parse_get_bucket_request_payment_response(
             output,
         )
         .map_err(crate::error::GetBucketRequestPaymentError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1390,8 +1815,13 @@ pub fn parse_get_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketTaggingOutput, crate::error::GetBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketTaggingError::generic(generic))
 }
 
@@ -1409,6 +1839,12 @@ pub fn parse_get_bucket_tagging_response(
             output,
         )
         .map_err(crate::error::GetBucketTaggingError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1420,8 +1856,13 @@ pub fn parse_get_bucket_versioning_error(
     crate::output::GetBucketVersioningOutput,
     crate::error::GetBucketVersioningError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketVersioningError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketVersioningError::generic(generic))
 }
 
@@ -1441,6 +1882,12 @@ pub fn parse_get_bucket_versioning_response(
             output,
         )
         .map_err(crate::error::GetBucketVersioningError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1450,8 +1897,13 @@ pub fn parse_get_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetBucketWebsiteOutput, crate::error::GetBucketWebsiteError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetBucketWebsiteError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetBucketWebsiteError::generic(generic))
 }
 
@@ -1469,6 +1921,12 @@ pub fn parse_get_bucket_website_response(
             output,
         )
         .map_err(crate::error::GetBucketWebsiteError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1788,6 +2246,12 @@ pub fn parse_get_object(
             crate::http_serde::deser_header_get_object_get_object_output_website_redirect_location(response.headers())
                                     .map_err(|_|crate::error::GetObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         let response_algorithms = ["crc32", "crc32c", "sha256", "sha1"].as_slice();
         let checksum_mode = properties.get::<crate::model::ChecksumMode>();
         // Per [the spec](https://awslabs.github.io/smithy/1.0/spec/aws/aws-core.html#http-response-checksums),
@@ -1819,8 +2283,13 @@ pub fn parse_get_object(
 pub fn parse_get_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectOutput, crate::error::GetObjectError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetObjectError::unhandled(generic)),
@@ -1828,46 +2297,45 @@ pub fn parse_get_object_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidObjectState" => {
-            crate::error::GetObjectError {
-                meta: generic,
-                kind: crate::error::GetObjectErrorKind::InvalidObjectState({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_object_state::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_object_state_xml_err(response.body().as_ref(), output).map_err(crate::error::GetObjectError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
-        }
-        "NoSuchKey" => crate::error::GetObjectError {
-            meta: generic,
-            kind: crate::error::GetObjectErrorKind::NoSuchKey({
+        "InvalidObjectState" => crate::error::GetObjectError::InvalidObjectState({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_key::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
+                let mut output = crate::error::invalid_object_state::Builder::default();
+                let _ = response;
+                output =
+                    crate::xml_deser::deser_structure_crate_error_invalid_object_state_xml_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::GetObjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NoSuchKey" => crate::error::GetObjectError::NoSuchKey({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::no_such_key::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetObjectError::generic(generic),
     })
 }
@@ -1876,8 +2344,13 @@ pub fn parse_get_object_error(
 pub fn parse_get_object_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectAclError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetObjectAclError::unhandled(generic)),
@@ -1885,27 +2358,25 @@ pub fn parse_get_object_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchKey" => crate::error::GetObjectAclError {
-            meta: generic,
-            kind: crate::error::GetObjectAclErrorKind::NoSuchKey({
+        "NoSuchKey" => crate::error::GetObjectAclError::NoSuchKey({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_key::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetObjectAclError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::no_such_key::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetObjectAclError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetObjectAclError::generic(generic),
     })
 }
@@ -1933,6 +2404,12 @@ pub fn parse_get_object_acl_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1944,8 +2421,13 @@ pub fn parse_get_object_attributes_error(
     crate::output::GetObjectAttributesOutput,
     crate::error::GetObjectAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectAttributesError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetObjectAttributesError::unhandled(generic)),
@@ -1953,27 +2435,25 @@ pub fn parse_get_object_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchKey" => crate::error::GetObjectAttributesError {
-            meta: generic,
-            kind: crate::error::GetObjectAttributesErrorKind::NoSuchKey({
+        "NoSuchKey" => crate::error::GetObjectAttributesError::NoSuchKey({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_key::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetObjectAttributesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::no_such_key::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetObjectAttributesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetObjectAttributesError::generic(generic),
     })
 }
@@ -2010,6 +2490,12 @@ pub fn parse_get_object_attributes_response(
             crate::http_serde::deser_header_get_object_attributes_get_object_attributes_output_version_id(response.headers())
                                     .map_err(|_|crate::error::GetObjectAttributesError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2021,8 +2507,13 @@ pub fn parse_get_object_legal_hold_error(
     crate::output::GetObjectLegalHoldOutput,
     crate::error::GetObjectLegalHoldError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectLegalHoldError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetObjectLegalHoldError::generic(generic))
 }
 
@@ -2040,6 +2531,12 @@ pub fn parse_get_object_legal_hold_response(
         output = output.set_legal_hold(
             crate::http_serde::deser_payload_get_object_legal_hold_get_object_legal_hold_output_legal_hold(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2051,8 +2548,13 @@ pub fn parse_get_object_lock_configuration_error(
     crate::output::GetObjectLockConfigurationOutput,
     crate::error::GetObjectLockConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectLockConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetObjectLockConfigurationError::generic(
         generic,
     ))
@@ -2072,6 +2574,12 @@ pub fn parse_get_object_lock_configuration_response(
         output = output.set_object_lock_configuration(
             crate::http_serde::deser_payload_get_object_lock_configuration_get_object_lock_configuration_output_object_lock_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2083,8 +2591,13 @@ pub fn parse_get_object_retention_error(
     crate::output::GetObjectRetentionOutput,
     crate::error::GetObjectRetentionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectRetentionError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetObjectRetentionError::generic(generic))
 }
 
@@ -2102,6 +2615,12 @@ pub fn parse_get_object_retention_response(
         output = output.set_retention(
             crate::http_serde::deser_payload_get_object_retention_get_object_retention_output_retention(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2111,8 +2630,13 @@ pub fn parse_get_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectTaggingOutput, crate::error::GetObjectTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectTaggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetObjectTaggingError::generic(generic))
 }
 
@@ -2133,6 +2657,12 @@ pub fn parse_get_object_tagging_response(
         output = output.set_version_id(
             crate::http_serde::deser_header_get_object_tagging_get_object_tagging_output_version_id(response.headers())
                                     .map_err(|_|crate::error::GetObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
+        );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
         );
         output.build()
     })
@@ -2158,6 +2688,12 @@ pub fn parse_get_object_torrent(
             crate::http_serde::deser_header_get_object_torrent_get_object_torrent_output_request_charged(response.headers())
                                     .map_err(|_|crate::error::GetObjectTorrentError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2167,8 +2703,13 @@ pub fn parse_get_object_torrent_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetObjectTorrentOutput, crate::error::GetObjectTorrentError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetObjectTorrentError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetObjectTorrentError::generic(generic))
 }
 
@@ -2179,8 +2720,13 @@ pub fn parse_get_public_access_block_error(
     crate::output::GetPublicAccessBlockOutput,
     crate::error::GetPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPublicAccessBlockError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::GetPublicAccessBlockError::generic(generic))
 }
 
@@ -2198,6 +2744,12 @@ pub fn parse_get_public_access_block_response(
         output = output.set_public_access_block_configuration(
             crate::http_serde::deser_payload_get_public_access_block_get_public_access_block_output_public_access_block_configuration(response.body().as_ref())?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2206,8 +2758,13 @@ pub fn parse_get_public_access_block_response(
 pub fn parse_head_bucket_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::HeadBucketError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::HeadBucketError::unhandled(generic)),
@@ -2215,27 +2772,25 @@ pub fn parse_head_bucket_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NotFound" => crate::error::HeadBucketError {
-            meta: generic,
-            kind: crate::error::HeadBucketErrorKind::NotFound({
+        "NotFound" => crate::error::HeadBucketError::NotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::not_found::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_not_found_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::HeadBucketError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::not_found::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::HeadBucketError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::HeadBucketError::generic(generic),
     })
 }
@@ -2248,6 +2803,12 @@ pub fn parse_head_bucket_response(
         #[allow(unused_mut)]
         let mut output = crate::output::head_bucket_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2256,8 +2817,13 @@ pub fn parse_head_bucket_response(
 pub fn parse_head_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::HeadObjectError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::HeadObjectError::unhandled(generic)),
@@ -2265,27 +2831,25 @@ pub fn parse_head_object_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NotFound" => crate::error::HeadObjectError {
-            meta: generic,
-            kind: crate::error::HeadObjectErrorKind::NotFound({
+        "NotFound" => crate::error::HeadObjectError::NotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::not_found::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_not_found_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::HeadObjectError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::not_found::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_not_found_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::HeadObjectError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::HeadObjectError::generic(generic),
     })
 }
@@ -2588,6 +3152,12 @@ pub fn parse_head_object_response(
             crate::http_serde::deser_header_head_object_head_object_output_website_redirect_location(response.headers())
                                     .map_err(|_|crate::error::HeadObjectError::unhandled("Failed to parse WebsiteRedirectLocation from header `x-amz-website-redirect-location"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2599,8 +3169,13 @@ pub fn parse_list_bucket_analytics_configurations_error(
     crate::output::ListBucketAnalyticsConfigurationsOutput,
     crate::error::ListBucketAnalyticsConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListBucketAnalyticsConfigurationsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListBucketAnalyticsConfigurationsError::generic(generic))
 }
 
@@ -2622,6 +3197,12 @@ pub fn parse_list_bucket_analytics_configurations_response(
                 output,
             )
             .map_err(crate::error::ListBucketAnalyticsConfigurationsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2633,8 +3214,13 @@ pub fn parse_list_bucket_intelligent_tiering_configurations_error(
     crate::output::ListBucketIntelligentTieringConfigurationsOutput,
     crate::error::ListBucketIntelligentTieringConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListBucketIntelligentTieringConfigurationsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListBucketIntelligentTieringConfigurationsError::generic(generic))
 }
 
@@ -2652,6 +3238,12 @@ pub fn parse_list_bucket_intelligent_tiering_configurations_response(
             );
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_list_bucket_intelligent_tiering_configurations(response.body().as_ref(), output).map_err(crate::error::ListBucketIntelligentTieringConfigurationsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2663,8 +3255,13 @@ pub fn parse_list_bucket_inventory_configurations_error(
     crate::output::ListBucketInventoryConfigurationsOutput,
     crate::error::ListBucketInventoryConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListBucketInventoryConfigurationsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListBucketInventoryConfigurationsError::generic(generic))
 }
 
@@ -2686,6 +3283,12 @@ pub fn parse_list_bucket_inventory_configurations_response(
                 output,
             )
             .map_err(crate::error::ListBucketInventoryConfigurationsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2697,8 +3300,13 @@ pub fn parse_list_bucket_metrics_configurations_error(
     crate::output::ListBucketMetricsConfigurationsOutput,
     crate::error::ListBucketMetricsConfigurationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListBucketMetricsConfigurationsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListBucketMetricsConfigurationsError::generic(
         generic,
     ))
@@ -2722,6 +3330,12 @@ pub fn parse_list_bucket_metrics_configurations_response(
                 output,
             )
             .map_err(crate::error::ListBucketMetricsConfigurationsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2730,8 +3344,13 @@ pub fn parse_list_bucket_metrics_configurations_response(
 pub fn parse_list_buckets_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListBucketsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListBucketsError::generic(generic))
 }
 
@@ -2748,6 +3367,12 @@ pub fn parse_list_buckets_response(
             output,
         )
         .map_err(crate::error::ListBucketsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2759,8 +3384,13 @@ pub fn parse_list_multipart_uploads_error(
     crate::output::ListMultipartUploadsOutput,
     crate::error::ListMultipartUploadsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListMultipartUploadsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListMultipartUploadsError::generic(generic))
 }
 
@@ -2780,6 +3410,12 @@ pub fn parse_list_multipart_uploads_response(
             output,
         )
         .map_err(crate::error::ListMultipartUploadsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2788,8 +3424,13 @@ pub fn parse_list_multipart_uploads_response(
 pub fn parse_list_objects_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListObjectsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListObjectsError::unhandled(generic)),
@@ -2797,27 +3438,25 @@ pub fn parse_list_objects_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchBucket" => crate::error::ListObjectsError {
-            meta: generic,
-            kind: crate::error::ListObjectsErrorKind::NoSuchBucket({
+        "NoSuchBucket" => crate::error::ListObjectsError::NoSuchBucket({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_bucket::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_bucket_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListObjectsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::no_such_bucket::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_bucket_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListObjectsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListObjectsError::generic(generic),
     })
 }
@@ -2835,6 +3474,12 @@ pub fn parse_list_objects_response(
             output,
         )
         .map_err(crate::error::ListObjectsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2843,8 +3488,13 @@ pub fn parse_list_objects_response(
 pub fn parse_list_objects_v2_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListObjectsV2Error::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListObjectsV2Error::unhandled(generic)),
@@ -2852,27 +3502,25 @@ pub fn parse_list_objects_v2_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchBucket" => crate::error::ListObjectsV2Error {
-            meta: generic,
-            kind: crate::error::ListObjectsV2ErrorKind::NoSuchBucket({
+        "NoSuchBucket" => crate::error::ListObjectsV2Error::NoSuchBucket({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_bucket::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_bucket_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListObjectsV2Error::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::no_such_bucket::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_bucket_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListObjectsV2Error::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListObjectsV2Error::generic(generic),
     })
 }
@@ -2890,6 +3538,12 @@ pub fn parse_list_objects_v2_response(
             output,
         )
         .map_err(crate::error::ListObjectsV2Error::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2901,8 +3555,13 @@ pub fn parse_list_object_versions_error(
     crate::output::ListObjectVersionsOutput,
     crate::error::ListObjectVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListObjectVersionsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListObjectVersionsError::generic(generic))
 }
 
@@ -2922,6 +3581,12 @@ pub fn parse_list_object_versions_response(
             output,
         )
         .map_err(crate::error::ListObjectVersionsError::unhandled)?;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2930,8 +3595,13 @@ pub fn parse_list_object_versions_response(
 pub fn parse_list_parts_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPartsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListPartsError::generic(generic))
 }
 
@@ -2978,6 +3648,12 @@ pub fn parse_list_parts_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2989,8 +3665,13 @@ pub fn parse_put_bucket_accelerate_configuration_error(
     crate::output::PutBucketAccelerateConfigurationOutput,
     crate::error::PutBucketAccelerateConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketAccelerateConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketAccelerateConfigurationError::generic(generic))
 }
 
@@ -3006,6 +3687,12 @@ pub fn parse_put_bucket_accelerate_configuration_response(
         let mut output =
             crate::output::put_bucket_accelerate_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3014,8 +3701,13 @@ pub fn parse_put_bucket_accelerate_configuration_response(
 pub fn parse_put_bucket_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketAclError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketAclError::generic(generic))
 }
 
@@ -3027,6 +3719,12 @@ pub fn parse_put_bucket_acl_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_acl_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3038,8 +3736,13 @@ pub fn parse_put_bucket_analytics_configuration_error(
     crate::output::PutBucketAnalyticsConfigurationOutput,
     crate::error::PutBucketAnalyticsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketAnalyticsConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketAnalyticsConfigurationError::generic(
         generic,
     ))
@@ -3057,6 +3760,12 @@ pub fn parse_put_bucket_analytics_configuration_response(
         let mut output =
             crate::output::put_bucket_analytics_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3065,8 +3774,13 @@ pub fn parse_put_bucket_analytics_configuration_response(
 pub fn parse_put_bucket_cors_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketCorsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketCorsError::generic(generic))
 }
 
@@ -3078,6 +3792,12 @@ pub fn parse_put_bucket_cors_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_cors_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3089,8 +3809,13 @@ pub fn parse_put_bucket_encryption_error(
     crate::output::PutBucketEncryptionOutput,
     crate::error::PutBucketEncryptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketEncryptionError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketEncryptionError::generic(generic))
 }
 
@@ -3105,6 +3830,12 @@ pub fn parse_put_bucket_encryption_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_encryption_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3116,8 +3847,13 @@ pub fn parse_put_bucket_intelligent_tiering_configuration_error(
     crate::output::PutBucketIntelligentTieringConfigurationOutput,
     crate::error::PutBucketIntelligentTieringConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketIntelligentTieringConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketIntelligentTieringConfigurationError::generic(generic))
 }
 
@@ -3133,6 +3869,12 @@ pub fn parse_put_bucket_intelligent_tiering_configuration_response(
         let mut output =
             crate::output::put_bucket_intelligent_tiering_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3144,8 +3886,13 @@ pub fn parse_put_bucket_inventory_configuration_error(
     crate::output::PutBucketInventoryConfigurationOutput,
     crate::error::PutBucketInventoryConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketInventoryConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketInventoryConfigurationError::generic(
         generic,
     ))
@@ -3163,6 +3910,12 @@ pub fn parse_put_bucket_inventory_configuration_response(
         let mut output =
             crate::output::put_bucket_inventory_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3174,8 +3927,13 @@ pub fn parse_put_bucket_lifecycle_configuration_error(
     crate::output::PutBucketLifecycleConfigurationOutput,
     crate::error::PutBucketLifecycleConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketLifecycleConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketLifecycleConfigurationError::generic(
         generic,
     ))
@@ -3193,6 +3951,12 @@ pub fn parse_put_bucket_lifecycle_configuration_response(
         let mut output =
             crate::output::put_bucket_lifecycle_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3202,8 +3966,13 @@ pub fn parse_put_bucket_logging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketLoggingOutput, crate::error::PutBucketLoggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketLoggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketLoggingError::generic(generic))
 }
 
@@ -3216,6 +3985,12 @@ pub fn parse_put_bucket_logging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_logging_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3227,8 +4002,13 @@ pub fn parse_put_bucket_metrics_configuration_error(
     crate::output::PutBucketMetricsConfigurationOutput,
     crate::error::PutBucketMetricsConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketMetricsConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketMetricsConfigurationError::generic(
         generic,
     ))
@@ -3245,6 +4025,12 @@ pub fn parse_put_bucket_metrics_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_metrics_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3256,8 +4042,13 @@ pub fn parse_put_bucket_notification_configuration_error(
     crate::output::PutBucketNotificationConfigurationOutput,
     crate::error::PutBucketNotificationConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketNotificationConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketNotificationConfigurationError::generic(generic))
 }
 
@@ -3273,6 +4064,12 @@ pub fn parse_put_bucket_notification_configuration_response(
         let mut output =
             crate::output::put_bucket_notification_configuration_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3284,8 +4081,13 @@ pub fn parse_put_bucket_ownership_controls_error(
     crate::output::PutBucketOwnershipControlsOutput,
     crate::error::PutBucketOwnershipControlsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketOwnershipControlsError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketOwnershipControlsError::generic(
         generic,
     ))
@@ -3302,6 +4104,12 @@ pub fn parse_put_bucket_ownership_controls_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_ownership_controls_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3310,8 +4118,13 @@ pub fn parse_put_bucket_ownership_controls_response(
 pub fn parse_put_bucket_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketPolicyOutput, crate::error::PutBucketPolicyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketPolicyError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketPolicyError::generic(generic))
 }
 
@@ -3323,6 +4136,12 @@ pub fn parse_put_bucket_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_policy_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3334,8 +4153,13 @@ pub fn parse_put_bucket_replication_error(
     crate::output::PutBucketReplicationOutput,
     crate::error::PutBucketReplicationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketReplicationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketReplicationError::generic(generic))
 }
 
@@ -3350,6 +4174,12 @@ pub fn parse_put_bucket_replication_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_replication_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3361,8 +4191,13 @@ pub fn parse_put_bucket_request_payment_error(
     crate::output::PutBucketRequestPaymentOutput,
     crate::error::PutBucketRequestPaymentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketRequestPaymentError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketRequestPaymentError::generic(generic))
 }
 
@@ -3377,6 +4212,12 @@ pub fn parse_put_bucket_request_payment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_request_payment_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3386,8 +4227,13 @@ pub fn parse_put_bucket_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketTaggingOutput, crate::error::PutBucketTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketTaggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketTaggingError::generic(generic))
 }
 
@@ -3400,6 +4246,12 @@ pub fn parse_put_bucket_tagging_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_tagging_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3411,8 +4263,13 @@ pub fn parse_put_bucket_versioning_error(
     crate::output::PutBucketVersioningOutput,
     crate::error::PutBucketVersioningError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketVersioningError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketVersioningError::generic(generic))
 }
 
@@ -3427,6 +4284,12 @@ pub fn parse_put_bucket_versioning_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_versioning_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3436,8 +4299,13 @@ pub fn parse_put_bucket_website_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutBucketWebsiteOutput, crate::error::PutBucketWebsiteError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutBucketWebsiteError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutBucketWebsiteError::generic(generic))
 }
 
@@ -3450,6 +4318,12 @@ pub fn parse_put_bucket_website_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_bucket_website_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3458,8 +4332,13 @@ pub fn parse_put_bucket_website_response(
 pub fn parse_put_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutObjectError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutObjectError::generic(generic))
 }
 
@@ -3573,6 +4452,12 @@ pub fn parse_put_object_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3581,8 +4466,13 @@ pub fn parse_put_object_response(
 pub fn parse_put_object_acl_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutObjectAclError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutObjectAclError::unhandled(generic)),
@@ -3590,27 +4480,25 @@ pub fn parse_put_object_acl_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "NoSuchKey" => crate::error::PutObjectAclError {
-            meta: generic,
-            kind: crate::error::PutObjectAclErrorKind::NoSuchKey({
+        "NoSuchKey" => crate::error::PutObjectAclError::NoSuchKey({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::no_such_key::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::PutObjectAclError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::no_such_key::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_no_such_key_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::PutObjectAclError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::PutObjectAclError::generic(generic),
     })
 }
@@ -3633,6 +4521,12 @@ pub fn parse_put_object_acl_response(
                 )
             })?,
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3644,8 +4538,13 @@ pub fn parse_put_object_legal_hold_error(
     crate::output::PutObjectLegalHoldOutput,
     crate::error::PutObjectLegalHoldError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutObjectLegalHoldError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutObjectLegalHoldError::generic(generic))
 }
 
@@ -3664,6 +4563,12 @@ pub fn parse_put_object_legal_hold_response(
             crate::http_serde::deser_header_put_object_legal_hold_put_object_legal_hold_output_request_charged(response.headers())
                                     .map_err(|_|crate::error::PutObjectLegalHoldError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3675,8 +4580,13 @@ pub fn parse_put_object_lock_configuration_error(
     crate::output::PutObjectLockConfigurationOutput,
     crate::error::PutObjectLockConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutObjectLockConfigurationError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutObjectLockConfigurationError::generic(
         generic,
     ))
@@ -3697,6 +4607,12 @@ pub fn parse_put_object_lock_configuration_response(
             crate::http_serde::deser_header_put_object_lock_configuration_put_object_lock_configuration_output_request_charged(response.headers())
                                     .map_err(|_|crate::error::PutObjectLockConfigurationError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3708,8 +4624,13 @@ pub fn parse_put_object_retention_error(
     crate::output::PutObjectRetentionOutput,
     crate::error::PutObjectRetentionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutObjectRetentionError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutObjectRetentionError::generic(generic))
 }
 
@@ -3728,6 +4649,12 @@ pub fn parse_put_object_retention_response(
             crate::http_serde::deser_header_put_object_retention_put_object_retention_output_request_charged(response.headers())
                                     .map_err(|_|crate::error::PutObjectRetentionError::unhandled("Failed to parse RequestCharged from header `x-amz-request-charged"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3737,8 +4664,13 @@ pub fn parse_put_object_tagging_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutObjectTaggingOutput, crate::error::PutObjectTaggingError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutObjectTaggingError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutObjectTaggingError::generic(generic))
 }
 
@@ -3755,6 +4687,12 @@ pub fn parse_put_object_tagging_response(
             crate::http_serde::deser_header_put_object_tagging_put_object_tagging_output_version_id(response.headers())
                                     .map_err(|_|crate::error::PutObjectTaggingError::unhandled("Failed to parse VersionId from header `x-amz-version-id"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3766,8 +4704,13 @@ pub fn parse_put_public_access_block_error(
     crate::output::PutPublicAccessBlockOutput,
     crate::error::PutPublicAccessBlockError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutPublicAccessBlockError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::PutPublicAccessBlockError::generic(generic))
 }
 
@@ -3782,6 +4725,12 @@ pub fn parse_put_public_access_block_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_public_access_block_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3790,8 +4739,13 @@ pub fn parse_put_public_access_block_response(
 pub fn parse_restore_object_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreObjectError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RestoreObjectError::unhandled(generic)),
@@ -3799,9 +4753,8 @@ pub fn parse_restore_object_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ObjectAlreadyInActiveTierError" => crate::error::RestoreObjectError {
-            meta: generic,
-            kind: crate::error::RestoreObjectErrorKind::ObjectAlreadyInActiveTierError({
+        "ObjectAlreadyInActiveTierError" => {
+            crate::error::RestoreObjectError::ObjectAlreadyInActiveTierError({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3809,14 +4762,15 @@ pub fn parse_restore_object_error(
                         crate::error::object_already_in_active_tier_error::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_object_already_in_active_tier_error_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreObjectError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RestoreObjectError::generic(generic),
     })
 }
@@ -3843,6 +4797,12 @@ pub fn parse_restore_object_response(
             crate::http_serde::deser_header_restore_object_restore_object_output_restore_output_path(response.headers())
                                     .map_err(|_|crate::error::RestoreObjectError::unhandled("Failed to parse RestoreOutputPath from header `x-amz-restore-output-path"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3863,6 +4823,12 @@ pub fn parse_select_object_content(
         output = output.set_payload(
             Some(crate::http_serde::deser_payload_select_object_content_select_object_content_output_payload(response.body_mut())?)
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output
             .build()
             .map_err(crate::error::SelectObjectContentError::unhandled)?
@@ -3876,8 +4842,13 @@ pub fn parse_select_object_content_error(
     crate::output::SelectObjectContentOutput,
     crate::error::SelectObjectContentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SelectObjectContentError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SelectObjectContentError::generic(generic))
 }
 
@@ -3885,8 +4856,13 @@ pub fn parse_select_object_content_error(
 pub fn parse_upload_part_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UploadPartError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UploadPartError::generic(generic))
 }
 
@@ -3976,6 +4952,12 @@ pub fn parse_upload_part_response(
             crate::http_serde::deser_header_upload_part_upload_part_output_server_side_encryption(response.headers())
                                     .map_err(|_|crate::error::UploadPartError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3984,8 +4966,13 @@ pub fn parse_upload_part_response(
 pub fn parse_upload_part_copy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UploadPartCopyError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UploadPartCopyError::generic(generic))
 }
 
@@ -4028,6 +5015,12 @@ pub fn parse_upload_part_copy_response(
             crate::http_serde::deser_header_upload_part_copy_upload_part_copy_output_server_side_encryption(response.headers())
                                     .map_err(|_|crate::error::UploadPartCopyError::unhandled("Failed to parse ServerSideEncryption from header `x-amz-server-side-encryption"))?
         );
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4039,8 +5032,13 @@ pub fn parse_write_get_object_response_error(
     crate::output::WriteGetObjectResponseOutput,
     crate::error::WriteGetObjectResponseError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::WriteGetObjectResponseError::unhandled)?;
+    generic_builder =
+        crate::s3_request_id::apply_extended_request_id(generic_builder, response.headers());
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::WriteGetObjectResponseError::generic(generic))
 }
 
@@ -4055,6 +5053,12 @@ pub fn parse_write_get_object_response_response(
         #[allow(unused_mut)]
         let mut output = crate::output::write_get_object_response_output::Builder::default();
         let _ = response;
+        output._set_extended_request_id(
+            crate::s3_request_id::RequestIdExt::extended_request_id(response).map(str::to_string),
+        );
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

@@ -6,8 +6,11 @@ pub fn parse_add_role_to_db_cluster_error(
     crate::output::AddRoleToDbClusterOutput,
     crate::error::AddRoleToDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddRoleToDBClusterError::unhandled(generic)),
@@ -15,26 +18,25 @@ pub fn parse_add_role_to_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::AddRoleToDBClusterError {
-            meta: generic,
-            kind: crate::error::AddRoleToDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::AddRoleToDBClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterRoleAlreadyExists" => crate::error::AddRoleToDBClusterError {
-            meta: generic,
-            kind: crate::error::AddRoleToDBClusterErrorKind::DbClusterRoleAlreadyExistsFault({
+            })
+        }
+        "DBClusterRoleAlreadyExists" => {
+            crate::error::AddRoleToDBClusterError::DbClusterRoleAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -42,17 +44,17 @@ pub fn parse_add_role_to_db_cluster_error(
                         crate::error::db_cluster_role_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_role_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterRoleQuotaExceeded" => crate::error::AddRoleToDBClusterError {
-            meta: generic,
-            kind: crate::error::AddRoleToDBClusterErrorKind::DbClusterRoleQuotaExceededFault({
+            })
+        }
+        "DBClusterRoleQuotaExceeded" => {
+            crate::error::AddRoleToDBClusterError::DbClusterRoleQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -60,17 +62,17 @@ pub fn parse_add_role_to_db_cluster_error(
                         crate::error::db_cluster_role_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_role_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::AddRoleToDBClusterError {
-            meta: generic,
-            kind: crate::error::AddRoleToDBClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::AddRoleToDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -78,14 +80,15 @@ pub fn parse_add_role_to_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddRoleToDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddRoleToDBClusterError::generic(generic),
     })
 }
@@ -101,6 +104,9 @@ pub fn parse_add_role_to_db_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_role_to_db_cluster_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -112,8 +118,11 @@ pub fn parse_add_source_identifier_to_subscription_error(
     crate::output::AddSourceIdentifierToSubscriptionOutput,
     crate::error::AddSourceIdentifierToSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddSourceIdentifierToSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -123,44 +132,40 @@ pub fn parse_add_source_identifier_to_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SourceNotFound" => crate::error::AddSourceIdentifierToSubscriptionError {
-            meta: generic,
-            kind: crate::error::AddSourceIdentifierToSubscriptionErrorKind::SourceNotFoundFault({
+        "SourceNotFound" => {
+            crate::error::AddSourceIdentifierToSubscriptionError::SourceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::source_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_source_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddSourceIdentifierToSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SubscriptionNotFound" => crate::error::AddSourceIdentifierToSubscriptionError {
-            meta: generic,
-            kind:
-                crate::error::AddSourceIdentifierToSubscriptionErrorKind::SubscriptionNotFoundFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::subscription_not_found_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddSourceIdentifierToSubscriptionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "SubscriptionNotFound" => {
+            crate::error::AddSourceIdentifierToSubscriptionError::SubscriptionNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::subscription_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddSourceIdentifierToSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AddSourceIdentifierToSubscriptionError::generic(generic),
     })
 }
@@ -178,6 +183,9 @@ pub fn parse_add_source_identifier_to_subscription_response(
             crate::output::add_source_identifier_to_subscription_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_add_source_identifier_to_subscription(response.body().as_ref(), output).map_err(crate::error::AddSourceIdentifierToSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -187,8 +195,11 @@ pub fn parse_add_tags_to_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddTagsToResourceError::unhandled(generic)),
@@ -196,57 +207,51 @@ pub fn parse_add_tags_to_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::error::AddTagsToResourceError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::DbInstanceNotFoundFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBInstanceNotFound" => crate::error::AddTagsToResourceError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBSnapshotNotFound" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::DbSnapshotNotFoundFault({
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBSnapshotNotFound" => crate::error::AddTagsToResourceError::DbSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::AddTagsToResourceError::generic(generic),
     })
 }
@@ -260,6 +265,9 @@ pub fn parse_add_tags_to_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::add_tags_to_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -271,8 +279,11 @@ pub fn parse_apply_pending_maintenance_action_error(
     crate::output::ApplyPendingMaintenanceActionOutput,
     crate::error::ApplyPendingMaintenanceActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ApplyPendingMaintenanceActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -284,23 +295,23 @@ pub fn parse_apply_pending_maintenance_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundFault" => crate::error::ApplyPendingMaintenanceActionError {
-            meta: generic,
-            kind: crate::error::ApplyPendingMaintenanceActionErrorKind::ResourceNotFoundFault({
+        "ResourceNotFoundFault" => {
+            crate::error::ApplyPendingMaintenanceActionError::ResourceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyPendingMaintenanceActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ApplyPendingMaintenanceActionError::generic(generic),
     })
 }
@@ -322,6 +333,9 @@ pub fn parse_apply_pending_maintenance_action_response(
                 output,
             )
             .map_err(crate::error::ApplyPendingMaintenanceActionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -333,8 +347,11 @@ pub fn parse_copy_db_cluster_parameter_group_error(
     crate::output::CopyDbClusterParameterGroupOutput,
     crate::error::CopyDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopyDBClusterParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -346,55 +363,61 @@ pub fn parse_copy_db_cluster_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupAlreadyExists" => crate::error::CopyDBClusterParameterGroupError { meta: generic, kind: crate::error::CopyDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupAlreadyExists" => {
+            crate::error::CopyDBClusterParameterGroupError::DbParameterGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_already_exists_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBParameterGroupNotFound" => crate::error::CopyDBClusterParameterGroupError { meta: generic, kind: crate::error::CopyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBParameterGroupNotFound" => {
+            crate::error::CopyDBClusterParameterGroupError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBParameterGroupQuotaExceeded" => crate::error::CopyDBClusterParameterGroupError { meta: generic, kind: crate::error::CopyDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBParameterGroupQuotaExceeded" => {
+            crate::error::CopyDBClusterParameterGroupError::DbParameterGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CopyDBClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::CopyDBClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -414,6 +437,9 @@ pub fn parse_copy_db_cluster_parameter_group_response(
             output,
         )
         .map_err(crate::error::CopyDBClusterParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -425,8 +451,11 @@ pub fn parse_copy_db_cluster_snapshot_error(
     crate::output::CopyDbClusterSnapshotOutput,
     crate::error::CopyDBClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CopyDBClusterSnapshotError::unhandled(generic)),
@@ -434,28 +463,26 @@ pub fn parse_copy_db_cluster_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotAlreadyExistsFault" => crate::error::CopyDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CopyDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(
-                {
+        "DBClusterSnapshotAlreadyExistsFault" => {
+            crate::error::CopyDBClusterSnapshotError::DbClusterSnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_snapshot_already_exists_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DBClusterSnapshotNotFoundFault" => crate::error::CopyDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CopyDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault({
+                    let mut output =
+                        crate::error::db_cluster_snapshot_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::error::CopyDBClusterSnapshotError::DbClusterSnapshotNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -463,38 +490,35 @@ pub fn parse_copy_db_cluster_snapshot_error(
                         crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterSnapshotStateFault" => crate::error::CopyDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CopyDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(
-                {
+            })
+        }
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::error::CopyDBClusterSnapshotError::InvalidDbClusterSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidDBClusterStateFault" => crate::error::CopyDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CopyDBClusterSnapshotErrorKind::InvalidDbClusterStateFault({
+                    let mut output =
+                        crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::CopyDBClusterSnapshotError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -502,34 +526,34 @@ pub fn parse_copy_db_cluster_snapshot_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSKeyNotAccessibleFault" => crate::error::CopyDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CopyDBClusterSnapshotErrorKind::KmsKeyNotAccessibleFault({
+            })
+        }
+        "KMSKeyNotAccessibleFault" => {
+            crate::error::CopyDBClusterSnapshotError::KmsKeyNotAccessibleFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SnapshotQuotaExceeded" => crate::error::CopyDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CopyDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault({
+            })
+        }
+        "SnapshotQuotaExceeded" => {
+            crate::error::CopyDBClusterSnapshotError::SnapshotQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -537,14 +561,15 @@ pub fn parse_copy_db_cluster_snapshot_error(
                         crate::error::snapshot_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CopyDBClusterSnapshotError::generic(generic),
     })
 }
@@ -565,6 +590,9 @@ pub fn parse_copy_db_cluster_snapshot_response(
             output,
         )
         .map_err(crate::error::CopyDBClusterSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -576,8 +604,11 @@ pub fn parse_copy_db_parameter_group_error(
     crate::output::CopyDbParameterGroupOutput,
     crate::error::CopyDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CopyDBParameterGroupError::unhandled(generic)),
@@ -585,30 +616,26 @@ pub fn parse_copy_db_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupAlreadyExists" => crate::error::CopyDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::CopyDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(
-                {
+        "DBParameterGroupAlreadyExists" => {
+            crate::error::CopyDBParameterGroupError::DbParameterGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_parameter_group_already_exists_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DBParameterGroupNotFound" => crate::error::CopyDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::CopyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault({
+                    let mut output =
+                        crate::error::db_parameter_group_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DBParameterGroupNotFound" => {
+            crate::error::CopyDBParameterGroupError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -616,35 +643,33 @@ pub fn parse_copy_db_parameter_group_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBParameterGroupQuotaExceeded" => crate::error::CopyDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::CopyDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(
-                {
+            })
+        }
+        "DBParameterGroupQuotaExceeded" => {
+            crate::error::CopyDBParameterGroupError::DbParameterGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_parameter_group_quota_exceeded_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CopyDBParameterGroupError::generic(generic),
     })
 }
@@ -665,6 +690,9 @@ pub fn parse_copy_db_parameter_group_response(
             output,
         )
         .map_err(crate::error::CopyDBParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -673,8 +701,11 @@ pub fn parse_copy_db_parameter_group_response(
 pub fn parse_create_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbClusterOutput, crate::error::CreateDBClusterError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateDBClusterError::unhandled(generic)),
@@ -682,9 +713,8 @@ pub fn parse_create_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterAlreadyExistsFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::DbClusterAlreadyExistsFault({
+        "DBClusterAlreadyExistsFault" => {
+            crate::error::CreateDBClusterError::DbClusterAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -692,34 +722,32 @@ pub fn parse_create_db_cluster_error(
                         crate::error::db_cluster_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterNotFoundFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::DbClusterNotFoundFault({
+            })
+        }
+        "DBClusterNotFoundFault" => crate::error::CreateDBClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBClusterParameterGroupNotFound" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::DbClusterParameterGroupNotFoundFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBClusterParameterGroupNotFound" => {
+            crate::error::CreateDBClusterError::DbClusterParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -728,17 +756,17 @@ pub fn parse_create_db_cluster_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterQuotaExceededFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::DbClusterQuotaExceededFault({
+            })
+        }
+        "DBClusterQuotaExceededFault" => {
+            crate::error::CreateDBClusterError::DbClusterQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -746,53 +774,51 @@ pub fn parse_create_db_cluster_error(
                         crate::error::db_cluster_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::DbInstanceNotFoundFault({
+            })
+        }
+        "DBInstanceNotFound" => crate::error::CreateDBClusterError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
+            crate::error::CreateDBClusterError::DbSubnetGroupDoesNotCoverEnoughAZs({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder::default(
+                        );
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
-            crate::error::CreateDBClusterError {
-                meta: generic,
-                kind: crate::error::CreateDBClusterErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::db_subnet_group_does_not_cover_enough_a_zs::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "DBSubnetGroupNotFoundFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::DbSubnetGroupNotFoundFault({
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::CreateDBClusterError::DbSubnetGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -800,17 +826,17 @@ pub fn parse_create_db_cluster_error(
                         crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GlobalClusterNotFoundFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::GlobalClusterNotFoundFault({
+            })
+        }
+        "GlobalClusterNotFoundFault" => {
+            crate::error::CreateDBClusterError::GlobalClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -818,36 +844,36 @@ pub fn parse_create_db_cluster_error(
                         crate::error::global_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InsufficientStorageClusterCapacity" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InsufficientStorageClusterCapacityFault(
-                {
+            })
+        }
+        "InsufficientStorageClusterCapacity" => {
+            crate::error::CreateDBClusterError::InsufficientStorageClusterCapacityFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_storage_cluster_capacity_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidDBClusterStateFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InvalidDbClusterStateFault({
+                    let mut output =
+                        crate::error::insufficient_storage_cluster_capacity_fault::Builder::default(
+                        );
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::CreateDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -855,17 +881,17 @@ pub fn parse_create_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::CreateDBClusterError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -873,17 +899,17 @@ pub fn parse_create_db_cluster_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBSubnetGroupStateFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InvalidDbSubnetGroupStateFault({
+            })
+        }
+        "InvalidDBSubnetGroupStateFault" => {
+            crate::error::CreateDBClusterError::InvalidDbSubnetGroupStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -891,17 +917,17 @@ pub fn parse_create_db_cluster_error(
                         crate::error::invalid_db_subnet_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGlobalClusterStateFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InvalidGlobalClusterStateFault({
+            })
+        }
+        "InvalidGlobalClusterStateFault" => {
+            crate::error::CreateDBClusterError::InvalidGlobalClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -909,38 +935,36 @@ pub fn parse_create_db_cluster_error(
                         crate::error::invalid_global_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSubnet" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InvalidSubnet({
+            })
+        }
+        "InvalidSubnet" => crate::error::CreateDBClusterError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidVPCNetworkStateFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::InvalidVpcNetworkStateFault({
+                let mut output = crate::error::invalid_subnet::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidVPCNetworkStateFault" => {
+            crate::error::CreateDBClusterError::InvalidVpcNetworkStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -948,48 +972,47 @@ pub fn parse_create_db_cluster_error(
                         crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSKeyNotAccessibleFault" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::KmsKeyNotAccessibleFault({
+            })
+        }
+        "KMSKeyNotAccessibleFault" => {
+            crate::error::CreateDBClusterError::KmsKeyNotAccessibleFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StorageQuotaExceeded" => crate::error::CreateDBClusterError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterErrorKind::StorageQuotaExceededFault({
+            })
+        }
+        "StorageQuotaExceeded" => crate::error::CreateDBClusterError::StorageQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateDBClusterError::generic(generic),
     })
 }
@@ -1007,6 +1030,9 @@ pub fn parse_create_db_cluster_response(
             output,
         )
         .map_err(crate::error::CreateDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1018,8 +1044,11 @@ pub fn parse_create_db_cluster_endpoint_error(
     crate::output::CreateDbClusterEndpointOutput,
     crate::error::CreateDBClusterEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1031,83 +1060,78 @@ pub fn parse_create_db_cluster_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterEndpointAlreadyExistsFault" => crate::error::CreateDBClusterEndpointError {
-            meta: generic,
-            kind:
-                crate::error::CreateDBClusterEndpointErrorKind::DbClusterEndpointAlreadyExistsFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_endpoint_already_exists_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_db_cluster_endpoint_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DBClusterEndpointQuotaExceededFault" => crate::error::CreateDBClusterEndpointError {
-            meta: generic,
-            kind:
-                crate::error::CreateDBClusterEndpointErrorKind::DbClusterEndpointQuotaExceededFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_db_cluster_endpoint_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DBClusterNotFoundFault" => crate::error::CreateDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterEndpointErrorKind::DbClusterNotFoundFault({
+        "DBClusterEndpointAlreadyExistsFault" => {
+            crate::error::CreateDBClusterEndpointError::DbClusterEndpointAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::db_cluster_endpoint_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_endpoint_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DBClusterEndpointQuotaExceededFault" => {
+            crate::error::CreateDBClusterEndpointError::DbClusterEndpointQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::db_cluster_endpoint_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_endpoint_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DBClusterNotFoundFault" => {
+            crate::error::CreateDBClusterEndpointError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::CreateDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterEndpointErrorKind::DbInstanceNotFoundFault({
+            })
+        }
+        "DBInstanceNotFound" => {
+            crate::error::CreateDBClusterEndpointError::DbInstanceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_instance_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::CreateDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterEndpointErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::CreateDBClusterEndpointError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1115,17 +1139,17 @@ pub fn parse_create_db_cluster_endpoint_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::CreateDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterEndpointErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::CreateDBClusterEndpointError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1133,14 +1157,15 @@ pub fn parse_create_db_cluster_endpoint_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateDBClusterEndpointError::generic(generic),
     })
 }
@@ -1161,6 +1186,9 @@ pub fn parse_create_db_cluster_endpoint_response(
             output,
         )
         .map_err(crate::error::CreateDBClusterEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1172,8 +1200,11 @@ pub fn parse_create_db_cluster_parameter_group_error(
     crate::output::CreateDbClusterParameterGroupOutput,
     crate::error::CreateDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBClusterParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1185,39 +1216,43 @@ pub fn parse_create_db_cluster_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupAlreadyExists" => crate::error::CreateDBClusterParameterGroupError { meta: generic, kind: crate::error::CreateDBClusterParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupAlreadyExists" => {
+            crate::error::CreateDBClusterParameterGroupError::DbParameterGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_already_exists_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBParameterGroupQuotaExceeded" => crate::error::CreateDBClusterParameterGroupError { meta: generic, kind: crate::error::CreateDBClusterParameterGroupErrorKind::DbParameterGroupQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBParameterGroupQuotaExceeded" => {
+            crate::error::CreateDBClusterParameterGroupError::DbParameterGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateDBClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::CreateDBClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -1239,6 +1274,9 @@ pub fn parse_create_db_cluster_parameter_group_response(
                 output,
             )
             .map_err(crate::error::CreateDBClusterParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1250,8 +1288,11 @@ pub fn parse_create_db_cluster_snapshot_error(
     crate::output::CreateDbClusterSnapshotOutput,
     crate::error::CreateDBClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1263,66 +1304,61 @@ pub fn parse_create_db_cluster_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::CreateDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterSnapshotErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::CreateDBClusterSnapshotError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterSnapshotAlreadyExistsFault" => crate::error::CreateDBClusterSnapshotError {
-            meta: generic,
-            kind:
-                crate::error::CreateDBClusterSnapshotErrorKind::DbClusterSnapshotAlreadyExistsFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_snapshot_already_exists_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidDBClusterSnapshotStateFault" => crate::error::CreateDBClusterSnapshotError {
-            meta: generic,
-            kind:
-                crate::error::CreateDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidDBClusterStateFault" => crate::error::CreateDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterSnapshotErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "DBClusterSnapshotAlreadyExistsFault" => {
+            crate::error::CreateDBClusterSnapshotError::DbClusterSnapshotAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::db_cluster_snapshot_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::error::CreateDBClusterSnapshotError::InvalidDbClusterSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::CreateDBClusterSnapshotError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1330,17 +1366,17 @@ pub fn parse_create_db_cluster_snapshot_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SnapshotQuotaExceeded" => crate::error::CreateDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::CreateDBClusterSnapshotErrorKind::SnapshotQuotaExceededFault({
+            })
+        }
+        "SnapshotQuotaExceeded" => {
+            crate::error::CreateDBClusterSnapshotError::SnapshotQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1348,14 +1384,15 @@ pub fn parse_create_db_cluster_snapshot_error(
                         crate::error::snapshot_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateDBClusterSnapshotError::generic(generic),
     })
 }
@@ -1376,6 +1413,9 @@ pub fn parse_create_db_cluster_snapshot_response(
             output,
         )
         .map_err(crate::error::CreateDBClusterSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1385,8 +1425,11 @@ pub fn parse_create_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateDbInstanceOutput, crate::error::CreateDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateDBInstanceError::unhandled(generic)),
@@ -1394,9 +1437,8 @@ pub fn parse_create_db_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationNotFound" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::AuthorizationNotFoundFault({
+        "AuthorizationNotFound" => {
+            crate::error::CreateDBInstanceError::AuthorizationNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1404,34 +1446,32 @@ pub fn parse_create_db_instance_error(
                         crate::error::authorization_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterNotFoundFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DbClusterNotFoundFault({
+            })
+        }
+        "DBClusterNotFoundFault" => crate::error::CreateDBInstanceError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBInstanceAlreadyExists" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DbInstanceAlreadyExistsFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBInstanceAlreadyExists" => {
+            crate::error::CreateDBInstanceError::DbInstanceAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1439,17 +1479,17 @@ pub fn parse_create_db_instance_error(
                         crate::error::db_instance_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_instance_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBParameterGroupNotFound" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DbParameterGroupNotFoundFault({
+            })
+        }
+        "DBParameterGroupNotFound" => {
+            crate::error::CreateDBInstanceError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1457,17 +1497,17 @@ pub fn parse_create_db_instance_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSecurityGroupNotFound" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DbSecurityGroupNotFoundFault({
+            })
+        }
+        "DBSecurityGroupNotFound" => {
+            crate::error::CreateDBInstanceError::DbSecurityGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1475,17 +1515,17 @@ pub fn parse_create_db_instance_error(
                         crate::error::db_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs({
+            })
+        }
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
+            crate::error::CreateDBInstanceError::DbSubnetGroupDoesNotCoverEnoughAZs({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1494,17 +1534,17 @@ pub fn parse_create_db_instance_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupNotFoundFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DbSubnetGroupNotFoundFault({
+            })
+        }
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::CreateDBInstanceError::DbSubnetGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1512,34 +1552,34 @@ pub fn parse_create_db_instance_error(
                         crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DomainNotFoundFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::DomainNotFoundFault({
+            })
+        }
+        "DomainNotFoundFault" => {
+            crate::error::CreateDBInstanceError::DomainNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::domain_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_domain_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InstanceQuotaExceeded" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::InstanceQuotaExceededFault({
+            })
+        }
+        "InstanceQuotaExceeded" => {
+            crate::error::CreateDBInstanceError::InstanceQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1547,17 +1587,17 @@ pub fn parse_create_db_instance_error(
                         crate::error::instance_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_instance_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InsufficientDBInstanceCapacity" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::InsufficientDbInstanceCapacityFault({
+            })
+        }
+        "InsufficientDBInstanceCapacity" => {
+            crate::error::CreateDBInstanceError::InsufficientDbInstanceCapacityFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1565,17 +1605,17 @@ pub fn parse_create_db_instance_error(
                         crate::error::insufficient_db_instance_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_db_instance_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::CreateDBInstanceError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1583,38 +1623,36 @@ pub fn parse_create_db_instance_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSubnet" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::InvalidSubnet({
+            })
+        }
+        "InvalidSubnet" => crate::error::CreateDBInstanceError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidVPCNetworkStateFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::InvalidVpcNetworkStateFault({
+                let mut output = crate::error::invalid_subnet::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidVPCNetworkStateFault" => {
+            crate::error::CreateDBInstanceError::InvalidVpcNetworkStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1622,51 +1660,51 @@ pub fn parse_create_db_instance_error(
                         crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSKeyNotAccessibleFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::KmsKeyNotAccessibleFault({
+            })
+        }
+        "KMSKeyNotAccessibleFault" => {
+            crate::error::CreateDBInstanceError::KmsKeyNotAccessibleFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OptionGroupNotFoundFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::OptionGroupNotFoundFault({
+            })
+        }
+        "OptionGroupNotFoundFault" => {
+            crate::error::CreateDBInstanceError::OptionGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::option_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProvisionedIopsNotAvailableInAZFault" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault({
+            })
+        }
+        "ProvisionedIopsNotAvailableInAZFault" => {
+            crate::error::CreateDBInstanceError::ProvisionedIopsNotAvailableInAzFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1675,34 +1713,32 @@ pub fn parse_create_db_instance_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_provisioned_iops_not_available_in_az_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StorageQuotaExceeded" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::StorageQuotaExceededFault({
+            })
+        }
+        "StorageQuotaExceeded" => crate::error::CreateDBInstanceError::StorageQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "StorageTypeNotSupported" => crate::error::CreateDBInstanceError {
-            meta: generic,
-            kind: crate::error::CreateDBInstanceErrorKind::StorageTypeNotSupportedFault({
+                let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StorageTypeNotSupported" => {
+            crate::error::CreateDBInstanceError::StorageTypeNotSupportedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1710,14 +1746,15 @@ pub fn parse_create_db_instance_error(
                         crate::error::storage_type_not_supported_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_storage_type_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateDBInstanceError::generic(generic),
     })
 }
@@ -1736,6 +1773,9 @@ pub fn parse_create_db_instance_response(
             output,
         )
         .map_err(crate::error::CreateDBInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1747,8 +1787,11 @@ pub fn parse_create_db_parameter_group_error(
     crate::output::CreateDbParameterGroupOutput,
     crate::error::CreateDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1760,48 +1803,42 @@ pub fn parse_create_db_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupAlreadyExists" => crate::error::CreateDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBParameterGroupErrorKind::DbParameterGroupAlreadyExistsFault(
-                {
+        "DBParameterGroupAlreadyExists" => {
+            crate::error::CreateDBParameterGroupError::DbParameterGroupAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_parameter_group_already_exists_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "DBParameterGroupQuotaExceeded" => crate::error::CreateDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBParameterGroupErrorKind::DbParameterGroupQuotaExceededFault(
-                {
+                    let mut output =
+                        crate::error::db_parameter_group_already_exists_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "DBParameterGroupQuotaExceeded" => {
+            crate::error::CreateDBParameterGroupError::DbParameterGroupQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_parameter_group_quota_exceeded_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::db_parameter_group_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateDBParameterGroupError::generic(generic),
     })
 }
@@ -1822,6 +1859,9 @@ pub fn parse_create_db_parameter_group_response(
             output,
         )
         .map_err(crate::error::CreateDBParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1833,8 +1873,11 @@ pub fn parse_create_db_subnet_group_error(
     crate::output::CreateDbSubnetGroupOutput,
     crate::error::CreateDBSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateDBSubnetGroupError::unhandled(generic)),
@@ -1842,9 +1885,8 @@ pub fn parse_create_db_subnet_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBSubnetGroupAlreadyExists" => crate::error::CreateDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBSubnetGroupErrorKind::DbSubnetGroupAlreadyExistsFault({
+        "DBSubnetGroupAlreadyExists" => {
+            crate::error::CreateDBSubnetGroupError::DbSubnetGroupAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1852,17 +1894,17 @@ pub fn parse_create_db_subnet_group_error(
                         crate::error::db_subnet_group_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::error::CreateDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs({
+            })
+        }
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
+            crate::error::CreateDBSubnetGroupError::DbSubnetGroupDoesNotCoverEnoughAZs({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1871,17 +1913,17 @@ pub fn parse_create_db_subnet_group_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupQuotaExceeded" => crate::error::CreateDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBSubnetGroupErrorKind::DbSubnetGroupQuotaExceededFault({
+            })
+        }
+        "DBSubnetGroupQuotaExceeded" => {
+            crate::error::CreateDBSubnetGroupError::DbSubnetGroupQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1889,17 +1931,17 @@ pub fn parse_create_db_subnet_group_error(
                         crate::error::db_subnet_group_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetQuotaExceededFault" => crate::error::CreateDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault({
+            })
+        }
+        "DBSubnetQuotaExceededFault" => {
+            crate::error::CreateDBSubnetGroupError::DbSubnetQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1907,35 +1949,34 @@ pub fn parse_create_db_subnet_group_error(
                         crate::error::db_subnet_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSubnet" => crate::error::CreateDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::CreateDBSubnetGroupErrorKind::InvalidSubnet({
+            })
+        }
+        "InvalidSubnet" => crate::error::CreateDBSubnetGroupError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_subnet::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateDBSubnetGroupError::generic(generic),
     })
 }
@@ -1956,6 +1997,9 @@ pub fn parse_create_db_subnet_group_response(
             output,
         )
         .map_err(crate::error::CreateDBSubnetGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1967,8 +2011,11 @@ pub fn parse_create_event_subscription_error(
     crate::output::CreateEventSubscriptionOutput,
     crate::error::CreateEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1980,63 +2027,60 @@ pub fn parse_create_event_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EventSubscriptionQuotaExceeded" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind:
-                crate::error::CreateEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::event_subscription_quota_exceeded_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "SNSInvalidTopic" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateEventSubscriptionErrorKind::SnsInvalidTopicFault({
+        "EventSubscriptionQuotaExceeded" => {
+            crate::error::CreateEventSubscriptionError::EventSubscriptionQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_subscription_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "SNSInvalidTopic" => {
+            crate::error::CreateEventSubscriptionError::SnsInvalidTopicFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::sns_invalid_topic_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_sns_invalid_topic_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SNSNoAuthorization" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateEventSubscriptionErrorKind::SnsNoAuthorizationFault({
+            })
+        }
+        "SNSNoAuthorization" => {
+            crate::error::CreateEventSubscriptionError::SnsNoAuthorizationFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::sns_no_authorization_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_sns_no_authorization_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SNSTopicArnNotFound" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateEventSubscriptionErrorKind::SnsTopicArnNotFoundFault({
+            })
+        }
+        "SNSTopicArnNotFound" => {
+            crate::error::CreateEventSubscriptionError::SnsTopicArnNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2044,34 +2088,34 @@ pub fn parse_create_event_subscription_error(
                         crate::error::sns_topic_arn_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SourceNotFound" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateEventSubscriptionErrorKind::SourceNotFoundFault({
+            })
+        }
+        "SourceNotFound" => {
+            crate::error::CreateEventSubscriptionError::SourceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::source_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_source_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SubscriptionAlreadyExist" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateEventSubscriptionErrorKind::SubscriptionAlreadyExistFault({
+            })
+        }
+        "SubscriptionAlreadyExist" => {
+            crate::error::CreateEventSubscriptionError::SubscriptionAlreadyExistFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2079,34 +2123,33 @@ pub fn parse_create_event_subscription_error(
                         crate::error::subscription_already_exist_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_subscription_already_exist_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SubscriptionCategoryNotFound" => crate::error::CreateEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::CreateEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(
-                {
+            })
+        }
+        "SubscriptionCategoryNotFound" => {
+            crate::error::CreateEventSubscriptionError::SubscriptionCategoryNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::subscription_category_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_subscription_category_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::subscription_category_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_subscription_category_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::CreateEventSubscriptionError::generic(generic),
     })
 }
@@ -2127,6 +2170,9 @@ pub fn parse_create_event_subscription_response(
             output,
         )
         .map_err(crate::error::CreateEventSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2138,8 +2184,11 @@ pub fn parse_create_global_cluster_error(
     crate::output::CreateGlobalClusterOutput,
     crate::error::CreateGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateGlobalClusterError::unhandled(generic)),
@@ -2147,26 +2196,25 @@ pub fn parse_create_global_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::CreateGlobalClusterError {
-            meta: generic,
-            kind: crate::error::CreateGlobalClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::CreateGlobalClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GlobalClusterAlreadyExistsFault" => crate::error::CreateGlobalClusterError {
-            meta: generic,
-            kind: crate::error::CreateGlobalClusterErrorKind::GlobalClusterAlreadyExistsFault({
+            })
+        }
+        "GlobalClusterAlreadyExistsFault" => {
+            crate::error::CreateGlobalClusterError::GlobalClusterAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2174,17 +2222,17 @@ pub fn parse_create_global_cluster_error(
                         crate::error::global_cluster_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GlobalClusterQuotaExceededFault" => crate::error::CreateGlobalClusterError {
-            meta: generic,
-            kind: crate::error::CreateGlobalClusterErrorKind::GlobalClusterQuotaExceededFault({
+            })
+        }
+        "GlobalClusterQuotaExceededFault" => {
+            crate::error::CreateGlobalClusterError::GlobalClusterQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2192,17 +2240,17 @@ pub fn parse_create_global_cluster_error(
                         crate::error::global_cluster_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::CreateGlobalClusterError {
-            meta: generic,
-            kind: crate::error::CreateGlobalClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::CreateGlobalClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2210,14 +2258,15 @@ pub fn parse_create_global_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateGlobalClusterError::generic(generic),
     })
 }
@@ -2238,6 +2287,9 @@ pub fn parse_create_global_cluster_response(
             output,
         )
         .map_err(crate::error::CreateGlobalClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2246,8 +2298,11 @@ pub fn parse_create_global_cluster_response(
 pub fn parse_delete_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbClusterOutput, crate::error::DeleteDBClusterError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteDBClusterError::unhandled(generic)),
@@ -2255,26 +2310,23 @@ pub fn parse_delete_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::DeleteDBClusterError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::error::DeleteDBClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBClusterSnapshotAlreadyExistsFault" => crate::error::DeleteDBClusterError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterErrorKind::DbClusterSnapshotAlreadyExistsFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBClusterSnapshotAlreadyExistsFault" => {
+            crate::error::DeleteDBClusterError::DbClusterSnapshotAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2282,17 +2334,17 @@ pub fn parse_delete_db_cluster_error(
                         crate::error::db_cluster_snapshot_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterSnapshotStateFault" => crate::error::DeleteDBClusterError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterErrorKind::InvalidDbClusterSnapshotStateFault({
+            })
+        }
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::error::DeleteDBClusterError::InvalidDbClusterSnapshotStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2300,17 +2352,17 @@ pub fn parse_delete_db_cluster_error(
                         crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::DeleteDBClusterError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::DeleteDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2318,17 +2370,17 @@ pub fn parse_delete_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SnapshotQuotaExceeded" => crate::error::DeleteDBClusterError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterErrorKind::SnapshotQuotaExceededFault({
+            })
+        }
+        "SnapshotQuotaExceeded" => {
+            crate::error::DeleteDBClusterError::SnapshotQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2336,14 +2388,15 @@ pub fn parse_delete_db_cluster_error(
                         crate::error::snapshot_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteDBClusterError::generic(generic),
     })
 }
@@ -2361,6 +2414,9 @@ pub fn parse_delete_db_cluster_response(
             output,
         )
         .map_err(crate::error::DeleteDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2372,8 +2428,11 @@ pub fn parse_delete_db_cluster_endpoint_error(
     crate::output::DeleteDbClusterEndpointOutput,
     crate::error::DeleteDBClusterEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2385,9 +2444,8 @@ pub fn parse_delete_db_cluster_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterEndpointNotFoundFault" => crate::error::DeleteDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault({
+        "DBClusterEndpointNotFoundFault" => {
+            crate::error::DeleteDBClusterEndpointError::DbClusterEndpointNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2395,37 +2453,35 @@ pub fn parse_delete_db_cluster_endpoint_error(
                         crate::error::db_cluster_endpoint_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterEndpointStateFault" => crate::error::DeleteDBClusterEndpointError {
-            meta: generic,
-            kind:
-                crate::error::DeleteDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_endpoint_state_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidDBClusterStateFault" => crate::error::DeleteDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterEndpointErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterEndpointStateFault" => {
+            crate::error::DeleteDBClusterEndpointError::InvalidDbClusterEndpointStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_endpoint_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::DeleteDBClusterEndpointError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2433,14 +2489,15 @@ pub fn parse_delete_db_cluster_endpoint_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteDBClusterEndpointError::generic(generic),
     })
 }
@@ -2461,6 +2518,9 @@ pub fn parse_delete_db_cluster_endpoint_response(
             output,
         )
         .map_err(crate::error::DeleteDBClusterEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2472,8 +2532,11 @@ pub fn parse_delete_db_cluster_parameter_group_error(
     crate::output::DeleteDbClusterParameterGroupOutput,
     crate::error::DeleteDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBClusterParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2485,39 +2548,43 @@ pub fn parse_delete_db_cluster_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::DeleteDBClusterParameterGroupError { meta: generic, kind: crate::error::DeleteDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupNotFound" => {
+            crate::error::DeleteDBClusterParameterGroupError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBParameterGroupState" => crate::error::DeleteDBClusterParameterGroupError { meta: generic, kind: crate::error::DeleteDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBParameterGroupState" => {
+            crate::error::DeleteDBClusterParameterGroupError::InvalidDbParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteDBClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteDBClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -2533,6 +2600,9 @@ pub fn parse_delete_db_cluster_parameter_group_response(
         let mut output =
             crate::output::delete_db_cluster_parameter_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2544,8 +2614,11 @@ pub fn parse_delete_db_cluster_snapshot_error(
     crate::output::DeleteDbClusterSnapshotOutput,
     crate::error::DeleteDBClusterSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2557,9 +2630,8 @@ pub fn parse_delete_db_cluster_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotNotFoundFault" => crate::error::DeleteDBClusterSnapshotError {
-            meta: generic,
-            kind: crate::error::DeleteDBClusterSnapshotErrorKind::DbClusterSnapshotNotFoundFault({
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::error::DeleteDBClusterSnapshotError::DbClusterSnapshotNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2567,34 +2639,33 @@ pub fn parse_delete_db_cluster_snapshot_error(
                         crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterSnapshotStateFault" => crate::error::DeleteDBClusterSnapshotError {
-            meta: generic,
-            kind:
-                crate::error::DeleteDBClusterSnapshotErrorKind::InvalidDbClusterSnapshotStateFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+            })
+        }
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::error::DeleteDBClusterSnapshotError::InvalidDbClusterSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteDBClusterSnapshotError::generic(generic),
     })
 }
@@ -2615,6 +2686,9 @@ pub fn parse_delete_db_cluster_snapshot_response(
             output,
         )
         .map_err(crate::error::DeleteDBClusterSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2624,8 +2698,11 @@ pub fn parse_delete_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteDbInstanceOutput, crate::error::DeleteDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteDBInstanceError::unhandled(generic)),
@@ -2633,26 +2710,23 @@ pub fn parse_delete_db_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::DeleteDBInstanceError {
-            meta: generic,
-            kind: crate::error::DeleteDBInstanceErrorKind::DbInstanceNotFoundFault({
+        "DBInstanceNotFound" => crate::error::DeleteDBInstanceError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBSnapshotAlreadyExists" => crate::error::DeleteDBInstanceError {
-            meta: generic,
-            kind: crate::error::DeleteDBInstanceErrorKind::DbSnapshotAlreadyExistsFault({
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBSnapshotAlreadyExists" => {
+            crate::error::DeleteDBInstanceError::DbSnapshotAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2660,17 +2734,17 @@ pub fn parse_delete_db_instance_error(
                         crate::error::db_snapshot_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_snapshot_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::DeleteDBInstanceError {
-            meta: generic,
-            kind: crate::error::DeleteDBInstanceErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::DeleteDBInstanceError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2678,17 +2752,17 @@ pub fn parse_delete_db_instance_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::DeleteDBInstanceError {
-            meta: generic,
-            kind: crate::error::DeleteDBInstanceErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::DeleteDBInstanceError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2696,17 +2770,17 @@ pub fn parse_delete_db_instance_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SnapshotQuotaExceeded" => crate::error::DeleteDBInstanceError {
-            meta: generic,
-            kind: crate::error::DeleteDBInstanceErrorKind::SnapshotQuotaExceededFault({
+            })
+        }
+        "SnapshotQuotaExceeded" => {
+            crate::error::DeleteDBInstanceError::SnapshotQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2714,14 +2788,15 @@ pub fn parse_delete_db_instance_error(
                         crate::error::snapshot_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteDBInstanceError::generic(generic),
     })
 }
@@ -2740,6 +2815,9 @@ pub fn parse_delete_db_instance_response(
             output,
         )
         .map_err(crate::error::DeleteDBInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2751,8 +2829,11 @@ pub fn parse_delete_db_parameter_group_error(
     crate::output::DeleteDbParameterGroupOutput,
     crate::error::DeleteDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2764,9 +2845,8 @@ pub fn parse_delete_db_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::DeleteDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::DeleteDBParameterGroupErrorKind::DbParameterGroupNotFoundFault({
+        "DBParameterGroupNotFound" => {
+            crate::error::DeleteDBParameterGroupError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2774,35 +2854,33 @@ pub fn parse_delete_db_parameter_group_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBParameterGroupState" => crate::error::DeleteDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::DeleteDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(
-                {
+            })
+        }
+        "InvalidDBParameterGroupState" => {
+            crate::error::DeleteDBParameterGroupError::InvalidDbParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_db_parameter_group_state_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteDBParameterGroupError::generic(generic),
     })
 }
@@ -2818,6 +2896,9 @@ pub fn parse_delete_db_parameter_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_parameter_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2829,8 +2910,11 @@ pub fn parse_delete_db_subnet_group_error(
     crate::output::DeleteDbSubnetGroupOutput,
     crate::error::DeleteDBSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteDBSubnetGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteDBSubnetGroupError::unhandled(generic)),
@@ -2838,9 +2922,8 @@ pub fn parse_delete_db_subnet_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBSubnetGroupNotFoundFault" => crate::error::DeleteDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::DeleteDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault({
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::DeleteDBSubnetGroupError::DbSubnetGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2848,17 +2931,17 @@ pub fn parse_delete_db_subnet_group_error(
                         crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBSubnetGroupStateFault" => crate::error::DeleteDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::DeleteDBSubnetGroupErrorKind::InvalidDbSubnetGroupStateFault({
+            })
+        }
+        "InvalidDBSubnetGroupStateFault" => {
+            crate::error::DeleteDBSubnetGroupError::InvalidDbSubnetGroupStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2866,17 +2949,17 @@ pub fn parse_delete_db_subnet_group_error(
                         crate::error::invalid_db_subnet_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBSubnetStateFault" => crate::error::DeleteDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::DeleteDBSubnetGroupErrorKind::InvalidDbSubnetStateFault({
+            })
+        }
+        "InvalidDBSubnetStateFault" => {
+            crate::error::DeleteDBSubnetGroupError::InvalidDbSubnetStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2884,14 +2967,15 @@ pub fn parse_delete_db_subnet_group_error(
                         crate::error::invalid_db_subnet_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_subnet_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteDBSubnetGroupError::generic(generic),
     })
 }
@@ -2907,6 +2991,9 @@ pub fn parse_delete_db_subnet_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_db_subnet_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2918,8 +3005,11 @@ pub fn parse_delete_event_subscription_error(
     crate::output::DeleteEventSubscriptionOutput,
     crate::error::DeleteEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2931,43 +3021,41 @@ pub fn parse_delete_event_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidEventSubscriptionState" => crate::error::DeleteEventSubscriptionError {
-            meta: generic,
-            kind:
-                crate::error::DeleteEventSubscriptionErrorKind::InvalidEventSubscriptionStateFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_event_subscription_state_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_invalid_event_subscription_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "SubscriptionNotFound" => crate::error::DeleteEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::DeleteEventSubscriptionErrorKind::SubscriptionNotFoundFault({
+        "InvalidEventSubscriptionState" => {
+            crate::error::DeleteEventSubscriptionError::InvalidEventSubscriptionStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::subscription_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_event_subscription_state_fault::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_event_subscription_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "SubscriptionNotFound" => {
+            crate::error::DeleteEventSubscriptionError::SubscriptionNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::subscription_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteEventSubscriptionError::generic(generic),
     })
 }
@@ -2988,6 +3076,9 @@ pub fn parse_delete_event_subscription_response(
             output,
         )
         .map_err(crate::error::DeleteEventSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2999,8 +3090,11 @@ pub fn parse_delete_global_cluster_error(
     crate::output::DeleteGlobalClusterOutput,
     crate::error::DeleteGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteGlobalClusterError::unhandled(generic)),
@@ -3008,9 +3102,8 @@ pub fn parse_delete_global_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "GlobalClusterNotFoundFault" => crate::error::DeleteGlobalClusterError {
-            meta: generic,
-            kind: crate::error::DeleteGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+        "GlobalClusterNotFoundFault" => {
+            crate::error::DeleteGlobalClusterError::GlobalClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3018,17 +3111,17 @@ pub fn parse_delete_global_cluster_error(
                         crate::error::global_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGlobalClusterStateFault" => crate::error::DeleteGlobalClusterError {
-            meta: generic,
-            kind: crate::error::DeleteGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+            })
+        }
+        "InvalidGlobalClusterStateFault" => {
+            crate::error::DeleteGlobalClusterError::InvalidGlobalClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3036,14 +3129,15 @@ pub fn parse_delete_global_cluster_error(
                         crate::error::invalid_global_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteGlobalClusterError::generic(generic),
     })
 }
@@ -3064,6 +3158,9 @@ pub fn parse_delete_global_cluster_response(
             output,
         )
         .map_err(crate::error::DeleteGlobalClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3075,8 +3172,11 @@ pub fn parse_describe_db_cluster_endpoints_error(
     crate::output::DescribeDbClusterEndpointsOutput,
     crate::error::DescribeDBClusterEndpointsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBClusterEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3088,23 +3188,23 @@ pub fn parse_describe_db_cluster_endpoints_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::DescribeDBClusterEndpointsError {
-            meta: generic,
-            kind: crate::error::DescribeDBClusterEndpointsErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::DescribeDBClusterEndpointsError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeDBClusterEndpointsError::generic(generic),
     })
 }
@@ -3125,6 +3225,9 @@ pub fn parse_describe_db_cluster_endpoints_response(
             output,
         )
         .map_err(crate::error::DescribeDBClusterEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3136,8 +3239,11 @@ pub fn parse_describe_db_cluster_parameter_groups_error(
     crate::output::DescribeDbClusterParameterGroupsOutput,
     crate::error::DescribeDBClusterParameterGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBClusterParameterGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3147,23 +3253,25 @@ pub fn parse_describe_db_cluster_parameter_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::DescribeDBClusterParameterGroupsError { meta: generic, kind: crate::error::DescribeDBClusterParameterGroupsErrorKind::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupNotFound" => {
+            crate::error::DescribeDBClusterParameterGroupsError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterParameterGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeDBClusterParameterGroupsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeDBClusterParameterGroupsError::generic(generic),
     })
 }
 
@@ -3185,6 +3293,9 @@ pub fn parse_describe_db_cluster_parameter_groups_response(
                 output,
             )
             .map_err(crate::error::DescribeDBClusterParameterGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3196,8 +3307,11 @@ pub fn parse_describe_db_cluster_parameters_error(
     crate::output::DescribeDbClusterParametersOutput,
     crate::error::DescribeDBClusterParametersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBClusterParametersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3209,26 +3323,24 @@ pub fn parse_describe_db_cluster_parameters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::DescribeDBClusterParametersError {
-            meta: generic,
-            kind: crate::error::DescribeDBClusterParametersErrorKind::DbParameterGroupNotFoundFault(
-                {
+        "DBParameterGroupNotFound" => {
+            crate::error::DescribeDBClusterParametersError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterParametersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterParametersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeDBClusterParametersError::generic(generic),
     })
 }
@@ -3249,6 +3361,9 @@ pub fn parse_describe_db_cluster_parameters_response(
             output,
         )
         .map_err(crate::error::DescribeDBClusterParametersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3260,8 +3375,11 @@ pub fn parse_describe_db_clusters_error(
     crate::output::DescribeDbClustersOutput,
     crate::error::DescribeDBClustersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBClustersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeDBClustersError::unhandled(generic)),
@@ -3269,23 +3387,23 @@ pub fn parse_describe_db_clusters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::DescribeDBClustersError {
-            meta: generic,
-            kind: crate::error::DescribeDBClustersErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::DescribeDBClustersError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClustersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeDBClustersError::generic(generic),
     })
 }
@@ -3306,6 +3424,9 @@ pub fn parse_describe_db_clusters_response(
             output,
         )
         .map_err(crate::error::DescribeDBClustersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3317,8 +3438,11 @@ pub fn parse_describe_db_cluster_snapshot_attributes_error(
     crate::output::DescribeDbClusterSnapshotAttributesOutput,
     crate::error::DescribeDBClusterSnapshotAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBClusterSnapshotAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3328,23 +3452,27 @@ pub fn parse_describe_db_cluster_snapshot_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotNotFoundFault" => crate::error::DescribeDBClusterSnapshotAttributesError { meta: generic, kind: crate::error::DescribeDBClusterSnapshotAttributesErrorKind::DbClusterSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::error::DescribeDBClusterSnapshotAttributesError::DbClusterSnapshotNotFoundFault(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotAttributesError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeDBClusterSnapshotAttributesError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotAttributesError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::DescribeDBClusterSnapshotAttributesError::generic(generic),
     })
 }
 
@@ -3361,6 +3489,9 @@ pub fn parse_describe_db_cluster_snapshot_attributes_response(
             crate::output::describe_db_cluster_snapshot_attributes_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_db_cluster_snapshot_attributes(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3372,8 +3503,11 @@ pub fn parse_describe_db_cluster_snapshots_error(
     crate::output::DescribeDbClusterSnapshotsOutput,
     crate::error::DescribeDBClusterSnapshotsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3385,26 +3519,24 @@ pub fn parse_describe_db_cluster_snapshots_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotNotFoundFault" => crate::error::DescribeDBClusterSnapshotsError {
-            meta: generic,
-            kind: crate::error::DescribeDBClusterSnapshotsErrorKind::DbClusterSnapshotNotFoundFault(
-                {
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::error::DescribeDBClusterSnapshotsError::DbClusterSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeDBClusterSnapshotsError::generic(generic),
     })
 }
@@ -3425,6 +3557,9 @@ pub fn parse_describe_db_cluster_snapshots_response(
             output,
         )
         .map_err(crate::error::DescribeDBClusterSnapshotsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3436,8 +3571,11 @@ pub fn parse_describe_db_engine_versions_error(
     crate::output::DescribeDbEngineVersionsOutput,
     crate::error::DescribeDBEngineVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBEngineVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeDBEngineVersionsError::generic(
         generic,
     ))
@@ -3459,6 +3597,9 @@ pub fn parse_describe_db_engine_versions_response(
             output,
         )
         .map_err(crate::error::DescribeDBEngineVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3470,8 +3611,11 @@ pub fn parse_describe_db_instances_error(
     crate::output::DescribeDbInstancesOutput,
     crate::error::DescribeDBInstancesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBInstancesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeDBInstancesError::unhandled(generic)),
@@ -3479,23 +3623,21 @@ pub fn parse_describe_db_instances_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::DescribeDBInstancesError {
-            meta: generic,
-            kind: crate::error::DescribeDBInstancesErrorKind::DbInstanceNotFoundFault({
+        "DBInstanceNotFound" => crate::error::DescribeDBInstancesError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBInstancesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBInstancesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeDBInstancesError::generic(generic),
     })
 }
@@ -3516,6 +3658,9 @@ pub fn parse_describe_db_instances_response(
             output,
         )
         .map_err(crate::error::DescribeDBInstancesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3527,8 +3672,11 @@ pub fn parse_describe_db_parameter_groups_error(
     crate::output::DescribeDbParameterGroupsOutput,
     crate::error::DescribeDBParameterGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBParameterGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3540,26 +3688,24 @@ pub fn parse_describe_db_parameter_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::DescribeDBParameterGroupsError {
-            meta: generic,
-            kind: crate::error::DescribeDBParameterGroupsErrorKind::DbParameterGroupNotFoundFault(
-                {
+        "DBParameterGroupNotFound" => {
+            crate::error::DescribeDBParameterGroupsError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::db_parameter_group_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBParameterGroupsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBParameterGroupsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeDBParameterGroupsError::generic(generic),
     })
 }
@@ -3580,6 +3726,9 @@ pub fn parse_describe_db_parameter_groups_response(
             output,
         )
         .map_err(crate::error::DescribeDBParameterGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3591,8 +3740,11 @@ pub fn parse_describe_db_parameters_error(
     crate::output::DescribeDbParametersOutput,
     crate::error::DescribeDBParametersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBParametersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeDBParametersError::unhandled(generic)),
@@ -3600,9 +3752,8 @@ pub fn parse_describe_db_parameters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::DescribeDBParametersError {
-            meta: generic,
-            kind: crate::error::DescribeDBParametersErrorKind::DbParameterGroupNotFoundFault({
+        "DBParameterGroupNotFound" => {
+            crate::error::DescribeDBParametersError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3610,14 +3761,15 @@ pub fn parse_describe_db_parameters_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBParametersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeDBParametersError::generic(generic),
     })
 }
@@ -3638,6 +3790,9 @@ pub fn parse_describe_db_parameters_response(
             output,
         )
         .map_err(crate::error::DescribeDBParametersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3649,8 +3804,11 @@ pub fn parse_describe_db_subnet_groups_error(
     crate::output::DescribeDbSubnetGroupsOutput,
     crate::error::DescribeDBSubnetGroupsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeDBSubnetGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3662,9 +3820,8 @@ pub fn parse_describe_db_subnet_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBSubnetGroupNotFoundFault" => crate::error::DescribeDBSubnetGroupsError {
-            meta: generic,
-            kind: crate::error::DescribeDBSubnetGroupsErrorKind::DbSubnetGroupNotFoundFault({
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::DescribeDBSubnetGroupsError::DbSubnetGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3672,14 +3829,15 @@ pub fn parse_describe_db_subnet_groups_error(
                         crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeDBSubnetGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeDBSubnetGroupsError::generic(generic),
     })
 }
@@ -3700,6 +3858,9 @@ pub fn parse_describe_db_subnet_groups_response(
             output,
         )
         .map_err(crate::error::DescribeDBSubnetGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3711,8 +3872,11 @@ pub fn parse_describe_engine_default_cluster_parameters_error(
     crate::output::DescribeEngineDefaultClusterParametersOutput,
     crate::error::DescribeEngineDefaultClusterParametersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEngineDefaultClusterParametersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEngineDefaultClusterParametersError::generic(generic))
 }
 
@@ -3729,6 +3893,9 @@ pub fn parse_describe_engine_default_cluster_parameters_response(
             crate::output::describe_engine_default_cluster_parameters_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_engine_default_cluster_parameters(response.body().as_ref(), output).map_err(crate::error::DescribeEngineDefaultClusterParametersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3740,8 +3907,11 @@ pub fn parse_describe_engine_default_parameters_error(
     crate::output::DescribeEngineDefaultParametersOutput,
     crate::error::DescribeEngineDefaultParametersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEngineDefaultParametersError::generic(
         generic,
     ))
@@ -3765,6 +3935,9 @@ pub fn parse_describe_engine_default_parameters_response(
                 output,
             )
             .map_err(crate::error::DescribeEngineDefaultParametersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3776,8 +3949,11 @@ pub fn parse_describe_event_categories_error(
     crate::output::DescribeEventCategoriesOutput,
     crate::error::DescribeEventCategoriesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventCategoriesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEventCategoriesError::generic(generic))
 }
 
@@ -3797,6 +3973,9 @@ pub fn parse_describe_event_categories_response(
             output,
         )
         .map_err(crate::error::DescribeEventCategoriesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3805,8 +3984,11 @@ pub fn parse_describe_event_categories_response(
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEventsError::generic(generic))
 }
 
@@ -3823,6 +4005,9 @@ pub fn parse_describe_events_response(
             output,
         )
         .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3834,8 +4019,11 @@ pub fn parse_describe_event_subscriptions_error(
     crate::output::DescribeEventSubscriptionsOutput,
     crate::error::DescribeEventSubscriptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3847,23 +4035,23 @@ pub fn parse_describe_event_subscriptions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SubscriptionNotFound" => crate::error::DescribeEventSubscriptionsError {
-            meta: generic,
-            kind: crate::error::DescribeEventSubscriptionsErrorKind::SubscriptionNotFoundFault({
+        "SubscriptionNotFound" => {
+            crate::error::DescribeEventSubscriptionsError::SubscriptionNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::subscription_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeEventSubscriptionsError::generic(generic),
     })
 }
@@ -3884,6 +4072,9 @@ pub fn parse_describe_event_subscriptions_response(
             output,
         )
         .map_err(crate::error::DescribeEventSubscriptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3895,8 +4086,11 @@ pub fn parse_describe_global_clusters_error(
     crate::output::DescribeGlobalClustersOutput,
     crate::error::DescribeGlobalClustersError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3908,9 +4102,8 @@ pub fn parse_describe_global_clusters_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "GlobalClusterNotFoundFault" => crate::error::DescribeGlobalClustersError {
-            meta: generic,
-            kind: crate::error::DescribeGlobalClustersErrorKind::GlobalClusterNotFoundFault({
+        "GlobalClusterNotFoundFault" => {
+            crate::error::DescribeGlobalClustersError::GlobalClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3918,14 +4111,15 @@ pub fn parse_describe_global_clusters_error(
                         crate::error::global_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeGlobalClustersError::generic(generic),
     })
 }
@@ -3946,6 +4140,9 @@ pub fn parse_describe_global_clusters_response(
             output,
         )
         .map_err(crate::error::DescribeGlobalClustersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3957,8 +4154,11 @@ pub fn parse_describe_orderable_db_instance_options_error(
     crate::output::DescribeOrderableDbInstanceOptionsOutput,
     crate::error::DescribeOrderableDBInstanceOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeOrderableDBInstanceOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeOrderableDBInstanceOptionsError::generic(generic))
 }
 
@@ -3975,6 +4175,9 @@ pub fn parse_describe_orderable_db_instance_options_response(
             crate::output::describe_orderable_db_instance_options_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_orderable_db_instance_options(response.body().as_ref(), output).map_err(crate::error::DescribeOrderableDBInstanceOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3986,8 +4189,11 @@ pub fn parse_describe_pending_maintenance_actions_error(
     crate::output::DescribePendingMaintenanceActionsOutput,
     crate::error::DescribePendingMaintenanceActionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePendingMaintenanceActionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3997,25 +4203,23 @@ pub fn parse_describe_pending_maintenance_actions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ResourceNotFoundFault" => crate::error::DescribePendingMaintenanceActionsError {
-            meta: generic,
-            kind: crate::error::DescribePendingMaintenanceActionsErrorKind::ResourceNotFoundFault(
-                {
+        "ResourceNotFoundFault" => {
+            crate::error::DescribePendingMaintenanceActionsError::ResourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePendingMaintenanceActionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::resource_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePendingMaintenanceActionsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribePendingMaintenanceActionsError::generic(generic),
     })
 }
@@ -4038,6 +4242,9 @@ pub fn parse_describe_pending_maintenance_actions_response(
                 output,
             )
             .map_err(crate::error::DescribePendingMaintenanceActionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4049,8 +4256,11 @@ pub fn parse_describe_valid_db_instance_modifications_error(
     crate::output::DescribeValidDbInstanceModificationsOutput,
     crate::error::DescribeValidDBInstanceModificationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeValidDBInstanceModificationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4060,39 +4270,42 @@ pub fn parse_describe_valid_db_instance_modifications_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::DescribeValidDBInstanceModificationsError { meta: generic, kind: crate::error::DescribeValidDBInstanceModificationsErrorKind::DbInstanceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBInstanceNotFound" => {
+            crate::error::DescribeValidDBInstanceModificationsError::DbInstanceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_instance_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeValidDBInstanceModificationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBInstanceState" => crate::error::DescribeValidDBInstanceModificationsError { meta: generic, kind: crate::error::DescribeValidDBInstanceModificationsErrorKind::InvalidDbInstanceStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::DescribeValidDBInstanceModificationsError::InvalidDbInstanceStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_instance_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeValidDBInstanceModificationsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeValidDBInstanceModificationsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeValidDBInstanceModificationsError::generic(generic),
     })
 }
 
@@ -4109,6 +4322,9 @@ pub fn parse_describe_valid_db_instance_modifications_response(
             crate::output::describe_valid_db_instance_modifications_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_valid_db_instance_modifications(response.body().as_ref(), output).map_err(crate::error::DescribeValidDBInstanceModificationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4118,8 +4334,11 @@ pub fn parse_failover_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::FailoverDbClusterOutput, crate::error::FailoverDBClusterError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::FailoverDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::FailoverDBClusterError::unhandled(generic)),
@@ -4127,26 +4346,23 @@ pub fn parse_failover_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::FailoverDBClusterError {
-            meta: generic,
-            kind: crate::error::FailoverDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::error::FailoverDBClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::FailoverDBClusterError {
-            meta: generic,
-            kind: crate::error::FailoverDBClusterErrorKind::InvalidDbClusterStateFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => {
+            crate::error::FailoverDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4154,17 +4370,17 @@ pub fn parse_failover_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::FailoverDBClusterError {
-            meta: generic,
-            kind: crate::error::FailoverDBClusterErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::FailoverDBClusterError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4172,14 +4388,15 @@ pub fn parse_failover_db_cluster_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::FailoverDBClusterError::generic(generic),
     })
 }
@@ -4198,6 +4415,9 @@ pub fn parse_failover_db_cluster_response(
             output,
         )
         .map_err(crate::error::FailoverDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4209,8 +4429,11 @@ pub fn parse_failover_global_cluster_error(
     crate::output::FailoverGlobalClusterOutput,
     crate::error::FailoverGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::FailoverGlobalClusterError::unhandled(generic)),
@@ -4218,26 +4441,25 @@ pub fn parse_failover_global_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::FailoverGlobalClusterError {
-            meta: generic,
-            kind: crate::error::FailoverGlobalClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::FailoverGlobalClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GlobalClusterNotFoundFault" => crate::error::FailoverGlobalClusterError {
-            meta: generic,
-            kind: crate::error::FailoverGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+            })
+        }
+        "GlobalClusterNotFoundFault" => {
+            crate::error::FailoverGlobalClusterError::GlobalClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4245,17 +4467,17 @@ pub fn parse_failover_global_cluster_error(
                         crate::error::global_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::FailoverGlobalClusterError {
-            meta: generic,
-            kind: crate::error::FailoverGlobalClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::FailoverGlobalClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4263,17 +4485,17 @@ pub fn parse_failover_global_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGlobalClusterStateFault" => crate::error::FailoverGlobalClusterError {
-            meta: generic,
-            kind: crate::error::FailoverGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+            })
+        }
+        "InvalidGlobalClusterStateFault" => {
+            crate::error::FailoverGlobalClusterError::InvalidGlobalClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4281,14 +4503,15 @@ pub fn parse_failover_global_cluster_error(
                         crate::error::invalid_global_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::FailoverGlobalClusterError::generic(generic),
     })
 }
@@ -4309,6 +4532,9 @@ pub fn parse_failover_global_cluster_response(
             output,
         )
         .map_err(crate::error::FailoverGlobalClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4320,8 +4546,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -4329,57 +4558,53 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::ListTagsForResourceError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::DbInstanceNotFoundFault({
+            })
+        }
+        "DBInstanceNotFound" => crate::error::ListTagsForResourceError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBSnapshotNotFound" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::DbSnapshotNotFoundFault({
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBSnapshotNotFound" => crate::error::ListTagsForResourceError::DbSnapshotNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -4400,6 +4625,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4408,8 +4636,11 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_modify_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyDbClusterOutput, crate::error::ModifyDBClusterError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyDBClusterError::unhandled(generic)),
@@ -4417,9 +4648,8 @@ pub fn parse_modify_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterAlreadyExistsFault" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::DbClusterAlreadyExistsFault({
+        "DBClusterAlreadyExistsFault" => {
+            crate::error::ModifyDBClusterError::DbClusterAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4427,34 +4657,32 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::db_cluster_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterNotFoundFault" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::DbClusterNotFoundFault({
+            })
+        }
+        "DBClusterNotFoundFault" => crate::error::ModifyDBClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBClusterParameterGroupNotFound" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::DbClusterParameterGroupNotFoundFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBClusterParameterGroupNotFound" => {
+            crate::error::ModifyDBClusterError::DbClusterParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4463,17 +4691,17 @@ pub fn parse_modify_db_cluster_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupNotFoundFault" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::DbSubnetGroupNotFoundFault({
+            })
+        }
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::ModifyDBClusterError::DbSubnetGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4481,17 +4709,17 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::ModifyDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4499,17 +4727,17 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::ModifyDBClusterError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4517,17 +4745,17 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBSecurityGroupState" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::InvalidDbSecurityGroupStateFault({
+            })
+        }
+        "InvalidDBSecurityGroupState" => {
+            crate::error::ModifyDBClusterError::InvalidDbSecurityGroupStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4535,17 +4763,17 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::invalid_db_security_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBSubnetGroupStateFault" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::InvalidDbSubnetGroupStateFault({
+            })
+        }
+        "InvalidDBSubnetGroupStateFault" => {
+            crate::error::ModifyDBClusterError::InvalidDbSubnetGroupStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4553,38 +4781,36 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::invalid_db_subnet_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_subnet_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSubnet" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::InvalidSubnet({
+            })
+        }
+        "InvalidSubnet" => crate::error::ModifyDBClusterError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidVPCNetworkStateFault" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::InvalidVpcNetworkStateFault({
+                let mut output = crate::error::invalid_subnet::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidVPCNetworkStateFault" => {
+            crate::error::ModifyDBClusterError::InvalidVpcNetworkStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4592,31 +4818,30 @@ pub fn parse_modify_db_cluster_error(
                         crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StorageQuotaExceeded" => crate::error::ModifyDBClusterError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterErrorKind::StorageQuotaExceededFault({
+            })
+        }
+        "StorageQuotaExceeded" => crate::error::ModifyDBClusterError::StorageQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ModifyDBClusterError::generic(generic),
     })
 }
@@ -4634,6 +4859,9 @@ pub fn parse_modify_db_cluster_response(
             output,
         )
         .map_err(crate::error::ModifyDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4645,8 +4873,11 @@ pub fn parse_modify_db_cluster_endpoint_error(
     crate::output::ModifyDbClusterEndpointOutput,
     crate::error::ModifyDBClusterEndpointError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4658,9 +4889,8 @@ pub fn parse_modify_db_cluster_endpoint_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterEndpointNotFoundFault" => crate::error::ModifyDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterEndpointErrorKind::DbClusterEndpointNotFoundFault({
+        "DBClusterEndpointNotFoundFault" => {
+            crate::error::ModifyDBClusterEndpointError::DbClusterEndpointNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4668,54 +4898,52 @@ pub fn parse_modify_db_cluster_endpoint_error(
                         crate::error::db_cluster_endpoint_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_endpoint_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::ModifyDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterEndpointErrorKind::DbInstanceNotFoundFault({
+            })
+        }
+        "DBInstanceNotFound" => {
+            crate::error::ModifyDBClusterEndpointError::DbInstanceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_instance_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterEndpointStateFault" => crate::error::ModifyDBClusterEndpointError {
-            meta: generic,
-            kind:
-                crate::error::ModifyDBClusterEndpointErrorKind::InvalidDbClusterEndpointStateFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_endpoint_state_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidDBClusterStateFault" => crate::error::ModifyDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterEndpointErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterEndpointStateFault" => {
+            crate::error::ModifyDBClusterEndpointError::InvalidDbClusterEndpointStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::invalid_db_cluster_endpoint_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_endpoint_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::ModifyDBClusterEndpointError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4723,17 +4951,17 @@ pub fn parse_modify_db_cluster_endpoint_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::ModifyDBClusterEndpointError {
-            meta: generic,
-            kind: crate::error::ModifyDBClusterEndpointErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::ModifyDBClusterEndpointError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4741,14 +4969,15 @@ pub fn parse_modify_db_cluster_endpoint_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyDBClusterEndpointError::generic(generic),
     })
 }
@@ -4769,6 +4998,9 @@ pub fn parse_modify_db_cluster_endpoint_response(
             output,
         )
         .map_err(crate::error::ModifyDBClusterEndpointError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4780,8 +5012,11 @@ pub fn parse_modify_db_cluster_parameter_group_error(
     crate::output::ModifyDbClusterParameterGroupOutput,
     crate::error::ModifyDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBClusterParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4793,39 +5028,43 @@ pub fn parse_modify_db_cluster_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::ModifyDBClusterParameterGroupError { meta: generic, kind: crate::error::ModifyDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupNotFound" => {
+            crate::error::ModifyDBClusterParameterGroupError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBParameterGroupState" => crate::error::ModifyDBClusterParameterGroupError { meta: generic, kind: crate::error::ModifyDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBParameterGroupState" => {
+            crate::error::ModifyDBClusterParameterGroupError::InvalidDbParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ModifyDBClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ModifyDBClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -4847,6 +5086,9 @@ pub fn parse_modify_db_cluster_parameter_group_response(
                 output,
             )
             .map_err(crate::error::ModifyDBClusterParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4858,8 +5100,11 @@ pub fn parse_modify_db_cluster_snapshot_attribute_error(
     crate::output::ModifyDbClusterSnapshotAttributeOutput,
     crate::error::ModifyDBClusterSnapshotAttributeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4869,55 +5114,64 @@ pub fn parse_modify_db_cluster_snapshot_attribute_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterSnapshotNotFoundFault" => crate::error::ModifyDBClusterSnapshotAttributeError { meta: generic, kind: crate::error::ModifyDBClusterSnapshotAttributeErrorKind::DbClusterSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::error::ModifyDBClusterSnapshotAttributeError::DbClusterSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBClusterSnapshotStateFault" => crate::error::ModifyDBClusterSnapshotAttributeError { meta: generic, kind: crate::error::ModifyDBClusterSnapshotAttributeErrorKind::InvalidDbClusterSnapshotStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::error::ModifyDBClusterSnapshotAttributeError::InvalidDbClusterSnapshotStateFault(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "SharedSnapshotQuotaExceeded" => crate::error::ModifyDBClusterSnapshotAttributeError { meta: generic, kind: crate::error::ModifyDBClusterSnapshotAttributeErrorKind::SharedSnapshotQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "SharedSnapshotQuotaExceeded" => {
+            crate::error::ModifyDBClusterSnapshotAttributeError::SharedSnapshotQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::shared_snapshot_quota_exceeded_fault::Builder::default();
+                    let mut output =
+                        crate::error::shared_snapshot_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_shared_snapshot_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ModifyDBClusterSnapshotAttributeError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ModifyDBClusterSnapshotAttributeError::generic(generic),
     })
 }
 
@@ -4939,6 +5193,9 @@ pub fn parse_modify_db_cluster_snapshot_attribute_response(
                 output,
             )
             .map_err(crate::error::ModifyDBClusterSnapshotAttributeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4948,8 +5205,11 @@ pub fn parse_modify_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyDbInstanceOutput, crate::error::ModifyDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyDBInstanceError::unhandled(generic)),
@@ -4957,9 +5217,8 @@ pub fn parse_modify_db_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AuthorizationNotFound" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::AuthorizationNotFoundFault({
+        "AuthorizationNotFound" => {
+            crate::error::ModifyDBInstanceError::AuthorizationNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4967,34 +5226,32 @@ pub fn parse_modify_db_instance_error(
                         crate::error::authorization_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_authorization_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CertificateNotFound" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::CertificateNotFoundFault({
+            })
+        }
+        "CertificateNotFound" => crate::error::ModifyDBInstanceError::CertificateNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::certificate_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBInstanceAlreadyExists" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::DbInstanceAlreadyExistsFault({
+                let mut output = crate::error::certificate_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_certificate_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBInstanceAlreadyExists" => {
+            crate::error::ModifyDBInstanceError::DbInstanceAlreadyExistsFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5002,34 +5259,32 @@ pub fn parse_modify_db_instance_error(
                         crate::error::db_instance_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_instance_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::DbInstanceNotFoundFault({
+            })
+        }
+        "DBInstanceNotFound" => crate::error::ModifyDBInstanceError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DBParameterGroupNotFound" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::DbParameterGroupNotFoundFault({
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DBParameterGroupNotFound" => {
+            crate::error::ModifyDBInstanceError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5037,17 +5292,17 @@ pub fn parse_modify_db_instance_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSecurityGroupNotFound" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::DbSecurityGroupNotFoundFault({
+            })
+        }
+        "DBSecurityGroupNotFound" => {
+            crate::error::ModifyDBInstanceError::DbSecurityGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5055,17 +5310,17 @@ pub fn parse_modify_db_instance_error(
                         crate::error::db_security_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_security_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBUpgradeDependencyFailure" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::DbUpgradeDependencyFailureFault({
+            })
+        }
+        "DBUpgradeDependencyFailure" => {
+            crate::error::ModifyDBInstanceError::DbUpgradeDependencyFailureFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5073,34 +5328,34 @@ pub fn parse_modify_db_instance_error(
                         crate::error::db_upgrade_dependency_failure_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_upgrade_dependency_failure_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DomainNotFoundFault" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::DomainNotFoundFault({
+            })
+        }
+        "DomainNotFoundFault" => {
+            crate::error::ModifyDBInstanceError::DomainNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::domain_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_domain_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InsufficientDBInstanceCapacity" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::InsufficientDbInstanceCapacityFault({
+            })
+        }
+        "InsufficientDBInstanceCapacity" => {
+            crate::error::ModifyDBInstanceError::InsufficientDbInstanceCapacityFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5108,17 +5363,17 @@ pub fn parse_modify_db_instance_error(
                         crate::error::insufficient_db_instance_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_db_instance_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::ModifyDBInstanceError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5126,17 +5381,17 @@ pub fn parse_modify_db_instance_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBSecurityGroupState" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::InvalidDbSecurityGroupStateFault({
+            })
+        }
+        "InvalidDBSecurityGroupState" => {
+            crate::error::ModifyDBInstanceError::InvalidDbSecurityGroupStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5144,17 +5399,17 @@ pub fn parse_modify_db_instance_error(
                         crate::error::invalid_db_security_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_security_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidVPCNetworkStateFault" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::InvalidVpcNetworkStateFault({
+            })
+        }
+        "InvalidVPCNetworkStateFault" => {
+            crate::error::ModifyDBInstanceError::InvalidVpcNetworkStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5162,34 +5417,34 @@ pub fn parse_modify_db_instance_error(
                         crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OptionGroupNotFoundFault" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::OptionGroupNotFoundFault({
+            })
+        }
+        "OptionGroupNotFoundFault" => {
+            crate::error::ModifyDBInstanceError::OptionGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::option_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ProvisionedIopsNotAvailableInAZFault" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::ProvisionedIopsNotAvailableInAzFault({
+            })
+        }
+        "ProvisionedIopsNotAvailableInAZFault" => {
+            crate::error::ModifyDBInstanceError::ProvisionedIopsNotAvailableInAzFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5198,34 +5453,32 @@ pub fn parse_modify_db_instance_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_provisioned_iops_not_available_in_az_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StorageQuotaExceeded" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::StorageQuotaExceededFault({
+            })
+        }
+        "StorageQuotaExceeded" => crate::error::ModifyDBInstanceError::StorageQuotaExceededFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "StorageTypeNotSupported" => crate::error::ModifyDBInstanceError {
-            meta: generic,
-            kind: crate::error::ModifyDBInstanceErrorKind::StorageTypeNotSupportedFault({
+                let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StorageTypeNotSupported" => {
+            crate::error::ModifyDBInstanceError::StorageTypeNotSupportedFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5233,14 +5486,15 @@ pub fn parse_modify_db_instance_error(
                         crate::error::storage_type_not_supported_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_storage_type_not_supported_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyDBInstanceError::generic(generic),
     })
 }
@@ -5259,6 +5513,9 @@ pub fn parse_modify_db_instance_response(
             output,
         )
         .map_err(crate::error::ModifyDBInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5270,8 +5527,11 @@ pub fn parse_modify_db_parameter_group_error(
     crate::output::ModifyDbParameterGroupOutput,
     crate::error::ModifyDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5283,9 +5543,8 @@ pub fn parse_modify_db_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::ModifyDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBParameterGroupErrorKind::DbParameterGroupNotFoundFault({
+        "DBParameterGroupNotFound" => {
+            crate::error::ModifyDBParameterGroupError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5293,35 +5552,33 @@ pub fn parse_modify_db_parameter_group_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBParameterGroupState" => crate::error::ModifyDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(
-                {
+            })
+        }
+        "InvalidDBParameterGroupState" => {
+            crate::error::ModifyDBParameterGroupError::InvalidDbParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_db_parameter_group_state_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ModifyDBParameterGroupError::generic(generic),
     })
 }
@@ -5342,6 +5599,9 @@ pub fn parse_modify_db_parameter_group_response(
             output,
         )
         .map_err(crate::error::ModifyDBParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5353,8 +5613,11 @@ pub fn parse_modify_db_subnet_group_error(
     crate::output::ModifyDbSubnetGroupOutput,
     crate::error::ModifyDBSubnetGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyDBSubnetGroupError::unhandled(generic)),
@@ -5362,9 +5625,8 @@ pub fn parse_modify_db_subnet_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBSubnetGroupDoesNotCoverEnoughAZs" => crate::error::ModifyDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBSubnetGroupErrorKind::DbSubnetGroupDoesNotCoverEnoughAZs({
+        "DBSubnetGroupDoesNotCoverEnoughAZs" => {
+            crate::error::ModifyDBSubnetGroupError::DbSubnetGroupDoesNotCoverEnoughAZs({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5373,17 +5635,17 @@ pub fn parse_modify_db_subnet_group_error(
                         );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_does_not_cover_enough_a_zs_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetGroupNotFoundFault" => crate::error::ModifyDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBSubnetGroupErrorKind::DbSubnetGroupNotFoundFault({
+            })
+        }
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::ModifyDBSubnetGroupError::DbSubnetGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5391,17 +5653,17 @@ pub fn parse_modify_db_subnet_group_error(
                         crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSubnetQuotaExceededFault" => crate::error::ModifyDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBSubnetGroupErrorKind::DbSubnetQuotaExceededFault({
+            })
+        }
+        "DBSubnetQuotaExceededFault" => {
+            crate::error::ModifyDBSubnetGroupError::DbSubnetQuotaExceededFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5409,52 +5671,51 @@ pub fn parse_modify_db_subnet_group_error(
                         crate::error::db_subnet_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidSubnet" => crate::error::ModifyDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBSubnetGroupErrorKind::InvalidSubnet({
+            })
+        }
+        "InvalidSubnet" => crate::error::ModifyDBSubnetGroupError::InvalidSubnet({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "SubnetAlreadyInUse" => crate::error::ModifyDBSubnetGroupError {
-            meta: generic,
-            kind: crate::error::ModifyDBSubnetGroupErrorKind::SubnetAlreadyInUse({
+                let mut output = crate::error::invalid_subnet::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "SubnetAlreadyInUse" => {
+            crate::error::ModifyDBSubnetGroupError::SubnetAlreadyInUse({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::subnet_already_in_use::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_subnet_already_in_use_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyDBSubnetGroupError::generic(generic),
     })
 }
@@ -5475,6 +5736,9 @@ pub fn parse_modify_db_subnet_group_response(
             output,
         )
         .map_err(crate::error::ModifyDBSubnetGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5486,8 +5750,11 @@ pub fn parse_modify_event_subscription_error(
     crate::output::ModifyEventSubscriptionOutput,
     crate::error::ModifyEventSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5499,63 +5766,60 @@ pub fn parse_modify_event_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EventSubscriptionQuotaExceeded" => crate::error::ModifyEventSubscriptionError {
-            meta: generic,
-            kind:
-                crate::error::ModifyEventSubscriptionErrorKind::EventSubscriptionQuotaExceededFault(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::event_subscription_quota_exceeded_fault::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "SNSInvalidTopic" => crate::error::ModifyEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::ModifyEventSubscriptionErrorKind::SnsInvalidTopicFault({
+        "EventSubscriptionQuotaExceeded" => {
+            crate::error::ModifyEventSubscriptionError::EventSubscriptionQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::event_subscription_quota_exceeded_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_event_subscription_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "SNSInvalidTopic" => {
+            crate::error::ModifyEventSubscriptionError::SnsInvalidTopicFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::sns_invalid_topic_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_sns_invalid_topic_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SNSNoAuthorization" => crate::error::ModifyEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::ModifyEventSubscriptionErrorKind::SnsNoAuthorizationFault({
+            })
+        }
+        "SNSNoAuthorization" => {
+            crate::error::ModifyEventSubscriptionError::SnsNoAuthorizationFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::sns_no_authorization_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_sns_no_authorization_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SNSTopicArnNotFound" => crate::error::ModifyEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::ModifyEventSubscriptionErrorKind::SnsTopicArnNotFoundFault({
+            })
+        }
+        "SNSTopicArnNotFound" => {
+            crate::error::ModifyEventSubscriptionError::SnsTopicArnNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5563,51 +5827,50 @@ pub fn parse_modify_event_subscription_error(
                         crate::error::sns_topic_arn_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_sns_topic_arn_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "SubscriptionCategoryNotFound" => crate::error::ModifyEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::ModifyEventSubscriptionErrorKind::SubscriptionCategoryNotFoundFault(
-                {
+            })
+        }
+        "SubscriptionCategoryNotFound" => {
+            crate::error::ModifyEventSubscriptionError::SubscriptionCategoryNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::subscription_category_not_found_fault::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_subscription_category_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "SubscriptionNotFound" => crate::error::ModifyEventSubscriptionError {
-            meta: generic,
-            kind: crate::error::ModifyEventSubscriptionErrorKind::SubscriptionNotFoundFault({
+                    let mut output =
+                        crate::error::subscription_category_not_found_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_subscription_category_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "SubscriptionNotFound" => {
+            crate::error::ModifyEventSubscriptionError::SubscriptionNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::subscription_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyEventSubscriptionError::generic(generic),
     })
 }
@@ -5628,6 +5891,9 @@ pub fn parse_modify_event_subscription_response(
             output,
         )
         .map_err(crate::error::ModifyEventSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5639,8 +5905,11 @@ pub fn parse_modify_global_cluster_error(
     crate::output::ModifyGlobalClusterOutput,
     crate::error::ModifyGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyGlobalClusterError::unhandled(generic)),
@@ -5648,9 +5917,8 @@ pub fn parse_modify_global_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "GlobalClusterNotFoundFault" => crate::error::ModifyGlobalClusterError {
-            meta: generic,
-            kind: crate::error::ModifyGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+        "GlobalClusterNotFoundFault" => {
+            crate::error::ModifyGlobalClusterError::GlobalClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5658,17 +5926,17 @@ pub fn parse_modify_global_cluster_error(
                         crate::error::global_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGlobalClusterStateFault" => crate::error::ModifyGlobalClusterError {
-            meta: generic,
-            kind: crate::error::ModifyGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+            })
+        }
+        "InvalidGlobalClusterStateFault" => {
+            crate::error::ModifyGlobalClusterError::InvalidGlobalClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5676,14 +5944,15 @@ pub fn parse_modify_global_cluster_error(
                         crate::error::invalid_global_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyGlobalClusterError::generic(generic),
     })
 }
@@ -5704,6 +5973,9 @@ pub fn parse_modify_global_cluster_response(
             output,
         )
         .map_err(crate::error::ModifyGlobalClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5715,8 +5987,11 @@ pub fn parse_promote_read_replica_db_cluster_error(
     crate::output::PromoteReadReplicaDbClusterOutput,
     crate::error::PromoteReadReplicaDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PromoteReadReplicaDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5728,26 +6003,25 @@ pub fn parse_promote_read_replica_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::PromoteReadReplicaDBClusterError {
-            meta: generic,
-            kind: crate::error::PromoteReadReplicaDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::PromoteReadReplicaDBClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PromoteReadReplicaDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::PromoteReadReplicaDBClusterError {
-            meta: generic,
-            kind: crate::error::PromoteReadReplicaDBClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::PromoteReadReplicaDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5755,14 +6029,15 @@ pub fn parse_promote_read_replica_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::PromoteReadReplicaDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PromoteReadReplicaDBClusterError::generic(generic),
     })
 }
@@ -5783,6 +6058,9 @@ pub fn parse_promote_read_replica_db_cluster_response(
             output,
         )
         .map_err(crate::error::PromoteReadReplicaDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5792,8 +6070,11 @@ pub fn parse_reboot_db_instance_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RebootDbInstanceOutput, crate::error::RebootDBInstanceError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RebootDBInstanceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RebootDBInstanceError::unhandled(generic)),
@@ -5801,26 +6082,23 @@ pub fn parse_reboot_db_instance_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBInstanceNotFound" => crate::error::RebootDBInstanceError {
-            meta: generic,
-            kind: crate::error::RebootDBInstanceErrorKind::DbInstanceNotFoundFault({
+        "DBInstanceNotFound" => crate::error::RebootDBInstanceError::DbInstanceNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_instance_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBInstanceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::RebootDBInstanceError {
-            meta: generic,
-            kind: crate::error::RebootDBInstanceErrorKind::InvalidDbInstanceStateFault({
+                let mut output = crate::error::db_instance_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBInstanceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBInstanceState" => {
+            crate::error::RebootDBInstanceError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5828,14 +6106,15 @@ pub fn parse_reboot_db_instance_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RebootDBInstanceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RebootDBInstanceError::generic(generic),
     })
 }
@@ -5854,6 +6133,9 @@ pub fn parse_reboot_db_instance_response(
             output,
         )
         .map_err(crate::error::RebootDBInstanceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5865,8 +6147,11 @@ pub fn parse_remove_from_global_cluster_error(
     crate::output::RemoveFromGlobalClusterOutput,
     crate::error::RemoveFromGlobalClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5878,26 +6163,25 @@ pub fn parse_remove_from_global_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::RemoveFromGlobalClusterError {
-            meta: generic,
-            kind: crate::error::RemoveFromGlobalClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::RemoveFromGlobalClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "GlobalClusterNotFoundFault" => crate::error::RemoveFromGlobalClusterError {
-            meta: generic,
-            kind: crate::error::RemoveFromGlobalClusterErrorKind::GlobalClusterNotFoundFault({
+            })
+        }
+        "GlobalClusterNotFoundFault" => {
+            crate::error::RemoveFromGlobalClusterError::GlobalClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5905,17 +6189,17 @@ pub fn parse_remove_from_global_cluster_error(
                         crate::error::global_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_global_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGlobalClusterStateFault" => crate::error::RemoveFromGlobalClusterError {
-            meta: generic,
-            kind: crate::error::RemoveFromGlobalClusterErrorKind::InvalidGlobalClusterStateFault({
+            })
+        }
+        "InvalidGlobalClusterStateFault" => {
+            crate::error::RemoveFromGlobalClusterError::InvalidGlobalClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5923,14 +6207,15 @@ pub fn parse_remove_from_global_cluster_error(
                         crate::error::invalid_global_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_global_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveFromGlobalClusterError::generic(generic),
     })
 }
@@ -5951,6 +6236,9 @@ pub fn parse_remove_from_global_cluster_response(
             output,
         )
         .map_err(crate::error::RemoveFromGlobalClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5962,8 +6250,11 @@ pub fn parse_remove_role_from_db_cluster_error(
     crate::output::RemoveRoleFromDbClusterOutput,
     crate::error::RemoveRoleFromDBClusterError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveRoleFromDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5975,26 +6266,25 @@ pub fn parse_remove_role_from_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::RemoveRoleFromDBClusterError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::RemoveRoleFromDBClusterError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBClusterRoleNotFound" => crate::error::RemoveRoleFromDBClusterError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromDBClusterErrorKind::DbClusterRoleNotFoundFault({
+            })
+        }
+        "DBClusterRoleNotFound" => {
+            crate::error::RemoveRoleFromDBClusterError::DbClusterRoleNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6002,17 +6292,17 @@ pub fn parse_remove_role_from_db_cluster_error(
                         crate::error::db_cluster_role_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_role_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::RemoveRoleFromDBClusterError {
-            meta: generic,
-            kind: crate::error::RemoveRoleFromDBClusterErrorKind::InvalidDbClusterStateFault({
+            })
+        }
+        "InvalidDBClusterStateFault" => {
+            crate::error::RemoveRoleFromDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6020,14 +6310,15 @@ pub fn parse_remove_role_from_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveRoleFromDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveRoleFromDBClusterError::generic(generic),
     })
 }
@@ -6043,6 +6334,9 @@ pub fn parse_remove_role_from_db_cluster_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_role_from_db_cluster_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6054,8 +6348,11 @@ pub fn parse_remove_source_identifier_from_subscription_error(
     crate::output::RemoveSourceIdentifierFromSubscriptionOutput,
     crate::error::RemoveSourceIdentifierFromSubscriptionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveSourceIdentifierFromSubscriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6067,39 +6364,41 @@ pub fn parse_remove_source_identifier_from_subscription_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "SourceNotFound" => crate::error::RemoveSourceIdentifierFromSubscriptionError { meta: generic, kind: crate::error::RemoveSourceIdentifierFromSubscriptionErrorKind::SourceNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "SourceNotFound" => {
+            crate::error::RemoveSourceIdentifierFromSubscriptionError::SourceNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::source_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_source_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveSourceIdentifierFromSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "SubscriptionNotFound" => crate::error::RemoveSourceIdentifierFromSubscriptionError { meta: generic, kind: crate::error::RemoveSourceIdentifierFromSubscriptionErrorKind::SubscriptionNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "SubscriptionNotFound" => {
+            crate::error::RemoveSourceIdentifierFromSubscriptionError::SubscriptionNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::subscription_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_subscription_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveSourceIdentifierFromSubscriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::RemoveSourceIdentifierFromSubscriptionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::RemoveSourceIdentifierFromSubscriptionError::generic(generic),
     })
 }
 
@@ -6116,6 +6415,9 @@ pub fn parse_remove_source_identifier_from_subscription_response(
             crate::output::remove_source_identifier_from_subscription_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_remove_source_identifier_from_subscription(response.body().as_ref(), output).map_err(crate::error::RemoveSourceIdentifierFromSubscriptionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6127,8 +6429,11 @@ pub fn parse_remove_tags_from_resource_error(
     crate::output::RemoveTagsFromResourceOutput,
     crate::error::RemoveTagsFromResourceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6140,57 +6445,57 @@ pub fn parse_remove_tags_from_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => {
+            crate::error::RemoveTagsFromResourceError::DbClusterNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBInstanceNotFound" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::DbInstanceNotFoundFault({
+            })
+        }
+        "DBInstanceNotFound" => {
+            crate::error::RemoveTagsFromResourceError::DbInstanceNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_instance_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_instance_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DBSnapshotNotFound" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::DbSnapshotNotFoundFault({
+            })
+        }
+        "DBSnapshotNotFound" => {
+            crate::error::RemoveTagsFromResourceError::DbSnapshotNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveTagsFromResourceError::generic(generic),
     })
 }
@@ -6206,6 +6511,9 @@ pub fn parse_remove_tags_from_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_tags_from_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6217,8 +6525,11 @@ pub fn parse_reset_db_cluster_parameter_group_error(
     crate::output::ResetDbClusterParameterGroupOutput,
     crate::error::ResetDBClusterParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetDBClusterParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6230,39 +6541,43 @@ pub fn parse_reset_db_cluster_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::ResetDBClusterParameterGroupError { meta: generic, kind: crate::error::ResetDBClusterParameterGroupErrorKind::DbParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBParameterGroupNotFound" => {
+            crate::error::ResetDBClusterParameterGroupError::DbParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_parameter_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBParameterGroupState" => crate::error::ResetDBClusterParameterGroupError { meta: generic, kind: crate::error::ResetDBClusterParameterGroupErrorKind::InvalidDbParameterGroupStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBParameterGroupState" => {
+            crate::error::ResetDBClusterParameterGroupError::InvalidDbParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetDBClusterParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ResetDBClusterParameterGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ResetDBClusterParameterGroupError::generic(generic),
     })
 }
 
@@ -6283,6 +6598,9 @@ pub fn parse_reset_db_cluster_parameter_group_response(
                 output,
             )
             .map_err(crate::error::ResetDBClusterParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6294,8 +6612,11 @@ pub fn parse_reset_db_parameter_group_error(
     crate::output::ResetDbParameterGroupOutput,
     crate::error::ResetDBParameterGroupError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ResetDBParameterGroupError::unhandled(generic)),
@@ -6303,9 +6624,8 @@ pub fn parse_reset_db_parameter_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBParameterGroupNotFound" => crate::error::ResetDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::ResetDBParameterGroupErrorKind::DbParameterGroupNotFoundFault({
+        "DBParameterGroupNotFound" => {
+            crate::error::ResetDBParameterGroupError::DbParameterGroupNotFoundFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -6313,35 +6633,33 @@ pub fn parse_reset_db_parameter_group_error(
                         crate::error::db_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBParameterGroupState" => crate::error::ResetDBParameterGroupError {
-            meta: generic,
-            kind: crate::error::ResetDBParameterGroupErrorKind::InvalidDbParameterGroupStateFault(
-                {
+            })
+        }
+        "InvalidDBParameterGroupState" => {
+            crate::error::ResetDBParameterGroupError::InvalidDbParameterGroupStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_db_parameter_group_state_fault::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::invalid_db_parameter_group_state_fault::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_db_parameter_group_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ResetDBParameterGroupError::generic(generic),
     })
 }
@@ -6362,6 +6680,9 @@ pub fn parse_reset_db_parameter_group_response(
             output,
         )
         .map_err(crate::error::ResetDBParameterGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6373,8 +6694,11 @@ pub fn parse_restore_db_cluster_from_snapshot_error(
     crate::output::RestoreDbClusterFromSnapshotOutput,
     crate::error::RestoreDBClusterFromSnapshotError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6386,263 +6710,293 @@ pub fn parse_restore_db_cluster_from_snapshot_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterAlreadyExistsFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::DbClusterAlreadyExistsFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DBClusterAlreadyExistsFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::DbClusterAlreadyExistsFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_already_exists_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_cluster_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBClusterParameterGroupNotFound" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::DbClusterParameterGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBClusterParameterGroupNotFound" => {
+            crate::error::RestoreDBClusterFromSnapshotError::DbClusterParameterGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_parameter_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_cluster_parameter_group_not_found_fault::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBClusterQuotaExceededFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::DbClusterQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBClusterQuotaExceededFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::DbClusterQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_quota_exceeded_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_cluster_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBClusterSnapshotNotFoundFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::DbClusterSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBClusterSnapshotNotFoundFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::DbClusterSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBSnapshotNotFound" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::DbSnapshotNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSnapshotNotFound" => {
+            crate::error::RestoreDBClusterFromSnapshotError::DbSnapshotNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::db_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DBSubnetGroupNotFoundFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::DbSubnetGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DBSubnetGroupNotFoundFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::DbSubnetGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::db_subnet_group_not_found_fault::Builder::default();
+                    let mut output =
+                        crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InsufficientDBClusterCapacityFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InsufficientDbClusterCapacityFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InsufficientDBClusterCapacityFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::InsufficientDbClusterCapacityFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_db_cluster_capacity_fault::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_db_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_db_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InsufficientStorageClusterCapacity" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InsufficientStorageClusterCapacityFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InsufficientStorageClusterCapacity" => {
+            crate::error::RestoreDBClusterFromSnapshotError::InsufficientStorageClusterCapacityFault(
+                {
                     #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
                     let mut output = crate::error::insufficient_storage_cluster_capacity_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBClusterSnapshotStateFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidDbClusterSnapshotStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InvalidDBClusterSnapshotStateFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::InvalidDbClusterSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidDBSnapshotState" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidDbSnapshotStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidDBSnapshotState" => {
+            crate::error::RestoreDBClusterFromSnapshotError::InvalidDbSnapshotStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_db_snapshot_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_db_snapshot_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidRestoreFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidRestoreFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidRestoreFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::InvalidRestoreFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_restore_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_restore_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidSubnet" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidSubnet({
+                tmp
+            })
+        }
+        "InvalidSubnet" => crate::error::RestoreDBClusterFromSnapshotError::InvalidSubnet({
             #[allow(unused_mut)]
-            let mut tmp =
-                 {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_subnet::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
-                    output.build()
-                }
-            ;
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_subnet::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
             if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
+                tmp.message = _error_message;
+            }
             tmp
-        })},
-        "InvalidVPCNetworkStateFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::InvalidVpcNetworkStateFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        }),
+        "InvalidVPCNetworkStateFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::InvalidVpcNetworkStateFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
+                    let mut output =
+                        crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "KMSKeyNotAccessibleFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::KmsKeyNotAccessibleFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KMSKeyNotAccessibleFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::KmsKeyNotAccessibleFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "OptionGroupNotFoundFault" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::OptionGroupNotFoundFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "OptionGroupNotFoundFault" => {
+            crate::error::RestoreDBClusterFromSnapshotError::OptionGroupNotFoundFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::option_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "StorageQuotaExceeded" => crate::error::RestoreDBClusterFromSnapshotError { meta: generic, kind: crate::error::RestoreDBClusterFromSnapshotErrorKind::StorageQuotaExceededFault({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "StorageQuotaExceeded" => {
+            crate::error::RestoreDBClusterFromSnapshotError::StorageQuotaExceededFault({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::RestoreDBClusterFromSnapshotError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::RestoreDBClusterFromSnapshotError::generic(generic),
     })
 }
 
@@ -6663,6 +7017,9 @@ pub fn parse_restore_db_cluster_from_snapshot_response(
                 output,
             )
             .map_err(crate::error::RestoreDBClusterFromSnapshotError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6674,8 +7031,11 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
     crate::output::RestoreDbClusterToPointInTimeOutput,
     crate::error::RestoreDBClusterToPointInTimeError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -6687,7 +7047,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterAlreadyExistsFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::DbClusterAlreadyExistsFault({
+        "DBClusterAlreadyExistsFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterAlreadyExistsFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6695,6 +7055,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::db_cluster_already_exists_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_already_exists_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6702,8 +7063,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DBClusterNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::DbClusterNotFoundFault({
+        }),
+        "DBClusterNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6711,6 +7072,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6718,8 +7080,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DBClusterParameterGroupNotFound" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::DbClusterParameterGroupNotFoundFault({
+        }),
+        "DBClusterParameterGroupNotFound" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterParameterGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6727,6 +7089,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::db_cluster_parameter_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_parameter_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6734,8 +7097,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DBClusterQuotaExceededFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::DbClusterQuotaExceededFault({
+        }),
+        "DBClusterQuotaExceededFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6743,6 +7106,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::db_cluster_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6750,8 +7114,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DBClusterSnapshotNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::DbClusterSnapshotNotFoundFault({
+        }),
+        "DBClusterSnapshotNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::DbClusterSnapshotNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6759,6 +7123,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::db_cluster_snapshot_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_cluster_snapshot_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6766,8 +7131,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "DBSubnetGroupNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::DbSubnetGroupNotFoundFault({
+        }),
+        "DBSubnetGroupNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::DbSubnetGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6775,6 +7140,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::db_subnet_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_db_subnet_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6782,8 +7148,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InsufficientDBClusterCapacityFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InsufficientDbClusterCapacityFault({
+        }),
+        "InsufficientDBClusterCapacityFault" => crate::error::RestoreDBClusterToPointInTimeError::InsufficientDbClusterCapacityFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6791,6 +7157,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::insufficient_db_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_db_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6798,8 +7165,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InsufficientStorageClusterCapacity" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InsufficientStorageClusterCapacityFault({
+        }),
+        "InsufficientStorageClusterCapacity" => crate::error::RestoreDBClusterToPointInTimeError::InsufficientStorageClusterCapacityFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6807,6 +7174,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::insufficient_storage_cluster_capacity_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_storage_cluster_capacity_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6814,8 +7182,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidDBClusterSnapshotStateFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterSnapshotStateFault({
+        }),
+        "InvalidDBClusterSnapshotStateFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidDbClusterSnapshotStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6823,6 +7191,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::invalid_db_cluster_snapshot_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6830,8 +7199,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidDBClusterStateFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InvalidDbClusterStateFault({
+        }),
+        "InvalidDBClusterStateFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidDbClusterStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6839,6 +7208,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6846,8 +7216,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidDBSnapshotState" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InvalidDbSnapshotStateFault({
+        }),
+        "InvalidDBSnapshotState" => crate::error::RestoreDBClusterToPointInTimeError::InvalidDbSnapshotStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6855,6 +7225,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::invalid_db_snapshot_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_snapshot_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6862,8 +7233,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidRestoreFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InvalidRestoreFault({
+        }),
+        "InvalidRestoreFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidRestoreFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6871,6 +7242,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::invalid_restore_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_restore_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6878,8 +7250,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidSubnet" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InvalidSubnet({
+        }),
+        "InvalidSubnet" => crate::error::RestoreDBClusterToPointInTimeError::InvalidSubnet({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6887,6 +7259,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::invalid_subnet::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_subnet_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6894,8 +7267,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidVPCNetworkStateFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::InvalidVpcNetworkStateFault({
+        }),
+        "InvalidVPCNetworkStateFault" => crate::error::RestoreDBClusterToPointInTimeError::InvalidVpcNetworkStateFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6903,6 +7276,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::invalid_vpc_network_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_vpc_network_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6910,8 +7284,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "KMSKeyNotAccessibleFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::KmsKeyNotAccessibleFault({
+        }),
+        "KMSKeyNotAccessibleFault" => crate::error::RestoreDBClusterToPointInTimeError::KmsKeyNotAccessibleFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6919,6 +7293,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::kms_key_not_accessible_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_kms_key_not_accessible_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6926,8 +7301,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "OptionGroupNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::OptionGroupNotFoundFault({
+        }),
+        "OptionGroupNotFoundFault" => crate::error::RestoreDBClusterToPointInTimeError::OptionGroupNotFoundFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6935,6 +7310,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::option_group_not_found_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_option_group_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6942,8 +7318,8 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "StorageQuotaExceeded" => crate::error::RestoreDBClusterToPointInTimeError { meta: generic, kind: crate::error::RestoreDBClusterToPointInTimeErrorKind::StorageQuotaExceededFault({
+        }),
+        "StorageQuotaExceeded" => crate::error::RestoreDBClusterToPointInTimeError::StorageQuotaExceededFault({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6951,6 +7327,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                     let mut output = crate::error::storage_quota_exceeded_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_storage_quota_exceeded_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6958,7 +7335,7 @@ pub fn parse_restore_db_cluster_to_point_in_time_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::RestoreDBClusterToPointInTimeError::generic(generic)
     })
 }
@@ -6981,6 +7358,9 @@ pub fn parse_restore_db_cluster_to_point_in_time_response(
                 output,
             )
             .map_err(crate::error::RestoreDBClusterToPointInTimeError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6989,8 +7369,11 @@ pub fn parse_restore_db_cluster_to_point_in_time_response(
 pub fn parse_start_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartDbClusterOutput, crate::error::StartDBClusterError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartDBClusterError::unhandled(generic)),
@@ -6998,26 +7381,23 @@ pub fn parse_start_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::StartDBClusterError {
-            meta: generic,
-            kind: crate::error::StartDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::error::StartDBClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::StartDBClusterError {
-            meta: generic,
-            kind: crate::error::StartDBClusterErrorKind::InvalidDbClusterStateFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => {
+            crate::error::StartDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7025,17 +7405,17 @@ pub fn parse_start_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::StartDBClusterError {
-            meta: generic,
-            kind: crate::error::StartDBClusterErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::StartDBClusterError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7043,14 +7423,15 @@ pub fn parse_start_db_cluster_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StartDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartDBClusterError::generic(generic),
     })
 }
@@ -7068,6 +7449,9 @@ pub fn parse_start_db_cluster_response(
             output,
         )
         .map_err(crate::error::StartDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7076,8 +7460,11 @@ pub fn parse_start_db_cluster_response(
 pub fn parse_stop_db_cluster_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopDbClusterOutput, crate::error::StopDBClusterError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StopDBClusterError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StopDBClusterError::unhandled(generic)),
@@ -7085,26 +7472,23 @@ pub fn parse_stop_db_cluster_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DBClusterNotFoundFault" => crate::error::StopDBClusterError {
-            meta: generic,
-            kind: crate::error::StopDBClusterErrorKind::DbClusterNotFoundFault({
+        "DBClusterNotFoundFault" => crate::error::StopDBClusterError::DbClusterNotFoundFault({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidDBClusterStateFault" => crate::error::StopDBClusterError {
-            meta: generic,
-            kind: crate::error::StopDBClusterErrorKind::InvalidDbClusterStateFault({
+                let mut output = crate::error::db_cluster_not_found_fault::Builder::default();
+                let _ = response;
+                output = crate::xml_deser::deser_structure_crate_error_db_cluster_not_found_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDBClusterStateFault" => {
+            crate::error::StopDBClusterError::InvalidDbClusterStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7112,17 +7496,17 @@ pub fn parse_stop_db_cluster_error(
                         crate::error::invalid_db_cluster_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_cluster_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidDBInstanceState" => crate::error::StopDBClusterError {
-            meta: generic,
-            kind: crate::error::StopDBClusterErrorKind::InvalidDbInstanceStateFault({
+            })
+        }
+        "InvalidDBInstanceState" => {
+            crate::error::StopDBClusterError::InvalidDbInstanceStateFault({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7130,14 +7514,15 @@ pub fn parse_stop_db_cluster_error(
                         crate::error::invalid_db_instance_state_fault::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_invalid_db_instance_state_fault_xml_err(response.body().as_ref(), output).map_err(crate::error::StopDBClusterError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StopDBClusterError::generic(generic),
     })
 }
@@ -7155,6 +7540,9 @@ pub fn parse_stop_db_cluster_response(
             output,
         )
         .map_err(crate::error::StopDBClusterError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

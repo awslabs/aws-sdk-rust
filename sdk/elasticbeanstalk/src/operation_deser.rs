@@ -6,8 +6,11 @@ pub fn parse_abort_environment_update_error(
     crate::output::AbortEnvironmentUpdateOutput,
     crate::error::AbortEnvironmentUpdateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,9 +22,8 @@ pub fn parse_abort_environment_update_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::AbortEnvironmentUpdateError {
-            meta: generic,
-            kind: crate::error::AbortEnvironmentUpdateErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::AbortEnvironmentUpdateError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -29,14 +31,15 @@ pub fn parse_abort_environment_update_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AbortEnvironmentUpdateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AbortEnvironmentUpdateError::generic(generic),
     })
 }
@@ -52,6 +55,9 @@ pub fn parse_abort_environment_update_response(
         #[allow(unused_mut)]
         let mut output = crate::output::abort_environment_update_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -63,8 +69,11 @@ pub fn parse_apply_environment_managed_action_error(
     crate::output::ApplyEnvironmentManagedActionOutput,
     crate::error::ApplyEnvironmentManagedActionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -76,39 +85,43 @@ pub fn parse_apply_environment_managed_action_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::ApplyEnvironmentManagedActionError { meta: generic, kind: crate::error::ApplyEnvironmentManagedActionErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ElasticBeanstalkServiceException" => {
+            crate::error::ApplyEnvironmentManagedActionError::ElasticBeanstalkServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    let mut output =
+                        crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ManagedActionInvalidStateException" => crate::error::ApplyEnvironmentManagedActionError { meta: generic, kind: crate::error::ApplyEnvironmentManagedActionErrorKind::ManagedActionInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ManagedActionInvalidStateException" => {
+            crate::error::ApplyEnvironmentManagedActionError::ManagedActionInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::managed_action_invalid_state_exception::Builder::default();
+                    let mut output =
+                        crate::error::managed_action_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_managed_action_invalid_state_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ApplyEnvironmentManagedActionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ApplyEnvironmentManagedActionError::generic(generic),
     })
 }
 
@@ -129,6 +142,9 @@ pub fn parse_apply_environment_managed_action_response(
                 output,
             )
             .map_err(crate::error::ApplyEnvironmentManagedActionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -140,8 +156,11 @@ pub fn parse_associate_environment_operations_role_error(
     crate::output::AssociateEnvironmentOperationsRoleOutput,
     crate::error::AssociateEnvironmentOperationsRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AssociateEnvironmentOperationsRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -151,23 +170,27 @@ pub fn parse_associate_environment_operations_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::AssociateEnvironmentOperationsRoleError { meta: generic, kind: crate::error::AssociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::error::AssociateEnvironmentOperationsRoleError::InsufficientPrivilegesException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateEnvironmentOperationsRoleError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::AssociateEnvironmentOperationsRoleError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::insufficient_privileges_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::AssociateEnvironmentOperationsRoleError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::AssociateEnvironmentOperationsRoleError::generic(generic),
     })
 }
 
@@ -183,6 +206,9 @@ pub fn parse_associate_environment_operations_role_response(
         let mut output =
             crate::output::associate_environment_operations_role_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -194,8 +220,11 @@ pub fn parse_check_dns_availability_error(
     crate::output::CheckDnsAvailabilityOutput,
     crate::error::CheckDNSAvailabilityError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CheckDNSAvailabilityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::CheckDNSAvailabilityError::generic(generic))
 }
 
@@ -215,6 +244,9 @@ pub fn parse_check_dns_availability_response(
             output,
         )
         .map_err(crate::error::CheckDNSAvailabilityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -226,8 +258,11 @@ pub fn parse_compose_environments_error(
     crate::output::ComposeEnvironmentsOutput,
     crate::error::ComposeEnvironmentsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ComposeEnvironmentsError::unhandled(generic)),
@@ -235,9 +270,8 @@ pub fn parse_compose_environments_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::ComposeEnvironmentsError {
-            meta: generic,
-            kind: crate::error::ComposeEnvironmentsErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::ComposeEnvironmentsError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -245,17 +279,17 @@ pub fn parse_compose_environments_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyEnvironmentsException" => crate::error::ComposeEnvironmentsError {
-            meta: generic,
-            kind: crate::error::ComposeEnvironmentsErrorKind::TooManyEnvironmentsException({
+            })
+        }
+        "TooManyEnvironmentsException" => {
+            crate::error::ComposeEnvironmentsError::TooManyEnvironmentsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -263,14 +297,15 @@ pub fn parse_compose_environments_error(
                         crate::error::too_many_environments_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ComposeEnvironmentsError::generic(generic),
     })
 }
@@ -291,6 +326,9 @@ pub fn parse_compose_environments_response(
             output,
         )
         .map_err(crate::error::ComposeEnvironmentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -300,8 +338,11 @@ pub fn parse_create_application_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateApplicationOutput, crate::error::CreateApplicationError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateApplicationError::unhandled(generic)),
@@ -309,9 +350,8 @@ pub fn parse_create_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TooManyApplicationsException" => crate::error::CreateApplicationError {
-            meta: generic,
-            kind: crate::error::CreateApplicationErrorKind::TooManyApplicationsException({
+        "TooManyApplicationsException" => {
+            crate::error::CreateApplicationError::TooManyApplicationsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -319,14 +359,15 @@ pub fn parse_create_application_error(
                         crate::error::too_many_applications_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateApplicationError::generic(generic),
     })
 }
@@ -345,6 +386,9 @@ pub fn parse_create_application_response(
             output,
         )
         .map_err(crate::error::CreateApplicationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -356,8 +400,11 @@ pub fn parse_create_application_version_error(
     crate::output::CreateApplicationVersionOutput,
     crate::error::CreateApplicationVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -369,87 +416,99 @@ pub fn parse_create_application_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CodeBuildNotInServiceRegionException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::CodeBuildNotInServiceRegionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CodeBuildNotInServiceRegionException" => {
+            crate::error::CreateApplicationVersionError::CodeBuildNotInServiceRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::code_build_not_in_service_region_exception::Builder::default();
+                    let mut output =
+                        crate::error::code_build_not_in_service_region_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_code_build_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InsufficientPrivilegesException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InsufficientPrivilegesException" => {
+            crate::error::CreateApplicationVersionError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "S3LocationNotInServiceRegionException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::S3LocationNotInServiceRegionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "S3LocationNotInServiceRegionException" => {
+            crate::error::CreateApplicationVersionError::S3LocationNotInServiceRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
+                    let mut output =
+                        crate::error::s3_location_not_in_service_region_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyApplicationsException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::TooManyApplicationsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyApplicationsException" => {
+            crate::error::CreateApplicationVersionError::TooManyApplicationsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_applications_exception::Builder::default();
+                    let mut output =
+                        crate::error::too_many_applications_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_applications_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyApplicationVersionsException" => crate::error::CreateApplicationVersionError { meta: generic, kind: crate::error::CreateApplicationVersionErrorKind::TooManyApplicationVersionsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyApplicationVersionsException" => {
+            crate::error::CreateApplicationVersionError::TooManyApplicationVersionsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_application_versions_exception::Builder::default();
+                    let mut output =
+                        crate::error::too_many_application_versions_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_application_versions_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateApplicationVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::CreateApplicationVersionError::generic(generic),
     })
 }
 
@@ -469,6 +528,9 @@ pub fn parse_create_application_version_response(
             output,
         )
         .map_err(crate::error::CreateApplicationVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -480,8 +542,11 @@ pub fn parse_create_configuration_template_error(
     crate::output::CreateConfigurationTemplateOutput,
     crate::error::CreateConfigurationTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -493,55 +558,61 @@ pub fn parse_create_configuration_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::CreateConfigurationTemplateError { meta: generic, kind: crate::error::CreateConfigurationTemplateErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::error::CreateConfigurationTemplateError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyBucketsException" => crate::error::CreateConfigurationTemplateError { meta: generic, kind: crate::error::CreateConfigurationTemplateErrorKind::TooManyBucketsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyBucketsException" => {
+            crate::error::CreateConfigurationTemplateError::TooManyBucketsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyConfigurationTemplatesException" => crate::error::CreateConfigurationTemplateError { meta: generic, kind: crate::error::CreateConfigurationTemplateErrorKind::TooManyConfigurationTemplatesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyConfigurationTemplatesException" => {
+            crate::error::CreateConfigurationTemplateError::TooManyConfigurationTemplatesException(
+                {
                     #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
                     let mut output = crate::error::too_many_configuration_templates_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_too_many_configuration_templates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateConfigurationTemplateError::generic(generic)
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_too_many_configuration_templates_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::CreateConfigurationTemplateError::generic(generic),
     })
 }
 
@@ -561,6 +632,9 @@ pub fn parse_create_configuration_template_response(
             output,
         )
         .map_err(crate::error::CreateConfigurationTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -570,8 +644,11 @@ pub fn parse_create_environment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateEnvironmentOutput, crate::error::CreateEnvironmentError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateEnvironmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateEnvironmentError::unhandled(generic)),
@@ -579,9 +656,8 @@ pub fn parse_create_environment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::CreateEnvironmentError {
-            meta: generic,
-            kind: crate::error::CreateEnvironmentErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::CreateEnvironmentError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -589,17 +665,17 @@ pub fn parse_create_environment_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyEnvironmentsException" => crate::error::CreateEnvironmentError {
-            meta: generic,
-            kind: crate::error::CreateEnvironmentErrorKind::TooManyEnvironmentsException({
+            })
+        }
+        "TooManyEnvironmentsException" => {
+            crate::error::CreateEnvironmentError::TooManyEnvironmentsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -607,14 +683,15 @@ pub fn parse_create_environment_error(
                         crate::error::too_many_environments_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_environments_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateEnvironmentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateEnvironmentError::generic(generic),
     })
 }
@@ -633,6 +710,9 @@ pub fn parse_create_environment_response(
             output,
         )
         .map_err(crate::error::CreateEnvironmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -644,8 +724,11 @@ pub fn parse_create_platform_version_error(
     crate::output::CreatePlatformVersionOutput,
     crate::error::CreatePlatformVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreatePlatformVersionError::unhandled(generic)),
@@ -653,9 +736,8 @@ pub fn parse_create_platform_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::CreatePlatformVersionError {
-            meta: generic,
-            kind: crate::error::CreatePlatformVersionErrorKind::ElasticBeanstalkServiceException({
+        "ElasticBeanstalkServiceException" => {
+            crate::error::CreatePlatformVersionError::ElasticBeanstalkServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -663,17 +745,17 @@ pub fn parse_create_platform_version_error(
                         crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InsufficientPrivilegesException" => crate::error::CreatePlatformVersionError {
-            meta: generic,
-            kind: crate::error::CreatePlatformVersionErrorKind::InsufficientPrivilegesException({
+            })
+        }
+        "InsufficientPrivilegesException" => {
+            crate::error::CreatePlatformVersionError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -681,31 +763,32 @@ pub fn parse_create_platform_version_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyPlatformsException" => crate::error::CreatePlatformVersionError {
-            meta: generic,
-            kind: crate::error::CreatePlatformVersionErrorKind::TooManyPlatformsException({
+            })
+        }
+        "TooManyPlatformsException" => {
+            crate::error::CreatePlatformVersionError::TooManyPlatformsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_platforms_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_platforms_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreatePlatformVersionError::generic(generic),
     })
 }
@@ -726,6 +809,9 @@ pub fn parse_create_platform_version_response(
             output,
         )
         .map_err(crate::error::CreatePlatformVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -737,8 +823,11 @@ pub fn parse_create_storage_location_error(
     crate::output::CreateStorageLocationOutput,
     crate::error::CreateStorageLocationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateStorageLocationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateStorageLocationError::unhandled(generic)),
@@ -746,9 +835,8 @@ pub fn parse_create_storage_location_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::CreateStorageLocationError {
-            meta: generic,
-            kind: crate::error::CreateStorageLocationErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::CreateStorageLocationError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -756,17 +844,17 @@ pub fn parse_create_storage_location_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "S3SubscriptionRequiredException" => crate::error::CreateStorageLocationError {
-            meta: generic,
-            kind: crate::error::CreateStorageLocationErrorKind::S3SubscriptionRequiredException({
+            })
+        }
+        "S3SubscriptionRequiredException" => {
+            crate::error::CreateStorageLocationError::S3SubscriptionRequiredException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -774,31 +862,32 @@ pub fn parse_create_storage_location_error(
                         crate::error::s3_subscription_required_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_s3_subscription_required_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyBucketsException" => crate::error::CreateStorageLocationError {
-            meta: generic,
-            kind: crate::error::CreateStorageLocationErrorKind::TooManyBucketsException({
+            })
+        }
+        "TooManyBucketsException" => {
+            crate::error::CreateStorageLocationError::TooManyBucketsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::CreateStorageLocationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateStorageLocationError::generic(generic),
     })
 }
@@ -819,6 +908,9 @@ pub fn parse_create_storage_location_response(
             output,
         )
         .map_err(crate::error::CreateStorageLocationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -828,8 +920,11 @@ pub fn parse_delete_application_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteApplicationOutput, crate::error::DeleteApplicationError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteApplicationError::unhandled(generic)),
@@ -837,9 +932,8 @@ pub fn parse_delete_application_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationInProgressFailure" => crate::error::DeleteApplicationError {
-            meta: generic,
-            kind: crate::error::DeleteApplicationErrorKind::OperationInProgressException({
+        "OperationInProgressFailure" => {
+            crate::error::DeleteApplicationError::OperationInProgressException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -847,14 +941,15 @@ pub fn parse_delete_application_error(
                         crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteApplicationError::generic(generic),
     })
 }
@@ -868,6 +963,9 @@ pub fn parse_delete_application_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_application_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -879,8 +977,11 @@ pub fn parse_delete_application_version_error(
     crate::output::DeleteApplicationVersionOutput,
     crate::error::DeleteApplicationVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -892,71 +993,80 @@ pub fn parse_delete_application_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::error::DeleteApplicationVersionError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "OperationInProgressFailure" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::OperationInProgressException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "OperationInProgressFailure" => {
+            crate::error::DeleteApplicationVersionError::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "S3LocationNotInServiceRegionException" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::S3LocationNotInServiceRegionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "S3LocationNotInServiceRegionException" => {
+            crate::error::DeleteApplicationVersionError::S3LocationNotInServiceRegionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::s3_location_not_in_service_region_exception::Builder::default();
+                    let mut output =
+                        crate::error::s3_location_not_in_service_region_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_s3_location_not_in_service_region_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "SourceBundleDeletionFailure" => crate::error::DeleteApplicationVersionError { meta: generic, kind: crate::error::DeleteApplicationVersionErrorKind::SourceBundleDeletionException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "SourceBundleDeletionFailure" => {
+            crate::error::DeleteApplicationVersionError::SourceBundleDeletionException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::source_bundle_deletion_exception::Builder::default();
+                    let mut output =
+                        crate::error::source_bundle_deletion_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_source_bundle_deletion_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteApplicationVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteApplicationVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteApplicationVersionError::generic(generic),
     })
 }
 
@@ -971,6 +1081,9 @@ pub fn parse_delete_application_version_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_application_version_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -982,8 +1095,11 @@ pub fn parse_delete_configuration_template_error(
     crate::output::DeleteConfigurationTemplateOutput,
     crate::error::DeleteConfigurationTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -995,26 +1111,24 @@ pub fn parse_delete_configuration_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "OperationInProgressFailure" => crate::error::DeleteConfigurationTemplateError {
-            meta: generic,
-            kind: crate::error::DeleteConfigurationTemplateErrorKind::OperationInProgressException(
-                {
+        "OperationInProgressFailure" => {
+            crate::error::DeleteConfigurationTemplateError::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::operation_in_progress_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeleteConfigurationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteConfigurationTemplateError::generic(generic),
     })
 }
@@ -1030,6 +1144,9 @@ pub fn parse_delete_configuration_template_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_configuration_template_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1041,8 +1158,11 @@ pub fn parse_delete_environment_configuration_error(
     crate::output::DeleteEnvironmentConfigurationOutput,
     crate::error::DeleteEnvironmentConfigurationError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteEnvironmentConfigurationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DeleteEnvironmentConfigurationError::generic(
         generic,
     ))
@@ -1059,6 +1179,9 @@ pub fn parse_delete_environment_configuration_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_environment_configuration_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1070,8 +1193,11 @@ pub fn parse_delete_platform_version_error(
     crate::output::DeletePlatformVersionOutput,
     crate::error::DeletePlatformVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeletePlatformVersionError::unhandled(generic)),
@@ -1079,71 +1205,80 @@ pub fn parse_delete_platform_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ElasticBeanstalkServiceException" => {
+            crate::error::DeletePlatformVersionError::ElasticBeanstalkServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    let mut output =
+                        crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InsufficientPrivilegesException" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InsufficientPrivilegesException" => {
+            crate::error::DeletePlatformVersionError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "OperationInProgressFailure" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::OperationInProgressException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "OperationInProgressFailure" => {
+            crate::error::DeletePlatformVersionError::OperationInProgressException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::operation_in_progress_exception::Builder::default();
+                    let mut output =
+                        crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "PlatformVersionStillReferencedException" => crate::error::DeletePlatformVersionError { meta: generic, kind: crate::error::DeletePlatformVersionErrorKind::PlatformVersionStillReferencedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "PlatformVersionStillReferencedException" => {
+            crate::error::DeletePlatformVersionError::PlatformVersionStillReferencedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::platform_version_still_referenced_exception::Builder::default();
+                    let mut output =
+                        crate::error::platform_version_still_referenced_exception::Builder::default(
+                        );
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_platform_version_still_referenced_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeletePlatformVersionError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeletePlatformVersionError::generic(generic),
     })
 }
 
@@ -1163,6 +1298,9 @@ pub fn parse_delete_platform_version_response(
             output,
         )
         .map_err(crate::error::DeletePlatformVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1174,8 +1312,11 @@ pub fn parse_describe_account_attributes_error(
     crate::output::DescribeAccountAttributesOutput,
     crate::error::DescribeAccountAttributesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1187,26 +1328,24 @@ pub fn parse_describe_account_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::DescribeAccountAttributesError {
-            meta: generic,
-            kind: crate::error::DescribeAccountAttributesErrorKind::InsufficientPrivilegesException(
-                {
+        "InsufficientPrivilegesException" => {
+            crate::error::DescribeAccountAttributesError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::insufficient_privileges_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeAccountAttributesError::generic(generic),
     })
 }
@@ -1227,6 +1366,9 @@ pub fn parse_describe_account_attributes_response(
             output,
         )
         .map_err(crate::error::DescribeAccountAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1238,8 +1380,11 @@ pub fn parse_describe_applications_error(
     crate::output::DescribeApplicationsOutput,
     crate::error::DescribeApplicationsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeApplicationsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeApplicationsError::generic(generic))
 }
 
@@ -1259,6 +1404,9 @@ pub fn parse_describe_applications_response(
             output,
         )
         .map_err(crate::error::DescribeApplicationsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1270,8 +1418,11 @@ pub fn parse_describe_application_versions_error(
     crate::output::DescribeApplicationVersionsOutput,
     crate::error::DescribeApplicationVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeApplicationVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeApplicationVersionsError::generic(
         generic,
     ))
@@ -1293,6 +1444,9 @@ pub fn parse_describe_application_versions_response(
             output,
         )
         .map_err(crate::error::DescribeApplicationVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1304,8 +1458,11 @@ pub fn parse_describe_configuration_options_error(
     crate::output::DescribeConfigurationOptionsOutput,
     crate::error::DescribeConfigurationOptionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConfigurationOptionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1317,23 +1474,23 @@ pub fn parse_describe_configuration_options_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TooManyBucketsException" => crate::error::DescribeConfigurationOptionsError {
-            meta: generic,
-            kind: crate::error::DescribeConfigurationOptionsErrorKind::TooManyBucketsException({
+        "TooManyBucketsException" => {
+            crate::error::DescribeConfigurationOptionsError::TooManyBucketsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationOptionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeConfigurationOptionsError::generic(generic),
     })
 }
@@ -1354,6 +1511,9 @@ pub fn parse_describe_configuration_options_response(
             output,
         )
         .map_err(crate::error::DescribeConfigurationOptionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1365,8 +1525,11 @@ pub fn parse_describe_configuration_settings_error(
     crate::output::DescribeConfigurationSettingsOutput,
     crate::error::DescribeConfigurationSettingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1378,23 +1541,23 @@ pub fn parse_describe_configuration_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "TooManyBucketsException" => crate::error::DescribeConfigurationSettingsError {
-            meta: generic,
-            kind: crate::error::DescribeConfigurationSettingsErrorKind::TooManyBucketsException({
+        "TooManyBucketsException" => {
+            crate::error::DescribeConfigurationSettingsError::TooManyBucketsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeConfigurationSettingsError::generic(generic),
     })
 }
@@ -1415,6 +1578,9 @@ pub fn parse_describe_configuration_settings_response(
             output,
         )
         .map_err(crate::error::DescribeConfigurationSettingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1426,8 +1592,11 @@ pub fn parse_describe_environment_health_error(
     crate::output::DescribeEnvironmentHealthOutput,
     crate::error::DescribeEnvironmentHealthError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1439,45 +1608,41 @@ pub fn parse_describe_environment_health_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::DescribeEnvironmentHealthError {
-            meta: generic,
-            kind:
-                crate::error::DescribeEnvironmentHealthErrorKind::ElasticBeanstalkServiceException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::elastic_beanstalk_service_exception::Builder::default(
-                                );
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidRequestException" => crate::error::DescribeEnvironmentHealthError {
-            meta: generic,
-            kind: crate::error::DescribeEnvironmentHealthErrorKind::InvalidRequestException({
+        "ElasticBeanstalkServiceException" => {
+            crate::error::DescribeEnvironmentHealthError::ElasticBeanstalkServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::DescribeEnvironmentHealthError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeEnvironmentHealthError::generic(generic),
     })
 }
@@ -1498,6 +1663,9 @@ pub fn parse_describe_environment_health_response(
             output,
         )
         .map_err(crate::error::DescribeEnvironmentHealthError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1509,8 +1677,11 @@ pub fn parse_describe_environment_managed_action_history_error(
     crate::output::DescribeEnvironmentManagedActionHistoryOutput,
     crate::error::DescribeEnvironmentManagedActionHistoryError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1522,7 +1693,7 @@ pub fn parse_describe_environment_managed_action_history_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::DescribeEnvironmentManagedActionHistoryError { meta: generic, kind: crate::error::DescribeEnvironmentManagedActionHistoryErrorKind::ElasticBeanstalkServiceException({
+        "ElasticBeanstalkServiceException" => crate::error::DescribeEnvironmentManagedActionHistoryError::ElasticBeanstalkServiceException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1530,6 +1701,7 @@ pub fn parse_describe_environment_managed_action_history_error(
                     let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1537,7 +1709,7 @@ pub fn parse_describe_environment_managed_action_history_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DescribeEnvironmentManagedActionHistoryError::generic(generic)
     })
 }
@@ -1555,6 +1727,9 @@ pub fn parse_describe_environment_managed_action_history_response(
             crate::output::describe_environment_managed_action_history_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_describe_environment_managed_action_history(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1566,8 +1741,11 @@ pub fn parse_describe_environment_managed_actions_error(
     crate::output::DescribeEnvironmentManagedActionsOutput,
     crate::error::DescribeEnvironmentManagedActionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1577,23 +1755,27 @@ pub fn parse_describe_environment_managed_actions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::DescribeEnvironmentManagedActionsError { meta: generic, kind: crate::error::DescribeEnvironmentManagedActionsErrorKind::ElasticBeanstalkServiceException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "ElasticBeanstalkServiceException" => {
+            crate::error::DescribeEnvironmentManagedActionsError::ElasticBeanstalkServiceException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::elastic_beanstalk_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeEnvironmentManagedActionsError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::elastic_beanstalk_service_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::DescribeEnvironmentManagedActionsError::generic(generic),
     })
 }
 
@@ -1615,6 +1797,9 @@ pub fn parse_describe_environment_managed_actions_response(
                 output,
             )
             .map_err(crate::error::DescribeEnvironmentManagedActionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1626,8 +1811,11 @@ pub fn parse_describe_environment_resources_error(
     crate::output::DescribeEnvironmentResourcesOutput,
     crate::error::DescribeEnvironmentResourcesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1639,27 +1827,24 @@ pub fn parse_describe_environment_resources_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::DescribeEnvironmentResourcesError {
-            meta: generic,
-            kind:
-                crate::error::DescribeEnvironmentResourcesErrorKind::InsufficientPrivilegesException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::insufficient_privileges_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
+        "InsufficientPrivilegesException" => {
+            crate::error::DescribeEnvironmentResourcesError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeEnvironmentResourcesError::generic(generic),
     })
 }
@@ -1680,6 +1865,9 @@ pub fn parse_describe_environment_resources_response(
             output,
         )
         .map_err(crate::error::DescribeEnvironmentResourcesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1691,8 +1879,11 @@ pub fn parse_describe_environments_error(
     crate::output::DescribeEnvironmentsOutput,
     crate::error::DescribeEnvironmentsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEnvironmentsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEnvironmentsError::generic(generic))
 }
 
@@ -1712,6 +1903,9 @@ pub fn parse_describe_environments_response(
             output,
         )
         .map_err(crate::error::DescribeEnvironmentsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1720,8 +1914,11 @@ pub fn parse_describe_environments_response(
 pub fn parse_describe_events_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeEventsOutput, crate::error::DescribeEventsError> {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEventsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::DescribeEventsError::generic(generic))
 }
 
@@ -1738,6 +1935,9 @@ pub fn parse_describe_events_response(
             output,
         )
         .map_err(crate::error::DescribeEventsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1749,8 +1949,11 @@ pub fn parse_describe_instances_health_error(
     crate::output::DescribeInstancesHealthOutput,
     crate::error::DescribeInstancesHealthError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1762,43 +1965,41 @@ pub fn parse_describe_instances_health_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::DescribeInstancesHealthError {
-            meta: generic,
-            kind: crate::error::DescribeInstancesHealthErrorKind::ElasticBeanstalkServiceException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::elastic_beanstalk_service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidRequestException" => crate::error::DescribeInstancesHealthError {
-            meta: generic,
-            kind: crate::error::DescribeInstancesHealthErrorKind::InvalidRequestException({
+        "ElasticBeanstalkServiceException" => {
+            crate::error::DescribeInstancesHealthError::ElasticBeanstalkServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let mut output =
+                        crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::DescribeInstancesHealthError::InvalidRequestException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_request_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_invalid_request_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeInstancesHealthError::generic(generic),
     })
 }
@@ -1819,6 +2020,9 @@ pub fn parse_describe_instances_health_response(
             output,
         )
         .map_err(crate::error::DescribeInstancesHealthError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1830,8 +2034,11 @@ pub fn parse_describe_platform_version_error(
     crate::output::DescribePlatformVersionOutput,
     crate::error::DescribePlatformVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribePlatformVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1843,46 +2050,42 @@ pub fn parse_describe_platform_version_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::DescribePlatformVersionError {
-            meta: generic,
-            kind: crate::error::DescribePlatformVersionErrorKind::ElasticBeanstalkServiceException(
-                {
+        "ElasticBeanstalkServiceException" => {
+            crate::error::DescribePlatformVersionError::ElasticBeanstalkServiceException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::elastic_beanstalk_service_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InsufficientPrivilegesException" => crate::error::DescribePlatformVersionError {
-            meta: generic,
-            kind: crate::error::DescribePlatformVersionErrorKind::InsufficientPrivilegesException(
-                {
+                    let mut output =
+                        crate::error::elastic_beanstalk_service_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InsufficientPrivilegesException" => {
+            crate::error::DescribePlatformVersionError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::insufficient_privileges_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DescribePlatformVersionError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribePlatformVersionError::generic(generic),
     })
 }
@@ -1903,6 +2106,9 @@ pub fn parse_describe_platform_version_response(
             output,
         )
         .map_err(crate::error::DescribePlatformVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1914,8 +2120,11 @@ pub fn parse_disassociate_environment_operations_role_error(
     crate::output::DisassociateEnvironmentOperationsRoleOutput,
     crate::error::DisassociateEnvironmentOperationsRoleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisassociateEnvironmentOperationsRoleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1927,7 +2136,7 @@ pub fn parse_disassociate_environment_operations_role_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::DisassociateEnvironmentOperationsRoleError { meta: generic, kind: crate::error::DisassociateEnvironmentOperationsRoleErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => crate::error::DisassociateEnvironmentOperationsRoleError::InsufficientPrivilegesException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -1935,6 +2144,7 @@ pub fn parse_disassociate_environment_operations_role_error(
                     let mut output = crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::DisassociateEnvironmentOperationsRoleError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -1942,7 +2152,7 @@ pub fn parse_disassociate_environment_operations_role_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DisassociateEnvironmentOperationsRoleError::generic(generic)
     })
 }
@@ -1959,6 +2169,9 @@ pub fn parse_disassociate_environment_operations_role_response(
         let mut output =
             crate::output::disassociate_environment_operations_role_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1970,8 +2183,11 @@ pub fn parse_list_available_solution_stacks_error(
     crate::output::ListAvailableSolutionStacksOutput,
     crate::error::ListAvailableSolutionStacksError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAvailableSolutionStacksError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListAvailableSolutionStacksError::generic(
         generic,
     ))
@@ -1993,6 +2209,9 @@ pub fn parse_list_available_solution_stacks_response(
             output,
         )
         .map_err(crate::error::ListAvailableSolutionStacksError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2004,8 +2223,11 @@ pub fn parse_list_platform_branches_error(
     crate::output::ListPlatformBranchesOutput,
     crate::error::ListPlatformBranchesError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPlatformBranchesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::ListPlatformBranchesError::generic(generic))
 }
 
@@ -2025,6 +2247,9 @@ pub fn parse_list_platform_branches_response(
             output,
         )
         .map_err(crate::error::ListPlatformBranchesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2036,8 +2261,11 @@ pub fn parse_list_platform_versions_error(
     crate::output::ListPlatformVersionsOutput,
     crate::error::ListPlatformVersionsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListPlatformVersionsError::unhandled(generic)),
@@ -2045,9 +2273,8 @@ pub fn parse_list_platform_versions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ElasticBeanstalkServiceException" => crate::error::ListPlatformVersionsError {
-            meta: generic,
-            kind: crate::error::ListPlatformVersionsErrorKind::ElasticBeanstalkServiceException({
+        "ElasticBeanstalkServiceException" => {
+            crate::error::ListPlatformVersionsError::ElasticBeanstalkServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2055,17 +2282,17 @@ pub fn parse_list_platform_versions_error(
                         crate::error::elastic_beanstalk_service_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_elastic_beanstalk_service_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InsufficientPrivilegesException" => crate::error::ListPlatformVersionsError {
-            meta: generic,
-            kind: crate::error::ListPlatformVersionsErrorKind::InsufficientPrivilegesException({
+            })
+        }
+        "InsufficientPrivilegesException" => {
+            crate::error::ListPlatformVersionsError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2073,14 +2300,15 @@ pub fn parse_list_platform_versions_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListPlatformVersionsError::generic(generic),
     })
 }
@@ -2101,6 +2329,9 @@ pub fn parse_list_platform_versions_response(
             output,
         )
         .map_err(crate::error::ListPlatformVersionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2112,8 +2343,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -2121,9 +2355,8 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::ListTagsForResourceError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2131,34 +2364,34 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::ListTagsForResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceTypeNotSupportedException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::ResourceTypeNotSupportedException({
+            })
+        }
+        "ResourceTypeNotSupportedException" => {
+            crate::error::ListTagsForResourceError::ResourceTypeNotSupportedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2166,14 +2399,15 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::resource_type_not_supported_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -2194,6 +2428,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2205,8 +2442,11 @@ pub fn parse_rebuild_environment_error(
     crate::output::RebuildEnvironmentOutput,
     crate::error::RebuildEnvironmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RebuildEnvironmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RebuildEnvironmentError::unhandled(generic)),
@@ -2214,9 +2454,8 @@ pub fn parse_rebuild_environment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::RebuildEnvironmentError {
-            meta: generic,
-            kind: crate::error::RebuildEnvironmentErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::RebuildEnvironmentError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2224,14 +2463,15 @@ pub fn parse_rebuild_environment_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::RebuildEnvironmentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RebuildEnvironmentError::generic(generic),
     })
 }
@@ -2247,6 +2487,9 @@ pub fn parse_rebuild_environment_response(
         #[allow(unused_mut)]
         let mut output = crate::output::rebuild_environment_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2258,8 +2501,11 @@ pub fn parse_request_environment_info_error(
     crate::output::RequestEnvironmentInfoOutput,
     crate::error::RequestEnvironmentInfoError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RequestEnvironmentInfoError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RequestEnvironmentInfoError::generic(generic))
 }
 
@@ -2274,6 +2520,9 @@ pub fn parse_request_environment_info_response(
         #[allow(unused_mut)]
         let mut output = crate::output::request_environment_info_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2283,8 +2532,11 @@ pub fn parse_restart_app_server_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RestartAppServerOutput, crate::error::RestartAppServerError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RestartAppServerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RestartAppServerError::generic(generic))
 }
 
@@ -2297,6 +2549,9 @@ pub fn parse_restart_app_server_response(
         #[allow(unused_mut)]
         let mut output = crate::output::restart_app_server_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2308,8 +2563,11 @@ pub fn parse_retrieve_environment_info_error(
     crate::output::RetrieveEnvironmentInfoOutput,
     crate::error::RetrieveEnvironmentInfoError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RetrieveEnvironmentInfoError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::RetrieveEnvironmentInfoError::generic(generic))
 }
 
@@ -2329,6 +2587,9 @@ pub fn parse_retrieve_environment_info_response(
             output,
         )
         .map_err(crate::error::RetrieveEnvironmentInfoError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2340,8 +2601,11 @@ pub fn parse_swap_environment_cnam_es_error(
     crate::output::SwapEnvironmentCnamEsOutput,
     crate::error::SwapEnvironmentCNAMEsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SwapEnvironmentCNAMEsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::SwapEnvironmentCNAMEsError::generic(generic))
 }
 
@@ -2356,6 +2620,9 @@ pub fn parse_swap_environment_cnam_es_response(
         #[allow(unused_mut)]
         let mut output = crate::output::swap_environment_cnam_es_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2367,8 +2634,11 @@ pub fn parse_terminate_environment_error(
     crate::output::TerminateEnvironmentOutput,
     crate::error::TerminateEnvironmentError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TerminateEnvironmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TerminateEnvironmentError::unhandled(generic)),
@@ -2376,9 +2646,8 @@ pub fn parse_terminate_environment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::TerminateEnvironmentError {
-            meta: generic,
-            kind: crate::error::TerminateEnvironmentErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::TerminateEnvironmentError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2386,14 +2655,15 @@ pub fn parse_terminate_environment_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::TerminateEnvironmentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::TerminateEnvironmentError::generic(generic),
     })
 }
@@ -2414,6 +2684,9 @@ pub fn parse_terminate_environment_response(
             output,
         )
         .map_err(crate::error::TerminateEnvironmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2423,8 +2696,11 @@ pub fn parse_update_application_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateApplicationOutput, crate::error::UpdateApplicationError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateApplicationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UpdateApplicationError::generic(generic))
 }
 
@@ -2442,6 +2718,9 @@ pub fn parse_update_application_response(
             output,
         )
         .map_err(crate::error::UpdateApplicationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2453,8 +2732,11 @@ pub fn parse_update_application_resource_lifecycle_error(
     crate::output::UpdateApplicationResourceLifecycleOutput,
     crate::error::UpdateApplicationResourceLifecycleError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2464,23 +2746,27 @@ pub fn parse_update_application_resource_lifecycle_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::UpdateApplicationResourceLifecycleError { meta: generic, kind: crate::error::UpdateApplicationResourceLifecycleErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::error::UpdateApplicationResourceLifecycleError::InsufficientPrivilegesException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
-                    let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::UpdateApplicationResourceLifecycleError::generic(generic)
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::insufficient_privileges_exception::Builder::default();
+                        let _ = response;
+                        output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        _ => crate::error::UpdateApplicationResourceLifecycleError::generic(generic),
     })
 }
 
@@ -2497,6 +2783,9 @@ pub fn parse_update_application_resource_lifecycle_response(
             crate::output::update_application_resource_lifecycle_output::Builder::default();
         let _ = response;
         output = crate::xml_deser::deser_operation_crate_operation_update_application_resource_lifecycle(response.body().as_ref(), output).map_err(crate::error::UpdateApplicationResourceLifecycleError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2508,8 +2797,11 @@ pub fn parse_update_application_version_error(
     crate::output::UpdateApplicationVersionOutput,
     crate::error::UpdateApplicationVersionError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateApplicationVersionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     Err(crate::error::UpdateApplicationVersionError::generic(
         generic,
     ))
@@ -2531,6 +2823,9 @@ pub fn parse_update_application_version_response(
             output,
         )
         .map_err(crate::error::UpdateApplicationVersionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2542,8 +2837,11 @@ pub fn parse_update_configuration_template_error(
     crate::output::UpdateConfigurationTemplateOutput,
     crate::error::UpdateConfigurationTemplateError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2555,44 +2853,41 @@ pub fn parse_update_configuration_template_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::UpdateConfigurationTemplateError {
-            meta: generic,
-            kind:
-                crate::error::UpdateConfigurationTemplateErrorKind::InsufficientPrivilegesException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::insufficient_privileges_exception::Builder::default();
-                            let _ = response;
-                            output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "TooManyBucketsException" => crate::error::UpdateConfigurationTemplateError {
-            meta: generic,
-            kind: crate::error::UpdateConfigurationTemplateErrorKind::TooManyBucketsException({
+        "InsufficientPrivilegesException" => {
+            crate::error::UpdateConfigurationTemplateError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_buckets_exception::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
-                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+                    output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "TooManyBucketsException" => {
+            crate::error::UpdateConfigurationTemplateError::TooManyBucketsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::too_many_buckets_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateConfigurationTemplateError::generic(generic),
     })
 }
@@ -2613,6 +2908,9 @@ pub fn parse_update_configuration_template_response(
             output,
         )
         .map_err(crate::error::UpdateConfigurationTemplateError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2622,8 +2920,11 @@ pub fn parse_update_environment_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateEnvironmentOutput, crate::error::UpdateEnvironmentError>
 {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateEnvironmentError::unhandled(generic)),
@@ -2631,9 +2932,8 @@ pub fn parse_update_environment_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::UpdateEnvironmentError {
-            meta: generic,
-            kind: crate::error::UpdateEnvironmentErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::UpdateEnvironmentError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2641,31 +2941,32 @@ pub fn parse_update_environment_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyBucketsException" => crate::error::UpdateEnvironmentError {
-            meta: generic,
-            kind: crate::error::UpdateEnvironmentErrorKind::TooManyBucketsException({
+            })
+        }
+        "TooManyBucketsException" => {
+            crate::error::UpdateEnvironmentError::TooManyBucketsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateEnvironmentError::generic(generic),
     })
 }
@@ -2684,6 +2985,9 @@ pub fn parse_update_environment_response(
             output,
         )
         .map_err(crate::error::UpdateEnvironmentError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2695,8 +2999,11 @@ pub fn parse_update_tags_for_resource_error(
     crate::output::UpdateTagsForResourceOutput,
     crate::error::UpdateTagsForResourceError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateTagsForResourceError::unhandled(generic)),
@@ -2704,9 +3011,8 @@ pub fn parse_update_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::UpdateTagsForResourceError {
-            meta: generic,
-            kind: crate::error::UpdateTagsForResourceErrorKind::InsufficientPrivilegesException({
+        "InsufficientPrivilegesException" => {
+            crate::error::UpdateTagsForResourceError::InsufficientPrivilegesException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2714,17 +3020,17 @@ pub fn parse_update_tags_for_resource_error(
                         crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "OperationInProgressFailure" => crate::error::UpdateTagsForResourceError {
-            meta: generic,
-            kind: crate::error::UpdateTagsForResourceErrorKind::OperationInProgressException({
+            })
+        }
+        "OperationInProgressFailure" => {
+            crate::error::UpdateTagsForResourceError::OperationInProgressException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2732,68 +3038,67 @@ pub fn parse_update_tags_for_resource_error(
                         crate::error::operation_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_operation_in_progress_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceNotFoundException" => crate::error::UpdateTagsForResourceError {
-            meta: generic,
-            kind: crate::error::UpdateTagsForResourceErrorKind::ResourceNotFoundException({
+            })
+        }
+        "ResourceNotFoundException" => {
+            crate::error::UpdateTagsForResourceError::ResourceNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::resource_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_resource_not_found_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ResourceTypeNotSupportedException" => crate::error::UpdateTagsForResourceError {
-            meta: generic,
-            kind: crate::error::UpdateTagsForResourceErrorKind::ResourceTypeNotSupportedException(
-                {
+            })
+        }
+        "ResourceTypeNotSupportedException" => {
+            crate::error::UpdateTagsForResourceError::ResourceTypeNotSupportedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::resource_type_not_supported_exception::Builder::default();
-                        let _ = response;
-                        output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "TooManyTagsException" => crate::error::UpdateTagsForResourceError {
-            meta: generic,
-            kind: crate::error::UpdateTagsForResourceErrorKind::TooManyTagsException({
+                    let mut output =
+                        crate::error::resource_type_not_supported_exception::Builder::default();
+                    let _ = response;
+                    output = crate::xml_deser::deser_structure_crate_error_resource_type_not_supported_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "TooManyTagsException" => {
+            crate::error::UpdateTagsForResourceError::TooManyTagsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_tags_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_tags_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::UpdateTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateTagsForResourceError::generic(generic),
     })
 }
@@ -2809,6 +3114,9 @@ pub fn parse_update_tags_for_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_tags_for_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2820,8 +3128,11 @@ pub fn parse_validate_configuration_settings_error(
     crate::output::ValidateConfigurationSettingsOutput,
     crate::error::ValidateConfigurationSettingsError,
 > {
-    let generic = crate::xml_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::xml_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2833,39 +3144,42 @@ pub fn parse_validate_configuration_settings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InsufficientPrivilegesException" => crate::error::ValidateConfigurationSettingsError { meta: generic, kind: crate::error::ValidateConfigurationSettingsErrorKind::InsufficientPrivilegesException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InsufficientPrivilegesException" => {
+            crate::error::ValidateConfigurationSettingsError::InsufficientPrivilegesException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::insufficient_privileges_exception::Builder::default();
+                    let mut output =
+                        crate::error::insufficient_privileges_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_insufficient_privileges_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "TooManyBucketsException" => crate::error::ValidateConfigurationSettingsError { meta: generic, kind: crate::error::ValidateConfigurationSettingsErrorKind::TooManyBucketsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "TooManyBucketsException" => {
+            crate::error::ValidateConfigurationSettingsError::TooManyBucketsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::too_many_buckets_exception::Builder::default();
                     let _ = response;
                     output = crate::xml_deser::deser_structure_crate_error_too_many_buckets_exception_xml_err(response.body().as_ref(), output).map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ValidateConfigurationSettingsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ValidateConfigurationSettingsError::generic(generic),
     })
 }
 
@@ -2885,6 +3199,9 @@ pub fn parse_validate_configuration_settings_response(
             output,
         )
         .map_err(crate::error::ValidateConfigurationSettingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

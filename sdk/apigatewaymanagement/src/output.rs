@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PostToConnectionOutput {}
+pub struct PostToConnectionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PostToConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
 pub mod post_to_connection_output {
 
     /// A builder for [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PostToConnectionOutput`](crate::output::PostToConnectionOutput).
         pub fn build(self) -> crate::output::PostToConnectionOutput {
-            crate::output::PostToConnectionOutput {}
+            crate::output::PostToConnectionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -37,6 +57,7 @@ pub struct GetConnectionOutput {
     /// <p>The time in ISO 8601 format for when the connection was last active.</p>
     #[doc(hidden)]
     pub last_active_at: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl GetConnectionOutput {
     /// <p>The time in ISO 8601 format for when the connection was established.</p>
@@ -52,6 +73,11 @@ impl GetConnectionOutput {
         self.last_active_at.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetConnectionOutput`](crate::output::GetConnectionOutput).
 pub mod get_connection_output {
 
@@ -62,6 +88,7 @@ pub mod get_connection_output {
         pub(crate) connected_at: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) identity: std::option::Option<crate::model::Identity>,
         pub(crate) last_active_at: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The time in ISO 8601 format for when the connection was established.</p>
@@ -100,12 +127,22 @@ pub mod get_connection_output {
             self.last_active_at = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetConnectionOutput`](crate::output::GetConnectionOutput).
         pub fn build(self) -> crate::output::GetConnectionOutput {
             crate::output::GetConnectionOutput {
                 connected_at: self.connected_at,
                 identity: self.identity,
                 last_active_at: self.last_active_at,
+                _request_id: self._request_id,
             }
         }
     }
@@ -120,18 +157,38 @@ impl GetConnectionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConnectionOutput {}
+pub struct DeleteConnectionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteConnectionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
 pub mod delete_connection_output {
 
     /// A builder for [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteConnectionOutput`](crate::output::DeleteConnectionOutput).
         pub fn build(self) -> crate::output::DeleteConnectionOutput {
-            crate::output::DeleteConnectionOutput {}
+            crate::output::DeleteConnectionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

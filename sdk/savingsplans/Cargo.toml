@@ -72,6 +72,9 @@ version = "1.5.5"
 
 [dependencies.tower]
 version = "0.4"
+
+[dependencies.tracing]
+version = "0.1"
 [dev-dependencies.aws-config]
 path = "../aws-config"
 version = "0.0.0-smithy-rs-head"

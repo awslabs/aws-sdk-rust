@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPoint {
         crate::error::CreateAccessPointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_access_point_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAccessPointForObje
         crate::error::CreateAccessPointForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_access_point_for_object_lambda_error(response)
         } else {
@@ -91,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBucket {
     type Output =
         std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_bucket_error(response)
         } else {
@@ -122,6 +125,7 @@ impl CreateJob {
 impl aws_smithy_http::response::ParseStrictResponse for CreateJob {
     type Output = std::result::Result<crate::output::CreateJobOutput, crate::error::CreateJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_job_error(response)
         } else {
@@ -156,6 +160,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultiRegionAccessP
         crate::error::CreateMultiRegionAccessPointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_multi_region_access_point_error(response)
         } else {
@@ -190,6 +195,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPoint {
         crate::error::DeleteAccessPointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_access_point_error(response)
         } else {
@@ -224,6 +230,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointForObje
         crate::error::DeleteAccessPointForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_access_point_for_object_lambda_error(response)
         } else {
@@ -258,6 +265,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicy 
         crate::error::DeleteAccessPointPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_access_point_policy_error(response)
         } else {
@@ -292,6 +300,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteAccessPointPolicyF
         crate::error::DeleteAccessPointPolicyForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_access_point_policy_for_object_lambda_error(
                 response,
@@ -328,6 +337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
     type Output =
         std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_bucket_error(response)
         } else {
@@ -362,6 +372,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycleCon
         crate::error::DeleteBucketLifecycleConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_bucket_lifecycle_configuration_error(response)
         } else {
@@ -396,6 +407,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
         crate::error::DeleteBucketPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_bucket_policy_error(response)
         } else {
@@ -430,6 +442,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
         crate::error::DeleteBucketTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_tagging_error(response)
         } else {
@@ -464,6 +477,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteJobTagging {
         crate::error::DeleteJobTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_job_tagging_error(response)
         } else {
@@ -498,6 +512,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteMultiRegionAccessP
         crate::error::DeleteMultiRegionAccessPointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_multi_region_access_point_error(response)
         } else {
@@ -532,6 +547,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
         crate::error::DeletePublicAccessBlockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_public_access_block_error(response)
         } else {
@@ -566,6 +582,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
         crate::error::DeleteStorageLensConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_storage_lens_configuration_error(response)
         } else {
@@ -600,6 +617,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteStorageLensConfigu
         crate::error::DeleteStorageLensConfigurationTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_storage_lens_configuration_tagging_error(response)
         } else {
@@ -634,6 +652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeJob {
     type Output =
         std::result::Result<crate::output::DescribeJobOutput, crate::error::DescribeJobError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_job_error(response)
         } else {
@@ -668,6 +687,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeMultiRegionAcces
         crate::error::DescribeMultiRegionAccessPointOperationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_multi_region_access_point_operation_error(
                 response,
@@ -704,6 +724,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPoint {
     type Output =
         std::result::Result<crate::output::GetAccessPointOutput, crate::error::GetAccessPointError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_error(response)
         } else {
@@ -739,6 +760,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointConfigurat
         crate::error::GetAccessPointConfigurationForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_configuration_for_object_lambda_error(
                 response,
@@ -777,6 +799,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointForObjectL
         crate::error::GetAccessPointForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_for_object_lambda_error(response)
         } else {
@@ -811,6 +834,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicy {
         crate::error::GetAccessPointPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_policy_error(response)
         } else {
@@ -845,6 +869,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyForO
         crate::error::GetAccessPointPolicyForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_policy_for_object_lambda_error(response)
         } else {
@@ -881,6 +906,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
         crate::error::GetAccessPointPolicyStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_policy_status_error(response)
         } else {
@@ -916,6 +942,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAccessPointPolicyStat
         crate::error::GetAccessPointPolicyStatusForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_access_point_policy_status_for_object_lambda_error(
                 response,
@@ -951,6 +978,7 @@ impl GetBucket {
 impl aws_smithy_http::response::ParseStrictResponse for GetBucket {
     type Output = std::result::Result<crate::output::GetBucketOutput, crate::error::GetBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_error(response)
         } else {
@@ -985,6 +1013,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfig
         crate::error::GetBucketLifecycleConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_lifecycle_configuration_error(response)
         } else {
@@ -1019,6 +1048,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicy {
         crate::error::GetBucketPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_policy_error(response)
         } else {
@@ -1053,6 +1083,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
         crate::error::GetBucketTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_tagging_error(response)
         } else {
@@ -1087,6 +1118,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
         crate::error::GetBucketVersioningError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_versioning_error(response)
         } else {
@@ -1119,6 +1151,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetJobTagging {
     type Output =
         std::result::Result<crate::output::GetJobTaggingOutput, crate::error::GetJobTaggingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_job_tagging_error(response)
         } else {
@@ -1153,6 +1186,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
         crate::error::GetMultiRegionAccessPointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_multi_region_access_point_error(response)
         } else {
@@ -1187,6 +1221,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
         crate::error::GetMultiRegionAccessPointPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_multi_region_access_point_policy_error(response)
         } else {
@@ -1221,6 +1256,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
         crate::error::GetMultiRegionAccessPointPolicyStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_multi_region_access_point_policy_status_error(
                 response,
@@ -1259,6 +1295,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMultiRegionAccessPoin
         crate::error::GetMultiRegionAccessPointRoutesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_multi_region_access_point_routes_error(response)
         } else {
@@ -1293,6 +1330,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
         crate::error::GetPublicAccessBlockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_public_access_block_error(response)
         } else {
@@ -1327,6 +1365,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStorageLensConfigurat
         crate::error::GetStorageLensConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_storage_lens_configuration_error(response)
         } else {
@@ -1361,6 +1400,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetStorageLensConfigurat
         crate::error::GetStorageLensConfigurationTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_storage_lens_configuration_tagging_error(response)
         } else {
@@ -1395,6 +1435,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPoints {
         crate::error::ListAccessPointsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_access_points_error(response)
         } else {
@@ -1429,6 +1470,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAccessPointsForObjec
         crate::error::ListAccessPointsForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_access_points_for_object_lambda_error(response)
         } else {
@@ -1460,6 +1502,7 @@ impl ListJobs {
 impl aws_smithy_http::response::ParseStrictResponse for ListJobs {
     type Output = std::result::Result<crate::output::ListJobsOutput, crate::error::ListJobsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_jobs_error(response)
         } else {
@@ -1494,6 +1537,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultiRegionAccessPoi
         crate::error::ListMultiRegionAccessPointsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_multi_region_access_points_error(response)
         } else {
@@ -1528,6 +1572,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRegionalBuckets {
         crate::error::ListRegionalBucketsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_regional_buckets_error(response)
         } else {
@@ -1562,6 +1607,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListStorageLensConfigura
         crate::error::ListStorageLensConfigurationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_storage_lens_configurations_error(response)
         } else {
@@ -1597,6 +1643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointConfigurat
         crate::error::PutAccessPointConfigurationForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_access_point_configuration_for_object_lambda_error(
                 response,
@@ -1635,6 +1682,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicy {
         crate::error::PutAccessPointPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_access_point_policy_error(response)
         } else {
@@ -1669,6 +1717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutAccessPointPolicyForO
         crate::error::PutAccessPointPolicyForObjectLambdaError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_access_point_policy_for_object_lambda_error(response)
         } else {
@@ -1705,6 +1754,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfig
         crate::error::PutBucketLifecycleConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_lifecycle_configuration_error(response)
         } else {
@@ -1739,6 +1789,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
         crate::error::PutBucketPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_policy_error(response)
         } else {
@@ -1773,6 +1824,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
         crate::error::PutBucketTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_tagging_error(response)
         } else {
@@ -1807,6 +1859,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
         crate::error::PutBucketVersioningError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_versioning_error(response)
         } else {
@@ -1839,6 +1892,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutJobTagging {
     type Output =
         std::result::Result<crate::output::PutJobTaggingOutput, crate::error::PutJobTaggingError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_job_tagging_error(response)
         } else {
@@ -1873,6 +1927,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutMultiRegionAccessPoin
         crate::error::PutMultiRegionAccessPointPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_multi_region_access_point_policy_error(response)
         } else {
@@ -1907,6 +1962,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
         crate::error::PutPublicAccessBlockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_public_access_block_error(response)
         } else {
@@ -1941,6 +1997,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
         crate::error::PutStorageLensConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_storage_lens_configuration_error(response)
         } else {
@@ -1975,6 +2032,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutStorageLensConfigurat
         crate::error::PutStorageLensConfigurationTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_storage_lens_configuration_tagging_error(response)
         } else {
@@ -2009,6 +2067,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SubmitMultiRegionAccessP
         crate::error::SubmitMultiRegionAccessPointRoutesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_submit_multi_region_access_point_routes_error(response)
         } else {
@@ -2043,6 +2102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobPriority {
         crate::error::UpdateJobPriorityError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_job_priority_error(response)
         } else {
@@ -2077,6 +2137,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateJobStatus {
         crate::error::UpdateJobStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_job_status_error(response)
         } else {

@@ -6,6 +6,7 @@ pub struct UpdateIdentityProviderSettingsOutput {
     /// <p>Describes an identity provider.</p>
     #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
+    _request_id: Option<String>,
 }
 impl UpdateIdentityProviderSettingsOutput {
     /// <p>Describes an identity provider.</p>
@@ -13,6 +14,11 @@ impl UpdateIdentityProviderSettingsOutput {
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateIdentityProviderSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
@@ -24,6 +30,7 @@ pub mod update_identity_provider_settings_output {
     pub struct Builder {
         pub(crate) identity_provider_summary:
             std::option::Option<crate::model::IdentityProviderSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Describes an identity provider.</p>
@@ -42,10 +49,20 @@ pub mod update_identity_provider_settings_output {
             self.identity_provider_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateIdentityProviderSettingsOutput`](crate::output::UpdateIdentityProviderSettingsOutput).
         pub fn build(self) -> crate::output::UpdateIdentityProviderSettingsOutput {
             crate::output::UpdateIdentityProviderSettingsOutput {
                 identity_provider_summary: self.identity_provider_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -64,11 +81,17 @@ pub struct StopProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
     #[doc(hidden)]
     pub product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
+    _request_id: Option<String>,
 }
 impl StopProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
     pub fn product_user_summary(&self) -> std::option::Option<&crate::model::ProductUserSummary> {
         self.product_user_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StopProductSubscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
@@ -79,6 +102,7 @@ pub mod stop_product_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata that describes the start product subscription operation.</p>
@@ -94,10 +118,20 @@ pub mod stop_product_subscription_output {
             self.product_user_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopProductSubscriptionOutput`](crate::output::StopProductSubscriptionOutput).
         pub fn build(self) -> crate::output::StopProductSubscriptionOutput {
             crate::output::StopProductSubscriptionOutput {
                 product_user_summary: self.product_user_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -116,11 +150,17 @@ pub struct StartProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
     #[doc(hidden)]
     pub product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
+    _request_id: Option<String>,
 }
 impl StartProductSubscriptionOutput {
     /// <p>Metadata that describes the start product subscription operation.</p>
     pub fn product_user_summary(&self) -> std::option::Option<&crate::model::ProductUserSummary> {
         self.product_user_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StartProductSubscriptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
@@ -131,6 +171,7 @@ pub mod start_product_subscription_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) product_user_summary: std::option::Option<crate::model::ProductUserSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata that describes the start product subscription operation.</p>
@@ -146,10 +187,20 @@ pub mod start_product_subscription_output {
             self.product_user_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartProductSubscriptionOutput`](crate::output::StartProductSubscriptionOutput).
         pub fn build(self) -> crate::output::StartProductSubscriptionOutput {
             crate::output::StartProductSubscriptionOutput {
                 product_user_summary: self.product_user_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -168,6 +219,7 @@ pub struct RegisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
     #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
+    _request_id: Option<String>,
 }
 impl RegisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
@@ -175,6 +227,11 @@ impl RegisterIdentityProviderOutput {
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for RegisterIdentityProviderOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
@@ -186,6 +243,7 @@ pub mod register_identity_provider_output {
     pub struct Builder {
         pub(crate) identity_provider_summary:
             std::option::Option<crate::model::IdentityProviderSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata that describes the results of an identity provider operation.</p>
@@ -204,10 +262,20 @@ pub mod register_identity_provider_output {
             self.identity_provider_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RegisterIdentityProviderOutput`](crate::output::RegisterIdentityProviderOutput).
         pub fn build(self) -> crate::output::RegisterIdentityProviderOutput {
             crate::output::RegisterIdentityProviderOutput {
                 identity_provider_summary: self.identity_provider_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -230,6 +298,7 @@ pub struct ListUserAssociationsOutput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListUserAssociationsOutput {
     /// <p>Metadata that describes the list user association operation.</p>
@@ -243,6 +312,11 @@ impl ListUserAssociationsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListUserAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
 pub mod list_user_associations_output {
 
@@ -253,6 +327,7 @@ pub mod list_user_associations_output {
         pub(crate) instance_user_summaries:
             std::option::Option<std::vec::Vec<crate::model::InstanceUserSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instance_user_summaries`.
@@ -284,11 +359,21 @@ pub mod list_user_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListUserAssociationsOutput`](crate::output::ListUserAssociationsOutput).
         pub fn build(self) -> crate::output::ListUserAssociationsOutput {
             crate::output::ListUserAssociationsOutput {
                 instance_user_summaries: self.instance_user_summaries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -311,6 +396,7 @@ pub struct ListProductSubscriptionsOutput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListProductSubscriptionsOutput {
     /// <p>Metadata that describes the list product subscriptions operation.</p>
@@ -324,6 +410,11 @@ impl ListProductSubscriptionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListProductSubscriptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
 pub mod list_product_subscriptions_output {
 
@@ -334,6 +425,7 @@ pub mod list_product_subscriptions_output {
         pub(crate) product_user_summaries:
             std::option::Option<std::vec::Vec<crate::model::ProductUserSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `product_user_summaries`.
@@ -365,11 +457,21 @@ pub mod list_product_subscriptions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListProductSubscriptionsOutput`](crate::output::ListProductSubscriptionsOutput).
         pub fn build(self) -> crate::output::ListProductSubscriptionsOutput {
             crate::output::ListProductSubscriptionsOutput {
                 product_user_summaries: self.product_user_summaries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -391,6 +493,7 @@ pub struct ListInstancesOutput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListInstancesOutput {
     /// <p>Metadata that describes the list instances operation.</p>
@@ -400,6 +503,11 @@ impl ListInstancesOutput {
     /// <p>Token for the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListInstancesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListInstancesOutput`](crate::output::ListInstancesOutput).
@@ -412,6 +520,7 @@ pub mod list_instances_output {
         pub(crate) instance_summaries:
             std::option::Option<std::vec::Vec<crate::model::InstanceSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instance_summaries`.
@@ -443,11 +552,21 @@ pub mod list_instances_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListInstancesOutput`](crate::output::ListInstancesOutput).
         pub fn build(self) -> crate::output::ListInstancesOutput {
             crate::output::ListInstancesOutput {
                 instance_summaries: self.instance_summaries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -470,6 +589,7 @@ pub struct ListIdentityProvidersOutput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListIdentityProvidersOutput {
     /// <p>Metadata that describes the list identity providers operation.</p>
@@ -483,6 +603,11 @@ impl ListIdentityProvidersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIdentityProvidersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
 pub mod list_identity_providers_output {
 
@@ -493,6 +618,7 @@ pub mod list_identity_providers_output {
         pub(crate) identity_provider_summaries:
             std::option::Option<std::vec::Vec<crate::model::IdentityProviderSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `identity_provider_summaries`.
@@ -527,11 +653,21 @@ pub mod list_identity_providers_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIdentityProvidersOutput`](crate::output::ListIdentityProvidersOutput).
         pub fn build(self) -> crate::output::ListIdentityProvidersOutput {
             crate::output::ListIdentityProvidersOutput {
                 identity_provider_summaries: self.identity_provider_summaries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -550,11 +686,17 @@ pub struct DisassociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
     #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
+    _request_id: Option<String>,
 }
 impl DisassociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
     pub fn instance_user_summary(&self) -> std::option::Option<&crate::model::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DisassociateUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
@@ -565,6 +707,7 @@ pub mod disassociate_user_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata that describes the associate user operation.</p>
@@ -580,10 +723,20 @@ pub mod disassociate_user_output {
             self.instance_user_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateUserOutput`](crate::output::DisassociateUserOutput).
         pub fn build(self) -> crate::output::DisassociateUserOutput {
             crate::output::DisassociateUserOutput {
                 instance_user_summary: self.instance_user_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -602,6 +755,7 @@ pub struct DeregisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
     #[doc(hidden)]
     pub identity_provider_summary: std::option::Option<crate::model::IdentityProviderSummary>,
+    _request_id: Option<String>,
 }
 impl DeregisterIdentityProviderOutput {
     /// <p>Metadata that describes the results of an identity provider operation.</p>
@@ -609,6 +763,11 @@ impl DeregisterIdentityProviderOutput {
         &self,
     ) -> std::option::Option<&crate::model::IdentityProviderSummary> {
         self.identity_provider_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeregisterIdentityProviderOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
@@ -620,6 +779,7 @@ pub mod deregister_identity_provider_output {
     pub struct Builder {
         pub(crate) identity_provider_summary:
             std::option::Option<crate::model::IdentityProviderSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata that describes the results of an identity provider operation.</p>
@@ -638,10 +798,20 @@ pub mod deregister_identity_provider_output {
             self.identity_provider_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeregisterIdentityProviderOutput`](crate::output::DeregisterIdentityProviderOutput).
         pub fn build(self) -> crate::output::DeregisterIdentityProviderOutput {
             crate::output::DeregisterIdentityProviderOutput {
                 identity_provider_summary: self.identity_provider_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -660,11 +830,17 @@ pub struct AssociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
     #[doc(hidden)]
     pub instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
+    _request_id: Option<String>,
 }
 impl AssociateUserOutput {
     /// <p>Metadata that describes the associate user operation.</p>
     pub fn instance_user_summary(&self) -> std::option::Option<&crate::model::InstanceUserSummary> {
         self.instance_user_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for AssociateUserOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AssociateUserOutput`](crate::output::AssociateUserOutput).
@@ -675,6 +851,7 @@ pub mod associate_user_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) instance_user_summary: std::option::Option<crate::model::InstanceUserSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Metadata that describes the associate user operation.</p>
@@ -690,10 +867,20 @@ pub mod associate_user_output {
             self.instance_user_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateUserOutput`](crate::output::AssociateUserOutput).
         pub fn build(self) -> crate::output::AssociateUserOutput {
             crate::output::AssociateUserOutput {
                 instance_user_summary: self.instance_user_summary,
+                _request_id: self._request_id,
             }
         }
     }

@@ -6,8 +6,11 @@ pub fn parse_add_custom_routing_endpoints_error(
     crate::output::AddCustomRoutingEndpointsOutput,
     crate::error::AddCustomRoutingEndpointsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,136 +22,131 @@ pub fn parse_add_custom_routing_endpoints_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::AddCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::AddCustomRoutingEndpointsErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::AddCustomRoutingEndpointsError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::AddCustomRoutingEndpointsError {
-                meta: generic,
-                kind: crate::error::AddCustomRoutingEndpointsErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "EndpointAlreadyExistsException" => crate::error::AddCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::AddCustomRoutingEndpointsErrorKind::EndpointAlreadyExistsException(
-                {
+        "ConflictException" => crate::error::AddCustomRoutingEndpointsError::ConflictException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::conflict_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EndpointAlreadyExistsException" => {
+            crate::error::AddCustomRoutingEndpointsError::EndpointAlreadyExistsException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::endpoint_already_exists_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_endpoint_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "EndpointGroupNotFoundException" => crate::error::AddCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::AddCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(
-                {
+                    let mut output =
+                        crate::error::endpoint_already_exists_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "EndpointGroupNotFoundException" => {
+            crate::error::AddCustomRoutingEndpointsError::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::endpoint_group_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InternalServiceErrorException" => crate::error::AddCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::AddCustomRoutingEndpointsErrorKind::InternalServiceErrorException(
-                {
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::AddCustomRoutingEndpointsError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_service_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidArgumentException" => crate::error::AddCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::AddCustomRoutingEndpointsErrorKind::InvalidArgumentException({
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::AddCustomRoutingEndpointsError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::AddCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::AddCustomRoutingEndpointsErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::AddCustomRoutingEndpointsError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddCustomRoutingEndpointsError::generic(generic),
     })
 }
@@ -169,6 +167,9 @@ pub fn parse_add_custom_routing_endpoints_response(
             output,
         )
         .map_err(crate::error::AddCustomRoutingEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -177,8 +178,11 @@ pub fn parse_add_custom_routing_endpoints_response(
 pub fn parse_add_endpoints_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddEndpointsOutput, crate::error::AddEndpointsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddEndpointsError::unhandled(generic)),
@@ -186,26 +190,23 @@ pub fn parse_add_endpoints_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::AddEndpointsError {
-            meta: generic,
-            kind: crate::error::AddEndpointsErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::AddEndpointsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EndpointGroupNotFoundException" => crate::error::AddEndpointsError {
-            meta: generic,
-            kind: crate::error::AddEndpointsErrorKind::EndpointGroupNotFoundException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EndpointGroupNotFoundException" => {
+            crate::error::AddEndpointsError::EndpointGroupNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -213,17 +214,17 @@ pub fn parse_add_endpoints_error(
                         crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::AddEndpointsError {
-            meta: generic,
-            kind: crate::error::AddEndpointsErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::AddEndpointsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -231,51 +232,47 @@ pub fn parse_add_endpoints_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::AddEndpointsError {
-            meta: generic,
-            kind: crate::error::AddEndpointsErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => crate::error::AddEndpointsError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::AddEndpointsError {
-            meta: generic,
-            kind: crate::error::AddEndpointsErrorKind::LimitExceededException({
+                let mut output = crate::error::invalid_argument_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::AddEndpointsError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TransactionInProgressException" => crate::error::AddEndpointsError {
-            meta: generic,
-            kind: crate::error::AddEndpointsErrorKind::TransactionInProgressException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TransactionInProgressException" => {
+            crate::error::AddEndpointsError::TransactionInProgressException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -283,14 +280,15 @@ pub fn parse_add_endpoints_error(
                         crate::error::transaction_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_transaction_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddEndpointsError::generic(generic),
     })
 }
@@ -308,6 +306,9 @@ pub fn parse_add_endpoints_response(
             output,
         )
         .map_err(crate::error::AddEndpointsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -319,8 +320,11 @@ pub fn parse_advertise_byoip_cidr_error(
     crate::output::AdvertiseByoipCidrOutput,
     crate::error::AdvertiseByoipCidrError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AdvertiseByoipCidrError::unhandled(generic)),
@@ -328,26 +332,23 @@ pub fn parse_advertise_byoip_cidr_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::AdvertiseByoipCidrError {
-            meta: generic,
-            kind: crate::error::AdvertiseByoipCidrErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::AdvertiseByoipCidrError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ByoipCidrNotFoundException" => crate::error::AdvertiseByoipCidrError {
-            meta: generic,
-            kind: crate::error::AdvertiseByoipCidrErrorKind::ByoipCidrNotFoundException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ByoipCidrNotFoundException" => {
+            crate::error::AdvertiseByoipCidrError::ByoipCidrNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -355,17 +356,17 @@ pub fn parse_advertise_byoip_cidr_error(
                         crate::error::byoip_cidr_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_byoip_cidr_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IncorrectCidrStateException" => crate::error::AdvertiseByoipCidrError {
-            meta: generic,
-            kind: crate::error::AdvertiseByoipCidrErrorKind::IncorrectCidrStateException({
+            })
+        }
+        "IncorrectCidrStateException" => {
+            crate::error::AdvertiseByoipCidrError::IncorrectCidrStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -373,17 +374,17 @@ pub fn parse_advertise_byoip_cidr_error(
                         crate::error::incorrect_cidr_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::AdvertiseByoipCidrError {
-            meta: generic,
-            kind: crate::error::AdvertiseByoipCidrErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::AdvertiseByoipCidrError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -391,31 +392,32 @@ pub fn parse_advertise_byoip_cidr_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::AdvertiseByoipCidrError {
-            meta: generic,
-            kind: crate::error::AdvertiseByoipCidrErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::AdvertiseByoipCidrError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AdvertiseByoipCidrError::generic(generic),
     })
 }
@@ -436,6 +438,9 @@ pub fn parse_advertise_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::AdvertiseByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -447,8 +452,11 @@ pub fn parse_allow_custom_routing_traffic_error(
     crate::output::AllowCustomRoutingTrafficOutput,
     crate::error::AllowCustomRoutingTrafficError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -460,63 +468,59 @@ pub fn parse_allow_custom_routing_traffic_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointGroupNotFoundException" => crate::error::AllowCustomRoutingTrafficError {
-            meta: generic,
-            kind: crate::error::AllowCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::endpoint_group_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InternalServiceErrorException" => crate::error::AllowCustomRoutingTrafficError {
-            meta: generic,
-            kind: crate::error::AllowCustomRoutingTrafficErrorKind::InternalServiceErrorException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_service_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidArgumentException" => crate::error::AllowCustomRoutingTrafficError {
-            meta: generic,
-            kind: crate::error::AllowCustomRoutingTrafficErrorKind::InvalidArgumentException({
+        "EndpointGroupNotFoundException" => {
+            crate::error::AllowCustomRoutingTrafficError::EndpointGroupNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::AllowCustomRoutingTrafficError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::AllowCustomRoutingTrafficError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AllowCustomRoutingTrafficError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::AllowCustomRoutingTrafficError::generic(generic),
     })
 }
@@ -532,6 +536,9 @@ pub fn parse_allow_custom_routing_traffic_response(
         #[allow(unused_mut)]
         let mut output = crate::output::allow_custom_routing_traffic_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -541,8 +548,11 @@ pub fn parse_create_accelerator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAcceleratorOutput, crate::error::CreateAcceleratorError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAcceleratorError::unhandled(generic)),
@@ -550,9 +560,8 @@ pub fn parse_create_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::CreateAcceleratorError {
-            meta: generic,
-            kind: crate::error::CreateAcceleratorErrorKind::InternalServiceErrorException({
+        "InternalServiceErrorException" => {
+            crate::error::CreateAcceleratorError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -560,48 +569,47 @@ pub fn parse_create_accelerator_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::CreateAcceleratorError {
-            meta: generic,
-            kind: crate::error::CreateAcceleratorErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::CreateAcceleratorError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateAcceleratorError {
-            meta: generic,
-            kind: crate::error::CreateAcceleratorErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::CreateAcceleratorError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAcceleratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateAcceleratorError::generic(generic),
     })
 }
@@ -620,6 +628,9 @@ pub fn parse_create_accelerator_response(
             output,
         )
         .map_err(crate::error::CreateAcceleratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -631,8 +642,11 @@ pub fn parse_create_custom_routing_accelerator_error(
     crate::output::CreateCustomRoutingAcceleratorOutput,
     crate::error::CreateCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateCustomRoutingAcceleratorError::unhandled(generic)),
@@ -640,81 +654,75 @@ pub fn parse_create_custom_routing_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::CreateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingAcceleratorErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::CreateCustomRoutingAcceleratorError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::CreateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind:
-                crate::error::CreateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::CreateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(
-                {
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::CreateCustomRoutingAcceleratorError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_argument_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "LimitExceededException" => crate::error::CreateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingAcceleratorErrorKind::LimitExceededException({
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::CreateCustomRoutingAcceleratorError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::CreateCustomRoutingAcceleratorError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateCustomRoutingAcceleratorError::generic(generic),
     })
 }
@@ -737,6 +745,9 @@ pub fn parse_create_custom_routing_accelerator_response(
                 output,
             )
             .map_err(crate::error::CreateCustomRoutingAcceleratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -748,8 +759,11 @@ pub fn parse_create_custom_routing_endpoint_group_error(
     crate::output::CreateCustomRoutingEndpointGroupOutput,
     crate::error::CreateCustomRoutingEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -759,135 +773,149 @@ pub fn parse_create_custom_routing_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::AcceleratorNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AcceleratorNotFoundException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::accelerator_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "AccessDeniedException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::AccessDeniedException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "AccessDeniedException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::AccessDeniedException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "EndpointGroupAlreadyExistsException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::EndpointGroupAlreadyExistsException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "EndpointGroupAlreadyExistsException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::EndpointGroupAlreadyExistsException(
+                {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::endpoint_group_already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalServiceErrorException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                    let mut tmp = {
+                        #[allow(unused_mut)]
+                        let mut output =
+                            crate::error::endpoint_group_already_exists_exception::Builder::default(
+                            );
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "InternalServiceErrorException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidPortRangeException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::InvalidPortRangeException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidPortRangeException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::InvalidPortRangeException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_port_range_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "LimitExceededException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::LimitExceededException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::LimitExceededException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ListenerNotFoundException" => crate::error::CreateCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::CreateCustomRoutingEndpointGroupErrorKind::ListenerNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::CreateCustomRoutingEndpointGroupError::ListenerNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::CreateCustomRoutingEndpointGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::CreateCustomRoutingEndpointGroupError::generic(generic),
     })
 }
 
@@ -904,6 +932,9 @@ pub fn parse_create_custom_routing_endpoint_group_response(
             crate::output::create_custom_routing_endpoint_group_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_create_custom_routing_endpoint_group(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingEndpointGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -915,8 +946,11 @@ pub fn parse_create_custom_routing_listener_error(
     crate::output::CreateCustomRoutingListenerOutput,
     crate::error::CreateCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -928,97 +962,93 @@ pub fn parse_create_custom_routing_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::CreateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingListenerErrorKind::AcceleratorNotFoundException(
-                {
+        "AcceleratorNotFoundException" => {
+            crate::error::CreateCustomRoutingListenerError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::accelerator_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InternalServiceErrorException" => crate::error::CreateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingListenerErrorKind::InternalServiceErrorException(
-                {
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::CreateCustomRoutingListenerError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_service_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidArgumentException" => crate::error::CreateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingListenerErrorKind::InvalidArgumentException({
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::CreateCustomRoutingListenerError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidPortRangeException" => crate::error::CreateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingListenerErrorKind::InvalidPortRangeException({
+            })
+        }
+        "InvalidPortRangeException" => {
+            crate::error::CreateCustomRoutingListenerError::InvalidPortRangeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_port_range_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::CreateCustomRoutingListenerErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::CreateCustomRoutingListenerError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateCustomRoutingListenerError::generic(generic),
     })
 }
@@ -1039,6 +1069,9 @@ pub fn parse_create_custom_routing_listener_response(
             output,
         )
         .map_err(crate::error::CreateCustomRoutingListenerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1050,8 +1083,11 @@ pub fn parse_create_endpoint_group_error(
     crate::output::CreateEndpointGroupOutput,
     crate::error::CreateEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateEndpointGroupError::unhandled(generic)),
@@ -1059,9 +1095,8 @@ pub fn parse_create_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::CreateEndpointGroupError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1069,55 +1104,50 @@ pub fn parse_create_endpoint_group_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "AccessDeniedException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::AccessDeniedException({
+            })
+        }
+        "AccessDeniedException" => crate::error::CreateEndpointGroupError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EndpointGroupAlreadyExistsException" => {
+            crate::error::CreateEndpointGroupError::EndpointGroupAlreadyExistsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
+                    let mut output =
+                        crate::error::endpoint_group_already_exists_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "EndpointGroupAlreadyExistsException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::EndpointGroupAlreadyExistsException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::endpoint_group_already_exists_exception::Builder::default(
-                            );
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InternalServiceErrorException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::CreateEndpointGroupError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1125,65 +1155,66 @@ pub fn parse_create_endpoint_group_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::CreateEndpointGroupError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::CreateEndpointGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::CreateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::CreateEndpointGroupErrorKind::ListenerNotFoundException({
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::CreateEndpointGroupError::ListenerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateEndpointGroupError::generic(generic),
     })
 }
@@ -1204,6 +1235,9 @@ pub fn parse_create_endpoint_group_response(
             output,
         )
         .map_err(crate::error::CreateEndpointGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1212,8 +1246,11 @@ pub fn parse_create_endpoint_group_response(
 pub fn parse_create_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateListenerOutput, crate::error::CreateListenerError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateListenerError::unhandled(generic)),
@@ -1221,9 +1258,8 @@ pub fn parse_create_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::CreateListenerError {
-            meta: generic,
-            kind: crate::error::CreateListenerErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::CreateListenerError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1231,17 +1267,17 @@ pub fn parse_create_listener_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::CreateListenerError {
-            meta: generic,
-            kind: crate::error::CreateListenerErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::CreateListenerError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1249,65 +1285,64 @@ pub fn parse_create_listener_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::CreateListenerError {
-            meta: generic,
-            kind: crate::error::CreateListenerErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::CreateListenerError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidPortRangeException" => crate::error::CreateListenerError {
-            meta: generic,
-            kind: crate::error::CreateListenerErrorKind::InvalidPortRangeException({
+            })
+        }
+        "InvalidPortRangeException" => {
+            crate::error::CreateListenerError::InvalidPortRangeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_port_range_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateListenerError {
-            meta: generic,
-            kind: crate::error::CreateListenerErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::CreateListenerError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateListenerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateListenerError::generic(generic),
     })
 }
@@ -1325,6 +1360,9 @@ pub fn parse_create_listener_response(
             output,
         )
         .map_err(crate::error::CreateListenerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1334,8 +1372,11 @@ pub fn parse_delete_accelerator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAcceleratorOutput, crate::error::DeleteAcceleratorError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAcceleratorError::unhandled(generic)),
@@ -1343,9 +1384,8 @@ pub fn parse_delete_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotDisabledException" => crate::error::DeleteAcceleratorError {
-            meta: generic,
-            kind: crate::error::DeleteAcceleratorErrorKind::AcceleratorNotDisabledException({
+        "AcceleratorNotDisabledException" => {
+            crate::error::DeleteAcceleratorError::AcceleratorNotDisabledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1353,17 +1393,17 @@ pub fn parse_delete_accelerator_error(
                         crate::error::accelerator_not_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "AcceleratorNotFoundException" => crate::error::DeleteAcceleratorError {
-            meta: generic,
-            kind: crate::error::DeleteAcceleratorErrorKind::AcceleratorNotFoundException({
+            })
+        }
+        "AcceleratorNotFoundException" => {
+            crate::error::DeleteAcceleratorError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1371,17 +1411,17 @@ pub fn parse_delete_accelerator_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "AssociatedListenerFoundException" => crate::error::DeleteAcceleratorError {
-            meta: generic,
-            kind: crate::error::DeleteAcceleratorErrorKind::AssociatedListenerFoundException({
+            })
+        }
+        "AssociatedListenerFoundException" => {
+            crate::error::DeleteAcceleratorError::AssociatedListenerFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1389,17 +1429,17 @@ pub fn parse_delete_accelerator_error(
                         crate::error::associated_listener_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_associated_listener_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::DeleteAcceleratorError {
-            meta: generic,
-            kind: crate::error::DeleteAcceleratorErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeleteAcceleratorError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1407,31 +1447,32 @@ pub fn parse_delete_accelerator_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DeleteAcceleratorError {
-            meta: generic,
-            kind: crate::error::DeleteAcceleratorErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeleteAcceleratorError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteAcceleratorError::generic(generic),
     })
 }
@@ -1445,6 +1486,9 @@ pub fn parse_delete_accelerator_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_accelerator_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1456,8 +1500,11 @@ pub fn parse_delete_custom_routing_accelerator_error(
     crate::output::DeleteCustomRoutingAcceleratorOutput,
     crate::error::DeleteCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled(generic)),
@@ -1465,87 +1512,96 @@ pub fn parse_delete_custom_routing_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotDisabledException" => crate::error::DeleteCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotDisabledException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AcceleratorNotDisabledException" => {
+            crate::error::DeleteCustomRoutingAcceleratorError::AcceleratorNotDisabledException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::accelerator_not_disabled_exception::Builder::default();
+                    let mut output =
+                        crate::error::accelerator_not_disabled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "AcceleratorNotFoundException" => crate::error::DeleteCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DeleteCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "AcceleratorNotFoundException" => {
+            crate::error::DeleteCustomRoutingAcceleratorError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::accelerator_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "AssociatedListenerFoundException" => crate::error::DeleteCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DeleteCustomRoutingAcceleratorErrorKind::AssociatedListenerFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "AssociatedListenerFoundException" => {
+            crate::error::DeleteCustomRoutingAcceleratorError::AssociatedListenerFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::associated_listener_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::associated_listener_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_associated_listener_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalServiceErrorException" => crate::error::DeleteCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DeleteCustomRoutingAcceleratorErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeleteCustomRoutingAcceleratorError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::DeleteCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DeleteCustomRoutingAcceleratorErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeleteCustomRoutingAcceleratorError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteCustomRoutingAcceleratorError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteCustomRoutingAcceleratorError::generic(generic),
     })
 }
 
@@ -1561,6 +1617,9 @@ pub fn parse_delete_custom_routing_accelerator_response(
         let mut output =
             crate::output::delete_custom_routing_accelerator_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1572,8 +1631,11 @@ pub fn parse_delete_custom_routing_endpoint_group_error(
     crate::output::DeleteCustomRoutingEndpointGroupOutput,
     crate::error::DeleteCustomRoutingEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCustomRoutingEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1583,55 +1645,60 @@ pub fn parse_delete_custom_routing_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointGroupNotFoundException" => crate::error::DeleteCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::DeleteCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "EndpointGroupNotFoundException" => {
+            crate::error::DeleteCustomRoutingEndpointGroupError::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalServiceErrorException" => crate::error::DeleteCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::DeleteCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeleteCustomRoutingEndpointGroupError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::DeleteCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::DeleteCustomRoutingEndpointGroupErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeleteCustomRoutingEndpointGroupError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteCustomRoutingEndpointGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteCustomRoutingEndpointGroupError::generic(generic),
     })
 }
 
@@ -1647,6 +1714,9 @@ pub fn parse_delete_custom_routing_endpoint_group_response(
         let mut output =
             crate::output::delete_custom_routing_endpoint_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1658,8 +1728,11 @@ pub fn parse_delete_custom_routing_listener_error(
     crate::output::DeleteCustomRoutingListenerOutput,
     crate::error::DeleteCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCustomRoutingListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1671,71 +1744,77 @@ pub fn parse_delete_custom_routing_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AssociatedEndpointGroupFoundException" => crate::error::DeleteCustomRoutingListenerError { meta: generic, kind: crate::error::DeleteCustomRoutingListenerErrorKind::AssociatedEndpointGroupFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AssociatedEndpointGroupFoundException" => {
+            crate::error::DeleteCustomRoutingListenerError::AssociatedEndpointGroupFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::associated_endpoint_group_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::associated_endpoint_group_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_associated_endpoint_group_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalServiceErrorException" => crate::error::DeleteCustomRoutingListenerError { meta: generic, kind: crate::error::DeleteCustomRoutingListenerErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeleteCustomRoutingListenerError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::DeleteCustomRoutingListenerError { meta: generic, kind: crate::error::DeleteCustomRoutingListenerErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeleteCustomRoutingListenerError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ListenerNotFoundException" => crate::error::DeleteCustomRoutingListenerError { meta: generic, kind: crate::error::DeleteCustomRoutingListenerErrorKind::ListenerNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::DeleteCustomRoutingListenerError::ListenerNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DeleteCustomRoutingListenerError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DeleteCustomRoutingListenerError::generic(generic),
     })
 }
 
@@ -1750,6 +1829,9 @@ pub fn parse_delete_custom_routing_listener_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_custom_routing_listener_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1761,8 +1843,11 @@ pub fn parse_delete_endpoint_group_error(
     crate::output::DeleteEndpointGroupOutput,
     crate::error::DeleteEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteEndpointGroupError::unhandled(generic)),
@@ -1770,9 +1855,8 @@ pub fn parse_delete_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointGroupNotFoundException" => crate::error::DeleteEndpointGroupError {
-            meta: generic,
-            kind: crate::error::DeleteEndpointGroupErrorKind::EndpointGroupNotFoundException({
+        "EndpointGroupNotFoundException" => {
+            crate::error::DeleteEndpointGroupError::EndpointGroupNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1780,17 +1864,17 @@ pub fn parse_delete_endpoint_group_error(
                         crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::DeleteEndpointGroupError {
-            meta: generic,
-            kind: crate::error::DeleteEndpointGroupErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeleteEndpointGroupError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1798,31 +1882,32 @@ pub fn parse_delete_endpoint_group_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DeleteEndpointGroupError {
-            meta: generic,
-            kind: crate::error::DeleteEndpointGroupErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeleteEndpointGroupError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteEndpointGroupError::generic(generic),
     })
 }
@@ -1838,6 +1923,9 @@ pub fn parse_delete_endpoint_group_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_endpoint_group_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1846,8 +1934,11 @@ pub fn parse_delete_endpoint_group_response(
 pub fn parse_delete_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteListenerOutput, crate::error::DeleteListenerError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteListenerError::unhandled(generic)),
@@ -1855,9 +1946,8 @@ pub fn parse_delete_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AssociatedEndpointGroupFoundException" => crate::error::DeleteListenerError {
-            meta: generic,
-            kind: crate::error::DeleteListenerErrorKind::AssociatedEndpointGroupFoundException({
+        "AssociatedEndpointGroupFoundException" => {
+            crate::error::DeleteListenerError::AssociatedEndpointGroupFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1865,17 +1955,17 @@ pub fn parse_delete_listener_error(
                         crate::error::associated_endpoint_group_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_associated_endpoint_group_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::DeleteListenerError {
-            meta: generic,
-            kind: crate::error::DeleteListenerErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeleteListenerError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1883,48 +1973,49 @@ pub fn parse_delete_listener_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DeleteListenerError {
-            meta: generic,
-            kind: crate::error::DeleteListenerErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeleteListenerError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::DeleteListenerError {
-            meta: generic,
-            kind: crate::error::DeleteListenerErrorKind::ListenerNotFoundException({
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::DeleteListenerError::ListenerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteListenerError::generic(generic),
     })
 }
@@ -1937,6 +2028,9 @@ pub fn parse_delete_listener_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_listener_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1948,8 +2042,11 @@ pub fn parse_deny_custom_routing_traffic_error(
     crate::output::DenyCustomRoutingTrafficOutput,
     crate::error::DenyCustomRoutingTrafficError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1961,29 +2058,26 @@ pub fn parse_deny_custom_routing_traffic_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointGroupNotFoundException" => crate::error::DenyCustomRoutingTrafficError {
-            meta: generic,
-            kind: crate::error::DenyCustomRoutingTrafficErrorKind::EndpointGroupNotFoundException(
-                {
+        "EndpointGroupNotFoundException" => {
+            crate::error::DenyCustomRoutingTrafficError::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::endpoint_group_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InternalServiceErrorException" => crate::error::DenyCustomRoutingTrafficError {
-            meta: generic,
-            kind: crate::error::DenyCustomRoutingTrafficErrorKind::InternalServiceErrorException({
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DenyCustomRoutingTrafficError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1991,31 +2085,32 @@ pub fn parse_deny_custom_routing_traffic_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DenyCustomRoutingTrafficError {
-            meta: generic,
-            kind: crate::error::DenyCustomRoutingTrafficErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DenyCustomRoutingTrafficError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DenyCustomRoutingTrafficError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DenyCustomRoutingTrafficError::generic(generic),
     })
 }
@@ -2031,6 +2126,9 @@ pub fn parse_deny_custom_routing_traffic_response(
         #[allow(unused_mut)]
         let mut output = crate::output::deny_custom_routing_traffic_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2042,8 +2140,11 @@ pub fn parse_deprovision_byoip_cidr_error(
     crate::output::DeprovisionByoipCidrOutput,
     crate::error::DeprovisionByoipCidrError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeprovisionByoipCidrError::unhandled(generic)),
@@ -2051,26 +2152,25 @@ pub fn parse_deprovision_byoip_cidr_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::DeprovisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::DeprovisionByoipCidrErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::DeprovisionByoipCidrError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ByoipCidrNotFoundException" => crate::error::DeprovisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::DeprovisionByoipCidrErrorKind::ByoipCidrNotFoundException({
+            })
+        }
+        "ByoipCidrNotFoundException" => {
+            crate::error::DeprovisionByoipCidrError::ByoipCidrNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2078,17 +2178,17 @@ pub fn parse_deprovision_byoip_cidr_error(
                         crate::error::byoip_cidr_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_byoip_cidr_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IncorrectCidrStateException" => crate::error::DeprovisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::DeprovisionByoipCidrErrorKind::IncorrectCidrStateException({
+            })
+        }
+        "IncorrectCidrStateException" => {
+            crate::error::DeprovisionByoipCidrError::IncorrectCidrStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2096,17 +2196,17 @@ pub fn parse_deprovision_byoip_cidr_error(
                         crate::error::incorrect_cidr_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::DeprovisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::DeprovisionByoipCidrErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DeprovisionByoipCidrError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2114,31 +2214,32 @@ pub fn parse_deprovision_byoip_cidr_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DeprovisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::DeprovisionByoipCidrErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DeprovisionByoipCidrError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeprovisionByoipCidrError::generic(generic),
     })
 }
@@ -2159,6 +2260,9 @@ pub fn parse_deprovision_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::DeprovisionByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2170,8 +2274,11 @@ pub fn parse_describe_accelerator_error(
     crate::output::DescribeAcceleratorOutput,
     crate::error::DescribeAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeAcceleratorError::unhandled(generic)),
@@ -2179,9 +2286,8 @@ pub fn parse_describe_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::DescribeAcceleratorError {
-            meta: generic,
-            kind: crate::error::DescribeAcceleratorErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::DescribeAcceleratorError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2189,17 +2295,17 @@ pub fn parse_describe_accelerator_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::DescribeAcceleratorError {
-            meta: generic,
-            kind: crate::error::DescribeAcceleratorErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DescribeAcceleratorError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2207,31 +2313,32 @@ pub fn parse_describe_accelerator_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DescribeAcceleratorError {
-            meta: generic,
-            kind: crate::error::DescribeAcceleratorErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeAcceleratorError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeAcceleratorError::generic(generic),
     })
 }
@@ -2252,6 +2359,9 @@ pub fn parse_describe_accelerator_response(
             output,
         )
         .map_err(crate::error::DescribeAcceleratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2263,8 +2373,11 @@ pub fn parse_describe_accelerator_attributes_error(
     crate::output::DescribeAcceleratorAttributesOutput,
     crate::error::DescribeAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2276,65 +2389,59 @@ pub fn parse_describe_accelerator_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::DescribeAcceleratorAttributesError {
-            meta: generic,
-            kind:
-                crate::error::DescribeAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::accelerator_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InternalServiceErrorException" => crate::error::DescribeAcceleratorAttributesError {
-            meta: generic,
-            kind:
-                crate::error::DescribeAcceleratorAttributesErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::DescribeAcceleratorAttributesError {
-            meta: generic,
-            kind: crate::error::DescribeAcceleratorAttributesErrorKind::InvalidArgumentException({
+        "AcceleratorNotFoundException" => {
+            crate::error::DescribeAcceleratorAttributesError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DescribeAcceleratorAttributesError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeAcceleratorAttributesError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeAcceleratorAttributesError::generic(generic),
     })
 }
@@ -2356,6 +2463,9 @@ pub fn parse_describe_accelerator_attributes_response(
                 output,
             )
             .map_err(crate::error::DescribeAcceleratorAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2367,8 +2477,11 @@ pub fn parse_describe_custom_routing_accelerator_error(
     crate::output::DescribeCustomRoutingAcceleratorOutput,
     crate::error::DescribeCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomRoutingAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2378,55 +2491,60 @@ pub fn parse_describe_custom_routing_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::DescribeCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DescribeCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "AcceleratorNotFoundException" => {
+            crate::error::DescribeCustomRoutingAcceleratorError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::accelerator_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalServiceErrorException" => crate::error::DescribeCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DescribeCustomRoutingAcceleratorErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DescribeCustomRoutingAcceleratorError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::DescribeCustomRoutingAcceleratorError { meta: generic, kind: crate::error::DescribeCustomRoutingAcceleratorErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeCustomRoutingAcceleratorError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeCustomRoutingAcceleratorError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeCustomRoutingAcceleratorError::generic(generic),
     })
 }
 
@@ -2448,6 +2566,9 @@ pub fn parse_describe_custom_routing_accelerator_response(
                 output,
             )
             .map_err(crate::error::DescribeCustomRoutingAcceleratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2459,8 +2580,11 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
     crate::output::DescribeCustomRoutingAcceleratorAttributesOutput,
     crate::error::DescribeCustomRoutingAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomRoutingAcceleratorAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2472,7 +2596,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::DescribeCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => crate::error::DescribeCustomRoutingAcceleratorAttributesError::AcceleratorNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2480,6 +2604,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2487,8 +2612,8 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InternalServiceErrorException" => crate::error::DescribeCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException({
+        }),
+        "InternalServiceErrorException" => crate::error::DescribeCustomRoutingAcceleratorAttributesError::InternalServiceErrorException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2496,6 +2621,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2503,8 +2629,8 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidArgumentException" => crate::error::DescribeCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::DescribeCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException({
+        }),
+        "InvalidArgumentException" => crate::error::DescribeCustomRoutingAcceleratorAttributesError::InvalidArgumentException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -2512,6 +2638,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -2519,7 +2646,7 @@ pub fn parse_describe_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::DescribeCustomRoutingAcceleratorAttributesError::generic(generic)
     })
 }
@@ -2538,6 +2665,9 @@ pub fn parse_describe_custom_routing_accelerator_attributes_response(
             );
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_custom_routing_accelerator_attributes(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingAcceleratorAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2549,8 +2679,11 @@ pub fn parse_describe_custom_routing_endpoint_group_error(
     crate::output::DescribeCustomRoutingEndpointGroupOutput,
     crate::error::DescribeCustomRoutingEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomRoutingEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2560,55 +2693,60 @@ pub fn parse_describe_custom_routing_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointGroupNotFoundException" => crate::error::DescribeCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::DescribeCustomRoutingEndpointGroupErrorKind::EndpointGroupNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "EndpointGroupNotFoundException" => {
+            crate::error::DescribeCustomRoutingEndpointGroupError::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InternalServiceErrorException" => crate::error::DescribeCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::DescribeCustomRoutingEndpointGroupErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DescribeCustomRoutingEndpointGroupError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::DescribeCustomRoutingEndpointGroupError { meta: generic, kind: crate::error::DescribeCustomRoutingEndpointGroupErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeCustomRoutingEndpointGroupError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::DescribeCustomRoutingEndpointGroupError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::DescribeCustomRoutingEndpointGroupError::generic(generic),
     })
 }
 
@@ -2625,6 +2763,9 @@ pub fn parse_describe_custom_routing_endpoint_group_response(
             crate::output::describe_custom_routing_endpoint_group_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_custom_routing_endpoint_group(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingEndpointGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2636,8 +2777,11 @@ pub fn parse_describe_custom_routing_listener_error(
     crate::output::DescribeCustomRoutingListenerOutput,
     crate::error::DescribeCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2649,64 +2793,58 @@ pub fn parse_describe_custom_routing_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::DescribeCustomRoutingListenerError {
-            meta: generic,
-            kind:
-                crate::error::DescribeCustomRoutingListenerErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::DescribeCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::DescribeCustomRoutingListenerErrorKind::InvalidArgumentException({
+        "InternalServiceErrorException" => {
+            crate::error::DescribeCustomRoutingListenerError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::DescribeCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::DescribeCustomRoutingListenerErrorKind::ListenerNotFoundException(
-                {
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeCustomRoutingListenerError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::listener_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::DescribeCustomRoutingListenerError::ListenerNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::listener_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DescribeCustomRoutingListenerError::generic(generic),
     })
 }
@@ -2728,6 +2866,9 @@ pub fn parse_describe_custom_routing_listener_response(
                 output,
             )
             .map_err(crate::error::DescribeCustomRoutingListenerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2739,8 +2880,11 @@ pub fn parse_describe_endpoint_group_error(
     crate::output::DescribeEndpointGroupOutput,
     crate::error::DescribeEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeEndpointGroupError::unhandled(generic)),
@@ -2748,9 +2892,8 @@ pub fn parse_describe_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointGroupNotFoundException" => crate::error::DescribeEndpointGroupError {
-            meta: generic,
-            kind: crate::error::DescribeEndpointGroupErrorKind::EndpointGroupNotFoundException({
+        "EndpointGroupNotFoundException" => {
+            crate::error::DescribeEndpointGroupError::EndpointGroupNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2758,17 +2901,17 @@ pub fn parse_describe_endpoint_group_error(
                         crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::DescribeEndpointGroupError {
-            meta: generic,
-            kind: crate::error::DescribeEndpointGroupErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::DescribeEndpointGroupError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2776,31 +2919,32 @@ pub fn parse_describe_endpoint_group_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DescribeEndpointGroupError {
-            meta: generic,
-            kind: crate::error::DescribeEndpointGroupErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeEndpointGroupError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeEndpointGroupError::generic(generic),
     })
 }
@@ -2821,6 +2965,9 @@ pub fn parse_describe_endpoint_group_response(
             output,
         )
         .map_err(crate::error::DescribeEndpointGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2830,8 +2977,11 @@ pub fn parse_describe_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeListenerOutput, crate::error::DescribeListenerError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeListenerError::unhandled(generic)),
@@ -2839,9 +2989,8 @@ pub fn parse_describe_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::DescribeListenerError {
-            meta: generic,
-            kind: crate::error::DescribeListenerErrorKind::InternalServiceErrorException({
+        "InternalServiceErrorException" => {
+            crate::error::DescribeListenerError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2849,48 +2998,49 @@ pub fn parse_describe_listener_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::DescribeListenerError {
-            meta: generic,
-            kind: crate::error::DescribeListenerErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::DescribeListenerError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::DescribeListenerError {
-            meta: generic,
-            kind: crate::error::DescribeListenerErrorKind::ListenerNotFoundException({
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::DescribeListenerError::ListenerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeListenerError::generic(generic),
     })
 }
@@ -2909,6 +3059,9 @@ pub fn parse_describe_listener_response(
             output,
         )
         .map_err(crate::error::DescribeListenerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2918,8 +3071,11 @@ pub fn parse_list_accelerators_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAcceleratorsOutput, crate::error::ListAcceleratorsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAcceleratorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAcceleratorsError::unhandled(generic)),
@@ -2927,9 +3083,8 @@ pub fn parse_list_accelerators_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::ListAcceleratorsError {
-            meta: generic,
-            kind: crate::error::ListAcceleratorsErrorKind::InternalServiceErrorException({
+        "InternalServiceErrorException" => {
+            crate::error::ListAcceleratorsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2937,48 +3092,49 @@ pub fn parse_list_accelerators_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAcceleratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::ListAcceleratorsError {
-            meta: generic,
-            kind: crate::error::ListAcceleratorsErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListAcceleratorsError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAcceleratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListAcceleratorsError {
-            meta: generic,
-            kind: crate::error::ListAcceleratorsErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListAcceleratorsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAcceleratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListAcceleratorsError::generic(generic),
     })
 }
@@ -2997,6 +3153,9 @@ pub fn parse_list_accelerators_response(
             output,
         )
         .map_err(crate::error::ListAcceleratorsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3005,8 +3164,11 @@ pub fn parse_list_accelerators_response(
 pub fn parse_list_byoip_cidrs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListByoipCidrsOutput, crate::error::ListByoipCidrsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListByoipCidrsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListByoipCidrsError::unhandled(generic)),
@@ -3014,26 +3176,23 @@ pub fn parse_list_byoip_cidrs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ListByoipCidrsError {
-            meta: generic,
-            kind: crate::error::ListByoipCidrsErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::ListByoipCidrsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::ListByoipCidrsError {
-            meta: generic,
-            kind: crate::error::ListByoipCidrsErrorKind::InternalServiceErrorException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceErrorException" => {
+            crate::error::ListByoipCidrsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3041,48 +3200,49 @@ pub fn parse_list_byoip_cidrs_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::ListByoipCidrsError {
-            meta: generic,
-            kind: crate::error::ListByoipCidrsErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListByoipCidrsError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListByoipCidrsError {
-            meta: generic,
-            kind: crate::error::ListByoipCidrsErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListByoipCidrsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListByoipCidrsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListByoipCidrsError::generic(generic),
     })
 }
@@ -3100,6 +3260,9 @@ pub fn parse_list_byoip_cidrs_response(
             output,
         )
         .map_err(crate::error::ListByoipCidrsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3111,8 +3274,11 @@ pub fn parse_list_custom_routing_accelerators_error(
     crate::output::ListCustomRoutingAcceleratorsOutput,
     crate::error::ListCustomRoutingAcceleratorsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3124,64 +3290,58 @@ pub fn parse_list_custom_routing_accelerators_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::ListCustomRoutingAcceleratorsError {
-            meta: generic,
-            kind:
-                crate::error::ListCustomRoutingAcceleratorsErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::ListCustomRoutingAcceleratorsError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingAcceleratorsErrorKind::InvalidArgumentException({
+        "InternalServiceErrorException" => {
+            crate::error::ListCustomRoutingAcceleratorsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListCustomRoutingAcceleratorsError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingAcceleratorsErrorKind::InvalidNextTokenException(
-                {
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListCustomRoutingAcceleratorsError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListCustomRoutingAcceleratorsError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListCustomRoutingAcceleratorsError::generic(generic),
     })
 }
@@ -3203,6 +3363,9 @@ pub fn parse_list_custom_routing_accelerators_response(
                 output,
             )
             .map_err(crate::error::ListCustomRoutingAcceleratorsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3214,8 +3377,11 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
     crate::output::ListCustomRoutingEndpointGroupsOutput,
     crate::error::ListCustomRoutingEndpointGroupsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled(generic)),
@@ -3223,71 +3389,76 @@ pub fn parse_list_custom_routing_endpoint_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::ListCustomRoutingEndpointGroupsError { meta: generic, kind: crate::error::ListCustomRoutingEndpointGroupsErrorKind::InternalServiceErrorException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "InternalServiceErrorException" => {
+            crate::error::ListCustomRoutingEndpointGroupsError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::internal_service_error_exception::Builder::default();
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidArgumentException" => crate::error::ListCustomRoutingEndpointGroupsError { meta: generic, kind: crate::error::ListCustomRoutingEndpointGroupsErrorKind::InvalidArgumentException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListCustomRoutingEndpointGroupsError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidNextTokenException" => crate::error::ListCustomRoutingEndpointGroupsError { meta: generic, kind: crate::error::ListCustomRoutingEndpointGroupsErrorKind::InvalidNextTokenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListCustomRoutingEndpointGroupsError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "ListenerNotFoundException" => crate::error::ListCustomRoutingEndpointGroupsError { meta: generic, kind: crate::error::ListCustomRoutingEndpointGroupsErrorKind::ListenerNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::ListCustomRoutingEndpointGroupsError::ListenerNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ListCustomRoutingEndpointGroupsError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ListCustomRoutingEndpointGroupsError::generic(generic),
     })
 }
 
@@ -3309,6 +3480,9 @@ pub fn parse_list_custom_routing_endpoint_groups_response(
                 output,
             )
             .map_err(crate::error::ListCustomRoutingEndpointGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3320,8 +3494,11 @@ pub fn parse_list_custom_routing_listeners_error(
     crate::output::ListCustomRoutingListenersOutput,
     crate::error::ListCustomRoutingListenersError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3333,80 +3510,76 @@ pub fn parse_list_custom_routing_listeners_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::ListCustomRoutingListenersError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingListenersErrorKind::AcceleratorNotFoundException(
-                {
+        "AcceleratorNotFoundException" => {
+            crate::error::ListCustomRoutingListenersError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::accelerator_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InternalServiceErrorException" => crate::error::ListCustomRoutingListenersError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingListenersErrorKind::InternalServiceErrorException(
-                {
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::ListCustomRoutingListenersError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_service_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidArgumentException" => crate::error::ListCustomRoutingListenersError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingListenersErrorKind::InvalidArgumentException({
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListCustomRoutingListenersError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListCustomRoutingListenersError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingListenersErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListCustomRoutingListenersError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListCustomRoutingListenersError::generic(generic),
     })
 }
@@ -3427,6 +3600,9 @@ pub fn parse_list_custom_routing_listeners_response(
             output,
         )
         .map_err(crate::error::ListCustomRoutingListenersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3438,8 +3614,11 @@ pub fn parse_list_custom_routing_port_mappings_error(
     crate::output::ListCustomRoutingPortMappingsOutput,
     crate::error::ListCustomRoutingPortMappingsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3451,107 +3630,94 @@ pub fn parse_list_custom_routing_port_mappings_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::ListCustomRoutingPortMappingsError {
-            meta: generic,
-            kind:
-                crate::error::ListCustomRoutingPortMappingsErrorKind::AcceleratorNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::accelerator_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "EndpointGroupNotFoundException" => crate::error::ListCustomRoutingPortMappingsError {
-            meta: generic,
-            kind:
-                crate::error::ListCustomRoutingPortMappingsErrorKind::EndpointGroupNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::endpoint_group_not_found_exception::Builder::default(
-                                );
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InternalServiceErrorException" => crate::error::ListCustomRoutingPortMappingsError {
-            meta: generic,
-            kind:
-                crate::error::ListCustomRoutingPortMappingsErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::ListCustomRoutingPortMappingsError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingPortMappingsErrorKind::InvalidArgumentException({
+        "AcceleratorNotFoundException" => {
+            crate::error::ListCustomRoutingPortMappingsError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListCustomRoutingPortMappingsError {
-            meta: generic,
-            kind: crate::error::ListCustomRoutingPortMappingsErrorKind::InvalidNextTokenException(
-                {
+            })
+        }
+        "EndpointGroupNotFoundException" => {
+            crate::error::ListCustomRoutingPortMappingsError::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_next_token_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::ListCustomRoutingPortMappingsError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListCustomRoutingPortMappingsError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListCustomRoutingPortMappingsError::InvalidNextTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_next_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::ListCustomRoutingPortMappingsError::generic(generic),
     })
 }
@@ -3574,6 +3740,9 @@ pub fn parse_list_custom_routing_port_mappings_response(
                 output,
             )
             .map_err(crate::error::ListCustomRoutingPortMappingsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3585,8 +3754,11 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
     crate::output::ListCustomRoutingPortMappingsByDestinationOutput,
     crate::error::ListCustomRoutingPortMappingsByDestinationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3598,7 +3770,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "EndpointNotFoundException" => crate::error::ListCustomRoutingPortMappingsByDestinationError { meta: generic, kind: crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::EndpointNotFoundException({
+        "EndpointNotFoundException" => crate::error::ListCustomRoutingPortMappingsByDestinationError::EndpointNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3606,6 +3778,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     let mut output = crate::error::endpoint_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3613,8 +3786,8 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InternalServiceErrorException" => crate::error::ListCustomRoutingPortMappingsByDestinationError { meta: generic, kind: crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InternalServiceErrorException({
+        }),
+        "InternalServiceErrorException" => crate::error::ListCustomRoutingPortMappingsByDestinationError::InternalServiceErrorException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3622,6 +3795,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3629,8 +3803,8 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidArgumentException" => crate::error::ListCustomRoutingPortMappingsByDestinationError { meta: generic, kind: crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidArgumentException({
+        }),
+        "InvalidArgumentException" => crate::error::ListCustomRoutingPortMappingsByDestinationError::InvalidArgumentException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3638,6 +3812,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3645,8 +3820,8 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidNextTokenException" => crate::error::ListCustomRoutingPortMappingsByDestinationError { meta: generic, kind: crate::error::ListCustomRoutingPortMappingsByDestinationErrorKind::InvalidNextTokenException({
+        }),
+        "InvalidNextTokenException" => crate::error::ListCustomRoutingPortMappingsByDestinationError::InvalidNextTokenException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -3654,6 +3829,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -3661,7 +3837,7 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::ListCustomRoutingPortMappingsByDestinationError::generic(generic)
     })
 }
@@ -3678,6 +3854,9 @@ pub fn parse_list_custom_routing_port_mappings_by_destination_response(
         let mut output = crate::output::list_custom_routing_port_mappings_by_destination_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_list_custom_routing_port_mappings_by_destination(response.body().as_ref(), output).map_err(crate::error::ListCustomRoutingPortMappingsByDestinationError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3689,8 +3868,11 @@ pub fn parse_list_endpoint_groups_error(
     crate::output::ListEndpointGroupsOutput,
     crate::error::ListEndpointGroupsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListEndpointGroupsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListEndpointGroupsError::unhandled(generic)),
@@ -3698,9 +3880,8 @@ pub fn parse_list_endpoint_groups_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::ListEndpointGroupsError {
-            meta: generic,
-            kind: crate::error::ListEndpointGroupsErrorKind::InternalServiceErrorException({
+        "InternalServiceErrorException" => {
+            crate::error::ListEndpointGroupsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3708,65 +3889,66 @@ pub fn parse_list_endpoint_groups_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::ListEndpointGroupsError {
-            meta: generic,
-            kind: crate::error::ListEndpointGroupsErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListEndpointGroupsError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListEndpointGroupsError {
-            meta: generic,
-            kind: crate::error::ListEndpointGroupsErrorKind::InvalidNextTokenException({
+            })
+        }
+        "InvalidNextTokenException" => {
+            crate::error::ListEndpointGroupsError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::ListEndpointGroupsError {
-            meta: generic,
-            kind: crate::error::ListEndpointGroupsErrorKind::ListenerNotFoundException({
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::ListEndpointGroupsError::ListenerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListEndpointGroupsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListEndpointGroupsError::generic(generic),
     })
 }
@@ -3787,6 +3969,9 @@ pub fn parse_list_endpoint_groups_response(
             output,
         )
         .map_err(crate::error::ListEndpointGroupsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3795,8 +3980,11 @@ pub fn parse_list_endpoint_groups_response(
 pub fn parse_list_listeners_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListListenersOutput, crate::error::ListListenersError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListListenersError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListListenersError::unhandled(generic)),
@@ -3804,9 +3992,8 @@ pub fn parse_list_listeners_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::ListListenersError {
-            meta: generic,
-            kind: crate::error::ListListenersErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::ListListenersError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3814,17 +4001,17 @@ pub fn parse_list_listeners_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::ListListenersError {
-            meta: generic,
-            kind: crate::error::ListListenersErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::ListListenersError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3832,48 +4019,47 @@ pub fn parse_list_listeners_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::ListListenersError {
-            meta: generic,
-            kind: crate::error::ListListenersErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => crate::error::ListListenersError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidNextTokenException" => crate::error::ListListenersError {
-            meta: generic,
-            kind: crate::error::ListListenersErrorKind::InvalidNextTokenException({
+                let mut output = crate::error::invalid_argument_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidNextTokenException" => {
+            crate::error::ListListenersError::InvalidNextTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_next_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_next_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListListenersError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListListenersError::generic(generic),
     })
 }
@@ -3891,6 +4077,9 @@ pub fn parse_list_listeners_response(
             output,
         )
         .map_err(crate::error::ListListenersError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3902,8 +4091,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -3911,9 +4103,8 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::ListTagsForResourceError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3921,17 +4112,17 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::ListTagsForResourceError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3939,31 +4130,32 @@ pub fn parse_list_tags_for_resource_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ListTagsForResourceError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -3984,6 +4176,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3995,8 +4190,11 @@ pub fn parse_provision_byoip_cidr_error(
     crate::output::ProvisionByoipCidrOutput,
     crate::error::ProvisionByoipCidrError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ProvisionByoipCidrError::unhandled(generic)),
@@ -4004,26 +4202,23 @@ pub fn parse_provision_byoip_cidr_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::ProvisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::ProvisionByoipCidrErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::ProvisionByoipCidrError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "IncorrectCidrStateException" => crate::error::ProvisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::ProvisionByoipCidrErrorKind::IncorrectCidrStateException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "IncorrectCidrStateException" => {
+            crate::error::ProvisionByoipCidrError::IncorrectCidrStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4031,17 +4226,17 @@ pub fn parse_provision_byoip_cidr_error(
                         crate::error::incorrect_cidr_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::ProvisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::ProvisionByoipCidrErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::ProvisionByoipCidrError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4049,48 +4244,49 @@ pub fn parse_provision_byoip_cidr_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::ProvisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::ProvisionByoipCidrErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::ProvisionByoipCidrError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::ProvisionByoipCidrError {
-            meta: generic,
-            kind: crate::error::ProvisionByoipCidrErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::ProvisionByoipCidrError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ProvisionByoipCidrError::generic(generic),
     })
 }
@@ -4111,6 +4307,9 @@ pub fn parse_provision_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::ProvisionByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4122,8 +4321,11 @@ pub fn parse_remove_custom_routing_endpoints_error(
     crate::output::RemoveCustomRoutingEndpointsOutput,
     crate::error::RemoveCustomRoutingEndpointsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4135,119 +4337,115 @@ pub fn parse_remove_custom_routing_endpoints_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::RemoveCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveCustomRoutingEndpointsErrorKind::AccessDeniedException({
+        "AccessDeniedException" => {
+            crate::error::RemoveCustomRoutingEndpointsError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ConflictException" => {
-            crate::error::RemoveCustomRoutingEndpointsError {
-                meta: generic,
-                kind: crate::error::RemoveCustomRoutingEndpointsErrorKind::ConflictException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::conflict_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "EndpointGroupNotFoundException" => crate::error::RemoveCustomRoutingEndpointsError {
-            meta: generic,
-            kind:
-                crate::error::RemoveCustomRoutingEndpointsErrorKind::EndpointGroupNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::endpoint_group_not_found_exception::Builder::default(
-                                );
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "EndpointNotFoundException" => crate::error::RemoveCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveCustomRoutingEndpointsErrorKind::EndpointNotFoundException({
+        "ConflictException" => {
+            crate::error::RemoveCustomRoutingEndpointsError::ConflictException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::conflict_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_conflict_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "EndpointGroupNotFoundException" => {
+            crate::error::RemoveCustomRoutingEndpointsError::EndpointGroupNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::endpoint_group_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "EndpointNotFoundException" => {
+            crate::error::RemoveCustomRoutingEndpointsError::EndpointNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::endpoint_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::RemoveCustomRoutingEndpointsError {
-            meta: generic,
-            kind:
-                crate::error::RemoveCustomRoutingEndpointsErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::RemoveCustomRoutingEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveCustomRoutingEndpointsErrorKind::InvalidArgumentException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::RemoveCustomRoutingEndpointsError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::RemoveCustomRoutingEndpointsError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveCustomRoutingEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveCustomRoutingEndpointsError::generic(generic),
     })
 }
@@ -4263,6 +4461,9 @@ pub fn parse_remove_custom_routing_endpoints_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_custom_routing_endpoints_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4271,8 +4472,11 @@ pub fn parse_remove_custom_routing_endpoints_response(
 pub fn parse_remove_endpoints_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RemoveEndpointsOutput, crate::error::RemoveEndpointsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveEndpointsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RemoveEndpointsError::unhandled(generic)),
@@ -4280,26 +4484,23 @@ pub fn parse_remove_endpoints_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::RemoveEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveEndpointsErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::RemoveEndpointsError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EndpointGroupNotFoundException" => crate::error::RemoveEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveEndpointsErrorKind::EndpointGroupNotFoundException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EndpointGroupNotFoundException" => {
+            crate::error::RemoveEndpointsError::EndpointGroupNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4307,17 +4508,17 @@ pub fn parse_remove_endpoints_error(
                         crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::RemoveEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveEndpointsErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::RemoveEndpointsError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4325,34 +4526,34 @@ pub fn parse_remove_endpoints_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::RemoveEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveEndpointsErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::RemoveEndpointsError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TransactionInProgressException" => crate::error::RemoveEndpointsError {
-            meta: generic,
-            kind: crate::error::RemoveEndpointsErrorKind::TransactionInProgressException({
+            })
+        }
+        "TransactionInProgressException" => {
+            crate::error::RemoveEndpointsError::TransactionInProgressException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4360,14 +4561,15 @@ pub fn parse_remove_endpoints_error(
                         crate::error::transaction_in_progress_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_transaction_in_progress_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveEndpointsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveEndpointsError::generic(generic),
     })
 }
@@ -4380,6 +4582,9 @@ pub fn parse_remove_endpoints_response(
         #[allow(unused_mut)]
         let mut output = crate::output::remove_endpoints_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4388,8 +4593,11 @@ pub fn parse_remove_endpoints_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -4397,9 +4605,8 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::TagResourceError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4407,17 +4614,17 @@ pub fn parse_tag_resource_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::TagResourceError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4425,31 +4632,30 @@ pub fn parse_tag_resource_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => crate::error::TagResourceError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_argument_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -4462,6 +4668,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4470,8 +4679,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -4479,9 +4691,8 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::UntagResourceError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4489,17 +4700,17 @@ pub fn parse_untag_resource_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::UntagResourceError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4507,31 +4718,30 @@ pub fn parse_untag_resource_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => crate::error::UntagResourceError::InvalidArgumentException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_argument_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_argument_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -4544,6 +4754,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4553,8 +4766,11 @@ pub fn parse_update_accelerator_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAcceleratorOutput, crate::error::UpdateAcceleratorError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateAcceleratorError::unhandled(generic)),
@@ -4562,9 +4778,8 @@ pub fn parse_update_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::UpdateAcceleratorError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => {
+            crate::error::UpdateAcceleratorError::AcceleratorNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4572,34 +4787,32 @@ pub fn parse_update_accelerator_error(
                         crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "AccessDeniedException" => crate::error::UpdateAcceleratorError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorErrorKind::AccessDeniedException({
+            })
+        }
+        "AccessDeniedException" => crate::error::UpdateAcceleratorError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::UpdateAcceleratorError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorErrorKind::InternalServiceErrorException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceErrorException" => {
+            crate::error::UpdateAcceleratorError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4607,31 +4820,32 @@ pub fn parse_update_accelerator_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::UpdateAcceleratorError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::UpdateAcceleratorError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAcceleratorError::generic(generic),
     })
 }
@@ -4650,6 +4864,9 @@ pub fn parse_update_accelerator_response(
             output,
         )
         .map_err(crate::error::UpdateAcceleratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4661,8 +4878,11 @@ pub fn parse_update_accelerator_attributes_error(
     crate::output::UpdateAcceleratorAttributesOutput,
     crate::error::UpdateAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4674,80 +4894,76 @@ pub fn parse_update_accelerator_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::UpdateAcceleratorAttributesError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorAttributesErrorKind::AcceleratorNotFoundException(
-                {
+        "AcceleratorNotFoundException" => {
+            crate::error::UpdateAcceleratorAttributesError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::accelerator_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "AccessDeniedException" => crate::error::UpdateAcceleratorAttributesError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorAttributesErrorKind::AccessDeniedException({
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "AccessDeniedException" => {
+            crate::error::UpdateAcceleratorAttributesError::AccessDeniedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::UpdateAcceleratorAttributesError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorAttributesErrorKind::InternalServiceErrorException(
-                {
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::UpdateAcceleratorAttributesError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_service_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidArgumentException" => crate::error::UpdateAcceleratorAttributesError {
-            meta: generic,
-            kind: crate::error::UpdateAcceleratorAttributesErrorKind::InvalidArgumentException({
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::UpdateAcceleratorAttributesError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAcceleratorAttributesError::generic(generic),
     })
 }
@@ -4768,6 +4984,9 @@ pub fn parse_update_accelerator_attributes_response(
             output,
         )
         .map_err(crate::error::UpdateAcceleratorAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4779,8 +4998,11 @@ pub fn parse_update_custom_routing_accelerator_error(
     crate::output::UpdateCustomRoutingAcceleratorOutput,
     crate::error::UpdateCustomRoutingAcceleratorError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled(generic)),
@@ -4788,68 +5010,59 @@ pub fn parse_update_custom_routing_accelerator_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::UpdateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind:
-                crate::error::UpdateCustomRoutingAcceleratorErrorKind::AcceleratorNotFoundException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::accelerator_not_found_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InternalServiceErrorException" => crate::error::UpdateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind:
-                crate::error::UpdateCustomRoutingAcceleratorErrorKind::InternalServiceErrorException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::internal_service_error_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidArgumentException" => crate::error::UpdateCustomRoutingAcceleratorError {
-            meta: generic,
-            kind: crate::error::UpdateCustomRoutingAcceleratorErrorKind::InvalidArgumentException(
-                {
+        "AcceleratorNotFoundException" => {
+            crate::error::UpdateCustomRoutingAcceleratorError::AcceleratorNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_argument_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::accelerator_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::UpdateCustomRoutingAcceleratorError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::UpdateCustomRoutingAcceleratorError::InvalidArgumentException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_argument_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::UpdateCustomRoutingAcceleratorError::generic(generic),
     })
 }
@@ -4872,6 +5085,9 @@ pub fn parse_update_custom_routing_accelerator_response(
                 output,
             )
             .map_err(crate::error::UpdateCustomRoutingAcceleratorError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4883,8 +5099,11 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
     crate::output::UpdateCustomRoutingAcceleratorAttributesOutput,
     crate::error::UpdateCustomRoutingAcceleratorAttributesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4896,7 +5115,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AcceleratorNotFoundException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::AcceleratorNotFoundException({
+        "AcceleratorNotFoundException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError::AcceleratorNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4904,6 +5123,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::accelerator_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_accelerator_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4911,8 +5131,8 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "AccessDeniedException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::AccessDeniedException({
+        }),
+        "AccessDeniedException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError::AccessDeniedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4920,6 +5140,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::access_denied_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4927,8 +5148,8 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InternalServiceErrorException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::InternalServiceErrorException({
+        }),
+        "InternalServiceErrorException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError::InternalServiceErrorException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4936,6 +5157,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4943,8 +5165,8 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "InvalidArgumentException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError { meta: generic, kind: crate::error::UpdateCustomRoutingAcceleratorAttributesErrorKind::InvalidArgumentException({
+        }),
+        "InvalidArgumentException" => crate::error::UpdateCustomRoutingAcceleratorAttributesError::InvalidArgumentException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -4952,6 +5174,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -4959,7 +5182,7 @@ pub fn parse_update_custom_routing_accelerator_attributes_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateCustomRoutingAcceleratorAttributesError::generic(generic)
     })
 }
@@ -4977,6 +5200,9 @@ pub fn parse_update_custom_routing_accelerator_attributes_response(
             crate::output::update_custom_routing_accelerator_attributes_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_update_custom_routing_accelerator_attributes(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingAcceleratorAttributesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4988,8 +5214,11 @@ pub fn parse_update_custom_routing_listener_error(
     crate::output::UpdateCustomRoutingListenerOutput,
     crate::error::UpdateCustomRoutingListenerError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -5001,94 +5230,92 @@ pub fn parse_update_custom_routing_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::UpdateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::UpdateCustomRoutingListenerErrorKind::InternalServiceErrorException(
-                {
+        "InternalServiceErrorException" => {
+            crate::error::UpdateCustomRoutingListenerError::InternalServiceErrorException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::internal_service_error_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidArgumentException" => crate::error::UpdateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::UpdateCustomRoutingListenerErrorKind::InvalidArgumentException({
+                    let mut output =
+                        crate::error::internal_service_error_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::UpdateCustomRoutingListenerError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidPortRangeException" => crate::error::UpdateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::UpdateCustomRoutingListenerErrorKind::InvalidPortRangeException({
+            })
+        }
+        "InvalidPortRangeException" => {
+            crate::error::UpdateCustomRoutingListenerError::InvalidPortRangeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_port_range_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::UpdateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::UpdateCustomRoutingListenerErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::UpdateCustomRoutingListenerError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::UpdateCustomRoutingListenerError {
-            meta: generic,
-            kind: crate::error::UpdateCustomRoutingListenerErrorKind::ListenerNotFoundException({
+            })
+        }
+        "ListenerNotFoundException" => {
+            crate::error::UpdateCustomRoutingListenerError::ListenerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateCustomRoutingListenerError::generic(generic),
     })
 }
@@ -5109,6 +5336,9 @@ pub fn parse_update_custom_routing_listener_response(
             output,
         )
         .map_err(crate::error::UpdateCustomRoutingListenerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5120,8 +5350,11 @@ pub fn parse_update_endpoint_group_error(
     crate::output::UpdateEndpointGroupOutput,
     crate::error::UpdateEndpointGroupError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateEndpointGroupError::unhandled(generic)),
@@ -5129,26 +5362,23 @@ pub fn parse_update_endpoint_group_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::UpdateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::UpdateEndpointGroupErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::UpdateEndpointGroupError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "EndpointGroupNotFoundException" => crate::error::UpdateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::UpdateEndpointGroupErrorKind::EndpointGroupNotFoundException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "EndpointGroupNotFoundException" => {
+            crate::error::UpdateEndpointGroupError::EndpointGroupNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5156,17 +5386,17 @@ pub fn parse_update_endpoint_group_error(
                         crate::error::endpoint_group_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_endpoint_group_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::UpdateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::UpdateEndpointGroupErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::UpdateEndpointGroupError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5174,48 +5404,49 @@ pub fn parse_update_endpoint_group_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::UpdateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::UpdateEndpointGroupErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::UpdateEndpointGroupError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::UpdateEndpointGroupError {
-            meta: generic,
-            kind: crate::error::UpdateEndpointGroupErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => {
+            crate::error::UpdateEndpointGroupError::LimitExceededException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateEndpointGroupError::generic(generic),
     })
 }
@@ -5236,6 +5467,9 @@ pub fn parse_update_endpoint_group_response(
             output,
         )
         .map_err(crate::error::UpdateEndpointGroupError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5244,8 +5478,11 @@ pub fn parse_update_endpoint_group_response(
 pub fn parse_update_listener_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateListenerOutput, crate::error::UpdateListenerError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateListenerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateListenerError::unhandled(generic)),
@@ -5253,9 +5490,8 @@ pub fn parse_update_listener_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalServiceErrorException" => crate::error::UpdateListenerError {
-            meta: generic,
-            kind: crate::error::UpdateListenerErrorKind::InternalServiceErrorException({
+        "InternalServiceErrorException" => {
+            crate::error::UpdateListenerError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5263,82 +5499,81 @@ pub fn parse_update_listener_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::UpdateListenerError {
-            meta: generic,
-            kind: crate::error::UpdateListenerErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::UpdateListenerError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidPortRangeException" => crate::error::UpdateListenerError {
-            meta: generic,
-            kind: crate::error::UpdateListenerErrorKind::InvalidPortRangeException({
+            })
+        }
+        "InvalidPortRangeException" => {
+            crate::error::UpdateListenerError::InvalidPortRangeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_port_range_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_port_range_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::UpdateListenerError {
-            meta: generic,
-            kind: crate::error::UpdateListenerErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::UpdateListenerError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ListenerNotFoundException" => crate::error::UpdateListenerError {
-            meta: generic,
-            kind: crate::error::UpdateListenerErrorKind::ListenerNotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ListenerNotFoundException" => {
+            crate::error::UpdateListenerError::ListenerNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::listener_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_listener_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateListenerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateListenerError::generic(generic),
     })
 }
@@ -5356,6 +5591,9 @@ pub fn parse_update_listener_response(
             output,
         )
         .map_err(crate::error::UpdateListenerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5365,8 +5603,11 @@ pub fn parse_withdraw_byoip_cidr_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::WithdrawByoipCidrOutput, crate::error::WithdrawByoipCidrError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::WithdrawByoipCidrError::unhandled(generic)),
@@ -5374,26 +5615,23 @@ pub fn parse_withdraw_byoip_cidr_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AccessDeniedException" => crate::error::WithdrawByoipCidrError {
-            meta: generic,
-            kind: crate::error::WithdrawByoipCidrErrorKind::AccessDeniedException({
+        "AccessDeniedException" => crate::error::WithdrawByoipCidrError::AccessDeniedException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::access_denied_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ByoipCidrNotFoundException" => crate::error::WithdrawByoipCidrError {
-            meta: generic,
-            kind: crate::error::WithdrawByoipCidrErrorKind::ByoipCidrNotFoundException({
+                let mut output = crate::error::access_denied_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_access_denied_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ByoipCidrNotFoundException" => {
+            crate::error::WithdrawByoipCidrError::ByoipCidrNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5401,17 +5639,17 @@ pub fn parse_withdraw_byoip_cidr_error(
                         crate::error::byoip_cidr_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_byoip_cidr_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IncorrectCidrStateException" => crate::error::WithdrawByoipCidrError {
-            meta: generic,
-            kind: crate::error::WithdrawByoipCidrErrorKind::IncorrectCidrStateException({
+            })
+        }
+        "IncorrectCidrStateException" => {
+            crate::error::WithdrawByoipCidrError::IncorrectCidrStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5419,17 +5657,17 @@ pub fn parse_withdraw_byoip_cidr_error(
                         crate::error::incorrect_cidr_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_cidr_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::WithdrawByoipCidrError {
-            meta: generic,
-            kind: crate::error::WithdrawByoipCidrErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::WithdrawByoipCidrError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5437,31 +5675,32 @@ pub fn parse_withdraw_byoip_cidr_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArgumentException" => crate::error::WithdrawByoipCidrError {
-            meta: generic,
-            kind: crate::error::WithdrawByoipCidrErrorKind::InvalidArgumentException({
+            })
+        }
+        "InvalidArgumentException" => {
+            crate::error::WithdrawByoipCidrError::InvalidArgumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_argument_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_argument_exception_json_err(response.body().as_ref(), output).map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::WithdrawByoipCidrError::generic(generic),
     })
 }
@@ -5480,6 +5719,9 @@ pub fn parse_withdraw_byoip_cidr_response(
             output,
         )
         .map_err(crate::error::WithdrawByoipCidrError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

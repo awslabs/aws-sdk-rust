@@ -25,6 +25,7 @@ pub struct UpdateLinkOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateLinkOutput {
     /// <p>The ARN of the link that you have updated.</p>
@@ -59,6 +60,11 @@ impl UpdateLinkOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
 pub mod update_link_output {
 
@@ -75,6 +81,7 @@ pub mod update_link_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the link that you have updated.</p>
@@ -174,6 +181,15 @@ pub mod update_link_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLinkOutput`](crate::output::UpdateLinkOutput).
         pub fn build(self) -> crate::output::UpdateLinkOutput {
             crate::output::UpdateLinkOutput {
@@ -184,6 +200,7 @@ pub mod update_link_output {
                 resource_types: self.resource_types,
                 sink_arn: self.sink_arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -198,18 +215,38 @@ impl UpdateLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -223,18 +260,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -258,6 +315,7 @@ pub struct PutSinkPolicyOutput {
     /// <p>The policy that you specified.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutSinkPolicyOutput {
     /// <p>The ARN of the sink.</p>
@@ -273,6 +331,11 @@ impl PutSinkPolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for PutSinkPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
 pub mod put_sink_policy_output {
 
@@ -283,6 +346,7 @@ pub mod put_sink_policy_output {
         pub(crate) sink_arn: std::option::Option<std::string::String>,
         pub(crate) sink_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the sink.</p>
@@ -315,12 +379,22 @@ pub mod put_sink_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutSinkPolicyOutput`](crate::output::PutSinkPolicyOutput).
         pub fn build(self) -> crate::output::PutSinkPolicyOutput {
             crate::output::PutSinkPolicyOutput {
                 sink_arn: self.sink_arn,
                 sink_id: self.sink_id,
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -340,6 +414,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags associated with the requested resource.&gt;</p>
@@ -348,6 +423,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -360,6 +440,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -387,9 +468,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -410,6 +503,7 @@ pub struct ListSinksOutput {
     /// <p>The token to use when requesting the next set of sinks.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListSinksOutput {
     /// <p>An array of structures that contain the information about the returned sinks.</p>
@@ -421,6 +515,11 @@ impl ListSinksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListSinksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListSinksOutput`](crate::output::ListSinksOutput).
 pub mod list_sinks_output {
 
@@ -430,6 +529,7 @@ pub mod list_sinks_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListSinksItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -461,11 +561,21 @@ pub mod list_sinks_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListSinksOutput`](crate::output::ListSinksOutput).
         pub fn build(self) -> crate::output::ListSinksOutput {
             crate::output::ListSinksOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -487,6 +597,7 @@ pub struct ListLinksOutput {
     /// <p>The token to use when requesting the next set of links.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLinksOutput {
     /// <p>An array of structures that contain the information about the returned links.</p>
@@ -498,6 +609,11 @@ impl ListLinksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLinksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLinksOutput`](crate::output::ListLinksOutput).
 pub mod list_links_output {
 
@@ -507,6 +623,7 @@ pub mod list_links_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListLinksItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -538,11 +655,21 @@ pub mod list_links_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLinksOutput`](crate::output::ListLinksOutput).
         pub fn build(self) -> crate::output::ListLinksOutput {
             crate::output::ListLinksOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -564,6 +691,7 @@ pub struct ListAttachedLinksOutput {
     /// <p>The token to use when requesting the next set of links.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAttachedLinksOutput {
     /// <p>An array of structures that contain the information about the attached links.</p>
@@ -575,6 +703,11 @@ impl ListAttachedLinksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAttachedLinksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
 pub mod list_attached_links_output {
 
@@ -584,6 +717,7 @@ pub mod list_attached_links_output {
     pub struct Builder {
         pub(crate) items: std::option::Option<std::vec::Vec<crate::model::ListAttachedLinksItem>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `items`.
@@ -615,11 +749,21 @@ pub mod list_attached_links_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAttachedLinksOutput`](crate::output::ListAttachedLinksOutput).
         pub fn build(self) -> crate::output::ListAttachedLinksOutput {
             crate::output::ListAttachedLinksOutput {
                 items: self.items,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -644,6 +788,7 @@ pub struct GetSinkPolicyOutput {
     /// <p>The policy that you specified, in JSON format.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetSinkPolicyOutput {
     /// <p>The ARN of the sink.</p>
@@ -659,6 +804,11 @@ impl GetSinkPolicyOutput {
         self.policy.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetSinkPolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
 pub mod get_sink_policy_output {
 
@@ -669,6 +819,7 @@ pub mod get_sink_policy_output {
         pub(crate) sink_arn: std::option::Option<std::string::String>,
         pub(crate) sink_id: std::option::Option<std::string::String>,
         pub(crate) policy: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the sink.</p>
@@ -701,12 +852,22 @@ pub mod get_sink_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSinkPolicyOutput`](crate::output::GetSinkPolicyOutput).
         pub fn build(self) -> crate::output::GetSinkPolicyOutput {
             crate::output::GetSinkPolicyOutput {
                 sink_arn: self.sink_arn,
                 sink_id: self.sink_id,
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -735,6 +896,7 @@ pub struct GetSinkOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetSinkOutput {
     /// <p>The ARN of the sink.</p>
@@ -757,6 +919,11 @@ impl GetSinkOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetSinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetSinkOutput`](crate::output::GetSinkOutput).
 pub mod get_sink_output {
 
@@ -770,6 +937,7 @@ pub mod get_sink_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the sink.</p>
@@ -827,6 +995,15 @@ pub mod get_sink_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSinkOutput`](crate::output::GetSinkOutput).
         pub fn build(self) -> crate::output::GetSinkOutput {
             crate::output::GetSinkOutput {
@@ -834,6 +1011,7 @@ pub mod get_sink_output {
                 id: self.id,
                 name: self.name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -871,6 +1049,7 @@ pub struct GetLinkOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetLinkOutput {
     /// <p>The ARN of the link.</p>
@@ -905,6 +1084,11 @@ impl GetLinkOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetLinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetLinkOutput`](crate::output::GetLinkOutput).
 pub mod get_link_output {
 
@@ -921,6 +1105,7 @@ pub mod get_link_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the link.</p>
@@ -1020,6 +1205,15 @@ pub mod get_link_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLinkOutput`](crate::output::GetLinkOutput).
         pub fn build(self) -> crate::output::GetLinkOutput {
             crate::output::GetLinkOutput {
@@ -1030,6 +1224,7 @@ pub mod get_link_output {
                 resource_types: self.resource_types,
                 sink_arn: self.sink_arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1044,18 +1239,38 @@ impl GetLinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteSinkOutput {}
+pub struct DeleteSinkOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteSinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
 pub mod delete_sink_output {
 
     /// A builder for [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSinkOutput`](crate::output::DeleteSinkOutput).
         pub fn build(self) -> crate::output::DeleteSinkOutput {
-            crate::output::DeleteSinkOutput {}
+            crate::output::DeleteSinkOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1069,18 +1284,38 @@ impl DeleteSinkOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLinkOutput {}
+pub struct DeleteLinkOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteLinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
 pub mod delete_link_output {
 
     /// A builder for [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLinkOutput`](crate::output::DeleteLinkOutput).
         pub fn build(self) -> crate::output::DeleteLinkOutput {
-            crate::output::DeleteLinkOutput {}
+            crate::output::DeleteLinkOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1108,6 +1343,7 @@ pub struct CreateSinkOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateSinkOutput {
     /// <p>The ARN of the sink that is newly created.</p>
@@ -1130,6 +1366,11 @@ impl CreateSinkOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateSinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateSinkOutput`](crate::output::CreateSinkOutput).
 pub mod create_sink_output {
 
@@ -1143,6 +1384,7 @@ pub mod create_sink_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the sink that is newly created.</p>
@@ -1200,6 +1442,15 @@ pub mod create_sink_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateSinkOutput`](crate::output::CreateSinkOutput).
         pub fn build(self) -> crate::output::CreateSinkOutput {
             crate::output::CreateSinkOutput {
@@ -1207,6 +1458,7 @@ pub mod create_sink_output {
                 id: self.id,
                 name: self.name,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1244,6 +1496,7 @@ pub struct CreateLinkOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateLinkOutput {
     /// <p>The ARN of the link that is newly created.</p>
@@ -1278,6 +1531,11 @@ impl CreateLinkOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLinkOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateLinkOutput`](crate::output::CreateLinkOutput).
 pub mod create_link_output {
 
@@ -1294,6 +1552,7 @@ pub mod create_link_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the link that is newly created.</p>
@@ -1393,6 +1652,15 @@ pub mod create_link_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLinkOutput`](crate::output::CreateLinkOutput).
         pub fn build(self) -> crate::output::CreateLinkOutput {
             crate::output::CreateLinkOutput {
@@ -1403,6 +1671,7 @@ pub mod create_link_output {
                 resource_types: self.resource_types,
                 sink_arn: self.sink_arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }

@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateFirewallRuleGro
         crate::error::AssociateFirewallRuleGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_firewall_rule_group_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverEndpoin
         crate::error::AssociateResolverEndpointIpAddressError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_resolver_endpoint_ip_address_error(response)
         } else {
@@ -93,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverQueryLo
         crate::error::AssociateResolverQueryLogConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_resolver_query_log_config_error(response)
         } else {
@@ -127,6 +130,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateResolverRule {
         crate::error::AssociateResolverRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_resolver_rule_error(response)
         } else {
@@ -161,6 +165,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallDomainList
         crate::error::CreateFirewallDomainListError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_firewall_domain_list_error(response)
         } else {
@@ -195,6 +200,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallRule {
         crate::error::CreateFirewallRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_firewall_rule_error(response)
         } else {
@@ -229,6 +235,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateFirewallRuleGroup 
         crate::error::CreateFirewallRuleGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_firewall_rule_group_error(response)
         } else {
@@ -263,6 +270,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverEndpoint {
         crate::error::CreateResolverEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_resolver_endpoint_error(response)
         } else {
@@ -297,6 +305,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverQueryLogCo
         crate::error::CreateResolverQueryLogConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_resolver_query_log_config_error(response)
         } else {
@@ -331,6 +340,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateResolverRule {
         crate::error::CreateResolverRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_resolver_rule_error(response)
         } else {
@@ -365,6 +375,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallDomainList
         crate::error::DeleteFirewallDomainListError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_firewall_domain_list_error(response)
         } else {
@@ -399,6 +410,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallRule {
         crate::error::DeleteFirewallRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_firewall_rule_error(response)
         } else {
@@ -433,6 +445,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteFirewallRuleGroup 
         crate::error::DeleteFirewallRuleGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_firewall_rule_group_error(response)
         } else {
@@ -467,6 +480,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolverEndpoint {
         crate::error::DeleteResolverEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_resolver_endpoint_error(response)
         } else {
@@ -501,6 +515,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolverQueryLogCo
         crate::error::DeleteResolverQueryLogConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_resolver_query_log_config_error(response)
         } else {
@@ -535,6 +550,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteResolverRule {
         crate::error::DeleteResolverRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_resolver_rule_error(response)
         } else {
@@ -569,6 +585,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateFirewallRule
         crate::error::DisassociateFirewallRuleGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_firewall_rule_group_error(response)
         } else {
@@ -603,6 +620,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverEndp
         crate::error::DisassociateResolverEndpointIpAddressError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_resolver_endpoint_ip_address_error(response)
         } else {
@@ -639,6 +657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverQuer
         crate::error::DisassociateResolverQueryLogConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_resolver_query_log_config_error(response)
         } else {
@@ -673,6 +692,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateResolverRule
         crate::error::DisassociateResolverRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_resolver_rule_error(response)
         } else {
@@ -707,6 +727,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallConfig {
         crate::error::GetFirewallConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_firewall_config_error(response)
         } else {
@@ -741,6 +762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallDomainList {
         crate::error::GetFirewallDomainListError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_firewall_domain_list_error(response)
         } else {
@@ -775,6 +797,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroup {
         crate::error::GetFirewallRuleGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_firewall_rule_group_error(response)
         } else {
@@ -809,6 +832,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupAsso
         crate::error::GetFirewallRuleGroupAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_firewall_rule_group_association_error(response)
         } else {
@@ -843,6 +867,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFirewallRuleGroupPoli
         crate::error::GetFirewallRuleGroupPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_firewall_rule_group_policy_error(response)
         } else {
@@ -877,6 +902,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverConfig {
         crate::error::GetResolverConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_config_error(response)
         } else {
@@ -911,6 +937,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverDnssecConfig 
         crate::error::GetResolverDnssecConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_dnssec_config_error(response)
         } else {
@@ -945,6 +972,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverEndpoint {
         crate::error::GetResolverEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_endpoint_error(response)
         } else {
@@ -979,6 +1007,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfi
         crate::error::GetResolverQueryLogConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_query_log_config_error(response)
         } else {
@@ -1013,6 +1042,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfi
         crate::error::GetResolverQueryLogConfigAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_query_log_config_association_error(response)
         } else {
@@ -1049,6 +1079,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverQueryLogConfi
         crate::error::GetResolverQueryLogConfigPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_query_log_config_policy_error(response)
         } else {
@@ -1083,6 +1114,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRule {
         crate::error::GetResolverRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_rule_error(response)
         } else {
@@ -1117,6 +1149,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRuleAssociati
         crate::error::GetResolverRuleAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_rule_association_error(response)
         } else {
@@ -1151,6 +1184,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetResolverRulePolicy {
         crate::error::GetResolverRulePolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_resolver_rule_policy_error(response)
         } else {
@@ -1185,6 +1219,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ImportFirewallDomains {
         crate::error::ImportFirewallDomainsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_import_firewall_domains_error(response)
         } else {
@@ -1219,6 +1254,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallConfigs {
         crate::error::ListFirewallConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_firewall_configs_error(response)
         } else {
@@ -1253,6 +1289,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallDomainLists 
         crate::error::ListFirewallDomainListsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_firewall_domain_lists_error(response)
         } else {
@@ -1287,6 +1324,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallDomains {
         crate::error::ListFirewallDomainsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_firewall_domains_error(response)
         } else {
@@ -1321,6 +1359,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRuleGroupAss
         crate::error::ListFirewallRuleGroupAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_firewall_rule_group_associations_error(response)
         } else {
@@ -1355,6 +1394,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRuleGroups {
         crate::error::ListFirewallRuleGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_firewall_rule_groups_error(response)
         } else {
@@ -1389,6 +1429,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListFirewallRules {
         crate::error::ListFirewallRulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_firewall_rules_error(response)
         } else {
@@ -1423,6 +1464,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverConfigs {
         crate::error::ListResolverConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_configs_error(response)
         } else {
@@ -1457,6 +1499,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverDnssecConfig
         crate::error::ListResolverDnssecConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_dnssec_configs_error(response)
         } else {
@@ -1491,6 +1534,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverEndpointIpAd
         crate::error::ListResolverEndpointIpAddressesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_endpoint_ip_addresses_error(response)
         } else {
@@ -1525,6 +1569,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverEndpoints {
         crate::error::ListResolverEndpointsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_endpoints_error(response)
         } else {
@@ -1559,6 +1604,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverQueryLogConf
         crate::error::ListResolverQueryLogConfigAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_query_log_config_associations_error(
                 response,
@@ -1597,6 +1643,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverQueryLogConf
         crate::error::ListResolverQueryLogConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_query_log_configs_error(response)
         } else {
@@ -1631,6 +1678,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverRuleAssociat
         crate::error::ListResolverRuleAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_rule_associations_error(response)
         } else {
@@ -1665,6 +1713,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListResolverRules {
         crate::error::ListResolverRulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_resolver_rules_error(response)
         } else {
@@ -1699,6 +1748,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
         crate::error::ListTagsForResourceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
@@ -1733,6 +1783,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutFirewallRuleGroupPoli
         crate::error::PutFirewallRuleGroupPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_firewall_rule_group_policy_error(response)
         } else {
@@ -1767,6 +1818,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResolverQueryLogConfi
         crate::error::PutResolverQueryLogConfigPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_resolver_query_log_config_policy_error(response)
         } else {
@@ -1801,6 +1853,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutResolverRulePolicy {
         crate::error::PutResolverRulePolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_resolver_rule_policy_error(response)
         } else {
@@ -1833,6 +1886,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -1865,6 +1919,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -1899,6 +1954,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallConfig {
         crate::error::UpdateFirewallConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_firewall_config_error(response)
         } else {
@@ -1933,6 +1989,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallDomains {
         crate::error::UpdateFirewallDomainsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_firewall_domains_error(response)
         } else {
@@ -1967,6 +2024,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallRule {
         crate::error::UpdateFirewallRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_firewall_rule_error(response)
         } else {
@@ -2001,6 +2059,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateFirewallRuleGroupA
         crate::error::UpdateFirewallRuleGroupAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_firewall_rule_group_association_error(response)
         } else {
@@ -2035,6 +2094,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverConfig {
         crate::error::UpdateResolverConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_resolver_config_error(response)
         } else {
@@ -2069,6 +2129,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverDnssecConf
         crate::error::UpdateResolverDnssecConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_resolver_dnssec_config_error(response)
         } else {
@@ -2103,6 +2164,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverEndpoint {
         crate::error::UpdateResolverEndpointError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_resolver_endpoint_error(response)
         } else {
@@ -2137,6 +2199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateResolverRule {
         crate::error::UpdateResolverRuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_resolver_rule_error(response)
         } else {

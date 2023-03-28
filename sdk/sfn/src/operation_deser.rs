@@ -3,8 +3,11 @@
 pub fn parse_create_activity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateActivityOutput, crate::error::CreateActivityError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateActivityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateActivityError::unhandled(generic)),
@@ -12,65 +15,59 @@ pub fn parse_create_activity_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ActivityLimitExceeded" => crate::error::CreateActivityError {
-            meta: generic,
-            kind: crate::error::CreateActivityErrorKind::ActivityLimitExceeded({
+        "ActivityLimitExceeded" => crate::error::CreateActivityError::ActivityLimitExceeded({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::activity_limit_exceeded::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_activity_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateActivityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidName" => crate::error::CreateActivityError {
-            meta: generic,
-            kind: crate::error::CreateActivityErrorKind::InvalidName({
+                let mut output = crate::error::activity_limit_exceeded::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_activity_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidName" => crate::error::CreateActivityError::InvalidName({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_name::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateActivityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TooManyTags" => crate::error::CreateActivityError {
-            meta: generic,
-            kind: crate::error::CreateActivityErrorKind::TooManyTags({
+                let mut output = crate::error::invalid_name::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTags" => crate::error::CreateActivityError::TooManyTags({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateActivityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateActivityError::generic(generic),
     })
 }
@@ -88,6 +85,9 @@ pub fn parse_create_activity_response(
             output,
         )
         .map_err(crate::error::CreateActivityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -99,8 +99,11 @@ pub fn parse_create_state_machine_error(
     crate::output::CreateStateMachineOutput,
     crate::error::CreateStateMachineError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateStateMachineError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateStateMachineError::unhandled(generic)),
@@ -108,49 +111,47 @@ pub fn parse_create_state_machine_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::CreateStateMachineError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDefinition" => crate::error::CreateStateMachineError::InvalidDefinition({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_definition::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_invalid_definition_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::CreateStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidDefinition" => {
-            crate::error::CreateStateMachineError {
-                meta: generic,
-                kind: crate::error::CreateStateMachineErrorKind::InvalidDefinition({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_definition::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_definition_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidLoggingConfiguration" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::InvalidLoggingConfiguration({
+            tmp
+        }),
+        "InvalidLoggingConfiguration" => {
+            crate::error::CreateStateMachineError::InvalidLoggingConfiguration({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -158,38 +159,36 @@ pub fn parse_create_state_machine_error(
                         crate::error::invalid_logging_configuration::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_logging_configuration_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidName" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::InvalidName({
+            })
+        }
+        "InvalidName" => crate::error::CreateStateMachineError::InvalidName({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_name::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidTracingConfiguration" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::InvalidTracingConfiguration({
+                let mut output = crate::error::invalid_name::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidTracingConfiguration" => {
+            crate::error::CreateStateMachineError::InvalidTracingConfiguration({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -197,68 +196,68 @@ pub fn parse_create_state_machine_error(
                         crate::error::invalid_tracing_configuration::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tracing_configuration_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineAlreadyExists" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::StateMachineAlreadyExists({
+            })
+        }
+        "StateMachineAlreadyExists" => {
+            crate::error::CreateStateMachineError::StateMachineAlreadyExists({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_already_exists::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineDeleting" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::StateMachineDeleting({
+            })
+        }
+        "StateMachineDeleting" => {
+            crate::error::CreateStateMachineError::StateMachineDeleting({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_deleting_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineLimitExceeded" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::StateMachineLimitExceeded({
+            })
+        }
+        "StateMachineLimitExceeded" => {
+            crate::error::CreateStateMachineError::StateMachineLimitExceeded({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineTypeNotSupported" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::StateMachineTypeNotSupported({
+            })
+        }
+        "StateMachineTypeNotSupported" => {
+            crate::error::CreateStateMachineError::StateMachineTypeNotSupported({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -266,35 +265,34 @@ pub fn parse_create_state_machine_error(
                         crate::error::state_machine_type_not_supported::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_type_not_supported_json_err(response.body().as_ref(), output).map_err(crate::error::CreateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TooManyTags" => crate::error::CreateStateMachineError {
-            meta: generic,
-            kind: crate::error::CreateStateMachineErrorKind::TooManyTags({
+            })
+        }
+        "TooManyTags" => crate::error::CreateStateMachineError::TooManyTags({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::too_many_tags::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateStateMachineError::generic(generic),
     })
 }
@@ -315,6 +313,9 @@ pub fn parse_create_state_machine_response(
             output,
         )
         .map_err(crate::error::CreateStateMachineError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -323,8 +324,11 @@ pub fn parse_create_state_machine_response(
 pub fn parse_delete_activity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteActivityOutput, crate::error::DeleteActivityError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteActivityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteActivityError::unhandled(generic)),
@@ -332,27 +336,25 @@ pub fn parse_delete_activity_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::DeleteActivityError {
-            meta: generic,
-            kind: crate::error::DeleteActivityErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::DeleteActivityError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteActivityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteActivityError::generic(generic),
     })
 }
@@ -365,6 +367,9 @@ pub fn parse_delete_activity_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_activity_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -376,8 +381,11 @@ pub fn parse_delete_state_machine_error(
     crate::output::DeleteStateMachineOutput,
     crate::error::DeleteStateMachineError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteStateMachineError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteStateMachineError::unhandled(generic)),
@@ -385,44 +393,42 @@ pub fn parse_delete_state_machine_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::DeleteStateMachineError {
-            meta: generic,
-            kind: crate::error::DeleteStateMachineErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::DeleteStateMachineError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DeleteStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::DeleteStateMachineError {
-            meta: generic,
-            kind: crate::error::DeleteStateMachineErrorKind::ValidationException({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DeleteStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::DeleteStateMachineError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteStateMachineError::generic(generic),
     })
 }
@@ -438,6 +444,9 @@ pub fn parse_delete_state_machine_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_state_machine_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -447,8 +456,11 @@ pub fn parse_describe_activity_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeActivityOutput, crate::error::DescribeActivityError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeActivityError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeActivityError::unhandled(generic)),
@@ -456,44 +468,40 @@ pub fn parse_describe_activity_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ActivityDoesNotExist" => crate::error::DescribeActivityError {
-            meta: generic,
-            kind: crate::error::DescribeActivityErrorKind::ActivityDoesNotExist({
+        "ActivityDoesNotExist" => crate::error::DescribeActivityError::ActivityDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::activity_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_activity_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArn" => crate::error::DescribeActivityError {
-            meta: generic,
-            kind: crate::error::DescribeActivityErrorKind::InvalidArn({
+                let mut output = crate::error::activity_does_not_exist::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_activity_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArn" => crate::error::DescribeActivityError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeActivityError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeActivityError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeActivityError::generic(generic),
     })
 }
@@ -512,6 +520,9 @@ pub fn parse_describe_activity_response(
             output,
         )
         .map_err(crate::error::DescribeActivityError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -521,8 +532,11 @@ pub fn parse_describe_execution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeExecutionOutput, crate::error::DescribeExecutionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeExecutionError::unhandled(generic)),
@@ -530,44 +544,40 @@ pub fn parse_describe_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExecutionDoesNotExist" => crate::error::DescribeExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeExecutionErrorKind::ExecutionDoesNotExist({
+        "ExecutionDoesNotExist" => crate::error::DescribeExecutionError::ExecutionDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::execution_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArn" => crate::error::DescribeExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeExecutionErrorKind::InvalidArn({
+                let mut output = crate::error::execution_does_not_exist::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArn" => crate::error::DescribeExecutionError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeExecutionError::generic(generic),
     })
 }
@@ -586,6 +596,9 @@ pub fn parse_describe_execution_response(
             output,
         )
         .map_err(crate::error::DescribeExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -594,8 +607,11 @@ pub fn parse_describe_execution_response(
 pub fn parse_describe_map_run_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeMapRunOutput, crate::error::DescribeMapRunError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeMapRunError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeMapRunError::unhandled(generic)),
@@ -603,46 +619,45 @@ pub fn parse_describe_map_run_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::DescribeMapRunError {
-            meta: generic,
-            kind: crate::error::DescribeMapRunErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::DescribeMapRunError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeMapRunError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::error::DescribeMapRunError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::DescribeMapRunError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => {
-            crate::error::DescribeMapRunError {
-                meta: generic,
-                kind: crate::error::DescribeMapRunErrorKind::ResourceNotFound({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeMapRunError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
         _ => crate::error::DescribeMapRunError::generic(generic),
     })
 }
@@ -660,6 +675,9 @@ pub fn parse_describe_map_run_response(
             output,
         )
         .map_err(crate::error::DescribeMapRunError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -671,8 +689,11 @@ pub fn parse_describe_state_machine_error(
     crate::output::DescribeStateMachineOutput,
     crate::error::DescribeStateMachineError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeStateMachineError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeStateMachineError::unhandled(generic)),
@@ -680,44 +701,42 @@ pub fn parse_describe_state_machine_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::DescribeStateMachineError {
-            meta: generic,
-            kind: crate::error::DescribeStateMachineErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::DescribeStateMachineError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "StateMachineDoesNotExist" => crate::error::DescribeStateMachineError {
-            meta: generic,
-            kind: crate::error::DescribeStateMachineErrorKind::StateMachineDoesNotExist({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StateMachineDoesNotExist" => {
+            crate::error::DescribeStateMachineError::StateMachineDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeStateMachineError::generic(generic),
     })
 }
@@ -738,6 +757,9 @@ pub fn parse_describe_state_machine_response(
             output,
         )
         .map_err(crate::error::DescribeStateMachineError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -749,8 +771,11 @@ pub fn parse_describe_state_machine_for_execution_error(
     crate::output::DescribeStateMachineForExecutionOutput,
     crate::error::DescribeStateMachineForExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -760,44 +785,42 @@ pub fn parse_describe_state_machine_for_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExecutionDoesNotExist" => crate::error::DescribeStateMachineForExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeStateMachineForExecutionErrorKind::ExecutionDoesNotExist({
+        "ExecutionDoesNotExist" => {
+            crate::error::DescribeStateMachineForExecutionError::ExecutionDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::execution_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArn" => crate::error::DescribeStateMachineForExecutionError {
-            meta: generic,
-            kind: crate::error::DescribeStateMachineForExecutionErrorKind::InvalidArn({
+            })
+        }
+        "InvalidArn" => crate::error::DescribeStateMachineForExecutionError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeStateMachineForExecutionError::generic(generic),
     })
 }
@@ -815,6 +838,9 @@ pub fn parse_describe_state_machine_for_execution_response(
             crate::output::describe_state_machine_for_execution_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_describe_state_machine_for_execution(response.body().as_ref(), output).map_err(crate::error::DescribeStateMachineForExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -823,8 +849,11 @@ pub fn parse_describe_state_machine_for_execution_response(
 pub fn parse_get_activity_task_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetActivityTaskOutput, crate::error::GetActivityTaskError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetActivityTaskError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetActivityTaskError::unhandled(generic)),
@@ -832,26 +861,23 @@ pub fn parse_get_activity_task_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ActivityDoesNotExist" => crate::error::GetActivityTaskError {
-            meta: generic,
-            kind: crate::error::GetActivityTaskErrorKind::ActivityDoesNotExist({
+        "ActivityDoesNotExist" => crate::error::GetActivityTaskError::ActivityDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::activity_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_activity_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::GetActivityTaskError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ActivityWorkerLimitExceeded" => crate::error::GetActivityTaskError {
-            meta: generic,
-            kind: crate::error::GetActivityTaskErrorKind::ActivityWorkerLimitExceeded({
+                let mut output = crate::error::activity_does_not_exist::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_activity_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::GetActivityTaskError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ActivityWorkerLimitExceeded" => {
+            crate::error::GetActivityTaskError::ActivityWorkerLimitExceeded({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -859,35 +885,34 @@ pub fn parse_get_activity_task_error(
                         crate::error::activity_worker_limit_exceeded::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_activity_worker_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::GetActivityTaskError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArn" => crate::error::GetActivityTaskError {
-            meta: generic,
-            kind: crate::error::GetActivityTaskErrorKind::InvalidArn({
+            })
+        }
+        "InvalidArn" => crate::error::GetActivityTaskError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetActivityTaskError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetActivityTaskError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetActivityTaskError::generic(generic),
     })
 }
@@ -905,6 +930,9 @@ pub fn parse_get_activity_task_response(
             output,
         )
         .map_err(crate::error::GetActivityTaskError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -916,8 +944,11 @@ pub fn parse_get_execution_history_error(
     crate::output::GetExecutionHistoryOutput,
     crate::error::GetExecutionHistoryError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetExecutionHistoryError::unhandled(generic)),
@@ -925,65 +956,59 @@ pub fn parse_get_execution_history_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExecutionDoesNotExist" => crate::error::GetExecutionHistoryError {
-            meta: generic,
-            kind: crate::error::GetExecutionHistoryErrorKind::ExecutionDoesNotExist({
+        "ExecutionDoesNotExist" => crate::error::GetExecutionHistoryError::ExecutionDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::execution_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::GetExecutionHistoryError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArn" => crate::error::GetExecutionHistoryError {
-            meta: generic,
-            kind: crate::error::GetExecutionHistoryErrorKind::InvalidArn({
+                let mut output = crate::error::execution_does_not_exist::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::GetExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArn" => crate::error::GetExecutionHistoryError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidToken" => crate::error::GetExecutionHistoryError {
-            meta: generic,
-            kind: crate::error::GetExecutionHistoryErrorKind::InvalidToken({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidToken" => crate::error::GetExecutionHistoryError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetExecutionHistoryError::generic(generic),
     })
 }
@@ -1004,6 +1029,9 @@ pub fn parse_get_execution_history_response(
             output,
         )
         .map_err(crate::error::GetExecutionHistoryError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1012,8 +1040,11 @@ pub fn parse_get_execution_history_response(
 pub fn parse_list_activities_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListActivitiesOutput, crate::error::ListActivitiesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListActivitiesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListActivitiesError::unhandled(generic)),
@@ -1021,27 +1052,25 @@ pub fn parse_list_activities_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidToken" => crate::error::ListActivitiesError {
-            meta: generic,
-            kind: crate::error::ListActivitiesErrorKind::InvalidToken({
+        "InvalidToken" => crate::error::ListActivitiesError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListActivitiesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListActivitiesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListActivitiesError::generic(generic),
     })
 }
@@ -1059,6 +1088,9 @@ pub fn parse_list_activities_response(
             output,
         )
         .map_err(crate::error::ListActivitiesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1067,8 +1099,11 @@ pub fn parse_list_activities_response(
 pub fn parse_list_executions_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListExecutionsOutput, crate::error::ListExecutionsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListExecutionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListExecutionsError::unhandled(generic)),
@@ -1076,87 +1111,83 @@ pub fn parse_list_executions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::ListExecutionsError {
-            meta: generic,
-            kind: crate::error::ListExecutionsErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::ListExecutionsError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListExecutionsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidToken" => crate::error::ListExecutionsError {
-            meta: generic,
-            kind: crate::error::ListExecutionsErrorKind::InvalidToken({
-                #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListExecutionsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => {
-            crate::error::ListExecutionsError {
-                meta: generic,
-                kind: crate::error::ListExecutionsErrorKind::ResourceNotFound({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListExecutionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "StateMachineDoesNotExist" => crate::error::ListExecutionsError {
-            meta: generic,
-            kind: crate::error::ListExecutionsErrorKind::StateMachineDoesNotExist({
+            tmp
+        }),
+        "InvalidToken" => crate::error::ListExecutionsError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListExecutionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::error::ListExecutionsError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ListExecutionsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StateMachineDoesNotExist" => {
+            crate::error::ListExecutionsError::StateMachineDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineTypeNotSupported" => crate::error::ListExecutionsError {
-            meta: generic,
-            kind: crate::error::ListExecutionsErrorKind::StateMachineTypeNotSupported({
+            })
+        }
+        "StateMachineTypeNotSupported" => {
+            crate::error::ListExecutionsError::StateMachineTypeNotSupported({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1164,31 +1195,32 @@ pub fn parse_list_executions_error(
                         crate::error::state_machine_type_not_supported::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_type_not_supported_json_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ListExecutionsError {
-            meta: generic,
-            kind: crate::error::ListExecutionsErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ListExecutionsError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListExecutionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListExecutionsError::generic(generic),
     })
 }
@@ -1206,6 +1238,9 @@ pub fn parse_list_executions_response(
             output,
         )
         .map_err(crate::error::ListExecutionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1214,8 +1249,11 @@ pub fn parse_list_executions_response(
 pub fn parse_list_map_runs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListMapRunsOutput, crate::error::ListMapRunsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListMapRunsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListMapRunsError::unhandled(generic)),
@@ -1223,65 +1261,59 @@ pub fn parse_list_map_runs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExecutionDoesNotExist" => crate::error::ListMapRunsError {
-            meta: generic,
-            kind: crate::error::ListMapRunsErrorKind::ExecutionDoesNotExist({
+        "ExecutionDoesNotExist" => crate::error::ListMapRunsError::ExecutionDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::execution_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::ListMapRunsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArn" => crate::error::ListMapRunsError {
-            meta: generic,
-            kind: crate::error::ListMapRunsErrorKind::InvalidArn({
+                let mut output = crate::error::execution_does_not_exist::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::ListMapRunsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArn" => crate::error::ListMapRunsError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListMapRunsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidToken" => crate::error::ListMapRunsError {
-            meta: generic,
-            kind: crate::error::ListMapRunsErrorKind::InvalidToken({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMapRunsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidToken" => crate::error::ListMapRunsError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListMapRunsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListMapRunsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListMapRunsError::generic(generic),
     })
 }
@@ -1299,6 +1331,9 @@ pub fn parse_list_map_runs_response(
             output,
         )
         .map_err(crate::error::ListMapRunsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1308,8 +1343,11 @@ pub fn parse_list_state_machines_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListStateMachinesOutput, crate::error::ListStateMachinesError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListStateMachinesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListStateMachinesError::unhandled(generic)),
@@ -1317,27 +1355,25 @@ pub fn parse_list_state_machines_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidToken" => crate::error::ListStateMachinesError {
-            meta: generic,
-            kind: crate::error::ListStateMachinesErrorKind::InvalidToken({
+        "InvalidToken" => crate::error::ListStateMachinesError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ListStateMachinesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListStateMachinesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListStateMachinesError::generic(generic),
     })
 }
@@ -1356,6 +1392,9 @@ pub fn parse_list_state_machines_response(
             output,
         )
         .map_err(crate::error::ListStateMachinesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1367,8 +1406,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -1376,46 +1418,45 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::ListTagsForResourceError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::error::ListTagsForResourceError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => {
-            crate::error::ListTagsForResourceError {
-                meta: generic,
-                kind: crate::error::ListTagsForResourceErrorKind::ResourceNotFound({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -1436,6 +1477,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1444,8 +1488,11 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_send_task_failure_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendTaskFailureOutput, crate::error::SendTaskFailureError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendTaskFailureError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendTaskFailureError::unhandled(generic)),
@@ -1453,66 +1500,61 @@ pub fn parse_send_task_failure_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidToken" => crate::error::SendTaskFailureError {
-            meta: generic,
-            kind: crate::error::SendTaskFailureErrorKind::InvalidToken({
+        "InvalidToken" => crate::error::SendTaskFailureError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTaskFailureError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TaskDoesNotExist" => crate::error::SendTaskFailureError {
-            meta: generic,
-            kind: crate::error::SendTaskFailureErrorKind::TaskDoesNotExist({
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskFailureError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TaskDoesNotExist" => {
+            crate::error::SendTaskFailureError::TaskDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_task_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::SendTaskFailureError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TaskTimedOut" => crate::error::SendTaskFailureError {
-            meta: generic,
-            kind: crate::error::SendTaskFailureErrorKind::TaskTimedOut({
+            })
+        }
+        "TaskTimedOut" => crate::error::SendTaskFailureError::TaskTimedOut({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::task_timed_out::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_task_timed_out_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendTaskFailureError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::task_timed_out::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_task_timed_out_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskFailureError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendTaskFailureError::generic(generic),
     })
 }
@@ -1525,6 +1567,9 @@ pub fn parse_send_task_failure_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_task_failure_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1534,8 +1579,11 @@ pub fn parse_send_task_heartbeat_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendTaskHeartbeatOutput, crate::error::SendTaskHeartbeatError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendTaskHeartbeatError::unhandled(generic)),
@@ -1543,66 +1591,61 @@ pub fn parse_send_task_heartbeat_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidToken" => crate::error::SendTaskHeartbeatError {
-            meta: generic,
-            kind: crate::error::SendTaskHeartbeatErrorKind::InvalidToken({
+        "InvalidToken" => crate::error::SendTaskHeartbeatError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TaskDoesNotExist" => crate::error::SendTaskHeartbeatError {
-            meta: generic,
-            kind: crate::error::SendTaskHeartbeatErrorKind::TaskDoesNotExist({
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TaskDoesNotExist" => {
+            crate::error::SendTaskHeartbeatError::TaskDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_task_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TaskTimedOut" => crate::error::SendTaskHeartbeatError {
-            meta: generic,
-            kind: crate::error::SendTaskHeartbeatErrorKind::TaskTimedOut({
+            })
+        }
+        "TaskTimedOut" => crate::error::SendTaskHeartbeatError::TaskTimedOut({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::task_timed_out::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_task_timed_out_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::task_timed_out::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_task_timed_out_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskHeartbeatError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendTaskHeartbeatError::generic(generic),
     })
 }
@@ -1616,6 +1659,9 @@ pub fn parse_send_task_heartbeat_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_task_heartbeat_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1624,8 +1670,11 @@ pub fn parse_send_task_heartbeat_response(
 pub fn parse_send_task_success_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SendTaskSuccessOutput, crate::error::SendTaskSuccessError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SendTaskSuccessError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SendTaskSuccessError::unhandled(generic)),
@@ -1633,88 +1682,80 @@ pub fn parse_send_task_success_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidOutput" => crate::error::SendTaskSuccessError {
-            meta: generic,
-            kind: crate::error::SendTaskSuccessErrorKind::InvalidOutput({
+        "InvalidOutput" => crate::error::SendTaskSuccessError::InvalidOutput({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_output::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_invalid_output_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendTaskSuccessError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidToken" => crate::error::SendTaskSuccessError {
-            meta: generic,
-            kind: crate::error::SendTaskSuccessErrorKind::InvalidToken({
+                let mut output = crate::error::invalid_output::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_output_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskSuccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidToken" => crate::error::SendTaskSuccessError::InvalidToken({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::SendTaskSuccessError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "TaskDoesNotExist" => crate::error::SendTaskSuccessError {
-            meta: generic,
-            kind: crate::error::SendTaskSuccessErrorKind::TaskDoesNotExist({
+                let mut output = crate::error::invalid_token::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskSuccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TaskDoesNotExist" => {
+            crate::error::SendTaskSuccessError::TaskDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::task_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_task_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::SendTaskSuccessError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TaskTimedOut" => crate::error::SendTaskSuccessError {
-            meta: generic,
-            kind: crate::error::SendTaskSuccessErrorKind::TaskTimedOut({
+            })
+        }
+        "TaskTimedOut" => crate::error::SendTaskSuccessError::TaskTimedOut({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::task_timed_out::Builder::default();
-                    let _ = response;
-                    output =
-                        crate::json_deser::deser_structure_crate_error_task_timed_out_json_err(
-                            response.body().as_ref(),
-                            output,
-                        )
-                        .map_err(crate::error::SendTaskSuccessError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::task_timed_out::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_task_timed_out_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::SendTaskSuccessError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::SendTaskSuccessError::generic(generic),
     })
 }
@@ -1727,6 +1768,9 @@ pub fn parse_send_task_success_response(
         #[allow(unused_mut)]
         let mut output = crate::output::send_task_success_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1735,8 +1779,11 @@ pub fn parse_send_task_success_response(
 pub fn parse_start_execution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StartExecutionOutput, crate::error::StartExecutionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartExecutionError::unhandled(generic)),
@@ -1744,150 +1791,140 @@ pub fn parse_start_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExecutionAlreadyExists" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::ExecutionAlreadyExists({
+        "ExecutionAlreadyExists" => crate::error::StartExecutionError::ExecutionAlreadyExists({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::execution_already_exists::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_execution_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ExecutionLimitExceeded" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::ExecutionLimitExceeded({
+                let mut output = crate::error::execution_already_exists::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_execution_already_exists_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ExecutionLimitExceeded" => crate::error::StartExecutionError::ExecutionLimitExceeded({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::execution_limit_exceeded::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_execution_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArn" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::InvalidArn({
+                let mut output = crate::error::execution_limit_exceeded::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_execution_limit_exceeded_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArn" => crate::error::StartExecutionError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidExecutionInput" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::InvalidExecutionInput({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidExecutionInput" => crate::error::StartExecutionError::InvalidExecutionInput({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_execution_input::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_execution_input_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidName" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::InvalidName({
+                let mut output = crate::error::invalid_execution_input::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_execution_input_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidName" => crate::error::StartExecutionError::InvalidName({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_name::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "StateMachineDeleting" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::StateMachineDeleting({
+                let mut output = crate::error::invalid_name::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StateMachineDeleting" => {
+            crate::error::StartExecutionError::StateMachineDeleting({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_deleting_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineDoesNotExist" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::StateMachineDoesNotExist({
+            })
+        }
+        "StateMachineDoesNotExist" => {
+            crate::error::StartExecutionError::StateMachineDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::StartExecutionError {
-            meta: generic,
-            kind: crate::error::StartExecutionErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::StartExecutionError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StartExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartExecutionError::generic(generic),
     })
 }
@@ -1905,6 +1942,9 @@ pub fn parse_start_execution_response(
             output,
         )
         .map_err(crate::error::StartExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1916,8 +1956,11 @@ pub fn parse_start_sync_execution_error(
     crate::output::StartSyncExecutionOutput,
     crate::error::StartSyncExecutionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StartSyncExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StartSyncExecutionError::unhandled(generic)),
@@ -1925,102 +1968,95 @@ pub fn parse_start_sync_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::StartSyncExecutionError {
-            meta: generic,
-            kind: crate::error::StartSyncExecutionErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::StartSyncExecutionError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSyncExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidExecutionInput" => crate::error::StartSyncExecutionError {
-            meta: generic,
-            kind: crate::error::StartSyncExecutionErrorKind::InvalidExecutionInput({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidExecutionInput" => crate::error::StartSyncExecutionError::InvalidExecutionInput({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_execution_input::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_execution_input_json_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidName" => crate::error::StartSyncExecutionError {
-            meta: generic,
-            kind: crate::error::StartSyncExecutionErrorKind::InvalidName({
+                let mut output = crate::error::invalid_execution_input::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_execution_input_json_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidName" => crate::error::StartSyncExecutionError::InvalidName({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_name::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StartSyncExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "StateMachineDeleting" => crate::error::StartSyncExecutionError {
-            meta: generic,
-            kind: crate::error::StartSyncExecutionErrorKind::StateMachineDeleting({
+                let mut output = crate::error::invalid_name::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_name_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "StateMachineDeleting" => {
+            crate::error::StartSyncExecutionError::StateMachineDeleting({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_deleting_json_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineDoesNotExist" => crate::error::StartSyncExecutionError {
-            meta: generic,
-            kind: crate::error::StartSyncExecutionErrorKind::StateMachineDoesNotExist({
+            })
+        }
+        "StateMachineDoesNotExist" => {
+            crate::error::StartSyncExecutionError::StateMachineDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineTypeNotSupported" => crate::error::StartSyncExecutionError {
-            meta: generic,
-            kind: crate::error::StartSyncExecutionErrorKind::StateMachineTypeNotSupported({
+            })
+        }
+        "StateMachineTypeNotSupported" => {
+            crate::error::StartSyncExecutionError::StateMachineTypeNotSupported({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2028,14 +2064,15 @@ pub fn parse_start_sync_execution_error(
                         crate::error::state_machine_type_not_supported::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_type_not_supported_json_err(response.body().as_ref(), output).map_err(crate::error::StartSyncExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StartSyncExecutionError::generic(generic),
     })
 }
@@ -2056,6 +2093,9 @@ pub fn parse_start_sync_execution_response(
             output,
         )
         .map_err(crate::error::StartSyncExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2064,8 +2104,11 @@ pub fn parse_start_sync_execution_response(
 pub fn parse_stop_execution_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::StopExecutionOutput, crate::error::StopExecutionError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::StopExecutionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::StopExecutionError::unhandled(generic)),
@@ -2073,61 +2116,57 @@ pub fn parse_stop_execution_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "ExecutionDoesNotExist" => crate::error::StopExecutionError {
-            meta: generic,
-            kind: crate::error::StopExecutionErrorKind::ExecutionDoesNotExist({
+        "ExecutionDoesNotExist" => crate::error::StopExecutionError::ExecutionDoesNotExist({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::execution_does_not_exist::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::StopExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArn" => crate::error::StopExecutionError {
-            meta: generic,
-            kind: crate::error::StopExecutionErrorKind::InvalidArn({
+                let mut output = crate::error::execution_does_not_exist::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_execution_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::StopExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArn" => crate::error::StopExecutionError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::StopExecutionError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ValidationException" => crate::error::StopExecutionError {
-            meta: generic,
-            kind: crate::error::StopExecutionErrorKind::ValidationException({
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::StopExecutionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::StopExecutionError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::StopExecutionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::StopExecutionError::generic(generic),
     })
 }
@@ -2145,6 +2184,9 @@ pub fn parse_stop_execution_response(
             output,
         )
         .map_err(crate::error::StopExecutionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2153,8 +2195,11 @@ pub fn parse_stop_execution_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -2162,67 +2207,64 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::TagResourceError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => {
-            crate::error::TagResourceError {
-                meta: generic,
-                kind: crate::error::TagResourceErrorKind::ResourceNotFound({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "TooManyTags" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TooManyTags({
+            tmp
+        }),
+        "ResourceNotFound" => crate::error::TagResourceError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::too_many_tags::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_too_many_tags_json_err(
+                let mut output = crate::error::resource_not_found::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "TooManyTags" => crate::error::TagResourceError::TooManyTags({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::too_many_tags::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_too_many_tags_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -2235,6 +2277,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2243,8 +2288,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -2252,46 +2300,45 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::UntagResourceError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::error::UntagResourceError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => {
-            crate::error::UntagResourceError {
-                meta: generic,
-                kind: crate::error::UntagResourceErrorKind::ResourceNotFound({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
+            tmp
+        }),
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -2304,6 +2351,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2312,8 +2362,11 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_map_run_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateMapRunOutput, crate::error::UpdateMapRunError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateMapRunError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateMapRunError::unhandled(generic)),
@@ -2321,63 +2374,62 @@ pub fn parse_update_map_run_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::UpdateMapRunError {
-            meta: generic,
-            kind: crate::error::UpdateMapRunErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::UpdateMapRunError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateMapRunError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ResourceNotFound" => crate::error::UpdateMapRunError::ResourceNotFound({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::resource_not_found::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::UpdateMapRunError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ResourceNotFound" => {
-            crate::error::UpdateMapRunError {
-                meta: generic,
-                kind: crate::error::UpdateMapRunErrorKind::ResourceNotFound({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::resource_not_found::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_resource_not_found_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMapRunError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "ValidationException" => crate::error::UpdateMapRunError {
-            meta: generic,
-            kind: crate::error::UpdateMapRunErrorKind::ValidationException({
+            tmp
+        }),
+        "ValidationException" => {
+            crate::error::UpdateMapRunError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateMapRunError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateMapRunError::generic(generic),
     })
 }
@@ -2390,6 +2442,9 @@ pub fn parse_update_map_run_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_map_run_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2401,8 +2456,11 @@ pub fn parse_update_state_machine_error(
     crate::output::UpdateStateMachineOutput,
     crate::error::UpdateStateMachineError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateStateMachineError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateStateMachineError::unhandled(generic)),
@@ -2410,49 +2468,47 @@ pub fn parse_update_state_machine_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArn" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::InvalidArn({
+        "InvalidArn" => crate::error::UpdateStateMachineError::InvalidArn({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_arn::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                let mut output = crate::error::invalid_arn::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_arn_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidDefinition" => crate::error::UpdateStateMachineError::InvalidDefinition({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::invalid_definition::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_invalid_definition_json_err(
                         response.body().as_ref(),
                         output,
                     )
                     .map_err(crate::error::UpdateStateMachineError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidDefinition" => {
-            crate::error::UpdateStateMachineError {
-                meta: generic,
-                kind: crate::error::UpdateStateMachineErrorKind::InvalidDefinition({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::invalid_definition::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_definition_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidLoggingConfiguration" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::InvalidLoggingConfiguration({
+            tmp
+        }),
+        "InvalidLoggingConfiguration" => {
+            crate::error::UpdateStateMachineError::InvalidLoggingConfiguration({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2460,17 +2516,17 @@ pub fn parse_update_state_machine_error(
                         crate::error::invalid_logging_configuration::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_logging_configuration_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidTracingConfiguration" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::InvalidTracingConfiguration({
+            })
+        }
+        "InvalidTracingConfiguration" => {
+            crate::error::UpdateStateMachineError::InvalidTracingConfiguration({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2478,82 +2534,83 @@ pub fn parse_update_state_machine_error(
                         crate::error::invalid_tracing_configuration::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tracing_configuration_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "MissingRequiredParameter" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::MissingRequiredParameter({
+            })
+        }
+        "MissingRequiredParameter" => {
+            crate::error::UpdateStateMachineError::MissingRequiredParameter({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::missing_required_parameter::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_missing_required_parameter_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineDeleting" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::StateMachineDeleting({
+            })
+        }
+        "StateMachineDeleting" => {
+            crate::error::UpdateStateMachineError::StateMachineDeleting({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_deleting::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_deleting_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "StateMachineDoesNotExist" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::StateMachineDoesNotExist({
+            })
+        }
+        "StateMachineDoesNotExist" => {
+            crate::error::UpdateStateMachineError::StateMachineDoesNotExist({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::state_machine_does_not_exist::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_state_machine_does_not_exist_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::UpdateStateMachineError {
-            meta: generic,
-            kind: crate::error::UpdateStateMachineErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::UpdateStateMachineError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateStateMachineError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateStateMachineError::generic(generic),
     })
 }
@@ -2574,6 +2631,9 @@ pub fn parse_update_state_machine_response(
             output,
         )
         .map_err(crate::error::UpdateStateMachineError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

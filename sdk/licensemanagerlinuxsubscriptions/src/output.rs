@@ -21,6 +21,7 @@ pub struct UpdateServiceSettingsOutput {
     /// <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
     #[doc(hidden)]
     pub home_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateServiceSettingsOutput {
     /// <p>Lists if discovery has been enabled for Linux subscriptions.</p>
@@ -51,6 +52,11 @@ impl UpdateServiceSettingsOutput {
         self.home_regions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateServiceSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
 pub mod update_service_settings_output {
 
@@ -67,6 +73,7 @@ pub mod update_service_settings_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) home_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists if discovery has been enabled for Linux subscriptions.</p>
@@ -155,6 +162,15 @@ pub mod update_service_settings_output {
             self.home_regions = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateServiceSettingsOutput`](crate::output::UpdateServiceSettingsOutput).
         pub fn build(self) -> crate::output::UpdateServiceSettingsOutput {
             crate::output::UpdateServiceSettingsOutput {
@@ -163,6 +179,7 @@ pub mod update_service_settings_output {
                 status: self.status,
                 status_message: self.status_message,
                 home_regions: self.home_regions,
+                _request_id: self._request_id,
             }
         }
     }
@@ -184,6 +201,7 @@ pub struct ListLinuxSubscriptionsOutput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLinuxSubscriptionsOutput {
     /// <p>An array that contains subscription objects.</p>
@@ -195,6 +213,11 @@ impl ListLinuxSubscriptionsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLinuxSubscriptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput).
 pub mod list_linux_subscriptions_output {
 
@@ -204,6 +227,7 @@ pub mod list_linux_subscriptions_output {
     pub struct Builder {
         pub(crate) subscriptions: std::option::Option<std::vec::Vec<crate::model::Subscription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `subscriptions`.
@@ -235,11 +259,21 @@ pub mod list_linux_subscriptions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLinuxSubscriptionsOutput`](crate::output::ListLinuxSubscriptionsOutput).
         pub fn build(self) -> crate::output::ListLinuxSubscriptionsOutput {
             crate::output::ListLinuxSubscriptionsOutput {
                 subscriptions: self.subscriptions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -261,6 +295,7 @@ pub struct ListLinuxSubscriptionInstancesOutput {
     /// <p>Token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLinuxSubscriptionInstancesOutput {
     /// <p>An array that contains instance objects.</p>
@@ -272,6 +307,11 @@ impl ListLinuxSubscriptionInstancesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLinuxSubscriptionInstancesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput).
 pub mod list_linux_subscription_instances_output {
 
@@ -281,6 +321,7 @@ pub mod list_linux_subscription_instances_output {
     pub struct Builder {
         pub(crate) instances: std::option::Option<std::vec::Vec<crate::model::Instance>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `instances`.
@@ -312,11 +353,21 @@ pub mod list_linux_subscription_instances_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLinuxSubscriptionInstancesOutput`](crate::output::ListLinuxSubscriptionInstancesOutput).
         pub fn build(self) -> crate::output::ListLinuxSubscriptionInstancesOutput {
             crate::output::ListLinuxSubscriptionInstancesOutput {
                 instances: self.instances,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -350,6 +401,7 @@ pub struct GetServiceSettingsOutput {
     /// <p>The Region in which License Manager displays the aggregated data for Linux subscriptions.</p>
     #[doc(hidden)]
     pub home_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetServiceSettingsOutput {
     /// <p>Lists if discovery has been enabled for Linux subscriptions.</p>
@@ -380,6 +432,11 @@ impl GetServiceSettingsOutput {
         self.home_regions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetServiceSettingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
 pub mod get_service_settings_output {
 
@@ -396,6 +453,7 @@ pub mod get_service_settings_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) home_regions: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Lists if discovery has been enabled for Linux subscriptions.</p>
@@ -484,6 +542,15 @@ pub mod get_service_settings_output {
             self.home_regions = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetServiceSettingsOutput`](crate::output::GetServiceSettingsOutput).
         pub fn build(self) -> crate::output::GetServiceSettingsOutput {
             crate::output::GetServiceSettingsOutput {
@@ -492,6 +559,7 @@ pub mod get_service_settings_output {
                 status: self.status,
                 status_message: self.status_message,
                 home_regions: self.home_regions,
+                _request_id: self._request_id,
             }
         }
     }

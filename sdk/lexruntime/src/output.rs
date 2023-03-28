@@ -57,6 +57,7 @@ pub struct PutSessionOutput {
     /// <p>A list of active contexts for the session.</p>
     #[doc(hidden)]
     pub active_contexts: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutSessionOutput {
     /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
@@ -143,7 +144,13 @@ impl std::fmt::Debug for PutSessionOutput {
         formatter.field("audio_stream", &self.audio_stream);
         formatter.field("session_id", &self.session_id);
         formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for PutSessionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutSessionOutput`](crate::output::PutSessionOutput).
@@ -165,6 +172,7 @@ pub mod put_session_output {
         pub(crate) audio_stream: std::option::Option<aws_smithy_http::byte_stream::ByteStream>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) active_contexts: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
@@ -348,6 +356,15 @@ pub mod put_session_output {
             self.active_contexts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutSessionOutput`](crate::output::PutSessionOutput).
         pub fn build(self) -> crate::output::PutSessionOutput {
             crate::output::PutSessionOutput {
@@ -363,6 +380,7 @@ pub mod put_session_output {
                 audio_stream: self.audio_stream.unwrap_or_default(),
                 session_id: self.session_id,
                 active_contexts: self.active_contexts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -381,6 +399,7 @@ pub mod put_session_output {
             formatter.field("audio_stream", &self.audio_stream);
             formatter.field("session_id", &self.session_id);
             formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -462,6 +481,7 @@ pub struct PostTextOutput {
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
+    _request_id: Option<String>,
 }
 impl PostTextOutput {
     /// <p>The current user intent that Amazon Lex is aware of.</p>
@@ -566,7 +586,13 @@ impl std::fmt::Debug for PostTextOutput {
         formatter.field("session_id", &self.session_id);
         formatter.field("bot_version", &self.bot_version);
         formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for PostTextOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PostTextOutput`](crate::output::PostTextOutput).
@@ -595,6 +621,7 @@ pub mod post_text_output {
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The current user intent that Amazon Lex is aware of.</p>
@@ -847,6 +874,15 @@ pub mod post_text_output {
             self.active_contexts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PostTextOutput`](crate::output::PostTextOutput).
         pub fn build(self) -> crate::output::PostTextOutput {
             crate::output::PostTextOutput {
@@ -864,6 +900,7 @@ pub mod post_text_output {
                 session_id: self.session_id,
                 bot_version: self.bot_version,
                 active_contexts: self.active_contexts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -884,6 +921,7 @@ pub mod post_text_output {
             formatter.field("session_id", &self.session_id);
             formatter.field("bot_version", &self.bot_version);
             formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -988,6 +1026,7 @@ pub struct PostContentOutput {
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     #[doc(hidden)]
     pub active_contexts: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PostContentOutput {
     /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
@@ -1124,7 +1163,13 @@ impl std::fmt::Debug for PostContentOutput {
         formatter.field("bot_version", &self.bot_version);
         formatter.field("session_id", &self.session_id);
         formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for PostContentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PostContentOutput`](crate::output::PostContentOutput).
@@ -1152,6 +1197,7 @@ pub mod post_content_output {
         pub(crate) bot_version: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) active_contexts: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Content type as specified in the <code>Accept</code> HTTP header in the request.</p>
@@ -1444,6 +1490,15 @@ pub mod post_content_output {
             self.active_contexts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PostContentOutput`](crate::output::PostContentOutput).
         pub fn build(self) -> crate::output::PostContentOutput {
             crate::output::PostContentOutput {
@@ -1465,6 +1520,7 @@ pub mod post_content_output {
                 bot_version: self.bot_version,
                 session_id: self.session_id,
                 active_contexts: self.active_contexts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1492,6 +1548,7 @@ pub mod post_content_output {
             formatter.field("bot_version", &self.bot_version);
             formatter.field("session_id", &self.session_id);
             formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1525,6 +1582,7 @@ pub struct GetSessionOutput {
     /// <p>You can use a context to control the intents that can follow up an intent, or to modify the operation of your application.</p>
     #[doc(hidden)]
     pub active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
+    _request_id: Option<String>,
 }
 impl GetSessionOutput {
     /// <p>An array of information about the intents used in the session. The array can contain a maximum of three summaries. If more than three intents are used in the session, the <code>recentIntentSummaryView</code> operation contains information about the last three intents used.</p>
@@ -1566,7 +1624,13 @@ impl std::fmt::Debug for GetSessionOutput {
         formatter.field("session_id", &self.session_id);
         formatter.field("dialog_action", &self.dialog_action);
         formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetSessionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetSessionOutput`](crate::output::GetSessionOutput).
@@ -1584,6 +1648,7 @@ pub mod get_session_output {
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) dialog_action: std::option::Option<crate::model::DialogAction>,
         pub(crate) active_contexts: std::option::Option<std::vec::Vec<crate::model::ActiveContext>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `recent_intent_summary_view`.
@@ -1676,6 +1741,15 @@ pub mod get_session_output {
             self.active_contexts = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetSessionOutput`](crate::output::GetSessionOutput).
         pub fn build(self) -> crate::output::GetSessionOutput {
             crate::output::GetSessionOutput {
@@ -1684,6 +1758,7 @@ pub mod get_session_output {
                 session_id: self.session_id,
                 dialog_action: self.dialog_action,
                 active_contexts: self.active_contexts,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1698,6 +1773,7 @@ pub mod get_session_output {
             formatter.field("session_id", &self.session_id);
             formatter.field("dialog_action", &self.dialog_action);
             formatter.field("active_contexts", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1725,6 +1801,7 @@ pub struct DeleteSessionOutput {
     /// <p>The unique identifier for the session.</p>
     #[doc(hidden)]
     pub session_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteSessionOutput {
     /// <p>The name of the bot associated with the session data.</p>
@@ -1744,6 +1821,11 @@ impl DeleteSessionOutput {
         self.session_id.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteSessionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
 pub mod delete_session_output {
 
@@ -1755,6 +1837,7 @@ pub mod delete_session_output {
         pub(crate) bot_alias: std::option::Option<std::string::String>,
         pub(crate) user_id: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the bot associated with the session data.</p>
@@ -1797,6 +1880,15 @@ pub mod delete_session_output {
             self.session_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteSessionOutput`](crate::output::DeleteSessionOutput).
         pub fn build(self) -> crate::output::DeleteSessionOutput {
             crate::output::DeleteSessionOutput {
@@ -1804,6 +1896,7 @@ pub mod delete_session_output {
                 bot_alias: self.bot_alias,
                 user_id: self.user_id,
                 session_id: self.session_id,
+                _request_id: self._request_id,
             }
         }
     }

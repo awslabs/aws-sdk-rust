@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRecommendationPref
         crate::error::DeleteRecommendationPreferencesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_recommendation_preferences_error(response)
         } else {
@@ -59,6 +60,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRecommendationEx
         crate::error::DescribeRecommendationExportJobsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_recommendation_export_jobs_error(response)
         } else {
@@ -93,6 +95,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportAutoScalingGroupRe
         crate::error::ExportAutoScalingGroupRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_auto_scaling_group_recommendations_error(response)
         } else {
@@ -129,6 +132,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEBSVolumeRecommend
         crate::error::ExportEBSVolumeRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_ebs_volume_recommendations_error(response)
         } else {
@@ -163,6 +167,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportEC2InstanceRecomme
         crate::error::ExportEC2InstanceRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_ec2_instance_recommendations_error(response)
         } else {
@@ -197,6 +202,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportECSServiceRecommen
         crate::error::ExportECSServiceRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_ecs_service_recommendations_error(response)
         } else {
@@ -231,6 +237,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ExportLambdaFunctionReco
         crate::error::ExportLambdaFunctionRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_export_lambda_function_recommendations_error(response)
         } else {
@@ -265,6 +272,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetAutoScalingGroupRecom
         crate::error::GetAutoScalingGroupRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_auto_scaling_group_recommendations_error(response)
         } else {
@@ -299,6 +307,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEBSVolumeRecommendati
         crate::error::GetEBSVolumeRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_ebs_volume_recommendations_error(response)
         } else {
@@ -333,6 +342,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2InstanceRecommenda
         crate::error::GetEC2InstanceRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_ec2_instance_recommendations_error(response)
         } else {
@@ -367,6 +377,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEC2RecommendationProj
         crate::error::GetEC2RecommendationProjectedMetricsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_ec2_recommendation_projected_metrics_error(response)
         } else {
@@ -406,6 +417,7 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::GetECSServiceRecommendationProjectedMetricsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_ecs_service_recommendation_projected_metrics_error(
                 response,
@@ -444,6 +456,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetECSServiceRecommendat
         crate::error::GetECSServiceRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_ecs_service_recommendations_error(response)
         } else {
@@ -478,6 +491,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEffectiveRecommendati
         crate::error::GetEffectiveRecommendationPreferencesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_effective_recommendation_preferences_error(response)
         } else {
@@ -514,6 +528,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatus {
         crate::error::GetEnrollmentStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_enrollment_status_error(response)
         } else {
@@ -548,6 +563,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetEnrollmentStatusesFor
         crate::error::GetEnrollmentStatusesForOrganizationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_enrollment_statuses_for_organization_error(response)
         } else {
@@ -584,6 +600,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetLambdaFunctionRecomme
         crate::error::GetLambdaFunctionRecommendationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_lambda_function_recommendations_error(response)
         } else {
@@ -618,6 +635,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationPrefere
         crate::error::GetRecommendationPreferencesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_recommendation_preferences_error(response)
         } else {
@@ -652,6 +670,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetRecommendationSummari
         crate::error::GetRecommendationSummariesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_recommendation_summaries_error(response)
         } else {
@@ -686,6 +705,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutRecommendationPrefere
         crate::error::PutRecommendationPreferencesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_recommendation_preferences_error(response)
         } else {
@@ -720,6 +740,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateEnrollmentStatus {
         crate::error::UpdateEnrollmentStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_enrollment_status_error(response)
         } else {

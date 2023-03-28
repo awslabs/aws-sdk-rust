@@ -4,8 +4,11 @@ pub fn parse_add_tags_to_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::AddTagsToResourceOutput, crate::error::AddTagsToResourceError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::AddTagsToResourceError::unhandled(generic)),
@@ -13,57 +16,57 @@ pub fn parse_add_tags_to_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::AddTagsToResourceError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::AddTagsToResourceError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::AddTagsToResourceError {
-            meta: generic,
-            kind: crate::error::AddTagsToResourceErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::AddTagsToResourceError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::AddTagsToResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::AddTagsToResourceError::generic(generic),
     })
 }
@@ -82,6 +85,9 @@ pub fn parse_add_tags_to_resource_response(
             output,
         )
         .map_err(crate::error::AddTagsToResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -90,8 +96,11 @@ pub fn parse_add_tags_to_resource_response(
 pub fn parse_create_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHapgOutput, crate::error::CreateHapgError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateHapgError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateHapgError::unhandled(generic)),
@@ -99,57 +108,51 @@ pub fn parse_create_hapg_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::CreateHapgError {
-            meta: generic,
-            kind: crate::error::CreateHapgErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::CreateHapgError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::CreateHapgError {
-            meta: generic,
-            kind: crate::error::CreateHapgErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::CreateHapgError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::CreateHapgError {
-            meta: generic,
-            kind: crate::error::CreateHapgErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::CreateHapgError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateHapgError::generic(generic),
     })
 }
@@ -167,6 +170,9 @@ pub fn parse_create_hapg_response(
             output,
         )
         .map_err(crate::error::CreateHapgError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -175,8 +181,11 @@ pub fn parse_create_hapg_response(
 pub fn parse_create_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateHsmOutput, crate::error::CreateHsmError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateHsmError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateHsmError::unhandled(generic)),
@@ -184,57 +193,51 @@ pub fn parse_create_hsm_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::CreateHsmError {
-            meta: generic,
-            kind: crate::error::CreateHsmErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::CreateHsmError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::CreateHsmError {
-            meta: generic,
-            kind: crate::error::CreateHsmErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::CreateHsmError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::CreateHsmError {
-            meta: generic,
-            kind: crate::error::CreateHsmErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::CreateHsmError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateHsmError::generic(generic),
     })
 }
@@ -252,6 +255,9 @@ pub fn parse_create_hsm_response(
             output,
         )
         .map_err(crate::error::CreateHsmError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -261,8 +267,11 @@ pub fn parse_create_luna_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateLunaClientOutput, crate::error::CreateLunaClientError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateLunaClientError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateLunaClientError::unhandled(generic)),
@@ -270,57 +279,57 @@ pub fn parse_create_luna_client_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::CreateLunaClientError {
-            meta: generic,
-            kind: crate::error::CreateLunaClientErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::CreateLunaClientError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::CreateLunaClientError {
-            meta: generic,
-            kind: crate::error::CreateLunaClientErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::CreateLunaClientError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::CreateLunaClientError {
-            meta: generic,
-            kind: crate::error::CreateLunaClientErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::CreateLunaClientError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateLunaClientError::generic(generic),
     })
 }
@@ -339,6 +348,9 @@ pub fn parse_create_luna_client_response(
             output,
         )
         .map_err(crate::error::CreateLunaClientError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -347,8 +359,11 @@ pub fn parse_create_luna_client_response(
 pub fn parse_delete_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHapgOutput, crate::error::DeleteHapgError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteHapgError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteHapgError::unhandled(generic)),
@@ -356,57 +371,51 @@ pub fn parse_delete_hapg_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::DeleteHapgError {
-            meta: generic,
-            kind: crate::error::DeleteHapgErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::DeleteHapgError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::DeleteHapgError {
-            meta: generic,
-            kind: crate::error::DeleteHapgErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::DeleteHapgError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::DeleteHapgError {
-            meta: generic,
-            kind: crate::error::DeleteHapgErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::DeleteHapgError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteHapgError::generic(generic),
     })
 }
@@ -424,6 +433,9 @@ pub fn parse_delete_hapg_response(
             output,
         )
         .map_err(crate::error::DeleteHapgError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -432,8 +444,11 @@ pub fn parse_delete_hapg_response(
 pub fn parse_delete_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteHsmOutput, crate::error::DeleteHsmError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteHsmError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteHsmError::unhandled(generic)),
@@ -441,57 +456,51 @@ pub fn parse_delete_hsm_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::DeleteHsmError {
-            meta: generic,
-            kind: crate::error::DeleteHsmErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::DeleteHsmError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::DeleteHsmError {
-            meta: generic,
-            kind: crate::error::DeleteHsmErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::DeleteHsmError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::DeleteHsmError {
-            meta: generic,
-            kind: crate::error::DeleteHsmErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::DeleteHsmError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DeleteHsmError::generic(generic),
     })
 }
@@ -509,6 +518,9 @@ pub fn parse_delete_hsm_response(
             output,
         )
         .map_err(crate::error::DeleteHsmError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -518,8 +530,11 @@ pub fn parse_delete_luna_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteLunaClientOutput, crate::error::DeleteLunaClientError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteLunaClientError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteLunaClientError::unhandled(generic)),
@@ -527,57 +542,57 @@ pub fn parse_delete_luna_client_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::DeleteLunaClientError {
-            meta: generic,
-            kind: crate::error::DeleteLunaClientErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::DeleteLunaClientError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::DeleteLunaClientError {
-            meta: generic,
-            kind: crate::error::DeleteLunaClientErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::DeleteLunaClientError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::DeleteLunaClientError {
-            meta: generic,
-            kind: crate::error::DeleteLunaClientErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::DeleteLunaClientError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteLunaClientError::generic(generic),
     })
 }
@@ -596,6 +611,9 @@ pub fn parse_delete_luna_client_response(
             output,
         )
         .map_err(crate::error::DeleteLunaClientError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -604,8 +622,11 @@ pub fn parse_delete_luna_client_response(
 pub fn parse_describe_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHapgOutput, crate::error::DescribeHapgError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHapgError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeHapgError::unhandled(generic)),
@@ -613,57 +634,53 @@ pub fn parse_describe_hapg_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::DescribeHapgError {
-            meta: generic,
-            kind: crate::error::DescribeHapgErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::DescribeHapgError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::DescribeHapgError {
-            meta: generic,
-            kind: crate::error::DescribeHapgErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => crate::error::DescribeHapgError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::DescribeHapgError {
-            meta: generic,
-            kind: crate::error::DescribeHapgErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::DescribeHapgError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeHapgError::generic(generic),
     })
 }
@@ -681,6 +698,9 @@ pub fn parse_describe_hapg_response(
             output,
         )
         .map_err(crate::error::DescribeHapgError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -689,8 +709,11 @@ pub fn parse_describe_hapg_response(
 pub fn parse_describe_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeHsmOutput, crate::error::DescribeHsmError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeHsmError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeHsmError::unhandled(generic)),
@@ -698,57 +721,51 @@ pub fn parse_describe_hsm_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::DescribeHsmError {
-            meta: generic,
-            kind: crate::error::DescribeHsmErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::DescribeHsmError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::DescribeHsmError {
-            meta: generic,
-            kind: crate::error::DescribeHsmErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::DescribeHsmError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::DescribeHsmError {
-            meta: generic,
-            kind: crate::error::DescribeHsmErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::DescribeHsmError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::DescribeHsmError::generic(generic),
     })
 }
@@ -766,6 +783,9 @@ pub fn parse_describe_hsm_response(
             output,
         )
         .map_err(crate::error::DescribeHsmError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -777,8 +797,11 @@ pub fn parse_describe_luna_client_error(
     crate::output::DescribeLunaClientOutput,
     crate::error::DescribeLunaClientError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeLunaClientError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeLunaClientError::unhandled(generic)),
@@ -786,57 +809,57 @@ pub fn parse_describe_luna_client_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::DescribeLunaClientError {
-            meta: generic,
-            kind: crate::error::DescribeLunaClientErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::DescribeLunaClientError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::DescribeLunaClientError {
-            meta: generic,
-            kind: crate::error::DescribeLunaClientErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::DescribeLunaClientError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::DescribeLunaClientError {
-            meta: generic,
-            kind: crate::error::DescribeLunaClientErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::DescribeLunaClientError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeLunaClientError::generic(generic),
     })
 }
@@ -857,6 +880,9 @@ pub fn parse_describe_luna_client_response(
             output,
         )
         .map_err(crate::error::DescribeLunaClientError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -865,8 +891,11 @@ pub fn parse_describe_luna_client_response(
 pub fn parse_get_config_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetConfigOutput, crate::error::GetConfigError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetConfigError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetConfigError::unhandled(generic)),
@@ -874,57 +903,51 @@ pub fn parse_get_config_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::GetConfigError {
-            meta: generic,
-            kind: crate::error::GetConfigErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::GetConfigError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::GetConfigError {
-            meta: generic,
-            kind: crate::error::GetConfigErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::GetConfigError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::GetConfigError {
-            meta: generic,
-            kind: crate::error::GetConfigErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::GetConfigError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetConfigError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::GetConfigError::generic(generic),
     })
 }
@@ -942,6 +965,9 @@ pub fn parse_get_config_response(
             output,
         )
         .map_err(crate::error::GetConfigError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -953,8 +979,11 @@ pub fn parse_list_available_zones_error(
     crate::output::ListAvailableZonesOutput,
     crate::error::ListAvailableZonesError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAvailableZonesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAvailableZonesError::unhandled(generic)),
@@ -962,57 +991,57 @@ pub fn parse_list_available_zones_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ListAvailableZonesError {
-            meta: generic,
-            kind: crate::error::ListAvailableZonesErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::ListAvailableZonesError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ListAvailableZonesError {
-            meta: generic,
-            kind: crate::error::ListAvailableZonesErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::ListAvailableZonesError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ListAvailableZonesError {
-            meta: generic,
-            kind: crate::error::ListAvailableZonesErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::ListAvailableZonesError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAvailableZonesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListAvailableZonesError::generic(generic),
     })
 }
@@ -1033,6 +1062,9 @@ pub fn parse_list_available_zones_response(
             output,
         )
         .map_err(crate::error::ListAvailableZonesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1041,8 +1073,11 @@ pub fn parse_list_available_zones_response(
 pub fn parse_list_hapgs_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHapgsOutput, crate::error::ListHapgsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListHapgsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListHapgsError::unhandled(generic)),
@@ -1050,57 +1085,51 @@ pub fn parse_list_hapgs_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ListHapgsError {
-            meta: generic,
-            kind: crate::error::ListHapgsErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::ListHapgsError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ListHapgsError {
-            meta: generic,
-            kind: crate::error::ListHapgsErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::ListHapgsError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ListHapgsError {
-            meta: generic,
-            kind: crate::error::ListHapgsErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::ListHapgsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHapgsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListHapgsError::generic(generic),
     })
 }
@@ -1118,6 +1147,9 @@ pub fn parse_list_hapgs_response(
             output,
         )
         .map_err(crate::error::ListHapgsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1126,8 +1158,11 @@ pub fn parse_list_hapgs_response(
 pub fn parse_list_hsms_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListHsmsOutput, crate::error::ListHsmsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListHsmsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListHsmsError::unhandled(generic)),
@@ -1135,57 +1170,51 @@ pub fn parse_list_hsms_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ListHsmsError {
-            meta: generic,
-            kind: crate::error::ListHsmsErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::ListHsmsError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ListHsmsError {
-            meta: generic,
-            kind: crate::error::ListHsmsErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::ListHsmsError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ListHsmsError {
-            meta: generic,
-            kind: crate::error::ListHsmsErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::ListHsmsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListHsmsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListHsmsError::generic(generic),
     })
 }
@@ -1203,6 +1232,9 @@ pub fn parse_list_hsms_response(
             output,
         )
         .map_err(crate::error::ListHsmsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1211,8 +1243,11 @@ pub fn parse_list_hsms_response(
 pub fn parse_list_luna_clients_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListLunaClientsOutput, crate::error::ListLunaClientsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListLunaClientsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListLunaClientsError::unhandled(generic)),
@@ -1220,57 +1255,55 @@ pub fn parse_list_luna_clients_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ListLunaClientsError {
-            meta: generic,
-            kind: crate::error::ListLunaClientsErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::ListLunaClientsError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ListLunaClientsError {
-            meta: generic,
-            kind: crate::error::ListLunaClientsErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::ListLunaClientsError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ListLunaClientsError {
-            meta: generic,
-            kind: crate::error::ListLunaClientsErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => crate::error::ListLunaClientsError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListLunaClientsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ListLunaClientsError::generic(generic),
     })
 }
@@ -1288,6 +1321,9 @@ pub fn parse_list_luna_clients_response(
             output,
         )
         .map_err(crate::error::ListLunaClientsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1299,8 +1335,11 @@ pub fn parse_list_tags_for_resource_error(
     crate::output::ListTagsForResourceOutput,
     crate::error::ListTagsForResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListTagsForResourceError::unhandled(generic)),
@@ -1308,57 +1347,57 @@ pub fn parse_list_tags_for_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::ListTagsForResourceError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::ListTagsForResourceError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ListTagsForResourceError {
-            meta: generic,
-            kind: crate::error::ListTagsForResourceErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::ListTagsForResourceError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListTagsForResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListTagsForResourceError::generic(generic),
     })
 }
@@ -1379,6 +1418,9 @@ pub fn parse_list_tags_for_resource_response(
             output,
         )
         .map_err(crate::error::ListTagsForResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1387,8 +1429,11 @@ pub fn parse_list_tags_for_resource_response(
 pub fn parse_modify_hapg_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyHapgOutput, crate::error::ModifyHapgError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyHapgError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyHapgError::unhandled(generic)),
@@ -1396,57 +1441,51 @@ pub fn parse_modify_hapg_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ModifyHapgError {
-            meta: generic,
-            kind: crate::error::ModifyHapgErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::ModifyHapgError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ModifyHapgError {
-            meta: generic,
-            kind: crate::error::ModifyHapgErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::ModifyHapgError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ModifyHapgError {
-            meta: generic,
-            kind: crate::error::ModifyHapgErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::ModifyHapgError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHapgError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ModifyHapgError::generic(generic),
     })
 }
@@ -1464,6 +1503,9 @@ pub fn parse_modify_hapg_response(
             output,
         )
         .map_err(crate::error::ModifyHapgError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1472,8 +1514,11 @@ pub fn parse_modify_hapg_response(
 pub fn parse_modify_hsm_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyHsmOutput, crate::error::ModifyHsmError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyHsmError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyHsmError::unhandled(generic)),
@@ -1481,57 +1526,51 @@ pub fn parse_modify_hsm_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::ModifyHsmError {
-            meta: generic,
-            kind: crate::error::ModifyHsmErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => crate::error::ModifyHsmError::CloudHsmInternalException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::ModifyHsmError {
-            meta: generic,
-            kind: crate::error::ModifyHsmErrorKind::CloudHsmServiceException({
+                let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "CloudHsmServiceException" => crate::error::ModifyHsmError::CloudHsmServiceException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::ModifyHsmError {
-            meta: generic,
-            kind: crate::error::ModifyHsmErrorKind::InvalidRequestException({
+                let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidRequestException" => crate::error::ModifyHsmError::InvalidRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::invalid_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyHsmError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::ModifyHsmError::generic(generic),
     })
 }
@@ -1549,6 +1588,9 @@ pub fn parse_modify_hsm_response(
             output,
         )
         .map_err(crate::error::ModifyHsmError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1558,8 +1600,11 @@ pub fn parse_modify_luna_client_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ModifyLunaClientOutput, crate::error::ModifyLunaClientError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyLunaClientError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ModifyLunaClientError::unhandled(generic)),
@@ -1567,23 +1612,23 @@ pub fn parse_modify_luna_client_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmServiceException" => crate::error::ModifyLunaClientError {
-            meta: generic,
-            kind: crate::error::ModifyLunaClientErrorKind::CloudHsmServiceException({
+        "CloudHsmServiceException" => {
+            crate::error::ModifyLunaClientError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyLunaClientError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyLunaClientError::generic(generic),
     })
 }
@@ -1602,6 +1647,9 @@ pub fn parse_modify_luna_client_response(
             output,
         )
         .map_err(crate::error::ModifyLunaClientError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1613,8 +1661,11 @@ pub fn parse_remove_tags_from_resource_error(
     crate::output::RemoveTagsFromResourceOutput,
     crate::error::RemoveTagsFromResourceError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1626,57 +1677,57 @@ pub fn parse_remove_tags_from_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmInternalException" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::CloudHsmInternalException({
+        "CloudHsmInternalException" => {
+            crate::error::RemoveTagsFromResourceError::CloudHsmInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CloudHsmServiceException" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::CloudHsmServiceException({
+            })
+        }
+        "CloudHsmServiceException" => {
+            crate::error::RemoveTagsFromResourceError::CloudHsmServiceException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_service_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_service_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRequestException" => crate::error::RemoveTagsFromResourceError {
-            meta: generic,
-            kind: crate::error::RemoveTagsFromResourceErrorKind::InvalidRequestException({
+            })
+        }
+        "InvalidRequestException" => {
+            crate::error::RemoveTagsFromResourceError::InvalidRequestException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_request_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RemoveTagsFromResourceError::generic(generic),
     })
 }
@@ -1697,6 +1748,9 @@ pub fn parse_remove_tags_from_resource_response(
             output,
         )
         .map_err(crate::error::RemoveTagsFromResourceError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

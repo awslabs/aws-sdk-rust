@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateRumMetricDefinitionOutput {}
+pub struct UpdateRumMetricDefinitionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateRumMetricDefinitionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
 pub mod update_rum_metric_definition_output {
 
     /// A builder for [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateRumMetricDefinitionOutput`](crate::output::UpdateRumMetricDefinitionOutput).
         pub fn build(self) -> crate::output::UpdateRumMetricDefinitionOutput {
-            crate::output::UpdateRumMetricDefinitionOutput {}
+            crate::output::UpdateRumMetricDefinitionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UpdateRumMetricDefinitionOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRumMetricsDestinationOutput {}
+pub struct PutRumMetricsDestinationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutRumMetricsDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
 pub mod put_rum_metrics_destination_output {
 
     /// A builder for [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRumMetricsDestinationOutput`](crate::output::PutRumMetricsDestinationOutput).
         pub fn build(self) -> crate::output::PutRumMetricsDestinationOutput {
-            crate::output::PutRumMetricsDestinationOutput {}
+            crate::output::PutRumMetricsDestinationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -59,6 +99,7 @@ pub struct ListRumMetricsDestinationsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListRumMetricsDestinationsOutput {
     /// <p>The list of CloudWatch RUM extended metrics destinations associated with the app monitor that you specified.</p>
@@ -68,6 +109,11 @@ impl ListRumMetricsDestinationsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListRumMetricsDestinationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
@@ -80,6 +126,7 @@ pub mod list_rum_metrics_destinations_output {
         pub(crate) destinations:
             std::option::Option<std::vec::Vec<crate::model::MetricDestinationSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `destinations`.
@@ -111,11 +158,21 @@ pub mod list_rum_metrics_destinations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListRumMetricsDestinationsOutput`](crate::output::ListRumMetricsDestinationsOutput).
         pub fn build(self) -> crate::output::ListRumMetricsDestinationsOutput {
             crate::output::ListRumMetricsDestinationsOutput {
                 destinations: self.destinations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -137,6 +194,7 @@ pub struct GetAppMonitorDataOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetAppMonitorDataOutput {
     /// <p>The events that RUM collected that match your request.</p>
@@ -148,6 +206,11 @@ impl GetAppMonitorDataOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetAppMonitorDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
 pub mod get_app_monitor_data_output {
 
@@ -157,6 +220,7 @@ pub mod get_app_monitor_data_output {
     pub struct Builder {
         pub(crate) events: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `events`.
@@ -188,11 +252,21 @@ pub mod get_app_monitor_data_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAppMonitorDataOutput`](crate::output::GetAppMonitorDataOutput).
         pub fn build(self) -> crate::output::GetAppMonitorDataOutput {
             crate::output::GetAppMonitorDataOutput {
                 events: self.events,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -207,18 +281,38 @@ impl GetAppMonitorDataOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteRumMetricsDestinationOutput {}
+pub struct DeleteRumMetricsDestinationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteRumMetricsDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
 pub mod delete_rum_metrics_destination_output {
 
     /// A builder for [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteRumMetricsDestinationOutput`](crate::output::DeleteRumMetricsDestinationOutput).
         pub fn build(self) -> crate::output::DeleteRumMetricsDestinationOutput {
-            crate::output::DeleteRumMetricsDestinationOutput {}
+            crate::output::DeleteRumMetricsDestinationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -236,11 +330,17 @@ pub struct CreateAppMonitorOutput {
     /// <p>The unique ID of the new app monitor.</p>
     #[doc(hidden)]
     pub id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateAppMonitorOutput {
     /// <p>The unique ID of the new app monitor.</p>
     pub fn id(&self) -> std::option::Option<&str> {
         self.id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAppMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
@@ -251,6 +351,7 @@ pub mod create_app_monitor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The unique ID of the new app monitor.</p>
@@ -263,9 +364,21 @@ pub mod create_app_monitor_output {
             self.id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAppMonitorOutput`](crate::output::CreateAppMonitorOutput).
         pub fn build(self) -> crate::output::CreateAppMonitorOutput {
-            crate::output::CreateAppMonitorOutput { id: self.id }
+            crate::output::CreateAppMonitorOutput {
+                id: self.id,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -286,6 +399,7 @@ pub struct BatchGetRumMetricDefinitionsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl BatchGetRumMetricDefinitionsOutput {
     /// <p>An array of structures that display information about the metrics that are sent by the specified app monitor to the specified destination.</p>
@@ -295,6 +409,11 @@ impl BatchGetRumMetricDefinitionsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchGetRumMetricDefinitionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
@@ -307,6 +426,7 @@ pub mod batch_get_rum_metric_definitions_output {
         pub(crate) metric_definitions:
             std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `metric_definitions`.
@@ -338,11 +458,21 @@ pub mod batch_get_rum_metric_definitions_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchGetRumMetricDefinitionsOutput`](crate::output::BatchGetRumMetricDefinitionsOutput).
         pub fn build(self) -> crate::output::BatchGetRumMetricDefinitionsOutput {
             crate::output::BatchGetRumMetricDefinitionsOutput {
                 metric_definitions: self.metric_definitions,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -365,6 +495,7 @@ pub struct BatchDeleteRumMetricDefinitionsOutput {
     /// <p>The IDs of the metric definitions that were deleted.</p>
     #[doc(hidden)]
     pub metric_definition_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+    _request_id: Option<String>,
 }
 impl BatchDeleteRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
@@ -378,6 +509,11 @@ impl BatchDeleteRumMetricDefinitionsOutput {
         self.metric_definition_ids.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchDeleteRumMetricDefinitionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
 pub mod batch_delete_rum_metric_definitions_output {
 
@@ -388,6 +524,7 @@ pub mod batch_delete_rum_metric_definitions_output {
         pub(crate) errors:
             std::option::Option<std::vec::Vec<crate::model::BatchDeleteRumMetricDefinitionsError>>,
         pub(crate) metric_definition_ids: std::option::Option<std::vec::Vec<std::string::String>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -430,11 +567,21 @@ pub mod batch_delete_rum_metric_definitions_output {
             self.metric_definition_ids = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDeleteRumMetricDefinitionsOutput`](crate::output::BatchDeleteRumMetricDefinitionsOutput).
         pub fn build(self) -> crate::output::BatchDeleteRumMetricDefinitionsOutput {
             crate::output::BatchDeleteRumMetricDefinitionsOutput {
                 errors: self.errors,
                 metric_definition_ids: self.metric_definition_ids,
+                _request_id: self._request_id,
             }
         }
     }
@@ -457,6 +604,7 @@ pub struct BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of structures that define the extended metrics.</p>
     #[doc(hidden)]
     pub metric_definitions: std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+    _request_id: Option<String>,
 }
 impl BatchCreateRumMetricDefinitionsOutput {
     /// <p>An array of error objects, if the operation caused any errors.</p>
@@ -470,6 +618,11 @@ impl BatchCreateRumMetricDefinitionsOutput {
         self.metric_definitions.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchCreateRumMetricDefinitionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
 pub mod batch_create_rum_metric_definitions_output {
 
@@ -481,6 +634,7 @@ pub mod batch_create_rum_metric_definitions_output {
             std::option::Option<std::vec::Vec<crate::model::BatchCreateRumMetricDefinitionsError>>,
         pub(crate) metric_definitions:
             std::option::Option<std::vec::Vec<crate::model::MetricDefinition>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `errors`.
@@ -523,11 +677,21 @@ pub mod batch_create_rum_metric_definitions_output {
             self.metric_definitions = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchCreateRumMetricDefinitionsOutput`](crate::output::BatchCreateRumMetricDefinitionsOutput).
         pub fn build(self) -> crate::output::BatchCreateRumMetricDefinitionsOutput {
             crate::output::BatchCreateRumMetricDefinitionsOutput {
                 errors: self.errors,
                 metric_definitions: self.metric_definitions,
+                _request_id: self._request_id,
             }
         }
     }
@@ -549,6 +713,7 @@ pub struct ListAppMonitorsOutput {
     /// <p>An array of structures that contain information about the returned app monitors.</p>
     #[doc(hidden)]
     pub app_monitor_summaries: std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
+    _request_id: Option<String>,
 }
 impl ListAppMonitorsOutput {
     /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -558,6 +723,11 @@ impl ListAppMonitorsOutput {
     /// <p>An array of structures that contain information about the returned app monitors.</p>
     pub fn app_monitor_summaries(&self) -> std::option::Option<&[crate::model::AppMonitorSummary]> {
         self.app_monitor_summaries.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListAppMonitorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
@@ -570,6 +740,7 @@ pub mod list_app_monitors_output {
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) app_monitor_summaries:
             std::option::Option<std::vec::Vec<crate::model::AppMonitorSummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A token that you can use in a subsequent operation to retrieve the next set of results.</p>
@@ -601,11 +772,21 @@ pub mod list_app_monitors_output {
             self.app_monitor_summaries = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAppMonitorsOutput`](crate::output::ListAppMonitorsOutput).
         pub fn build(self) -> crate::output::ListAppMonitorsOutput {
             crate::output::ListAppMonitorsOutput {
                 next_token: self.next_token,
                 app_monitor_summaries: self.app_monitor_summaries,
+                _request_id: self._request_id,
             }
         }
     }
@@ -620,18 +801,38 @@ impl ListAppMonitorsOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAppMonitorOutput {}
+pub struct DeleteAppMonitorOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAppMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
 pub mod delete_app_monitor_output {
 
     /// A builder for [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAppMonitorOutput`](crate::output::DeleteAppMonitorOutput).
         pub fn build(self) -> crate::output::DeleteAppMonitorOutput {
-            crate::output::DeleteAppMonitorOutput {}
+            crate::output::DeleteAppMonitorOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -645,18 +846,38 @@ impl DeleteAppMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateAppMonitorOutput {}
+pub struct UpdateAppMonitorOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateAppMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
 pub mod update_app_monitor_output {
 
     /// A builder for [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAppMonitorOutput`](crate::output::UpdateAppMonitorOutput).
         pub fn build(self) -> crate::output::UpdateAppMonitorOutput {
-            crate::output::UpdateAppMonitorOutput {}
+            crate::output::UpdateAppMonitorOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -674,11 +895,17 @@ pub struct GetAppMonitorOutput {
     /// <p>A structure containing all the configuration information for the app monitor.</p>
     #[doc(hidden)]
     pub app_monitor: std::option::Option<crate::model::AppMonitor>,
+    _request_id: Option<String>,
 }
 impl GetAppMonitorOutput {
     /// <p>A structure containing all the configuration information for the app monitor.</p>
     pub fn app_monitor(&self) -> std::option::Option<&crate::model::AppMonitor> {
         self.app_monitor.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAppMonitorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
@@ -689,6 +916,7 @@ pub mod get_app_monitor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app_monitor: std::option::Option<crate::model::AppMonitor>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure containing all the configuration information for the app monitor.</p>
@@ -704,10 +932,20 @@ pub mod get_app_monitor_output {
             self.app_monitor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAppMonitorOutput`](crate::output::GetAppMonitorOutput).
         pub fn build(self) -> crate::output::GetAppMonitorOutput {
             crate::output::GetAppMonitorOutput {
                 app_monitor: self.app_monitor,
+                _request_id: self._request_id,
             }
         }
     }
@@ -722,18 +960,38 @@ impl GetAppMonitorOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -747,18 +1005,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -772,18 +1050,38 @@ impl TagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutRumEventsOutput {}
+pub struct PutRumEventsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutRumEventsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
 pub mod put_rum_events_output {
 
     /// A builder for [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutRumEventsOutput`](crate::output::PutRumEventsOutput).
         pub fn build(self) -> crate::output::PutRumEventsOutput {
-            crate::output::PutRumEventsOutput {}
+            crate::output::PutRumEventsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -805,6 +1103,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The ARN of the resource that you are viewing.</p>
@@ -819,6 +1118,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -830,6 +1134,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ARN of the resource that you are viewing.</p>
@@ -867,11 +1172,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }

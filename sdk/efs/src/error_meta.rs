@@ -63,15 +63,8 @@ pub enum Error {
     UnsupportedAvailabilityZone(crate::error::UnsupportedAvailabilityZone),
     /// <p>Returned if the Backup service is not available in the Amazon Web Services Region in which the request was made.</p>
     ValidationException(crate::error::ValidationException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -121,35 +114,40 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateAccessPointError> for Error {
     fn from(err: crate::error::CreateAccessPointError) -> Self {
-        match err.kind {
-            crate::error::CreateAccessPointErrorKind::AccessPointAlreadyExists(inner) => {
+        match err {
+            crate::error::CreateAccessPointError::AccessPointAlreadyExists(inner) => {
                 Error::AccessPointAlreadyExists(inner)
             }
-            crate::error::CreateAccessPointErrorKind::AccessPointLimitExceeded(inner) => {
+            crate::error::CreateAccessPointError::AccessPointLimitExceeded(inner) => {
                 Error::AccessPointLimitExceeded(inner)
             }
-            crate::error::CreateAccessPointErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::CreateAccessPointErrorKind::FileSystemNotFound(inner) => {
+            crate::error::CreateAccessPointError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::CreateAccessPointError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::CreateAccessPointErrorKind::IncorrectFileSystemLifeCycleState(inner) => {
+            crate::error::CreateAccessPointError::IncorrectFileSystemLifeCycleState(inner) => {
                 Error::IncorrectFileSystemLifeCycleState(inner)
             }
-            crate::error::CreateAccessPointErrorKind::InternalServerError(inner) => {
+            crate::error::CreateAccessPointError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::CreateAccessPointErrorKind::ThrottlingException(inner) => {
+            crate::error::CreateAccessPointError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::CreateAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -164,35 +162,40 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateFileSystemError> for Error {
     fn from(err: crate::error::CreateFileSystemError) -> Self {
-        match err.kind {
-            crate::error::CreateFileSystemErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::CreateFileSystemErrorKind::FileSystemAlreadyExists(inner) => {
+        match err {
+            crate::error::CreateFileSystemError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::CreateFileSystemError::FileSystemAlreadyExists(inner) => {
                 Error::FileSystemAlreadyExists(inner)
             }
-            crate::error::CreateFileSystemErrorKind::FileSystemLimitExceeded(inner) => {
+            crate::error::CreateFileSystemError::FileSystemLimitExceeded(inner) => {
                 Error::FileSystemLimitExceeded(inner)
             }
-            crate::error::CreateFileSystemErrorKind::InsufficientThroughputCapacity(inner) => {
+            crate::error::CreateFileSystemError::InsufficientThroughputCapacity(inner) => {
                 Error::InsufficientThroughputCapacity(inner)
             }
-            crate::error::CreateFileSystemErrorKind::InternalServerError(inner) => {
+            crate::error::CreateFileSystemError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::CreateFileSystemErrorKind::ThroughputLimitExceeded(inner) => {
+            crate::error::CreateFileSystemError::ThroughputLimitExceeded(inner) => {
                 Error::ThroughputLimitExceeded(inner)
             }
-            crate::error::CreateFileSystemErrorKind::UnsupportedAvailabilityZone(inner) => {
+            crate::error::CreateFileSystemError::UnsupportedAvailabilityZone(inner) => {
                 Error::UnsupportedAvailabilityZone(inner)
             }
-            crate::error::CreateFileSystemErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateFileSystemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -207,53 +210,58 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateMountTargetError> for Error {
     fn from(err: crate::error::CreateMountTargetError) -> Self {
-        match err.kind {
-            crate::error::CreateMountTargetErrorKind::AvailabilityZonesMismatch(inner) => {
+        match err {
+            crate::error::CreateMountTargetError::AvailabilityZonesMismatch(inner) => {
                 Error::AvailabilityZonesMismatch(inner)
             }
-            crate::error::CreateMountTargetErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::CreateMountTargetErrorKind::FileSystemNotFound(inner) => {
+            crate::error::CreateMountTargetError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::CreateMountTargetError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::CreateMountTargetErrorKind::IncorrectFileSystemLifeCycleState(inner) => {
+            crate::error::CreateMountTargetError::IncorrectFileSystemLifeCycleState(inner) => {
                 Error::IncorrectFileSystemLifeCycleState(inner)
             }
-            crate::error::CreateMountTargetErrorKind::InternalServerError(inner) => {
+            crate::error::CreateMountTargetError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::CreateMountTargetErrorKind::IpAddressInUse(inner) => {
+            crate::error::CreateMountTargetError::IpAddressInUse(inner) => {
                 Error::IpAddressInUse(inner)
             }
-            crate::error::CreateMountTargetErrorKind::MountTargetConflict(inner) => {
+            crate::error::CreateMountTargetError::MountTargetConflict(inner) => {
                 Error::MountTargetConflict(inner)
             }
-            crate::error::CreateMountTargetErrorKind::NetworkInterfaceLimitExceeded(inner) => {
+            crate::error::CreateMountTargetError::NetworkInterfaceLimitExceeded(inner) => {
                 Error::NetworkInterfaceLimitExceeded(inner)
             }
-            crate::error::CreateMountTargetErrorKind::NoFreeAddressesInSubnet(inner) => {
+            crate::error::CreateMountTargetError::NoFreeAddressesInSubnet(inner) => {
                 Error::NoFreeAddressesInSubnet(inner)
             }
-            crate::error::CreateMountTargetErrorKind::SecurityGroupLimitExceeded(inner) => {
+            crate::error::CreateMountTargetError::SecurityGroupLimitExceeded(inner) => {
                 Error::SecurityGroupLimitExceeded(inner)
             }
-            crate::error::CreateMountTargetErrorKind::SecurityGroupNotFound(inner) => {
+            crate::error::CreateMountTargetError::SecurityGroupNotFound(inner) => {
                 Error::SecurityGroupNotFound(inner)
             }
-            crate::error::CreateMountTargetErrorKind::SubnetNotFound(inner) => {
+            crate::error::CreateMountTargetError::SubnetNotFound(inner) => {
                 Error::SubnetNotFound(inner)
             }
-            crate::error::CreateMountTargetErrorKind::UnsupportedAvailabilityZone(inner) => {
+            crate::error::CreateMountTargetError::UnsupportedAvailabilityZone(inner) => {
                 Error::UnsupportedAvailabilityZone(inner)
             }
-            crate::error::CreateMountTargetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateMountTargetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -273,24 +281,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateReplicationConfigurationError> for Error {
     fn from(err: crate::error::CreateReplicationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::CreateReplicationConfigurationErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::FileSystemLimitExceeded(inner) => Error::FileSystemLimitExceeded(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::IncorrectFileSystemLifeCycleState(inner) => Error::IncorrectFileSystemLifeCycleState(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::InsufficientThroughputCapacity(inner) => Error::InsufficientThroughputCapacity(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::InternalServerError(inner) => Error::InternalServerError(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::ReplicationNotFound(inner) => Error::ReplicationNotFound(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::ThroughputLimitExceeded(inner) => Error::ThroughputLimitExceeded(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::UnsupportedAvailabilityZone(inner) => Error::UnsupportedAvailabilityZone(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::ValidationException(inner) => Error::ValidationException(inner),
-            crate::error::CreateReplicationConfigurationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateReplicationConfigurationError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::CreateReplicationConfigurationError::FileSystemLimitExceeded(inner) => Error::FileSystemLimitExceeded(inner),
+            crate::error::CreateReplicationConfigurationError::FileSystemNotFound(inner) => Error::FileSystemNotFound(inner),
+            crate::error::CreateReplicationConfigurationError::IncorrectFileSystemLifeCycleState(inner) => Error::IncorrectFileSystemLifeCycleState(inner),
+            crate::error::CreateReplicationConfigurationError::InsufficientThroughputCapacity(inner) => Error::InsufficientThroughputCapacity(inner),
+            crate::error::CreateReplicationConfigurationError::InternalServerError(inner) => Error::InternalServerError(inner),
+            crate::error::CreateReplicationConfigurationError::ReplicationNotFound(inner) => Error::ReplicationNotFound(inner),
+            crate::error::CreateReplicationConfigurationError::ThroughputLimitExceeded(inner) => Error::ThroughputLimitExceeded(inner),
+            crate::error::CreateReplicationConfigurationError::UnsupportedAvailabilityZone(inner) => Error::UnsupportedAvailabilityZone(inner),
+            crate::error::CreateReplicationConfigurationError::ValidationException(inner) => Error::ValidationException(inner),
+            crate::error::CreateReplicationConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -303,23 +318,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTagsError> for Error {
     fn from(err: crate::error::CreateTagsError) -> Self {
-        match err.kind {
-            crate::error::CreateTagsErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::CreateTagsErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::CreateTagsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::CreateTagsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::CreateTagsErrorKind::InternalServerError(inner) => {
+            crate::error::CreateTagsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::CreateTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -334,23 +354,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAccessPointError> for Error {
     fn from(err: crate::error::DeleteAccessPointError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointErrorKind::AccessPointNotFound(inner) => {
+        match err {
+            crate::error::DeleteAccessPointError::AccessPointNotFound(inner) => {
                 Error::AccessPointNotFound(inner)
             }
-            crate::error::DeleteAccessPointErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::DeleteAccessPointErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteAccessPointError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DeleteAccessPointError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -365,26 +390,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteFileSystemError> for Error {
     fn from(err: crate::error::DeleteFileSystemError) -> Self {
-        match err.kind {
-            crate::error::DeleteFileSystemErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::DeleteFileSystemErrorKind::FileSystemInUse(inner) => {
+        match err {
+            crate::error::DeleteFileSystemError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DeleteFileSystemError::FileSystemInUse(inner) => {
                 Error::FileSystemInUse(inner)
             }
-            crate::error::DeleteFileSystemErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DeleteFileSystemError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DeleteFileSystemErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteFileSystemError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteFileSystemErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteFileSystemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -400,28 +430,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteFileSystemPolicyError> for Error {
     fn from(err: crate::error::DeleteFileSystemPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteFileSystemPolicyErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::DeleteFileSystemPolicyError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::DeleteFileSystemPolicyErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DeleteFileSystemPolicyError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DeleteFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(
-                inner,
-            ) => Error::IncorrectFileSystemLifeCycleState(inner),
-            crate::error::DeleteFileSystemPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteFileSystemPolicyError::IncorrectFileSystemLifeCycleState(inner) => {
+                Error::IncorrectFileSystemLifeCycleState(inner)
+            }
+            crate::error::DeleteFileSystemPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteFileSystemPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteFileSystemPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -436,26 +471,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteMountTargetError> for Error {
     fn from(err: crate::error::DeleteMountTargetError) -> Self {
-        match err.kind {
-            crate::error::DeleteMountTargetErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::DeleteMountTargetErrorKind::DependencyTimeout(inner) => {
+        match err {
+            crate::error::DeleteMountTargetError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DeleteMountTargetError::DependencyTimeout(inner) => {
                 Error::DependencyTimeout(inner)
             }
-            crate::error::DeleteMountTargetErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteMountTargetError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteMountTargetErrorKind::MountTargetNotFound(inner) => {
+            crate::error::DeleteMountTargetError::MountTargetNotFound(inner) => {
                 Error::MountTargetNotFound(inner)
             }
-            crate::error::DeleteMountTargetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteMountTargetError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -475,27 +515,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteReplicationConfigurationError> for Error {
     fn from(err: crate::error::DeleteReplicationConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteReplicationConfigurationErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::DeleteReplicationConfigurationError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::DeleteReplicationConfigurationErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DeleteReplicationConfigurationError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DeleteReplicationConfigurationErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteReplicationConfigurationError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteReplicationConfigurationErrorKind::ReplicationNotFound(inner) => {
+            crate::error::DeleteReplicationConfigurationError::ReplicationNotFound(inner) => {
                 Error::ReplicationNotFound(inner)
             }
-            crate::error::DeleteReplicationConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteReplicationConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -509,23 +556,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteTagsError> for Error {
     fn from(err: crate::error::DeleteTagsError) -> Self {
-        match err.kind {
-            crate::error::DeleteTagsErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::DeleteTagsErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::DeleteTagsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DeleteTagsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DeleteTagsErrorKind::InternalServerError(inner) => {
+            crate::error::DeleteTagsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DeleteTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -541,28 +593,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeAccessPointsError> for Error {
     fn from(err: crate::error::DescribeAccessPointsError) -> Self {
-        match err.kind {
-            crate::error::DescribeAccessPointsErrorKind::AccessPointNotFound(inner) => {
+        match err {
+            crate::error::DescribeAccessPointsError::AccessPointNotFound(inner) => {
                 Error::AccessPointNotFound(inner)
             }
-            crate::error::DescribeAccessPointsErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::DescribeAccessPointsErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DescribeAccessPointsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DescribeAccessPointsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeAccessPointsErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeAccessPointsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeAccessPointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeAccessPointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -578,18 +633,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeAccountPreferencesError> for Error {
     fn from(err: crate::error::DescribeAccountPreferencesError) -> Self {
-        match err.kind {
-            crate::error::DescribeAccountPreferencesErrorKind::InternalServerError(inner) => {
+        match err {
+            crate::error::DescribeAccountPreferencesError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeAccountPreferencesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeAccountPreferencesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -606,31 +668,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeBackupPolicyError> for Error {
     fn from(err: crate::error::DescribeBackupPolicyError) -> Self {
-        match err.kind {
-            crate::error::DescribeBackupPolicyErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::DescribeBackupPolicyErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::DescribeBackupPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DescribeBackupPolicyError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeBackupPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeBackupPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeBackupPolicyErrorKind::PolicyNotFound(inner) => {
+            crate::error::DescribeBackupPolicyError::PolicyNotFound(inner) => {
                 Error::PolicyNotFound(inner)
             }
-            crate::error::DescribeBackupPolicyErrorKind::ValidationException(inner) => {
+            crate::error::DescribeBackupPolicyError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::DescribeBackupPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeBackupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -646,27 +711,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeFileSystemPolicyError> for Error {
     fn from(err: crate::error::DescribeFileSystemPolicyError) -> Self {
-        match err.kind {
-            crate::error::DescribeFileSystemPolicyErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::DescribeFileSystemPolicyError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::DescribeFileSystemPolicyErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DescribeFileSystemPolicyError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeFileSystemPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeFileSystemPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeFileSystemPolicyErrorKind::PolicyNotFound(inner) => {
+            crate::error::DescribeFileSystemPolicyError::PolicyNotFound(inner) => {
                 Error::PolicyNotFound(inner)
             }
-            crate::error::DescribeFileSystemPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeFileSystemPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -682,25 +754,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeFileSystemsError> for Error {
     fn from(err: crate::error::DescribeFileSystemsError) -> Self {
-        match err.kind {
-            crate::error::DescribeFileSystemsErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::DescribeFileSystemsErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::DescribeFileSystemsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DescribeFileSystemsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeFileSystemsErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeFileSystemsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeFileSystemsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeFileSystemsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -720,24 +795,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeLifecycleConfigurationError> for Error {
     fn from(err: crate::error::DescribeLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DescribeLifecycleConfigurationErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::DescribeLifecycleConfigurationError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::DescribeLifecycleConfigurationErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DescribeLifecycleConfigurationError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeLifecycleConfigurationErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeLifecycleConfigurationError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeLifecycleConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -754,31 +836,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeMountTargetsError> for Error {
     fn from(err: crate::error::DescribeMountTargetsError) -> Self {
-        match err.kind {
-            crate::error::DescribeMountTargetsErrorKind::AccessPointNotFound(inner) => {
+        match err {
+            crate::error::DescribeMountTargetsError::AccessPointNotFound(inner) => {
                 Error::AccessPointNotFound(inner)
             }
-            crate::error::DescribeMountTargetsErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::DescribeMountTargetsErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DescribeMountTargetsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DescribeMountTargetsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeMountTargetsErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeMountTargetsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeMountTargetsErrorKind::MountTargetNotFound(inner) => {
+            crate::error::DescribeMountTargetsError::MountTargetNotFound(inner) => {
                 Error::MountTargetNotFound(inner)
             }
-            crate::error::DescribeMountTargetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeMountTargetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -798,27 +883,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeMountTargetSecurityGroupsError> for Error {
     fn from(err: crate::error::DescribeMountTargetSecurityGroupsError) -> Self {
-        match err.kind {
-            crate::error::DescribeMountTargetSecurityGroupsErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::DescribeMountTargetSecurityGroupsError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::DescribeMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState(
+            crate::error::DescribeMountTargetSecurityGroupsError::IncorrectMountTargetState(
                 inner,
             ) => Error::IncorrectMountTargetState(inner),
-            crate::error::DescribeMountTargetSecurityGroupsErrorKind::InternalServerError(
-                inner,
-            ) => Error::InternalServerError(inner),
-            crate::error::DescribeMountTargetSecurityGroupsErrorKind::MountTargetNotFound(
-                inner,
-            ) => Error::MountTargetNotFound(inner),
-            crate::error::DescribeMountTargetSecurityGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeMountTargetSecurityGroupsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::DescribeMountTargetSecurityGroupsError::MountTargetNotFound(inner) => {
+                Error::MountTargetNotFound(inner)
+            }
+            crate::error::DescribeMountTargetSecurityGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -839,30 +931,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeReplicationConfigurationsError> for Error {
     fn from(err: crate::error::DescribeReplicationConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::DescribeReplicationConfigurationsErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::DescribeReplicationConfigurationsError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::DescribeReplicationConfigurationsErrorKind::FileSystemNotFound(inner) => {
+            crate::error::DescribeReplicationConfigurationsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeReplicationConfigurationsErrorKind::InternalServerError(
-                inner,
-            ) => Error::InternalServerError(inner),
-            crate::error::DescribeReplicationConfigurationsErrorKind::ReplicationNotFound(
-                inner,
-            ) => Error::ReplicationNotFound(inner),
-            crate::error::DescribeReplicationConfigurationsErrorKind::ValidationException(
-                inner,
-            ) => Error::ValidationException(inner),
-            crate::error::DescribeReplicationConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DescribeReplicationConfigurationsError::InternalServerError(inner) => {
+                Error::InternalServerError(inner)
+            }
+            crate::error::DescribeReplicationConfigurationsError::ReplicationNotFound(inner) => {
+                Error::ReplicationNotFound(inner)
+            }
+            crate::error::DescribeReplicationConfigurationsError::ValidationException(inner) => {
+                Error::ValidationException(inner)
+            }
+            crate::error::DescribeReplicationConfigurationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -876,23 +975,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeTagsError> for Error {
     fn from(err: crate::error::DescribeTagsError) -> Self {
-        match err.kind {
-            crate::error::DescribeTagsErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::DescribeTagsErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::DescribeTagsError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::DescribeTagsError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::DescribeTagsErrorKind::InternalServerError(inner) => {
+            crate::error::DescribeTagsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -907,28 +1011,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::AccessPointNotFound(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::AccessPointNotFound(inner) => {
                 Error::AccessPointNotFound(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::ListTagsForResourceErrorKind::FileSystemNotFound(inner) => {
+            crate::error::ListTagsForResourceError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::ListTagsForResourceError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::InternalServerError(inner) => {
+            crate::error::ListTagsForResourceError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -948,33 +1055,40 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ModifyMountTargetSecurityGroupsError> for Error {
     fn from(err: crate::error::ModifyMountTargetSecurityGroupsError) -> Self {
-        match err.kind {
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::ModifyMountTargetSecurityGroupsError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::IncorrectMountTargetState(
+            crate::error::ModifyMountTargetSecurityGroupsError::IncorrectMountTargetState(
                 inner,
             ) => Error::IncorrectMountTargetState(inner),
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::InternalServerError(inner) => {
+            crate::error::ModifyMountTargetSecurityGroupsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::MountTargetNotFound(inner) => {
+            crate::error::ModifyMountTargetSecurityGroupsError::MountTargetNotFound(inner) => {
                 Error::MountTargetNotFound(inner)
             }
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupLimitExceeded(
+            crate::error::ModifyMountTargetSecurityGroupsError::SecurityGroupLimitExceeded(
                 inner,
             ) => Error::SecurityGroupLimitExceeded(inner),
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::SecurityGroupNotFound(
-                inner,
-            ) => Error::SecurityGroupNotFound(inner),
-            crate::error::ModifyMountTargetSecurityGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ModifyMountTargetSecurityGroupsError::SecurityGroupNotFound(inner) => {
+                Error::SecurityGroupNotFound(inner)
+            }
+            crate::error::ModifyMountTargetSecurityGroupsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -991,22 +1105,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutAccountPreferencesError> for Error {
     fn from(err: crate::error::PutAccountPreferencesError) -> Self {
-        match err.kind {
-            crate::error::PutAccountPreferencesErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::PutAccountPreferencesErrorKind::InternalServerError(inner) => {
+        match err {
+            crate::error::PutAccountPreferencesError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::PutAccountPreferencesError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutAccountPreferencesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutAccountPreferencesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1019,29 +1136,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutBackupPolicyError> for Error {
     fn from(err: crate::error::PutBackupPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutBackupPolicyErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::PutBackupPolicyErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::PutBackupPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::PutBackupPolicyError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::PutBackupPolicyErrorKind::IncorrectFileSystemLifeCycleState(inner) => {
+            crate::error::PutBackupPolicyError::IncorrectFileSystemLifeCycleState(inner) => {
                 Error::IncorrectFileSystemLifeCycleState(inner)
             }
-            crate::error::PutBackupPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::PutBackupPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutBackupPolicyErrorKind::ValidationException(inner) => {
+            crate::error::PutBackupPolicyError::ValidationException(inner) => {
                 Error::ValidationException(inner)
             }
-            crate::error::PutBackupPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutBackupPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1056,31 +1178,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutFileSystemPolicyError> for Error {
     fn from(err: crate::error::PutFileSystemPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutFileSystemPolicyErrorKind::BadRequest(inner) => {
-                Error::BadRequest(inner)
-            }
-            crate::error::PutFileSystemPolicyErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::PutFileSystemPolicyError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::PutFileSystemPolicyError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::PutFileSystemPolicyErrorKind::IncorrectFileSystemLifeCycleState(
-                inner,
-            ) => Error::IncorrectFileSystemLifeCycleState(inner),
-            crate::error::PutFileSystemPolicyErrorKind::InternalServerError(inner) => {
+            crate::error::PutFileSystemPolicyError::IncorrectFileSystemLifeCycleState(inner) => {
+                Error::IncorrectFileSystemLifeCycleState(inner)
+            }
+            crate::error::PutFileSystemPolicyError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutFileSystemPolicyErrorKind::InvalidPolicyException(inner) => {
+            crate::error::PutFileSystemPolicyError::InvalidPolicyException(inner) => {
                 Error::InvalidPolicyException(inner)
             }
-            crate::error::PutFileSystemPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutFileSystemPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1096,27 +1221,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutLifecycleConfigurationError> for Error {
     fn from(err: crate::error::PutLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutLifecycleConfigurationErrorKind::BadRequest(inner) => {
+        match err {
+            crate::error::PutLifecycleConfigurationError::BadRequest(inner) => {
                 Error::BadRequest(inner)
             }
-            crate::error::PutLifecycleConfigurationErrorKind::FileSystemNotFound(inner) => {
+            crate::error::PutLifecycleConfigurationError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::PutLifecycleConfigurationErrorKind::IncorrectFileSystemLifeCycleState(
+            crate::error::PutLifecycleConfigurationError::IncorrectFileSystemLifeCycleState(
                 inner,
             ) => Error::IncorrectFileSystemLifeCycleState(inner),
-            crate::error::PutLifecycleConfigurationErrorKind::InternalServerError(inner) => {
+            crate::error::PutLifecycleConfigurationError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::PutLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::PutLifecycleConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1130,26 +1262,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagResourceError> for Error {
     fn from(err: crate::error::TagResourceError) -> Self {
-        match err.kind {
-            crate::error::TagResourceErrorKind::AccessPointNotFound(inner) => {
+        match err {
+            crate::error::TagResourceError::AccessPointNotFound(inner) => {
                 Error::AccessPointNotFound(inner)
             }
-            crate::error::TagResourceErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::TagResourceErrorKind::FileSystemNotFound(inner) => {
+            crate::error::TagResourceError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::TagResourceError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::TagResourceErrorKind::InternalServerError(inner) => {
+            crate::error::TagResourceError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::TagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1162,26 +1299,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagResourceError> for Error {
     fn from(err: crate::error::UntagResourceError) -> Self {
-        match err.kind {
-            crate::error::UntagResourceErrorKind::AccessPointNotFound(inner) => {
+        match err {
+            crate::error::UntagResourceError::AccessPointNotFound(inner) => {
                 Error::AccessPointNotFound(inner)
             }
-            crate::error::UntagResourceErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::UntagResourceErrorKind::FileSystemNotFound(inner) => {
+            crate::error::UntagResourceError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::UntagResourceError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::UntagResourceErrorKind::InternalServerError(inner) => {
+            crate::error::UntagResourceError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::UntagResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1196,36 +1338,78 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateFileSystemError> for Error {
     fn from(err: crate::error::UpdateFileSystemError) -> Self {
-        match err.kind {
-            crate::error::UpdateFileSystemErrorKind::BadRequest(inner) => Error::BadRequest(inner),
-            crate::error::UpdateFileSystemErrorKind::FileSystemNotFound(inner) => {
+        match err {
+            crate::error::UpdateFileSystemError::BadRequest(inner) => Error::BadRequest(inner),
+            crate::error::UpdateFileSystemError::FileSystemNotFound(inner) => {
                 Error::FileSystemNotFound(inner)
             }
-            crate::error::UpdateFileSystemErrorKind::IncorrectFileSystemLifeCycleState(inner) => {
+            crate::error::UpdateFileSystemError::IncorrectFileSystemLifeCycleState(inner) => {
                 Error::IncorrectFileSystemLifeCycleState(inner)
             }
-            crate::error::UpdateFileSystemErrorKind::InsufficientThroughputCapacity(inner) => {
+            crate::error::UpdateFileSystemError::InsufficientThroughputCapacity(inner) => {
                 Error::InsufficientThroughputCapacity(inner)
             }
-            crate::error::UpdateFileSystemErrorKind::InternalServerError(inner) => {
+            crate::error::UpdateFileSystemError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::UpdateFileSystemErrorKind::ThroughputLimitExceeded(inner) => {
+            crate::error::UpdateFileSystemError::ThroughputLimitExceeded(inner) => {
                 Error::ThroughputLimitExceeded(inner)
             }
-            crate::error::UpdateFileSystemErrorKind::TooManyRequests(inner) => {
+            crate::error::UpdateFileSystemError::TooManyRequests(inner) => {
                 Error::TooManyRequests(inner)
             }
-            crate::error::UpdateFileSystemErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateFileSystemError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::AccessPointAlreadyExists(e) => e.request_id(),
+            Self::AccessPointLimitExceeded(e) => e.request_id(),
+            Self::AccessPointNotFound(e) => e.request_id(),
+            Self::AvailabilityZonesMismatch(e) => e.request_id(),
+            Self::BadRequest(e) => e.request_id(),
+            Self::DependencyTimeout(e) => e.request_id(),
+            Self::FileSystemAlreadyExists(e) => e.request_id(),
+            Self::FileSystemInUse(e) => e.request_id(),
+            Self::FileSystemLimitExceeded(e) => e.request_id(),
+            Self::FileSystemNotFound(e) => e.request_id(),
+            Self::IncorrectFileSystemLifeCycleState(e) => e.request_id(),
+            Self::IncorrectMountTargetState(e) => e.request_id(),
+            Self::InsufficientThroughputCapacity(e) => e.request_id(),
+            Self::InternalServerError(e) => e.request_id(),
+            Self::InvalidPolicyException(e) => e.request_id(),
+            Self::IpAddressInUse(e) => e.request_id(),
+            Self::MountTargetConflict(e) => e.request_id(),
+            Self::MountTargetNotFound(e) => e.request_id(),
+            Self::NetworkInterfaceLimitExceeded(e) => e.request_id(),
+            Self::NoFreeAddressesInSubnet(e) => e.request_id(),
+            Self::PolicyNotFound(e) => e.request_id(),
+            Self::ReplicationNotFound(e) => e.request_id(),
+            Self::SecurityGroupLimitExceeded(e) => e.request_id(),
+            Self::SecurityGroupNotFound(e) => e.request_id(),
+            Self::SubnetNotFound(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::ThroughputLimitExceeded(e) => e.request_id(),
+            Self::TooManyRequests(e) => e.request_id(),
+            Self::UnsupportedAvailabilityZone(e) => e.request_id(),
+            Self::ValidationException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

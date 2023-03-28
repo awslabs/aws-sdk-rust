@@ -37,6 +37,7 @@ pub struct UpdateIdentityPoolOutput {
     #[doc(hidden)]
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl UpdateIdentityPoolOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -88,6 +89,11 @@ impl UpdateIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateIdentityPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateIdentityPoolOutput`](crate::output::UpdateIdentityPoolOutput).
 pub mod update_identity_pool_output {
 
@@ -111,6 +117,7 @@ pub mod update_identity_pool_output {
         pub(crate) identity_pool_tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -288,6 +295,15 @@ pub mod update_identity_pool_output {
             self.identity_pool_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateIdentityPoolOutput`](crate::output::UpdateIdentityPoolOutput).
         pub fn build(self) -> crate::output::UpdateIdentityPoolOutput {
             crate::output::UpdateIdentityPoolOutput {
@@ -303,6 +319,7 @@ pub mod update_identity_pool_output {
                 cognito_identity_providers: self.cognito_identity_providers,
                 saml_provider_ar_ns: self.saml_provider_ar_ns,
                 identity_pool_tags: self.identity_pool_tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -317,18 +334,38 @@ impl UpdateIdentityPoolOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -342,18 +379,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlinkIdentityOutput {}
+pub struct UnlinkIdentityOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UnlinkIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput).
 pub mod unlink_identity_output {
 
     /// A builder for [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UnlinkIdentityOutput`](crate::output::UnlinkIdentityOutput).
         pub fn build(self) -> crate::output::UnlinkIdentityOutput {
-            crate::output::UnlinkIdentityOutput {}
+            crate::output::UnlinkIdentityOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -367,18 +424,38 @@ impl UnlinkIdentityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UnlinkDeveloperIdentityOutput {}
+pub struct UnlinkDeveloperIdentityOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UnlinkDeveloperIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput).
 pub mod unlink_developer_identity_output {
 
     /// A builder for [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UnlinkDeveloperIdentityOutput`](crate::output::UnlinkDeveloperIdentityOutput).
         pub fn build(self) -> crate::output::UnlinkDeveloperIdentityOutput {
-            crate::output::UnlinkDeveloperIdentityOutput {}
+            crate::output::UnlinkDeveloperIdentityOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -392,18 +469,38 @@ impl UnlinkDeveloperIdentityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -431,6 +528,7 @@ pub struct SetPrincipalTagAttributeMapOutput {
     #[doc(hidden)]
     pub principal_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl SetPrincipalTagAttributeMapOutput {
     /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
@@ -453,6 +551,11 @@ impl SetPrincipalTagAttributeMapOutput {
         self.principal_tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for SetPrincipalTagAttributeMapOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SetPrincipalTagAttributeMapOutput`](crate::output::SetPrincipalTagAttributeMapOutput).
 pub mod set_principal_tag_attribute_map_output {
 
@@ -466,6 +569,7 @@ pub mod set_principal_tag_attribute_map_output {
         pub(crate) principal_tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the Identity Pool you want to set attribute mappings for.</p>
@@ -529,6 +633,15 @@ pub mod set_principal_tag_attribute_map_output {
             self.principal_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SetPrincipalTagAttributeMapOutput`](crate::output::SetPrincipalTagAttributeMapOutput).
         pub fn build(self) -> crate::output::SetPrincipalTagAttributeMapOutput {
             crate::output::SetPrincipalTagAttributeMapOutput {
@@ -536,6 +649,7 @@ pub mod set_principal_tag_attribute_map_output {
                 identity_provider_name: self.identity_provider_name,
                 use_defaults: self.use_defaults,
                 principal_tags: self.principal_tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -550,18 +664,38 @@ impl SetPrincipalTagAttributeMapOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct SetIdentityPoolRolesOutput {}
+pub struct SetIdentityPoolRolesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for SetIdentityPoolRolesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput).
 pub mod set_identity_pool_roles_output {
 
     /// A builder for [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SetIdentityPoolRolesOutput`](crate::output::SetIdentityPoolRolesOutput).
         pub fn build(self) -> crate::output::SetIdentityPoolRolesOutput {
-            crate::output::SetIdentityPoolRolesOutput {}
+            crate::output::SetIdentityPoolRolesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -579,11 +713,17 @@ pub struct MergeDeveloperIdentitiesOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl MergeDeveloperIdentitiesOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for MergeDeveloperIdentitiesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`MergeDeveloperIdentitiesOutput`](crate::output::MergeDeveloperIdentitiesOutput).
@@ -594,6 +734,7 @@ pub mod merge_developer_identities_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -606,10 +747,20 @@ pub mod merge_developer_identities_output {
             self.identity_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`MergeDeveloperIdentitiesOutput`](crate::output::MergeDeveloperIdentitiesOutput).
         pub fn build(self) -> crate::output::MergeDeveloperIdentitiesOutput {
             crate::output::MergeDeveloperIdentitiesOutput {
                 identity_id: self.identity_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -634,6 +785,7 @@ pub struct LookupDeveloperIdentityOutput {
     /// <p>A pagination token. The first call you make will have <code>NextToken</code> set to null. After that the service will return <code>NextToken</code> values as needed. For example, let's say you make a request with <code>MaxResults</code> set to 10, and there are 20 matches in the database. The service will return a pagination token as a part of the response. This token can be used to call the API again and get results starting from the 11th match.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl LookupDeveloperIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -649,6 +801,11 @@ impl LookupDeveloperIdentityOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for LookupDeveloperIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`LookupDeveloperIdentityOutput`](crate::output::LookupDeveloperIdentityOutput).
 pub mod lookup_developer_identity_output {
 
@@ -660,6 +817,7 @@ pub mod lookup_developer_identity_output {
         pub(crate) developer_user_identifier_list:
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -704,12 +862,22 @@ pub mod lookup_developer_identity_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`LookupDeveloperIdentityOutput`](crate::output::LookupDeveloperIdentityOutput).
         pub fn build(self) -> crate::output::LookupDeveloperIdentityOutput {
             crate::output::LookupDeveloperIdentityOutput {
                 identity_id: self.identity_id,
                 developer_user_identifier_list: self.developer_user_identifier_list,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -729,6 +897,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are assigned to the identity pool.</p>
@@ -737,6 +906,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -749,6 +923,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -776,9 +951,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -800,6 +987,7 @@ pub struct ListIdentityPoolsOutput {
     /// <p>A pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListIdentityPoolsOutput {
     /// <p>The identity pools returned by the ListIdentityPools action.</p>
@@ -813,6 +1001,11 @@ impl ListIdentityPoolsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIdentityPoolsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListIdentityPoolsOutput`](crate::output::ListIdentityPoolsOutput).
 pub mod list_identity_pools_output {
 
@@ -823,6 +1016,7 @@ pub mod list_identity_pools_output {
         pub(crate) identity_pools:
             std::option::Option<std::vec::Vec<crate::model::IdentityPoolShortDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `identity_pools`.
@@ -854,11 +1048,21 @@ pub mod list_identity_pools_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIdentityPoolsOutput`](crate::output::ListIdentityPoolsOutput).
         pub fn build(self) -> crate::output::ListIdentityPoolsOutput {
             crate::output::ListIdentityPoolsOutput {
                 identity_pools: self.identity_pools,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -883,6 +1087,7 @@ pub struct ListIdentitiesOutput {
     /// <p>A pagination token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListIdentitiesOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -898,6 +1103,11 @@ impl ListIdentitiesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListIdentitiesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListIdentitiesOutput`](crate::output::ListIdentitiesOutput).
 pub mod list_identities_output {
 
@@ -909,6 +1119,7 @@ pub mod list_identities_output {
         pub(crate) identities:
             std::option::Option<std::vec::Vec<crate::model::IdentityDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -953,12 +1164,22 @@ pub mod list_identities_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListIdentitiesOutput`](crate::output::ListIdentitiesOutput).
         pub fn build(self) -> crate::output::ListIdentitiesOutput {
             crate::output::ListIdentitiesOutput {
                 identity_pool_id: self.identity_pool_id,
                 identities: self.identities,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -987,6 +1208,7 @@ pub struct GetPrincipalTagAttributeMapOutput {
     #[doc(hidden)]
     pub principal_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl GetPrincipalTagAttributeMapOutput {
     /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
@@ -1009,6 +1231,11 @@ impl GetPrincipalTagAttributeMapOutput {
         self.principal_tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetPrincipalTagAttributeMapOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetPrincipalTagAttributeMapOutput`](crate::output::GetPrincipalTagAttributeMapOutput).
 pub mod get_principal_tag_attribute_map_output {
 
@@ -1022,6 +1249,7 @@ pub mod get_principal_tag_attribute_map_output {
         pub(crate) principal_tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>You can use this operation to get the ID of the Identity Pool you setup attribute mappings for.</p>
@@ -1085,6 +1313,15 @@ pub mod get_principal_tag_attribute_map_output {
             self.principal_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetPrincipalTagAttributeMapOutput`](crate::output::GetPrincipalTagAttributeMapOutput).
         pub fn build(self) -> crate::output::GetPrincipalTagAttributeMapOutput {
             crate::output::GetPrincipalTagAttributeMapOutput {
@@ -1092,6 +1329,7 @@ pub mod get_principal_tag_attribute_map_output {
                 identity_provider_name: self.identity_provider_name,
                 use_defaults: self.use_defaults,
                 principal_tags: self.principal_tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1113,6 +1351,7 @@ pub struct GetOpenIdTokenForDeveloperIdentityOutput {
     /// <p>An OpenID token.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetOpenIdTokenForDeveloperIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1124,6 +1363,11 @@ impl GetOpenIdTokenForDeveloperIdentityOutput {
         self.token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetOpenIdTokenForDeveloperIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput).
 pub mod get_open_id_token_for_developer_identity_output {
 
@@ -1133,6 +1377,7 @@ pub mod get_open_id_token_for_developer_identity_output {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1155,11 +1400,21 @@ pub mod get_open_id_token_for_developer_identity_output {
             self.token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetOpenIdTokenForDeveloperIdentityOutput`](crate::output::GetOpenIdTokenForDeveloperIdentityOutput).
         pub fn build(self) -> crate::output::GetOpenIdTokenForDeveloperIdentityOutput {
             crate::output::GetOpenIdTokenForDeveloperIdentityOutput {
                 identity_id: self.identity_id,
                 token: self.token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1181,6 +1436,7 @@ pub struct GetOpenIdTokenOutput {
     /// <p>An OpenID token, valid for 10 minutes.</p>
     #[doc(hidden)]
     pub token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetOpenIdTokenOutput {
     /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
@@ -1192,6 +1448,11 @@ impl GetOpenIdTokenOutput {
         self.token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetOpenIdTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetOpenIdTokenOutput`](crate::output::GetOpenIdTokenOutput).
 pub mod get_open_id_token_output {
 
@@ -1201,6 +1462,7 @@ pub mod get_open_id_token_output {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID. Note that the IdentityId returned may not match the one passed on input.</p>
@@ -1223,11 +1485,21 @@ pub mod get_open_id_token_output {
             self.token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetOpenIdTokenOutput`](crate::output::GetOpenIdTokenOutput).
         pub fn build(self) -> crate::output::GetOpenIdTokenOutput {
             crate::output::GetOpenIdTokenOutput {
                 identity_id: self.identity_id,
                 token: self.token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1255,6 +1527,7 @@ pub struct GetIdentityPoolRolesOutput {
     pub role_mappings: std::option::Option<
         std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
     >,
+    _request_id: Option<String>,
 }
 impl GetIdentityPoolRolesOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1277,6 +1550,11 @@ impl GetIdentityPoolRolesOutput {
         self.role_mappings.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetIdentityPoolRolesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetIdentityPoolRolesOutput`](crate::output::GetIdentityPoolRolesOutput).
 pub mod get_identity_pool_roles_output {
 
@@ -1291,6 +1569,7 @@ pub mod get_identity_pool_roles_output {
         pub(crate) role_mappings: std::option::Option<
             std::collections::HashMap<std::string::String, crate::model::RoleMapping>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1356,12 +1635,22 @@ pub mod get_identity_pool_roles_output {
             self.role_mappings = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetIdentityPoolRolesOutput`](crate::output::GetIdentityPoolRolesOutput).
         pub fn build(self) -> crate::output::GetIdentityPoolRolesOutput {
             crate::output::GetIdentityPoolRolesOutput {
                 identity_pool_id: self.identity_pool_id,
                 roles: self.roles,
                 role_mappings: self.role_mappings,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1380,11 +1669,17 @@ pub struct GetIdOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     #[doc(hidden)]
     pub identity_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetIdOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
     pub fn identity_id(&self) -> std::option::Option<&str> {
         self.identity_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetIdOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetIdOutput`](crate::output::GetIdOutput).
@@ -1395,6 +1690,7 @@ pub mod get_id_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1407,10 +1703,20 @@ pub mod get_id_output {
             self.identity_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetIdOutput`](crate::output::GetIdOutput).
         pub fn build(self) -> crate::output::GetIdOutput {
             crate::output::GetIdOutput {
                 identity_id: self.identity_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1432,6 +1738,7 @@ pub struct GetCredentialsForIdentityOutput {
     /// <p>Credentials for the provided identity ID.</p>
     #[doc(hidden)]
     pub credentials: std::option::Option<crate::model::Credentials>,
+    _request_id: Option<String>,
 }
 impl GetCredentialsForIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1443,6 +1750,11 @@ impl GetCredentialsForIdentityOutput {
         self.credentials.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for GetCredentialsForIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetCredentialsForIdentityOutput`](crate::output::GetCredentialsForIdentityOutput).
 pub mod get_credentials_for_identity_output {
 
@@ -1452,6 +1764,7 @@ pub mod get_credentials_for_identity_output {
     pub struct Builder {
         pub(crate) identity_id: std::option::Option<std::string::String>,
         pub(crate) credentials: std::option::Option<crate::model::Credentials>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1477,11 +1790,21 @@ pub mod get_credentials_for_identity_output {
             self.credentials = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetCredentialsForIdentityOutput`](crate::output::GetCredentialsForIdentityOutput).
         pub fn build(self) -> crate::output::GetCredentialsForIdentityOutput {
             crate::output::GetCredentialsForIdentityOutput {
                 identity_id: self.identity_id,
                 credentials: self.credentials,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1530,6 +1853,7 @@ pub struct DescribeIdentityPoolOutput {
     #[doc(hidden)]
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl DescribeIdentityPoolOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1581,6 +1905,11 @@ impl DescribeIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeIdentityPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeIdentityPoolOutput`](crate::output::DescribeIdentityPoolOutput).
 pub mod describe_identity_pool_output {
 
@@ -1604,6 +1933,7 @@ pub mod describe_identity_pool_output {
         pub(crate) identity_pool_tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -1781,6 +2111,15 @@ pub mod describe_identity_pool_output {
             self.identity_pool_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeIdentityPoolOutput`](crate::output::DescribeIdentityPoolOutput).
         pub fn build(self) -> crate::output::DescribeIdentityPoolOutput {
             crate::output::DescribeIdentityPoolOutput {
@@ -1796,6 +2135,7 @@ pub mod describe_identity_pool_output {
                 cognito_identity_providers: self.cognito_identity_providers,
                 saml_provider_ar_ns: self.saml_provider_ar_ns,
                 identity_pool_tags: self.identity_pool_tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1823,6 +2163,7 @@ pub struct DescribeIdentityOutput {
     /// <p>Date on which the identity was last modified.</p>
     #[doc(hidden)]
     pub last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+    _request_id: Option<String>,
 }
 impl DescribeIdentityOutput {
     /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1842,6 +2183,11 @@ impl DescribeIdentityOutput {
         self.last_modified_date.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeIdentityOutput`](crate::output::DescribeIdentityOutput).
 pub mod describe_identity_output {
 
@@ -1853,6 +2199,7 @@ pub mod describe_identity_output {
         pub(crate) logins: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) creation_date: std::option::Option<aws_smithy_types::DateTime>,
         pub(crate) last_modified_date: std::option::Option<aws_smithy_types::DateTime>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier in the format REGION:GUID.</p>
@@ -1910,6 +2257,15 @@ pub mod describe_identity_output {
             self.last_modified_date = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeIdentityOutput`](crate::output::DescribeIdentityOutput).
         pub fn build(self) -> crate::output::DescribeIdentityOutput {
             crate::output::DescribeIdentityOutput {
@@ -1917,6 +2273,7 @@ pub mod describe_identity_output {
                 logins: self.logins,
                 creation_date: self.creation_date,
                 last_modified_date: self.last_modified_date,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1931,18 +2288,38 @@ impl DescribeIdentityOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteIdentityPoolOutput {}
+pub struct DeleteIdentityPoolOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteIdentityPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput).
 pub mod delete_identity_pool_output {
 
     /// A builder for [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteIdentityPoolOutput`](crate::output::DeleteIdentityPoolOutput).
         pub fn build(self) -> crate::output::DeleteIdentityPoolOutput {
-            crate::output::DeleteIdentityPoolOutput {}
+            crate::output::DeleteIdentityPoolOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1961,6 +2338,7 @@ pub struct DeleteIdentitiesOutput {
     #[doc(hidden)]
     pub unprocessed_identity_ids:
         std::option::Option<std::vec::Vec<crate::model::UnprocessedIdentityId>>,
+    _request_id: Option<String>,
 }
 impl DeleteIdentitiesOutput {
     /// <p>An array of UnprocessedIdentityId objects, each of which contains an ErrorCode and IdentityId.</p>
@@ -1968,6 +2346,11 @@ impl DeleteIdentitiesOutput {
         &self,
     ) -> std::option::Option<&[crate::model::UnprocessedIdentityId]> {
         self.unprocessed_identity_ids.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteIdentitiesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteIdentitiesOutput`](crate::output::DeleteIdentitiesOutput).
@@ -1979,6 +2362,7 @@ pub mod delete_identities_output {
     pub struct Builder {
         pub(crate) unprocessed_identity_ids:
             std::option::Option<std::vec::Vec<crate::model::UnprocessedIdentityId>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `unprocessed_identity_ids`.
@@ -2003,10 +2387,20 @@ pub mod delete_identities_output {
             self.unprocessed_identity_ids = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteIdentitiesOutput`](crate::output::DeleteIdentitiesOutput).
         pub fn build(self) -> crate::output::DeleteIdentitiesOutput {
             crate::output::DeleteIdentitiesOutput {
                 unprocessed_identity_ids: self.unprocessed_identity_ids,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2055,6 +2449,7 @@ pub struct CreateIdentityPoolOutput {
     #[doc(hidden)]
     pub identity_pool_tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl CreateIdentityPoolOutput {
     /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2106,6 +2501,11 @@ impl CreateIdentityPoolOutput {
         self.identity_pool_tags.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateIdentityPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateIdentityPoolOutput`](crate::output::CreateIdentityPoolOutput).
 pub mod create_identity_pool_output {
 
@@ -2129,6 +2529,7 @@ pub mod create_identity_pool_output {
         pub(crate) identity_pool_tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An identity pool ID in the format REGION:GUID.</p>
@@ -2306,6 +2707,15 @@ pub mod create_identity_pool_output {
             self.identity_pool_tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateIdentityPoolOutput`](crate::output::CreateIdentityPoolOutput).
         pub fn build(self) -> crate::output::CreateIdentityPoolOutput {
             crate::output::CreateIdentityPoolOutput {
@@ -2321,6 +2731,7 @@ pub mod create_identity_pool_output {
                 cognito_identity_providers: self.cognito_identity_providers,
                 saml_provider_ar_ns: self.saml_provider_ar_ns,
                 identity_pool_tags: self.identity_pool_tags,
+                _request_id: self._request_id,
             }
         }
     }

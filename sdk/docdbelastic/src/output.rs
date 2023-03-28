@@ -6,11 +6,17 @@ pub struct UpdateClusterOutput {
     /// <p>Returns information about the updated Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl UpdateClusterOutput {
     /// <p>Returns information about the updated Elastic DocumentDB cluster.</p>
     pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
         self.cluster.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateClusterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
@@ -21,6 +27,7 @@ pub mod update_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about the updated Elastic DocumentDB cluster.</p>
@@ -33,10 +40,20 @@ pub mod update_cluster_output {
             self.cluster = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateClusterOutput`](crate::output::UpdateClusterOutput).
         pub fn build(self) -> crate::output::UpdateClusterOutput {
             crate::output::UpdateClusterOutput {
                 cluster: self.cluster,
+                _request_id: self._request_id,
             }
         }
     }
@@ -51,18 +68,38 @@ impl UpdateClusterOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -76,18 +113,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -105,11 +162,17 @@ pub struct RestoreClusterFromSnapshotOutput {
     /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl RestoreClusterFromSnapshotOutput {
     /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
     pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
         self.cluster.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for RestoreClusterFromSnapshotOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RestoreClusterFromSnapshotOutput`](crate::output::RestoreClusterFromSnapshotOutput).
@@ -120,6 +183,7 @@ pub mod restore_cluster_from_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about a the restored Elastic DocumentDB cluster.</p>
@@ -132,10 +196,20 @@ pub mod restore_cluster_from_snapshot_output {
             self.cluster = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RestoreClusterFromSnapshotOutput`](crate::output::RestoreClusterFromSnapshotOutput).
         pub fn build(self) -> crate::output::RestoreClusterFromSnapshotOutput {
             crate::output::RestoreClusterFromSnapshotOutput {
                 cluster: self.cluster,
+                _request_id: self._request_id,
             }
         }
     }
@@ -155,6 +229,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The list of tags for the specified Elastic DocumentDB resource.</p>
@@ -163,6 +238,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -175,6 +255,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -202,9 +283,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -226,6 +319,7 @@ pub struct ListClusterSnapshotsOutput {
     /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListClusterSnapshotsOutput {
     /// <p>A list of Elastic DocumentDB snapshots for a specified cluster.</p>
@@ -238,6 +332,11 @@ impl ListClusterSnapshotsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListClusterSnapshotsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListClusterSnapshotsOutput`](crate::output::ListClusterSnapshotsOutput).
 pub mod list_cluster_snapshots_output {
 
@@ -248,6 +347,7 @@ pub mod list_cluster_snapshots_output {
         pub(crate) snapshots:
             std::option::Option<std::vec::Vec<crate::model::ClusterSnapshotInList>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `snapshots`.
@@ -281,11 +381,21 @@ pub mod list_cluster_snapshots_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListClusterSnapshotsOutput`](crate::output::ListClusterSnapshotsOutput).
         pub fn build(self) -> crate::output::ListClusterSnapshotsOutput {
             crate::output::ListClusterSnapshotsOutput {
                 snapshots: self.snapshots,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -308,6 +418,7 @@ pub struct ListClustersOutput {
     /// <p>If there is no more data in the responce, the nextToken will not be returned.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListClustersOutput {
     /// <p>A list of Elastic DocumentDB cluster.</p>
@@ -320,6 +431,11 @@ impl ListClustersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListClustersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListClustersOutput`](crate::output::ListClustersOutput).
 pub mod list_clusters_output {
 
@@ -329,6 +445,7 @@ pub mod list_clusters_output {
     pub struct Builder {
         pub(crate) clusters: std::option::Option<std::vec::Vec<crate::model::ClusterInList>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `clusters`.
@@ -362,11 +479,21 @@ pub mod list_clusters_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListClustersOutput`](crate::output::ListClustersOutput).
         pub fn build(self) -> crate::output::ListClustersOutput {
             crate::output::ListClustersOutput {
                 clusters: self.clusters,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -385,11 +512,17 @@ pub struct GetClusterSnapshotOutput {
     /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::ClusterSnapshot>,
+    _request_id: Option<String>,
 }
 impl GetClusterSnapshotOutput {
     /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
     pub fn snapshot(&self) -> std::option::Option<&crate::model::ClusterSnapshot> {
         self.snapshot.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetClusterSnapshotOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetClusterSnapshotOutput`](crate::output::GetClusterSnapshotOutput).
@@ -400,6 +533,7 @@ pub mod get_cluster_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::ClusterSnapshot>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about a specific Elastic DocumentDB snapshot.</p>
@@ -415,10 +549,20 @@ pub mod get_cluster_snapshot_output {
             self.snapshot = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetClusterSnapshotOutput`](crate::output::GetClusterSnapshotOutput).
         pub fn build(self) -> crate::output::GetClusterSnapshotOutput {
             crate::output::GetClusterSnapshotOutput {
                 snapshot: self.snapshot,
+                _request_id: self._request_id,
             }
         }
     }
@@ -437,11 +581,17 @@ pub struct GetClusterOutput {
     /// <p>Returns information about a specific Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl GetClusterOutput {
     /// <p>Returns information about a specific Elastic DocumentDB cluster.</p>
     pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
         self.cluster.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetClusterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetClusterOutput`](crate::output::GetClusterOutput).
@@ -452,6 +602,7 @@ pub mod get_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about a specific Elastic DocumentDB cluster.</p>
@@ -464,10 +615,20 @@ pub mod get_cluster_output {
             self.cluster = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetClusterOutput`](crate::output::GetClusterOutput).
         pub fn build(self) -> crate::output::GetClusterOutput {
             crate::output::GetClusterOutput {
                 cluster: self.cluster,
+                _request_id: self._request_id,
             }
         }
     }
@@ -486,11 +647,17 @@ pub struct DeleteClusterSnapshotOutput {
     /// <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::ClusterSnapshot>,
+    _request_id: Option<String>,
 }
 impl DeleteClusterSnapshotOutput {
     /// <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
     pub fn snapshot(&self) -> std::option::Option<&crate::model::ClusterSnapshot> {
         self.snapshot.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteClusterSnapshotOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput).
@@ -501,6 +668,7 @@ pub mod delete_cluster_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::ClusterSnapshot>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about the newly deleted Elastic DocumentDB snapshot.</p>
@@ -516,10 +684,20 @@ pub mod delete_cluster_snapshot_output {
             self.snapshot = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteClusterSnapshotOutput`](crate::output::DeleteClusterSnapshotOutput).
         pub fn build(self) -> crate::output::DeleteClusterSnapshotOutput {
             crate::output::DeleteClusterSnapshotOutput {
                 snapshot: self.snapshot,
+                _request_id: self._request_id,
             }
         }
     }
@@ -538,11 +716,17 @@ pub struct DeleteClusterOutput {
     /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl DeleteClusterOutput {
     /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
     pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
         self.cluster.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteClusterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
@@ -553,6 +737,7 @@ pub mod delete_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about the newly deleted Elastic DocumentDB cluster.</p>
@@ -565,10 +750,20 @@ pub mod delete_cluster_output {
             self.cluster = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteClusterOutput`](crate::output::DeleteClusterOutput).
         pub fn build(self) -> crate::output::DeleteClusterOutput {
             crate::output::DeleteClusterOutput {
                 cluster: self.cluster,
+                _request_id: self._request_id,
             }
         }
     }
@@ -587,11 +782,17 @@ pub struct CreateClusterSnapshotOutput {
     /// <p>Returns information about the new Elastic DocumentDB snapshot.</p>
     #[doc(hidden)]
     pub snapshot: std::option::Option<crate::model::ClusterSnapshot>,
+    _request_id: Option<String>,
 }
 impl CreateClusterSnapshotOutput {
     /// <p>Returns information about the new Elastic DocumentDB snapshot.</p>
     pub fn snapshot(&self) -> std::option::Option<&crate::model::ClusterSnapshot> {
         self.snapshot.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateClusterSnapshotOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput).
@@ -602,6 +803,7 @@ pub mod create_cluster_snapshot_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) snapshot: std::option::Option<crate::model::ClusterSnapshot>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Returns information about the new Elastic DocumentDB snapshot.</p>
@@ -617,10 +819,20 @@ pub mod create_cluster_snapshot_output {
             self.snapshot = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterSnapshotOutput`](crate::output::CreateClusterSnapshotOutput).
         pub fn build(self) -> crate::output::CreateClusterSnapshotOutput {
             crate::output::CreateClusterSnapshotOutput {
                 snapshot: self.snapshot,
+                _request_id: self._request_id,
             }
         }
     }
@@ -639,11 +851,17 @@ pub struct CreateClusterOutput {
     /// <p>The new Elastic DocumentDB cluster that has been created.</p>
     #[doc(hidden)]
     pub cluster: std::option::Option<crate::model::Cluster>,
+    _request_id: Option<String>,
 }
 impl CreateClusterOutput {
     /// <p>The new Elastic DocumentDB cluster that has been created.</p>
     pub fn cluster(&self) -> std::option::Option<&crate::model::Cluster> {
         self.cluster.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateClusterOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateClusterOutput`](crate::output::CreateClusterOutput).
@@ -654,6 +872,7 @@ pub mod create_cluster_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) cluster: std::option::Option<crate::model::Cluster>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The new Elastic DocumentDB cluster that has been created.</p>
@@ -666,10 +885,20 @@ pub mod create_cluster_output {
             self.cluster = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateClusterOutput`](crate::output::CreateClusterOutput).
         pub fn build(self) -> crate::output::CreateClusterOutput {
             crate::output::CreateClusterOutput {
                 cluster: self.cluster,
+                _request_id: self._request_id,
             }
         }
     }

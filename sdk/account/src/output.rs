@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutContactInformationOutput {}
+pub struct PutContactInformationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutContactInformationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
 pub mod put_contact_information_output {
 
     /// A builder for [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutContactInformationOutput`](crate::output::PutContactInformationOutput).
         pub fn build(self) -> crate::output::PutContactInformationOutput {
-            crate::output::PutContactInformationOutput {}
+            crate::output::PutContactInformationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -31,11 +51,17 @@ pub struct GetContactInformationOutput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     #[doc(hidden)]
     pub contact_information: std::option::Option<crate::model::ContactInformation>,
+    _request_id: Option<String>,
 }
 impl GetContactInformationOutput {
     /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
     pub fn contact_information(&self) -> std::option::Option<&crate::model::ContactInformation> {
         self.contact_information.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetContactInformationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
@@ -46,6 +72,7 @@ pub mod get_contact_information_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) contact_information: std::option::Option<crate::model::ContactInformation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Contains the details of the primary contact information associated with an Amazon Web Services account.</p>
@@ -61,10 +88,20 @@ pub mod get_contact_information_output {
             self.contact_information = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetContactInformationOutput`](crate::output::GetContactInformationOutput).
         pub fn build(self) -> crate::output::GetContactInformationOutput {
             crate::output::GetContactInformationOutput {
                 contact_information: self.contact_information,
+                _request_id: self._request_id,
             }
         }
     }
@@ -79,18 +116,38 @@ impl GetContactInformationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAlternateContactOutput {}
+pub struct PutAlternateContactOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutAlternateContactOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
 pub mod put_alternate_contact_output {
 
     /// A builder for [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAlternateContactOutput`](crate::output::PutAlternateContactOutput).
         pub fn build(self) -> crate::output::PutAlternateContactOutput {
-            crate::output::PutAlternateContactOutput {}
+            crate::output::PutAlternateContactOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -104,18 +161,38 @@ impl PutAlternateContactOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteAlternateContactOutput {}
+pub struct DeleteAlternateContactOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteAlternateContactOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
 pub mod delete_alternate_contact_output {
 
     /// A builder for [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAlternateContactOutput`](crate::output::DeleteAlternateContactOutput).
         pub fn build(self) -> crate::output::DeleteAlternateContactOutput {
-            crate::output::DeleteAlternateContactOutput {}
+            crate::output::DeleteAlternateContactOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -133,11 +210,17 @@ pub struct GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
     #[doc(hidden)]
     pub alternate_contact: std::option::Option<crate::model::AlternateContact>,
+    _request_id: Option<String>,
 }
 impl GetAlternateContactOutput {
     /// <p>A structure that contains the details for the specified alternate contact.</p>
     pub fn alternate_contact(&self) -> std::option::Option<&crate::model::AlternateContact> {
         self.alternate_contact.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAlternateContactOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
@@ -148,6 +231,7 @@ pub mod get_alternate_contact_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) alternate_contact: std::option::Option<crate::model::AlternateContact>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A structure that contains the details for the specified alternate contact.</p>
@@ -163,10 +247,20 @@ pub mod get_alternate_contact_output {
             self.alternate_contact = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAlternateContactOutput`](crate::output::GetAlternateContactOutput).
         pub fn build(self) -> crate::output::GetAlternateContactOutput {
             crate::output::GetAlternateContactOutput {
                 alternate_contact: self.alternate_contact,
+                _request_id: self._request_id,
             }
         }
     }

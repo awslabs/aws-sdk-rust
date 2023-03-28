@@ -12,6 +12,7 @@ pub struct UpdateLedgerPermissionsModeOutput {
     /// <p>The current permissions mode of the ledger.</p>
     #[doc(hidden)]
     pub permissions_mode: std::option::Option<crate::model::PermissionsMode>,
+    _request_id: Option<String>,
 }
 impl UpdateLedgerPermissionsModeOutput {
     /// <p>The name of the ledger.</p>
@@ -27,6 +28,11 @@ impl UpdateLedgerPermissionsModeOutput {
         self.permissions_mode.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLedgerPermissionsModeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
 pub mod update_ledger_permissions_mode_output {
 
@@ -37,6 +43,7 @@ pub mod update_ledger_permissions_mode_output {
         pub(crate) name: std::option::Option<std::string::String>,
         pub(crate) arn: std::option::Option<std::string::String>,
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -72,12 +79,22 @@ pub mod update_ledger_permissions_mode_output {
             self.permissions_mode = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLedgerPermissionsModeOutput`](crate::output::UpdateLedgerPermissionsModeOutput).
         pub fn build(self) -> crate::output::UpdateLedgerPermissionsModeOutput {
             crate::output::UpdateLedgerPermissionsModeOutput {
                 name: self.name,
                 arn: self.arn,
                 permissions_mode: self.permissions_mode,
+                _request_id: self._request_id,
             }
         }
     }
@@ -112,6 +129,7 @@ pub struct UpdateLedgerOutput {
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     #[doc(hidden)]
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
+    _request_id: Option<String>,
 }
 impl UpdateLedgerOutput {
     /// <p>The name of the ledger.</p>
@@ -142,6 +160,11 @@ impl UpdateLedgerOutput {
         self.encryption_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateLedgerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
 pub mod update_ledger_output {
 
@@ -156,6 +179,7 @@ pub mod update_ledger_output {
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) encryption_description:
             std::option::Option<crate::model::LedgerEncryptionDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -229,6 +253,15 @@ pub mod update_ledger_output {
             self.encryption_description = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLedgerOutput`](crate::output::UpdateLedgerOutput).
         pub fn build(self) -> crate::output::UpdateLedgerOutput {
             crate::output::UpdateLedgerOutput {
@@ -238,6 +271,7 @@ pub mod update_ledger_output {
                 creation_date_time: self.creation_date_time,
                 deletion_protection: self.deletion_protection,
                 encryption_description: self.encryption_description,
+                _request_id: self._request_id,
             }
         }
     }
@@ -252,18 +286,38 @@ impl UpdateLedgerOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -277,18 +331,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -306,11 +380,17 @@ pub struct StreamJournalToKinesisOutput {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StreamJournalToKinesisOutput {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for StreamJournalToKinesisOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
@@ -321,6 +401,7 @@ pub mod stream_journal_to_kinesis_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB journal stream.</p>
@@ -333,10 +414,20 @@ pub mod stream_journal_to_kinesis_output {
             self.stream_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StreamJournalToKinesisOutput`](crate::output::StreamJournalToKinesisOutput).
         pub fn build(self) -> crate::output::StreamJournalToKinesisOutput {
             crate::output::StreamJournalToKinesisOutput {
                 stream_id: self.stream_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -357,6 +448,7 @@ pub struct ListTagsForResourceOutput {
     pub tags: std::option::Option<
         std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     >,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The tags that are currently associated with the specified Amazon QLDB resource.</p>
@@ -366,6 +458,11 @@ impl ListTagsForResourceOutput {
         &std::collections::HashMap<std::string::String, std::option::Option<std::string::String>>,
     > {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -381,6 +478,7 @@ pub mod list_tags_for_resource_output {
                 std::option::Option<std::string::String>,
             >,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -411,9 +509,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -438,6 +548,7 @@ pub struct ListLedgersOutput {
     /// </ul>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListLedgersOutput {
     /// <p>The array of ledger summaries that are associated with the current Amazon Web Services account and Region.</p>
@@ -453,6 +564,11 @@ impl ListLedgersOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListLedgersOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListLedgersOutput`](crate::output::ListLedgersOutput).
 pub mod list_ledgers_output {
 
@@ -462,6 +578,7 @@ pub mod list_ledgers_output {
     pub struct Builder {
         pub(crate) ledgers: std::option::Option<std::vec::Vec<crate::model::LedgerSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `ledgers`.
@@ -501,11 +618,21 @@ pub mod list_ledgers_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListLedgersOutput`](crate::output::ListLedgersOutput).
         pub fn build(self) -> crate::output::ListLedgersOutput {
             crate::output::ListLedgersOutput {
                 ledgers: self.ledgers,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -531,6 +658,7 @@ pub struct ListJournalS3ExportsForLedgerOutput {
     /// </ul>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJournalS3ExportsForLedgerOutput {
     /// <p>The array of journal export job descriptions that are associated with the specified ledger.</p>
@@ -547,6 +675,11 @@ impl ListJournalS3ExportsForLedgerOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJournalS3ExportsForLedgerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
 pub mod list_journal_s3_exports_for_ledger_output {
 
@@ -557,6 +690,7 @@ pub mod list_journal_s3_exports_for_ledger_output {
         pub(crate) journal_s3_exports:
             std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `journal_s3_exports`.
@@ -597,11 +731,21 @@ pub mod list_journal_s3_exports_for_ledger_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListJournalS3ExportsForLedgerOutput`](crate::output::ListJournalS3ExportsForLedgerOutput).
         pub fn build(self) -> crate::output::ListJournalS3ExportsForLedgerOutput {
             crate::output::ListJournalS3ExportsForLedgerOutput {
                 journal_s3_exports: self.journal_s3_exports,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -627,6 +771,7 @@ pub struct ListJournalS3ExportsOutput {
     /// </ul>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJournalS3ExportsOutput {
     /// <p>The array of journal export job descriptions for all ledgers that are associated with the current Amazon Web Services account and Region.</p>
@@ -643,6 +788,11 @@ impl ListJournalS3ExportsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJournalS3ExportsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
 pub mod list_journal_s3_exports_output {
 
@@ -653,6 +803,7 @@ pub mod list_journal_s3_exports_output {
         pub(crate) journal_s3_exports:
             std::option::Option<std::vec::Vec<crate::model::JournalS3ExportDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `journal_s3_exports`.
@@ -693,11 +844,21 @@ pub mod list_journal_s3_exports_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListJournalS3ExportsOutput`](crate::output::ListJournalS3ExportsOutput).
         pub fn build(self) -> crate::output::ListJournalS3ExportsOutput {
             crate::output::ListJournalS3ExportsOutput {
                 journal_s3_exports: self.journal_s3_exports,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -722,6 +883,7 @@ pub struct ListJournalKinesisStreamsForLedgerOutput {
     /// </ul>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJournalKinesisStreamsForLedgerOutput {
     /// <p>The array of QLDB journal stream descriptors that are associated with the given ledger.</p>
@@ -736,6 +898,11 @@ impl ListJournalKinesisStreamsForLedgerOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJournalKinesisStreamsForLedgerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
 pub mod list_journal_kinesis_streams_for_ledger_output {
 
@@ -746,6 +913,7 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
         pub(crate) streams:
             std::option::Option<std::vec::Vec<crate::model::JournalKinesisStreamDescription>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `streams`.
@@ -785,11 +953,21 @@ pub mod list_journal_kinesis_streams_for_ledger_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListJournalKinesisStreamsForLedgerOutput`](crate::output::ListJournalKinesisStreamsForLedgerOutput).
         pub fn build(self) -> crate::output::ListJournalKinesisStreamsForLedgerOutput {
             crate::output::ListJournalKinesisStreamsForLedgerOutput {
                 streams: self.streams,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -811,6 +989,7 @@ pub struct GetRevisionOutput {
     /// <p>The document revision data object in Amazon Ion format.</p>
     #[doc(hidden)]
     pub revision: std::option::Option<crate::model::ValueHolder>,
+    _request_id: Option<String>,
 }
 impl GetRevisionOutput {
     /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
@@ -827,7 +1006,13 @@ impl std::fmt::Debug for GetRevisionOutput {
         let mut formatter = f.debug_struct("GetRevisionOutput");
         formatter.field("proof", &"*** Sensitive Data Redacted ***");
         formatter.field("revision", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetRevisionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetRevisionOutput`](crate::output::GetRevisionOutput).
@@ -839,6 +1024,7 @@ pub mod get_revision_output {
     pub struct Builder {
         pub(crate) proof: std::option::Option<crate::model::ValueHolder>,
         pub(crate) revision: std::option::Option<crate::model::ValueHolder>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The proof object in Amazon Ion format returned by a <code>GetRevision</code> request. A proof contains the list of hash values that are required to recalculate the specified digest using a Merkle tree, starting with the specified document revision.</p>
@@ -864,11 +1050,21 @@ pub mod get_revision_output {
             self.revision = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRevisionOutput`](crate::output::GetRevisionOutput).
         pub fn build(self) -> crate::output::GetRevisionOutput {
             crate::output::GetRevisionOutput {
                 proof: self.proof,
                 revision: self.revision,
+                _request_id: self._request_id,
             }
         }
     }
@@ -877,6 +1073,7 @@ pub mod get_revision_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("proof", &"*** Sensitive Data Redacted ***");
             formatter.field("revision", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -898,6 +1095,7 @@ pub struct GetDigestOutput {
     /// <p>The latest block location covered by the digest that you requested. An address is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
     #[doc(hidden)]
     pub digest_tip_address: std::option::Option<crate::model::ValueHolder>,
+    _request_id: Option<String>,
 }
 impl GetDigestOutput {
     /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
@@ -914,7 +1112,13 @@ impl std::fmt::Debug for GetDigestOutput {
         let mut formatter = f.debug_struct("GetDigestOutput");
         formatter.field("digest", &self.digest);
         formatter.field("digest_tip_address", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetDigestOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDigestOutput`](crate::output::GetDigestOutput).
@@ -926,6 +1130,7 @@ pub mod get_digest_output {
     pub struct Builder {
         pub(crate) digest: std::option::Option<aws_smithy_types::Blob>,
         pub(crate) digest_tip_address: std::option::Option<crate::model::ValueHolder>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The 256-bit hash value representing the digest returned by a <code>GetDigest</code> request.</p>
@@ -951,11 +1156,21 @@ pub mod get_digest_output {
             self.digest_tip_address = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDigestOutput`](crate::output::GetDigestOutput).
         pub fn build(self) -> crate::output::GetDigestOutput {
             crate::output::GetDigestOutput {
                 digest: self.digest,
                 digest_tip_address: self.digest_tip_address,
+                _request_id: self._request_id,
             }
         }
     }
@@ -964,6 +1179,7 @@ pub mod get_digest_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("digest", &self.digest);
             formatter.field("digest_tip_address", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -985,6 +1201,7 @@ pub struct GetBlockOutput {
     /// <p>The proof object in Amazon Ion format returned by a <code>GetBlock</code> request. A proof contains the list of hash values required to recalculate the specified digest using a Merkle tree, starting with the specified block.</p>
     #[doc(hidden)]
     pub proof: std::option::Option<crate::model::ValueHolder>,
+    _request_id: Option<String>,
 }
 impl GetBlockOutput {
     /// <p>The block data object in Amazon Ion format.</p>
@@ -1001,7 +1218,13 @@ impl std::fmt::Debug for GetBlockOutput {
         let mut formatter = f.debug_struct("GetBlockOutput");
         formatter.field("block", &"*** Sensitive Data Redacted ***");
         formatter.field("proof", &"*** Sensitive Data Redacted ***");
+        formatter.field("_request_id", &self._request_id);
         formatter.finish()
+    }
+}
+impl aws_http::request_id::RequestId for GetBlockOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetBlockOutput`](crate::output::GetBlockOutput).
@@ -1013,6 +1236,7 @@ pub mod get_block_output {
     pub struct Builder {
         pub(crate) block: std::option::Option<crate::model::ValueHolder>,
         pub(crate) proof: std::option::Option<crate::model::ValueHolder>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The block data object in Amazon Ion format.</p>
@@ -1035,11 +1259,21 @@ pub mod get_block_output {
             self.proof = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBlockOutput`](crate::output::GetBlockOutput).
         pub fn build(self) -> crate::output::GetBlockOutput {
             crate::output::GetBlockOutput {
                 block: self.block,
                 proof: self.proof,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1048,6 +1282,7 @@ pub mod get_block_output {
             let mut formatter = f.debug_struct("Builder");
             formatter.field("block", &"*** Sensitive Data Redacted ***");
             formatter.field("proof", &"*** Sensitive Data Redacted ***");
+            formatter.field("_request_id", &self._request_id);
             formatter.finish()
         }
     }
@@ -1067,12 +1302,18 @@ pub struct ExportJournalToS3Output {
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     #[doc(hidden)]
     pub export_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ExportJournalToS3Output {
     /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
     /// <p>To describe your export request and check the status of the job, you can use <code>ExportId</code> to call <code>DescribeJournalS3Export</code>.</p>
     pub fn export_id(&self) -> std::option::Option<&str> {
         self.export_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ExportJournalToS3Output {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
@@ -1083,6 +1324,7 @@ pub mod export_journal_to_s3_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) export_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each journal export job.</p>
@@ -1097,10 +1339,20 @@ pub mod export_journal_to_s3_output {
             self.export_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ExportJournalToS3Output`](crate::output::ExportJournalToS3Output).
         pub fn build(self) -> crate::output::ExportJournalToS3Output {
             crate::output::ExportJournalToS3Output {
                 export_id: self.export_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1138,6 +1390,7 @@ pub struct DescribeLedgerOutput {
     /// <p>Information about the encryption of data at rest in the ledger. This includes the current status, the KMS key, and when the key became inaccessible (in the case of an error).</p>
     #[doc(hidden)]
     pub encryption_description: std::option::Option<crate::model::LedgerEncryptionDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeLedgerOutput {
     /// <p>The name of the ledger.</p>
@@ -1172,6 +1425,11 @@ impl DescribeLedgerOutput {
         self.encryption_description.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeLedgerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
 pub mod describe_ledger_output {
 
@@ -1187,6 +1445,7 @@ pub mod describe_ledger_output {
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) encryption_description:
             std::option::Option<crate::model::LedgerEncryptionDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1273,6 +1532,15 @@ pub mod describe_ledger_output {
             self.encryption_description = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeLedgerOutput`](crate::output::DescribeLedgerOutput).
         pub fn build(self) -> crate::output::DescribeLedgerOutput {
             crate::output::DescribeLedgerOutput {
@@ -1283,6 +1551,7 @@ pub mod describe_ledger_output {
                 permissions_mode: self.permissions_mode,
                 deletion_protection: self.deletion_protection,
                 encryption_description: self.encryption_description,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1301,6 +1570,7 @@ pub struct DescribeJournalS3ExportOutput {
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
     #[doc(hidden)]
     pub export_description: std::option::Option<crate::model::JournalS3ExportDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeJournalS3ExportOutput {
     /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
@@ -1308,6 +1578,11 @@ impl DescribeJournalS3ExportOutput {
         &self,
     ) -> std::option::Option<&crate::model::JournalS3ExportDescription> {
         self.export_description.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeJournalS3ExportOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
@@ -1319,6 +1594,7 @@ pub mod describe_journal_s3_export_output {
     pub struct Builder {
         pub(crate) export_description:
             std::option::Option<crate::model::JournalS3ExportDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the journal export job returned by a <code>DescribeJournalS3Export</code> request.</p>
@@ -1337,10 +1613,20 @@ pub mod describe_journal_s3_export_output {
             self.export_description = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeJournalS3ExportOutput`](crate::output::DescribeJournalS3ExportOutput).
         pub fn build(self) -> crate::output::DescribeJournalS3ExportOutput {
             crate::output::DescribeJournalS3ExportOutput {
                 export_description: self.export_description,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1359,11 +1645,17 @@ pub struct DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
     #[doc(hidden)]
     pub stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeJournalKinesisStreamOutput {
     /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
     pub fn stream(&self) -> std::option::Option<&crate::model::JournalKinesisStreamDescription> {
         self.stream.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeJournalKinesisStreamOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
@@ -1374,6 +1666,7 @@ pub mod describe_journal_kinesis_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream: std::option::Option<crate::model::JournalKinesisStreamDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code> request.</p>
@@ -1389,10 +1682,20 @@ pub mod describe_journal_kinesis_stream_output {
             self.stream = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeJournalKinesisStreamOutput`](crate::output::DescribeJournalKinesisStreamOutput).
         pub fn build(self) -> crate::output::DescribeJournalKinesisStreamOutput {
             crate::output::DescribeJournalKinesisStreamOutput {
                 stream: self.stream,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1407,18 +1710,38 @@ impl DescribeJournalKinesisStreamOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLedgerOutput {}
+pub struct DeleteLedgerOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteLedgerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
 pub mod delete_ledger_output {
 
     /// A builder for [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLedgerOutput`](crate::output::DeleteLedgerOutput).
         pub fn build(self) -> crate::output::DeleteLedgerOutput {
-            crate::output::DeleteLedgerOutput {}
+            crate::output::DeleteLedgerOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1455,6 +1778,7 @@ pub struct CreateLedgerOutput {
     /// <p>The ARN of the customer managed KMS key that the ledger uses for encryption at rest. If this parameter is undefined, the ledger uses an Amazon Web Services owned KMS key for encryption.</p>
     #[doc(hidden)]
     pub kms_key_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLedgerOutput {
     /// <p>The name of the ledger.</p>
@@ -1487,6 +1811,11 @@ impl CreateLedgerOutput {
         self.kms_key_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateLedgerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
 pub mod create_ledger_output {
 
@@ -1501,6 +1830,7 @@ pub mod create_ledger_output {
         pub(crate) permissions_mode: std::option::Option<crate::model::PermissionsMode>,
         pub(crate) deletion_protection: std::option::Option<bool>,
         pub(crate) kms_key_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the ledger.</p>
@@ -1581,6 +1911,15 @@ pub mod create_ledger_output {
             self.kms_key_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLedgerOutput`](crate::output::CreateLedgerOutput).
         pub fn build(self) -> crate::output::CreateLedgerOutput {
             crate::output::CreateLedgerOutput {
@@ -1591,6 +1930,7 @@ pub mod create_ledger_output {
                 permissions_mode: self.permissions_mode,
                 deletion_protection: self.deletion_protection,
                 kms_key_arn: self.kms_key_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1609,11 +1949,17 @@ pub struct CancelJournalKinesisStreamOutput {
     /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
     #[doc(hidden)]
     pub stream_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CancelJournalKinesisStreamOutput {
     /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
     pub fn stream_id(&self) -> std::option::Option<&str> {
         self.stream_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CancelJournalKinesisStreamOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
@@ -1624,6 +1970,7 @@ pub mod cancel_journal_kinesis_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The UUID (Base62-encoded text) of the canceled QLDB journal stream.</p>
@@ -1636,10 +1983,20 @@ pub mod cancel_journal_kinesis_stream_output {
             self.stream_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CancelJournalKinesisStreamOutput`](crate::output::CancelJournalKinesisStreamOutput).
         pub fn build(self) -> crate::output::CancelJournalKinesisStreamOutput {
             crate::output::CancelJournalKinesisStreamOutput {
                 stream_id: self.stream_id,
+                _request_id: self._request_id,
             }
         }
     }

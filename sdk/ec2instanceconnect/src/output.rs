@@ -9,6 +9,7 @@ pub struct SendSshPublicKeyOutput {
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     #[doc(hidden)]
     pub success: bool,
+    _request_id: Option<String>,
 }
 impl SendSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
@@ -20,6 +21,11 @@ impl SendSshPublicKeyOutput {
         self.success
     }
 }
+impl aws_http::request_id::RequestId for SendSshPublicKeyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
 pub mod send_ssh_public_key_output {
 
@@ -29,6 +35,7 @@ pub mod send_ssh_public_key_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) success: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
@@ -51,11 +58,21 @@ pub mod send_ssh_public_key_output {
             self.success = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendSshPublicKeyOutput`](crate::output::SendSshPublicKeyOutput).
         pub fn build(self) -> crate::output::SendSshPublicKeyOutput {
             crate::output::SendSshPublicKeyOutput {
                 request_id: self.request_id,
                 success: self.success.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -77,6 +94,7 @@ pub struct SendSerialConsoleSshPublicKeyOutput {
     /// <p>Is true if the request succeeds and an error otherwise.</p>
     #[doc(hidden)]
     pub success: bool,
+    _request_id: Option<String>,
 }
 impl SendSerialConsoleSshPublicKeyOutput {
     /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
@@ -88,6 +106,11 @@ impl SendSerialConsoleSshPublicKeyOutput {
         self.success
     }
 }
+impl aws_http::request_id::RequestId for SendSerialConsoleSshPublicKeyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
 pub mod send_serial_console_ssh_public_key_output {
 
@@ -97,6 +120,7 @@ pub mod send_serial_console_ssh_public_key_output {
     pub struct Builder {
         pub(crate) request_id: std::option::Option<std::string::String>,
         pub(crate) success: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The ID of the request. Please provide this ID when contacting AWS Support for assistance.</p>
@@ -119,11 +143,21 @@ pub mod send_serial_console_ssh_public_key_output {
             self.success = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendSerialConsoleSshPublicKeyOutput`](crate::output::SendSerialConsoleSshPublicKeyOutput).
         pub fn build(self) -> crate::output::SendSerialConsoleSshPublicKeyOutput {
             crate::output::SendSerialConsoleSshPublicKeyOutput {
                 request_id: self.request_id,
                 success: self.success.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }

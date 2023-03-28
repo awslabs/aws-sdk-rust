@@ -11,15 +11,8 @@ pub enum Error {
     NotFoundException(crate::error::NotFoundException),
     /// <p>An error that is returned when a limit of a specific type has been exceeded.</p>
     TooManyRequestsException(crate::error::TooManyRequestsException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -41,28 +34,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CloneBackendError> for Error {
     fn from(err: crate::error::CloneBackendError) -> Self {
-        match err.kind {
-            crate::error::CloneBackendErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CloneBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CloneBackendErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CloneBackendError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CloneBackendErrorKind::NotFoundException(inner) => {
+            crate::error::CloneBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CloneBackendErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CloneBackendError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CloneBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CloneBackendError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -75,28 +73,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateBackendError> for Error {
     fn from(err: crate::error::CreateBackendError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateBackendErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateBackendError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateBackendErrorKind::NotFoundException(inner) => {
+            crate::error::CreateBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateBackendErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateBackendError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBackendError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -111,28 +114,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateBackendAPIError> for Error {
     fn from(err: crate::error::CreateBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendAPIErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateBackendAPIError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateBackendAPIErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateBackendAPIError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateBackendAPIErrorKind::NotFoundException(inner) => {
+            crate::error::CreateBackendAPIError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateBackendAPIErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateBackendAPIError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -147,28 +155,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateBackendAuthError> for Error {
     fn from(err: crate::error::CreateBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendAuthErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateBackendAuthError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateBackendAuthErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateBackendAuthError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateBackendAuthErrorKind::NotFoundException(inner) => {
+            crate::error::CreateBackendAuthError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateBackendAuthErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateBackendAuthError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -183,28 +196,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateBackendConfigError> for Error {
     fn from(err: crate::error::CreateBackendConfigError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendConfigErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateBackendConfigError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateBackendConfigErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateBackendConfigError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateBackendConfigErrorKind::NotFoundException(inner) => {
+            crate::error::CreateBackendConfigError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateBackendConfigErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateBackendConfigError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateBackendConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBackendConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -220,28 +238,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateBackendStorageError> for Error {
     fn from(err: crate::error::CreateBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::CreateBackendStorageErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateBackendStorageError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateBackendStorageErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateBackendStorageError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::error::CreateBackendStorageError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateBackendStorageErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateBackendStorageError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -254,28 +277,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTokenError> for Error {
     fn from(err: crate::error::CreateTokenError) -> Self {
-        match err.kind {
-            crate::error::CreateTokenErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateTokenError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateTokenErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::CreateTokenError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::CreateTokenErrorKind::NotFoundException(inner) => {
+            crate::error::CreateTokenError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::CreateTokenErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateTokenError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -288,28 +316,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBackendError> for Error {
     fn from(err: crate::error::DeleteBackendError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBackendErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteBackendError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteBackendErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBackendErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteBackendError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteBackendError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -324,28 +357,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBackendAPIError> for Error {
     fn from(err: crate::error::DeleteBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendAPIErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteBackendAPIError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBackendAPIErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteBackendAPIError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteBackendAPIErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteBackendAPIError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBackendAPIErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteBackendAPIError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -360,28 +398,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBackendAuthError> for Error {
     fn from(err: crate::error::DeleteBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendAuthErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteBackendAuthError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBackendAuthErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteBackendAuthError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteBackendAuthErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteBackendAuthError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBackendAuthErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteBackendAuthError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -397,28 +440,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBackendStorageError> for Error {
     fn from(err: crate::error::DeleteBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::DeleteBackendStorageErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteBackendStorageError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteBackendStorageErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteBackendStorageError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteBackendStorageError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteBackendStorageErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteBackendStorageError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -431,28 +479,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteTokenError> for Error {
     fn from(err: crate::error::DeleteTokenError) -> Self {
-        match err.kind {
-            crate::error::DeleteTokenErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteTokenError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteTokenErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::DeleteTokenError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::DeleteTokenErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteTokenError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteTokenErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteTokenError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -468,27 +521,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GenerateBackendAPIModelsError> for Error {
     fn from(err: crate::error::GenerateBackendAPIModelsError) -> Self {
-        match err.kind {
-            crate::error::GenerateBackendAPIModelsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GenerateBackendAPIModelsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GenerateBackendAPIModelsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GenerateBackendAPIModelsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GenerateBackendAPIModelsErrorKind::NotFoundException(inner) => {
+            crate::error::GenerateBackendAPIModelsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GenerateBackendAPIModelsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GenerateBackendAPIModelsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GenerateBackendAPIModelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GenerateBackendAPIModelsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -502,28 +562,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBackendError> for Error {
     fn from(err: crate::error::GetBackendError) -> Self {
-        match err.kind {
-            crate::error::GetBackendErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetBackendError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetBackendError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendErrorKind::NotFoundException(inner) => {
+            crate::error::GetBackendError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetBackendError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBackendError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -536,28 +601,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBackendAPIError> for Error {
     fn from(err: crate::error::GetBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::GetBackendAPIErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetBackendAPIError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendAPIErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetBackendAPIError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendAPIErrorKind::NotFoundException(inner) => {
+            crate::error::GetBackendAPIError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendAPIErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetBackendAPIError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -572,28 +642,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBackendAPIModelsError> for Error {
     fn from(err: crate::error::GetBackendAPIModelsError) -> Self {
-        match err.kind {
-            crate::error::GetBackendAPIModelsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetBackendAPIModelsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendAPIModelsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetBackendAPIModelsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendAPIModelsErrorKind::NotFoundException(inner) => {
+            crate::error::GetBackendAPIModelsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendAPIModelsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetBackendAPIModelsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendAPIModelsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBackendAPIModelsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -606,28 +681,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBackendAuthError> for Error {
     fn from(err: crate::error::GetBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::GetBackendAuthErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetBackendAuthError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendAuthErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetBackendAuthError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendAuthErrorKind::NotFoundException(inner) => {
+            crate::error::GetBackendAuthError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendAuthErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetBackendAuthError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -640,28 +720,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBackendJobError> for Error {
     fn from(err: crate::error::GetBackendJobError) -> Self {
-        match err.kind {
-            crate::error::GetBackendJobErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetBackendJobError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendJobErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetBackendJobError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendJobErrorKind::NotFoundException(inner) => {
+            crate::error::GetBackendJobError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendJobErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetBackendJobError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBackendJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -676,28 +761,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBackendStorageError> for Error {
     fn from(err: crate::error::GetBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::GetBackendStorageErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetBackendStorageError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetBackendStorageErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetBackendStorageError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::error::GetBackendStorageError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetBackendStorageErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetBackendStorageError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -710,28 +800,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTokenError> for Error {
     fn from(err: crate::error::GetTokenError) -> Self {
-        match err.kind {
-            crate::error::GetTokenErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetTokenError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetTokenErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::GetTokenError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::GetTokenErrorKind::NotFoundException(inner) => {
+            crate::error::GetTokenError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetTokenErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetTokenError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetTokenErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTokenError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -746,28 +841,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ImportBackendAuthError> for Error {
     fn from(err: crate::error::ImportBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::ImportBackendAuthErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ImportBackendAuthError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ImportBackendAuthErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ImportBackendAuthError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ImportBackendAuthErrorKind::NotFoundException(inner) => {
+            crate::error::ImportBackendAuthError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ImportBackendAuthErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ImportBackendAuthError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ImportBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ImportBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -783,28 +883,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ImportBackendStorageError> for Error {
     fn from(err: crate::error::ImportBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::ImportBackendStorageErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ImportBackendStorageError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ImportBackendStorageErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ImportBackendStorageError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ImportBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::error::ImportBackendStorageError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ImportBackendStorageErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ImportBackendStorageError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ImportBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ImportBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -817,28 +922,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListBackendJobsError> for Error {
     fn from(err: crate::error::ListBackendJobsError) -> Self {
-        match err.kind {
-            crate::error::ListBackendJobsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListBackendJobsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListBackendJobsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListBackendJobsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListBackendJobsErrorKind::NotFoundException(inner) => {
+            crate::error::ListBackendJobsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListBackendJobsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListBackendJobsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListBackendJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListBackendJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -851,28 +961,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListS3BucketsError> for Error {
     fn from(err: crate::error::ListS3BucketsError) -> Self {
-        match err.kind {
-            crate::error::ListS3BucketsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListS3BucketsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListS3BucketsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::ListS3BucketsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::ListS3BucketsErrorKind::NotFoundException(inner) => {
+            crate::error::ListS3BucketsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListS3BucketsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListS3BucketsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListS3BucketsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListS3BucketsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -887,28 +1002,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RemoveAllBackendsError> for Error {
     fn from(err: crate::error::RemoveAllBackendsError) -> Self {
-        match err.kind {
-            crate::error::RemoveAllBackendsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::RemoveAllBackendsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::RemoveAllBackendsErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::RemoveAllBackendsError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::RemoveAllBackendsErrorKind::NotFoundException(inner) => {
+            crate::error::RemoveAllBackendsError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::RemoveAllBackendsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::RemoveAllBackendsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::RemoveAllBackendsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RemoveAllBackendsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -923,28 +1043,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::RemoveBackendConfigError> for Error {
     fn from(err: crate::error::RemoveBackendConfigError) -> Self {
-        match err.kind {
-            crate::error::RemoveBackendConfigErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::RemoveBackendConfigError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::RemoveBackendConfigErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::RemoveBackendConfigError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::RemoveBackendConfigErrorKind::NotFoundException(inner) => {
+            crate::error::RemoveBackendConfigError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::RemoveBackendConfigErrorKind::TooManyRequestsException(inner) => {
+            crate::error::RemoveBackendConfigError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::RemoveBackendConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::RemoveBackendConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -959,28 +1084,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateBackendAPIError> for Error {
     fn from(err: crate::error::UpdateBackendAPIError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendAPIErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateBackendAPIError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateBackendAPIErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateBackendAPIError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateBackendAPIErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateBackendAPIError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateBackendAPIErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateBackendAPIError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateBackendAPIErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBackendAPIError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -995,28 +1125,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateBackendAuthError> for Error {
     fn from(err: crate::error::UpdateBackendAuthError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendAuthErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateBackendAuthError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateBackendAuthErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateBackendAuthError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateBackendAuthErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateBackendAuthError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateBackendAuthErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateBackendAuthError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateBackendAuthErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBackendAuthError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1031,28 +1166,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateBackendConfigError> for Error {
     fn from(err: crate::error::UpdateBackendConfigError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendConfigErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateBackendConfigError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateBackendConfigErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateBackendConfigError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateBackendConfigErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateBackendConfigError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateBackendConfigErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateBackendConfigError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateBackendConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBackendConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1067,28 +1207,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateBackendJobError> for Error {
     fn from(err: crate::error::UpdateBackendJobError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendJobErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateBackendJobError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateBackendJobErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateBackendJobError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateBackendJobErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateBackendJobError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateBackendJobErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateBackendJobError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateBackendJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBackendJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1104,29 +1249,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateBackendStorageError> for Error {
     fn from(err: crate::error::UpdateBackendStorageError) -> Self {
-        match err.kind {
-            crate::error::UpdateBackendStorageErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateBackendStorageError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::GatewayTimeoutException(inner) => {
+            crate::error::UpdateBackendStorageError::GatewayTimeoutException(inner) => {
                 Error::GatewayTimeoutException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateBackendStorageError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateBackendStorageError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateBackendStorageErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateBackendStorageError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::GatewayTimeoutException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -3,18 +3,38 @@
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateConfigurationSetEventDestinationOutput {}
+pub struct UpdateConfigurationSetEventDestinationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateConfigurationSetEventDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
 pub mod update_configuration_set_event_destination_output {
 
     /// A builder for [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateConfigurationSetEventDestinationOutput`](crate::output::UpdateConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::UpdateConfigurationSetEventDestinationOutput {
-            crate::output::UpdateConfigurationSetEventDestinationOutput {}
+            crate::output::UpdateConfigurationSetEventDestinationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -28,18 +48,38 @@ impl UpdateConfigurationSetEventDestinationOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -53,18 +93,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -84,6 +144,7 @@ pub struct SendEmailOutput {
     /// </note>
     #[doc(hidden)]
     pub message_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl SendEmailOutput {
     /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>
@@ -91,6 +152,11 @@ impl SendEmailOutput {
     /// </note>
     pub fn message_id(&self) -> std::option::Option<&str> {
         self.message_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for SendEmailOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`SendEmailOutput`](crate::output::SendEmailOutput).
@@ -101,6 +167,7 @@ pub mod send_email_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) message_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique identifier for the message that is generated when Amazon Pinpoint accepts the message.</p> <note>
@@ -117,10 +184,20 @@ pub mod send_email_output {
             self.message_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`SendEmailOutput`](crate::output::SendEmailOutput).
         pub fn build(self) -> crate::output::SendEmailOutput {
             crate::output::SendEmailOutput {
                 message_id: self.message_id,
+                _request_id: self._request_id,
             }
         }
     }
@@ -135,18 +212,38 @@ impl SendEmailOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityMailFromAttributesOutput {}
+pub struct PutEmailIdentityMailFromAttributesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutEmailIdentityMailFromAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
 pub mod put_email_identity_mail_from_attributes_output {
 
     /// A builder for [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutEmailIdentityMailFromAttributesOutput`](crate::output::PutEmailIdentityMailFromAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityMailFromAttributesOutput {
-            crate::output::PutEmailIdentityMailFromAttributesOutput {}
+            crate::output::PutEmailIdentityMailFromAttributesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -160,18 +257,38 @@ impl PutEmailIdentityMailFromAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityFeedbackAttributesOutput {}
+pub struct PutEmailIdentityFeedbackAttributesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutEmailIdentityFeedbackAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
 pub mod put_email_identity_feedback_attributes_output {
 
     /// A builder for [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutEmailIdentityFeedbackAttributesOutput`](crate::output::PutEmailIdentityFeedbackAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityFeedbackAttributesOutput {
-            crate::output::PutEmailIdentityFeedbackAttributesOutput {}
+            crate::output::PutEmailIdentityFeedbackAttributesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -185,18 +302,38 @@ impl PutEmailIdentityFeedbackAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutEmailIdentityDkimAttributesOutput {}
+pub struct PutEmailIdentityDkimAttributesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutEmailIdentityDkimAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
 pub mod put_email_identity_dkim_attributes_output {
 
     /// A builder for [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutEmailIdentityDkimAttributesOutput`](crate::output::PutEmailIdentityDkimAttributesOutput).
         pub fn build(self) -> crate::output::PutEmailIdentityDkimAttributesOutput {
-            crate::output::PutEmailIdentityDkimAttributesOutput {}
+            crate::output::PutEmailIdentityDkimAttributesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -210,18 +347,38 @@ impl PutEmailIdentityDkimAttributesOutput {
 /// <p>A response that indicates whether the Deliverability dashboard is enabled for your Amazon Pinpoint account.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDeliverabilityDashboardOptionOutput {}
+pub struct PutDeliverabilityDashboardOptionOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutDeliverabilityDashboardOptionOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
 pub mod put_deliverability_dashboard_option_output {
 
     /// A builder for [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutDeliverabilityDashboardOptionOutput`](crate::output::PutDeliverabilityDashboardOptionOutput).
         pub fn build(self) -> crate::output::PutDeliverabilityDashboardOptionOutput {
-            crate::output::PutDeliverabilityDashboardOptionOutput {}
+            crate::output::PutDeliverabilityDashboardOptionOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -235,18 +392,38 @@ impl PutDeliverabilityDashboardOptionOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDedicatedIpWarmupAttributesOutput {}
+pub struct PutDedicatedIpWarmupAttributesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutDedicatedIpWarmupAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
 pub mod put_dedicated_ip_warmup_attributes_output {
 
     /// A builder for [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutDedicatedIpWarmupAttributesOutput`](crate::output::PutDedicatedIpWarmupAttributesOutput).
         pub fn build(self) -> crate::output::PutDedicatedIpWarmupAttributesOutput {
-            crate::output::PutDedicatedIpWarmupAttributesOutput {}
+            crate::output::PutDedicatedIpWarmupAttributesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -260,18 +437,38 @@ impl PutDedicatedIpWarmupAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutDedicatedIpInPoolOutput {}
+pub struct PutDedicatedIpInPoolOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutDedicatedIpInPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
 pub mod put_dedicated_ip_in_pool_output {
 
     /// A builder for [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutDedicatedIpInPoolOutput`](crate::output::PutDedicatedIpInPoolOutput).
         pub fn build(self) -> crate::output::PutDedicatedIpInPoolOutput {
-            crate::output::PutDedicatedIpInPoolOutput {}
+            crate::output::PutDedicatedIpInPoolOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -285,18 +482,38 @@ impl PutDedicatedIpInPoolOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetTrackingOptionsOutput {}
+pub struct PutConfigurationSetTrackingOptionsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutConfigurationSetTrackingOptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
 pub mod put_configuration_set_tracking_options_output {
 
     /// A builder for [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutConfigurationSetTrackingOptionsOutput`](crate::output::PutConfigurationSetTrackingOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetTrackingOptionsOutput {
-            crate::output::PutConfigurationSetTrackingOptionsOutput {}
+            crate::output::PutConfigurationSetTrackingOptionsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -310,18 +527,38 @@ impl PutConfigurationSetTrackingOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetSendingOptionsOutput {}
+pub struct PutConfigurationSetSendingOptionsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutConfigurationSetSendingOptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
 pub mod put_configuration_set_sending_options_output {
 
     /// A builder for [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutConfigurationSetSendingOptionsOutput`](crate::output::PutConfigurationSetSendingOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetSendingOptionsOutput {
-            crate::output::PutConfigurationSetSendingOptionsOutput {}
+            crate::output::PutConfigurationSetSendingOptionsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -335,18 +572,38 @@ impl PutConfigurationSetSendingOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetReputationOptionsOutput {}
+pub struct PutConfigurationSetReputationOptionsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutConfigurationSetReputationOptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
 pub mod put_configuration_set_reputation_options_output {
 
     /// A builder for [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutConfigurationSetReputationOptionsOutput`](crate::output::PutConfigurationSetReputationOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetReputationOptionsOutput {
-            crate::output::PutConfigurationSetReputationOptionsOutput {}
+            crate::output::PutConfigurationSetReputationOptionsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -360,18 +617,38 @@ impl PutConfigurationSetReputationOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutConfigurationSetDeliveryOptionsOutput {}
+pub struct PutConfigurationSetDeliveryOptionsOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutConfigurationSetDeliveryOptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
 pub mod put_configuration_set_delivery_options_output {
 
     /// A builder for [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutConfigurationSetDeliveryOptionsOutput`](crate::output::PutConfigurationSetDeliveryOptionsOutput).
         pub fn build(self) -> crate::output::PutConfigurationSetDeliveryOptionsOutput {
-            crate::output::PutConfigurationSetDeliveryOptionsOutput {}
+            crate::output::PutConfigurationSetDeliveryOptionsOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -385,18 +662,38 @@ impl PutConfigurationSetDeliveryOptionsOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountSendingAttributesOutput {}
+pub struct PutAccountSendingAttributesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutAccountSendingAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
 pub mod put_account_sending_attributes_output {
 
     /// A builder for [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAccountSendingAttributesOutput`](crate::output::PutAccountSendingAttributesOutput).
         pub fn build(self) -> crate::output::PutAccountSendingAttributesOutput {
-            crate::output::PutAccountSendingAttributesOutput {}
+            crate::output::PutAccountSendingAttributesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -410,18 +707,38 @@ impl PutAccountSendingAttributesOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct PutAccountDedicatedIpWarmupAttributesOutput {}
+pub struct PutAccountDedicatedIpWarmupAttributesOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for PutAccountDedicatedIpWarmupAttributesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
 pub mod put_account_dedicated_ip_warmup_attributes_output {
 
     /// A builder for [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutAccountDedicatedIpWarmupAttributesOutput`](crate::output::PutAccountDedicatedIpWarmupAttributesOutput).
         pub fn build(self) -> crate::output::PutAccountDedicatedIpWarmupAttributesOutput {
-            crate::output::PutAccountDedicatedIpWarmupAttributesOutput {}
+            crate::output::PutAccountDedicatedIpWarmupAttributesOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -439,11 +756,17 @@ pub struct ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>An array that lists all the tags that are associated with the resource. Each tag consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)</p>
     pub fn tags(&self) -> std::option::Option<&[crate::model::Tag]> {
         self.tags.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -454,6 +777,7 @@ pub mod list_tags_for_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tags`.
@@ -475,9 +799,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -498,6 +834,7 @@ pub struct ListEmailIdentitiesOutput {
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListEmailIdentities</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListEmailIdentitiesOutput {
     /// <p>An array that includes all of the identities associated with your Amazon Pinpoint account.</p>
@@ -509,6 +846,11 @@ impl ListEmailIdentitiesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListEmailIdentitiesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
 pub mod list_email_identities_output {
 
@@ -518,6 +860,7 @@ pub mod list_email_identities_output {
     pub struct Builder {
         pub(crate) email_identities: std::option::Option<std::vec::Vec<crate::model::IdentityInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `email_identities`.
@@ -549,11 +892,21 @@ pub mod list_email_identities_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListEmailIdentitiesOutput`](crate::output::ListEmailIdentitiesOutput).
         pub fn build(self) -> crate::output::ListEmailIdentitiesOutput {
             crate::output::ListEmailIdentitiesOutput {
                 email_identities: self.email_identities,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -576,6 +929,7 @@ pub struct ListDomainDeliverabilityCampaignsOutput {
     /// <p>A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code> operation. This token indicates the position of the campaign in the list of campaigns.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDomainDeliverabilityCampaignsOutput {
     /// <p>An array of responses, one for each campaign that used the domain to send email during the specified time range.</p>
@@ -589,6 +943,11 @@ impl ListDomainDeliverabilityCampaignsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDomainDeliverabilityCampaignsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
 pub mod list_domain_deliverability_campaigns_output {
 
@@ -599,6 +958,7 @@ pub mod list_domain_deliverability_campaigns_output {
         pub(crate) domain_deliverability_campaigns:
             std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityCampaign>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `domain_deliverability_campaigns`.
@@ -633,11 +993,21 @@ pub mod list_domain_deliverability_campaigns_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDomainDeliverabilityCampaignsOutput`](crate::output::ListDomainDeliverabilityCampaignsOutput).
         pub fn build(self) -> crate::output::ListDomainDeliverabilityCampaignsOutput {
             crate::output::ListDomainDeliverabilityCampaignsOutput {
                 domain_deliverability_campaigns: self.domain_deliverability_campaigns,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -660,6 +1030,7 @@ pub struct ListDeliverabilityTestReportsOutput {
     /// <p>A token that indicates that there are additional predictive inbox placement tests to list. To view additional predictive inbox placement tests, issue another request to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDeliverabilityTestReportsOutput {
     /// <p>An object that contains a lists of predictive inbox placement tests that you've performed.</p>
@@ -673,6 +1044,11 @@ impl ListDeliverabilityTestReportsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDeliverabilityTestReportsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
 pub mod list_deliverability_test_reports_output {
 
@@ -683,6 +1059,7 @@ pub mod list_deliverability_test_reports_output {
         pub(crate) deliverability_test_reports:
             std::option::Option<std::vec::Vec<crate::model::DeliverabilityTestReport>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `deliverability_test_reports`.
@@ -717,11 +1094,21 @@ pub mod list_deliverability_test_reports_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDeliverabilityTestReportsOutput`](crate::output::ListDeliverabilityTestReportsOutput).
         pub fn build(self) -> crate::output::ListDeliverabilityTestReportsOutput {
             crate::output::ListDeliverabilityTestReportsOutput {
                 deliverability_test_reports: self.deliverability_test_reports,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -743,6 +1130,7 @@ pub struct ListDedicatedIpPoolsOutput {
     /// <p>A token that indicates that there are additional IP pools to list. To view additional IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDedicatedIpPoolsOutput {
     /// <p>A list of all of the dedicated IP pools that are associated with your Amazon Pinpoint account.</p>
@@ -754,6 +1142,11 @@ impl ListDedicatedIpPoolsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListDedicatedIpPoolsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
 pub mod list_dedicated_ip_pools_output {
 
@@ -763,6 +1156,7 @@ pub mod list_dedicated_ip_pools_output {
     pub struct Builder {
         pub(crate) dedicated_ip_pools: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `dedicated_ip_pools`.
@@ -794,11 +1188,21 @@ pub mod list_dedicated_ip_pools_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDedicatedIpPoolsOutput`](crate::output::ListDedicatedIpPoolsOutput).
         pub fn build(self) -> crate::output::ListDedicatedIpPoolsOutput {
             crate::output::ListDedicatedIpPoolsOutput {
                 dedicated_ip_pools: self.dedicated_ip_pools,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -820,6 +1224,7 @@ pub struct ListConfigurationSetsOutput {
     /// <p>A token that indicates that there are additional configuration sets to list. To view additional configuration sets, issue another request to <code>ListConfigurationSets</code>, and pass this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListConfigurationSetsOutput {
     /// <p>An array that contains all of the configuration sets in your Amazon Pinpoint account in the current AWS Region.</p>
@@ -831,6 +1236,11 @@ impl ListConfigurationSetsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListConfigurationSetsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
 pub mod list_configuration_sets_output {
 
@@ -840,6 +1250,7 @@ pub mod list_configuration_sets_output {
     pub struct Builder {
         pub(crate) configuration_sets: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `configuration_sets`.
@@ -871,11 +1282,21 @@ pub mod list_configuration_sets_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListConfigurationSetsOutput`](crate::output::ListConfigurationSetsOutput).
         pub fn build(self) -> crate::output::ListConfigurationSetsOutput {
             crate::output::ListConfigurationSetsOutput {
                 configuration_sets: self.configuration_sets,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -911,6 +1332,7 @@ pub struct GetEmailIdentityOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the email identity.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl GetEmailIdentityOutput {
     /// <p>The email identity type.</p>
@@ -940,6 +1362,11 @@ impl GetEmailIdentityOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEmailIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
 pub mod get_email_identity_output {
 
@@ -953,6 +1380,7 @@ pub mod get_email_identity_output {
         pub(crate) dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
         pub(crate) mail_from_attributes: std::option::Option<crate::model::MailFromAttributes>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The email identity type.</p>
@@ -1037,6 +1465,15 @@ pub mod get_email_identity_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEmailIdentityOutput`](crate::output::GetEmailIdentityOutput).
         pub fn build(self) -> crate::output::GetEmailIdentityOutput {
             crate::output::GetEmailIdentityOutput {
@@ -1046,6 +1483,7 @@ pub mod get_email_identity_output {
                 dkim_attributes: self.dkim_attributes,
                 mail_from_attributes: self.mail_from_attributes,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1067,6 +1505,7 @@ pub struct GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. This object contains data for each day, starting on the <code>StartDate</code> and ending on the <code>EndDate</code>.</p>
     #[doc(hidden)]
     pub daily_volumes: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
+    _request_id: Option<String>,
 }
 impl GetDomainStatisticsReportOutput {
     /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
@@ -1078,6 +1517,11 @@ impl GetDomainStatisticsReportOutput {
         self.daily_volumes.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDomainStatisticsReportOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
 pub mod get_domain_statistics_report_output {
 
@@ -1087,6 +1531,7 @@ pub mod get_domain_statistics_report_output {
     pub struct Builder {
         pub(crate) overall_volume: std::option::Option<crate::model::OverallVolume>,
         pub(crate) daily_volumes: std::option::Option<std::vec::Vec<crate::model::DailyVolume>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains deliverability metrics for the domain that you specified. The data in this object is a summary of all of the data that was collected from the <code>StartDate</code> to the <code>EndDate</code>.</p>
@@ -1121,11 +1566,21 @@ pub mod get_domain_statistics_report_output {
             self.daily_volumes = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainStatisticsReportOutput`](crate::output::GetDomainStatisticsReportOutput).
         pub fn build(self) -> crate::output::GetDomainStatisticsReportOutput {
             crate::output::GetDomainStatisticsReportOutput {
                 overall_volume: self.overall_volume,
                 daily_volumes: self.daily_volumes,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1145,6 +1600,7 @@ pub struct GetDomainDeliverabilityCampaignOutput {
     #[doc(hidden)]
     pub domain_deliverability_campaign:
         std::option::Option<crate::model::DomainDeliverabilityCampaign>,
+    _request_id: Option<String>,
 }
 impl GetDomainDeliverabilityCampaignOutput {
     /// <p>An object that contains the deliverability data for the campaign.</p>
@@ -1152,6 +1608,11 @@ impl GetDomainDeliverabilityCampaignOutput {
         &self,
     ) -> std::option::Option<&crate::model::DomainDeliverabilityCampaign> {
         self.domain_deliverability_campaign.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDomainDeliverabilityCampaignOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
@@ -1163,6 +1624,7 @@ pub mod get_domain_deliverability_campaign_output {
     pub struct Builder {
         pub(crate) domain_deliverability_campaign:
             std::option::Option<crate::model::DomainDeliverabilityCampaign>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the deliverability data for the campaign.</p>
@@ -1181,10 +1643,20 @@ pub mod get_domain_deliverability_campaign_output {
             self.domain_deliverability_campaign = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainDeliverabilityCampaignOutput`](crate::output::GetDomainDeliverabilityCampaignOutput).
         pub fn build(self) -> crate::output::GetDomainDeliverabilityCampaignOutput {
             crate::output::GetDomainDeliverabilityCampaignOutput {
                 domain_deliverability_campaign: self.domain_deliverability_campaign,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1215,6 +1687,7 @@ pub struct GetDeliverabilityTestReportOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the predictive inbox placement test.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl GetDeliverabilityTestReportOutput {
     /// <p>An object that contains the results of the predictive inbox placement test.</p>
@@ -1240,6 +1713,11 @@ impl GetDeliverabilityTestReportOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDeliverabilityTestReportOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
 pub mod get_deliverability_test_report_output {
 
@@ -1253,6 +1731,7 @@ pub mod get_deliverability_test_report_output {
         pub(crate) isp_placements: std::option::Option<std::vec::Vec<crate::model::IspPlacement>>,
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains the results of the predictive inbox placement test.</p>
@@ -1332,6 +1811,15 @@ pub mod get_deliverability_test_report_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDeliverabilityTestReportOutput`](crate::output::GetDeliverabilityTestReportOutput).
         pub fn build(self) -> crate::output::GetDeliverabilityTestReportOutput {
             crate::output::GetDeliverabilityTestReportOutput {
@@ -1340,6 +1828,7 @@ pub mod get_deliverability_test_report_output {
                 isp_placements: self.isp_placements,
                 message: self.message,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1372,6 +1861,7 @@ pub struct GetDeliverabilityDashboardOptionsOutput {
     #[doc(hidden)]
     pub pending_expiration_subscribed_domains:
         std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+    _request_id: Option<String>,
 }
 impl GetDeliverabilityDashboardOptionsOutput {
     /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
@@ -1401,6 +1891,11 @@ impl GetDeliverabilityDashboardOptionsOutput {
         self.pending_expiration_subscribed_domains.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDeliverabilityDashboardOptionsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
 pub mod get_deliverability_dashboard_options_output {
 
@@ -1416,6 +1911,7 @@ pub mod get_deliverability_dashboard_options_output {
             std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
         pub(crate) pending_expiration_subscribed_domains:
             std::option::Option<std::vec::Vec<crate::model::DomainDeliverabilityTrackingOption>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Specifies whether the Deliverability dashboard is enabled for your Amazon Pinpoint account. If this value is <code>true</code>, the dashboard is enabled.</p>
@@ -1507,6 +2003,15 @@ pub mod get_deliverability_dashboard_options_output {
             self.pending_expiration_subscribed_domains = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDeliverabilityDashboardOptionsOutput`](crate::output::GetDeliverabilityDashboardOptionsOutput).
         pub fn build(self) -> crate::output::GetDeliverabilityDashboardOptionsOutput {
             crate::output::GetDeliverabilityDashboardOptionsOutput {
@@ -1515,6 +2020,7 @@ pub mod get_deliverability_dashboard_options_output {
                 account_status: self.account_status,
                 active_subscribed_domains: self.active_subscribed_domains,
                 pending_expiration_subscribed_domains: self.pending_expiration_subscribed_domains,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1536,6 +2042,7 @@ pub struct GetDedicatedIpsOutput {
     /// <p>A token that indicates that there are additional dedicated IP addresses to list. To view additional addresses, issue another request to <code>GetDedicatedIps</code>, passing this token in the <code>NextToken</code> parameter.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetDedicatedIpsOutput {
     /// <p>A list of dedicated IP addresses that are reserved for use by your Amazon Pinpoint account.</p>
@@ -1547,6 +2054,11 @@ impl GetDedicatedIpsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetDedicatedIpsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
 pub mod get_dedicated_ips_output {
 
@@ -1556,6 +2068,7 @@ pub mod get_dedicated_ips_output {
     pub struct Builder {
         pub(crate) dedicated_ips: std::option::Option<std::vec::Vec<crate::model::DedicatedIp>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `dedicated_ips`.
@@ -1587,11 +2100,21 @@ pub mod get_dedicated_ips_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDedicatedIpsOutput`](crate::output::GetDedicatedIpsOutput).
         pub fn build(self) -> crate::output::GetDedicatedIpsOutput {
             crate::output::GetDedicatedIpsOutput {
                 dedicated_ips: self.dedicated_ips,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1610,11 +2133,17 @@ pub struct GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     #[doc(hidden)]
     pub dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
+    _request_id: Option<String>,
 }
 impl GetDedicatedIpOutput {
     /// <p>An object that contains information about a dedicated IP address.</p>
     pub fn dedicated_ip(&self) -> std::option::Option<&crate::model::DedicatedIp> {
         self.dedicated_ip.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDedicatedIpOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
@@ -1625,6 +2154,7 @@ pub mod get_dedicated_ip_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) dedicated_ip: std::option::Option<crate::model::DedicatedIp>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains information about a dedicated IP address.</p>
@@ -1640,10 +2170,20 @@ pub mod get_dedicated_ip_output {
             self.dedicated_ip = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDedicatedIpOutput`](crate::output::GetDedicatedIpOutput).
         pub fn build(self) -> crate::output::GetDedicatedIpOutput {
             crate::output::GetDedicatedIpOutput {
                 dedicated_ip: self.dedicated_ip,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1662,11 +2202,17 @@ pub struct GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
     #[doc(hidden)]
     pub event_destinations: std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+    _request_id: Option<String>,
 }
 impl GetConfigurationSetEventDestinationsOutput {
     /// <p>An array that includes all of the events destinations that have been configured for the configuration set.</p>
     pub fn event_destinations(&self) -> std::option::Option<&[crate::model::EventDestination]> {
         self.event_destinations.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetConfigurationSetEventDestinationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
@@ -1678,6 +2224,7 @@ pub mod get_configuration_set_event_destinations_output {
     pub struct Builder {
         pub(crate) event_destinations:
             std::option::Option<std::vec::Vec<crate::model::EventDestination>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `event_destinations`.
@@ -1699,10 +2246,20 @@ pub mod get_configuration_set_event_destinations_output {
             self.event_destinations = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetConfigurationSetEventDestinationsOutput`](crate::output::GetConfigurationSetEventDestinationsOutput).
         pub fn build(self) -> crate::output::GetConfigurationSetEventDestinationsOutput {
             crate::output::GetConfigurationSetEventDestinationsOutput {
                 event_destinations: self.event_destinations,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1736,6 +2293,7 @@ pub struct GetConfigurationSetOutput {
     /// <p>An array of objects that define the tags (keys and values) that are associated with the configuration set.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl GetConfigurationSetOutput {
     /// <p>The name of the configuration set.</p>
@@ -1763,6 +2321,11 @@ impl GetConfigurationSetOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetConfigurationSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
 pub mod get_configuration_set_output {
 
@@ -1776,6 +2339,7 @@ pub mod get_configuration_set_output {
         pub(crate) reputation_options: std::option::Option<crate::model::ReputationOptions>,
         pub(crate) sending_options: std::option::Option<crate::model::SendingOptions>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The name of the configuration set.</p>
@@ -1862,6 +2426,15 @@ pub mod get_configuration_set_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetConfigurationSetOutput`](crate::output::GetConfigurationSetOutput).
         pub fn build(self) -> crate::output::GetConfigurationSetOutput {
             crate::output::GetConfigurationSetOutput {
@@ -1871,6 +2444,7 @@ pub mod get_configuration_set_output {
                 reputation_options: self.reputation_options,
                 sending_options: self.sending_options,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1891,6 +2465,7 @@ pub struct GetBlacklistReportsOutput {
     pub blacklist_report: std::option::Option<
         std::collections::HashMap<std::string::String, std::vec::Vec<crate::model::BlacklistEntry>>,
     >,
+    _request_id: Option<String>,
 }
 impl GetBlacklistReportsOutput {
     /// <p>An object that contains information about a blacklist that one of your dedicated IP addresses appears on.</p>
@@ -1903,6 +2478,11 @@ impl GetBlacklistReportsOutput {
         >,
     > {
         self.blacklist_report.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetBlacklistReportsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
@@ -1918,6 +2498,7 @@ pub mod get_blacklist_reports_output {
                 std::vec::Vec<crate::model::BlacklistEntry>,
             >,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `blacklist_report`.
@@ -1948,10 +2529,20 @@ pub mod get_blacklist_reports_output {
             self.blacklist_report = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBlacklistReportsOutput`](crate::output::GetBlacklistReportsOutput).
         pub fn build(self) -> crate::output::GetBlacklistReportsOutput {
             crate::output::GetBlacklistReportsOutput {
                 blacklist_report: self.blacklist_report,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1989,6 +2580,7 @@ pub struct GetAccountOutput {
     /// <p>If the value is <code>true</code>, then your account has production access. When your account has production access, you can send email to any address. The sending quota and maximum sending rate for your account vary based on your specific use case.</p>
     #[doc(hidden)]
     pub production_access_enabled: bool,
+    _request_id: Option<String>,
 }
 impl GetAccountOutput {
     /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
@@ -2019,6 +2611,11 @@ impl GetAccountOutput {
         self.production_access_enabled
     }
 }
+impl aws_http::request_id::RequestId for GetAccountOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetAccountOutput`](crate::output::GetAccountOutput).
 pub mod get_account_output {
 
@@ -2031,6 +2628,7 @@ pub mod get_account_output {
         pub(crate) dedicated_ip_auto_warmup_enabled: std::option::Option<bool>,
         pub(crate) enforcement_status: std::option::Option<std::string::String>,
         pub(crate) production_access_enabled: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>An object that contains information about the per-day and per-second sending limits for your Amazon Pinpoint account in the current AWS Region.</p>
@@ -2106,6 +2704,15 @@ pub mod get_account_output {
             self.production_access_enabled = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAccountOutput`](crate::output::GetAccountOutput).
         pub fn build(self) -> crate::output::GetAccountOutput {
             crate::output::GetAccountOutput {
@@ -2116,6 +2723,7 @@ pub mod get_account_output {
                     .unwrap_or_default(),
                 enforcement_status: self.enforcement_status,
                 production_access_enabled: self.production_access_enabled.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -2130,18 +2738,38 @@ impl GetAccountOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteEmailIdentityOutput {}
+pub struct DeleteEmailIdentityOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteEmailIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
 pub mod delete_email_identity_output {
 
     /// A builder for [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteEmailIdentityOutput`](crate::output::DeleteEmailIdentityOutput).
         pub fn build(self) -> crate::output::DeleteEmailIdentityOutput {
-            crate::output::DeleteEmailIdentityOutput {}
+            crate::output::DeleteEmailIdentityOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2155,18 +2783,38 @@ impl DeleteEmailIdentityOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteDedicatedIpPoolOutput {}
+pub struct DeleteDedicatedIpPoolOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteDedicatedIpPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
 pub mod delete_dedicated_ip_pool_output {
 
     /// A builder for [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDedicatedIpPoolOutput`](crate::output::DeleteDedicatedIpPoolOutput).
         pub fn build(self) -> crate::output::DeleteDedicatedIpPoolOutput {
-            crate::output::DeleteDedicatedIpPoolOutput {}
+            crate::output::DeleteDedicatedIpPoolOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2180,18 +2828,38 @@ impl DeleteDedicatedIpPoolOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetEventDestinationOutput {}
+pub struct DeleteConfigurationSetEventDestinationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteConfigurationSetEventDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
 pub mod delete_configuration_set_event_destination_output {
 
     /// A builder for [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetEventDestinationOutput`](crate::output::DeleteConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetEventDestinationOutput {
-            crate::output::DeleteConfigurationSetEventDestinationOutput {}
+            crate::output::DeleteConfigurationSetEventDestinationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2205,18 +2873,38 @@ impl DeleteConfigurationSetEventDestinationOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteConfigurationSetOutput {}
+pub struct DeleteConfigurationSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteConfigurationSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
 pub mod delete_configuration_set_output {
 
     /// A builder for [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteConfigurationSetOutput`](crate::output::DeleteConfigurationSetOutput).
         pub fn build(self) -> crate::output::DeleteConfigurationSetOutput {
-            crate::output::DeleteConfigurationSetOutput {}
+            crate::output::DeleteConfigurationSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2241,6 +2929,7 @@ pub struct CreateEmailIdentityOutput {
     /// <p>An object that contains information about the DKIM attributes for the identity. This object includes the tokens that you use to create the CNAME records that are required to complete the DKIM verification process.</p>
     #[doc(hidden)]
     pub dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
+    _request_id: Option<String>,
 }
 impl CreateEmailIdentityOutput {
     /// <p>The email identity type.</p>
@@ -2256,6 +2945,11 @@ impl CreateEmailIdentityOutput {
         self.dkim_attributes.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateEmailIdentityOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
 pub mod create_email_identity_output {
 
@@ -2266,6 +2960,7 @@ pub mod create_email_identity_output {
         pub(crate) identity_type: std::option::Option<crate::model::IdentityType>,
         pub(crate) verified_for_sending_status: std::option::Option<bool>,
         pub(crate) dkim_attributes: std::option::Option<crate::model::DkimAttributes>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The email identity type.</p>
@@ -2304,12 +2999,22 @@ pub mod create_email_identity_output {
             self.dkim_attributes = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateEmailIdentityOutput`](crate::output::CreateEmailIdentityOutput).
         pub fn build(self) -> crate::output::CreateEmailIdentityOutput {
             crate::output::CreateEmailIdentityOutput {
                 identity_type: self.identity_type,
                 verified_for_sending_status: self.verified_for_sending_status.unwrap_or_default(),
                 dkim_attributes: self.dkim_attributes,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2331,6 +3036,7 @@ pub struct CreateDeliverabilityTestReportOutput {
     /// <p>The status of the predictive inbox placement test. If the status is <code>IN_PROGRESS</code>, then the predictive inbox placement test is currently running. Predictive inbox placement tests are usually complete within 24 hours of creating the test. If the status is <code>COMPLETE</code>, then the test is finished, and you can use the <code>GetDeliverabilityTestReport</code> to view the results of the test.</p>
     #[doc(hidden)]
     pub deliverability_test_status: std::option::Option<crate::model::DeliverabilityTestStatus>,
+    _request_id: Option<String>,
 }
 impl CreateDeliverabilityTestReportOutput {
     /// <p>A unique string that identifies the predictive inbox placement test.</p>
@@ -2344,6 +3050,11 @@ impl CreateDeliverabilityTestReportOutput {
         self.deliverability_test_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDeliverabilityTestReportOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
 pub mod create_deliverability_test_report_output {
 
@@ -2354,6 +3065,7 @@ pub mod create_deliverability_test_report_output {
         pub(crate) report_id: std::option::Option<std::string::String>,
         pub(crate) deliverability_test_status:
             std::option::Option<crate::model::DeliverabilityTestStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A unique string that identifies the predictive inbox placement test.</p>
@@ -2382,11 +3094,21 @@ pub mod create_deliverability_test_report_output {
             self.deliverability_test_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDeliverabilityTestReportOutput`](crate::output::CreateDeliverabilityTestReportOutput).
         pub fn build(self) -> crate::output::CreateDeliverabilityTestReportOutput {
             crate::output::CreateDeliverabilityTestReportOutput {
                 report_id: self.report_id,
                 deliverability_test_status: self.deliverability_test_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2401,18 +3123,38 @@ impl CreateDeliverabilityTestReportOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateDedicatedIpPoolOutput {}
+pub struct CreateDedicatedIpPoolOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateDedicatedIpPoolOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
 pub mod create_dedicated_ip_pool_output {
 
     /// A builder for [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDedicatedIpPoolOutput`](crate::output::CreateDedicatedIpPoolOutput).
         pub fn build(self) -> crate::output::CreateDedicatedIpPoolOutput {
-            crate::output::CreateDedicatedIpPoolOutput {}
+            crate::output::CreateDedicatedIpPoolOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2426,18 +3168,38 @@ impl CreateDedicatedIpPoolOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetEventDestinationOutput {}
+pub struct CreateConfigurationSetEventDestinationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateConfigurationSetEventDestinationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
 pub mod create_configuration_set_event_destination_output {
 
     /// A builder for [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateConfigurationSetEventDestinationOutput`](crate::output::CreateConfigurationSetEventDestinationOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetEventDestinationOutput {
-            crate::output::CreateConfigurationSetEventDestinationOutput {}
+            crate::output::CreateConfigurationSetEventDestinationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -2451,18 +3213,38 @@ impl CreateConfigurationSetEventDestinationOutput {
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct CreateConfigurationSetOutput {}
+pub struct CreateConfigurationSetOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for CreateConfigurationSetOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
 pub mod create_configuration_set_output {
 
     /// A builder for [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateConfigurationSetOutput`](crate::output::CreateConfigurationSetOutput).
         pub fn build(self) -> crate::output::CreateConfigurationSetOutput {
-            crate::output::CreateConfigurationSetOutput {}
+            crate::output::CreateConfigurationSetOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }

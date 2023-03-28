@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateLifecyclePolicyOutput {}
+pub struct UpdateLifecyclePolicyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateLifecyclePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput).
 pub mod update_lifecycle_policy_output {
 
     /// A builder for [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateLifecyclePolicyOutput`](crate::output::UpdateLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::UpdateLifecyclePolicyOutput {
-            crate::output::UpdateLifecyclePolicyOutput {}
+            crate::output::UpdateLifecyclePolicyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UpdateLifecyclePolicyOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -52,18 +92,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -82,6 +142,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>Information about the tags.</p>
@@ -90,6 +151,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -102,6 +168,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -129,9 +196,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -149,11 +228,17 @@ pub struct GetLifecyclePolicyOutput {
     /// <p>Detailed information about the lifecycle policy.</p>
     #[doc(hidden)]
     pub policy: std::option::Option<crate::model::LifecyclePolicy>,
+    _request_id: Option<String>,
 }
 impl GetLifecyclePolicyOutput {
     /// <p>Detailed information about the lifecycle policy.</p>
     pub fn policy(&self) -> std::option::Option<&crate::model::LifecyclePolicy> {
         self.policy.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetLifecyclePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
@@ -164,6 +249,7 @@ pub mod get_lifecycle_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy: std::option::Option<crate::model::LifecyclePolicy>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Detailed information about the lifecycle policy.</p>
@@ -179,10 +265,20 @@ pub mod get_lifecycle_policy_output {
             self.policy = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLifecyclePolicyOutput`](crate::output::GetLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::GetLifecyclePolicyOutput {
             crate::output::GetLifecyclePolicyOutput {
                 policy: self.policy,
+                _request_id: self._request_id,
             }
         }
     }
@@ -201,11 +297,17 @@ pub struct GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
     #[doc(hidden)]
     pub policies: std::option::Option<std::vec::Vec<crate::model::LifecyclePolicySummary>>,
+    _request_id: Option<String>,
 }
 impl GetLifecyclePoliciesOutput {
     /// <p>Summary information about the lifecycle policies.</p>
     pub fn policies(&self) -> std::option::Option<&[crate::model::LifecyclePolicySummary]> {
         self.policies.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetLifecyclePoliciesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput).
@@ -217,6 +319,7 @@ pub mod get_lifecycle_policies_output {
     pub struct Builder {
         pub(crate) policies:
             std::option::Option<std::vec::Vec<crate::model::LifecyclePolicySummary>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `policies`.
@@ -238,10 +341,20 @@ pub mod get_lifecycle_policies_output {
             self.policies = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetLifecyclePoliciesOutput`](crate::output::GetLifecyclePoliciesOutput).
         pub fn build(self) -> crate::output::GetLifecyclePoliciesOutput {
             crate::output::GetLifecyclePoliciesOutput {
                 policies: self.policies,
+                _request_id: self._request_id,
             }
         }
     }
@@ -256,18 +369,38 @@ impl GetLifecyclePoliciesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteLifecyclePolicyOutput {}
+pub struct DeleteLifecyclePolicyOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteLifecyclePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
 pub mod delete_lifecycle_policy_output {
 
     /// A builder for [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteLifecyclePolicyOutput`](crate::output::DeleteLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::DeleteLifecyclePolicyOutput {
-            crate::output::DeleteLifecyclePolicyOutput {}
+            crate::output::DeleteLifecyclePolicyOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -285,11 +418,17 @@ pub struct CreateLifecyclePolicyOutput {
     /// <p>The identifier of the lifecycle policy.</p>
     #[doc(hidden)]
     pub policy_id: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateLifecyclePolicyOutput {
     /// <p>The identifier of the lifecycle policy.</p>
     pub fn policy_id(&self) -> std::option::Option<&str> {
         self.policy_id.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateLifecyclePolicyOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput).
@@ -300,6 +439,7 @@ pub mod create_lifecycle_policy_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) policy_id: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The identifier of the lifecycle policy.</p>
@@ -312,10 +452,20 @@ pub mod create_lifecycle_policy_output {
             self.policy_id = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateLifecyclePolicyOutput`](crate::output::CreateLifecyclePolicyOutput).
         pub fn build(self) -> crate::output::CreateLifecyclePolicyOutput {
             crate::output::CreateLifecyclePolicyOutput {
                 policy_id: self.policy_id,
+                _request_id: self._request_id,
             }
         }
     }

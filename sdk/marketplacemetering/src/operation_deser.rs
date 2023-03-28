@@ -3,8 +3,11 @@
 pub fn parse_batch_meter_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::BatchMeterUsageOutput, crate::error::BatchMeterUsageError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::BatchMeterUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::BatchMeterUsageError::unhandled(generic)),
@@ -12,26 +15,25 @@ pub fn parse_batch_meter_usage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledApiException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::DisabledApiException({
+        "DisabledApiException" => {
+            crate::error::BatchMeterUsageError::DisabledApiException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_api_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::BatchMeterUsageError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -39,17 +41,17 @@ pub fn parse_batch_meter_usage_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidCustomerIdentifierException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::InvalidCustomerIdentifierException({
+            })
+        }
+        "InvalidCustomerIdentifierException" => {
+            crate::error::BatchMeterUsageError::InvalidCustomerIdentifierException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -57,17 +59,17 @@ pub fn parse_batch_meter_usage_error(
                         crate::error::invalid_customer_identifier_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_customer_identifier_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidProductCodeException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::InvalidProductCodeException({
+            })
+        }
+        "InvalidProductCodeException" => {
+            crate::error::BatchMeterUsageError::InvalidProductCodeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -75,34 +77,34 @@ pub fn parse_batch_meter_usage_error(
                         crate::error::invalid_product_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidTagException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::InvalidTagException({
+            })
+        }
+        "InvalidTagException" => {
+            crate::error::BatchMeterUsageError::InvalidTagException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_tag_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidUsageAllocationsException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::InvalidUsageAllocationsException({
+            })
+        }
+        "InvalidUsageAllocationsException" => {
+            crate::error::BatchMeterUsageError::InvalidUsageAllocationsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -110,17 +112,17 @@ pub fn parse_batch_meter_usage_error(
                         crate::error::invalid_usage_allocations_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_usage_allocations_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidUsageDimensionException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::InvalidUsageDimensionException({
+            })
+        }
+        "InvalidUsageDimensionException" => {
+            crate::error::BatchMeterUsageError::InvalidUsageDimensionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -128,34 +130,34 @@ pub fn parse_batch_meter_usage_error(
                         crate::error::invalid_usage_dimension_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_usage_dimension_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottlingException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::ThrottlingException({
+            })
+        }
+        "ThrottlingException" => {
+            crate::error::BatchMeterUsageError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TimestampOutOfBoundsException" => crate::error::BatchMeterUsageError {
-            meta: generic,
-            kind: crate::error::BatchMeterUsageErrorKind::TimestampOutOfBoundsException({
+            })
+        }
+        "TimestampOutOfBoundsException" => {
+            crate::error::BatchMeterUsageError::TimestampOutOfBoundsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -163,14 +165,15 @@ pub fn parse_batch_meter_usage_error(
                         crate::error::timestamp_out_of_bounds_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_timestamp_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::BatchMeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::BatchMeterUsageError::generic(generic),
     })
 }
@@ -188,6 +191,9 @@ pub fn parse_batch_meter_usage_response(
             output,
         )
         .map_err(crate::error::BatchMeterUsageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -196,8 +202,11 @@ pub fn parse_batch_meter_usage_response(
 pub fn parse_meter_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::MeterUsageOutput, crate::error::MeterUsageError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::MeterUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::MeterUsageError::unhandled(generic)),
@@ -205,9 +214,8 @@ pub fn parse_meter_usage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomerNotEntitledException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::CustomerNotEntitledException({
+        "CustomerNotEntitledException" => {
+            crate::error::MeterUsageError::CustomerNotEntitledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -215,34 +223,32 @@ pub fn parse_meter_usage_error(
                         crate::error::customer_not_entitled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_customer_not_entitled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DuplicateRequestException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::DuplicateRequestException({
+            })
+        }
+        "DuplicateRequestException" => crate::error::MeterUsageError::DuplicateRequestException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::duplicate_request_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_duplicate_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::InternalServiceErrorException({
+                let mut output = crate::error::duplicate_request_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_duplicate_request_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceErrorException" => {
+            crate::error::MeterUsageError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -250,17 +256,17 @@ pub fn parse_meter_usage_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidEndpointRegionException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::InvalidEndpointRegionException({
+            })
+        }
+        "InvalidEndpointRegionException" => {
+            crate::error::MeterUsageError::InvalidEndpointRegionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -268,17 +274,17 @@ pub fn parse_meter_usage_error(
                         crate::error::invalid_endpoint_region_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_endpoint_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidProductCodeException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::InvalidProductCodeException({
+            })
+        }
+        "InvalidProductCodeException" => {
+            crate::error::MeterUsageError::InvalidProductCodeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -286,34 +292,34 @@ pub fn parse_meter_usage_error(
                         crate::error::invalid_product_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidTagException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::InvalidTagException({
+            })
+        }
+        "InvalidTagException" => {
+            crate::error::MeterUsageError::InvalidTagException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_tag_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_tag_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidUsageAllocationsException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::InvalidUsageAllocationsException({
+            })
+        }
+        "InvalidUsageAllocationsException" => {
+            crate::error::MeterUsageError::InvalidUsageAllocationsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -321,17 +327,17 @@ pub fn parse_meter_usage_error(
                         crate::error::invalid_usage_allocations_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_usage_allocations_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidUsageDimensionException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::InvalidUsageDimensionException({
+            })
+        }
+        "InvalidUsageDimensionException" => {
+            crate::error::MeterUsageError::InvalidUsageDimensionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -339,34 +345,34 @@ pub fn parse_meter_usage_error(
                         crate::error::invalid_usage_dimension_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_usage_dimension_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottlingException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::ThrottlingException({
+            })
+        }
+        "ThrottlingException" => {
+            crate::error::MeterUsageError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TimestampOutOfBoundsException" => crate::error::MeterUsageError {
-            meta: generic,
-            kind: crate::error::MeterUsageErrorKind::TimestampOutOfBoundsException({
+            })
+        }
+        "TimestampOutOfBoundsException" => {
+            crate::error::MeterUsageError::TimestampOutOfBoundsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -374,14 +380,15 @@ pub fn parse_meter_usage_error(
                         crate::error::timestamp_out_of_bounds_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_timestamp_out_of_bounds_exception_json_err(response.body().as_ref(), output).map_err(crate::error::MeterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::MeterUsageError::generic(generic),
     })
 }
@@ -399,6 +406,9 @@ pub fn parse_meter_usage_response(
             output,
         )
         .map_err(crate::error::MeterUsageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -407,8 +417,11 @@ pub fn parse_meter_usage_response(
 pub fn parse_register_usage_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RegisterUsageOutput, crate::error::RegisterUsageError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RegisterUsageError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RegisterUsageError::unhandled(generic)),
@@ -416,9 +429,8 @@ pub fn parse_register_usage_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomerNotEntitledException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::CustomerNotEntitledException({
+        "CustomerNotEntitledException" => {
+            crate::error::RegisterUsageError::CustomerNotEntitledException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -426,34 +438,34 @@ pub fn parse_register_usage_error(
                         crate::error::customer_not_entitled_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_customer_not_entitled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledApiException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::DisabledApiException({
+            })
+        }
+        "DisabledApiException" => {
+            crate::error::RegisterUsageError::DisabledApiException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_api_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::InternalServiceErrorException({
+            })
+        }
+        "InternalServiceErrorException" => {
+            crate::error::RegisterUsageError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -461,17 +473,17 @@ pub fn parse_register_usage_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidProductCodeException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::InvalidProductCodeException({
+            })
+        }
+        "InvalidProductCodeException" => {
+            crate::error::RegisterUsageError::InvalidProductCodeException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -479,17 +491,17 @@ pub fn parse_register_usage_error(
                         crate::error::invalid_product_code_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_product_code_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidPublicKeyVersionException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::InvalidPublicKeyVersionException({
+            })
+        }
+        "InvalidPublicKeyVersionException" => {
+            crate::error::RegisterUsageError::InvalidPublicKeyVersionException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -497,34 +509,32 @@ pub fn parse_register_usage_error(
                         crate::error::invalid_public_key_version_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_public_key_version_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidRegionException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::InvalidRegionException({
+            })
+        }
+        "InvalidRegionException" => crate::error::RegisterUsageError::InvalidRegionException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_region_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "PlatformNotSupportedException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::PlatformNotSupportedException({
+                let mut output = crate::error::invalid_region_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_region_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "PlatformNotSupportedException" => {
+            crate::error::RegisterUsageError::PlatformNotSupportedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -532,31 +542,32 @@ pub fn parse_register_usage_error(
                         crate::error::platform_not_supported_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_platform_not_supported_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ThrottlingException" => crate::error::RegisterUsageError {
-            meta: generic,
-            kind: crate::error::RegisterUsageErrorKind::ThrottlingException({
+            })
+        }
+        "ThrottlingException" => {
+            crate::error::RegisterUsageError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RegisterUsageError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RegisterUsageError::generic(generic),
     })
 }
@@ -574,6 +585,9 @@ pub fn parse_register_usage_response(
             output,
         )
         .map_err(crate::error::RegisterUsageError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -582,8 +596,11 @@ pub fn parse_register_usage_response(
 pub fn parse_resolve_customer_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ResolveCustomerOutput, crate::error::ResolveCustomerError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ResolveCustomerError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ResolveCustomerError::unhandled(generic)),
@@ -591,43 +608,40 @@ pub fn parse_resolve_customer_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledApiException" => crate::error::ResolveCustomerError {
-            meta: generic,
-            kind: crate::error::ResolveCustomerErrorKind::DisabledApiException({
+        "DisabledApiException" => {
+            crate::error::ResolveCustomerError::DisabledApiException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_api_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_disabled_api_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ExpiredTokenException" => crate::error::ResolveCustomerError {
-            meta: generic,
-            kind: crate::error::ResolveCustomerErrorKind::ExpiredTokenException({
+            })
+        }
+        "ExpiredTokenException" => crate::error::ResolveCustomerError::ExpiredTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::expired_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_expired_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InternalServiceErrorException" => crate::error::ResolveCustomerError {
-            meta: generic,
-            kind: crate::error::ResolveCustomerErrorKind::InternalServiceErrorException({
+                let mut output = crate::error::expired_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_expired_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InternalServiceErrorException" => {
+            crate::error::ResolveCustomerError::InternalServiceErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -635,48 +649,47 @@ pub fn parse_resolve_customer_error(
                         crate::error::internal_service_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_service_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidTokenException" => crate::error::ResolveCustomerError {
-            meta: generic,
-            kind: crate::error::ResolveCustomerErrorKind::InvalidTokenException({
+            })
+        }
+        "InvalidTokenException" => crate::error::ResolveCustomerError::InvalidTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "ThrottlingException" => crate::error::ResolveCustomerError {
-            meta: generic,
-            kind: crate::error::ResolveCustomerErrorKind::ThrottlingException({
+                let mut output = crate::error::invalid_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "ThrottlingException" => {
+            crate::error::ResolveCustomerError::ThrottlingException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::throttling_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_throttling_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ResolveCustomerError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ResolveCustomerError::generic(generic),
     })
 }
@@ -694,6 +707,9 @@ pub fn parse_resolve_customer_response(
             output,
         )
         .map_err(crate::error::ResolveCustomerError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

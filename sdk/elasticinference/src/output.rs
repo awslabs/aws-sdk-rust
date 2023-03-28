@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -57,6 +97,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p> The tags of the Elastic Inference Accelerator. </p>
@@ -65,6 +106,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -77,6 +123,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -104,9 +151,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -124,11 +183,17 @@ pub struct DescribeAcceleratorTypesOutput {
     /// <p> The available accelerator types. </p>
     #[doc(hidden)]
     pub accelerator_types: std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
+    _request_id: Option<String>,
 }
 impl DescribeAcceleratorTypesOutput {
     /// <p> The available accelerator types. </p>
     pub fn accelerator_types(&self) -> std::option::Option<&[crate::model::AcceleratorType]> {
         self.accelerator_types.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAcceleratorTypesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput).
@@ -140,6 +205,7 @@ pub mod describe_accelerator_types_output {
     pub struct Builder {
         pub(crate) accelerator_types:
             std::option::Option<std::vec::Vec<crate::model::AcceleratorType>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `accelerator_types`.
@@ -161,10 +227,20 @@ pub mod describe_accelerator_types_output {
             self.accelerator_types = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAcceleratorTypesOutput`](crate::output::DescribeAcceleratorTypesOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorTypesOutput {
             crate::output::DescribeAcceleratorTypesOutput {
                 accelerator_types: self.accelerator_types,
+                _request_id: self._request_id,
             }
         }
     }
@@ -187,6 +263,7 @@ pub struct DescribeAcceleratorsOutput {
     /// <p> A token to specify where to start paginating. This is the NextToken from a previously truncated response. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeAcceleratorsOutput {
     /// <p> The details of the Elastic Inference Accelerators. </p>
@@ -200,6 +277,11 @@ impl DescribeAcceleratorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeAcceleratorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput).
 pub mod describe_accelerators_output {
 
@@ -210,6 +292,7 @@ pub mod describe_accelerators_output {
         pub(crate) accelerator_set:
             std::option::Option<std::vec::Vec<crate::model::ElasticInferenceAccelerator>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `accelerator_set`.
@@ -241,11 +324,21 @@ pub mod describe_accelerators_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAcceleratorsOutput`](crate::output::DescribeAcceleratorsOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorsOutput {
             crate::output::DescribeAcceleratorsOutput {
                 accelerator_set: self.accelerator_set,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -265,6 +358,7 @@ pub struct DescribeAcceleratorOfferingsOutput {
     #[doc(hidden)]
     pub accelerator_type_offerings:
         std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,
+    _request_id: Option<String>,
 }
 impl DescribeAcceleratorOfferingsOutput {
     /// <p> The list of accelerator type offerings for a specific location. </p>
@@ -272,6 +366,11 @@ impl DescribeAcceleratorOfferingsOutput {
         &self,
     ) -> std::option::Option<&[crate::model::AcceleratorTypeOffering]> {
         self.accelerator_type_offerings.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeAcceleratorOfferingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput).
@@ -283,6 +382,7 @@ pub mod describe_accelerator_offerings_output {
     pub struct Builder {
         pub(crate) accelerator_type_offerings:
             std::option::Option<std::vec::Vec<crate::model::AcceleratorTypeOffering>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `accelerator_type_offerings`.
@@ -307,10 +407,20 @@ pub mod describe_accelerator_offerings_output {
             self.accelerator_type_offerings = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeAcceleratorOfferingsOutput`](crate::output::DescribeAcceleratorOfferingsOutput).
         pub fn build(self) -> crate::output::DescribeAcceleratorOfferingsOutput {
             crate::output::DescribeAcceleratorOfferingsOutput {
                 accelerator_type_offerings: self.accelerator_type_offerings,
+                _request_id: self._request_id,
             }
         }
     }

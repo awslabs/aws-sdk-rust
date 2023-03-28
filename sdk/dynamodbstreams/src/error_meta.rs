@@ -22,15 +22,8 @@ pub enum Error {
     /// <li> <p>You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code> request, a stream record in the shard exceeds the 24 hour period and is trimmed. This causes the iterator to access a record that no longer exists.</p> </li>
     /// </ul>
     TrimmedDataAccessException(crate::error::TrimmedDataAccessException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -53,22 +46,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeStreamError> for Error {
     fn from(err: crate::error::DescribeStreamError) -> Self {
-        match err.kind {
-            crate::error::DescribeStreamErrorKind::InternalServerError(inner) => {
+        match err {
+            crate::error::DescribeStreamError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::DescribeStreamErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::DescribeStreamError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::DescribeStreamErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeStreamError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -81,31 +79,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetRecordsError> for Error {
     fn from(err: crate::error::GetRecordsError) -> Self {
-        match err.kind {
-            crate::error::GetRecordsErrorKind::ExpiredIteratorException(inner) => {
+        match err {
+            crate::error::GetRecordsError::ExpiredIteratorException(inner) => {
                 Error::ExpiredIteratorException(inner)
             }
-            crate::error::GetRecordsErrorKind::InternalServerError(inner) => {
+            crate::error::GetRecordsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::GetRecordsErrorKind::LimitExceededException(inner) => {
+            crate::error::GetRecordsError::LimitExceededException(inner) => {
                 Error::LimitExceededException(inner)
             }
-            crate::error::GetRecordsErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetRecordsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetRecordsErrorKind::TrimmedDataAccessException(inner) => {
+            crate::error::GetRecordsError::TrimmedDataAccessException(inner) => {
                 Error::TrimmedDataAccessException(inner)
             }
-            crate::error::GetRecordsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetRecordsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -120,25 +123,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetShardIteratorError> for Error {
     fn from(err: crate::error::GetShardIteratorError) -> Self {
-        match err.kind {
-            crate::error::GetShardIteratorErrorKind::InternalServerError(inner) => {
+        match err {
+            crate::error::GetShardIteratorError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::GetShardIteratorErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::GetShardIteratorError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::GetShardIteratorErrorKind::TrimmedDataAccessException(inner) => {
+            crate::error::GetShardIteratorError::TrimmedDataAccessException(inner) => {
                 Error::TrimmedDataAccessException(inner)
             }
-            crate::error::GetShardIteratorErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetShardIteratorError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -151,23 +159,40 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListStreamsError> for Error {
     fn from(err: crate::error::ListStreamsError) -> Self {
-        match err.kind {
-            crate::error::ListStreamsErrorKind::InternalServerError(inner) => {
+        match err {
+            crate::error::ListStreamsError::InternalServerError(inner) => {
                 Error::InternalServerError(inner)
             }
-            crate::error::ListStreamsErrorKind::ResourceNotFoundException(inner) => {
+            crate::error::ListStreamsError::ResourceNotFoundException(inner) => {
                 Error::ResourceNotFoundException(inner)
             }
-            crate::error::ListStreamsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListStreamsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::ExpiredIteratorException(e) => e.request_id(),
+            Self::InternalServerError(e) => e.request_id(),
+            Self::LimitExceededException(e) => e.request_id(),
+            Self::ResourceNotFoundException(e) => e.request_id(),
+            Self::TrimmedDataAccessException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

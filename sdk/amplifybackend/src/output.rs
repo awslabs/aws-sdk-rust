@@ -15,6 +15,7 @@ pub struct UpdateBackendStorageOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateBackendStorageOutput {
     /// <p>The app ID.</p>
@@ -34,6 +35,11 @@ impl UpdateBackendStorageOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBackendStorageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
 pub mod update_backend_storage_output {
 
@@ -45,6 +51,7 @@ pub mod update_backend_storage_output {
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -90,6 +97,15 @@ pub mod update_backend_storage_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBackendStorageOutput`](crate::output::UpdateBackendStorageOutput).
         pub fn build(self) -> crate::output::UpdateBackendStorageOutput {
             crate::output::UpdateBackendStorageOutput {
@@ -97,6 +113,7 @@ pub mod update_backend_storage_output {
                 backend_environment_name: self.backend_environment_name,
                 job_id: self.job_id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -136,6 +153,7 @@ pub struct UpdateBackendJobOutput {
     /// <p>The time when the job was last updated.</p>
     #[doc(hidden)]
     pub update_time: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateBackendJobOutput {
     /// <p>The app ID.</p>
@@ -171,6 +189,11 @@ impl UpdateBackendJobOutput {
         self.update_time.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBackendJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
 pub mod update_backend_job_output {
 
@@ -186,6 +209,7 @@ pub mod update_backend_job_output {
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -271,6 +295,15 @@ pub mod update_backend_job_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBackendJobOutput`](crate::output::UpdateBackendJobOutput).
         pub fn build(self) -> crate::output::UpdateBackendJobOutput {
             crate::output::UpdateBackendJobOutput {
@@ -282,6 +315,7 @@ pub mod update_backend_job_output {
                 operation: self.operation,
                 status: self.status,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -309,6 +343,7 @@ pub struct UpdateBackendConfigOutput {
     /// <p>Describes the Amazon Cognito configurations for the Admin UI auth resource to log in with.</p>
     #[doc(hidden)]
     pub login_auth_config: std::option::Option<crate::model::LoginAuthConfigReqObj>,
+    _request_id: Option<String>,
 }
 impl UpdateBackendConfigOutput {
     /// <p>The app ID.</p>
@@ -328,6 +363,11 @@ impl UpdateBackendConfigOutput {
         self.login_auth_config.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBackendConfigOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
 pub mod update_backend_config_output {
 
@@ -339,6 +379,7 @@ pub mod update_backend_config_output {
         pub(crate) backend_manager_app_id: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) login_auth_config: std::option::Option<crate::model::LoginAuthConfigReqObj>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -387,6 +428,15 @@ pub mod update_backend_config_output {
             self.login_auth_config = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBackendConfigOutput`](crate::output::UpdateBackendConfigOutput).
         pub fn build(self) -> crate::output::UpdateBackendConfigOutput {
             crate::output::UpdateBackendConfigOutput {
@@ -394,6 +444,7 @@ pub mod update_backend_config_output {
                 backend_manager_app_id: self.backend_manager_app_id,
                 error: self.error,
                 login_auth_config: self.login_auth_config,
+                _request_id: self._request_id,
             }
         }
     }
@@ -427,6 +478,7 @@ pub struct UpdateBackendAuthOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateBackendAuthOutput {
     /// <p>The app ID.</p>
@@ -454,6 +506,11 @@ impl UpdateBackendAuthOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBackendAuthOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
 pub mod update_backend_auth_output {
 
@@ -467,6 +524,7 @@ pub mod update_backend_auth_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -532,6 +590,15 @@ pub mod update_backend_auth_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBackendAuthOutput`](crate::output::UpdateBackendAuthOutput).
         pub fn build(self) -> crate::output::UpdateBackendAuthOutput {
             crate::output::UpdateBackendAuthOutput {
@@ -541,6 +608,7 @@ pub mod update_backend_auth_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -574,6 +642,7 @@ pub struct UpdateBackendApiOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateBackendApiOutput {
     /// <p>The app ID.</p>
@@ -601,6 +670,11 @@ impl UpdateBackendApiOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for UpdateBackendApiOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
 pub mod update_backend_api_output {
 
@@ -614,6 +688,7 @@ pub mod update_backend_api_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -679,6 +754,15 @@ pub mod update_backend_api_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBackendApiOutput`](crate::output::UpdateBackendApiOutput).
         pub fn build(self) -> crate::output::UpdateBackendApiOutput {
             crate::output::UpdateBackendApiOutput {
@@ -688,6 +772,7 @@ pub mod update_backend_api_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -706,11 +791,17 @@ pub struct RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveBackendConfigOutput {
     /// <p>If the request fails, this error is returned.</p>
     pub fn error(&self) -> std::option::Option<&str> {
         self.error.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for RemoveBackendConfigOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
@@ -721,6 +812,7 @@ pub mod remove_backend_config_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) error: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>If the request fails, this error is returned.</p>
@@ -733,9 +825,21 @@ pub mod remove_backend_config_output {
             self.error = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveBackendConfigOutput`](crate::output::RemoveBackendConfigOutput).
         pub fn build(self) -> crate::output::RemoveBackendConfigOutput {
-            crate::output::RemoveBackendConfigOutput { error: self.error }
+            crate::output::RemoveBackendConfigOutput {
+                error: self.error,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -765,6 +869,7 @@ pub struct RemoveAllBackendsOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl RemoveAllBackendsOutput {
     /// <p>The app ID.</p>
@@ -788,6 +893,11 @@ impl RemoveAllBackendsOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for RemoveAllBackendsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
 pub mod remove_all_backends_output {
 
@@ -800,6 +910,7 @@ pub mod remove_all_backends_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -852,6 +963,15 @@ pub mod remove_all_backends_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`RemoveAllBackendsOutput`](crate::output::RemoveAllBackendsOutput).
         pub fn build(self) -> crate::output::RemoveAllBackendsOutput {
             crate::output::RemoveAllBackendsOutput {
@@ -860,6 +980,7 @@ pub mod remove_all_backends_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -881,6 +1002,7 @@ pub struct ListS3BucketsOutput {
     /// <p>Reserved for future use.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListS3BucketsOutput {
     /// <p>The list of S3 buckets.</p>
@@ -892,6 +1014,11 @@ impl ListS3BucketsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListS3BucketsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
 pub mod list_s3_buckets_output {
 
@@ -901,6 +1028,7 @@ pub mod list_s3_buckets_output {
     pub struct Builder {
         pub(crate) buckets: std::option::Option<std::vec::Vec<crate::model::S3BucketInfo>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `buckets`.
@@ -932,11 +1060,21 @@ pub mod list_s3_buckets_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListS3BucketsOutput`](crate::output::ListS3BucketsOutput).
         pub fn build(self) -> crate::output::ListS3BucketsOutput {
             crate::output::ListS3BucketsOutput {
                 buckets: self.buckets,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -958,6 +1096,7 @@ pub struct ListBackendJobsOutput {
     /// <p>The token for the next set of results.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBackendJobsOutput {
     /// <p>An array of jobs and their properties.</p>
@@ -969,6 +1108,11 @@ impl ListBackendJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBackendJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
 pub mod list_backend_jobs_output {
 
@@ -978,6 +1122,7 @@ pub mod list_backend_jobs_output {
     pub struct Builder {
         pub(crate) jobs: std::option::Option<std::vec::Vec<crate::model::BackendJobRespObj>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `jobs`.
@@ -1009,11 +1154,21 @@ pub mod list_backend_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBackendJobsOutput`](crate::output::ListBackendJobsOutput).
         pub fn build(self) -> crate::output::ListBackendJobsOutput {
             crate::output::ListBackendJobsOutput {
                 jobs: self.jobs,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1041,6 +1196,7 @@ pub struct ImportBackendStorageOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportBackendStorageOutput {
     /// <p>The app ID.</p>
@@ -1060,6 +1216,11 @@ impl ImportBackendStorageOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportBackendStorageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
 pub mod import_backend_storage_output {
 
@@ -1071,6 +1232,7 @@ pub mod import_backend_storage_output {
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -1116,6 +1278,15 @@ pub mod import_backend_storage_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportBackendStorageOutput`](crate::output::ImportBackendStorageOutput).
         pub fn build(self) -> crate::output::ImportBackendStorageOutput {
             crate::output::ImportBackendStorageOutput {
@@ -1123,6 +1294,7 @@ pub mod import_backend_storage_output {
                 backend_environment_name: self.backend_environment_name,
                 job_id: self.job_id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1156,6 +1328,7 @@ pub struct ImportBackendAuthOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportBackendAuthOutput {
     /// <p>The app ID.</p>
@@ -1183,6 +1356,11 @@ impl ImportBackendAuthOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ImportBackendAuthOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
 pub mod import_backend_auth_output {
 
@@ -1196,6 +1374,7 @@ pub mod import_backend_auth_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -1261,6 +1440,15 @@ pub mod import_backend_auth_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportBackendAuthOutput`](crate::output::ImportBackendAuthOutput).
         pub fn build(self) -> crate::output::ImportBackendAuthOutput {
             crate::output::ImportBackendAuthOutput {
@@ -1270,6 +1458,7 @@ pub mod import_backend_auth_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1297,6 +1486,7 @@ pub struct GetTokenOutput {
     /// <p>The expiry time for the one-time generated token code.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetTokenOutput {
     /// <p>The app ID.</p>
@@ -1316,6 +1506,11 @@ impl GetTokenOutput {
         self.ttl.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetTokenOutput`](crate::output::GetTokenOutput).
 pub mod get_token_output {
 
@@ -1327,6 +1522,7 @@ pub mod get_token_output {
         pub(crate) challenge_code: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) ttl: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -1372,6 +1568,15 @@ pub mod get_token_output {
             self.ttl = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetTokenOutput`](crate::output::GetTokenOutput).
         pub fn build(self) -> crate::output::GetTokenOutput {
             crate::output::GetTokenOutput {
@@ -1379,6 +1584,7 @@ pub mod get_token_output {
                 challenge_code: self.challenge_code,
                 session_id: self.session_id,
                 ttl: self.ttl,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1406,6 +1612,7 @@ pub struct GetBackendStorageOutput {
     /// <p>The name of the storage resource.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBackendStorageOutput {
     /// <p>The app ID.</p>
@@ -1427,6 +1634,11 @@ impl GetBackendStorageOutput {
         self.resource_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBackendStorageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
 pub mod get_backend_storage_output {
 
@@ -1439,6 +1651,7 @@ pub mod get_backend_storage_output {
         pub(crate) resource_config:
             std::option::Option<crate::model::GetBackendStorageResourceConfig>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -1493,6 +1706,15 @@ pub mod get_backend_storage_output {
             self.resource_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendStorageOutput`](crate::output::GetBackendStorageOutput).
         pub fn build(self) -> crate::output::GetBackendStorageOutput {
             crate::output::GetBackendStorageOutput {
@@ -1500,6 +1722,7 @@ pub mod get_backend_storage_output {
                 backend_environment_name: self.backend_environment_name,
                 resource_config: self.resource_config,
                 resource_name: self.resource_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1539,6 +1762,7 @@ pub struct GetBackendJobOutput {
     /// <p>The time when the job was last updated.</p>
     #[doc(hidden)]
     pub update_time: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBackendJobOutput {
     /// <p>The app ID.</p>
@@ -1574,6 +1798,11 @@ impl GetBackendJobOutput {
         self.update_time.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBackendJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
 pub mod get_backend_job_output {
 
@@ -1589,6 +1818,7 @@ pub mod get_backend_job_output {
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
         pub(crate) update_time: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -1674,6 +1904,15 @@ pub mod get_backend_job_output {
             self.update_time = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendJobOutput`](crate::output::GetBackendJobOutput).
         pub fn build(self) -> crate::output::GetBackendJobOutput {
             crate::output::GetBackendJobOutput {
@@ -1685,6 +1924,7 @@ pub mod get_backend_job_output {
                 operation: self.operation,
                 status: self.status,
                 update_time: self.update_time,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1715,6 +1955,7 @@ pub struct GetBackendAuthOutput {
     /// <p>The name of this resource.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBackendAuthOutput {
     /// <p>The app ID.</p>
@@ -1740,6 +1981,11 @@ impl GetBackendAuthOutput {
         self.resource_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBackendAuthOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
 pub mod get_backend_auth_output {
 
@@ -1753,6 +1999,7 @@ pub mod get_backend_auth_output {
         pub(crate) resource_config:
             std::option::Option<crate::model::CreateBackendAuthResourceConfig>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -1817,6 +2064,15 @@ pub mod get_backend_auth_output {
             self.resource_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendAuthOutput`](crate::output::GetBackendAuthOutput).
         pub fn build(self) -> crate::output::GetBackendAuthOutput {
             crate::output::GetBackendAuthOutput {
@@ -1825,6 +2081,7 @@ pub mod get_backend_auth_output {
                 error: self.error,
                 resource_config: self.resource_config,
                 resource_name: self.resource_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1849,6 +2106,7 @@ pub struct GetBackendApiModelsOutput {
     /// <p>Stringified JSON of the model introspection schema for an existing backend API resource.</p>
     #[doc(hidden)]
     pub model_introspection_schema: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBackendApiModelsOutput {
     /// <p>Stringified JSON of the datastore model.</p>
@@ -1864,6 +2122,11 @@ impl GetBackendApiModelsOutput {
         self.model_introspection_schema.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBackendApiModelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
 pub mod get_backend_api_models_output {
 
@@ -1874,6 +2137,7 @@ pub mod get_backend_api_models_output {
         pub(crate) models: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<crate::model::Status>,
         pub(crate) model_introspection_schema: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Stringified JSON of the datastore model.</p>
@@ -1909,12 +2173,22 @@ pub mod get_backend_api_models_output {
             self.model_introspection_schema = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendApiModelsOutput`](crate::output::GetBackendApiModelsOutput).
         pub fn build(self) -> crate::output::GetBackendApiModelsOutput {
             crate::output::GetBackendApiModelsOutput {
                 models: self.models,
                 status: self.status,
                 model_introspection_schema: self.model_introspection_schema,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1945,6 +2219,7 @@ pub struct GetBackendApiOutput {
     /// <p>The name of this resource.</p>
     #[doc(hidden)]
     pub resource_name: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBackendApiOutput {
     /// <p>The app ID.</p>
@@ -1968,6 +2243,11 @@ impl GetBackendApiOutput {
         self.resource_name.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBackendApiOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
 pub mod get_backend_api_output {
 
@@ -1980,6 +2260,7 @@ pub mod get_backend_api_output {
         pub(crate) error: std::option::Option<std::string::String>,
         pub(crate) resource_config: std::option::Option<crate::model::BackendApiResourceConfig>,
         pub(crate) resource_name: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -2041,6 +2322,15 @@ pub mod get_backend_api_output {
             self.resource_name = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendApiOutput`](crate::output::GetBackendApiOutput).
         pub fn build(self) -> crate::output::GetBackendApiOutput {
             crate::output::GetBackendApiOutput {
@@ -2049,6 +2339,7 @@ pub mod get_backend_api_output {
                 error: self.error,
                 resource_config: self.resource_config,
                 resource_name: self.resource_name,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2085,6 +2376,7 @@ pub struct GetBackendOutput {
     /// <p>If the request failed, this is the returned error.</p>
     #[doc(hidden)]
     pub error: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetBackendOutput {
     /// <p>A stringified version of the cli.json file for your Amplify project.</p>
@@ -2116,6 +2408,11 @@ impl GetBackendOutput {
         self.error.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBackendOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBackendOutput`](crate::output::GetBackendOutput).
 pub mod get_backend_output {
 
@@ -2131,6 +2428,7 @@ pub mod get_backend_output {
             std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) error: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A stringified version of the cli.json file for your Amplify project.</p>
@@ -2221,6 +2519,15 @@ pub mod get_backend_output {
             self.error = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendOutput`](crate::output::GetBackendOutput).
         pub fn build(self) -> crate::output::GetBackendOutput {
             crate::output::GetBackendOutput {
@@ -2231,6 +2538,7 @@ pub mod get_backend_output {
                 backend_environment_list: self.backend_environment_list,
                 backend_environment_name: self.backend_environment_name,
                 error: self.error,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2264,6 +2572,7 @@ pub struct GenerateBackendApiModelsOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GenerateBackendApiModelsOutput {
     /// <p>The app ID.</p>
@@ -2291,6 +2600,11 @@ impl GenerateBackendApiModelsOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GenerateBackendApiModelsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
 pub mod generate_backend_api_models_output {
 
@@ -2304,6 +2618,7 @@ pub mod generate_backend_api_models_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -2369,6 +2684,15 @@ pub mod generate_backend_api_models_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GenerateBackendApiModelsOutput`](crate::output::GenerateBackendApiModelsOutput).
         pub fn build(self) -> crate::output::GenerateBackendApiModelsOutput {
             crate::output::GenerateBackendApiModelsOutput {
@@ -2378,6 +2702,7 @@ pub mod generate_backend_api_models_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2396,11 +2721,17 @@ pub struct DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
     #[doc(hidden)]
     pub is_success: bool,
+    _request_id: Option<String>,
 }
 impl DeleteTokenOutput {
     /// <p>Indicates whether the request succeeded or failed.</p>
     pub fn is_success(&self) -> bool {
         self.is_success
+    }
+}
+impl aws_http::request_id::RequestId for DeleteTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
@@ -2411,6 +2742,7 @@ pub mod delete_token_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) is_success: std::option::Option<bool>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Indicates whether the request succeeded or failed.</p>
@@ -2423,10 +2755,20 @@ pub mod delete_token_output {
             self.is_success = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteTokenOutput`](crate::output::DeleteTokenOutput).
         pub fn build(self) -> crate::output::DeleteTokenOutput {
             crate::output::DeleteTokenOutput {
                 is_success: self.is_success.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -2454,6 +2796,7 @@ pub struct DeleteBackendStorageOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteBackendStorageOutput {
     /// <p>The app ID.</p>
@@ -2473,6 +2816,11 @@ impl DeleteBackendStorageOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBackendStorageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
 pub mod delete_backend_storage_output {
 
@@ -2484,6 +2832,7 @@ pub mod delete_backend_storage_output {
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -2529,6 +2878,15 @@ pub mod delete_backend_storage_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBackendStorageOutput`](crate::output::DeleteBackendStorageOutput).
         pub fn build(self) -> crate::output::DeleteBackendStorageOutput {
             crate::output::DeleteBackendStorageOutput {
@@ -2536,6 +2894,7 @@ pub mod delete_backend_storage_output {
                 backend_environment_name: self.backend_environment_name,
                 job_id: self.job_id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2569,6 +2928,7 @@ pub struct DeleteBackendAuthOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteBackendAuthOutput {
     /// <p>The app ID.</p>
@@ -2596,6 +2956,11 @@ impl DeleteBackendAuthOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBackendAuthOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
 pub mod delete_backend_auth_output {
 
@@ -2609,6 +2974,7 @@ pub mod delete_backend_auth_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -2674,6 +3040,15 @@ pub mod delete_backend_auth_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBackendAuthOutput`](crate::output::DeleteBackendAuthOutput).
         pub fn build(self) -> crate::output::DeleteBackendAuthOutput {
             crate::output::DeleteBackendAuthOutput {
@@ -2683,6 +3058,7 @@ pub mod delete_backend_auth_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2716,6 +3092,7 @@ pub struct DeleteBackendApiOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteBackendApiOutput {
     /// <p>The app ID.</p>
@@ -2743,6 +3120,11 @@ impl DeleteBackendApiOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBackendApiOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
 pub mod delete_backend_api_output {
 
@@ -2756,6 +3138,7 @@ pub mod delete_backend_api_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -2821,6 +3204,15 @@ pub mod delete_backend_api_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBackendApiOutput`](crate::output::DeleteBackendApiOutput).
         pub fn build(self) -> crate::output::DeleteBackendApiOutput {
             crate::output::DeleteBackendApiOutput {
@@ -2830,6 +3222,7 @@ pub mod delete_backend_api_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2863,6 +3256,7 @@ pub struct DeleteBackendOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteBackendOutput {
     /// <p>The app ID.</p>
@@ -2890,6 +3284,11 @@ impl DeleteBackendOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DeleteBackendOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
 pub mod delete_backend_output {
 
@@ -2903,6 +3302,7 @@ pub mod delete_backend_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -2968,6 +3368,15 @@ pub mod delete_backend_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBackendOutput`](crate::output::DeleteBackendOutput).
         pub fn build(self) -> crate::output::DeleteBackendOutput {
             crate::output::DeleteBackendOutput {
@@ -2977,6 +3386,7 @@ pub mod delete_backend_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3004,6 +3414,7 @@ pub struct CreateTokenOutput {
     /// <p>The expiry time for the one-time generated token code.</p>
     #[doc(hidden)]
     pub ttl: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateTokenOutput {
     /// <p>The app ID.</p>
@@ -3023,6 +3434,11 @@ impl CreateTokenOutput {
         self.ttl.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateTokenOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateTokenOutput`](crate::output::CreateTokenOutput).
 pub mod create_token_output {
 
@@ -3034,6 +3450,7 @@ pub mod create_token_output {
         pub(crate) challenge_code: std::option::Option<std::string::String>,
         pub(crate) session_id: std::option::Option<std::string::String>,
         pub(crate) ttl: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3079,6 +3496,15 @@ pub mod create_token_output {
             self.ttl = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateTokenOutput`](crate::output::CreateTokenOutput).
         pub fn build(self) -> crate::output::CreateTokenOutput {
             crate::output::CreateTokenOutput {
@@ -3086,6 +3512,7 @@ pub mod create_token_output {
                 challenge_code: self.challenge_code,
                 session_id: self.session_id,
                 ttl: self.ttl,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3113,6 +3540,7 @@ pub struct CreateBackendStorageOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBackendStorageOutput {
     /// <p>The app ID.</p>
@@ -3132,6 +3560,11 @@ impl CreateBackendStorageOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBackendStorageOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
 pub mod create_backend_storage_output {
 
@@ -3143,6 +3576,7 @@ pub mod create_backend_storage_output {
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3188,6 +3622,15 @@ pub mod create_backend_storage_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendStorageOutput`](crate::output::CreateBackendStorageOutput).
         pub fn build(self) -> crate::output::CreateBackendStorageOutput {
             crate::output::CreateBackendStorageOutput {
@@ -3195,6 +3638,7 @@ pub mod create_backend_storage_output {
                 backend_environment_name: self.backend_environment_name,
                 job_id: self.job_id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3222,6 +3666,7 @@ pub struct CreateBackendConfigOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBackendConfigOutput {
     /// <p>The app ID.</p>
@@ -3241,6 +3686,11 @@ impl CreateBackendConfigOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBackendConfigOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
 pub mod create_backend_config_output {
 
@@ -3252,6 +3702,7 @@ pub mod create_backend_config_output {
         pub(crate) backend_environment_name: std::option::Option<std::string::String>,
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3297,6 +3748,15 @@ pub mod create_backend_config_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendConfigOutput`](crate::output::CreateBackendConfigOutput).
         pub fn build(self) -> crate::output::CreateBackendConfigOutput {
             crate::output::CreateBackendConfigOutput {
@@ -3304,6 +3764,7 @@ pub mod create_backend_config_output {
                 backend_environment_name: self.backend_environment_name,
                 job_id: self.job_id,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3337,6 +3798,7 @@ pub struct CreateBackendAuthOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBackendAuthOutput {
     /// <p>The app ID.</p>
@@ -3364,6 +3826,11 @@ impl CreateBackendAuthOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBackendAuthOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
 pub mod create_backend_auth_output {
 
@@ -3377,6 +3844,7 @@ pub mod create_backend_auth_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3442,6 +3910,15 @@ pub mod create_backend_auth_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendAuthOutput`](crate::output::CreateBackendAuthOutput).
         pub fn build(self) -> crate::output::CreateBackendAuthOutput {
             crate::output::CreateBackendAuthOutput {
@@ -3451,6 +3928,7 @@ pub mod create_backend_auth_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3484,6 +3962,7 @@ pub struct CreateBackendApiOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBackendApiOutput {
     /// <p>The app ID.</p>
@@ -3511,6 +3990,11 @@ impl CreateBackendApiOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBackendApiOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
 pub mod create_backend_api_output {
 
@@ -3524,6 +4008,7 @@ pub mod create_backend_api_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3589,6 +4074,15 @@ pub mod create_backend_api_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendApiOutput`](crate::output::CreateBackendApiOutput).
         pub fn build(self) -> crate::output::CreateBackendApiOutput {
             crate::output::CreateBackendApiOutput {
@@ -3598,6 +4092,7 @@ pub mod create_backend_api_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3631,6 +4126,7 @@ pub struct CreateBackendOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateBackendOutput {
     /// <p>The app ID.</p>
@@ -3658,6 +4154,11 @@ impl CreateBackendOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateBackendOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateBackendOutput`](crate::output::CreateBackendOutput).
 pub mod create_backend_output {
 
@@ -3671,6 +4172,7 @@ pub mod create_backend_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3736,6 +4238,15 @@ pub mod create_backend_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendOutput`](crate::output::CreateBackendOutput).
         pub fn build(self) -> crate::output::CreateBackendOutput {
             crate::output::CreateBackendOutput {
@@ -3745,6 +4256,7 @@ pub mod create_backend_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -3778,6 +4290,7 @@ pub struct CloneBackendOutput {
     /// <p>The current status of the request.</p>
     #[doc(hidden)]
     pub status: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CloneBackendOutput {
     /// <p>The app ID.</p>
@@ -3805,6 +4318,11 @@ impl CloneBackendOutput {
         self.status.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CloneBackendOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CloneBackendOutput`](crate::output::CloneBackendOutput).
 pub mod clone_backend_output {
 
@@ -3818,6 +4336,7 @@ pub mod clone_backend_output {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) operation: std::option::Option<std::string::String>,
         pub(crate) status: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The app ID.</p>
@@ -3883,6 +4402,15 @@ pub mod clone_backend_output {
             self.status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CloneBackendOutput`](crate::output::CloneBackendOutput).
         pub fn build(self) -> crate::output::CloneBackendOutput {
             crate::output::CloneBackendOutput {
@@ -3892,6 +4420,7 @@ pub mod clone_backend_output {
                 job_id: self.job_id,
                 operation: self.operation,
                 status: self.status,
+                _request_id: self._request_id,
             }
         }
     }

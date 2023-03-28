@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -27,18 +47,38 @@ impl UntagResourceOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -59,6 +99,7 @@ pub struct StartTableDataImportJobOutput {
     /// <p> The status of the import job immediately after submitting the request. </p>
     #[doc(hidden)]
     pub job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
+    _request_id: Option<String>,
 }
 impl StartTableDataImportJobOutput {
     /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
@@ -70,6 +111,11 @@ impl StartTableDataImportJobOutput {
         self.job_status.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for StartTableDataImportJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
 pub mod start_table_data_import_job_output {
 
@@ -79,6 +125,7 @@ pub mod start_table_data_import_job_output {
     pub struct Builder {
         pub(crate) job_id: std::option::Option<std::string::String>,
         pub(crate) job_status: std::option::Option<crate::model::TableDataImportJobStatus>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The id that is assigned to this import job. Future requests to find out the status of this import job need to send this id in the appropriate parameter in the request. </p>
@@ -104,11 +151,21 @@ pub mod start_table_data_import_job_output {
             self.job_status = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartTableDataImportJobOutput`](crate::output::StartTableDataImportJobOutput).
         pub fn build(self) -> crate::output::StartTableDataImportJobOutput {
             crate::output::StartTableDataImportJobOutput {
                 job_id: self.job_id,
                 job_status: self.job_status,
+                _request_id: self._request_id,
             }
         }
     }
@@ -136,6 +193,7 @@ pub struct QueryTableRowsOutput {
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
+    _request_id: Option<String>,
 }
 impl QueryTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
@@ -155,6 +213,11 @@ impl QueryTableRowsOutput {
         self.workbook_cursor
     }
 }
+impl aws_http::request_id::RequestId for QueryTableRowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
 pub mod query_table_rows_output {
 
@@ -166,6 +229,7 @@ pub mod query_table_rows_output {
         pub(crate) rows: std::option::Option<std::vec::Vec<crate::model::TableRow>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workbook_cursor: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `column_ids`.
@@ -226,6 +290,15 @@ pub mod query_table_rows_output {
             self.workbook_cursor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`QueryTableRowsOutput`](crate::output::QueryTableRowsOutput).
         pub fn build(self) -> crate::output::QueryTableRowsOutput {
             crate::output::QueryTableRowsOutput {
@@ -233,6 +306,7 @@ pub mod query_table_rows_output {
                 rows: self.rows,
                 next_token: self.next_token,
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -252,6 +326,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The resource's tags.</p>
@@ -260,6 +335,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -272,6 +352,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -299,9 +380,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -325,6 +418,7 @@ pub struct ListTablesOutput {
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
+    _request_id: Option<String>,
 }
 impl ListTablesOutput {
     /// <p> The list of tables in the workbook. </p>
@@ -340,6 +434,11 @@ impl ListTablesOutput {
         self.workbook_cursor
     }
 }
+impl aws_http::request_id::RequestId for ListTablesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTablesOutput`](crate::output::ListTablesOutput).
 pub mod list_tables_output {
 
@@ -350,6 +449,7 @@ pub mod list_tables_output {
         pub(crate) tables: std::option::Option<std::vec::Vec<crate::model::Table>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workbook_cursor: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `tables`.
@@ -391,12 +491,22 @@ pub mod list_tables_output {
             self.workbook_cursor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTablesOutput`](crate::output::ListTablesOutput).
         pub fn build(self) -> crate::output::ListTablesOutput {
             crate::output::ListTablesOutput {
                 tables: self.tables,
                 next_token: self.next_token,
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -427,6 +537,7 @@ pub struct ListTableRowsOutput {
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
+    _request_id: Option<String>,
 }
 impl ListTableRowsOutput {
     /// <p> The list of columns in the table whose row data is returned in the result. </p>
@@ -450,6 +561,11 @@ impl ListTableRowsOutput {
         self.workbook_cursor
     }
 }
+impl aws_http::request_id::RequestId for ListTableRowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
 pub mod list_table_rows_output {
 
@@ -462,6 +578,7 @@ pub mod list_table_rows_output {
         pub(crate) row_ids_not_found: std::option::Option<std::vec::Vec<std::string::String>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workbook_cursor: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `column_ids`.
@@ -541,6 +658,15 @@ pub mod list_table_rows_output {
             self.workbook_cursor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTableRowsOutput`](crate::output::ListTableRowsOutput).
         pub fn build(self) -> crate::output::ListTableRowsOutput {
             crate::output::ListTableRowsOutput {
@@ -549,6 +675,7 @@ pub mod list_table_rows_output {
                 row_ids_not_found: self.row_ids_not_found,
                 next_token: self.next_token,
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -573,6 +700,7 @@ pub struct ListTableColumnsOutput {
     /// <p> Indicates the cursor of the workbook at which the data returned by this request is read. Workbook cursor keeps increasing with every update and the increments are not sequential. </p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
+    _request_id: Option<String>,
 }
 impl ListTableColumnsOutput {
     /// <p> The list of columns in the table. </p>
@@ -588,6 +716,11 @@ impl ListTableColumnsOutput {
         self.workbook_cursor
     }
 }
+impl aws_http::request_id::RequestId for ListTableColumnsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
 pub mod list_table_columns_output {
 
@@ -598,6 +731,7 @@ pub mod list_table_columns_output {
         pub(crate) table_columns: std::option::Option<std::vec::Vec<crate::model::TableColumn>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
         pub(crate) workbook_cursor: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `table_columns`.
@@ -639,12 +773,22 @@ pub mod list_table_columns_output {
             self.workbook_cursor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTableColumnsOutput`](crate::output::ListTableColumnsOutput).
         pub fn build(self) -> crate::output::ListTableColumnsOutput {
             crate::output::ListTableColumnsOutput {
                 table_columns: self.table_columns,
                 next_token: self.next_token,
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -663,11 +807,17 @@ pub struct InvokeScreenAutomationOutput {
     /// <p>The updated workbook cursor after performing the automation action.</p>
     #[doc(hidden)]
     pub workbook_cursor: i64,
+    _request_id: Option<String>,
 }
 impl InvokeScreenAutomationOutput {
     /// <p>The updated workbook cursor after performing the automation action.</p>
     pub fn workbook_cursor(&self) -> i64 {
         self.workbook_cursor
+    }
+}
+impl aws_http::request_id::RequestId for InvokeScreenAutomationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
@@ -678,6 +828,7 @@ pub mod invoke_screen_automation_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) workbook_cursor: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after performing the automation action.</p>
@@ -690,10 +841,20 @@ pub mod invoke_screen_automation_output {
             self.workbook_cursor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`InvokeScreenAutomationOutput`](crate::output::InvokeScreenAutomationOutput).
         pub fn build(self) -> crate::output::InvokeScreenAutomationOutput {
             crate::output::InvokeScreenAutomationOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
+                _request_id: self._request_id,
             }
         }
     }
@@ -720,6 +881,7 @@ pub struct GetScreenDataOutput {
     /// <p> Provides the pagination token to load the next page if there are more results matching the request. If a pagination token is not present in the response, it means that all data matching the query has been loaded. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetScreenDataOutput {
     /// <p>A map of all the rows on the screen keyed by block name.</p>
@@ -738,6 +900,11 @@ impl GetScreenDataOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetScreenDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
 pub mod get_screen_data_output {
 
@@ -750,6 +917,7 @@ pub mod get_screen_data_output {
         >,
         pub(crate) workbook_cursor: std::option::Option<i64>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `results`.
@@ -797,12 +965,22 @@ pub mod get_screen_data_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetScreenDataOutput`](crate::output::GetScreenDataOutput).
         pub fn build(self) -> crate::output::GetScreenDataOutput {
             crate::output::GetScreenDataOutput {
                 results: self.results,
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -830,6 +1008,7 @@ pub struct DescribeTableDataImportJobOutput {
     /// <p> If job status is failed, error code to understand reason for the failure. </p>
     #[doc(hidden)]
     pub error_code: std::option::Option<crate::model::ErrorCode>,
+    _request_id: Option<String>,
 }
 impl DescribeTableDataImportJobOutput {
     /// <p> The current status of the import job. </p>
@@ -849,6 +1028,11 @@ impl DescribeTableDataImportJobOutput {
         self.error_code.as_ref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeTableDataImportJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
 pub mod describe_table_data_import_job_output {
 
@@ -860,6 +1044,7 @@ pub mod describe_table_data_import_job_output {
         pub(crate) message: std::option::Option<std::string::String>,
         pub(crate) job_metadata: std::option::Option<crate::model::TableDataImportJobMetadata>,
         pub(crate) error_code: std::option::Option<crate::model::ErrorCode>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The current status of the import job. </p>
@@ -911,6 +1096,15 @@ pub mod describe_table_data_import_job_output {
             self.error_code = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeTableDataImportJobOutput`](crate::output::DescribeTableDataImportJobOutput).
         pub fn build(self) -> crate::output::DescribeTableDataImportJobOutput {
             crate::output::DescribeTableDataImportJobOutput {
@@ -918,6 +1112,7 @@ pub mod describe_table_data_import_job_output {
                 message: self.message,
                 job_metadata: self.job_metadata,
                 error_code: self.error_code,
+                _request_id: self._request_id,
             }
         }
     }
@@ -944,6 +1139,7 @@ pub struct BatchUpsertTableRowsOutput {
     /// <p> The list of batch items in the request that could not be updated or appended in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated or appended. </p>
     #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+    _request_id: Option<String>,
 }
 impl BatchUpsertTableRowsOutput {
     /// <p> A map with the batch item id as the key and the result of the upsert operation as the value. The result of the upsert operation specifies whether existing rows were updated or a new row was appended, along with the list of row ids that were affected. </p>
@@ -963,6 +1159,11 @@ impl BatchUpsertTableRowsOutput {
         self.failed_batch_items.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchUpsertTableRowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
 pub mod batch_upsert_table_rows_output {
 
@@ -976,6 +1177,7 @@ pub mod batch_upsert_table_rows_output {
         pub(crate) workbook_cursor: std::option::Option<i64>,
         pub(crate) failed_batch_items:
             std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `rows`.
@@ -1032,12 +1234,22 @@ pub mod batch_upsert_table_rows_output {
             self.failed_batch_items = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchUpsertTableRowsOutput`](crate::output::BatchUpsertTableRowsOutput).
         pub fn build(self) -> crate::output::BatchUpsertTableRowsOutput {
             crate::output::BatchUpsertTableRowsOutput {
                 rows: self.rows,
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
                 failed_batch_items: self.failed_batch_items,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1059,6 +1271,7 @@ pub struct BatchUpdateTableRowsOutput {
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
     #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+    _request_id: Option<String>,
 }
 impl BatchUpdateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
@@ -1068,6 +1281,11 @@ impl BatchUpdateTableRowsOutput {
     /// <p> The list of batch items in the request that could not be updated in the table. Each element in this list contains one item from the request that could not be updated in the table along with the reason why that item could not be updated. </p>
     pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchUpdateTableRowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
@@ -1080,6 +1298,7 @@ pub mod batch_update_table_rows_output {
         pub(crate) workbook_cursor: std::option::Option<i64>,
         pub(crate) failed_batch_items:
             std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
@@ -1111,11 +1330,21 @@ pub mod batch_update_table_rows_output {
             self.failed_batch_items = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchUpdateTableRowsOutput`](crate::output::BatchUpdateTableRowsOutput).
         pub fn build(self) -> crate::output::BatchUpdateTableRowsOutput {
             crate::output::BatchUpdateTableRowsOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
                 failed_batch_items: self.failed_batch_items,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1137,6 +1366,7 @@ pub struct BatchDeleteTableRowsOutput {
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+    _request_id: Option<String>,
 }
 impl BatchDeleteTableRowsOutput {
     /// <p>The updated workbook cursor after deleting the rows from the table.</p>
@@ -1146,6 +1376,11 @@ impl BatchDeleteTableRowsOutput {
     /// <p> The list of row ids in the request that could not be deleted from the table. Each element in this list contains one row id from the request that could not be deleted along with the reason why that item could not be deleted. </p>
     pub fn failed_batch_items(&self) -> std::option::Option<&[crate::model::FailedBatchItem]> {
         self.failed_batch_items.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for BatchDeleteTableRowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
@@ -1158,6 +1393,7 @@ pub mod batch_delete_table_rows_output {
         pub(crate) workbook_cursor: std::option::Option<i64>,
         pub(crate) failed_batch_items:
             std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after deleting the rows from the table.</p>
@@ -1189,11 +1425,21 @@ pub mod batch_delete_table_rows_output {
             self.failed_batch_items = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchDeleteTableRowsOutput`](crate::output::BatchDeleteTableRowsOutput).
         pub fn build(self) -> crate::output::BatchDeleteTableRowsOutput {
             crate::output::BatchDeleteTableRowsOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
                 failed_batch_items: self.failed_batch_items,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1219,6 +1465,7 @@ pub struct BatchCreateTableRowsOutput {
     /// <p> The list of batch items in the request that could not be added to the table. Each element in this list contains one item from the request that could not be added to the table along with the reason why that item could not be added. </p>
     #[doc(hidden)]
     pub failed_batch_items: std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+    _request_id: Option<String>,
 }
 impl BatchCreateTableRowsOutput {
     /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
@@ -1237,6 +1484,11 @@ impl BatchCreateTableRowsOutput {
         self.failed_batch_items.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for BatchCreateTableRowsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
 pub mod batch_create_table_rows_output {
 
@@ -1250,6 +1502,7 @@ pub mod batch_create_table_rows_output {
         >,
         pub(crate) failed_batch_items:
             std::option::Option<std::vec::Vec<crate::model::FailedBatchItem>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The updated workbook cursor after adding the new rows at the end of the table.</p>
@@ -1306,12 +1559,22 @@ pub mod batch_create_table_rows_output {
             self.failed_batch_items = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`BatchCreateTableRowsOutput`](crate::output::BatchCreateTableRowsOutput).
         pub fn build(self) -> crate::output::BatchCreateTableRowsOutput {
             crate::output::BatchCreateTableRowsOutput {
                 workbook_cursor: self.workbook_cursor.unwrap_or_default(),
                 created_rows: self.created_rows,
                 failed_batch_items: self.failed_batch_items,
+                _request_id: self._request_id,
             }
         }
     }

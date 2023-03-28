@@ -2,18 +2,38 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UpdateScalingPlanOutput {}
+pub struct UpdateScalingPlanOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UpdateScalingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
 pub mod update_scaling_plan_output {
 
     /// A builder for [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateScalingPlanOutput`](crate::output::UpdateScalingPlanOutput).
         pub fn build(self) -> crate::output::UpdateScalingPlanOutput {
-            crate::output::UpdateScalingPlanOutput {}
+            crate::output::UpdateScalingPlanOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -31,11 +51,17 @@ pub struct GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
     #[doc(hidden)]
     pub datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
+    _request_id: Option<String>,
 }
 impl GetScalingPlanResourceForecastDataOutput {
     /// <p>The data points to return.</p>
     pub fn datapoints(&self) -> std::option::Option<&[crate::model::Datapoint]> {
         self.datapoints.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetScalingPlanResourceForecastDataOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
@@ -46,6 +72,7 @@ pub mod get_scaling_plan_resource_forecast_data_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) datapoints: std::option::Option<std::vec::Vec<crate::model::Datapoint>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `datapoints`.
@@ -67,10 +94,20 @@ pub mod get_scaling_plan_resource_forecast_data_output {
             self.datapoints = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetScalingPlanResourceForecastDataOutput`](crate::output::GetScalingPlanResourceForecastDataOutput).
         pub fn build(self) -> crate::output::GetScalingPlanResourceForecastDataOutput {
             crate::output::GetScalingPlanResourceForecastDataOutput {
                 datapoints: self.datapoints,
+                _request_id: self._request_id,
             }
         }
     }
@@ -92,6 +129,7 @@ pub struct DescribeScalingPlansOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeScalingPlansOutput {
     /// <p>Information about the scaling plans.</p>
@@ -103,6 +141,11 @@ impl DescribeScalingPlansOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeScalingPlansOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
 pub mod describe_scaling_plans_output {
 
@@ -112,6 +155,7 @@ pub mod describe_scaling_plans_output {
     pub struct Builder {
         pub(crate) scaling_plans: std::option::Option<std::vec::Vec<crate::model::ScalingPlan>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `scaling_plans`.
@@ -143,11 +187,21 @@ pub mod describe_scaling_plans_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeScalingPlansOutput`](crate::output::DescribeScalingPlansOutput).
         pub fn build(self) -> crate::output::DescribeScalingPlansOutput {
             crate::output::DescribeScalingPlansOutput {
                 scaling_plans: self.scaling_plans,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -170,6 +224,7 @@ pub struct DescribeScalingPlanResourcesOutput {
     /// <p>The token required to get the next set of results. This value is <code>null</code> if there are no more results to return.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DescribeScalingPlanResourcesOutput {
     /// <p>Information about the scalable resources.</p>
@@ -183,6 +238,11 @@ impl DescribeScalingPlanResourcesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for DescribeScalingPlanResourcesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
 pub mod describe_scaling_plan_resources_output {
 
@@ -193,6 +253,7 @@ pub mod describe_scaling_plan_resources_output {
         pub(crate) scaling_plan_resources:
             std::option::Option<std::vec::Vec<crate::model::ScalingPlanResource>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `scaling_plan_resources`.
@@ -224,11 +285,21 @@ pub mod describe_scaling_plan_resources_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeScalingPlanResourcesOutput`](crate::output::DescribeScalingPlanResourcesOutput).
         pub fn build(self) -> crate::output::DescribeScalingPlanResourcesOutput {
             crate::output::DescribeScalingPlanResourcesOutput {
                 scaling_plan_resources: self.scaling_plan_resources,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -243,18 +314,38 @@ impl DescribeScalingPlanResourcesOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct DeleteScalingPlanOutput {}
+pub struct DeleteScalingPlanOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for DeleteScalingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
 pub mod delete_scaling_plan_output {
 
     /// A builder for [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteScalingPlanOutput`](crate::output::DeleteScalingPlanOutput).
         pub fn build(self) -> crate::output::DeleteScalingPlanOutput {
-            crate::output::DeleteScalingPlanOutput {}
+            crate::output::DeleteScalingPlanOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -272,11 +363,17 @@ pub struct CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     #[doc(hidden)]
     pub scaling_plan_version: std::option::Option<i64>,
+    _request_id: Option<String>,
 }
 impl CreateScalingPlanOutput {
     /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
     pub fn scaling_plan_version(&self) -> std::option::Option<i64> {
         self.scaling_plan_version
+    }
+}
+impl aws_http::request_id::RequestId for CreateScalingPlanOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
@@ -287,6 +384,7 @@ pub mod create_scaling_plan_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) scaling_plan_version: std::option::Option<i64>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple scaling plan versions.</p>
@@ -299,10 +397,20 @@ pub mod create_scaling_plan_output {
             self.scaling_plan_version = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateScalingPlanOutput`](crate::output::CreateScalingPlanOutput).
         pub fn build(self) -> crate::output::CreateScalingPlanOutput {
             crate::output::CreateScalingPlanOutput {
                 scaling_plan_version: self.scaling_plan_version,
+                _request_id: self._request_id,
             }
         }
     }

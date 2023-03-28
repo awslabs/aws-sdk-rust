@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateApprovedOrigin 
         crate::error::AssociateApprovedOriginError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_approved_origin_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateBot {
     type Output =
         std::result::Result<crate::output::AssociateBotOutput, crate::error::AssociateBotError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_bot_error(response)
         } else {
@@ -91,6 +93,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateDefaultVocabula
         crate::error::AssociateDefaultVocabularyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_default_vocabulary_error(response)
         } else {
@@ -125,6 +128,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateInstanceStorage
         crate::error::AssociateInstanceStorageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_instance_storage_config_error(response)
         } else {
@@ -159,6 +163,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLambdaFunction 
         crate::error::AssociateLambdaFunctionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_lambda_function_error(response)
         } else {
@@ -193,6 +198,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateLexBot {
         crate::error::AssociateLexBotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_lex_bot_error(response)
         } else {
@@ -227,6 +233,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociatePhoneNumberCont
         crate::error::AssociatePhoneNumberContactFlowError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_phone_number_contact_flow_error(response)
         } else {
@@ -261,6 +268,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateQueueQuickConne
         crate::error::AssociateQueueQuickConnectsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_queue_quick_connects_error(response)
         } else {
@@ -295,6 +303,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateRoutingProfileQ
         crate::error::AssociateRoutingProfileQueuesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_routing_profile_queues_error(response)
         } else {
@@ -329,6 +338,7 @@ impl aws_smithy_http::response::ParseStrictResponse for AssociateSecurityKey {
         crate::error::AssociateSecurityKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_associate_security_key_error(response)
         } else {
@@ -363,6 +373,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ClaimPhoneNumber {
         crate::error::ClaimPhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_claim_phone_number_error(response)
         } else {
@@ -397,6 +408,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateAgentStatus {
         crate::error::CreateAgentStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_agent_status_error(response)
         } else {
@@ -431,6 +443,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContactFlow {
         crate::error::CreateContactFlowError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_contact_flow_error(response)
         } else {
@@ -465,6 +478,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateContactFlowModule 
         crate::error::CreateContactFlowModuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_contact_flow_module_error(response)
         } else {
@@ -499,6 +513,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateHoursOfOperation {
         crate::error::CreateHoursOfOperationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_hours_of_operation_error(response)
         } else {
@@ -531,6 +546,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateInstance {
     type Output =
         std::result::Result<crate::output::CreateInstanceOutput, crate::error::CreateInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_instance_error(response)
         } else {
@@ -565,6 +581,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateIntegrationAssocia
         crate::error::CreateIntegrationAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_integration_association_error(response)
         } else {
@@ -597,6 +614,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQueue {
     type Output =
         std::result::Result<crate::output::CreateQueueOutput, crate::error::CreateQueueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_queue_error(response)
         } else {
@@ -631,6 +649,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateQuickConnect {
         crate::error::CreateQuickConnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_quick_connect_error(response)
         } else {
@@ -665,6 +684,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRoutingProfile {
         crate::error::CreateRoutingProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_routing_profile_error(response)
         } else {
@@ -697,6 +717,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateRule {
     type Output =
         std::result::Result<crate::output::CreateRuleOutput, crate::error::CreateRuleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_rule_error(response)
         } else {
@@ -731,6 +752,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSecurityProfile {
         crate::error::CreateSecurityProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_security_profile_error(response)
         } else {
@@ -765,6 +787,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTaskTemplate {
         crate::error::CreateTaskTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_task_template_error(response)
         } else {
@@ -799,6 +822,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateTrafficDistributio
         crate::error::CreateTrafficDistributionGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_traffic_distribution_group_error(response)
         } else {
@@ -831,6 +855,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUseCase {
     type Output =
         std::result::Result<crate::output::CreateUseCaseOutput, crate::error::CreateUseCaseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_use_case_error(response)
         } else {
@@ -863,6 +888,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUser {
     type Output =
         std::result::Result<crate::output::CreateUserOutput, crate::error::CreateUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_user_error(response)
         } else {
@@ -897,6 +923,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateUserHierarchyGroup
         crate::error::CreateUserHierarchyGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_user_hierarchy_group_error(response)
         } else {
@@ -931,6 +958,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateVocabulary {
         crate::error::CreateVocabularyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_vocabulary_error(response)
         } else {
@@ -965,6 +993,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContactFlow {
         crate::error::DeleteContactFlowError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_contact_flow_error(response)
         } else {
@@ -999,6 +1028,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteContactFlowModule 
         crate::error::DeleteContactFlowModuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_contact_flow_module_error(response)
         } else {
@@ -1033,6 +1063,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteHoursOfOperation {
         crate::error::DeleteHoursOfOperationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_hours_of_operation_error(response)
         } else {
@@ -1065,6 +1096,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteInstance {
     type Output =
         std::result::Result<crate::output::DeleteInstanceOutput, crate::error::DeleteInstanceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_instance_error(response)
         } else {
@@ -1099,6 +1131,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteIntegrationAssocia
         crate::error::DeleteIntegrationAssociationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_integration_association_error(response)
         } else {
@@ -1133,6 +1166,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteQuickConnect {
         crate::error::DeleteQuickConnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_quick_connect_error(response)
         } else {
@@ -1165,6 +1199,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteRule {
     type Output =
         std::result::Result<crate::output::DeleteRuleOutput, crate::error::DeleteRuleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_rule_error(response)
         } else {
@@ -1199,6 +1234,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSecurityProfile {
         crate::error::DeleteSecurityProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_security_profile_error(response)
         } else {
@@ -1233,6 +1269,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTaskTemplate {
         crate::error::DeleteTaskTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_task_template_error(response)
         } else {
@@ -1267,6 +1304,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteTrafficDistributio
         crate::error::DeleteTrafficDistributionGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_traffic_distribution_group_error(response)
         } else {
@@ -1299,6 +1337,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUseCase {
     type Output =
         std::result::Result<crate::output::DeleteUseCaseOutput, crate::error::DeleteUseCaseError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_use_case_error(response)
         } else {
@@ -1331,6 +1370,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUser {
     type Output =
         std::result::Result<crate::output::DeleteUserOutput, crate::error::DeleteUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_user_error(response)
         } else {
@@ -1365,6 +1405,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteUserHierarchyGroup
         crate::error::DeleteUserHierarchyGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_user_hierarchy_group_error(response)
         } else {
@@ -1399,6 +1440,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteVocabulary {
         crate::error::DeleteVocabularyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_vocabulary_error(response)
         } else {
@@ -1433,6 +1475,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeAgentStatus {
         crate::error::DescribeAgentStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_agent_status_error(response)
         } else {
@@ -1467,6 +1510,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContact {
         crate::error::DescribeContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_contact_error(response)
         } else {
@@ -1501,6 +1545,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContactFlow {
         crate::error::DescribeContactFlowError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_contact_flow_error(response)
         } else {
@@ -1535,6 +1580,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeContactFlowModul
         crate::error::DescribeContactFlowModuleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_contact_flow_module_error(response)
         } else {
@@ -1569,6 +1615,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeHoursOfOperation
         crate::error::DescribeHoursOfOperationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_hours_of_operation_error(response)
         } else {
@@ -1603,6 +1650,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstance {
         crate::error::DescribeInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_instance_error(response)
         } else {
@@ -1637,6 +1685,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceAttribut
         crate::error::DescribeInstanceAttributeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_instance_attribute_error(response)
         } else {
@@ -1671,6 +1720,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeInstanceStorageC
         crate::error::DescribeInstanceStorageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_instance_storage_config_error(response)
         } else {
@@ -1705,6 +1755,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribePhoneNumber {
         crate::error::DescribePhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_phone_number_error(response)
         } else {
@@ -1737,6 +1788,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeQueue {
     type Output =
         std::result::Result<crate::output::DescribeQueueOutput, crate::error::DescribeQueueError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_queue_error(response)
         } else {
@@ -1771,6 +1823,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeQuickConnect {
         crate::error::DescribeQuickConnectError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_quick_connect_error(response)
         } else {
@@ -1805,6 +1858,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRoutingProfile {
         crate::error::DescribeRoutingProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_routing_profile_error(response)
         } else {
@@ -1837,6 +1891,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeRule {
     type Output =
         std::result::Result<crate::output::DescribeRuleOutput, crate::error::DescribeRuleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_rule_error(response)
         } else {
@@ -1871,6 +1926,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeSecurityProfile 
         crate::error::DescribeSecurityProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_security_profile_error(response)
         } else {
@@ -1905,6 +1961,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeTrafficDistribut
         crate::error::DescribeTrafficDistributionGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_traffic_distribution_group_error(response)
         } else {
@@ -1937,6 +1994,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUser {
     type Output =
         std::result::Result<crate::output::DescribeUserOutput, crate::error::DescribeUserError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_user_error(response)
         } else {
@@ -1971,6 +2029,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserHierarchyGro
         crate::error::DescribeUserHierarchyGroupError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_user_hierarchy_group_error(response)
         } else {
@@ -2005,6 +2064,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeUserHierarchyStr
         crate::error::DescribeUserHierarchyStructureError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_user_hierarchy_structure_error(response)
         } else {
@@ -2039,6 +2099,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DescribeVocabulary {
         crate::error::DescribeVocabularyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_describe_vocabulary_error(response)
         } else {
@@ -2073,6 +2134,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateApprovedOrig
         crate::error::DisassociateApprovedOriginError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_approved_origin_error(response)
         } else {
@@ -2107,6 +2169,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateBot {
         crate::error::DisassociateBotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_bot_error(response)
         } else {
@@ -2141,6 +2204,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateInstanceStor
         crate::error::DisassociateInstanceStorageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_instance_storage_config_error(response)
         } else {
@@ -2175,6 +2239,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLambdaFuncti
         crate::error::DisassociateLambdaFunctionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_lambda_function_error(response)
         } else {
@@ -2209,6 +2274,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateLexBot {
         crate::error::DisassociateLexBotError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_lex_bot_error(response)
         } else {
@@ -2243,6 +2309,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociatePhoneNumberC
         crate::error::DisassociatePhoneNumberContactFlowError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_phone_number_contact_flow_error(response)
         } else {
@@ -2277,6 +2344,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateQueueQuickCo
         crate::error::DisassociateQueueQuickConnectsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_queue_quick_connects_error(response)
         } else {
@@ -2311,6 +2379,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateRoutingProfi
         crate::error::DisassociateRoutingProfileQueuesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_routing_profile_queues_error(response)
         } else {
@@ -2345,6 +2414,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DisassociateSecurityKey 
         crate::error::DisassociateSecurityKeyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_disassociate_security_key_error(response)
         } else {
@@ -2379,6 +2449,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DismissUserContact {
         crate::error::DismissUserContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_dismiss_user_contact_error(response)
         } else {
@@ -2413,6 +2484,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetContactAttributes {
         crate::error::GetContactAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_contact_attributes_error(response)
         } else {
@@ -2447,6 +2519,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCurrentMetricData {
         crate::error::GetCurrentMetricDataError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_current_metric_data_error(response)
         } else {
@@ -2481,6 +2554,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetCurrentUserData {
         crate::error::GetCurrentUserDataError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_current_user_data_error(response)
         } else {
@@ -2515,6 +2589,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetFederationToken {
         crate::error::GetFederationTokenError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_federation_token_error(response)
         } else {
@@ -2547,6 +2622,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetMetricData {
     type Output =
         std::result::Result<crate::output::GetMetricDataOutput, crate::error::GetMetricDataError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_metric_data_error(response)
         } else {
@@ -2581,6 +2657,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTaskTemplate {
         crate::error::GetTaskTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_task_template_error(response)
         } else {
@@ -2615,6 +2692,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetTrafficDistribution {
         crate::error::GetTrafficDistributionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_traffic_distribution_error(response)
         } else {
@@ -2649,6 +2727,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListAgentStatuses {
         crate::error::ListAgentStatusesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_agent_statuses_error(response)
         } else {
@@ -2683,6 +2762,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListApprovedOrigins {
         crate::error::ListApprovedOriginsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_approved_origins_error(response)
         } else {
@@ -2714,6 +2794,7 @@ impl ListBots {
 impl aws_smithy_http::response::ParseStrictResponse for ListBots {
     type Output = std::result::Result<crate::output::ListBotsOutput, crate::error::ListBotsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_bots_error(response)
         } else {
@@ -2748,6 +2829,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactFlowModules {
         crate::error::ListContactFlowModulesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_contact_flow_modules_error(response)
         } else {
@@ -2782,6 +2864,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactFlows {
         crate::error::ListContactFlowsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_contact_flows_error(response)
         } else {
@@ -2816,6 +2899,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListContactReferences {
         crate::error::ListContactReferencesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_contact_references_error(response)
         } else {
@@ -2850,6 +2934,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDefaultVocabularies 
         crate::error::ListDefaultVocabulariesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_default_vocabularies_error(response)
         } else {
@@ -2884,6 +2969,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListHoursOfOperations {
         crate::error::ListHoursOfOperationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_hours_of_operations_error(response)
         } else {
@@ -2918,6 +3004,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstanceAttributes {
         crate::error::ListInstanceAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_instance_attributes_error(response)
         } else {
@@ -2950,6 +3037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstances {
     type Output =
         std::result::Result<crate::output::ListInstancesOutput, crate::error::ListInstancesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_instances_error(response)
         } else {
@@ -2984,6 +3072,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListInstanceStorageConfi
         crate::error::ListInstanceStorageConfigsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_instance_storage_configs_error(response)
         } else {
@@ -3018,6 +3107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListIntegrationAssociati
         crate::error::ListIntegrationAssociationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_integration_associations_error(response)
         } else {
@@ -3052,6 +3142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLambdaFunctions {
         crate::error::ListLambdaFunctionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_lambda_functions_error(response)
         } else {
@@ -3084,6 +3175,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListLexBots {
     type Output =
         std::result::Result<crate::output::ListLexBotsOutput, crate::error::ListLexBotsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_lex_bots_error(response)
         } else {
@@ -3118,6 +3210,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbers {
         crate::error::ListPhoneNumbersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_phone_numbers_error(response)
         } else {
@@ -3152,6 +3245,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPhoneNumbersV2 {
         crate::error::ListPhoneNumbersV2Error,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_phone_numbers_v2_error(response)
         } else {
@@ -3184,6 +3278,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListPrompts {
     type Output =
         std::result::Result<crate::output::ListPromptsOutput, crate::error::ListPromptsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_prompts_error(response)
         } else {
@@ -3218,6 +3313,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueueQuickConnects {
         crate::error::ListQueueQuickConnectsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_queue_quick_connects_error(response)
         } else {
@@ -3250,6 +3346,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQueues {
     type Output =
         std::result::Result<crate::output::ListQueuesOutput, crate::error::ListQueuesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_queues_error(response)
         } else {
@@ -3284,6 +3381,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListQuickConnects {
         crate::error::ListQuickConnectsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_quick_connects_error(response)
         } else {
@@ -3318,6 +3416,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingProfileQueues
         crate::error::ListRoutingProfileQueuesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_routing_profile_queues_error(response)
         } else {
@@ -3352,6 +3451,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListRoutingProfiles {
         crate::error::ListRoutingProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_routing_profiles_error(response)
         } else {
@@ -3383,6 +3483,7 @@ impl ListRules {
 impl aws_smithy_http::response::ParseStrictResponse for ListRules {
     type Output = std::result::Result<crate::output::ListRulesOutput, crate::error::ListRulesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_rules_error(response)
         } else {
@@ -3417,6 +3518,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityKeys {
         crate::error::ListSecurityKeysError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_security_keys_error(response)
         } else {
@@ -3451,6 +3553,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityProfilePermi
         crate::error::ListSecurityProfilePermissionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_security_profile_permissions_error(response)
         } else {
@@ -3485,6 +3588,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListSecurityProfiles {
         crate::error::ListSecurityProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_security_profiles_error(response)
         } else {
@@ -3519,6 +3623,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTagsForResource {
         crate::error::ListTagsForResourceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_tags_for_resource_error(response)
         } else {
@@ -3553,6 +3658,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTaskTemplates {
         crate::error::ListTaskTemplatesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_task_templates_error(response)
         } else {
@@ -3587,6 +3693,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListTrafficDistributionG
         crate::error::ListTrafficDistributionGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_traffic_distribution_groups_error(response)
         } else {
@@ -3619,6 +3726,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUseCases {
     type Output =
         std::result::Result<crate::output::ListUseCasesOutput, crate::error::ListUseCasesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_use_cases_error(response)
         } else {
@@ -3653,6 +3761,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListUserHierarchyGroups 
         crate::error::ListUserHierarchyGroupsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_user_hierarchy_groups_error(response)
         } else {
@@ -3684,6 +3793,7 @@ impl ListUsers {
 impl aws_smithy_http::response::ParseStrictResponse for ListUsers {
     type Output = std::result::Result<crate::output::ListUsersOutput, crate::error::ListUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_users_error(response)
         } else {
@@ -3716,6 +3826,7 @@ impl aws_smithy_http::response::ParseStrictResponse for MonitorContact {
     type Output =
         std::result::Result<crate::output::MonitorContactOutput, crate::error::MonitorContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_monitor_contact_error(response)
         } else {
@@ -3748,6 +3859,7 @@ impl aws_smithy_http::response::ParseStrictResponse for PutUserStatus {
     type Output =
         std::result::Result<crate::output::PutUserStatusOutput, crate::error::PutUserStatusError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_user_status_error(response)
         } else {
@@ -3782,6 +3894,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReleasePhoneNumber {
         crate::error::ReleasePhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_release_phone_number_error(response)
         } else {
@@ -3816,6 +3929,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ReplicateInstance {
         crate::error::ReplicateInstanceError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_replicate_instance_error(response)
         } else {
@@ -3850,6 +3964,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ResumeContactRecording {
         crate::error::ResumeContactRecordingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_resume_contact_recording_error(response)
         } else {
@@ -3884,6 +3999,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchAvailablePhoneNumb
         crate::error::SearchAvailablePhoneNumbersError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_available_phone_numbers_error(response)
         } else {
@@ -3916,6 +4032,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchQueues {
     type Output =
         std::result::Result<crate::output::SearchQueuesOutput, crate::error::SearchQueuesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_queues_error(response)
         } else {
@@ -3950,6 +4067,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchRoutingProfiles {
         crate::error::SearchRoutingProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_routing_profiles_error(response)
         } else {
@@ -3984,6 +4102,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchSecurityProfiles {
         crate::error::SearchSecurityProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_security_profiles_error(response)
         } else {
@@ -4016,6 +4135,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchUsers {
     type Output =
         std::result::Result<crate::output::SearchUsersOutput, crate::error::SearchUsersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_users_error(response)
         } else {
@@ -4050,6 +4170,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SearchVocabularies {
         crate::error::SearchVocabulariesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_search_vocabularies_error(response)
         } else {
@@ -4084,6 +4205,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartChatContact {
         crate::error::StartChatContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_chat_contact_error(response)
         } else {
@@ -4118,6 +4240,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartContactRecording {
         crate::error::StartContactRecordingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_contact_recording_error(response)
         } else {
@@ -4152,6 +4275,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartContactStreaming {
         crate::error::StartContactStreamingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_contact_streaming_error(response)
         } else {
@@ -4186,6 +4310,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartOutboundVoiceContac
         crate::error::StartOutboundVoiceContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_outbound_voice_contact_error(response)
         } else {
@@ -4220,6 +4345,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StartTaskContact {
         crate::error::StartTaskContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_start_task_contact_error(response)
         } else {
@@ -4252,6 +4378,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopContact {
     type Output =
         std::result::Result<crate::output::StopContactOutput, crate::error::StopContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_contact_error(response)
         } else {
@@ -4286,6 +4413,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopContactRecording {
         crate::error::StopContactRecordingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_contact_recording_error(response)
         } else {
@@ -4320,6 +4448,7 @@ impl aws_smithy_http::response::ParseStrictResponse for StopContactStreaming {
         crate::error::StopContactStreamingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_stop_contact_streaming_error(response)
         } else {
@@ -4354,6 +4483,7 @@ impl aws_smithy_http::response::ParseStrictResponse for SuspendContactRecording 
         crate::error::SuspendContactRecordingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_suspend_contact_recording_error(response)
         } else {
@@ -4386,6 +4516,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TagResource {
     type Output =
         std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_tag_resource_error(response)
         } else {
@@ -4420,6 +4551,7 @@ impl aws_smithy_http::response::ParseStrictResponse for TransferContact {
         crate::error::TransferContactError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_transfer_contact_error(response)
         } else {
@@ -4452,6 +4584,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UntagResource {
     type Output =
         std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_untag_resource_error(response)
         } else {
@@ -4486,6 +4619,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateAgentStatus {
         crate::error::UpdateAgentStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_agent_status_error(response)
         } else {
@@ -4518,6 +4652,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContact {
     type Output =
         std::result::Result<crate::output::UpdateContactOutput, crate::error::UpdateContactError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_error(response)
         } else {
@@ -4552,6 +4687,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactAttributes 
         crate::error::UpdateContactAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_attributes_error(response)
         } else {
@@ -4586,6 +4722,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowContent
         crate::error::UpdateContactFlowContentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_flow_content_error(response)
         } else {
@@ -4620,6 +4757,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowMetadat
         crate::error::UpdateContactFlowMetadataError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_flow_metadata_error(response)
         } else {
@@ -4654,6 +4792,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowModuleC
         crate::error::UpdateContactFlowModuleContentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_flow_module_content_error(response)
         } else {
@@ -4688,6 +4827,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowModuleM
         crate::error::UpdateContactFlowModuleMetadataError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_flow_module_metadata_error(response)
         } else {
@@ -4722,6 +4862,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactFlowName {
         crate::error::UpdateContactFlowNameError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_flow_name_error(response)
         } else {
@@ -4756,6 +4897,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateContactSchedule {
         crate::error::UpdateContactScheduleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_contact_schedule_error(response)
         } else {
@@ -4790,6 +4932,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateHoursOfOperation {
         crate::error::UpdateHoursOfOperationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_hours_of_operation_error(response)
         } else {
@@ -4824,6 +4967,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceAttribute 
         crate::error::UpdateInstanceAttributeError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_instance_attribute_error(response)
         } else {
@@ -4858,6 +5002,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateInstanceStorageCon
         crate::error::UpdateInstanceStorageConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_instance_storage_config_error(response)
         } else {
@@ -4892,6 +5037,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateParticipantRoleCon
         crate::error::UpdateParticipantRoleConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_participant_role_config_error(response)
         } else {
@@ -4926,6 +5072,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdatePhoneNumber {
         crate::error::UpdatePhoneNumberError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_phone_number_error(response)
         } else {
@@ -4960,6 +5107,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQueueHoursOfOperat
         crate::error::UpdateQueueHoursOfOperationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_queue_hours_of_operation_error(response)
         } else {
@@ -4994,6 +5142,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQueueMaxContacts {
         crate::error::UpdateQueueMaxContactsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_queue_max_contacts_error(response)
         } else {
@@ -5028,6 +5177,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQueueName {
         crate::error::UpdateQueueNameError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_queue_name_error(response)
         } else {
@@ -5062,6 +5212,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQueueOutboundCalle
         crate::error::UpdateQueueOutboundCallerConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_queue_outbound_caller_config_error(response)
         } else {
@@ -5096,6 +5247,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQueueStatus {
         crate::error::UpdateQueueStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_queue_status_error(response)
         } else {
@@ -5130,6 +5282,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQuickConnectConfig
         crate::error::UpdateQuickConnectConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_quick_connect_config_error(response)
         } else {
@@ -5164,6 +5317,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateQuickConnectName {
         crate::error::UpdateQuickConnectNameError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_quick_connect_name_error(response)
         } else {
@@ -5198,6 +5352,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingProfileConc
         crate::error::UpdateRoutingProfileConcurrencyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_routing_profile_concurrency_error(response)
         } else {
@@ -5232,6 +5387,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingProfileDefa
         crate::error::UpdateRoutingProfileDefaultOutboundQueueError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_routing_profile_default_outbound_queue_error(
                 response,
@@ -5270,6 +5426,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingProfileName
         crate::error::UpdateRoutingProfileNameError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_routing_profile_name_error(response)
         } else {
@@ -5304,6 +5461,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRoutingProfileQueu
         crate::error::UpdateRoutingProfileQueuesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_routing_profile_queues_error(response)
         } else {
@@ -5336,6 +5494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateRule {
     type Output =
         std::result::Result<crate::output::UpdateRuleOutput, crate::error::UpdateRuleError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_rule_error(response)
         } else {
@@ -5370,6 +5529,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSecurityProfile {
         crate::error::UpdateSecurityProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_security_profile_error(response)
         } else {
@@ -5404,6 +5564,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTaskTemplate {
         crate::error::UpdateTaskTemplateError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_task_template_error(response)
         } else {
@@ -5438,6 +5599,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateTrafficDistributio
         crate::error::UpdateTrafficDistributionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_traffic_distribution_error(response)
         } else {
@@ -5472,6 +5634,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserHierarchy {
         crate::error::UpdateUserHierarchyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_hierarchy_error(response)
         } else {
@@ -5506,6 +5669,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserHierarchyGroup
         crate::error::UpdateUserHierarchyGroupNameError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_hierarchy_group_name_error(response)
         } else {
@@ -5540,6 +5704,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserHierarchyStruc
         crate::error::UpdateUserHierarchyStructureError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_hierarchy_structure_error(response)
         } else {
@@ -5574,6 +5739,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserIdentityInfo {
         crate::error::UpdateUserIdentityInfoError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_identity_info_error(response)
         } else {
@@ -5608,6 +5774,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserPhoneConfig {
         crate::error::UpdateUserPhoneConfigError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_phone_config_error(response)
         } else {
@@ -5642,6 +5809,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserRoutingProfile
         crate::error::UpdateUserRoutingProfileError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_routing_profile_error(response)
         } else {
@@ -5676,6 +5844,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateUserSecurityProfil
         crate::error::UpdateUserSecurityProfilesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_user_security_profiles_error(response)
         } else {

@@ -17,15 +17,8 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>The request was rejected because it doesn't have valid credentials for the target resource.</p>
     UnauthorizedException(crate::error::UnauthorizedException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -50,31 +43,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateGroupError> for Error {
     fn from(err: crate::error::CreateGroupError) -> Self {
-        match err.kind {
-            crate::error::CreateGroupErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::CreateGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::CreateGroupErrorKind::InternalServerErrorException(inner) => {
+            crate::error::CreateGroupError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::CreateGroupErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::CreateGroupError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::CreateGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -87,34 +85,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteGroupError> for Error {
     fn from(err: crate::error::DeleteGroupError) -> Self {
-        match err.kind {
-            crate::error::DeleteGroupErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DeleteGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DeleteGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::DeleteGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::DeleteGroupErrorKind::InternalServerErrorException(inner) => {
+            crate::error::DeleteGroupError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::DeleteGroupErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::DeleteGroupError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::DeleteGroupErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteGroupError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -129,31 +132,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccountSettingsError> for Error {
     fn from(err: crate::error::GetAccountSettingsError) -> Self {
-        match err.kind {
-            crate::error::GetAccountSettingsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetAccountSettingsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::ForbiddenException(inner) => {
+            crate::error::GetAccountSettingsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::GetAccountSettingsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::GetAccountSettingsError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetAccountSettingsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetAccountSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -166,34 +174,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetGroupError> for Error {
     fn from(err: crate::error::GetGroupError) -> Self {
-        match err.kind {
-            crate::error::GetGroupErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::GetGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GetGroupErrorKind::InternalServerErrorException(inner) => {
+            crate::error::GetGroupError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::GetGroupErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::GetGroupError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::GetGroupErrorKind::NotFoundException(inner) => {
+            crate::error::GetGroupError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -209,34 +222,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetGroupConfigurationError> for Error {
     fn from(err: crate::error::GetGroupConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetGroupConfigurationErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetGroupConfigurationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetGroupConfigurationErrorKind::ForbiddenException(inner) => {
+            crate::error::GetGroupConfigurationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GetGroupConfigurationErrorKind::InternalServerErrorException(inner) => {
+            crate::error::GetGroupConfigurationError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::GetGroupConfigurationErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::GetGroupConfigurationError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::GetGroupConfigurationErrorKind::NotFoundException(inner) => {
+            crate::error::GetGroupConfigurationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetGroupConfigurationErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetGroupConfigurationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetGroupConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGroupConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -249,34 +267,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetGroupQueryError> for Error {
     fn from(err: crate::error::GetGroupQueryError) -> Self {
-        match err.kind {
-            crate::error::GetGroupQueryErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetGroupQueryError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetGroupQueryErrorKind::ForbiddenException(inner) => {
+            crate::error::GetGroupQueryError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GetGroupQueryErrorKind::InternalServerErrorException(inner) => {
+            crate::error::GetGroupQueryError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::GetGroupQueryErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::GetGroupQueryError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::GetGroupQueryErrorKind::NotFoundException(inner) => {
+            crate::error::GetGroupQueryError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetGroupQueryErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetGroupQueryError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetGroupQueryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGroupQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -289,34 +312,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTagsError> for Error {
     fn from(err: crate::error::GetTagsError) -> Self {
-        match err.kind {
-            crate::error::GetTagsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GetTagsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GetTagsErrorKind::ForbiddenException(inner) => {
+            crate::error::GetTagsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GetTagsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::GetTagsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::GetTagsErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::GetTagsError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::GetTagsErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::GetTagsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetTagsError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::GetTagsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetTagsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTagsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -329,34 +355,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GroupResourcesError> for Error {
     fn from(err: crate::error::GroupResourcesError) -> Self {
-        match err.kind {
-            crate::error::GroupResourcesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::GroupResourcesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::GroupResourcesErrorKind::ForbiddenException(inner) => {
+            crate::error::GroupResourcesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::GroupResourcesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::GroupResourcesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::GroupResourcesErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::GroupResourcesError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::GroupResourcesErrorKind::NotFoundException(inner) => {
+            crate::error::GroupResourcesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GroupResourcesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GroupResourcesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GroupResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GroupResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -371,37 +402,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListGroupResourcesError> for Error {
     fn from(err: crate::error::ListGroupResourcesError) -> Self {
-        match err.kind {
-            crate::error::ListGroupResourcesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListGroupResourcesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::ForbiddenException(inner) => {
+            crate::error::ListGroupResourcesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListGroupResourcesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::ListGroupResourcesError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::NotFoundException(inner) => {
+            crate::error::ListGroupResourcesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListGroupResourcesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::UnauthorizedException(inner) => {
+            crate::error::ListGroupResourcesError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
-            crate::error::ListGroupResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGroupResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -414,31 +450,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListGroupsError> for Error {
     fn from(err: crate::error::ListGroupsError) -> Self {
-        match err.kind {
-            crate::error::ListGroupsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::ListGroupsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::ListGroupsErrorKind::ForbiddenException(inner) => {
+            crate::error::ListGroupsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::ListGroupsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::ListGroupsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::ListGroupsErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::ListGroupsError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::ListGroupsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::ListGroupsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::ListGroupsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListGroupsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -454,34 +495,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutGroupConfigurationError> for Error {
     fn from(err: crate::error::PutGroupConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutGroupConfigurationErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::PutGroupConfigurationError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::PutGroupConfigurationErrorKind::ForbiddenException(inner) => {
+            crate::error::PutGroupConfigurationError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::PutGroupConfigurationErrorKind::InternalServerErrorException(inner) => {
+            crate::error::PutGroupConfigurationError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::PutGroupConfigurationErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::PutGroupConfigurationError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::PutGroupConfigurationErrorKind::NotFoundException(inner) => {
+            crate::error::PutGroupConfigurationError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::PutGroupConfigurationErrorKind::TooManyRequestsException(inner) => {
+            crate::error::PutGroupConfigurationError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::PutGroupConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutGroupConfigurationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -494,34 +540,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::SearchResourcesError> for Error {
     fn from(err: crate::error::SearchResourcesError) -> Self {
-        match err.kind {
-            crate::error::SearchResourcesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::SearchResourcesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::SearchResourcesErrorKind::ForbiddenException(inner) => {
+            crate::error::SearchResourcesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::SearchResourcesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::SearchResourcesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::SearchResourcesErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::SearchResourcesError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::SearchResourcesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::SearchResourcesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::SearchResourcesErrorKind::UnauthorizedException(inner) => {
+            crate::error::SearchResourcesError::UnauthorizedException(inner) => {
                 Error::UnauthorizedException(inner)
             }
-            crate::error::SearchResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::SearchResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -534,32 +585,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TagError> for Error {
     fn from(err: crate::error::TagError) -> Self {
-        match err.kind {
-            crate::error::TagErrorKind::BadRequestException(inner) => {
-                Error::BadRequestException(inner)
-            }
-            crate::error::TagErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::TagErrorKind::InternalServerErrorException(inner) => {
+        match err {
+            crate::error::TagError::BadRequestException(inner) => Error::BadRequestException(inner),
+            crate::error::TagError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::TagError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::TagErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::TagError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::TagErrorKind::NotFoundException(inner) => Error::NotFoundException(inner),
-            crate::error::TagErrorKind::TooManyRequestsException(inner) => {
+            crate::error::TagError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::TagError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::TagErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TagError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -574,34 +626,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UngroupResourcesError> for Error {
     fn from(err: crate::error::UngroupResourcesError) -> Self {
-        match err.kind {
-            crate::error::UngroupResourcesErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UngroupResourcesError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UngroupResourcesErrorKind::ForbiddenException(inner) => {
+            crate::error::UngroupResourcesError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UngroupResourcesErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UngroupResourcesError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UngroupResourcesErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::UngroupResourcesError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::UngroupResourcesErrorKind::NotFoundException(inner) => {
+            crate::error::UngroupResourcesError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UngroupResourcesErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UngroupResourcesError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UngroupResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UngroupResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -614,34 +671,35 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UntagError> for Error {
     fn from(err: crate::error::UntagError) -> Self {
-        match err.kind {
-            crate::error::UntagErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UntagError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UntagErrorKind::ForbiddenException(inner) => {
-                Error::ForbiddenException(inner)
-            }
-            crate::error::UntagErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UntagError::ForbiddenException(inner) => Error::ForbiddenException(inner),
+            crate::error::UntagError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UntagErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::UntagError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::UntagErrorKind::NotFoundException(inner) => {
-                Error::NotFoundException(inner)
-            }
-            crate::error::UntagErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UntagError::NotFoundException(inner) => Error::NotFoundException(inner),
+            crate::error::UntagError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UntagErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UntagError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -657,31 +715,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateAccountSettingsError> for Error {
     fn from(err: crate::error::UpdateAccountSettingsError) -> Self {
-        match err.kind {
-            crate::error::UpdateAccountSettingsErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateAccountSettingsError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateAccountSettingsErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateAccountSettingsError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateAccountSettingsErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateAccountSettingsError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateAccountSettingsErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::UpdateAccountSettingsError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::UpdateAccountSettingsErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateAccountSettingsError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateAccountSettingsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateAccountSettingsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -694,34 +757,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateGroupError> for Error {
     fn from(err: crate::error::UpdateGroupError) -> Self {
-        match err.kind {
-            crate::error::UpdateGroupErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateGroupError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateGroupErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateGroupError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateGroupErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateGroupError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateGroupErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::UpdateGroupError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::UpdateGroupErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateGroupError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateGroupErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateGroupError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateGroupErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGroupError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -736,35 +804,54 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateGroupQueryError> for Error {
     fn from(err: crate::error::UpdateGroupQueryError) -> Self {
-        match err.kind {
-            crate::error::UpdateGroupQueryErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateGroupQueryError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateGroupQueryErrorKind::ForbiddenException(inner) => {
+            crate::error::UpdateGroupQueryError::ForbiddenException(inner) => {
                 Error::ForbiddenException(inner)
             }
-            crate::error::UpdateGroupQueryErrorKind::InternalServerErrorException(inner) => {
+            crate::error::UpdateGroupQueryError::InternalServerErrorException(inner) => {
                 Error::InternalServerErrorException(inner)
             }
-            crate::error::UpdateGroupQueryErrorKind::MethodNotAllowedException(inner) => {
+            crate::error::UpdateGroupQueryError::MethodNotAllowedException(inner) => {
                 Error::MethodNotAllowedException(inner)
             }
-            crate::error::UpdateGroupQueryErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateGroupQueryError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateGroupQueryErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateGroupQueryError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateGroupQueryErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateGroupQueryError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::ForbiddenException(e) => e.request_id(),
+            Self::InternalServerErrorException(e) => e.request_id(),
+            Self::MethodNotAllowedException(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::UnauthorizedException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

@@ -9,6 +9,7 @@ pub struct ListVirtualMachinesOutput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListVirtualMachinesOutput {
     /// <p>A list of your <code>VirtualMachine</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
@@ -18,6 +19,11 @@ impl ListVirtualMachinesOutput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListVirtualMachinesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
@@ -30,6 +36,7 @@ pub mod list_virtual_machines_output {
         pub(crate) virtual_machines:
             std::option::Option<std::vec::Vec<crate::model::VirtualMachine>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `virtual_machines`.
@@ -61,11 +68,21 @@ pub mod list_virtual_machines_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListVirtualMachinesOutput`](crate::output::ListVirtualMachinesOutput).
         pub fn build(self) -> crate::output::ListVirtualMachinesOutput {
             crate::output::ListVirtualMachinesOutput {
                 virtual_machines: self.virtual_machines,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -84,11 +101,17 @@ pub struct GetVirtualMachineOutput {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     #[doc(hidden)]
     pub virtual_machine: std::option::Option<crate::model::VirtualMachineDetails>,
+    _request_id: Option<String>,
 }
 impl GetVirtualMachineOutput {
     /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
     pub fn virtual_machine(&self) -> std::option::Option<&crate::model::VirtualMachineDetails> {
         self.virtual_machine.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetVirtualMachineOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
@@ -99,6 +122,7 @@ pub mod get_virtual_machine_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) virtual_machine: std::option::Option<crate::model::VirtualMachineDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>This object contains the basic attributes of <code>VirtualMachine</code> contained by the output of <code>GetVirtualMachine</code> </p>
@@ -114,10 +138,20 @@ pub mod get_virtual_machine_output {
             self.virtual_machine = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetVirtualMachineOutput`](crate::output::GetVirtualMachineOutput).
         pub fn build(self) -> crate::output::GetVirtualMachineOutput {
             crate::output::GetVirtualMachineOutput {
                 virtual_machine: self.virtual_machine,
+                _request_id: self._request_id,
             }
         }
     }
@@ -136,11 +170,17 @@ pub struct StartVirtualMachinesMetadataSyncOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl StartVirtualMachinesMetadataSyncOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for StartVirtualMachinesMetadataSyncOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
@@ -151,6 +191,7 @@ pub mod start_virtual_machines_metadata_sync_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
@@ -166,10 +207,20 @@ pub mod start_virtual_machines_metadata_sync_output {
             self.hypervisor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartVirtualMachinesMetadataSyncOutput`](crate::output::StartVirtualMachinesMetadataSyncOutput).
         pub fn build(self) -> crate::output::StartVirtualMachinesMetadataSyncOutput {
             crate::output::StartVirtualMachinesMetadataSyncOutput {
                 hypervisor_arn: self.hypervisor_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -191,6 +242,7 @@ pub struct ListHypervisorsOutput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListHypervisorsOutput {
     /// <p>A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names (ARNs).</p>
@@ -202,6 +254,11 @@ impl ListHypervisorsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListHypervisorsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
 pub mod list_hypervisors_output {
 
@@ -211,6 +268,7 @@ pub mod list_hypervisors_output {
     pub struct Builder {
         pub(crate) hypervisors: std::option::Option<std::vec::Vec<crate::model::Hypervisor>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `hypervisors`.
@@ -242,11 +300,21 @@ pub mod list_hypervisors_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListHypervisorsOutput`](crate::output::ListHypervisorsOutput).
         pub fn build(self) -> crate::output::ListHypervisorsOutput {
             crate::output::ListHypervisorsOutput {
                 hypervisors: self.hypervisors,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -265,11 +333,17 @@ pub struct ImportHypervisorConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ImportHypervisorConfigurationOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ImportHypervisorConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
@@ -280,6 +354,7 @@ pub mod import_hypervisor_configuration_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor you disassociated.</p>
@@ -295,10 +370,20 @@ pub mod import_hypervisor_configuration_output {
             self.hypervisor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ImportHypervisorConfigurationOutput`](crate::output::ImportHypervisorConfigurationOutput).
         pub fn build(self) -> crate::output::ImportHypervisorConfigurationOutput {
             crate::output::ImportHypervisorConfigurationOutput {
                 hypervisor_arn: self.hypervisor_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -317,11 +402,17 @@ pub struct DeleteHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteHypervisorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
@@ -332,6 +423,7 @@ pub mod delete_hypervisor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor you deleted.</p>
@@ -347,10 +439,20 @@ pub mod delete_hypervisor_output {
             self.hypervisor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteHypervisorOutput`](crate::output::DeleteHypervisorOutput).
         pub fn build(self) -> crate::output::DeleteHypervisorOutput {
             crate::output::DeleteHypervisorOutput {
                 hypervisor_arn: self.hypervisor_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -369,11 +471,17 @@ pub struct UpdateHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateHypervisorOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateHypervisorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
@@ -384,6 +492,7 @@ pub mod update_hypervisor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor you updated.</p>
@@ -399,10 +508,20 @@ pub mod update_hypervisor_output {
             self.hypervisor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateHypervisorOutput`](crate::output::UpdateHypervisorOutput).
         pub fn build(self) -> crate::output::UpdateHypervisorOutput {
             crate::output::UpdateHypervisorOutput {
                 hypervisor_arn: self.hypervisor_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -421,11 +540,17 @@ pub struct GetHypervisorOutput {
     /// <p>Details about the requested hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor: std::option::Option<crate::model::HypervisorDetails>,
+    _request_id: Option<String>,
 }
 impl GetHypervisorOutput {
     /// <p>Details about the requested hypervisor.</p>
     pub fn hypervisor(&self) -> std::option::Option<&crate::model::HypervisorDetails> {
         self.hypervisor.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetHypervisorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
@@ -436,6 +561,7 @@ pub mod get_hypervisor_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor: std::option::Option<crate::model::HypervisorDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>Details about the requested hypervisor.</p>
@@ -451,10 +577,20 @@ pub mod get_hypervisor_output {
             self.hypervisor = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetHypervisorOutput`](crate::output::GetHypervisorOutput).
         pub fn build(self) -> crate::output::GetHypervisorOutput {
             crate::output::GetHypervisorOutput {
                 hypervisor: self.hypervisor,
+                _request_id: self._request_id,
             }
         }
     }
@@ -473,11 +609,17 @@ pub struct PutHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     #[doc(hidden)]
     pub hypervisor_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
     pub fn hypervisor_arn(&self) -> std::option::Option<&str> {
         self.hypervisor_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for PutHypervisorPropertyMappingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
@@ -488,6 +630,7 @@ pub mod put_hypervisor_property_mappings_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) hypervisor_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
@@ -503,10 +646,20 @@ pub mod put_hypervisor_property_mappings_output {
             self.hypervisor_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutHypervisorPropertyMappingsOutput`](crate::output::PutHypervisorPropertyMappingsOutput).
         pub fn build(self) -> crate::output::PutHypervisorPropertyMappingsOutput {
             crate::output::PutHypervisorPropertyMappingsOutput {
                 hypervisor_arn: self.hypervisor_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -532,6 +685,7 @@ pub struct GetHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the IAM role.</p>
     #[doc(hidden)]
     pub iam_role_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetHypervisorPropertyMappingsOutput {
     /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
@@ -549,6 +703,11 @@ impl GetHypervisorPropertyMappingsOutput {
         self.iam_role_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetHypervisorPropertyMappingsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
 pub mod get_hypervisor_property_mappings_output {
 
@@ -560,6 +719,7 @@ pub mod get_hypervisor_property_mappings_output {
         pub(crate) vmware_to_aws_tag_mappings:
             std::option::Option<std::vec::Vec<crate::model::VmwareToAwsTagMapping>>,
         pub(crate) iam_role_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
@@ -607,12 +767,22 @@ pub mod get_hypervisor_property_mappings_output {
             self.iam_role_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetHypervisorPropertyMappingsOutput`](crate::output::GetHypervisorPropertyMappingsOutput).
         pub fn build(self) -> crate::output::GetHypervisorPropertyMappingsOutput {
             crate::output::GetHypervisorPropertyMappingsOutput {
                 hypervisor_arn: self.hypervisor_arn,
                 vmware_to_aws_tag_mappings: self.vmware_to_aws_tag_mappings,
                 iam_role_arn: self.iam_role_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -631,11 +801,17 @@ pub struct UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateGatewaySoftwareNowOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateGatewaySoftwareNowOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
@@ -646,6 +822,7 @@ pub mod update_gateway_software_now_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
@@ -658,10 +835,20 @@ pub mod update_gateway_software_now_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGatewaySoftwareNowOutput`](crate::output::UpdateGatewaySoftwareNowOutput).
         pub fn build(self) -> crate::output::UpdateGatewaySoftwareNowOutput {
             crate::output::UpdateGatewaySoftwareNowOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -676,18 +863,38 @@ impl UpdateGatewaySoftwareNowOutput {
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TestHypervisorConfigurationOutput {}
+pub struct TestHypervisorConfigurationOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TestHypervisorConfigurationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
 pub mod test_hypervisor_configuration_output {
 
     /// A builder for [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TestHypervisorConfigurationOutput`](crate::output::TestHypervisorConfigurationOutput).
         pub fn build(self) -> crate::output::TestHypervisorConfigurationOutput {
-            crate::output::TestHypervisorConfigurationOutput {}
+            crate::output::TestHypervisorConfigurationOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -705,11 +912,17 @@ pub struct PutMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutMaintenanceStartTimeOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for PutMaintenanceStartTimeOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
@@ -720,6 +933,7 @@ pub mod put_maintenance_start_time_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of a gateway for which you set the maintenance start time.</p>
@@ -732,10 +946,20 @@ pub mod put_maintenance_start_time_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutMaintenanceStartTimeOutput`](crate::output::PutMaintenanceStartTimeOutput).
         pub fn build(self) -> crate::output::PutMaintenanceStartTimeOutput {
             crate::output::PutMaintenanceStartTimeOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -754,11 +978,17 @@ pub struct DisassociateGatewayFromServerOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DisassociateGatewayFromServerOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DisassociateGatewayFromServerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
@@ -769,6 +999,7 @@ pub mod disassociate_gateway_from_server_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway you disassociated.</p>
@@ -781,10 +1012,20 @@ pub mod disassociate_gateway_from_server_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DisassociateGatewayFromServerOutput`](crate::output::DisassociateGatewayFromServerOutput).
         pub fn build(self) -> crate::output::DisassociateGatewayFromServerOutput {
             crate::output::DisassociateGatewayFromServerOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -803,11 +1044,17 @@ pub struct AssociateGatewayToServerOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl AssociateGatewayToServerOutput {
     /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for AssociateGatewayToServerOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
@@ -818,6 +1065,7 @@ pub mod associate_gateway_to_server_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of a gateway.</p>
@@ -830,10 +1078,20 @@ pub mod associate_gateway_to_server_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`AssociateGatewayToServerOutput`](crate::output::AssociateGatewayToServerOutput).
         pub fn build(self) -> crate::output::AssociateGatewayToServerOutput {
             crate::output::AssociateGatewayToServerOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -855,6 +1113,7 @@ pub struct ListGatewaysOutput {
     /// <p>The next item following a partial list of returned resources. For example, if a request is made to return <code>maxResults</code> number of resources, <code>NextToken</code> allows you to return more items in your list starting at the location pointed to by the next token.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListGatewaysOutput {
     /// <p>A list of your gateways.</p>
@@ -866,6 +1125,11 @@ impl ListGatewaysOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListGatewaysOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
 pub mod list_gateways_output {
 
@@ -875,6 +1139,7 @@ pub mod list_gateways_output {
     pub struct Builder {
         pub(crate) gateways: std::option::Option<std::vec::Vec<crate::model::Gateway>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `gateways`.
@@ -906,11 +1171,21 @@ pub mod list_gateways_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListGatewaysOutput`](crate::output::ListGatewaysOutput).
         pub fn build(self) -> crate::output::ListGatewaysOutput {
             crate::output::ListGatewaysOutput {
                 gateways: self.gateways,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -929,11 +1204,17 @@ pub struct CreateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
@@ -944,6 +1225,7 @@ pub mod create_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway you create.</p>
@@ -956,10 +1238,20 @@ pub mod create_gateway_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateGatewayOutput`](crate::output::CreateGatewayOutput).
         pub fn build(self) -> crate::output::CreateGatewayOutput {
             crate::output::CreateGatewayOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -978,11 +1270,17 @@ pub struct DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl DeleteGatewayOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
@@ -993,6 +1291,7 @@ pub mod delete_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway you deleted.</p>
@@ -1005,10 +1304,20 @@ pub mod delete_gateway_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteGatewayOutput`](crate::output::DeleteGatewayOutput).
         pub fn build(self) -> crate::output::DeleteGatewayOutput {
             crate::output::DeleteGatewayOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1027,11 +1336,17 @@ pub struct UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UpdateGatewayInformationOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateGatewayInformationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
@@ -1042,6 +1357,7 @@ pub mod update_gateway_information_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway you updated.</p>
@@ -1054,10 +1370,20 @@ pub mod update_gateway_information_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateGatewayInformationOutput`](crate::output::UpdateGatewayInformationOutput).
         pub fn build(self) -> crate::output::UpdateGatewayInformationOutput {
             crate::output::UpdateGatewayInformationOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1076,11 +1402,17 @@ pub struct GetGatewayOutput {
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
     #[doc(hidden)]
     pub gateway: std::option::Option<crate::model::GatewayDetails>,
+    _request_id: Option<String>,
 }
 impl GetGatewayOutput {
     /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
     pub fn gateway(&self) -> std::option::Option<&crate::model::GatewayDetails> {
         self.gateway.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetGatewayOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetGatewayOutput`](crate::output::GetGatewayOutput).
@@ -1091,6 +1423,7 @@ pub mod get_gateway_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway: std::option::Option<crate::model::GatewayDetails>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>
@@ -1106,10 +1439,20 @@ pub mod get_gateway_output {
             self.gateway = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetGatewayOutput`](crate::output::GetGatewayOutput).
         pub fn build(self) -> crate::output::GetGatewayOutput {
             crate::output::GetGatewayOutput {
                 gateway: self.gateway,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1128,11 +1471,17 @@ pub struct PutBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     #[doc(hidden)]
     pub gateway_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl PutBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
     pub fn gateway_arn(&self) -> std::option::Option<&str> {
         self.gateway_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for PutBandwidthRateLimitScheduleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
@@ -1143,6 +1492,7 @@ pub mod put_bandwidth_rate_limit_schedule_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -1155,10 +1505,20 @@ pub mod put_bandwidth_rate_limit_schedule_output {
             self.gateway_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`PutBandwidthRateLimitScheduleOutput`](crate::output::PutBandwidthRateLimitScheduleOutput).
         pub fn build(self) -> crate::output::PutBandwidthRateLimitScheduleOutput {
             crate::output::PutBandwidthRateLimitScheduleOutput {
                 gateway_arn: self.gateway_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1181,6 +1541,7 @@ pub struct GetBandwidthRateLimitScheduleOutput {
     #[doc(hidden)]
     pub bandwidth_rate_limit_intervals:
         std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+    _request_id: Option<String>,
 }
 impl GetBandwidthRateLimitScheduleOutput {
     /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -1194,6 +1555,11 @@ impl GetBandwidthRateLimitScheduleOutput {
         self.bandwidth_rate_limit_intervals.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetBandwidthRateLimitScheduleOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
 pub mod get_bandwidth_rate_limit_schedule_output {
 
@@ -1204,6 +1570,7 @@ pub mod get_bandwidth_rate_limit_schedule_output {
         pub(crate) gateway_arn: std::option::Option<std::string::String>,
         pub(crate) bandwidth_rate_limit_intervals:
             std::option::Option<std::vec::Vec<crate::model::BandwidthRateLimitInterval>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the gateway. Use the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BGW_ListGateways.html"> <code>ListGateways</code> </a> operation to return a list of gateways for your account and Amazon Web Services Region.</p>
@@ -1238,11 +1605,21 @@ pub mod get_bandwidth_rate_limit_schedule_output {
             self.bandwidth_rate_limit_intervals = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBandwidthRateLimitScheduleOutput`](crate::output::GetBandwidthRateLimitScheduleOutput).
         pub fn build(self) -> crate::output::GetBandwidthRateLimitScheduleOutput {
             crate::output::GetBandwidthRateLimitScheduleOutput {
                 gateway_arn: self.gateway_arn,
                 bandwidth_rate_limit_intervals: self.bandwidth_rate_limit_intervals,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1261,11 +1638,17 @@ pub struct UntagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl UntagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
@@ -1276,6 +1659,7 @@ pub mod untag_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource from which you removed tags.</p>
@@ -1288,10 +1672,20 @@ pub mod untag_resource_output {
             self.resource_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
             crate::output::UntagResourceOutput {
                 resource_arn: self.resource_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1310,11 +1704,17 @@ pub struct TagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
     #[doc(hidden)]
     pub resource_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl TagResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
     pub fn resource_arn(&self) -> std::option::Option<&str> {
         self.resource_arn.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
@@ -1325,6 +1725,7 @@ pub mod tag_resource_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource you tagged.</p>
@@ -1337,10 +1738,20 @@ pub mod tag_resource_output {
             self.resource_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
             crate::output::TagResourceOutput {
                 resource_arn: self.resource_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1362,6 +1773,7 @@ pub struct ListTagsForResourceOutput {
     /// <p>A list of the resource's tags.</p>
     #[doc(hidden)]
     pub tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
@@ -1373,6 +1785,11 @@ impl ListTagsForResourceOutput {
         self.tags.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
 pub mod list_tags_for_resource_output {
 
@@ -1382,6 +1799,7 @@ pub mod list_tags_for_resource_output {
     pub struct Builder {
         pub(crate) resource_arn: std::option::Option<std::string::String>,
         pub(crate) tags: std::option::Option<std::vec::Vec<crate::model::Tag>>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The Amazon Resource Name (ARN) of the resource's tags that you listed.</p>
@@ -1413,11 +1831,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
             crate::output::ListTagsForResourceOutput {
                 resource_arn: self.resource_arn,
                 tags: self.tags,
+                _request_id: self._request_id,
             }
         }
     }

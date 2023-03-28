@@ -12,6 +12,7 @@ pub struct ListStreamsOutput {
     /// <p>If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean that there is more data in the result set. The only way to know when you have reached the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.</p>
     #[doc(hidden)]
     pub last_evaluated_stream_arn: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListStreamsOutput {
     /// <p>A list of stream descriptors associated with the current account and endpoint.</p>
@@ -25,6 +26,11 @@ impl ListStreamsOutput {
         self.last_evaluated_stream_arn.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListStreamsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListStreamsOutput`](crate::output::ListStreamsOutput).
 pub mod list_streams_output {
 
@@ -34,6 +40,7 @@ pub mod list_streams_output {
     pub struct Builder {
         pub(crate) streams: std::option::Option<std::vec::Vec<crate::model::Stream>>,
         pub(crate) last_evaluated_stream_arn: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `streams`.
@@ -72,11 +79,21 @@ pub mod list_streams_output {
             self.last_evaluated_stream_arn = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListStreamsOutput`](crate::output::ListStreamsOutput).
         pub fn build(self) -> crate::output::ListStreamsOutput {
             crate::output::ListStreamsOutput {
                 streams: self.streams,
                 last_evaluated_stream_arn: self.last_evaluated_stream_arn,
+                _request_id: self._request_id,
             }
         }
     }
@@ -95,11 +112,17 @@ pub struct GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     #[doc(hidden)]
     pub shard_iterator: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetShardIteratorOutput {
     /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
     pub fn shard_iterator(&self) -> std::option::Option<&str> {
         self.shard_iterator.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GetShardIteratorOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
@@ -110,6 +133,7 @@ pub mod get_shard_iterator_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) shard_iterator: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>The position in the shard from which to start reading stream records sequentially. A shard iterator specifies this position using the sequence number of a stream record in a shard.</p>
@@ -125,10 +149,20 @@ pub mod get_shard_iterator_output {
             self.shard_iterator = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetShardIteratorOutput`](crate::output::GetShardIteratorOutput).
         pub fn build(self) -> crate::output::GetShardIteratorOutput {
             crate::output::GetShardIteratorOutput {
                 shard_iterator: self.shard_iterator,
+                _request_id: self._request_id,
             }
         }
     }
@@ -150,6 +184,7 @@ pub struct GetRecordsOutput {
     /// <p>The next position in the shard from which to start sequentially reading stream records. If set to <code>null</code>, the shard has been closed and the requested iterator will not return any more data.</p>
     #[doc(hidden)]
     pub next_shard_iterator: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetRecordsOutput {
     /// <p>The stream records from the shard, which were retrieved using the shard iterator.</p>
@@ -161,6 +196,11 @@ impl GetRecordsOutput {
         self.next_shard_iterator.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetRecordsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetRecordsOutput`](crate::output::GetRecordsOutput).
 pub mod get_records_output {
 
@@ -170,6 +210,7 @@ pub mod get_records_output {
     pub struct Builder {
         pub(crate) records: std::option::Option<std::vec::Vec<crate::model::Record>>,
         pub(crate) next_shard_iterator: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `records`.
@@ -204,11 +245,21 @@ pub mod get_records_output {
             self.next_shard_iterator = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetRecordsOutput`](crate::output::GetRecordsOutput).
         pub fn build(self) -> crate::output::GetRecordsOutput {
             crate::output::GetRecordsOutput {
                 records: self.records,
                 next_shard_iterator: self.next_shard_iterator,
+                _request_id: self._request_id,
             }
         }
     }
@@ -227,11 +278,17 @@ pub struct DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     #[doc(hidden)]
     pub stream_description: std::option::Option<crate::model::StreamDescription>,
+    _request_id: Option<String>,
 }
 impl DescribeStreamOutput {
     /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
     pub fn stream_description(&self) -> std::option::Option<&crate::model::StreamDescription> {
         self.stream_description.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DescribeStreamOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
@@ -242,6 +299,7 @@ pub mod describe_stream_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) stream_description: std::option::Option<crate::model::StreamDescription>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p>A complete description of the stream, including its creation date and time, the DynamoDB table associated with the stream, the shard IDs within the stream, and the beginning and ending sequence numbers of stream records within the shards.</p>
@@ -257,10 +315,20 @@ pub mod describe_stream_output {
             self.stream_description = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DescribeStreamOutput`](crate::output::DescribeStreamOutput).
         pub fn build(self) -> crate::output::DescribeStreamOutput {
             crate::output::DescribeStreamOutput {
                 stream_description: self.stream_description,
+                _request_id: self._request_id,
             }
         }
     }

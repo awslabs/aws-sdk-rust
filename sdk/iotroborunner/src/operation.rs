@@ -25,6 +25,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateDestination {
         crate::error::CreateDestinationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_destination_error(response)
         } else {
@@ -57,6 +58,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateSite {
     type Output =
         std::result::Result<crate::output::CreateSiteOutput, crate::error::CreateSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_site_error(response)
         } else {
@@ -89,6 +91,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorker {
     type Output =
         std::result::Result<crate::output::CreateWorkerOutput, crate::error::CreateWorkerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_worker_error(response)
         } else {
@@ -123,6 +126,7 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateWorkerFleet {
         crate::error::CreateWorkerFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_worker_fleet_error(response)
         } else {
@@ -157,6 +161,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteDestination {
         crate::error::DeleteDestinationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_destination_error(response)
         } else {
@@ -189,6 +194,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteSite {
     type Output =
         std::result::Result<crate::output::DeleteSiteOutput, crate::error::DeleteSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_site_error(response)
         } else {
@@ -221,6 +227,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorker {
     type Output =
         std::result::Result<crate::output::DeleteWorkerOutput, crate::error::DeleteWorkerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_worker_error(response)
         } else {
@@ -255,6 +262,7 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteWorkerFleet {
         crate::error::DeleteWorkerFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_worker_fleet_error(response)
         } else {
@@ -287,6 +295,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetDestination {
     type Output =
         std::result::Result<crate::output::GetDestinationOutput, crate::error::GetDestinationError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_destination_error(response)
         } else {
@@ -318,6 +327,7 @@ impl GetSite {
 impl aws_smithy_http::response::ParseStrictResponse for GetSite {
     type Output = std::result::Result<crate::output::GetSiteOutput, crate::error::GetSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_site_error(response)
         } else {
@@ -349,6 +359,7 @@ impl GetWorker {
 impl aws_smithy_http::response::ParseStrictResponse for GetWorker {
     type Output = std::result::Result<crate::output::GetWorkerOutput, crate::error::GetWorkerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_worker_error(response)
         } else {
@@ -381,6 +392,7 @@ impl aws_smithy_http::response::ParseStrictResponse for GetWorkerFleet {
     type Output =
         std::result::Result<crate::output::GetWorkerFleetOutput, crate::error::GetWorkerFleetError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_worker_fleet_error(response)
         } else {
@@ -415,6 +427,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListDestinations {
         crate::error::ListDestinationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_destinations_error(response)
         } else {
@@ -446,6 +459,7 @@ impl ListSites {
 impl aws_smithy_http::response::ParseStrictResponse for ListSites {
     type Output = std::result::Result<crate::output::ListSitesOutput, crate::error::ListSitesError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_sites_error(response)
         } else {
@@ -480,6 +494,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkerFleets {
         crate::error::ListWorkerFleetsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_worker_fleets_error(response)
         } else {
@@ -512,6 +527,7 @@ impl aws_smithy_http::response::ParseStrictResponse for ListWorkers {
     type Output =
         std::result::Result<crate::output::ListWorkersOutput, crate::error::ListWorkersError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_workers_error(response)
         } else {
@@ -546,6 +562,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateDestination {
         crate::error::UpdateDestinationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_destination_error(response)
         } else {
@@ -578,6 +595,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateSite {
     type Output =
         std::result::Result<crate::output::UpdateSiteOutput, crate::error::UpdateSiteError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_site_error(response)
         } else {
@@ -610,6 +628,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorker {
     type Output =
         std::result::Result<crate::output::UpdateWorkerOutput, crate::error::UpdateWorkerError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_worker_error(response)
         } else {
@@ -644,6 +663,7 @@ impl aws_smithy_http::response::ParseStrictResponse for UpdateWorkerFleet {
         crate::error::UpdateWorkerFleetError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_update_worker_fleet_error(response)
         } else {

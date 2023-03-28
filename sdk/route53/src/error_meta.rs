@@ -176,15 +176,8 @@ pub enum Error {
     VpcAssociationAuthorizationNotFound(crate::error::VpcAssociationAuthorizationNotFound),
     /// <p>The specified VPC and hosted zone are not currently associated.</p>
     VpcAssociationNotFound(crate::error::VpcAssociationNotFound),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -274,34 +267,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ActivateKeySigningKeyError> for Error {
     fn from(err: crate::error::ActivateKeySigningKeyError) -> Self {
-        match err.kind {
-            crate::error::ActivateKeySigningKeyErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::ActivateKeySigningKeyError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::ActivateKeySigningKeyErrorKind::InvalidInput(inner) => {
+            crate::error::ActivateKeySigningKeyError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ActivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
+            crate::error::ActivateKeySigningKeyError::InvalidKeySigningKeyStatus(inner) => {
                 Error::InvalidKeySigningKeyStatus(inner)
             }
-            crate::error::ActivateKeySigningKeyErrorKind::InvalidKmsArn(inner) => {
+            crate::error::ActivateKeySigningKeyError::InvalidKmsArn(inner) => {
                 Error::InvalidKmsArn(inner)
             }
-            crate::error::ActivateKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
+            crate::error::ActivateKeySigningKeyError::InvalidSigningStatus(inner) => {
                 Error::InvalidSigningStatus(inner)
             }
-            crate::error::ActivateKeySigningKeyErrorKind::NoSuchKeySigningKey(inner) => {
+            crate::error::ActivateKeySigningKeyError::NoSuchKeySigningKey(inner) => {
                 Error::NoSuchKeySigningKey(inner)
             }
-            crate::error::ActivateKeySigningKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ActivateKeySigningKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -317,39 +315,46 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::AssociateVPCWithHostedZoneError> for Error {
     fn from(err: crate::error::AssociateVPCWithHostedZoneError) -> Self {
-        match err.kind {
-            crate::error::AssociateVPCWithHostedZoneErrorKind::ConflictingDomainExists(inner) => {
+        match err {
+            crate::error::AssociateVPCWithHostedZoneError::ConflictingDomainExists(inner) => {
                 Error::ConflictingDomainExists(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidInput(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::InvalidVpcId(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::InvalidVpcId(inner) => {
                 Error::InvalidVpcId(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::LimitsExceeded(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::LimitsExceeded(inner) => {
                 Error::LimitsExceeded(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::NotAuthorizedException(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::NotAuthorizedException(inner) => {
                 Error::NotAuthorizedException(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::PublicZoneVpcAssociation(inner) => {
+            crate::error::AssociateVPCWithHostedZoneError::PublicZoneVpcAssociation(inner) => {
                 Error::PublicZoneVpcAssociation(inner)
             }
-            crate::error::AssociateVPCWithHostedZoneErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::AssociateVPCWithHostedZoneError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -366,34 +371,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ChangeCidrCollectionError> for Error {
     fn from(err: crate::error::ChangeCidrCollectionError) -> Self {
-        match err.kind {
-            crate::error::ChangeCidrCollectionErrorKind::CidrBlockInUseException(inner) => {
+        match err {
+            crate::error::ChangeCidrCollectionError::CidrBlockInUseException(inner) => {
                 Error::CidrBlockInUseException(inner)
             }
-            crate::error::ChangeCidrCollectionErrorKind::CidrCollectionVersionMismatchException(
+            crate::error::ChangeCidrCollectionError::CidrCollectionVersionMismatchException(
                 inner,
             ) => Error::CidrCollectionVersionMismatchException(inner),
-            crate::error::ChangeCidrCollectionErrorKind::ConcurrentModification(inner) => {
+            crate::error::ChangeCidrCollectionError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::ChangeCidrCollectionErrorKind::InvalidInput(inner) => {
+            crate::error::ChangeCidrCollectionError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ChangeCidrCollectionErrorKind::LimitsExceeded(inner) => {
+            crate::error::ChangeCidrCollectionError::LimitsExceeded(inner) => {
                 Error::LimitsExceeded(inner)
             }
-            crate::error::ChangeCidrCollectionErrorKind::NoSuchCidrCollectionException(inner) => {
+            crate::error::ChangeCidrCollectionError::NoSuchCidrCollectionException(inner) => {
                 Error::NoSuchCidrCollectionException(inner)
             }
-            crate::error::ChangeCidrCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ChangeCidrCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -409,30 +419,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ChangeResourceRecordSetsError> for Error {
     fn from(err: crate::error::ChangeResourceRecordSetsError) -> Self {
-        match err.kind {
-            crate::error::ChangeResourceRecordSetsErrorKind::InvalidChangeBatch(inner) => {
+        match err {
+            crate::error::ChangeResourceRecordSetsError::InvalidChangeBatch(inner) => {
                 Error::InvalidChangeBatch(inner)
             }
-            crate::error::ChangeResourceRecordSetsErrorKind::InvalidInput(inner) => {
+            crate::error::ChangeResourceRecordSetsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ChangeResourceRecordSetsErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::ChangeResourceRecordSetsError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::ChangeResourceRecordSetsErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ChangeResourceRecordSetsError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ChangeResourceRecordSetsErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::ChangeResourceRecordSetsError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::ChangeResourceRecordSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ChangeResourceRecordSetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -449,31 +466,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ChangeTagsForResourceError> for Error {
     fn from(err: crate::error::ChangeTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ChangeTagsForResourceErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ChangeTagsForResourceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ChangeTagsForResourceErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::ChangeTagsForResourceError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::ChangeTagsForResourceErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ChangeTagsForResourceError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ChangeTagsForResourceErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::ChangeTagsForResourceError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::ChangeTagsForResourceErrorKind::ThrottlingException(inner) => {
+            crate::error::ChangeTagsForResourceError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::ChangeTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ChangeTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -489,28 +511,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateCidrCollectionError> for Error {
     fn from(err: crate::error::CreateCidrCollectionError) -> Self {
-        match err.kind {
-            crate::error::CreateCidrCollectionErrorKind::CidrCollectionAlreadyExistsException(
+        match err {
+            crate::error::CreateCidrCollectionError::CidrCollectionAlreadyExistsException(
                 inner,
             ) => Error::CidrCollectionAlreadyExistsException(inner),
-            crate::error::CreateCidrCollectionErrorKind::ConcurrentModification(inner) => {
+            crate::error::CreateCidrCollectionError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::CreateCidrCollectionErrorKind::InvalidInput(inner) => {
+            crate::error::CreateCidrCollectionError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreateCidrCollectionErrorKind::LimitsExceeded(inner) => {
+            crate::error::CreateCidrCollectionError::LimitsExceeded(inner) => {
                 Error::LimitsExceeded(inner)
             }
-            crate::error::CreateCidrCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateCidrCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -525,25 +552,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateHealthCheckError> for Error {
     fn from(err: crate::error::CreateHealthCheckError) -> Self {
-        match err.kind {
-            crate::error::CreateHealthCheckErrorKind::HealthCheckAlreadyExists(inner) => {
+        match err {
+            crate::error::CreateHealthCheckError::HealthCheckAlreadyExists(inner) => {
                 Error::HealthCheckAlreadyExists(inner)
             }
-            crate::error::CreateHealthCheckErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::CreateHealthCheckErrorKind::TooManyHealthChecks(inner) => {
+            crate::error::CreateHealthCheckError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CreateHealthCheckError::TooManyHealthChecks(inner) => {
                 Error::TooManyHealthChecks(inner)
             }
-            crate::error::CreateHealthCheckErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -558,43 +588,44 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateHostedZoneError> for Error {
     fn from(err: crate::error::CreateHostedZoneError) -> Self {
-        match err.kind {
-            crate::error::CreateHostedZoneErrorKind::ConflictingDomainExists(inner) => {
+        match err {
+            crate::error::CreateHostedZoneError::ConflictingDomainExists(inner) => {
                 Error::ConflictingDomainExists(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::DelegationSetNotAvailable(inner) => {
+            crate::error::CreateHostedZoneError::DelegationSetNotAvailable(inner) => {
                 Error::DelegationSetNotAvailable(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::DelegationSetNotReusable(inner) => {
+            crate::error::CreateHostedZoneError::DelegationSetNotReusable(inner) => {
                 Error::DelegationSetNotReusable(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::HostedZoneAlreadyExists(inner) => {
+            crate::error::CreateHostedZoneError::HostedZoneAlreadyExists(inner) => {
                 Error::HostedZoneAlreadyExists(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::InvalidDomainName(inner) => {
+            crate::error::CreateHostedZoneError::InvalidDomainName(inner) => {
                 Error::InvalidDomainName(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::CreateHostedZoneErrorKind::InvalidVpcId(inner) => {
-                Error::InvalidVpcId(inner)
-            }
-            crate::error::CreateHostedZoneErrorKind::NoSuchDelegationSet(inner) => {
+            crate::error::CreateHostedZoneError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CreateHostedZoneError::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
+            crate::error::CreateHostedZoneError::NoSuchDelegationSet(inner) => {
                 Error::NoSuchDelegationSet(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::TooManyHostedZones(inner) => {
+            crate::error::CreateHostedZoneError::TooManyHostedZones(inner) => {
                 Error::TooManyHostedZones(inner)
             }
-            crate::error::CreateHostedZoneErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateHostedZoneError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -609,46 +640,51 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateKeySigningKeyError> for Error {
     fn from(err: crate::error::CreateKeySigningKeyError) -> Self {
-        match err.kind {
-            crate::error::CreateKeySigningKeyErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::CreateKeySigningKeyError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::InvalidArgument(inner) => {
+            crate::error::CreateKeySigningKeyError::InvalidArgument(inner) => {
                 Error::InvalidArgument(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::InvalidInput(inner) => {
+            crate::error::CreateKeySigningKeyError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::InvalidKeySigningKeyName(inner) => {
+            crate::error::CreateKeySigningKeyError::InvalidKeySigningKeyName(inner) => {
                 Error::InvalidKeySigningKeyName(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
+            crate::error::CreateKeySigningKeyError::InvalidKeySigningKeyStatus(inner) => {
                 Error::InvalidKeySigningKeyStatus(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::InvalidKmsArn(inner) => {
+            crate::error::CreateKeySigningKeyError::InvalidKmsArn(inner) => {
                 Error::InvalidKmsArn(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
+            crate::error::CreateKeySigningKeyError::InvalidSigningStatus(inner) => {
                 Error::InvalidSigningStatus(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::KeySigningKeyAlreadyExists(inner) => {
+            crate::error::CreateKeySigningKeyError::KeySigningKeyAlreadyExists(inner) => {
                 Error::KeySigningKeyAlreadyExists(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::CreateKeySigningKeyError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::TooManyKeySigningKeys(inner) => {
+            crate::error::CreateKeySigningKeyError::TooManyKeySigningKeys(inner) => {
                 Error::TooManyKeySigningKeys(inner)
             }
-            crate::error::CreateKeySigningKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateKeySigningKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -664,20 +700,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateQueryLoggingConfigError> for Error {
     fn from(err: crate::error::CreateQueryLoggingConfigError) -> Self {
-        match err.kind {
-            crate::error::CreateQueryLoggingConfigErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
-            crate::error::CreateQueryLoggingConfigErrorKind::InsufficientCloudWatchLogsResourcePolicy(inner) => Error::InsufficientCloudWatchLogsResourcePolicy(inner),
-            crate::error::CreateQueryLoggingConfigErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CreateQueryLoggingConfigErrorKind::NoSuchCloudWatchLogsLogGroup(inner) => Error::NoSuchCloudWatchLogsLogGroup(inner),
-            crate::error::CreateQueryLoggingConfigErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-            crate::error::CreateQueryLoggingConfigErrorKind::QueryLoggingConfigAlreadyExists(inner) => Error::QueryLoggingConfigAlreadyExists(inner),
-            crate::error::CreateQueryLoggingConfigErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateQueryLoggingConfigError::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
+            crate::error::CreateQueryLoggingConfigError::InsufficientCloudWatchLogsResourcePolicy(inner) => Error::InsufficientCloudWatchLogsResourcePolicy(inner),
+            crate::error::CreateQueryLoggingConfigError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CreateQueryLoggingConfigError::NoSuchCloudWatchLogsLogGroup(inner) => Error::NoSuchCloudWatchLogsLogGroup(inner),
+            crate::error::CreateQueryLoggingConfigError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::error::CreateQueryLoggingConfigError::QueryLoggingConfigAlreadyExists(inner) => Error::QueryLoggingConfigAlreadyExists(inner),
+            crate::error::CreateQueryLoggingConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -693,36 +736,43 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateReusableDelegationSetError> for Error {
     fn from(err: crate::error::CreateReusableDelegationSetError) -> Self {
-        match err.kind {
-            crate::error::CreateReusableDelegationSetErrorKind::DelegationSetAlreadyCreated(
-                inner,
-            ) => Error::DelegationSetAlreadyCreated(inner),
-            crate::error::CreateReusableDelegationSetErrorKind::DelegationSetAlreadyReusable(
-                inner,
-            ) => Error::DelegationSetAlreadyReusable(inner),
-            crate::error::CreateReusableDelegationSetErrorKind::DelegationSetNotAvailable(
-                inner,
-            ) => Error::DelegationSetNotAvailable(inner),
-            crate::error::CreateReusableDelegationSetErrorKind::HostedZoneNotFound(inner) => {
+        match err {
+            crate::error::CreateReusableDelegationSetError::DelegationSetAlreadyCreated(inner) => {
+                Error::DelegationSetAlreadyCreated(inner)
+            }
+            crate::error::CreateReusableDelegationSetError::DelegationSetAlreadyReusable(inner) => {
+                Error::DelegationSetAlreadyReusable(inner)
+            }
+            crate::error::CreateReusableDelegationSetError::DelegationSetNotAvailable(inner) => {
+                Error::DelegationSetNotAvailable(inner)
+            }
+            crate::error::CreateReusableDelegationSetError::HostedZoneNotFound(inner) => {
                 Error::HostedZoneNotFound(inner)
             }
-            crate::error::CreateReusableDelegationSetErrorKind::InvalidArgument(inner) => {
+            crate::error::CreateReusableDelegationSetError::InvalidArgument(inner) => {
                 Error::InvalidArgument(inner)
             }
-            crate::error::CreateReusableDelegationSetErrorKind::InvalidInput(inner) => {
+            crate::error::CreateReusableDelegationSetError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreateReusableDelegationSetErrorKind::LimitsExceeded(inner) => {
+            crate::error::CreateReusableDelegationSetError::LimitsExceeded(inner) => {
                 Error::LimitsExceeded(inner)
             }
-            crate::error::CreateReusableDelegationSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::CreateReusableDelegationSetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -738,28 +788,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTrafficPolicyError> for Error {
     fn from(err: crate::error::CreateTrafficPolicyError) -> Self {
-        match err.kind {
-            crate::error::CreateTrafficPolicyErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::CreateTrafficPolicyError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::CreateTrafficPolicyErrorKind::InvalidTrafficPolicyDocument(inner) => {
+            crate::error::CreateTrafficPolicyError::InvalidTrafficPolicyDocument(inner) => {
                 Error::InvalidTrafficPolicyDocument(inner)
             }
-            crate::error::CreateTrafficPolicyErrorKind::TooManyTrafficPolicies(inner) => {
+            crate::error::CreateTrafficPolicyError::TooManyTrafficPolicies(inner) => {
                 Error::TooManyTrafficPolicies(inner)
             }
-            crate::error::CreateTrafficPolicyErrorKind::TrafficPolicyAlreadyExists(inner) => {
+            crate::error::CreateTrafficPolicyError::TrafficPolicyAlreadyExists(inner) => {
                 Error::TrafficPolicyAlreadyExists(inner)
             }
-            crate::error::CreateTrafficPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateTrafficPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -775,19 +830,38 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTrafficPolicyInstanceError> for Error {
     fn from(err: crate::error::CreateTrafficPolicyInstanceError) -> Self {
-        match err.kind {
-            crate::error::CreateTrafficPolicyInstanceErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-            crate::error::CreateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
-            crate::error::CreateTrafficPolicyInstanceErrorKind::TooManyTrafficPolicyInstances(inner) => Error::TooManyTrafficPolicyInstances(inner),
-            crate::error::CreateTrafficPolicyInstanceErrorKind::TrafficPolicyInstanceAlreadyExists(inner) => Error::TrafficPolicyInstanceAlreadyExists(inner),
-            crate::error::CreateTrafficPolicyInstanceErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateTrafficPolicyInstanceError::InvalidInput(inner) => {
+                Error::InvalidInput(inner)
+            }
+            crate::error::CreateTrafficPolicyInstanceError::NoSuchHostedZone(inner) => {
+                Error::NoSuchHostedZone(inner)
+            }
+            crate::error::CreateTrafficPolicyInstanceError::NoSuchTrafficPolicy(inner) => {
+                Error::NoSuchTrafficPolicy(inner)
+            }
+            crate::error::CreateTrafficPolicyInstanceError::TooManyTrafficPolicyInstances(
+                inner,
+            ) => Error::TooManyTrafficPolicyInstances(inner),
+            crate::error::CreateTrafficPolicyInstanceError::TrafficPolicyInstanceAlreadyExists(
+                inner,
+            ) => Error::TrafficPolicyInstanceAlreadyExists(inner),
+            crate::error::CreateTrafficPolicyInstanceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -803,19 +877,26 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateTrafficPolicyVersionError> for Error {
     fn from(err: crate::error::CreateTrafficPolicyVersionError) -> Self {
-        match err.kind {
-            crate::error::CreateTrafficPolicyVersionErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
-            crate::error::CreateTrafficPolicyVersionErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CreateTrafficPolicyVersionErrorKind::InvalidTrafficPolicyDocument(inner) => Error::InvalidTrafficPolicyDocument(inner),
-            crate::error::CreateTrafficPolicyVersionErrorKind::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
-            crate::error::CreateTrafficPolicyVersionErrorKind::TooManyTrafficPolicyVersionsForCurrentPolicy(inner) => Error::TooManyTrafficPolicyVersionsForCurrentPolicy(inner),
-            crate::error::CreateTrafficPolicyVersionErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateTrafficPolicyVersionError::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
+            crate::error::CreateTrafficPolicyVersionError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CreateTrafficPolicyVersionError::InvalidTrafficPolicyDocument(inner) => Error::InvalidTrafficPolicyDocument(inner),
+            crate::error::CreateTrafficPolicyVersionError::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
+            crate::error::CreateTrafficPolicyVersionError::TooManyTrafficPolicyVersionsForCurrentPolicy(inner) => Error::TooManyTrafficPolicyVersionsForCurrentPolicy(inner),
+            crate::error::CreateTrafficPolicyVersionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -835,19 +916,26 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateVPCAssociationAuthorizationError> for Error {
     fn from(err: crate::error::CreateVPCAssociationAuthorizationError) -> Self {
-        match err.kind {
-            crate::error::CreateVPCAssociationAuthorizationErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
-            crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::CreateVPCAssociationAuthorizationErrorKind::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
-            crate::error::CreateVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-            crate::error::CreateVPCAssociationAuthorizationErrorKind::TooManyVpcAssociationAuthorizations(inner) => Error::TooManyVpcAssociationAuthorizations(inner),
-            crate::error::CreateVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::CreateVPCAssociationAuthorizationError::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
+            crate::error::CreateVPCAssociationAuthorizationError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::CreateVPCAssociationAuthorizationError::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
+            crate::error::CreateVPCAssociationAuthorizationError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::error::CreateVPCAssociationAuthorizationError::TooManyVpcAssociationAuthorizations(inner) => Error::TooManyVpcAssociationAuthorizations(inner),
+            crate::error::CreateVPCAssociationAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -863,37 +951,42 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeactivateKeySigningKeyError> for Error {
     fn from(err: crate::error::DeactivateKeySigningKeyError) -> Self {
-        match err.kind {
-            crate::error::DeactivateKeySigningKeyErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::DeactivateKeySigningKeyError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::DeactivateKeySigningKeyErrorKind::InvalidInput(inner) => {
+            crate::error::DeactivateKeySigningKeyError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeactivateKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
+            crate::error::DeactivateKeySigningKeyError::InvalidKeySigningKeyStatus(inner) => {
                 Error::InvalidKeySigningKeyStatus(inner)
             }
-            crate::error::DeactivateKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
+            crate::error::DeactivateKeySigningKeyError::InvalidSigningStatus(inner) => {
                 Error::InvalidSigningStatus(inner)
             }
-            crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInParentDsRecord(
-                inner,
-            ) => Error::KeySigningKeyInParentDsRecord(inner),
-            crate::error::DeactivateKeySigningKeyErrorKind::KeySigningKeyInUse(inner) => {
+            crate::error::DeactivateKeySigningKeyError::KeySigningKeyInParentDsRecord(inner) => {
+                Error::KeySigningKeyInParentDsRecord(inner)
+            }
+            crate::error::DeactivateKeySigningKeyError::KeySigningKeyInUse(inner) => {
                 Error::KeySigningKeyInUse(inner)
             }
-            crate::error::DeactivateKeySigningKeyErrorKind::NoSuchKeySigningKey(inner) => {
+            crate::error::DeactivateKeySigningKeyError::NoSuchKeySigningKey(inner) => {
                 Error::NoSuchKeySigningKey(inner)
             }
-            crate::error::DeactivateKeySigningKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeactivateKeySigningKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -909,28 +1002,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteCidrCollectionError> for Error {
     fn from(err: crate::error::DeleteCidrCollectionError) -> Self {
-        match err.kind {
-            crate::error::DeleteCidrCollectionErrorKind::CidrCollectionInUseException(inner) => {
+        match err {
+            crate::error::DeleteCidrCollectionError::CidrCollectionInUseException(inner) => {
                 Error::CidrCollectionInUseException(inner)
             }
-            crate::error::DeleteCidrCollectionErrorKind::ConcurrentModification(inner) => {
+            crate::error::DeleteCidrCollectionError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::DeleteCidrCollectionErrorKind::InvalidInput(inner) => {
+            crate::error::DeleteCidrCollectionError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeleteCidrCollectionErrorKind::NoSuchCidrCollectionException(inner) => {
+            crate::error::DeleteCidrCollectionError::NoSuchCidrCollectionException(inner) => {
                 Error::NoSuchCidrCollectionException(inner)
             }
-            crate::error::DeleteCidrCollectionErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteCidrCollectionError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -945,25 +1043,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteHealthCheckError> for Error {
     fn from(err: crate::error::DeleteHealthCheckError) -> Self {
-        match err.kind {
-            crate::error::DeleteHealthCheckErrorKind::HealthCheckInUse(inner) => {
+        match err {
+            crate::error::DeleteHealthCheckError::HealthCheckInUse(inner) => {
                 Error::HealthCheckInUse(inner)
             }
-            crate::error::DeleteHealthCheckErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::DeleteHealthCheckErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::DeleteHealthCheckError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteHealthCheckError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::DeleteHealthCheckErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -978,31 +1079,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteHostedZoneError> for Error {
     fn from(err: crate::error::DeleteHostedZoneError) -> Self {
-        match err.kind {
-            crate::error::DeleteHostedZoneErrorKind::HostedZoneNotEmpty(inner) => {
+        match err {
+            crate::error::DeleteHostedZoneError::HostedZoneNotEmpty(inner) => {
                 Error::HostedZoneNotEmpty(inner)
             }
-            crate::error::DeleteHostedZoneErrorKind::InvalidDomainName(inner) => {
+            crate::error::DeleteHostedZoneError::InvalidDomainName(inner) => {
                 Error::InvalidDomainName(inner)
             }
-            crate::error::DeleteHostedZoneErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::DeleteHostedZoneErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::DeleteHostedZoneError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteHostedZoneError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::DeleteHostedZoneErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::DeleteHostedZoneError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::DeleteHostedZoneErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteHostedZoneError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1017,34 +1121,39 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteKeySigningKeyError> for Error {
     fn from(err: crate::error::DeleteKeySigningKeyError) -> Self {
-        match err.kind {
-            crate::error::DeleteKeySigningKeyErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::DeleteKeySigningKeyError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::DeleteKeySigningKeyErrorKind::InvalidInput(inner) => {
+            crate::error::DeleteKeySigningKeyError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeleteKeySigningKeyErrorKind::InvalidKeySigningKeyStatus(inner) => {
+            crate::error::DeleteKeySigningKeyError::InvalidKeySigningKeyStatus(inner) => {
                 Error::InvalidKeySigningKeyStatus(inner)
             }
-            crate::error::DeleteKeySigningKeyErrorKind::InvalidKmsArn(inner) => {
+            crate::error::DeleteKeySigningKeyError::InvalidKmsArn(inner) => {
                 Error::InvalidKmsArn(inner)
             }
-            crate::error::DeleteKeySigningKeyErrorKind::InvalidSigningStatus(inner) => {
+            crate::error::DeleteKeySigningKeyError::InvalidSigningStatus(inner) => {
                 Error::InvalidSigningStatus(inner)
             }
-            crate::error::DeleteKeySigningKeyErrorKind::NoSuchKeySigningKey(inner) => {
+            crate::error::DeleteKeySigningKeyError::NoSuchKeySigningKey(inner) => {
                 Error::NoSuchKeySigningKey(inner)
             }
-            crate::error::DeleteKeySigningKeyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteKeySigningKeyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1060,24 +1169,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteQueryLoggingConfigError> for Error {
     fn from(err: crate::error::DeleteQueryLoggingConfigError) -> Self {
-        match err.kind {
-            crate::error::DeleteQueryLoggingConfigErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::DeleteQueryLoggingConfigError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::DeleteQueryLoggingConfigErrorKind::InvalidInput(inner) => {
+            crate::error::DeleteQueryLoggingConfigError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeleteQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig(inner) => {
+            crate::error::DeleteQueryLoggingConfigError::NoSuchQueryLoggingConfig(inner) => {
                 Error::NoSuchQueryLoggingConfig(inner)
             }
-            crate::error::DeleteQueryLoggingConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteQueryLoggingConfigError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1094,27 +1210,34 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteReusableDelegationSetError> for Error {
     fn from(err: crate::error::DeleteReusableDelegationSetError) -> Self {
-        match err.kind {
-            crate::error::DeleteReusableDelegationSetErrorKind::DelegationSetInUse(inner) => {
+        match err {
+            crate::error::DeleteReusableDelegationSetError::DelegationSetInUse(inner) => {
                 Error::DelegationSetInUse(inner)
             }
-            crate::error::DeleteReusableDelegationSetErrorKind::DelegationSetNotReusable(inner) => {
+            crate::error::DeleteReusableDelegationSetError::DelegationSetNotReusable(inner) => {
                 Error::DelegationSetNotReusable(inner)
             }
-            crate::error::DeleteReusableDelegationSetErrorKind::InvalidInput(inner) => {
+            crate::error::DeleteReusableDelegationSetError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeleteReusableDelegationSetErrorKind::NoSuchDelegationSet(inner) => {
+            crate::error::DeleteReusableDelegationSetError::NoSuchDelegationSet(inner) => {
                 Error::NoSuchDelegationSet(inner)
             }
-            crate::error::DeleteReusableDelegationSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteReusableDelegationSetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1130,28 +1253,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteTrafficPolicyError> for Error {
     fn from(err: crate::error::DeleteTrafficPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteTrafficPolicyErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::DeleteTrafficPolicyError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::DeleteTrafficPolicyErrorKind::InvalidInput(inner) => {
+            crate::error::DeleteTrafficPolicyError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeleteTrafficPolicyErrorKind::NoSuchTrafficPolicy(inner) => {
+            crate::error::DeleteTrafficPolicyError::NoSuchTrafficPolicy(inner) => {
                 Error::NoSuchTrafficPolicy(inner)
             }
-            crate::error::DeleteTrafficPolicyErrorKind::TrafficPolicyInUse(inner) => {
+            crate::error::DeleteTrafficPolicyError::TrafficPolicyInUse(inner) => {
                 Error::TrafficPolicyInUse(inner)
             }
-            crate::error::DeleteTrafficPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteTrafficPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1167,24 +1295,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteTrafficPolicyInstanceError> for Error {
     fn from(err: crate::error::DeleteTrafficPolicyInstanceError) -> Self {
-        match err.kind {
-            crate::error::DeleteTrafficPolicyInstanceErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::DeleteTrafficPolicyInstanceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DeleteTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(
-                inner,
-            ) => Error::NoSuchTrafficPolicyInstance(inner),
-            crate::error::DeleteTrafficPolicyInstanceErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::DeleteTrafficPolicyInstanceError::NoSuchTrafficPolicyInstance(inner) => {
+                Error::NoSuchTrafficPolicyInstance(inner)
+            }
+            crate::error::DeleteTrafficPolicyInstanceError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::DeleteTrafficPolicyInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DeleteTrafficPolicyInstanceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1205,19 +1340,26 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteVPCAssociationAuthorizationError> for Error {
     fn from(err: crate::error::DeleteVPCAssociationAuthorizationError) -> Self {
-        match err.kind {
-            crate::error::DeleteVPCAssociationAuthorizationErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
-            crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::DeleteVPCAssociationAuthorizationErrorKind::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
-            crate::error::DeleteVPCAssociationAuthorizationErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-            crate::error::DeleteVPCAssociationAuthorizationErrorKind::VpcAssociationAuthorizationNotFound(inner) => Error::VpcAssociationAuthorizationNotFound(inner),
-            crate::error::DeleteVPCAssociationAuthorizationErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::DeleteVPCAssociationAuthorizationError::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
+            crate::error::DeleteVPCAssociationAuthorizationError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::DeleteVPCAssociationAuthorizationError::InvalidVpcId(inner) => Error::InvalidVpcId(inner),
+            crate::error::DeleteVPCAssociationAuthorizationError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::error::DeleteVPCAssociationAuthorizationError::VpcAssociationAuthorizationNotFound(inner) => Error::VpcAssociationAuthorizationNotFound(inner),
+            crate::error::DeleteVPCAssociationAuthorizationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1233,40 +1375,45 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DisableHostedZoneDNSSECError> for Error {
     fn from(err: crate::error::DisableHostedZoneDNSSECError) -> Self {
-        match err.kind {
-            crate::error::DisableHostedZoneDNSSECErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::DisableHostedZoneDNSSECError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::DnssecNotFound(inner) => {
+            crate::error::DisableHostedZoneDNSSECError::DnssecNotFound(inner) => {
                 Error::DnssecNotFound(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::InvalidArgument(inner) => {
+            crate::error::DisableHostedZoneDNSSECError::InvalidArgument(inner) => {
                 Error::InvalidArgument(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::InvalidInput(inner) => {
+            crate::error::DisableHostedZoneDNSSECError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(inner) => {
+            crate::error::DisableHostedZoneDNSSECError::InvalidKeySigningKeyStatus(inner) => {
                 Error::InvalidKeySigningKeyStatus(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::InvalidKmsArn(inner) => {
+            crate::error::DisableHostedZoneDNSSECError::InvalidKmsArn(inner) => {
                 Error::InvalidKmsArn(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::KeySigningKeyInParentDsRecord(
-                inner,
-            ) => Error::KeySigningKeyInParentDsRecord(inner),
-            crate::error::DisableHostedZoneDNSSECErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::DisableHostedZoneDNSSECError::KeySigningKeyInParentDsRecord(inner) => {
+                Error::KeySigningKeyInParentDsRecord(inner)
+            }
+            crate::error::DisableHostedZoneDNSSECError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::DisableHostedZoneDNSSECErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DisableHostedZoneDNSSECError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1282,30 +1429,37 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DisassociateVPCFromHostedZoneError> for Error {
     fn from(err: crate::error::DisassociateVPCFromHostedZoneError) -> Self {
-        match err.kind {
-            crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::DisassociateVPCFromHostedZoneError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::DisassociateVPCFromHostedZoneErrorKind::InvalidVpcId(inner) => {
+            crate::error::DisassociateVPCFromHostedZoneError::InvalidVpcId(inner) => {
                 Error::InvalidVpcId(inner)
             }
-            crate::error::DisassociateVPCFromHostedZoneErrorKind::LastVpcAssociation(inner) => {
+            crate::error::DisassociateVPCFromHostedZoneError::LastVpcAssociation(inner) => {
                 Error::LastVpcAssociation(inner)
             }
-            crate::error::DisassociateVPCFromHostedZoneErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::DisassociateVPCFromHostedZoneError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::DisassociateVPCFromHostedZoneErrorKind::VpcAssociationNotFound(inner) => {
+            crate::error::DisassociateVPCFromHostedZoneError::VpcAssociationNotFound(inner) => {
                 Error::VpcAssociationNotFound(inner)
             }
-            crate::error::DisassociateVPCFromHostedZoneErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::DisassociateVPCFromHostedZoneError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1322,23 +1476,48 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::EnableHostedZoneDNSSECError> for Error {
     fn from(err: crate::error::EnableHostedZoneDNSSECError) -> Self {
-        match err.kind {
-            crate::error::EnableHostedZoneDNSSECErrorKind::ConcurrentModification(inner) => Error::ConcurrentModification(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::DnssecNotFound(inner) => Error::DnssecNotFound(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::HostedZonePartiallyDelegated(inner) => Error::HostedZonePartiallyDelegated(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::InvalidArgument(inner) => Error::InvalidArgument(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKeySigningKeyStatus(inner) => Error::InvalidKeySigningKeyStatus(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::InvalidKmsArn(inner) => Error::InvalidKmsArn(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::KeySigningKeyWithActiveStatusNotFound(inner) => Error::KeySigningKeyWithActiveStatusNotFound(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-            crate::error::EnableHostedZoneDNSSECErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::EnableHostedZoneDNSSECError::ConcurrentModification(inner) => {
+                Error::ConcurrentModification(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::DnssecNotFound(inner) => {
+                Error::DnssecNotFound(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::HostedZonePartiallyDelegated(inner) => {
+                Error::HostedZonePartiallyDelegated(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::InvalidArgument(inner) => {
+                Error::InvalidArgument(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::InvalidInput(inner) => {
+                Error::InvalidInput(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::InvalidKeySigningKeyStatus(inner) => {
+                Error::InvalidKeySigningKeyStatus(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::InvalidKmsArn(inner) => {
+                Error::InvalidKmsArn(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::KeySigningKeyWithActiveStatusNotFound(
+                inner,
+            ) => Error::KeySigningKeyWithActiveStatusNotFound(inner),
+            crate::error::EnableHostedZoneDNSSECError::NoSuchHostedZone(inner) => {
+                Error::NoSuchHostedZone(inner)
+            }
+            crate::error::EnableHostedZoneDNSSECError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1351,19 +1530,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccountLimitError> for Error {
     fn from(err: crate::error::GetAccountLimitError) -> Self {
-        match err.kind {
-            crate::error::GetAccountLimitErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::GetAccountLimitErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetAccountLimitError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetAccountLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1376,18 +1558,23 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetChangeError> for Error {
     fn from(err: crate::error::GetChangeError) -> Self {
-        match err.kind {
-            crate::error::GetChangeErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetChangeErrorKind::NoSuchChange(inner) => Error::NoSuchChange(inner),
-            crate::error::GetChangeErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetChangeError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetChangeError::NoSuchChange(inner) => Error::NoSuchChange(inner),
+            crate::error::GetChangeError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1402,16 +1589,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetCheckerIpRangesError> for Error {
     fn from(err: crate::error::GetCheckerIpRangesError) -> Self {
-        match err.kind {
-            crate::error::GetCheckerIpRangesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetCheckerIpRangesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1424,23 +1616,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetDNSSECError> for Error {
     fn from(err: crate::error::GetDNSSECError) -> Self {
-        match err.kind {
-            crate::error::GetDNSSECErrorKind::InvalidArgument(inner) => {
-                Error::InvalidArgument(inner)
-            }
-            crate::error::GetDNSSECErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetDNSSECErrorKind::NoSuchHostedZone(inner) => {
-                Error::NoSuchHostedZone(inner)
-            }
-            crate::error::GetDNSSECErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetDNSSECError::InvalidArgument(inner) => Error::InvalidArgument(inner),
+            crate::error::GetDNSSECError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetDNSSECError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::error::GetDNSSECError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1453,22 +1646,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetGeoLocationError> for Error {
     fn from(err: crate::error::GetGeoLocationError) -> Self {
-        match err.kind {
-            crate::error::GetGeoLocationErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::GetGeoLocationErrorKind::NoSuchGeoLocation(inner) => {
+        match err {
+            crate::error::GetGeoLocationError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetGeoLocationError::NoSuchGeoLocation(inner) => {
                 Error::NoSuchGeoLocation(inner)
             }
-            crate::error::GetGeoLocationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetGeoLocationError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1481,25 +1677,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHealthCheckError> for Error {
     fn from(err: crate::error::GetHealthCheckError) -> Self {
-        match err.kind {
-            crate::error::GetHealthCheckErrorKind::IncompatibleVersion(inner) => {
+        match err {
+            crate::error::GetHealthCheckError::IncompatibleVersion(inner) => {
                 Error::IncompatibleVersion(inner)
             }
-            crate::error::GetHealthCheckErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::GetHealthCheckErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::GetHealthCheckError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetHealthCheckError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::GetHealthCheckErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1514,16 +1713,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHealthCheckCountError> for Error {
     fn from(err: crate::error::GetHealthCheckCountError) -> Self {
-        match err.kind {
-            crate::error::GetHealthCheckCountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetHealthCheckCountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1543,21 +1747,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHealthCheckLastFailureReasonError> for Error {
     fn from(err: crate::error::GetHealthCheckLastFailureReasonError) -> Self {
-        match err.kind {
-            crate::error::GetHealthCheckLastFailureReasonErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::GetHealthCheckLastFailureReasonError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetHealthCheckLastFailureReasonErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::GetHealthCheckLastFailureReasonError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::GetHealthCheckLastFailureReasonErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetHealthCheckLastFailureReasonError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1574,22 +1785,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHealthCheckStatusError> for Error {
     fn from(err: crate::error::GetHealthCheckStatusError) -> Self {
-        match err.kind {
-            crate::error::GetHealthCheckStatusErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::GetHealthCheckStatusError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetHealthCheckStatusErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::GetHealthCheckStatusError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::GetHealthCheckStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetHealthCheckStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1602,20 +1818,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHostedZoneError> for Error {
     fn from(err: crate::error::GetHostedZoneError) -> Self {
-        match err.kind {
-            crate::error::GetHostedZoneErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::GetHostedZoneErrorKind::NoSuchHostedZone(inner) => {
+        match err {
+            crate::error::GetHostedZoneError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetHostedZoneError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::GetHostedZoneErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetHostedZoneError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1630,19 +1851,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHostedZoneCountError> for Error {
     fn from(err: crate::error::GetHostedZoneCountError) -> Self {
-        match err.kind {
-            crate::error::GetHostedZoneCountErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::GetHostedZoneCountError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetHostedZoneCountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetHostedZoneCountError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1657,25 +1883,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetHostedZoneLimitError> for Error {
     fn from(err: crate::error::GetHostedZoneLimitError) -> Self {
-        match err.kind {
-            crate::error::GetHostedZoneLimitErrorKind::HostedZoneNotPrivate(inner) => {
+        match err {
+            crate::error::GetHostedZoneLimitError::HostedZoneNotPrivate(inner) => {
                 Error::HostedZoneNotPrivate(inner)
             }
-            crate::error::GetHostedZoneLimitErrorKind::InvalidInput(inner) => {
+            crate::error::GetHostedZoneLimitError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetHostedZoneLimitErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::GetHostedZoneLimitError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::GetHostedZoneLimitErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetHostedZoneLimitError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1691,22 +1922,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetQueryLoggingConfigError> for Error {
     fn from(err: crate::error::GetQueryLoggingConfigError) -> Self {
-        match err.kind {
-            crate::error::GetQueryLoggingConfigErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::GetQueryLoggingConfigError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetQueryLoggingConfigErrorKind::NoSuchQueryLoggingConfig(inner) => {
+            crate::error::GetQueryLoggingConfigError::NoSuchQueryLoggingConfig(inner) => {
                 Error::NoSuchQueryLoggingConfig(inner)
             }
-            crate::error::GetQueryLoggingConfigErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetQueryLoggingConfigError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1722,24 +1958,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetReusableDelegationSetError> for Error {
     fn from(err: crate::error::GetReusableDelegationSetError) -> Self {
-        match err.kind {
-            crate::error::GetReusableDelegationSetErrorKind::DelegationSetNotReusable(inner) => {
+        match err {
+            crate::error::GetReusableDelegationSetError::DelegationSetNotReusable(inner) => {
                 Error::DelegationSetNotReusable(inner)
             }
-            crate::error::GetReusableDelegationSetErrorKind::InvalidInput(inner) => {
+            crate::error::GetReusableDelegationSetError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetReusableDelegationSetErrorKind::NoSuchDelegationSet(inner) => {
+            crate::error::GetReusableDelegationSetError::NoSuchDelegationSet(inner) => {
                 Error::NoSuchDelegationSet(inner)
             }
-            crate::error::GetReusableDelegationSetErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetReusableDelegationSetError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1756,21 +1999,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetReusableDelegationSetLimitError> for Error {
     fn from(err: crate::error::GetReusableDelegationSetLimitError) -> Self {
-        match err.kind {
-            crate::error::GetReusableDelegationSetLimitErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::GetReusableDelegationSetLimitError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetReusableDelegationSetLimitErrorKind::NoSuchDelegationSet(inner) => {
+            crate::error::GetReusableDelegationSetLimitError::NoSuchDelegationSet(inner) => {
                 Error::NoSuchDelegationSet(inner)
             }
-            crate::error::GetReusableDelegationSetLimitErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetReusableDelegationSetLimitError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1786,22 +2036,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTrafficPolicyError> for Error {
     fn from(err: crate::error::GetTrafficPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetTrafficPolicyErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::GetTrafficPolicyErrorKind::NoSuchTrafficPolicy(inner) => {
+        match err {
+            crate::error::GetTrafficPolicyError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::GetTrafficPolicyError::NoSuchTrafficPolicy(inner) => {
                 Error::NoSuchTrafficPolicy(inner)
             }
-            crate::error::GetTrafficPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetTrafficPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1817,21 +2070,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTrafficPolicyInstanceError> for Error {
     fn from(err: crate::error::GetTrafficPolicyInstanceError) -> Self {
-        match err.kind {
-            crate::error::GetTrafficPolicyInstanceErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::GetTrafficPolicyInstanceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::GetTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(inner) => {
+            crate::error::GetTrafficPolicyInstanceError::NoSuchTrafficPolicyInstance(inner) => {
                 Error::NoSuchTrafficPolicyInstance(inner)
             }
-            crate::error::GetTrafficPolicyInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::GetTrafficPolicyInstanceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1848,15 +2108,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetTrafficPolicyInstanceCountError> for Error {
     fn from(err: crate::error::GetTrafficPolicyInstanceCountError) -> Self {
-        match err.kind {
-            crate::error::GetTrafficPolicyInstanceCountErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetTrafficPolicyInstanceCountError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1870,25 +2137,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCidrBlocksError> for Error {
     fn from(err: crate::error::ListCidrBlocksError) -> Self {
-        match err.kind {
-            crate::error::ListCidrBlocksErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListCidrBlocksErrorKind::NoSuchCidrCollectionException(inner) => {
+        match err {
+            crate::error::ListCidrBlocksError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListCidrBlocksError::NoSuchCidrCollectionException(inner) => {
                 Error::NoSuchCidrCollectionException(inner)
             }
-            crate::error::ListCidrBlocksErrorKind::NoSuchCidrLocationException(inner) => {
+            crate::error::ListCidrBlocksError::NoSuchCidrLocationException(inner) => {
                 Error::NoSuchCidrLocationException(inner)
             }
-            crate::error::ListCidrBlocksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCidrBlocksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1903,19 +2173,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCidrCollectionsError> for Error {
     fn from(err: crate::error::ListCidrCollectionsError) -> Self {
-        match err.kind {
-            crate::error::ListCidrCollectionsErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListCidrCollectionsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListCidrCollectionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCidrCollectionsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1930,22 +2205,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListCidrLocationsError> for Error {
     fn from(err: crate::error::ListCidrLocationsError) -> Self {
-        match err.kind {
-            crate::error::ListCidrLocationsErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListCidrLocationsErrorKind::NoSuchCidrCollectionException(inner) => {
+        match err {
+            crate::error::ListCidrLocationsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListCidrLocationsError::NoSuchCidrCollectionException(inner) => {
                 Error::NoSuchCidrCollectionException(inner)
             }
-            crate::error::ListCidrLocationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListCidrLocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1960,19 +2238,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListGeoLocationsError> for Error {
     fn from(err: crate::error::ListGeoLocationsError) -> Self {
-        match err.kind {
-            crate::error::ListGeoLocationsErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListGeoLocationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::ListGeoLocationsError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListGeoLocationsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1987,22 +2268,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListHealthChecksError> for Error {
     fn from(err: crate::error::ListHealthChecksError) -> Self {
-        match err.kind {
-            crate::error::ListHealthChecksErrorKind::IncompatibleVersion(inner) => {
+        match err {
+            crate::error::ListHealthChecksError::IncompatibleVersion(inner) => {
                 Error::IncompatibleVersion(inner)
             }
-            crate::error::ListHealthChecksErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListHealthChecksErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListHealthChecksError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListHealthChecksError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2015,25 +2299,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListHostedZonesError> for Error {
     fn from(err: crate::error::ListHostedZonesError) -> Self {
-        match err.kind {
-            crate::error::ListHostedZonesErrorKind::DelegationSetNotReusable(inner) => {
+        match err {
+            crate::error::ListHostedZonesError::DelegationSetNotReusable(inner) => {
                 Error::DelegationSetNotReusable(inner)
             }
-            crate::error::ListHostedZonesErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::ListHostedZonesErrorKind::NoSuchDelegationSet(inner) => {
+            crate::error::ListHostedZonesError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListHostedZonesError::NoSuchDelegationSet(inner) => {
                 Error::NoSuchDelegationSet(inner)
             }
-            crate::error::ListHostedZonesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListHostedZonesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2049,22 +2336,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListHostedZonesByNameError> for Error {
     fn from(err: crate::error::ListHostedZonesByNameError) -> Self {
-        match err.kind {
-            crate::error::ListHostedZonesByNameErrorKind::InvalidDomainName(inner) => {
+        match err {
+            crate::error::ListHostedZonesByNameError::InvalidDomainName(inner) => {
                 Error::InvalidDomainName(inner)
             }
-            crate::error::ListHostedZonesByNameErrorKind::InvalidInput(inner) => {
+            crate::error::ListHostedZonesByNameError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListHostedZonesByNameErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListHostedZonesByNameError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2080,22 +2372,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListHostedZonesByVPCError> for Error {
     fn from(err: crate::error::ListHostedZonesByVPCError) -> Self {
-        match err.kind {
-            crate::error::ListHostedZonesByVPCErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListHostedZonesByVPCError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListHostedZonesByVPCErrorKind::InvalidPaginationToken(inner) => {
+            crate::error::ListHostedZonesByVPCError::InvalidPaginationToken(inner) => {
                 Error::InvalidPaginationToken(inner)
             }
-            crate::error::ListHostedZonesByVPCErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListHostedZonesByVPCError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2111,25 +2408,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListQueryLoggingConfigsError> for Error {
     fn from(err: crate::error::ListQueryLoggingConfigsError) -> Self {
-        match err.kind {
-            crate::error::ListQueryLoggingConfigsErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListQueryLoggingConfigsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListQueryLoggingConfigsErrorKind::InvalidPaginationToken(inner) => {
+            crate::error::ListQueryLoggingConfigsError::InvalidPaginationToken(inner) => {
                 Error::InvalidPaginationToken(inner)
             }
-            crate::error::ListQueryLoggingConfigsErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ListQueryLoggingConfigsError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ListQueryLoggingConfigsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListQueryLoggingConfigsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2145,22 +2447,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListResourceRecordSetsError> for Error {
     fn from(err: crate::error::ListResourceRecordSetsError) -> Self {
-        match err.kind {
-            crate::error::ListResourceRecordSetsErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListResourceRecordSetsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListResourceRecordSetsErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ListResourceRecordSetsError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ListResourceRecordSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListResourceRecordSetsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2176,18 +2483,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListReusableDelegationSetsError> for Error {
     fn from(err: crate::error::ListReusableDelegationSetsError) -> Self {
-        match err.kind {
-            crate::error::ListReusableDelegationSetsErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListReusableDelegationSetsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListReusableDelegationSetsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListReusableDelegationSetsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2203,31 +2517,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourceError> for Error {
     fn from(err: crate::error::ListTagsForResourceError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourceErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListTagsForResourceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::ListTagsForResourceError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ListTagsForResourceError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::ListTagsForResourceError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::ThrottlingException(inner) => {
+            crate::error::ListTagsForResourceError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::ListTagsForResourceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourceError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2243,31 +2562,36 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTagsForResourcesError> for Error {
     fn from(err: crate::error::ListTagsForResourcesError) -> Self {
-        match err.kind {
-            crate::error::ListTagsForResourcesErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListTagsForResourcesError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListTagsForResourcesErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::ListTagsForResourcesError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::ListTagsForResourcesErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ListTagsForResourcesError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ListTagsForResourcesErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::ListTagsForResourcesError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::ListTagsForResourcesErrorKind::ThrottlingException(inner) => {
+            crate::error::ListTagsForResourcesError::ThrottlingException(inner) => {
                 Error::ThrottlingException(inner)
             }
-            crate::error::ListTagsForResourcesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTagsForResourcesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2282,19 +2606,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTrafficPoliciesError> for Error {
     fn from(err: crate::error::ListTrafficPoliciesError) -> Self {
-        match err.kind {
-            crate::error::ListTrafficPoliciesErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListTrafficPoliciesError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListTrafficPoliciesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListTrafficPoliciesError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2310,21 +2639,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTrafficPolicyInstancesError> for Error {
     fn from(err: crate::error::ListTrafficPolicyInstancesError) -> Self {
-        match err.kind {
-            crate::error::ListTrafficPolicyInstancesErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListTrafficPolicyInstancesError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListTrafficPolicyInstancesErrorKind::NoSuchTrafficPolicyInstance(
-                inner,
-            ) => Error::NoSuchTrafficPolicyInstance(inner),
-            crate::error::ListTrafficPolicyInstancesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListTrafficPolicyInstancesError::NoSuchTrafficPolicyInstance(inner) => {
+                Error::NoSuchTrafficPolicyInstance(inner)
+            }
+            crate::error::ListTrafficPolicyInstancesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2349,17 +2685,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTrafficPolicyInstancesByHostedZoneError> for Error {
     fn from(err: crate::error::ListTrafficPolicyInstancesByHostedZoneError) -> Self {
-        match err.kind {
-            crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
-            crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::NoSuchTrafficPolicyInstance(inner) => Error::NoSuchTrafficPolicyInstance(inner),
-            crate::error::ListTrafficPolicyInstancesByHostedZoneErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTrafficPolicyInstancesByHostedZoneError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::ListTrafficPolicyInstancesByHostedZoneError::NoSuchHostedZone(inner) => Error::NoSuchHostedZone(inner),
+            crate::error::ListTrafficPolicyInstancesByHostedZoneError::NoSuchTrafficPolicyInstance(inner) => Error::NoSuchTrafficPolicyInstance(inner),
+            crate::error::ListTrafficPolicyInstancesByHostedZoneError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2380,17 +2723,32 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTrafficPolicyInstancesByPolicyError> for Error {
     fn from(err: crate::error::ListTrafficPolicyInstancesByPolicyError) -> Self {
-        match err.kind {
-            crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicy(inner) => Error::NoSuchTrafficPolicy(inner),
-            crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::NoSuchTrafficPolicyInstance(inner) => Error::NoSuchTrafficPolicyInstance(inner),
-            crate::error::ListTrafficPolicyInstancesByPolicyErrorKind::Unhandled(inner) => Error::Unhandled(crate::error::Unhandled::new(inner.into())),
+        match err {
+            crate::error::ListTrafficPolicyInstancesByPolicyError::InvalidInput(inner) => {
+                Error::InvalidInput(inner)
+            }
+            crate::error::ListTrafficPolicyInstancesByPolicyError::NoSuchTrafficPolicy(inner) => {
+                Error::NoSuchTrafficPolicy(inner)
+            }
+            crate::error::ListTrafficPolicyInstancesByPolicyError::NoSuchTrafficPolicyInstance(
+                inner,
+            ) => Error::NoSuchTrafficPolicyInstance(inner),
+            crate::error::ListTrafficPolicyInstancesByPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
+            }
         }
     }
 }
@@ -2406,21 +2764,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListTrafficPolicyVersionsError> for Error {
     fn from(err: crate::error::ListTrafficPolicyVersionsError) -> Self {
-        match err.kind {
-            crate::error::ListTrafficPolicyVersionsErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListTrafficPolicyVersionsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListTrafficPolicyVersionsErrorKind::NoSuchTrafficPolicy(inner) => {
+            crate::error::ListTrafficPolicyVersionsError::NoSuchTrafficPolicy(inner) => {
                 Error::NoSuchTrafficPolicy(inner)
             }
-            crate::error::ListTrafficPolicyVersionsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListTrafficPolicyVersionsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2441,24 +2806,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListVPCAssociationAuthorizationsError> for Error {
     fn from(err: crate::error::ListVPCAssociationAuthorizationsError) -> Self {
-        match err.kind {
-            crate::error::ListVPCAssociationAuthorizationsErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::ListVPCAssociationAuthorizationsError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::ListVPCAssociationAuthorizationsErrorKind::InvalidPaginationToken(
-                inner,
-            ) => Error::InvalidPaginationToken(inner),
-            crate::error::ListVPCAssociationAuthorizationsErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::ListVPCAssociationAuthorizationsError::InvalidPaginationToken(inner) => {
+                Error::InvalidPaginationToken(inner)
+            }
+            crate::error::ListVPCAssociationAuthorizationsError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::ListVPCAssociationAuthorizationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::ListVPCAssociationAuthorizationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2472,20 +2844,25 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::TestDNSAnswerError> for Error {
     fn from(err: crate::error::TestDNSAnswerError) -> Self {
-        match err.kind {
-            crate::error::TestDNSAnswerErrorKind::InvalidInput(inner) => Error::InvalidInput(inner),
-            crate::error::TestDNSAnswerErrorKind::NoSuchHostedZone(inner) => {
+        match err {
+            crate::error::TestDNSAnswerError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::TestDNSAnswerError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::TestDNSAnswerErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::TestDNSAnswerError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2500,25 +2877,28 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateHealthCheckError> for Error {
     fn from(err: crate::error::UpdateHealthCheckError) -> Self {
-        match err.kind {
-            crate::error::UpdateHealthCheckErrorKind::HealthCheckVersionMismatch(inner) => {
+        match err {
+            crate::error::UpdateHealthCheckError::HealthCheckVersionMismatch(inner) => {
                 Error::HealthCheckVersionMismatch(inner)
             }
-            crate::error::UpdateHealthCheckErrorKind::InvalidInput(inner) => {
-                Error::InvalidInput(inner)
-            }
-            crate::error::UpdateHealthCheckErrorKind::NoSuchHealthCheck(inner) => {
+            crate::error::UpdateHealthCheckError::InvalidInput(inner) => Error::InvalidInput(inner),
+            crate::error::UpdateHealthCheckError::NoSuchHealthCheck(inner) => {
                 Error::NoSuchHealthCheck(inner)
             }
-            crate::error::UpdateHealthCheckErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateHealthCheckError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2534,25 +2914,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateHostedZoneCommentError> for Error {
     fn from(err: crate::error::UpdateHostedZoneCommentError) -> Self {
-        match err.kind {
-            crate::error::UpdateHostedZoneCommentErrorKind::InvalidInput(inner) => {
+        match err {
+            crate::error::UpdateHostedZoneCommentError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdateHostedZoneCommentErrorKind::NoSuchHostedZone(inner) => {
+            crate::error::UpdateHostedZoneCommentError::NoSuchHostedZone(inner) => {
                 Error::NoSuchHostedZone(inner)
             }
-            crate::error::UpdateHostedZoneCommentErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::UpdateHostedZoneCommentError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::UpdateHostedZoneCommentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateHostedZoneCommentError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -2568,24 +2953,31 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateTrafficPolicyCommentError> for Error {
     fn from(err: crate::error::UpdateTrafficPolicyCommentError) -> Self {
-        match err.kind {
-            crate::error::UpdateTrafficPolicyCommentErrorKind::ConcurrentModification(inner) => {
+        match err {
+            crate::error::UpdateTrafficPolicyCommentError::ConcurrentModification(inner) => {
                 Error::ConcurrentModification(inner)
             }
-            crate::error::UpdateTrafficPolicyCommentErrorKind::InvalidInput(inner) => {
+            crate::error::UpdateTrafficPolicyCommentError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdateTrafficPolicyCommentErrorKind::NoSuchTrafficPolicy(inner) => {
+            crate::error::UpdateTrafficPolicyCommentError::NoSuchTrafficPolicy(inner) => {
                 Error::NoSuchTrafficPolicy(inner)
             }
-            crate::error::UpdateTrafficPolicyCommentErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateTrafficPolicyCommentError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -2602,32 +2994,115 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateTrafficPolicyInstanceError> for Error {
     fn from(err: crate::error::UpdateTrafficPolicyInstanceError) -> Self {
-        match err.kind {
-            crate::error::UpdateTrafficPolicyInstanceErrorKind::ConflictingTypes(inner) => {
+        match err {
+            crate::error::UpdateTrafficPolicyInstanceError::ConflictingTypes(inner) => {
                 Error::ConflictingTypes(inner)
             }
-            crate::error::UpdateTrafficPolicyInstanceErrorKind::InvalidInput(inner) => {
+            crate::error::UpdateTrafficPolicyInstanceError::InvalidInput(inner) => {
                 Error::InvalidInput(inner)
             }
-            crate::error::UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicy(inner) => {
+            crate::error::UpdateTrafficPolicyInstanceError::NoSuchTrafficPolicy(inner) => {
                 Error::NoSuchTrafficPolicy(inner)
             }
-            crate::error::UpdateTrafficPolicyInstanceErrorKind::NoSuchTrafficPolicyInstance(
-                inner,
-            ) => Error::NoSuchTrafficPolicyInstance(inner),
-            crate::error::UpdateTrafficPolicyInstanceErrorKind::PriorRequestNotComplete(inner) => {
+            crate::error::UpdateTrafficPolicyInstanceError::NoSuchTrafficPolicyInstance(inner) => {
+                Error::NoSuchTrafficPolicyInstance(inner)
+            }
+            crate::error::UpdateTrafficPolicyInstanceError::PriorRequestNotComplete(inner) => {
                 Error::PriorRequestNotComplete(inner)
             }
-            crate::error::UpdateTrafficPolicyInstanceErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+            crate::error::UpdateTrafficPolicyInstanceError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::CidrBlockInUseException(e) => e.request_id(),
+            Self::CidrCollectionAlreadyExistsException(e) => e.request_id(),
+            Self::CidrCollectionInUseException(e) => e.request_id(),
+            Self::CidrCollectionVersionMismatchException(e) => e.request_id(),
+            Self::ConcurrentModification(e) => e.request_id(),
+            Self::ConflictingDomainExists(e) => e.request_id(),
+            Self::ConflictingTypes(e) => e.request_id(),
+            Self::DnssecNotFound(e) => e.request_id(),
+            Self::DelegationSetAlreadyCreated(e) => e.request_id(),
+            Self::DelegationSetAlreadyReusable(e) => e.request_id(),
+            Self::DelegationSetInUse(e) => e.request_id(),
+            Self::DelegationSetNotAvailable(e) => e.request_id(),
+            Self::DelegationSetNotReusable(e) => e.request_id(),
+            Self::HealthCheckAlreadyExists(e) => e.request_id(),
+            Self::HealthCheckInUse(e) => e.request_id(),
+            Self::HealthCheckVersionMismatch(e) => e.request_id(),
+            Self::HostedZoneAlreadyExists(e) => e.request_id(),
+            Self::HostedZoneNotEmpty(e) => e.request_id(),
+            Self::HostedZoneNotFound(e) => e.request_id(),
+            Self::HostedZoneNotPrivate(e) => e.request_id(),
+            Self::HostedZonePartiallyDelegated(e) => e.request_id(),
+            Self::IncompatibleVersion(e) => e.request_id(),
+            Self::InsufficientCloudWatchLogsResourcePolicy(e) => e.request_id(),
+            Self::InvalidArgument(e) => e.request_id(),
+            Self::InvalidChangeBatch(e) => e.request_id(),
+            Self::InvalidDomainName(e) => e.request_id(),
+            Self::InvalidInput(e) => e.request_id(),
+            Self::InvalidKmsArn(e) => e.request_id(),
+            Self::InvalidKeySigningKeyName(e) => e.request_id(),
+            Self::InvalidKeySigningKeyStatus(e) => e.request_id(),
+            Self::InvalidPaginationToken(e) => e.request_id(),
+            Self::InvalidSigningStatus(e) => e.request_id(),
+            Self::InvalidTrafficPolicyDocument(e) => e.request_id(),
+            Self::InvalidVpcId(e) => e.request_id(),
+            Self::KeySigningKeyAlreadyExists(e) => e.request_id(),
+            Self::KeySigningKeyInParentDsRecord(e) => e.request_id(),
+            Self::KeySigningKeyInUse(e) => e.request_id(),
+            Self::KeySigningKeyWithActiveStatusNotFound(e) => e.request_id(),
+            Self::LastVpcAssociation(e) => e.request_id(),
+            Self::LimitsExceeded(e) => e.request_id(),
+            Self::NoSuchChange(e) => e.request_id(),
+            Self::NoSuchCidrCollectionException(e) => e.request_id(),
+            Self::NoSuchCidrLocationException(e) => e.request_id(),
+            Self::NoSuchCloudWatchLogsLogGroup(e) => e.request_id(),
+            Self::NoSuchDelegationSet(e) => e.request_id(),
+            Self::NoSuchGeoLocation(e) => e.request_id(),
+            Self::NoSuchHealthCheck(e) => e.request_id(),
+            Self::NoSuchHostedZone(e) => e.request_id(),
+            Self::NoSuchKeySigningKey(e) => e.request_id(),
+            Self::NoSuchQueryLoggingConfig(e) => e.request_id(),
+            Self::NoSuchTrafficPolicy(e) => e.request_id(),
+            Self::NoSuchTrafficPolicyInstance(e) => e.request_id(),
+            Self::NotAuthorizedException(e) => e.request_id(),
+            Self::PriorRequestNotComplete(e) => e.request_id(),
+            Self::PublicZoneVpcAssociation(e) => e.request_id(),
+            Self::QueryLoggingConfigAlreadyExists(e) => e.request_id(),
+            Self::ThrottlingException(e) => e.request_id(),
+            Self::TooManyHealthChecks(e) => e.request_id(),
+            Self::TooManyHostedZones(e) => e.request_id(),
+            Self::TooManyKeySigningKeys(e) => e.request_id(),
+            Self::TooManyTrafficPolicies(e) => e.request_id(),
+            Self::TooManyTrafficPolicyInstances(e) => e.request_id(),
+            Self::TooManyTrafficPolicyVersionsForCurrentPolicy(e) => e.request_id(),
+            Self::TooManyVpcAssociationAuthorizations(e) => e.request_id(),
+            Self::TrafficPolicyAlreadyExists(e) => e.request_id(),
+            Self::TrafficPolicyInUse(e) => e.request_id(),
+            Self::TrafficPolicyInstanceAlreadyExists(e) => e.request_id(),
+            Self::VpcAssociationAuthorizationNotFound(e) => e.request_id(),
+            Self::VpcAssociationNotFound(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}

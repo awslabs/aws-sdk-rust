@@ -7,11 +7,17 @@ pub struct UpdateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
+    _request_id: Option<String>,
 }
 impl UpdateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateWebhookOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput).
@@ -22,6 +28,7 @@ pub mod update_webhook_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
@@ -34,10 +41,20 @@ pub mod update_webhook_output {
             self.webhook = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateWebhookOutput`](crate::output::UpdateWebhookOutput).
         pub fn build(self) -> crate::output::UpdateWebhookOutput {
             crate::output::UpdateWebhookOutput {
                 webhook: self.webhook,
+                _request_id: self._request_id,
             }
         }
     }
@@ -56,11 +73,17 @@ pub struct UpdateDomainAssociationOutput {
     /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+    _request_id: Option<String>,
 }
 impl UpdateDomainAssociationOutput {
     /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateDomainAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateDomainAssociationOutput`](crate::output::UpdateDomainAssociationOutput).
@@ -71,6 +94,7 @@ pub mod update_domain_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes a domain association, which associates a custom domain with an Amplify app. </p>
@@ -86,10 +110,20 @@ pub mod update_domain_association_output {
             self.domain_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateDomainAssociationOutput`](crate::output::UpdateDomainAssociationOutput).
         pub fn build(self) -> crate::output::UpdateDomainAssociationOutput {
             crate::output::UpdateDomainAssociationOutput {
                 domain_association: self.domain_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -108,11 +142,17 @@ pub struct UpdateBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
+    _request_id: Option<String>,
 }
 impl UpdateBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateBranchOutput`](crate::output::UpdateBranchOutput).
@@ -123,6 +163,7 @@ pub mod update_branch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
@@ -135,10 +176,20 @@ pub mod update_branch_output {
             self.branch = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateBranchOutput`](crate::output::UpdateBranchOutput).
         pub fn build(self) -> crate::output::UpdateBranchOutput {
             crate::output::UpdateBranchOutput {
                 branch: self.branch,
+                _request_id: self._request_id,
             }
         }
     }
@@ -157,11 +208,17 @@ pub struct UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl UpdateAppOutput {
     /// <p> Represents the updated Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for UpdateAppOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`UpdateAppOutput`](crate::output::UpdateAppOutput).
@@ -172,6 +229,7 @@ pub mod update_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Represents the updated Amplify app. </p>
@@ -184,9 +242,21 @@ pub mod update_app_output {
             self.app = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UpdateAppOutput`](crate::output::UpdateAppOutput).
         pub fn build(self) -> crate::output::UpdateAppOutput {
-            crate::output::UpdateAppOutput { app: self.app }
+            crate::output::UpdateAppOutput {
+                app: self.app,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -200,18 +270,38 @@ impl UpdateAppOutput {
 /// <p> The response for the untag resource request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct UntagResourceOutput {}
+pub struct UntagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for UntagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`UntagResourceOutput`](crate::output::UntagResourceOutput).
 pub mod untag_resource_output {
 
     /// A builder for [`UntagResourceOutput`](crate::output::UntagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`UntagResourceOutput`](crate::output::UntagResourceOutput).
         pub fn build(self) -> crate::output::UntagResourceOutput {
-            crate::output::UntagResourceOutput {}
+            crate::output::UntagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -225,18 +315,38 @@ impl UntagResourceOutput {
 /// <p> The response for the tag resource request. </p>
 #[non_exhaustive]
 #[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
-pub struct TagResourceOutput {}
+pub struct TagResourceOutput {
+    _request_id: Option<String>,
+}
+impl aws_http::request_id::RequestId for TagResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`TagResourceOutput`](crate::output::TagResourceOutput).
 pub mod tag_resource_output {
 
     /// A builder for [`TagResourceOutput`](crate::output::TagResourceOutput).
     #[non_exhaustive]
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
-    pub struct Builder {}
+    pub struct Builder {
+        _request_id: Option<String>,
+    }
     impl Builder {
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`TagResourceOutput`](crate::output::TagResourceOutput).
         pub fn build(self) -> crate::output::TagResourceOutput {
-            crate::output::TagResourceOutput {}
+            crate::output::TagResourceOutput {
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -254,11 +364,17 @@ pub struct StopJobOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
+    _request_id: Option<String>,
 }
 impl StopJobOutput {
     /// <p> The summary for the job. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StopJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StopJobOutput`](crate::output::StopJobOutput).
@@ -269,6 +385,7 @@ pub mod stop_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The summary for the job. </p>
@@ -284,10 +401,20 @@ pub mod stop_job_output {
             self.job_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StopJobOutput`](crate::output::StopJobOutput).
         pub fn build(self) -> crate::output::StopJobOutput {
             crate::output::StopJobOutput {
                 job_summary: self.job_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -306,11 +433,17 @@ pub struct StartJobOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
+    _request_id: Option<String>,
 }
 impl StartJobOutput {
     /// <p> The summary for the job. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StartJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartJobOutput`](crate::output::StartJobOutput).
@@ -321,6 +454,7 @@ pub mod start_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The summary for the job. </p>
@@ -336,10 +470,20 @@ pub mod start_job_output {
             self.job_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartJobOutput`](crate::output::StartJobOutput).
         pub fn build(self) -> crate::output::StartJobOutput {
             crate::output::StartJobOutput {
                 job_summary: self.job_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -358,11 +502,17 @@ pub struct StartDeploymentOutput {
     /// <p> The summary for the job. </p>
     #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
+    _request_id: Option<String>,
 }
 impl StartDeploymentOutput {
     /// <p> The summary for the job. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for StartDeploymentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
@@ -373,6 +523,7 @@ pub mod start_deployment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The summary for the job. </p>
@@ -388,10 +539,20 @@ pub mod start_deployment_output {
             self.job_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`StartDeploymentOutput`](crate::output::StartDeploymentOutput).
         pub fn build(self) -> crate::output::StartDeploymentOutput {
             crate::output::StartDeploymentOutput {
                 job_summary: self.job_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -413,6 +574,7 @@ pub struct ListWebhooksOutput {
     /// <p> A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListWebhooksOutput {
     /// <p> A list of webhooks. </p>
@@ -424,6 +586,11 @@ impl ListWebhooksOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListWebhooksOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListWebhooksOutput`](crate::output::ListWebhooksOutput).
 pub mod list_webhooks_output {
 
@@ -433,6 +600,7 @@ pub mod list_webhooks_output {
     pub struct Builder {
         pub(crate) webhooks: std::option::Option<std::vec::Vec<crate::model::Webhook>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `webhooks`.
@@ -464,11 +632,21 @@ pub mod list_webhooks_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListWebhooksOutput`](crate::output::ListWebhooksOutput).
         pub fn build(self) -> crate::output::ListWebhooksOutput {
             crate::output::ListWebhooksOutput {
                 webhooks: self.webhooks,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -488,6 +666,7 @@ pub struct ListTagsForResourceOutput {
     #[doc(hidden)]
     pub tags:
         std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    _request_id: Option<String>,
 }
 impl ListTagsForResourceOutput {
     /// <p> A list of tags for the specified The Amazon Resource Name (ARN). </p>
@@ -496,6 +675,11 @@ impl ListTagsForResourceOutput {
     ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
     {
         self.tags.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for ListTagsForResourceOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
@@ -508,6 +692,7 @@ pub mod list_tags_for_resource_output {
         pub(crate) tags: std::option::Option<
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Adds a key-value pair to `tags`.
@@ -535,9 +720,21 @@ pub mod list_tags_for_resource_output {
             self.tags = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListTagsForResourceOutput`](crate::output::ListTagsForResourceOutput).
         pub fn build(self) -> crate::output::ListTagsForResourceOutput {
-            crate::output::ListTagsForResourceOutput { tags: self.tags }
+            crate::output::ListTagsForResourceOutput {
+                tags: self.tags,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -558,6 +755,7 @@ pub struct ListJobsOutput {
     /// <p> A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListJobsOutput {
     /// <p> The result structure for the list job result request. </p>
@@ -569,6 +767,11 @@ impl ListJobsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListJobsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListJobsOutput`](crate::output::ListJobsOutput).
 pub mod list_jobs_output {
 
@@ -578,6 +781,7 @@ pub mod list_jobs_output {
     pub struct Builder {
         pub(crate) job_summaries: std::option::Option<std::vec::Vec<crate::model::JobSummary>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `job_summaries`.
@@ -609,11 +813,21 @@ pub mod list_jobs_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListJobsOutput`](crate::output::ListJobsOutput).
         pub fn build(self) -> crate::output::ListJobsOutput {
             crate::output::ListJobsOutput {
                 job_summaries: self.job_summaries,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -635,6 +849,7 @@ pub struct ListDomainAssociationsOutput {
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListDomainAssociationsOutput {
     /// <p> A list of domain associations. </p>
@@ -644,6 +859,11 @@ impl ListDomainAssociationsOutput {
     /// <p> A pagination token. If non-null, a pagination token is returned in a result. Pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListDomainAssociationsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListDomainAssociationsOutput`](crate::output::ListDomainAssociationsOutput).
@@ -656,6 +876,7 @@ pub mod list_domain_associations_output {
         pub(crate) domain_associations:
             std::option::Option<std::vec::Vec<crate::model::DomainAssociation>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `domain_associations`.
@@ -687,11 +908,21 @@ pub mod list_domain_associations_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListDomainAssociationsOutput`](crate::output::ListDomainAssociationsOutput).
         pub fn build(self) -> crate::output::ListDomainAssociationsOutput {
             crate::output::ListDomainAssociationsOutput {
                 domain_associations: self.domain_associations,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -713,6 +944,7 @@ pub struct ListBranchesOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBranchesOutput {
     /// <p> A list of branches for an Amplify app. </p>
@@ -724,6 +956,11 @@ impl ListBranchesOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListBranchesOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListBranchesOutput`](crate::output::ListBranchesOutput).
 pub mod list_branches_output {
 
@@ -733,6 +970,7 @@ pub mod list_branches_output {
     pub struct Builder {
         pub(crate) branches: std::option::Option<std::vec::Vec<crate::model::Branch>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `branches`.
@@ -764,11 +1002,21 @@ pub mod list_branches_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBranchesOutput`](crate::output::ListBranchesOutput).
         pub fn build(self) -> crate::output::ListBranchesOutput {
             crate::output::ListBranchesOutput {
                 branches: self.branches,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -790,6 +1038,7 @@ pub struct ListBackendEnvironmentsOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListBackendEnvironmentsOutput {
     /// <p> The list of backend environments for an Amplify app. </p>
@@ -799,6 +1048,11 @@ impl ListBackendEnvironmentsOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     pub fn next_token(&self) -> std::option::Option<&str> {
         self.next_token.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for ListBackendEnvironmentsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`ListBackendEnvironmentsOutput`](crate::output::ListBackendEnvironmentsOutput).
@@ -811,6 +1065,7 @@ pub mod list_backend_environments_output {
         pub(crate) backend_environments:
             std::option::Option<std::vec::Vec<crate::model::BackendEnvironment>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `backend_environments`.
@@ -842,11 +1097,21 @@ pub mod list_backend_environments_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListBackendEnvironmentsOutput`](crate::output::ListBackendEnvironmentsOutput).
         pub fn build(self) -> crate::output::ListBackendEnvironmentsOutput {
             crate::output::ListBackendEnvironmentsOutput {
                 backend_environments: self.backend_environments,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -868,6 +1133,7 @@ pub struct ListArtifactsOutput {
     /// <p> A pagination token. If a non-null pagination token is returned in a result, pass its value in another request to retrieve more entries. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListArtifactsOutput {
     /// <p> A list of artifacts. </p>
@@ -879,6 +1145,11 @@ impl ListArtifactsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListArtifactsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListArtifactsOutput`](crate::output::ListArtifactsOutput).
 pub mod list_artifacts_output {
 
@@ -888,6 +1159,7 @@ pub mod list_artifacts_output {
     pub struct Builder {
         pub(crate) artifacts: std::option::Option<std::vec::Vec<crate::model::Artifact>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `artifacts`.
@@ -919,11 +1191,21 @@ pub mod list_artifacts_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListArtifactsOutput`](crate::output::ListArtifactsOutput).
         pub fn build(self) -> crate::output::ListArtifactsOutput {
             crate::output::ListArtifactsOutput {
                 artifacts: self.artifacts,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -945,6 +1227,7 @@ pub struct ListAppsOutput {
     /// <p> A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned in a result. Pass its value in here to list more projects. </p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl ListAppsOutput {
     /// <p> A list of Amplify apps. </p>
@@ -956,6 +1239,11 @@ impl ListAppsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for ListAppsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`ListAppsOutput`](crate::output::ListAppsOutput).
 pub mod list_apps_output {
 
@@ -965,6 +1253,7 @@ pub mod list_apps_output {
     pub struct Builder {
         pub(crate) apps: std::option::Option<std::vec::Vec<crate::model::App>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `apps`.
@@ -996,11 +1285,21 @@ pub mod list_apps_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`ListAppsOutput`](crate::output::ListAppsOutput).
         pub fn build(self) -> crate::output::ListAppsOutput {
             crate::output::ListAppsOutput {
                 apps: self.apps,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1019,11 +1318,17 @@ pub struct GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
+    _request_id: Option<String>,
 }
 impl GetWebhookOutput {
     /// <p> Describes the structure of a webhook. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetWebhookOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetWebhookOutput`](crate::output::GetWebhookOutput).
@@ -1034,6 +1339,7 @@ pub mod get_webhook_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the structure of a webhook. </p>
@@ -1046,10 +1352,20 @@ pub mod get_webhook_output {
             self.webhook = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetWebhookOutput`](crate::output::GetWebhookOutput).
         pub fn build(self) -> crate::output::GetWebhookOutput {
             crate::output::GetWebhookOutput {
                 webhook: self.webhook,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1068,11 +1384,17 @@ pub struct GetJobOutput {
     /// <p> Describes an execution job for an Amplify app. </p>
     #[doc(hidden)]
     pub job: std::option::Option<crate::model::Job>,
+    _request_id: Option<String>,
 }
 impl GetJobOutput {
     /// <p> Describes an execution job for an Amplify app. </p>
     pub fn job(&self) -> std::option::Option<&crate::model::Job> {
         self.job.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetJobOutput`](crate::output::GetJobOutput).
@@ -1083,6 +1405,7 @@ pub mod get_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job: std::option::Option<crate::model::Job>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes an execution job for an Amplify app. </p>
@@ -1095,9 +1418,21 @@ pub mod get_job_output {
             self.job = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetJobOutput`](crate::output::GetJobOutput).
         pub fn build(self) -> crate::output::GetJobOutput {
-            crate::output::GetJobOutput { job: self.job }
+            crate::output::GetJobOutput {
+                job: self.job,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1115,11 +1450,17 @@ pub struct GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+    _request_id: Option<String>,
 }
 impl GetDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetDomainAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetDomainAssociationOutput`](crate::output::GetDomainAssociationOutput).
@@ -1130,6 +1471,7 @@ pub mod get_domain_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
@@ -1145,10 +1487,20 @@ pub mod get_domain_association_output {
             self.domain_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetDomainAssociationOutput`](crate::output::GetDomainAssociationOutput).
         pub fn build(self) -> crate::output::GetDomainAssociationOutput {
             crate::output::GetDomainAssociationOutput {
                 domain_association: self.domain_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1167,11 +1519,17 @@ pub struct GetBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
+    _request_id: Option<String>,
 }
 impl GetBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetBranchOutput`](crate::output::GetBranchOutput).
@@ -1182,6 +1540,7 @@ pub mod get_branch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
@@ -1194,10 +1553,20 @@ pub mod get_branch_output {
             self.branch = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBranchOutput`](crate::output::GetBranchOutput).
         pub fn build(self) -> crate::output::GetBranchOutput {
             crate::output::GetBranchOutput {
                 branch: self.branch,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1216,11 +1585,17 @@ pub struct GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+    _request_id: Option<String>,
 }
 impl GetBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
         self.backend_environment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetBackendEnvironmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetBackendEnvironmentOutput`](crate::output::GetBackendEnvironmentOutput).
@@ -1231,6 +1606,7 @@ pub mod get_backend_environment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the backend environment for an Amplify app. </p>
@@ -1246,10 +1622,20 @@ pub mod get_backend_environment_output {
             self.backend_environment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetBackendEnvironmentOutput`](crate::output::GetBackendEnvironmentOutput).
         pub fn build(self) -> crate::output::GetBackendEnvironmentOutput {
             crate::output::GetBackendEnvironmentOutput {
                 backend_environment: self.backend_environment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1271,6 +1657,7 @@ pub struct GetArtifactUrlOutput {
     /// <p> The presigned URL for the artifact. </p>
     #[doc(hidden)]
     pub artifact_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetArtifactUrlOutput {
     /// <p> The unique ID for an artifact. </p>
@@ -1282,6 +1669,11 @@ impl GetArtifactUrlOutput {
         self.artifact_url.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetArtifactUrlOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetArtifactUrlOutput`](crate::output::GetArtifactUrlOutput).
 pub mod get_artifact_url_output {
 
@@ -1291,6 +1683,7 @@ pub mod get_artifact_url_output {
     pub struct Builder {
         pub(crate) artifact_id: std::option::Option<std::string::String>,
         pub(crate) artifact_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The unique ID for an artifact. </p>
@@ -1313,11 +1706,21 @@ pub mod get_artifact_url_output {
             self.artifact_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetArtifactUrlOutput`](crate::output::GetArtifactUrlOutput).
         pub fn build(self) -> crate::output::GetArtifactUrlOutput {
             crate::output::GetArtifactUrlOutput {
                 artifact_id: self.artifact_id,
                 artifact_url: self.artifact_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1336,11 +1739,17 @@ pub struct GetAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl GetAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for GetAppOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GetAppOutput`](crate::output::GetAppOutput).
@@ -1351,6 +1760,7 @@ pub mod get_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
@@ -1363,9 +1773,21 @@ pub mod get_app_output {
             self.app = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetAppOutput`](crate::output::GetAppOutput).
         pub fn build(self) -> crate::output::GetAppOutput {
-            crate::output::GetAppOutput { app: self.app }
+            crate::output::GetAppOutput {
+                app: self.app,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1383,11 +1805,17 @@ pub struct GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     #[doc(hidden)]
     pub log_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GenerateAccessLogsOutput {
     /// <p> The pre-signed URL for the requested access logs. </p>
     pub fn log_url(&self) -> std::option::Option<&str> {
         self.log_url.as_deref()
+    }
+}
+impl aws_http::request_id::RequestId for GenerateAccessLogsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`GenerateAccessLogsOutput`](crate::output::GenerateAccessLogsOutput).
@@ -1398,6 +1826,7 @@ pub mod generate_access_logs_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) log_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The pre-signed URL for the requested access logs. </p>
@@ -1410,10 +1839,20 @@ pub mod generate_access_logs_output {
             self.log_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GenerateAccessLogsOutput`](crate::output::GenerateAccessLogsOutput).
         pub fn build(self) -> crate::output::GenerateAccessLogsOutput {
             crate::output::GenerateAccessLogsOutput {
                 log_url: self.log_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1432,11 +1871,17 @@ pub struct DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
+    _request_id: Option<String>,
 }
 impl DeleteWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteWebhookOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
@@ -1447,6 +1892,7 @@ pub mod delete_webhook_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
@@ -1459,10 +1905,20 @@ pub mod delete_webhook_output {
             self.webhook = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteWebhookOutput`](crate::output::DeleteWebhookOutput).
         pub fn build(self) -> crate::output::DeleteWebhookOutput {
             crate::output::DeleteWebhookOutput {
                 webhook: self.webhook,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1481,11 +1937,17 @@ pub struct DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     #[doc(hidden)]
     pub job_summary: std::option::Option<crate::model::JobSummary>,
+    _request_id: Option<String>,
 }
 impl DeleteJobOutput {
     /// <p> Describes the summary for an execution job for an Amplify app. </p>
     pub fn job_summary(&self) -> std::option::Option<&crate::model::JobSummary> {
         self.job_summary.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteJobOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteJobOutput`](crate::output::DeleteJobOutput).
@@ -1496,6 +1958,7 @@ pub mod delete_job_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) job_summary: std::option::Option<crate::model::JobSummary>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the summary for an execution job for an Amplify app. </p>
@@ -1511,10 +1974,20 @@ pub mod delete_job_output {
             self.job_summary = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteJobOutput`](crate::output::DeleteJobOutput).
         pub fn build(self) -> crate::output::DeleteJobOutput {
             crate::output::DeleteJobOutput {
                 job_summary: self.job_summary,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1533,11 +2006,17 @@ pub struct DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+    _request_id: Option<String>,
 }
 impl DeleteDomainAssociationOutput {
     /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteDomainAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteDomainAssociationOutput`](crate::output::DeleteDomainAssociationOutput).
@@ -1548,6 +2027,7 @@ pub mod delete_domain_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes a domain association that associates a custom domain with an Amplify app. </p>
@@ -1563,10 +2043,20 @@ pub mod delete_domain_association_output {
             self.domain_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteDomainAssociationOutput`](crate::output::DeleteDomainAssociationOutput).
         pub fn build(self) -> crate::output::DeleteDomainAssociationOutput {
             crate::output::DeleteDomainAssociationOutput {
                 domain_association: self.domain_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1585,11 +2075,17 @@ pub struct DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
+    _request_id: Option<String>,
 }
 impl DeleteBranchOutput {
     /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
@@ -1600,6 +2096,7 @@ pub mod delete_branch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The branch for an Amplify app, which maps to a third-party repository branch. </p>
@@ -1612,10 +2109,20 @@ pub mod delete_branch_output {
             self.branch = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBranchOutput`](crate::output::DeleteBranchOutput).
         pub fn build(self) -> crate::output::DeleteBranchOutput {
             crate::output::DeleteBranchOutput {
                 branch: self.branch,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1634,11 +2141,17 @@ pub struct DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+    _request_id: Option<String>,
 }
 impl DeleteBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
         self.backend_environment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteBackendEnvironmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteBackendEnvironmentOutput`](crate::output::DeleteBackendEnvironmentOutput).
@@ -1649,6 +2162,7 @@ pub mod delete_backend_environment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the backend environment for an Amplify app. </p>
@@ -1664,10 +2178,20 @@ pub mod delete_backend_environment_output {
             self.backend_environment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteBackendEnvironmentOutput`](crate::output::DeleteBackendEnvironmentOutput).
         pub fn build(self) -> crate::output::DeleteBackendEnvironmentOutput {
             crate::output::DeleteBackendEnvironmentOutput {
                 backend_environment: self.backend_environment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1686,11 +2210,17 @@ pub struct DeleteAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl DeleteAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for DeleteAppOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`DeleteAppOutput`](crate::output::DeleteAppOutput).
@@ -1701,6 +2231,7 @@ pub mod delete_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
@@ -1713,9 +2244,21 @@ pub mod delete_app_output {
             self.app = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`DeleteAppOutput`](crate::output::DeleteAppOutput).
         pub fn build(self) -> crate::output::DeleteAppOutput {
-            crate::output::DeleteAppOutput { app: self.app }
+            crate::output::DeleteAppOutput {
+                app: self.app,
+                _request_id: self._request_id,
+            }
         }
     }
 }
@@ -1733,11 +2276,17 @@ pub struct CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     #[doc(hidden)]
     pub webhook: std::option::Option<crate::model::Webhook>,
+    _request_id: Option<String>,
 }
 impl CreateWebhookOutput {
     /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
     pub fn webhook(&self) -> std::option::Option<&crate::model::Webhook> {
         self.webhook.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateWebhookOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateWebhookOutput`](crate::output::CreateWebhookOutput).
@@ -1748,6 +2297,7 @@ pub mod create_webhook_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) webhook: std::option::Option<crate::model::Webhook>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes a webhook that connects repository events to an Amplify app. </p>
@@ -1760,10 +2310,20 @@ pub mod create_webhook_output {
             self.webhook = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateWebhookOutput`](crate::output::CreateWebhookOutput).
         pub fn build(self) -> crate::output::CreateWebhookOutput {
             crate::output::CreateWebhookOutput {
                 webhook: self.webhook,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1782,11 +2342,17 @@ pub struct CreateDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     #[doc(hidden)]
     pub domain_association: std::option::Option<crate::model::DomainAssociation>,
+    _request_id: Option<String>,
 }
 impl CreateDomainAssociationOutput {
     /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
     pub fn domain_association(&self) -> std::option::Option<&crate::model::DomainAssociation> {
         self.domain_association.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateDomainAssociationOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateDomainAssociationOutput`](crate::output::CreateDomainAssociationOutput).
@@ -1797,6 +2363,7 @@ pub mod create_domain_association_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) domain_association: std::option::Option<crate::model::DomainAssociation>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the structure of a domain association, which associates a custom domain with an Amplify app. </p>
@@ -1812,10 +2379,20 @@ pub mod create_domain_association_output {
             self.domain_association = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDomainAssociationOutput`](crate::output::CreateDomainAssociationOutput).
         pub fn build(self) -> crate::output::CreateDomainAssociationOutput {
             crate::output::CreateDomainAssociationOutput {
                 domain_association: self.domain_association,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1841,6 +2418,7 @@ pub struct CreateDeploymentOutput {
     /// <p> When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code> is returned. </p>
     #[doc(hidden)]
     pub zip_upload_url: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl CreateDeploymentOutput {
     /// <p> The job ID for this deployment. will supply to start deployment api. </p>
@@ -1859,6 +2437,11 @@ impl CreateDeploymentOutput {
         self.zip_upload_url.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for CreateDeploymentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
 pub mod create_deployment_output {
 
@@ -1871,6 +2454,7 @@ pub mod create_deployment_output {
             std::collections::HashMap<std::string::String, std::string::String>,
         >,
         pub(crate) zip_upload_url: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> The job ID for this deployment. will supply to start deployment api. </p>
@@ -1921,12 +2505,22 @@ pub mod create_deployment_output {
             self.zip_upload_url = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateDeploymentOutput`](crate::output::CreateDeploymentOutput).
         pub fn build(self) -> crate::output::CreateDeploymentOutput {
             crate::output::CreateDeploymentOutput {
                 job_id: self.job_id,
                 file_upload_urls: self.file_upload_urls,
                 zip_upload_url: self.zip_upload_url,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1945,11 +2539,17 @@ pub struct CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     #[doc(hidden)]
     pub branch: std::option::Option<crate::model::Branch>,
+    _request_id: Option<String>,
 }
 impl CreateBranchOutput {
     /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
     pub fn branch(&self) -> std::option::Option<&crate::model::Branch> {
         self.branch.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateBranchOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateBranchOutput`](crate::output::CreateBranchOutput).
@@ -1960,6 +2560,7 @@ pub mod create_branch_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) branch: std::option::Option<crate::model::Branch>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the branch for an Amplify app, which maps to a third-party repository branch. </p>
@@ -1972,10 +2573,20 @@ pub mod create_branch_output {
             self.branch = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBranchOutput`](crate::output::CreateBranchOutput).
         pub fn build(self) -> crate::output::CreateBranchOutput {
             crate::output::CreateBranchOutput {
                 branch: self.branch,
+                _request_id: self._request_id,
             }
         }
     }
@@ -1994,11 +2605,17 @@ pub struct CreateBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     #[doc(hidden)]
     pub backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+    _request_id: Option<String>,
 }
 impl CreateBackendEnvironmentOutput {
     /// <p> Describes the backend environment for an Amplify app. </p>
     pub fn backend_environment(&self) -> std::option::Option<&crate::model::BackendEnvironment> {
         self.backend_environment.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateBackendEnvironmentOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateBackendEnvironmentOutput`](crate::output::CreateBackendEnvironmentOutput).
@@ -2009,6 +2626,7 @@ pub mod create_backend_environment_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) backend_environment: std::option::Option<crate::model::BackendEnvironment>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Describes the backend environment for an Amplify app. </p>
@@ -2024,10 +2642,20 @@ pub mod create_backend_environment_output {
             self.backend_environment = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateBackendEnvironmentOutput`](crate::output::CreateBackendEnvironmentOutput).
         pub fn build(self) -> crate::output::CreateBackendEnvironmentOutput {
             crate::output::CreateBackendEnvironmentOutput {
                 backend_environment: self.backend_environment,
+                _request_id: self._request_id,
             }
         }
     }
@@ -2046,11 +2674,17 @@ pub struct CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     #[doc(hidden)]
     pub app: std::option::Option<crate::model::App>,
+    _request_id: Option<String>,
 }
 impl CreateAppOutput {
     /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
     pub fn app(&self) -> std::option::Option<&crate::model::App> {
         self.app.as_ref()
+    }
+}
+impl aws_http::request_id::RequestId for CreateAppOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
     }
 }
 /// See [`CreateAppOutput`](crate::output::CreateAppOutput).
@@ -2061,6 +2695,7 @@ pub mod create_app_output {
     #[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
     pub struct Builder {
         pub(crate) app: std::option::Option<crate::model::App>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// <p> Represents the different branches of a repository for building, deploying, and hosting an Amplify app. </p>
@@ -2073,9 +2708,21 @@ pub mod create_app_output {
             self.app = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`CreateAppOutput`](crate::output::CreateAppOutput).
         pub fn build(self) -> crate::output::CreateAppOutput {
-            crate::output::CreateAppOutput { app: self.app }
+            crate::output::CreateAppOutput {
+                app: self.app,
+                _request_id: self._request_id,
+            }
         }
     }
 }

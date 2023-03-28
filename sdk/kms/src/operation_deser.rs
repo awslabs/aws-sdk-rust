@@ -4,8 +4,11 @@ pub fn parse_cancel_key_deletion_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CancelKeyDeletionOutput, crate::error::CancelKeyDeletionError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CancelKeyDeletionError::unhandled(generic)),
@@ -13,91 +16,91 @@ pub fn parse_cancel_key_deletion_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::CancelKeyDeletionError {
-            meta: generic,
-            kind: crate::error::CancelKeyDeletionErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::CancelKeyDeletionError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::CancelKeyDeletionError {
-            meta: generic,
-            kind: crate::error::CancelKeyDeletionErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::CancelKeyDeletionError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::CancelKeyDeletionError {
-            meta: generic,
-            kind: crate::error::CancelKeyDeletionErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::CancelKeyDeletionError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::CancelKeyDeletionError {
-            meta: generic,
-            kind: crate::error::CancelKeyDeletionErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::CancelKeyDeletionError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::CancelKeyDeletionError {
-            meta: generic,
-            kind: crate::error::CancelKeyDeletionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::CancelKeyDeletionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CancelKeyDeletionError::generic(generic),
     })
 }
@@ -116,6 +119,9 @@ pub fn parse_cancel_key_deletion_response(
             output,
         )
         .map_err(crate::error::CancelKeyDeletionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -127,8 +133,11 @@ pub fn parse_connect_custom_key_store_error(
     crate::output::ConnectCustomKeyStoreOutput,
     crate::error::ConnectCustomKeyStoreError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ConnectCustomKeyStoreError::unhandled(generic)),
@@ -136,87 +145,97 @@ pub fn parse_connect_custom_key_store_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmClusterInvalidConfigurationException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "CloudHsmClusterInvalidConfigurationException" => {
+            crate::error::ConnectCustomKeyStoreError::CloudHsmClusterInvalidConfigurationException(
+                {
                     #[allow(unused_mut)]
+                    let mut tmp = {
+                        #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
-                    output.build()
-                }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "CloudHsmClusterNotActiveException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                        let _ = response;
+                        output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
+                        let output = output.meta(generic);
+                        output.build()
+                    };
+                    if tmp.message.is_none() {
+                        tmp.message = _error_message;
+                    }
+                    tmp
+                },
+            )
+        }
+        "CloudHsmClusterNotActiveException" => {
+            crate::error::ConnectCustomKeyStoreError::CloudHsmClusterNotActiveException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
+                    let mut output =
+                        crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "CustomKeyStoreInvalidStateException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "CustomKeyStoreInvalidStateException" => {
+            crate::error::ConnectCustomKeyStoreError::CustomKeyStoreInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                    let mut output =
+                        crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "CustomKeyStoreNotFoundException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "CustomKeyStoreNotFoundException" => {
+            crate::error::ConnectCustomKeyStoreError::CustomKeyStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::custom_key_store_not_found_exception::Builder::default();
+                    let mut output =
+                        crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "KMSInternalException" => crate::error::ConnectCustomKeyStoreError { meta: generic, kind: crate::error::ConnectCustomKeyStoreErrorKind::KmsInternalException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::ConnectCustomKeyStoreError::KmsInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ConnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::ConnectCustomKeyStoreError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::ConnectCustomKeyStoreError::generic(generic),
     })
 }
 
@@ -231,6 +250,9 @@ pub fn parse_connect_custom_key_store_response(
         #[allow(unused_mut)]
         let mut output = crate::output::connect_custom_key_store_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -239,8 +261,11 @@ pub fn parse_connect_custom_key_store_response(
 pub fn parse_create_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateAliasOutput, crate::error::CreateAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateAliasError::unhandled(generic)),
@@ -248,125 +273,117 @@ pub fn parse_create_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExistsException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::AlreadyExistsException({
+        "AlreadyExistsException" => crate::error::CreateAliasError::AlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DependencyTimeoutException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::DependencyTimeoutException({
+                let mut output = crate::error::already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "DependencyTimeoutException" => {
+            crate::error::CreateAliasError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidAliasNameException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::InvalidAliasNameException({
+            })
+        }
+        "InvalidAliasNameException" => crate::error::CreateAliasError::InvalidAliasNameException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_alias_name_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_alias_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_alias_name_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_alias_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::CreateAliasError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::CreateAliasError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::CreateAliasError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::CreateAliasError {
-            meta: generic,
-            kind: crate::error::CreateAliasErrorKind::NotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::CreateAliasError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateAliasError::generic(generic),
     })
 }
@@ -379,6 +396,9 @@ pub fn parse_create_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::create_alias_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -390,8 +410,11 @@ pub fn parse_create_custom_key_store_error(
     crate::output::CreateCustomKeyStoreOutput,
     crate::error::CreateCustomKeyStoreError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateCustomKeyStoreError::unhandled(generic)),
@@ -399,7 +422,7 @@ pub fn parse_create_custom_key_store_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmClusterInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInUseException({
+        "CloudHsmClusterInUseException" => crate::error::CreateCustomKeyStoreError::CloudHsmClusterInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -407,6 +430,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -414,8 +438,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CloudHsmClusterInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException({
+        }),
+        "CloudHsmClusterInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError::CloudHsmClusterInvalidConfigurationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -423,6 +447,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -430,8 +455,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CloudHsmClusterNotActiveException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException({
+        }),
+        "CloudHsmClusterNotActiveException" => crate::error::CreateCustomKeyStoreError::CloudHsmClusterNotActiveException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -439,6 +464,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -446,8 +472,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CloudHsmClusterNotFoundException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException({
+        }),
+        "CloudHsmClusterNotFoundException" => crate::error::CreateCustomKeyStoreError::CloudHsmClusterNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -455,6 +481,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -462,8 +489,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomKeyStoreNameInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException({
+        }),
+        "CustomKeyStoreNameInUseException" => crate::error::CreateCustomKeyStoreError::CustomKeyStoreNameInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -471,6 +498,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::custom_key_store_name_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_name_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -478,8 +506,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "IncorrectTrustAnchorException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::IncorrectTrustAnchorException({
+        }),
+        "IncorrectTrustAnchorException" => crate::error::CreateCustomKeyStoreError::IncorrectTrustAnchorException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -487,6 +515,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::incorrect_trust_anchor_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_trust_anchor_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -494,8 +523,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "KMSInternalException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::KmsInternalException({
+        }),
+        "KMSInternalException" => crate::error::CreateCustomKeyStoreError::KmsInternalException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -503,6 +532,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -510,8 +540,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "LimitExceededException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::LimitExceededException({
+        }),
+        "LimitExceededException" => crate::error::CreateCustomKeyStoreError::LimitExceededException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -519,6 +549,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::limit_exceeded_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -526,8 +557,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyIncorrectAuthenticationCredentialException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException({
+        }),
+        "XksProxyIncorrectAuthenticationCredentialException" => crate::error::CreateCustomKeyStoreError::XksProxyIncorrectAuthenticationCredentialException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -535,6 +566,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -542,8 +574,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException({
+        }),
+        "XksProxyInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError::XksProxyInvalidConfigurationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -551,6 +583,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -558,8 +591,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyInvalidResponseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyInvalidResponseException({
+        }),
+        "XksProxyInvalidResponseException" => crate::error::CreateCustomKeyStoreError::XksProxyInvalidResponseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -567,6 +600,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -574,8 +608,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyUriEndpointInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException({
+        }),
+        "XksProxyUriEndpointInUseException" => crate::error::CreateCustomKeyStoreError::XksProxyUriEndpointInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -583,6 +617,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -590,8 +625,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyUriInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriInUseException({
+        }),
+        "XksProxyUriInUseException" => crate::error::CreateCustomKeyStoreError::XksProxyUriInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -599,6 +634,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -606,8 +642,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyUriUnreachableException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyUriUnreachableException({
+        }),
+        "XksProxyUriUnreachableException" => crate::error::CreateCustomKeyStoreError::XksProxyUriUnreachableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -615,6 +651,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -622,8 +659,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyVpcEndpointServiceInUseException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException({
+        }),
+        "XksProxyVpcEndpointServiceInUseException" => crate::error::CreateCustomKeyStoreError::XksProxyVpcEndpointServiceInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -631,6 +668,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -638,8 +676,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException({
+        }),
+        "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::CreateCustomKeyStoreError::XksProxyVpcEndpointServiceInvalidConfigurationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -647,6 +685,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -654,8 +693,8 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyVpcEndpointServiceNotFoundException" => crate::error::CreateCustomKeyStoreError { meta: generic, kind: crate::error::CreateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException({
+        }),
+        "XksProxyVpcEndpointServiceNotFoundException" => crate::error::CreateCustomKeyStoreError::XksProxyVpcEndpointServiceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -663,6 +702,7 @@ pub fn parse_create_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -670,7 +710,7 @@ pub fn parse_create_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::CreateCustomKeyStoreError::generic(generic)
     })
 }
@@ -691,6 +731,9 @@ pub fn parse_create_custom_key_store_response(
             output,
         )
         .map_err(crate::error::CreateCustomKeyStoreError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -699,8 +742,11 @@ pub fn parse_create_custom_key_store_response(
 pub fn parse_create_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateGrantOutput, crate::error::CreateGrantError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateGrantError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateGrantError::unhandled(generic)),
@@ -708,62 +754,62 @@ pub fn parse_create_grant_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::CreateGrantError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::CreateGrantError {
-                meta: generic,
-                kind: crate::error::CreateGrantErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "InvalidArnException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::InvalidArnException({
+        "DisabledException" => crate::error::CreateGrantError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::CreateGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::CreateGrantError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGrantTokenException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::InvalidGrantTokenException({
+            })
+        }
+        "InvalidGrantTokenException" => {
+            crate::error::CreateGrantError::InvalidGrantTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -771,82 +817,79 @@ pub fn parse_create_grant_error(
                         crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::CreateGrantError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::CreateGrantError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::CreateGrantError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::CreateGrantError {
-            meta: generic,
-            kind: crate::error::CreateGrantErrorKind::NotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::CreateGrantError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::CreateGrantError::generic(generic),
     })
 }
@@ -864,6 +907,9 @@ pub fn parse_create_grant_response(
             output,
         )
         .map_err(crate::error::CreateGrantError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -872,8 +918,11 @@ pub fn parse_create_grant_response(
 pub fn parse_create_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::CreateKeyOutput, crate::error::CreateKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::CreateKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::CreateKeyError::unhandled(generic)),
@@ -881,26 +930,25 @@ pub fn parse_create_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmClusterInvalidConfigurationException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::CloudHsmClusterInvalidConfigurationException({
+        "CloudHsmClusterInvalidConfigurationException" => {
+            crate::error::CreateKeyError::CloudHsmClusterInvalidConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CustomKeyStoreInvalidStateException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::CustomKeyStoreInvalidStateException({
+            })
+        }
+        "CustomKeyStoreInvalidStateException" => {
+            crate::error::CreateKeyError::CustomKeyStoreInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -908,17 +956,17 @@ pub fn parse_create_key_error(
                         crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CustomKeyStoreNotFoundException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::CustomKeyStoreNotFoundException({
+            })
+        }
+        "CustomKeyStoreNotFoundException" => {
+            crate::error::CreateKeyError::CustomKeyStoreNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -926,85 +974,81 @@ pub fn parse_create_key_error(
                         crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DependencyTimeoutException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::DependencyTimeoutException({
+            })
+        }
+        "DependencyTimeoutException" => crate::error::CreateKeyError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::InvalidArnException({
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::CreateKeyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::CreateKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::LimitExceededException({
+            })
+        }
+        "LimitExceededException" => crate::error::CreateKeyError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MalformedPolicyDocumentException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::MalformedPolicyDocumentException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MalformedPolicyDocumentException" => {
+            crate::error::CreateKeyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1012,38 +1056,36 @@ pub fn parse_create_key_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_malformed_policy_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TagException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::TagException({
+            })
+        }
+        "TagException" => crate::error::CreateKeyError::TagException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::tag_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::CreateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::UnsupportedOperationException({
+                let mut output = crate::error::tag_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::CreateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedOperationException" => {
+            crate::error::CreateKeyError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1051,17 +1093,17 @@ pub fn parse_create_key_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "XksKeyAlreadyInUseException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::XksKeyAlreadyInUseException({
+            })
+        }
+        "XksKeyAlreadyInUseException" => {
+            crate::error::CreateKeyError::XksKeyAlreadyInUseException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1069,17 +1111,17 @@ pub fn parse_create_key_error(
                         crate::error::xks_key_already_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_key_already_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "XksKeyInvalidConfigurationException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::XksKeyInvalidConfigurationException({
+            })
+        }
+        "XksKeyInvalidConfigurationException" => {
+            crate::error::CreateKeyError::XksKeyInvalidConfigurationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1087,31 +1129,30 @@ pub fn parse_create_key_error(
                         crate::error::xks_key_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_key_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "XksKeyNotFoundException" => crate::error::CreateKeyError {
-            meta: generic,
-            kind: crate::error::CreateKeyErrorKind::XksKeyNotFoundException({
+            })
+        }
+        "XksKeyNotFoundException" => crate::error::CreateKeyError::XksKeyNotFoundException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::xks_key_not_found_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_xks_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::xks_key_not_found_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_xks_key_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::CreateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::CreateKeyError::generic(generic),
     })
 }
@@ -1129,6 +1170,9 @@ pub fn parse_create_key_response(
             output,
         )
         .map_err(crate::error::CreateKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1137,8 +1181,11 @@ pub fn parse_create_key_response(
 pub fn parse_decrypt_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DecryptOutput, crate::error::DecryptError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DecryptError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DecryptError::unhandled(generic)),
@@ -1146,179 +1193,165 @@ pub fn parse_decrypt_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::DecryptError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::DecryptError {
-                meta: generic,
-                kind: crate::error::DecryptErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "IncorrectKeyException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::IncorrectKeyException({
+            tmp
+        }),
+        "DisabledException" => crate::error::DecryptError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::incorrect_key_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_incorrect_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidCiphertextException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::InvalidCiphertextException({
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "IncorrectKeyException" => crate::error::DecryptError::IncorrectKeyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_ciphertext_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_ciphertext_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidGrantTokenException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::InvalidGrantTokenException({
+                let mut output = crate::error::incorrect_key_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_incorrect_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidCiphertextException" => crate::error::DecryptError::InvalidCiphertextException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_grant_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::InvalidKeyUsageException({
+                let mut output = crate::error::invalid_ciphertext_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_ciphertext_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => crate::error::DecryptError::InvalidGrantTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidKeyUsageException" => crate::error::DecryptError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::DecryptError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::DecryptError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::DecryptError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DecryptError {
-            meta: generic,
-            kind: crate::error::DecryptErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::DecryptError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DecryptError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DecryptError::generic(generic),
     })
 }
@@ -1336,6 +1369,9 @@ pub fn parse_decrypt_response(
             output,
         )
         .map_err(crate::error::DecryptError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1344,8 +1380,11 @@ pub fn parse_decrypt_response(
 pub fn parse_delete_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DeleteAliasOutput, crate::error::DeleteAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteAliasError::unhandled(generic)),
@@ -1353,74 +1392,72 @@ pub fn parse_delete_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::DeleteAliasError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DeleteAliasError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::DeleteAliasError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteAliasError {
-            meta: generic,
-            kind: crate::error::DeleteAliasErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::DeleteAliasError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteAliasError::generic(generic),
     })
 }
@@ -1433,6 +1470,9 @@ pub fn parse_delete_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_alias_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1444,8 +1484,11 @@ pub fn parse_delete_custom_key_store_error(
     crate::output::DeleteCustomKeyStoreOutput,
     crate::error::DeleteCustomKeyStoreError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DeleteCustomKeyStoreError::unhandled(generic)),
@@ -1453,9 +1496,8 @@ pub fn parse_delete_custom_key_store_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomKeyStoreHasCMKsException" => crate::error::DeleteCustomKeyStoreError {
-            meta: generic,
-            kind: crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreHasCmKsException({
+        "CustomKeyStoreHasCMKsException" => {
+            crate::error::DeleteCustomKeyStoreError::CustomKeyStoreHasCmKsException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1463,36 +1505,35 @@ pub fn parse_delete_custom_key_store_error(
                         crate::error::custom_key_store_has_cm_ks_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_has_cm_ks_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CustomKeyStoreInvalidStateException" => crate::error::DeleteCustomKeyStoreError {
-            meta: generic,
-            kind: crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(
-                {
+            })
+        }
+        "CustomKeyStoreInvalidStateException" => {
+            crate::error::DeleteCustomKeyStoreError::CustomKeyStoreInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "CustomKeyStoreNotFoundException" => crate::error::DeleteCustomKeyStoreError {
-            meta: generic,
-            kind: crate::error::DeleteCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException({
+                    let mut output =
+                        crate::error::custom_key_store_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "CustomKeyStoreNotFoundException" => {
+            crate::error::DeleteCustomKeyStoreError::CustomKeyStoreNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -1500,31 +1541,32 @@ pub fn parse_delete_custom_key_store_error(
                         crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DeleteCustomKeyStoreError {
-            meta: generic,
-            kind: crate::error::DeleteCustomKeyStoreErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DeleteCustomKeyStoreError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteCustomKeyStoreError::generic(generic),
     })
 }
@@ -1540,6 +1582,9 @@ pub fn parse_delete_custom_key_store_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_custom_key_store_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1551,8 +1596,11 @@ pub fn parse_delete_imported_key_material_error(
     crate::output::DeleteImportedKeyMaterialOutput,
     crate::error::DeleteImportedKeyMaterialError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1564,111 +1612,109 @@ pub fn parse_delete_imported_key_material_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::DeleteImportedKeyMaterialError {
-            meta: generic,
-            kind: crate::error::DeleteImportedKeyMaterialErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::DeleteImportedKeyMaterialError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::DeleteImportedKeyMaterialError {
-            meta: generic,
-            kind: crate::error::DeleteImportedKeyMaterialErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::DeleteImportedKeyMaterialError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DeleteImportedKeyMaterialError {
-            meta: generic,
-            kind: crate::error::DeleteImportedKeyMaterialErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DeleteImportedKeyMaterialError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::DeleteImportedKeyMaterialError {
-            meta: generic,
-            kind: crate::error::DeleteImportedKeyMaterialErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::DeleteImportedKeyMaterialError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DeleteImportedKeyMaterialError {
-            meta: generic,
-            kind: crate::error::DeleteImportedKeyMaterialErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DeleteImportedKeyMaterialError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::DeleteImportedKeyMaterialError {
-            meta: generic,
-            kind: crate::error::DeleteImportedKeyMaterialErrorKind::UnsupportedOperationException(
-                {
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::DeleteImportedKeyMaterialError::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::unsupported_operation_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteImportedKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DeleteImportedKeyMaterialError::generic(generic),
     })
 }
@@ -1684,6 +1730,9 @@ pub fn parse_delete_imported_key_material_response(
         #[allow(unused_mut)]
         let mut output = crate::output::delete_imported_key_material_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1695,8 +1744,11 @@ pub fn parse_describe_custom_key_stores_error(
     crate::output::DescribeCustomKeyStoresOutput,
     crate::error::DescribeCustomKeyStoresError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -1708,60 +1760,58 @@ pub fn parse_describe_custom_key_stores_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomKeyStoreNotFoundException" => crate::error::DescribeCustomKeyStoresError {
-            meta: generic,
-            kind: crate::error::DescribeCustomKeyStoresErrorKind::CustomKeyStoreNotFoundException(
-                {
+        "CustomKeyStoreNotFoundException" => {
+            crate::error::DescribeCustomKeyStoresError::CustomKeyStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::custom_key_store_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "InvalidMarkerException" => crate::error::DescribeCustomKeyStoresError {
-            meta: generic,
-            kind: crate::error::DescribeCustomKeyStoresErrorKind::InvalidMarkerException({
+                    let mut output =
+                        crate::error::custom_key_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidMarkerException" => {
+            crate::error::DescribeCustomKeyStoresError::InvalidMarkerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_marker_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DescribeCustomKeyStoresError {
-            meta: generic,
-            kind: crate::error::DescribeCustomKeyStoresErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DescribeCustomKeyStoresError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeCustomKeyStoresError::generic(generic),
     })
 }
@@ -1782,6 +1832,9 @@ pub fn parse_describe_custom_key_stores_response(
             output,
         )
         .map_err(crate::error::DescribeCustomKeyStoresError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1790,8 +1843,11 @@ pub fn parse_describe_custom_key_stores_response(
 pub fn parse_describe_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DescribeKeyOutput, crate::error::DescribeKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DescribeKeyError::unhandled(generic)),
@@ -1799,74 +1855,74 @@ pub fn parse_describe_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::DescribeKeyError {
-            meta: generic,
-            kind: crate::error::DescribeKeyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::DescribeKeyError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::DescribeKeyError {
-            meta: generic,
-            kind: crate::error::DescribeKeyErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::DescribeKeyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DescribeKeyError {
-            meta: generic,
-            kind: crate::error::DescribeKeyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DescribeKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DescribeKeyError {
-            meta: generic,
-            kind: crate::error::DescribeKeyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DescribeKeyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeKeyError::generic(generic),
     })
 }
@@ -1884,6 +1940,9 @@ pub fn parse_describe_key_response(
             output,
         )
         .map_err(crate::error::DescribeKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -1892,8 +1951,11 @@ pub fn parse_describe_key_response(
 pub fn parse_disable_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::DisableKeyOutput, crate::error::DisableKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DisableKeyError::unhandled(generic)),
@@ -1901,91 +1963,89 @@ pub fn parse_disable_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::DisableKeyError {
-            meta: generic,
-            kind: crate::error::DisableKeyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::DisableKeyError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::DisableKeyError {
-            meta: generic,
-            kind: crate::error::DisableKeyErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::DisableKeyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DisableKeyError {
-            meta: generic,
-            kind: crate::error::DisableKeyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DisableKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::DisableKeyError {
-            meta: generic,
-            kind: crate::error::DisableKeyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::DisableKeyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DisableKeyError {
-            meta: generic,
-            kind: crate::error::DisableKeyErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::DisableKeyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisableKeyError::generic(generic),
     })
 }
@@ -1998,6 +2058,9 @@ pub fn parse_disable_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_key_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2009,8 +2072,11 @@ pub fn parse_disable_key_rotation_error(
     crate::output::DisableKeyRotationOutput,
     crate::error::DisableKeyRotationError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisableKeyRotationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::DisableKeyRotationError::unhandled(generic)),
@@ -2018,113 +2084,113 @@ pub fn parse_disable_key_rotation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::DisableKeyRotationError {
-            meta: generic,
-            kind: crate::error::DisableKeyRotationErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::DisableKeyRotationError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::DisableKeyRotationError {
-                meta: generic,
-                kind: crate::error::DisableKeyRotationErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "InvalidArnException" => crate::error::DisableKeyRotationError {
-            meta: generic,
-            kind: crate::error::DisableKeyRotationErrorKind::InvalidArnException({
+        "DisabledException" => crate::error::DisableKeyRotationError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::DisableKeyRotationError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::DisableKeyRotationError {
-            meta: generic,
-            kind: crate::error::DisableKeyRotationErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DisableKeyRotationError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::DisableKeyRotationError {
-            meta: generic,
-            kind: crate::error::DisableKeyRotationErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::DisableKeyRotationError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::DisableKeyRotationError {
-            meta: generic,
-            kind: crate::error::DisableKeyRotationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::DisableKeyRotationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::DisableKeyRotationError {
-            meta: generic,
-            kind: crate::error::DisableKeyRotationErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::DisableKeyRotationError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2132,14 +2198,15 @@ pub fn parse_disable_key_rotation_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DisableKeyRotationError::generic(generic),
     })
 }
@@ -2155,6 +2222,9 @@ pub fn parse_disable_key_rotation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disable_key_rotation_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2166,8 +2236,11 @@ pub fn parse_disconnect_custom_key_store_error(
     crate::output::DisconnectCustomKeyStoreOutput,
     crate::error::DisconnectCustomKeyStoreError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -2179,63 +2252,59 @@ pub fn parse_disconnect_custom_key_store_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomKeyStoreInvalidStateException" => crate::error::DisconnectCustomKeyStoreError {
-            meta: generic,
-            kind:
-                crate::error::DisconnectCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                    let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "CustomKeyStoreNotFoundException" => crate::error::DisconnectCustomKeyStoreError {
-            meta: generic,
-            kind: crate::error::DisconnectCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException(
-                {
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::custom_key_store_not_found_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "KMSInternalException" => crate::error::DisconnectCustomKeyStoreError {
-            meta: generic,
-            kind: crate::error::DisconnectCustomKeyStoreErrorKind::KmsInternalException({
+        "CustomKeyStoreInvalidStateException" => {
+            crate::error::DisconnectCustomKeyStoreError::CustomKeyStoreInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::kms_internal_exception::Builder::default();
+                    let mut output =
+                        crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
+                    output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
+        "CustomKeyStoreNotFoundException" => {
+            crate::error::DisconnectCustomKeyStoreError::CustomKeyStoreNotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output =
+                        crate::error::custom_key_store_not_found_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::DisconnectCustomKeyStoreError::KmsInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::kms_internal_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DisconnectCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
         _ => crate::error::DisconnectCustomKeyStoreError::generic(generic),
     })
 }
@@ -2251,6 +2320,9 @@ pub fn parse_disconnect_custom_key_store_response(
         #[allow(unused_mut)]
         let mut output = crate::output::disconnect_custom_key_store_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2259,8 +2331,11 @@ pub fn parse_disconnect_custom_key_store_response(
 pub fn parse_enable_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableKeyOutput, crate::error::EnableKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::EnableKeyError::unhandled(generic)),
@@ -2268,108 +2343,102 @@ pub fn parse_enable_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::EnableKeyError {
-            meta: generic,
-            kind: crate::error::EnableKeyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::EnableKeyError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::EnableKeyError {
-            meta: generic,
-            kind: crate::error::EnableKeyErrorKind::InvalidArnException({
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::EnableKeyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::EnableKeyError {
-            meta: generic,
-            kind: crate::error::EnableKeyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::EnableKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::EnableKeyError {
-            meta: generic,
-            kind: crate::error::EnableKeyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::EnableKeyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::EnableKeyError {
-            meta: generic,
-            kind: crate::error::EnableKeyErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::EnableKeyError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::EnableKeyError {
-            meta: generic,
-            kind: crate::error::EnableKeyErrorKind::NotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::EnableKeyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::EnableKeyError::generic(generic),
     })
 }
@@ -2382,6 +2451,9 @@ pub fn parse_enable_key_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_key_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2391,8 +2463,11 @@ pub fn parse_enable_key_rotation_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EnableKeyRotationOutput, crate::error::EnableKeyRotationError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EnableKeyRotationError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::EnableKeyRotationError::unhandled(generic)),
@@ -2400,113 +2475,113 @@ pub fn parse_enable_key_rotation_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::EnableKeyRotationError {
-            meta: generic,
-            kind: crate::error::EnableKeyRotationErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::EnableKeyRotationError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::EnableKeyRotationError {
-                meta: generic,
-                kind: crate::error::EnableKeyRotationErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "InvalidArnException" => crate::error::EnableKeyRotationError {
-            meta: generic,
-            kind: crate::error::EnableKeyRotationErrorKind::InvalidArnException({
+        "DisabledException" => crate::error::EnableKeyRotationError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::EnableKeyRotationError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::EnableKeyRotationError {
-            meta: generic,
-            kind: crate::error::EnableKeyRotationErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::EnableKeyRotationError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::EnableKeyRotationError {
-            meta: generic,
-            kind: crate::error::EnableKeyRotationErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::EnableKeyRotationError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::EnableKeyRotationError {
-            meta: generic,
-            kind: crate::error::EnableKeyRotationErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::EnableKeyRotationError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::EnableKeyRotationError {
-            meta: generic,
-            kind: crate::error::EnableKeyRotationErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::EnableKeyRotationError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2514,14 +2589,15 @@ pub fn parse_enable_key_rotation_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EnableKeyRotationError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::EnableKeyRotationError::generic(generic),
     })
 }
@@ -2535,6 +2611,9 @@ pub fn parse_enable_key_rotation_response(
         #[allow(unused_mut)]
         let mut output = crate::output::enable_key_rotation_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2543,8 +2622,11 @@ pub fn parse_enable_key_rotation_response(
 pub fn parse_encrypt_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::EncryptOutput, crate::error::EncryptError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::EncryptError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::EncryptError::unhandled(generic)),
@@ -2552,145 +2634,135 @@ pub fn parse_encrypt_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::EncryptError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::EncryptError {
-                meta: generic,
-                kind: crate::error::EncryptErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidGrantTokenException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::InvalidGrantTokenException({
+            tmp
+        }),
+        "DisabledException" => crate::error::EncryptError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_grant_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::InvalidKeyUsageException({
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::EncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => crate::error::EncryptError::InvalidGrantTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidKeyUsageException" => crate::error::EncryptError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::EncryptError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::EncryptError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::EncryptError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::EncryptError {
-            meta: generic,
-            kind: crate::error::EncryptErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::EncryptError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::EncryptError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::EncryptError::generic(generic),
     })
 }
@@ -2708,6 +2780,9 @@ pub fn parse_encrypt_response(
             output,
         )
         .map_err(crate::error::EncryptError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2716,8 +2791,11 @@ pub fn parse_encrypt_response(
 pub fn parse_generate_data_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GenerateDataKeyOutput, crate::error::GenerateDataKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateDataKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GenerateDataKeyError::unhandled(generic)),
@@ -2725,45 +2803,45 @@ pub fn parse_generate_data_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::GenerateDataKeyError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::GenerateDataKeyError {
-                meta: generic,
-                kind: crate::error::GenerateDataKeyErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "InvalidGrantTokenException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::InvalidGrantTokenException({
+        "DisabledException" => crate::error::GenerateDataKeyError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => {
+            crate::error::GenerateDataKeyError::InvalidGrantTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2771,99 +2849,98 @@ pub fn parse_generate_data_key_error(
                         crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::InvalidKeyUsageException({
+            })
+        }
+        "InvalidKeyUsageException" => {
+            crate::error::GenerateDataKeyError::InvalidKeyUsageException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_key_usage_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::KeyUnavailableException({
+            })
+        }
+        "KeyUnavailableException" => crate::error::GenerateDataKeyError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::KmsInternalException({
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::GenerateDataKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::GenerateDataKeyError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GenerateDataKeyError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GenerateDataKeyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GenerateDataKeyError::generic(generic),
     })
 }
@@ -2881,6 +2958,9 @@ pub fn parse_generate_data_key_response(
             output,
         )
         .map_err(crate::error::GenerateDataKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -2892,8 +2972,11 @@ pub fn parse_generate_data_key_pair_error(
     crate::output::GenerateDataKeyPairOutput,
     crate::error::GenerateDataKeyPairError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GenerateDataKeyPairError::unhandled(generic)),
@@ -2901,45 +2984,45 @@ pub fn parse_generate_data_key_pair_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::GenerateDataKeyPairError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::GenerateDataKeyPairError {
-                meta: generic,
-                kind: crate::error::GenerateDataKeyPairErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "InvalidGrantTokenException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::InvalidGrantTokenException({
+        "DisabledException" => crate::error::GenerateDataKeyPairError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => {
+            crate::error::GenerateDataKeyPairError::InvalidGrantTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -2947,102 +3030,102 @@ pub fn parse_generate_data_key_pair_error(
                         crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::InvalidKeyUsageException({
+            })
+        }
+        "InvalidKeyUsageException" => {
+            crate::error::GenerateDataKeyPairError::InvalidKeyUsageException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_key_usage_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::KeyUnavailableException({
+            })
+        }
+        "KeyUnavailableException" => {
+            crate::error::GenerateDataKeyPairError::KeyUnavailableException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GenerateDataKeyPairError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::GenerateDataKeyPairError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GenerateDataKeyPairError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::GenerateDataKeyPairError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyPairErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::GenerateDataKeyPairError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3050,14 +3133,15 @@ pub fn parse_generate_data_key_pair_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GenerateDataKeyPairError::generic(generic),
     })
 }
@@ -3078,6 +3162,9 @@ pub fn parse_generate_data_key_pair_response(
             output,
         )
         .map_err(crate::error::GenerateDataKeyPairError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3089,8 +3176,11 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
     crate::output::GenerateDataKeyPairWithoutPlaintextOutput,
     crate::error::GenerateDataKeyPairWithoutPlaintextError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -3100,151 +3190,169 @@ pub fn parse_generate_data_key_pair_without_plaintext_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DependencyTimeoutException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+        "DependencyTimeoutException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::DependencyTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "DisabledException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::DisabledException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "DisabledException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::DisabledException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::disabled_exception::Builder::default();
                     let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(
+                            crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled,
+                        )?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidGrantTokenException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidGrantTokenException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidGrantTokenException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::InvalidGrantTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                    let mut output =
+                        crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "InvalidKeyUsageException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::InvalidKeyUsageException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "InvalidKeyUsageException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::InvalidKeyUsageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_key_usage_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "KeyUnavailableException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KeyUnavailableException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KeyUnavailableException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::KeyUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::key_unavailable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "KMSInternalException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInternalException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::KmsInternalException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "KMSInvalidStateException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::KmsInvalidStateException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::KmsInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "NotFoundException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::NotFoundException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::NotFoundException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        "UnsupportedOperationException" => crate::error::GenerateDataKeyPairWithoutPlaintextError { meta: generic, kind: crate::error::GenerateDataKeyPairWithoutPlaintextErrorKind::UnsupportedOperationException({
-            #[allow(unused_mut)]
-            let mut tmp =
-                 {
+                tmp
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::GenerateDataKeyPairWithoutPlaintextError::UnsupportedOperationException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut output = crate::error::unsupported_operation_exception::Builder::default();
+                    let mut output =
+                        crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
                 }
-            ;
-            if tmp.message.is_none() {
-                                                        tmp.message = _error_message;
-                                                    }
-            tmp
-        })},
-        _ => crate::error::GenerateDataKeyPairWithoutPlaintextError::generic(generic)
+                tmp
+            })
+        }
+        _ => crate::error::GenerateDataKeyPairWithoutPlaintextError::generic(generic),
     })
 }
 
@@ -3261,6 +3369,9 @@ pub fn parse_generate_data_key_pair_without_plaintext_response(
             crate::output::generate_data_key_pair_without_plaintext_output::Builder::default();
         let _ = response;
         output = crate::json_deser::deser_operation_crate_operation_generate_data_key_pair_without_plaintext(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyPairWithoutPlaintextError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3272,8 +3383,11 @@ pub fn parse_generate_data_key_without_plaintext_error(
     crate::output::GenerateDataKeyWithoutPlaintextOutput,
     crate::error::GenerateDataKeyWithoutPlaintextError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled(generic)),
@@ -3281,161 +3395,148 @@ pub fn parse_generate_data_key_without_plaintext_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind:
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::DependencyTimeoutException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::dependency_timeout_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "DisabledException" => {
-            crate::error::GenerateDataKeyWithoutPlaintextError {
-                meta: generic,
-                kind: crate::error::GenerateDataKeyWithoutPlaintextErrorKind::DisabledException({
+        "DependencyTimeoutException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::DependencyTimeoutException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
         }
-        "InvalidGrantTokenException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind:
-                crate::error::GenerateDataKeyWithoutPlaintextErrorKind::InvalidGrantTokenException(
-                    {
-                        #[allow(unused_mut)]
-                        let mut tmp = {
-                            #[allow(unused_mut)]
-                            let mut output =
-                                crate::error::invalid_grant_token_exception::Builder::default();
-                            let _ = response;
-                            output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-                            output.build()
-                        };
-                        if tmp.message.is_none() {
-                            tmp.message = _error_message;
-                        }
-                        tmp
-                    },
-                ),
-        },
-        "InvalidKeyUsageException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyWithoutPlaintextErrorKind::InvalidKeyUsageException(
-                {
+        "DisabledException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::DisabledException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::invalid_key_usage_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "KeyUnavailableException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KeyUnavailableException(
-                {
+                    let mut output = crate::error::disabled_exception::Builder::default();
+                    let _ = response;
+                    output =
+                        crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                            response.body().as_ref(),
+                            output,
+                        )
+                        .map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidGrantTokenException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::InvalidGrantTokenException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::key_unavailable_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "KMSInternalException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KmsInternalException({
+                    let mut output =
+                        crate::error::invalid_grant_token_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "InvalidKeyUsageException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::InvalidKeyUsageException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KeyUnavailableException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::KeyUnavailableException({
+                #[allow(unused_mut)]
+                let mut tmp = {
+                    #[allow(unused_mut)]
+                    let mut output = crate::error::key_unavailable_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyWithoutPlaintextErrorKind::KmsInvalidStateException(
-                {
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::KmsInvalidStateException({
+                #[allow(unused_mut)]
+                let mut tmp = {
                     #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output =
-                            crate::error::kms_invalid_state_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                },
-            ),
-        },
-        "NotFoundException" => crate::error::GenerateDataKeyWithoutPlaintextError {
-            meta: generic,
-            kind: crate::error::GenerateDataKeyWithoutPlaintextErrorKind::NotFoundException({
+                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                    let _ = response;
+                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
+                    output.build()
+                };
+                if tmp.message.is_none() {
+                    tmp.message = _error_message;
+                }
+                tmp
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GenerateDataKeyWithoutPlaintextError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GenerateDataKeyWithoutPlaintextError::generic(generic),
     })
 }
@@ -3458,6 +3559,9 @@ pub fn parse_generate_data_key_without_plaintext_response(
                 output,
             )
             .map_err(crate::error::GenerateDataKeyWithoutPlaintextError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3466,8 +3570,11 @@ pub fn parse_generate_data_key_without_plaintext_response(
 pub fn parse_generate_mac_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GenerateMacOutput, crate::error::GenerateMacError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateMacError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GenerateMacError::unhandled(generic)),
@@ -3475,28 +3582,28 @@ pub fn parse_generate_mac_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledException" => {
-            crate::error::GenerateMacError {
-                meta: generic,
-                kind: crate::error::GenerateMacErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "DisabledException" => crate::error::GenerateMacError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GenerateMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidGrantTokenException" => crate::error::GenerateMacError {
-            meta: generic,
-            kind: crate::error::GenerateMacErrorKind::InvalidGrantTokenException({
+            tmp
+        }),
+        "InvalidGrantTokenException" => {
+            crate::error::GenerateMacError::InvalidGrantTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3504,99 +3611,94 @@ pub fn parse_generate_mac_error(
                         crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::GenerateMacError {
-            meta: generic,
-            kind: crate::error::GenerateMacErrorKind::InvalidKeyUsageException({
+            })
+        }
+        "InvalidKeyUsageException" => crate::error::GenerateMacError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::GenerateMacError {
-            meta: generic,
-            kind: crate::error::GenerateMacErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::GenerateMacError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GenerateMacError {
-            meta: generic,
-            kind: crate::error::GenerateMacErrorKind::KmsInternalException({
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::GenerateMacError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GenerateMacError {
-            meta: generic,
-            kind: crate::error::GenerateMacErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::GenerateMacError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GenerateMacError {
-            meta: generic,
-            kind: crate::error::GenerateMacErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::GenerateMacError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateMacError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GenerateMacError::generic(generic),
     })
 }
@@ -3614,6 +3716,9 @@ pub fn parse_generate_mac_response(
             output,
         )
         .map_err(crate::error::GenerateMacError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3622,8 +3727,11 @@ pub fn parse_generate_mac_response(
 pub fn parse_generate_random_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GenerateRandomOutput, crate::error::GenerateRandomError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GenerateRandomError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GenerateRandomError::unhandled(generic)),
@@ -3631,9 +3739,8 @@ pub fn parse_generate_random_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CustomKeyStoreInvalidStateException" => crate::error::GenerateRandomError {
-            meta: generic,
-            kind: crate::error::GenerateRandomErrorKind::CustomKeyStoreInvalidStateException({
+        "CustomKeyStoreInvalidStateException" => {
+            crate::error::GenerateRandomError::CustomKeyStoreInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3641,17 +3748,17 @@ pub fn parse_generate_random_error(
                         crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "CustomKeyStoreNotFoundException" => crate::error::GenerateRandomError {
-            meta: generic,
-            kind: crate::error::GenerateRandomErrorKind::CustomKeyStoreNotFoundException({
+            })
+        }
+        "CustomKeyStoreNotFoundException" => {
+            crate::error::GenerateRandomError::CustomKeyStoreNotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3659,51 +3766,51 @@ pub fn parse_generate_random_error(
                         crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DependencyTimeoutException" => crate::error::GenerateRandomError {
-            meta: generic,
-            kind: crate::error::GenerateRandomErrorKind::DependencyTimeoutException({
+            })
+        }
+        "DependencyTimeoutException" => {
+            crate::error::GenerateRandomError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GenerateRandomError {
-            meta: generic,
-            kind: crate::error::GenerateRandomErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GenerateRandomError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::GenerateRandomError {
-            meta: generic,
-            kind: crate::error::GenerateRandomErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::GenerateRandomError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3711,14 +3818,15 @@ pub fn parse_generate_random_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GenerateRandomError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GenerateRandomError::generic(generic),
     })
 }
@@ -3736,6 +3844,9 @@ pub fn parse_generate_random_response(
             output,
         )
         .map_err(crate::error::GenerateRandomError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3744,8 +3855,11 @@ pub fn parse_generate_random_response(
 pub fn parse_get_key_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetKeyPolicyOutput, crate::error::GetKeyPolicyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetKeyPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetKeyPolicyError::unhandled(generic)),
@@ -3753,91 +3867,89 @@ pub fn parse_get_key_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GetKeyPolicyError {
-            meta: generic,
-            kind: crate::error::GetKeyPolicyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::GetKeyPolicyError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::GetKeyPolicyError {
-            meta: generic,
-            kind: crate::error::GetKeyPolicyErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::GetKeyPolicyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GetKeyPolicyError {
-            meta: generic,
-            kind: crate::error::GetKeyPolicyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GetKeyPolicyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GetKeyPolicyError {
-            meta: generic,
-            kind: crate::error::GetKeyPolicyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::GetKeyPolicyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetKeyPolicyError {
-            meta: generic,
-            kind: crate::error::GetKeyPolicyErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::GetKeyPolicyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetKeyPolicyError::generic(generic),
     })
 }
@@ -3855,6 +3967,9 @@ pub fn parse_get_key_policy_response(
             output,
         )
         .map_err(crate::error::GetKeyPolicyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -3866,8 +3981,11 @@ pub fn parse_get_key_rotation_status_error(
     crate::output::GetKeyRotationStatusOutput,
     crate::error::GetKeyRotationStatusError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetKeyRotationStatusError::unhandled(generic)),
@@ -3875,94 +3993,93 @@ pub fn parse_get_key_rotation_status_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GetKeyRotationStatusError {
-            meta: generic,
-            kind: crate::error::GetKeyRotationStatusErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::GetKeyRotationStatusError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::GetKeyRotationStatusError {
-            meta: generic,
-            kind: crate::error::GetKeyRotationStatusErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::GetKeyRotationStatusError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GetKeyRotationStatusError {
-            meta: generic,
-            kind: crate::error::GetKeyRotationStatusErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GetKeyRotationStatusError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GetKeyRotationStatusError {
-            meta: generic,
-            kind: crate::error::GetKeyRotationStatusErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::GetKeyRotationStatusError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetKeyRotationStatusError {
-            meta: generic,
-            kind: crate::error::GetKeyRotationStatusErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetKeyRotationStatusError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::GetKeyRotationStatusError {
-            meta: generic,
-            kind: crate::error::GetKeyRotationStatusErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::GetKeyRotationStatusError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -3970,14 +4087,15 @@ pub fn parse_get_key_rotation_status_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetKeyRotationStatusError::generic(generic),
     })
 }
@@ -3998,6 +4116,9 @@ pub fn parse_get_key_rotation_status_response(
             output,
         )
         .map_err(crate::error::GetKeyRotationStatusError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4009,8 +4130,11 @@ pub fn parse_get_parameters_for_import_error(
     crate::output::GetParametersForImportOutput,
     crate::error::GetParametersForImportError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetParametersForImportError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -4022,94 +4146,93 @@ pub fn parse_get_parameters_for_import_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GetParametersForImportError {
-            meta: generic,
-            kind: crate::error::GetParametersForImportErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::GetParametersForImportError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetParametersForImportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::GetParametersForImportError {
-            meta: generic,
-            kind: crate::error::GetParametersForImportErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::GetParametersForImportError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetParametersForImportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GetParametersForImportError {
-            meta: generic,
-            kind: crate::error::GetParametersForImportErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::GetParametersForImportError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetParametersForImportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GetParametersForImportError {
-            meta: generic,
-            kind: crate::error::GetParametersForImportErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::GetParametersForImportError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetParametersForImportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetParametersForImportError {
-            meta: generic,
-            kind: crate::error::GetParametersForImportErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::GetParametersForImportError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetParametersForImportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::GetParametersForImportError {
-            meta: generic,
-            kind: crate::error::GetParametersForImportErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::GetParametersForImportError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4117,14 +4240,15 @@ pub fn parse_get_parameters_for_import_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetParametersForImportError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetParametersForImportError::generic(generic),
     })
 }
@@ -4145,6 +4269,9 @@ pub fn parse_get_parameters_for_import_response(
             output,
         )
         .map_err(crate::error::GetParametersForImportError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4153,8 +4280,11 @@ pub fn parse_get_parameters_for_import_response(
 pub fn parse_get_public_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::GetPublicKeyOutput, crate::error::GetPublicKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::GetPublicKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::GetPublicKeyError::unhandled(generic)),
@@ -4162,62 +4292,62 @@ pub fn parse_get_public_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::GetPublicKeyError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::GetPublicKeyError {
-                meta: generic,
-                kind: crate::error::GetPublicKeyErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
-            }
+            })
         }
-        "InvalidArnException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::InvalidArnException({
+        "DisabledException" => crate::error::GetPublicKeyError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::GetPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::GetPublicKeyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGrantTokenException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::InvalidGrantTokenException({
+            })
+        }
+        "InvalidGrantTokenException" => {
+            crate::error::GetPublicKeyError::InvalidGrantTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4225,102 +4355,96 @@ pub fn parse_get_public_key_error(
                         crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::InvalidKeyUsageException({
+            })
+        }
+        "InvalidKeyUsageException" => crate::error::GetPublicKeyError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::GetPublicKeyError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::KmsInternalException({
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::GetPublicKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::GetPublicKeyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::GetPublicKeyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::GetPublicKeyError {
-            meta: generic,
-            kind: crate::error::GetPublicKeyErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::GetPublicKeyError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4328,14 +4452,15 @@ pub fn parse_get_public_key_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::GetPublicKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::GetPublicKeyError::generic(generic),
     })
 }
@@ -4353,6 +4478,9 @@ pub fn parse_get_public_key_response(
             output,
         )
         .map_err(crate::error::GetPublicKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4362,8 +4490,11 @@ pub fn parse_import_key_material_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ImportKeyMaterialOutput, crate::error::ImportKeyMaterialError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ImportKeyMaterialError::unhandled(generic)),
@@ -4371,26 +4502,25 @@ pub fn parse_import_key_material_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::ImportKeyMaterialError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ExpiredImportTokenException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::ExpiredImportTokenException({
+            })
+        }
+        "ExpiredImportTokenException" => {
+            crate::error::ImportKeyMaterialError::ExpiredImportTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4398,17 +4528,17 @@ pub fn parse_import_key_material_error(
                         crate::error::expired_import_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_expired_import_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "IncorrectKeyMaterialException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::IncorrectKeyMaterialException({
+            })
+        }
+        "IncorrectKeyMaterialException" => {
+            crate::error::ImportKeyMaterialError::IncorrectKeyMaterialException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4416,51 +4546,51 @@ pub fn parse_import_key_material_error(
                         crate::error::incorrect_key_material_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_incorrect_key_material_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::ImportKeyMaterialError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidCiphertextException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::InvalidCiphertextException({
+            })
+        }
+        "InvalidCiphertextException" => {
+            crate::error::ImportKeyMaterialError::InvalidCiphertextException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_ciphertext_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_ciphertext_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidImportTokenException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::InvalidImportTokenException({
+            })
+        }
+        "InvalidImportTokenException" => {
+            crate::error::ImportKeyMaterialError::InvalidImportTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4468,68 +4598,68 @@ pub fn parse_import_key_material_error(
                         crate::error::invalid_import_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_import_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::ImportKeyMaterialError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::ImportKeyMaterialError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ImportKeyMaterialError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::ImportKeyMaterialError {
-            meta: generic,
-            kind: crate::error::ImportKeyMaterialErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::ImportKeyMaterialError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -4537,14 +4667,15 @@ pub fn parse_import_key_material_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ImportKeyMaterialError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ImportKeyMaterialError::generic(generic),
     })
 }
@@ -4558,6 +4689,9 @@ pub fn parse_import_key_material_response(
         #[allow(unused_mut)]
         let mut output = crate::output::import_key_material_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4566,8 +4700,11 @@ pub fn parse_import_key_material_response(
 pub fn parse_list_aliases_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListAliasesOutput, crate::error::ListAliasesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListAliasesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListAliasesError::unhandled(generic)),
@@ -4575,91 +4712,89 @@ pub fn parse_list_aliases_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::ListAliasesError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::ListAliasesError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidMarkerException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::InvalidMarkerException({
+            })
+        }
+        "InvalidMarkerException" => crate::error::ListAliasesError::InvalidMarkerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_marker_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_marker_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::ListAliasesError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListAliasesError {
-            meta: generic,
-            kind: crate::error::ListAliasesErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListAliasesError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListAliasesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListAliasesError::generic(generic),
     })
 }
@@ -4677,6 +4812,9 @@ pub fn parse_list_aliases_response(
             output,
         )
         .map_err(crate::error::ListAliasesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4685,8 +4823,11 @@ pub fn parse_list_aliases_response(
 pub fn parse_list_grants_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListGrantsOutput, crate::error::ListGrantsError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListGrantsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListGrantsError::unhandled(generic)),
@@ -4694,125 +4835,119 @@ pub fn parse_list_grants_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::ListGrantsError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::ListGrantsError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGrantIdException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::InvalidGrantIdException({
+            })
+        }
+        "InvalidGrantIdException" => crate::error::ListGrantsError::InvalidGrantIdException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_grant_id_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidMarkerException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::InvalidMarkerException({
+                let mut output = crate::error::invalid_grant_id_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidMarkerException" => crate::error::ListGrantsError::InvalidMarkerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_marker_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_marker_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::ListGrantsError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::ListGrantsError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListGrantsError {
-            meta: generic,
-            kind: crate::error::ListGrantsErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::ListGrantsError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListGrantsError::generic(generic),
     })
 }
@@ -4830,6 +4965,9 @@ pub fn parse_list_grants_response(
             output,
         )
         .map_err(crate::error::ListGrantsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4838,8 +4976,11 @@ pub fn parse_list_grants_response(
 pub fn parse_list_key_policies_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListKeyPoliciesOutput, crate::error::ListKeyPoliciesError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListKeyPoliciesError::unhandled(generic)),
@@ -4847,91 +4988,91 @@ pub fn parse_list_key_policies_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ListKeyPoliciesError {
-            meta: generic,
-            kind: crate::error::ListKeyPoliciesErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::ListKeyPoliciesError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::ListKeyPoliciesError {
-            meta: generic,
-            kind: crate::error::ListKeyPoliciesErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::ListKeyPoliciesError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ListKeyPoliciesError {
-            meta: generic,
-            kind: crate::error::ListKeyPoliciesErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::ListKeyPoliciesError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::ListKeyPoliciesError {
-            meta: generic,
-            kind: crate::error::ListKeyPoliciesErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::ListKeyPoliciesError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListKeyPoliciesError {
-            meta: generic,
-            kind: crate::error::ListKeyPoliciesErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListKeyPoliciesError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListKeyPoliciesError::generic(generic),
     })
 }
@@ -4949,6 +5090,9 @@ pub fn parse_list_key_policies_response(
             output,
         )
         .map_err(crate::error::ListKeyPoliciesError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -4957,8 +5101,11 @@ pub fn parse_list_key_policies_response(
 pub fn parse_list_keys_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListKeysOutput, crate::error::ListKeysError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListKeysError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListKeysError::unhandled(generic)),
@@ -4966,57 +5113,53 @@ pub fn parse_list_keys_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ListKeysError {
-            meta: generic,
-            kind: crate::error::ListKeysErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::ListKeysError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeysError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidMarkerException" => crate::error::ListKeysError {
-            meta: generic,
-            kind: crate::error::ListKeysErrorKind::InvalidMarkerException({
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeysError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidMarkerException" => crate::error::ListKeysError::InvalidMarkerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_marker_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeysError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ListKeysError {
-            meta: generic,
-            kind: crate::error::ListKeysErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_marker_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeysError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::ListKeysError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListKeysError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListKeysError::generic(generic),
     })
 }
@@ -5034,6 +5177,9 @@ pub fn parse_list_keys_response(
             output,
         )
         .map_err(crate::error::ListKeysError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5043,8 +5189,11 @@ pub fn parse_list_resource_tags_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ListResourceTagsOutput, crate::error::ListResourceTagsError>
 {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListResourceTagsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListResourceTagsError::unhandled(generic)),
@@ -5052,74 +5201,72 @@ pub fn parse_list_resource_tags_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArnException" => crate::error::ListResourceTagsError {
-            meta: generic,
-            kind: crate::error::ListResourceTagsErrorKind::InvalidArnException({
+        "InvalidArnException" => {
+            crate::error::ListResourceTagsError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidMarkerException" => crate::error::ListResourceTagsError {
-            meta: generic,
-            kind: crate::error::ListResourceTagsErrorKind::InvalidMarkerException({
+            })
+        }
+        "InvalidMarkerException" => crate::error::ListResourceTagsError::InvalidMarkerException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_marker_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceTagsError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ListResourceTagsError {
-            meta: generic,
-            kind: crate::error::ListResourceTagsErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_marker_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceTagsError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::ListResourceTagsError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListResourceTagsError {
-            meta: generic,
-            kind: crate::error::ListResourceTagsErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListResourceTagsError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListResourceTagsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListResourceTagsError::generic(generic),
     })
 }
@@ -5138,6 +5285,9 @@ pub fn parse_list_resource_tags_response(
             output,
         )
         .map_err(crate::error::ListResourceTagsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5149,8 +5299,11 @@ pub fn parse_list_retirable_grants_error(
     crate::output::ListRetirableGrantsOutput,
     crate::error::ListRetirableGrantsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ListRetirableGrantsError::unhandled(generic)),
@@ -5158,91 +5311,91 @@ pub fn parse_list_retirable_grants_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ListRetirableGrantsError {
-            meta: generic,
-            kind: crate::error::ListRetirableGrantsErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::ListRetirableGrantsError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::ListRetirableGrantsError {
-            meta: generic,
-            kind: crate::error::ListRetirableGrantsErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::ListRetirableGrantsError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidMarkerException" => crate::error::ListRetirableGrantsError {
-            meta: generic,
-            kind: crate::error::ListRetirableGrantsErrorKind::InvalidMarkerException({
+            })
+        }
+        "InvalidMarkerException" => {
+            crate::error::ListRetirableGrantsError::InvalidMarkerException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_marker_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_marker_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ListRetirableGrantsError {
-            meta: generic,
-            kind: crate::error::ListRetirableGrantsErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::ListRetirableGrantsError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ListRetirableGrantsError {
-            meta: generic,
-            kind: crate::error::ListRetirableGrantsErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ListRetirableGrantsError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ListRetirableGrantsError::generic(generic),
     })
 }
@@ -5263,6 +5416,9 @@ pub fn parse_list_retirable_grants_response(
             output,
         )
         .map_err(crate::error::ListRetirableGrantsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5271,8 +5427,11 @@ pub fn parse_list_retirable_grants_response(
 pub fn parse_put_key_policy_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::PutKeyPolicyOutput, crate::error::PutKeyPolicyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutKeyPolicyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutKeyPolicyError::unhandled(generic)),
@@ -5280,94 +5439,89 @@ pub fn parse_put_key_policy_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::PutKeyPolicyError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::PutKeyPolicyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::PutKeyPolicyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::PutKeyPolicyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::PutKeyPolicyError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MalformedPolicyDocumentException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::MalformedPolicyDocumentException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MalformedPolicyDocumentException" => {
+            crate::error::PutKeyPolicyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5375,34 +5529,34 @@ pub fn parse_put_key_policy_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_malformed_policy_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::PutKeyPolicyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::PutKeyPolicyError {
-            meta: generic,
-            kind: crate::error::PutKeyPolicyErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::PutKeyPolicyError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5410,14 +5564,15 @@ pub fn parse_put_key_policy_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutKeyPolicyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutKeyPolicyError::generic(generic),
     })
 }
@@ -5430,6 +5585,9 @@ pub fn parse_put_key_policy_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_key_policy_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5438,8 +5596,11 @@ pub fn parse_put_key_policy_response(
 pub fn parse_re_encrypt_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReEncryptOutput, crate::error::ReEncryptError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReEncryptError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ReEncryptError::unhandled(generic)),
@@ -5447,179 +5608,165 @@ pub fn parse_re_encrypt_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::ReEncryptError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::ReEncryptError {
-                meta: generic,
-                kind: crate::error::ReEncryptErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "IncorrectKeyException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::IncorrectKeyException({
+            tmp
+        }),
+        "DisabledException" => crate::error::ReEncryptError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::incorrect_key_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_incorrect_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidCiphertextException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::InvalidCiphertextException({
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "IncorrectKeyException" => crate::error::ReEncryptError::IncorrectKeyException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_ciphertext_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_ciphertext_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidGrantTokenException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::InvalidGrantTokenException({
+                let mut output = crate::error::incorrect_key_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_incorrect_key_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidCiphertextException" => crate::error::ReEncryptError::InvalidCiphertextException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_grant_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::InvalidKeyUsageException({
+                let mut output = crate::error::invalid_ciphertext_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_ciphertext_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => crate::error::ReEncryptError::InvalidGrantTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidKeyUsageException" => crate::error::ReEncryptError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::ReEncryptError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::ReEncryptError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::ReEncryptError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ReEncryptError {
-            meta: generic,
-            kind: crate::error::ReEncryptErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::ReEncryptError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReEncryptError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ReEncryptError::generic(generic),
     })
 }
@@ -5637,6 +5784,9 @@ pub fn parse_re_encrypt_response(
             output,
         )
         .map_err(crate::error::ReEncryptError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5645,8 +5795,11 @@ pub fn parse_re_encrypt_response(
 pub fn parse_replicate_key_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::ReplicateKeyOutput, crate::error::ReplicateKeyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ReplicateKeyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ReplicateKeyError::unhandled(generic)),
@@ -5654,113 +5807,107 @@ pub fn parse_replicate_key_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "AlreadyExistsException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::AlreadyExistsException({
+        "AlreadyExistsException" => crate::error::ReplicateKeyError::AlreadyExistsException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::already_exists_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::ReplicateKeyError {
-                meta: generic,
-                kind: crate::error::ReplicateKeyErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::already_exists_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_already_exists_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidArnException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::InvalidArnException({
+            tmp
+        }),
+        "DisabledException" => crate::error::ReplicateKeyError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::ReplicateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::ReplicateKeyError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::ReplicateKeyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::ReplicateKeyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::ReplicateKeyError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "MalformedPolicyDocumentException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::MalformedPolicyDocumentException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "MalformedPolicyDocumentException" => {
+            crate::error::ReplicateKeyError::MalformedPolicyDocumentException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5768,55 +5915,53 @@ pub fn parse_replicate_key_error(
                         crate::error::malformed_policy_document_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_malformed_policy_document_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ReplicateKeyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TagException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::TagException({
+            })
+        }
+        "TagException" => crate::error::ReplicateKeyError::TagException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::tag_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::ReplicateKeyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::ReplicateKeyError {
-            meta: generic,
-            kind: crate::error::ReplicateKeyErrorKind::UnsupportedOperationException({
+                let mut output = crate::error::tag_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::ReplicateKeyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "UnsupportedOperationException" => {
+            crate::error::ReplicateKeyError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5824,14 +5969,15 @@ pub fn parse_replicate_key_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ReplicateKeyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ReplicateKeyError::generic(generic),
     })
 }
@@ -5849,6 +5995,9 @@ pub fn parse_replicate_key_response(
             output,
         )
         .map_err(crate::error::ReplicateKeyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -5857,8 +6006,11 @@ pub fn parse_replicate_key_response(
 pub fn parse_retire_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RetireGrantOutput, crate::error::RetireGrantError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RetireGrantError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RetireGrantError::unhandled(generic)),
@@ -5866,60 +6018,57 @@ pub fn parse_retire_grant_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::RetireGrantError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::RetireGrantError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGrantIdException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::InvalidGrantIdException({
+            })
+        }
+        "InvalidGrantIdException" => crate::error::RetireGrantError::InvalidGrantIdException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_grant_id_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidGrantTokenException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::InvalidGrantTokenException({
+                let mut output = crate::error::invalid_grant_id_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => {
+            crate::error::RetireGrantError::InvalidGrantTokenException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -5927,65 +6076,64 @@ pub fn parse_retire_grant_error(
                         crate::error::invalid_grant_token_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::RetireGrantError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::RetireGrantError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::RetireGrantError {
-            meta: generic,
-            kind: crate::error::RetireGrantErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::RetireGrantError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RetireGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RetireGrantError::generic(generic),
     })
 }
@@ -5998,6 +6146,9 @@ pub fn parse_retire_grant_response(
         #[allow(unused_mut)]
         let mut output = crate::output::retire_grant_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6006,8 +6157,11 @@ pub fn parse_retire_grant_response(
 pub fn parse_revoke_grant_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::RevokeGrantOutput, crate::error::RevokeGrantError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::RevokeGrantError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::RevokeGrantError::unhandled(generic)),
@@ -6015,108 +6169,104 @@ pub fn parse_revoke_grant_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::RevokeGrantError {
-            meta: generic,
-            kind: crate::error::RevokeGrantErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::RevokeGrantError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::RevokeGrantError {
-            meta: generic,
-            kind: crate::error::RevokeGrantErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::RevokeGrantError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidGrantIdException" => crate::error::RevokeGrantError {
-            meta: generic,
-            kind: crate::error::RevokeGrantErrorKind::InvalidGrantIdException({
+            })
+        }
+        "InvalidGrantIdException" => crate::error::RevokeGrantError::InvalidGrantIdException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_grant_id_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::RevokeGrantError {
-            meta: generic,
-            kind: crate::error::RevokeGrantErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_grant_id_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_id_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::RevokeGrantError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::RevokeGrantError {
-            meta: generic,
-            kind: crate::error::RevokeGrantErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::RevokeGrantError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::RevokeGrantError {
-            meta: generic,
-            kind: crate::error::RevokeGrantErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::RevokeGrantError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::RevokeGrantError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::RevokeGrantError::generic(generic),
     })
 }
@@ -6129,6 +6279,9 @@ pub fn parse_revoke_grant_response(
         #[allow(unused_mut)]
         let mut output = crate::output::revoke_grant_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6140,8 +6293,11 @@ pub fn parse_schedule_key_deletion_error(
     crate::output::ScheduleKeyDeletionOutput,
     crate::error::ScheduleKeyDeletionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::ScheduleKeyDeletionError::unhandled(generic)),
@@ -6149,91 +6305,91 @@ pub fn parse_schedule_key_deletion_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::ScheduleKeyDeletionError {
-            meta: generic,
-            kind: crate::error::ScheduleKeyDeletionErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::ScheduleKeyDeletionError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::ScheduleKeyDeletionError {
-            meta: generic,
-            kind: crate::error::ScheduleKeyDeletionErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::ScheduleKeyDeletionError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::ScheduleKeyDeletionError {
-            meta: generic,
-            kind: crate::error::ScheduleKeyDeletionErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::ScheduleKeyDeletionError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::ScheduleKeyDeletionError {
-            meta: generic,
-            kind: crate::error::ScheduleKeyDeletionErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::ScheduleKeyDeletionError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::ScheduleKeyDeletionError {
-            meta: generic,
-            kind: crate::error::ScheduleKeyDeletionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::ScheduleKeyDeletionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ScheduleKeyDeletionError::generic(generic),
     })
 }
@@ -6254,6 +6410,9 @@ pub fn parse_schedule_key_deletion_response(
             output,
         )
         .map_err(crate::error::ScheduleKeyDeletionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6262,8 +6421,11 @@ pub fn parse_schedule_key_deletion_response(
 pub fn parse_sign_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::SignOutput, crate::error::SignError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::SignError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::SignError::unhandled(generic)),
@@ -6271,145 +6433,135 @@ pub fn parse_sign_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::SignError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::SignError {
-                meta: generic,
-                kind: crate::error::SignErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidGrantTokenException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::InvalidGrantTokenException({
+            tmp
+        }),
+        "DisabledException" => crate::error::SignError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_grant_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::InvalidKeyUsageException({
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::SignError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => crate::error::SignError::InvalidGrantTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidKeyUsageException" => crate::error::SignError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::SignError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::SignError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::SignError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::SignError {
-            meta: generic,
-            kind: crate::error::SignErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::SignError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::SignError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::SignError::generic(generic),
     })
 }
@@ -6427,6 +6579,9 @@ pub fn parse_sign_response(
             output,
         )
         .map_err(crate::error::SignError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6435,8 +6590,11 @@ pub fn parse_sign_response(
 pub fn parse_tag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::TagResourceOutput, crate::error::TagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::TagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::TagResourceError::unhandled(generic)),
@@ -6444,112 +6602,106 @@ pub fn parse_tag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArnException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::InvalidArnException({
+        "InvalidArnException" => {
+            crate::error::TagResourceError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::TagResourceError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::TagResourceError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::TagResourceError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::NotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::TagResourceError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::TagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TagException" => crate::error::TagResourceError {
-            meta: generic,
-            kind: crate::error::TagResourceErrorKind::TagException({
+            })
+        }
+        "TagException" => crate::error::TagResourceError::TagException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::tag_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::TagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::tag_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::TagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::TagResourceError::generic(generic),
     })
 }
@@ -6562,6 +6714,9 @@ pub fn parse_tag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::tag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6570,8 +6725,11 @@ pub fn parse_tag_resource_response(
 pub fn parse_untag_resource_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UntagResourceOutput, crate::error::UntagResourceError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UntagResourceError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UntagResourceError::unhandled(generic)),
@@ -6579,95 +6737,91 @@ pub fn parse_untag_resource_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InvalidArnException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::InvalidArnException({
+        "InvalidArnException" => {
+            crate::error::UntagResourceError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::UntagResourceError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::UntagResourceError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::UntagResourceError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UntagResourceError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "TagException" => crate::error::UntagResourceError {
-            meta: generic,
-            kind: crate::error::UntagResourceErrorKind::TagException({
+            })
+        }
+        "TagException" => crate::error::UntagResourceError::TagException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::tag_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
-                        response.body().as_ref(),
-                        output,
-                    )
-                    .map_err(crate::error::UntagResourceError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
+                let mut output = crate::error::tag_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_tag_exception_json_err(
+                    response.body().as_ref(),
+                    output,
+                )
+                .map_err(crate::error::UntagResourceError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
         _ => crate::error::UntagResourceError::generic(generic),
     })
 }
@@ -6680,6 +6834,9 @@ pub fn parse_untag_resource_response(
         #[allow(unused_mut)]
         let mut output = crate::output::untag_resource_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6688,8 +6845,11 @@ pub fn parse_untag_resource_response(
 pub fn parse_update_alias_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::UpdateAliasOutput, crate::error::UpdateAliasError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateAliasError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateAliasError::unhandled(generic)),
@@ -6697,91 +6857,87 @@ pub fn parse_update_alias_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::UpdateAliasError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::UpdateAliasError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::UpdateAliasError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "LimitExceededException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::LimitExceededException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "LimitExceededException" => crate::error::UpdateAliasError::LimitExceededException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::limit_exceeded_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateAliasError {
-            meta: generic,
-            kind: crate::error::UpdateAliasErrorKind::NotFoundException({
+                let mut output = crate::error::limit_exceeded_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_limit_exceeded_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::UpdateAliasError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateAliasError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateAliasError::generic(generic),
     })
 }
@@ -6794,6 +6950,9 @@ pub fn parse_update_alias_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_alias_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -6805,8 +6964,11 @@ pub fn parse_update_custom_key_store_error(
     crate::output::UpdateCustomKeyStoreOutput,
     crate::error::UpdateCustomKeyStoreError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateCustomKeyStoreError::unhandled(generic)),
@@ -6814,7 +6976,7 @@ pub fn parse_update_custom_key_store_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "CloudHsmClusterInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterInvalidConfigurationException({
+        "CloudHsmClusterInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError::CloudHsmClusterInvalidConfigurationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6822,6 +6984,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6829,8 +6992,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CloudHsmClusterNotActiveException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotActiveException({
+        }),
+        "CloudHsmClusterNotActiveException" => crate::error::UpdateCustomKeyStoreError::CloudHsmClusterNotActiveException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6838,6 +7001,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_not_active_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_active_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6845,8 +7009,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CloudHsmClusterNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotFoundException({
+        }),
+        "CloudHsmClusterNotFoundException" => crate::error::UpdateCustomKeyStoreError::CloudHsmClusterNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6854,6 +7018,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6861,8 +7026,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CloudHsmClusterNotRelatedException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CloudHsmClusterNotRelatedException({
+        }),
+        "CloudHsmClusterNotRelatedException" => crate::error::UpdateCustomKeyStoreError::CloudHsmClusterNotRelatedException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6870,6 +7035,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::cloud_hsm_cluster_not_related_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_cloud_hsm_cluster_not_related_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6877,8 +7043,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomKeyStoreInvalidStateException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreInvalidStateException({
+        }),
+        "CustomKeyStoreInvalidStateException" => crate::error::UpdateCustomKeyStoreError::CustomKeyStoreInvalidStateException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6886,6 +7052,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::custom_key_store_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6893,8 +7060,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomKeyStoreNameInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNameInUseException({
+        }),
+        "CustomKeyStoreNameInUseException" => crate::error::UpdateCustomKeyStoreError::CustomKeyStoreNameInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6902,6 +7069,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::custom_key_store_name_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_name_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6909,8 +7077,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "CustomKeyStoreNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::CustomKeyStoreNotFoundException({
+        }),
+        "CustomKeyStoreNotFoundException" => crate::error::UpdateCustomKeyStoreError::CustomKeyStoreNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6918,6 +7086,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::custom_key_store_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_custom_key_store_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6925,8 +7094,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "KMSInternalException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::KmsInternalException({
+        }),
+        "KMSInternalException" => crate::error::UpdateCustomKeyStoreError::KmsInternalException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6934,6 +7103,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6941,8 +7111,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyIncorrectAuthenticationCredentialException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyIncorrectAuthenticationCredentialException({
+        }),
+        "XksProxyIncorrectAuthenticationCredentialException" => crate::error::UpdateCustomKeyStoreError::XksProxyIncorrectAuthenticationCredentialException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6950,6 +7120,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_incorrect_authentication_credential_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_incorrect_authentication_credential_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6957,8 +7128,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyInvalidConfigurationException({
+        }),
+        "XksProxyInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError::XksProxyInvalidConfigurationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6966,6 +7137,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6973,8 +7145,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyInvalidResponseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyInvalidResponseException({
+        }),
+        "XksProxyInvalidResponseException" => crate::error::UpdateCustomKeyStoreError::XksProxyInvalidResponseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6982,6 +7154,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_invalid_response_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_invalid_response_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -6989,8 +7162,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyUriEndpointInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriEndpointInUseException({
+        }),
+        "XksProxyUriEndpointInUseException" => crate::error::UpdateCustomKeyStoreError::XksProxyUriEndpointInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -6998,6 +7171,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_uri_endpoint_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_endpoint_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -7005,8 +7179,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyUriInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriInUseException({
+        }),
+        "XksProxyUriInUseException" => crate::error::UpdateCustomKeyStoreError::XksProxyUriInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -7014,6 +7188,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_uri_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -7021,8 +7196,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyUriUnreachableException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyUriUnreachableException({
+        }),
+        "XksProxyUriUnreachableException" => crate::error::UpdateCustomKeyStoreError::XksProxyUriUnreachableException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -7030,6 +7205,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_uri_unreachable_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_uri_unreachable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -7037,8 +7213,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyVpcEndpointServiceInUseException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInUseException({
+        }),
+        "XksProxyVpcEndpointServiceInUseException" => crate::error::UpdateCustomKeyStoreError::XksProxyVpcEndpointServiceInUseException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -7046,6 +7222,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_vpc_endpoint_service_in_use_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_in_use_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -7053,8 +7230,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceInvalidConfigurationException({
+        }),
+        "XksProxyVpcEndpointServiceInvalidConfigurationException" => crate::error::UpdateCustomKeyStoreError::XksProxyVpcEndpointServiceInvalidConfigurationException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -7062,6 +7239,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_vpc_endpoint_service_invalid_configuration_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_invalid_configuration_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -7069,8 +7247,8 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
-        "XksProxyVpcEndpointServiceNotFoundException" => crate::error::UpdateCustomKeyStoreError { meta: generic, kind: crate::error::UpdateCustomKeyStoreErrorKind::XksProxyVpcEndpointServiceNotFoundException({
+        }),
+        "XksProxyVpcEndpointServiceNotFoundException" => crate::error::UpdateCustomKeyStoreError::XksProxyVpcEndpointServiceNotFoundException({
             #[allow(unused_mut)]
             let mut tmp =
                  {
@@ -7078,6 +7256,7 @@ pub fn parse_update_custom_key_store_error(
                     let mut output = crate::error::xks_proxy_vpc_endpoint_service_not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_xks_proxy_vpc_endpoint_service_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateCustomKeyStoreError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 }
             ;
@@ -7085,7 +7264,7 @@ pub fn parse_update_custom_key_store_error(
                                                         tmp.message = _error_message;
                                                     }
             tmp
-        })},
+        }),
         _ => crate::error::UpdateCustomKeyStoreError::generic(generic)
     })
 }
@@ -7101,6 +7280,9 @@ pub fn parse_update_custom_key_store_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_custom_key_store_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7112,8 +7294,11 @@ pub fn parse_update_key_description_error(
     crate::output::UpdateKeyDescriptionOutput,
     crate::error::UpdateKeyDescriptionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdateKeyDescriptionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdateKeyDescriptionError::unhandled(generic)),
@@ -7121,91 +7306,91 @@ pub fn parse_update_key_description_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::UpdateKeyDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateKeyDescriptionErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => {
+            crate::error::UpdateKeyDescriptionError::DependencyTimeoutException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::dependency_timeout_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateKeyDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InvalidArnException" => crate::error::UpdateKeyDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateKeyDescriptionErrorKind::InvalidArnException({
+            })
+        }
+        "InvalidArnException" => {
+            crate::error::UpdateKeyDescriptionError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateKeyDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::UpdateKeyDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateKeyDescriptionErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::UpdateKeyDescriptionError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateKeyDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::UpdateKeyDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateKeyDescriptionErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::UpdateKeyDescriptionError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateKeyDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdateKeyDescriptionError {
-            meta: generic,
-            kind: crate::error::UpdateKeyDescriptionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdateKeyDescriptionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdateKeyDescriptionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdateKeyDescriptionError::generic(generic),
     })
 }
@@ -7221,6 +7406,9 @@ pub fn parse_update_key_description_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_key_description_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7232,8 +7420,11 @@ pub fn parse_update_primary_region_error(
     crate::output::UpdatePrimaryRegionOutput,
     crate::error::UpdatePrimaryRegionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::UpdatePrimaryRegionError::unhandled(generic)),
@@ -7241,96 +7432,96 @@ pub fn parse_update_primary_region_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledException" => {
-            crate::error::UpdatePrimaryRegionError {
-                meta: generic,
-                kind: crate::error::UpdatePrimaryRegionErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "DisabledException" => crate::error::UpdatePrimaryRegionError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidArnException" => crate::error::UpdatePrimaryRegionError {
-            meta: generic,
-            kind: crate::error::UpdatePrimaryRegionErrorKind::InvalidArnException({
+            tmp
+        }),
+        "InvalidArnException" => {
+            crate::error::UpdatePrimaryRegionError::InvalidArnException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::invalid_arn_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_invalid_arn_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::UpdatePrimaryRegionError {
-            meta: generic,
-            kind: crate::error::UpdatePrimaryRegionErrorKind::KmsInternalException({
+            })
+        }
+        "KMSInternalException" => {
+            crate::error::UpdatePrimaryRegionError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::UpdatePrimaryRegionError {
-            meta: generic,
-            kind: crate::error::UpdatePrimaryRegionErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => {
+            crate::error::UpdatePrimaryRegionError::KmsInvalidStateException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_invalid_state_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "NotFoundException" => crate::error::UpdatePrimaryRegionError {
-            meta: generic,
-            kind: crate::error::UpdatePrimaryRegionErrorKind::NotFoundException({
+            })
+        }
+        "NotFoundException" => {
+            crate::error::UpdatePrimaryRegionError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "UnsupportedOperationException" => crate::error::UpdatePrimaryRegionError {
-            meta: generic,
-            kind: crate::error::UpdatePrimaryRegionErrorKind::UnsupportedOperationException({
+            })
+        }
+        "UnsupportedOperationException" => {
+            crate::error::UpdatePrimaryRegionError::UnsupportedOperationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7338,14 +7529,15 @@ pub fn parse_update_primary_region_error(
                         crate::error::unsupported_operation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_unsupported_operation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::UpdatePrimaryRegionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::UpdatePrimaryRegionError::generic(generic),
     })
 }
@@ -7361,6 +7553,9 @@ pub fn parse_update_primary_region_response(
         #[allow(unused_mut)]
         let mut output = crate::output::update_primary_region_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7369,8 +7564,11 @@ pub fn parse_update_primary_region_response(
 pub fn parse_verify_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::VerifyOutput, crate::error::VerifyError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::VerifyError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::VerifyError::unhandled(generic)),
@@ -7378,114 +7576,105 @@ pub fn parse_verify_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DependencyTimeoutException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::DependencyTimeoutException({
+        "DependencyTimeoutException" => crate::error::VerifyError::DependencyTimeoutException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::dependency_timeout_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "DisabledException" => {
-            crate::error::VerifyError {
-                meta: generic,
-                kind: crate::error::VerifyErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+                let mut output = crate::error::dependency_timeout_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_dependency_timeout_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidGrantTokenException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::InvalidGrantTokenException({
+            tmp
+        }),
+        "DisabledException" => crate::error::VerifyError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_grant_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::InvalidKeyUsageException({
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::VerifyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidGrantTokenException" => crate::error::VerifyError::InvalidGrantTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidKeyUsageException" => crate::error::VerifyError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::KmsInternalException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::VerifyError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::VerifyError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidSignatureException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::KmsInvalidSignatureException({
+            })
+        }
+        "KMSInvalidSignatureException" => {
+            crate::error::VerifyError::KmsInvalidSignatureException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -7493,48 +7682,47 @@ pub fn parse_verify_error(
                         crate::error::kms_invalid_signature_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_invalid_signature_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::KmsInvalidStateException({
+            })
+        }
+        "KMSInvalidStateException" => crate::error::VerifyError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::VerifyError {
-            meta: generic,
-            kind: crate::error::VerifyErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::VerifyError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::VerifyError::generic(generic),
     })
 }
@@ -7552,6 +7740,9 @@ pub fn parse_verify_response(
             output,
         )
         .map_err(crate::error::VerifyError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -7560,8 +7751,11 @@ pub fn parse_verify_response(
 pub fn parse_verify_mac_error(
     response: &http::Response<bytes::Bytes>,
 ) -> std::result::Result<crate::output::VerifyMacOutput, crate::error::VerifyMacError> {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::VerifyMacError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::VerifyMacError::unhandled(generic)),
@@ -7569,145 +7763,135 @@ pub fn parse_verify_mac_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DisabledException" => {
-            crate::error::VerifyMacError {
-                meta: generic,
-                kind: crate::error::VerifyMacErrorKind::DisabledException({
-                    #[allow(unused_mut)]
-                    let mut tmp = {
-                        #[allow(unused_mut)]
-                        let mut output = crate::error::disabled_exception::Builder::default();
-                        let _ = response;
-                        output = crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
-                        output.build()
-                    };
-                    if tmp.message.is_none() {
-                        tmp.message = _error_message;
-                    }
-                    tmp
-                }),
+        "DisabledException" => crate::error::VerifyMacError::DisabledException({
+            #[allow(unused_mut)]
+            let mut tmp = {
+                #[allow(unused_mut)]
+                let mut output = crate::error::disabled_exception::Builder::default();
+                let _ = response;
+                output =
+                    crate::json_deser::deser_structure_crate_error_disabled_exception_json_err(
+                        response.body().as_ref(),
+                        output,
+                    )
+                    .map_err(crate::error::VerifyMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
             }
-        }
-        "InvalidGrantTokenException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::InvalidGrantTokenException({
+            tmp
+        }),
+        "InvalidGrantTokenException" => crate::error::VerifyMacError::InvalidGrantTokenException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output =
-                        crate::error::invalid_grant_token_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "InvalidKeyUsageException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::InvalidKeyUsageException({
+                let mut output = crate::error::invalid_grant_token_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_grant_token_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "InvalidKeyUsageException" => crate::error::VerifyMacError::InvalidKeyUsageException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::invalid_key_usage_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KeyUnavailableException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::KeyUnavailableException({
+                let mut output = crate::error::invalid_key_usage_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_invalid_key_usage_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KeyUnavailableException" => crate::error::VerifyMacError::KeyUnavailableException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::key_unavailable_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInternalException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::KmsInternalException({
+                let mut output = crate::error::key_unavailable_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_key_unavailable_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInternalException" => {
+            crate::error::VerifyMacError::KmsInternalException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::kms_internal_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_kms_internal_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "KMSInvalidMacException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::KmsInvalidMacException({
+            })
+        }
+        "KMSInvalidMacException" => crate::error::VerifyMacError::KmsInvalidMacException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_mac_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_mac_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "KMSInvalidStateException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::KmsInvalidStateException({
+                let mut output = crate::error::kms_invalid_mac_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_mac_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "KMSInvalidStateException" => crate::error::VerifyMacError::KmsInvalidStateException({
+            #[allow(unused_mut)]
+            let mut tmp = {
                 #[allow(unused_mut)]
-                let mut tmp = {
-                    #[allow(unused_mut)]
-                    let mut output = crate::error::kms_invalid_state_exception::Builder::default();
-                    let _ = response;
-                    output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
-                    output.build()
-                };
-                if tmp.message.is_none() {
-                    tmp.message = _error_message;
-                }
-                tmp
-            }),
-        },
-        "NotFoundException" => crate::error::VerifyMacError {
-            meta: generic,
-            kind: crate::error::VerifyMacErrorKind::NotFoundException({
+                let mut output = crate::error::kms_invalid_state_exception::Builder::default();
+                let _ = response;
+                output = crate::json_deser::deser_structure_crate_error_kms_invalid_state_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                let output = output.meta(generic);
+                output.build()
+            };
+            if tmp.message.is_none() {
+                tmp.message = _error_message;
+            }
+            tmp
+        }),
+        "NotFoundException" => {
+            crate::error::VerifyMacError::NotFoundException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::not_found_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_not_found_exception_json_err(response.body().as_ref(), output).map_err(crate::error::VerifyMacError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::VerifyMacError::generic(generic),
     })
 }
@@ -7725,6 +7909,9 @@ pub fn parse_verify_mac_response(
             output,
         )
         .map_err(crate::error::VerifyMacError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

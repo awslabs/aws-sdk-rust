@@ -25,6 +25,8 @@ impl aws_smithy_http::response::ParseStrictResponse for AbortMultipartUpload {
         crate::error::AbortMultipartUploadError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_abort_multipart_upload_error(response)
         } else {
@@ -59,6 +61,8 @@ impl aws_smithy_http::response::ParseStrictResponse for CompleteMultipartUpload 
         crate::error::CompleteMultipartUploadError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_complete_multipart_upload_error(response)
         } else {
@@ -91,6 +95,8 @@ impl aws_smithy_http::response::ParseStrictResponse for CopyObject {
     type Output =
         std::result::Result<crate::output::CopyObjectOutput, crate::error::CopyObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_copy_object_error(response)
         } else {
@@ -123,6 +129,8 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateBucket {
     type Output =
         std::result::Result<crate::output::CreateBucketOutput, crate::error::CreateBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_bucket_error(response)
         } else {
@@ -157,6 +165,8 @@ impl aws_smithy_http::response::ParseStrictResponse for CreateMultipartUpload {
         crate::error::CreateMultipartUploadError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_create_multipart_upload_error(response)
         } else {
@@ -219,6 +229,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucket {
     type Output =
         std::result::Result<crate::output::DeleteBucketOutput, crate::error::DeleteBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_error(response)
         } else {
@@ -253,6 +265,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketAnalyticsCon
         crate::error::DeleteBucketAnalyticsConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_analytics_configuration_error(response)
         } else {
@@ -287,6 +301,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketCors {
         crate::error::DeleteBucketCorsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_cors_error(response)
         } else {
@@ -321,6 +337,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketEncryption {
         crate::error::DeleteBucketEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_encryption_error(response)
         } else {
@@ -358,6 +376,8 @@ impl aws_smithy_http::response::ParseStrictResponse
         crate::error::DeleteBucketIntelligentTieringConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_intelligent_tiering_configuration_error(
                 response,
@@ -396,6 +416,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketInventoryCon
         crate::error::DeleteBucketInventoryConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_inventory_configuration_error(response)
         } else {
@@ -430,6 +452,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketLifecycle {
         crate::error::DeleteBucketLifecycleError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_lifecycle_error(response)
         } else {
@@ -464,6 +488,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketMetricsConfi
         crate::error::DeleteBucketMetricsConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_metrics_configuration_error(response)
         } else {
@@ -498,6 +524,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketOwnershipCon
         crate::error::DeleteBucketOwnershipControlsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_ownership_controls_error(response)
         } else {
@@ -532,6 +560,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketPolicy {
         crate::error::DeleteBucketPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_policy_error(response)
         } else {
@@ -566,6 +596,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketReplication 
         crate::error::DeleteBucketReplicationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_replication_error(response)
         } else {
@@ -600,6 +632,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketTagging {
         crate::error::DeleteBucketTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_tagging_error(response)
         } else {
@@ -634,6 +668,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteBucketWebsite {
         crate::error::DeleteBucketWebsiteError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_bucket_website_error(response)
         } else {
@@ -666,6 +702,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObject {
     type Output =
         std::result::Result<crate::output::DeleteObjectOutput, crate::error::DeleteObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_object_error(response)
         } else {
@@ -698,6 +736,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObjects {
     type Output =
         std::result::Result<crate::output::DeleteObjectsOutput, crate::error::DeleteObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_delete_objects_error(response)
         } else {
@@ -732,6 +772,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeleteObjectTagging {
         crate::error::DeleteObjectTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_object_tagging_error(response)
         } else {
@@ -766,6 +808,8 @@ impl aws_smithy_http::response::ParseStrictResponse for DeletePublicAccessBlock 
         crate::error::DeletePublicAccessBlockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 204 {
             crate::operation_deser::parse_delete_public_access_block_error(response)
         } else {
@@ -800,6 +844,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAccelerateConfi
         crate::error::GetBucketAccelerateConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_accelerate_configuration_error(response)
         } else {
@@ -832,6 +878,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAcl {
     type Output =
         std::result::Result<crate::output::GetBucketAclOutput, crate::error::GetBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_acl_error(response)
         } else {
@@ -866,6 +914,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketAnalyticsConfig
         crate::error::GetBucketAnalyticsConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_analytics_configuration_error(response)
         } else {
@@ -898,6 +948,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketCors {
     type Output =
         std::result::Result<crate::output::GetBucketCorsOutput, crate::error::GetBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_cors_error(response)
         } else {
@@ -932,6 +984,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketEncryption {
         crate::error::GetBucketEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_encryption_error(response)
         } else {
@@ -966,6 +1020,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketIntelligentTier
         crate::error::GetBucketIntelligentTieringConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_intelligent_tiering_configuration_error(
                 response,
@@ -1004,6 +1060,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketInventoryConfig
         crate::error::GetBucketInventoryConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_inventory_configuration_error(response)
         } else {
@@ -1038,6 +1096,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLifecycleConfig
         crate::error::GetBucketLifecycleConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_lifecycle_configuration_error(response)
         } else {
@@ -1072,6 +1132,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLocation {
         crate::error::GetBucketLocationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_location_error(response)
         } else {
@@ -1139,6 +1201,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketLogging {
         crate::error::GetBucketLoggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_logging_error(response)
         } else {
@@ -1173,6 +1237,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketMetricsConfigur
         crate::error::GetBucketMetricsConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_metrics_configuration_error(response)
         } else {
@@ -1207,6 +1273,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketNotificationCon
         crate::error::GetBucketNotificationConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_notification_configuration_error(response)
         } else {
@@ -1241,6 +1309,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketOwnershipContro
         crate::error::GetBucketOwnershipControlsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_ownership_controls_error(response)
         } else {
@@ -1275,6 +1345,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicy {
         crate::error::GetBucketPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_policy_error(response)
         } else {
@@ -1309,6 +1381,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketPolicyStatus {
         crate::error::GetBucketPolicyStatusError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_policy_status_error(response)
         } else {
@@ -1343,6 +1417,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketReplication {
         crate::error::GetBucketReplicationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_replication_error(response)
         } else {
@@ -1377,6 +1453,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketRequestPayment 
         crate::error::GetBucketRequestPaymentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_request_payment_error(response)
         } else {
@@ -1411,6 +1489,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketTagging {
         crate::error::GetBucketTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_tagging_error(response)
         } else {
@@ -1445,6 +1525,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketVersioning {
         crate::error::GetBucketVersioningError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_versioning_error(response)
         } else {
@@ -1479,6 +1561,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetBucketWebsite {
         crate::error::GetBucketWebsiteError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_bucket_website_error(response)
         } else {
@@ -1549,6 +1633,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAcl {
     type Output =
         std::result::Result<crate::output::GetObjectAclOutput, crate::error::GetObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_acl_error(response)
         } else {
@@ -1583,6 +1669,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectAttributes {
         crate::error::GetObjectAttributesError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_attributes_error(response)
         } else {
@@ -1617,6 +1705,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLegalHold {
         crate::error::GetObjectLegalHoldError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_legal_hold_error(response)
         } else {
@@ -1651,6 +1741,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectLockConfigurati
         crate::error::GetObjectLockConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_lock_configuration_error(response)
         } else {
@@ -1685,6 +1777,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectRetention {
         crate::error::GetObjectRetentionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_retention_error(response)
         } else {
@@ -1719,6 +1813,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetObjectTagging {
         crate::error::GetObjectTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_object_tagging_error(response)
         } else {
@@ -1794,6 +1890,8 @@ impl aws_smithy_http::response::ParseStrictResponse for GetPublicAccessBlock {
         crate::error::GetPublicAccessBlockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_get_public_access_block_error(response)
         } else {
@@ -1826,6 +1924,8 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadBucket {
     type Output =
         std::result::Result<crate::output::HeadBucketOutput, crate::error::HeadBucketError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_head_bucket_error(response)
         } else {
@@ -1863,8 +1963,12 @@ mod head_bucket_request_test {
                         <crate::operation::HeadBucket as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::HeadBucketErrorKind::NotFound(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::HeadBucketError::NotFound(parsed) = parsed {
+            pretty_assertions::assert_eq!(
+                parsed.message,
+                expected_output.message,
+                "Unexpected value for `message`"
+            );
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -1898,6 +2002,8 @@ impl aws_smithy_http::response::ParseStrictResponse for HeadObject {
     type Output =
         std::result::Result<crate::output::HeadObjectOutput, crate::error::HeadObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_head_object_error(response)
         } else {
@@ -1956,8 +2062,12 @@ mod head_object_request_test {
                         <crate::operation::HeadObject as aws_smithy_http::response::ParseHttpResponse>::parse_loaded(&parser, &http_response)
                     });
         let parsed = parsed.expect_err("should be error response");
-        if let crate::error::HeadObjectErrorKind::NotFound(actual_error) = parsed.kind {
-            pretty_assertions::assert_eq!(expected_output, actual_error);
+        if let crate::error::HeadObjectError::NotFound(parsed) = parsed {
+            pretty_assertions::assert_eq!(
+                parsed.message,
+                expected_output.message,
+                "Unexpected value for `message`"
+            );
         } else {
             panic!(
                 "wrong variant: Got: {:?}. Expected: {:?}",
@@ -1993,6 +2103,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketAnalyticsConfi
         crate::error::ListBucketAnalyticsConfigurationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_bucket_analytics_configurations_error(response)
         } else {
@@ -2028,6 +2140,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketIntelligentTie
         crate::error::ListBucketIntelligentTieringConfigurationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_bucket_intelligent_tiering_configurations_error(
                 response,
@@ -2066,6 +2180,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketInventoryConfi
         crate::error::ListBucketInventoryConfigurationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_bucket_inventory_configurations_error(response)
         } else {
@@ -2100,6 +2216,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBucketMetricsConfigu
         crate::error::ListBucketMetricsConfigurationsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_bucket_metrics_configurations_error(response)
         } else {
@@ -2132,6 +2250,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListBuckets {
     type Output =
         std::result::Result<crate::output::ListBucketsOutput, crate::error::ListBucketsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_buckets_error(response)
         } else {
@@ -2166,6 +2286,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListMultipartUploads {
         crate::error::ListMultipartUploadsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_multipart_uploads_error(response)
         } else {
@@ -2198,6 +2320,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjects {
     type Output =
         std::result::Result<crate::output::ListObjectsOutput, crate::error::ListObjectsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_objects_error(response)
         } else {
@@ -2336,6 +2460,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectsV2 {
     type Output =
         std::result::Result<crate::output::ListObjectsV2Output, crate::error::ListObjectsV2Error>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_objects_v2_error(response)
         } else {
@@ -2370,6 +2496,8 @@ impl aws_smithy_http::response::ParseStrictResponse for ListObjectVersions {
         crate::error::ListObjectVersionsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_object_versions_error(response)
         } else {
@@ -2401,6 +2529,8 @@ impl ListParts {
 impl aws_smithy_http::response::ParseStrictResponse for ListParts {
     type Output = std::result::Result<crate::output::ListPartsOutput, crate::error::ListPartsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_list_parts_error(response)
         } else {
@@ -2435,6 +2565,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAccelerateConfi
         crate::error::PutBucketAccelerateConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_accelerate_configuration_error(response)
         } else {
@@ -2467,6 +2599,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAcl {
     type Output =
         std::result::Result<crate::output::PutBucketAclOutput, crate::error::PutBucketAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_acl_error(response)
         } else {
@@ -2501,6 +2635,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketAnalyticsConfig
         crate::error::PutBucketAnalyticsConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_analytics_configuration_error(response)
         } else {
@@ -2533,6 +2669,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketCors {
     type Output =
         std::result::Result<crate::output::PutBucketCorsOutput, crate::error::PutBucketCorsError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_cors_error(response)
         } else {
@@ -2567,6 +2705,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketEncryption {
         crate::error::PutBucketEncryptionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_encryption_error(response)
         } else {
@@ -2601,6 +2741,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketIntelligentTier
         crate::error::PutBucketIntelligentTieringConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_intelligent_tiering_configuration_error(
                 response,
@@ -2639,6 +2781,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketInventoryConfig
         crate::error::PutBucketInventoryConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_inventory_configuration_error(response)
         } else {
@@ -2673,6 +2817,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLifecycleConfig
         crate::error::PutBucketLifecycleConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_lifecycle_configuration_error(response)
         } else {
@@ -2753,6 +2899,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketLogging {
         crate::error::PutBucketLoggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_logging_error(response)
         } else {
@@ -2787,6 +2935,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketMetricsConfigur
         crate::error::PutBucketMetricsConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_metrics_configuration_error(response)
         } else {
@@ -2821,6 +2971,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketNotificationCon
         crate::error::PutBucketNotificationConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_notification_configuration_error(response)
         } else {
@@ -2855,6 +3007,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketOwnershipContro
         crate::error::PutBucketOwnershipControlsError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_ownership_controls_error(response)
         } else {
@@ -2889,6 +3043,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketPolicy {
         crate::error::PutBucketPolicyError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_policy_error(response)
         } else {
@@ -2923,6 +3079,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketReplication {
         crate::error::PutBucketReplicationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_replication_error(response)
         } else {
@@ -2957,6 +3115,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketRequestPayment 
         crate::error::PutBucketRequestPaymentError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_request_payment_error(response)
         } else {
@@ -2991,6 +3151,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketTagging {
         crate::error::PutBucketTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_tagging_error(response)
         } else {
@@ -3025,6 +3187,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketVersioning {
         crate::error::PutBucketVersioningError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_versioning_error(response)
         } else {
@@ -3059,6 +3223,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutBucketWebsite {
         crate::error::PutBucketWebsiteError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_bucket_website_error(response)
         } else {
@@ -3090,6 +3256,8 @@ impl PutObject {
 impl aws_smithy_http::response::ParseStrictResponse for PutObject {
     type Output = std::result::Result<crate::output::PutObjectOutput, crate::error::PutObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_error(response)
         } else {
@@ -3183,6 +3351,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectAcl {
     type Output =
         std::result::Result<crate::output::PutObjectAclOutput, crate::error::PutObjectAclError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_acl_error(response)
         } else {
@@ -3217,6 +3387,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLegalHold {
         crate::error::PutObjectLegalHoldError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_legal_hold_error(response)
         } else {
@@ -3251,6 +3423,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectLockConfigurati
         crate::error::PutObjectLockConfigurationError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_lock_configuration_error(response)
         } else {
@@ -3285,6 +3459,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectRetention {
         crate::error::PutObjectRetentionError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_retention_error(response)
         } else {
@@ -3319,6 +3495,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutObjectTagging {
         crate::error::PutObjectTaggingError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_object_tagging_error(response)
         } else {
@@ -3353,6 +3531,8 @@ impl aws_smithy_http::response::ParseStrictResponse for PutPublicAccessBlock {
         crate::error::PutPublicAccessBlockError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_put_public_access_block_error(response)
         } else {
@@ -3385,6 +3565,8 @@ impl aws_smithy_http::response::ParseStrictResponse for RestoreObject {
     type Output =
         std::result::Result<crate::output::RestoreObjectOutput, crate::error::RestoreObjectError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_restore_object_error(response)
         } else {
@@ -3460,6 +3642,8 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadPart {
     type Output =
         std::result::Result<crate::output::UploadPartOutput, crate::error::UploadPartError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_upload_part_error(response)
         } else {
@@ -3492,6 +3676,8 @@ impl aws_smithy_http::response::ParseStrictResponse for UploadPartCopy {
     type Output =
         std::result::Result<crate::output::UploadPartCopyOutput, crate::error::UploadPartCopyError>;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_upload_part_copy_error(response)
         } else {
@@ -3526,6 +3712,8 @@ impl aws_smithy_http::response::ParseStrictResponse for WriteGetObjectResponse {
         crate::error::WriteGetObjectResponseError,
     >;
     fn parse(&self, response: &http::Response<bytes::Bytes>) -> Self::Output {
+        tracing::debug!(extended_request_id = ?crate::s3_request_id::RequestIdExt::extended_request_id(response));
+        tracing::debug!(request_id = ?aws_http::request_id::RequestId::request_id(response));
         if !response.status().is_success() && response.status().as_u16() != 200 {
             crate::operation_deser::parse_write_get_object_response_error(response)
         } else {

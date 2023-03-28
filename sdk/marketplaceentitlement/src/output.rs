@@ -10,6 +10,7 @@ pub struct GetEntitlementsOutput {
     /// <p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
     #[doc(hidden)]
     pub next_token: std::option::Option<std::string::String>,
+    _request_id: Option<String>,
 }
 impl GetEntitlementsOutput {
     /// <p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>
@@ -21,6 +22,11 @@ impl GetEntitlementsOutput {
         self.next_token.as_deref()
     }
 }
+impl aws_http::request_id::RequestId for GetEntitlementsOutput {
+    fn request_id(&self) -> Option<&str> {
+        self._request_id.as_deref()
+    }
+}
 /// See [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
 pub mod get_entitlements_output {
 
@@ -30,6 +36,7 @@ pub mod get_entitlements_output {
     pub struct Builder {
         pub(crate) entitlements: std::option::Option<std::vec::Vec<crate::model::Entitlement>>,
         pub(crate) next_token: std::option::Option<std::string::String>,
+        _request_id: Option<String>,
     }
     impl Builder {
         /// Appends an item to `entitlements`.
@@ -61,11 +68,21 @@ pub mod get_entitlements_output {
             self.next_token = input;
             self
         }
+        pub(crate) fn _request_id(mut self, request_id: impl Into<String>) -> Self {
+            self._request_id = Some(request_id.into());
+            self
+        }
+
+        pub(crate) fn _set_request_id(&mut self, request_id: Option<String>) -> &mut Self {
+            self._request_id = request_id;
+            self
+        }
         /// Consumes the builder and constructs a [`GetEntitlementsOutput`](crate::output::GetEntitlementsOutput).
         pub fn build(self) -> crate::output::GetEntitlementsOutput {
             crate::output::GetEntitlementsOutput {
                 entitlements: self.entitlements,
                 next_token: self.next_token,
+                _request_id: self._request_id,
             }
         }
     }

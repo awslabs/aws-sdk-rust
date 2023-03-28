@@ -6,8 +6,11 @@ pub fn parse_delete_report_definition_error(
     crate::output::DeleteReportDefinitionOutput,
     crate::error::DeleteReportDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DeleteReportDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -19,40 +22,40 @@ pub fn parse_delete_report_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalErrorException" => crate::error::DeleteReportDefinitionError {
-            meta: generic,
-            kind: crate::error::DeleteReportDefinitionErrorKind::InternalErrorException({
+        "InternalErrorException" => {
+            crate::error::DeleteReportDefinitionError::InternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::DeleteReportDefinitionError {
-            meta: generic,
-            kind: crate::error::DeleteReportDefinitionErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::DeleteReportDefinitionError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DeleteReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DeleteReportDefinitionError::generic(generic),
     })
 }
@@ -73,6 +76,9 @@ pub fn parse_delete_report_definition_response(
             output,
         )
         .map_err(crate::error::DeleteReportDefinitionError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -84,8 +90,11 @@ pub fn parse_describe_report_definitions_error(
     crate::output::DescribeReportDefinitionsOutput,
     crate::error::DescribeReportDefinitionsError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::DescribeReportDefinitionsError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -97,23 +106,23 @@ pub fn parse_describe_report_definitions_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalErrorException" => crate::error::DescribeReportDefinitionsError {
-            meta: generic,
-            kind: crate::error::DescribeReportDefinitionsErrorKind::InternalErrorException({
+        "InternalErrorException" => {
+            crate::error::DescribeReportDefinitionsError::InternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::DescribeReportDefinitionsError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::DescribeReportDefinitionsError::generic(generic),
     })
 }
@@ -134,6 +143,9 @@ pub fn parse_describe_report_definitions_response(
             output,
         )
         .map_err(crate::error::DescribeReportDefinitionsError::unhandled)?;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -145,8 +157,11 @@ pub fn parse_modify_report_definition_error(
     crate::output::ModifyReportDefinitionOutput,
     crate::error::ModifyReportDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::ModifyReportDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => {
@@ -158,40 +173,40 @@ pub fn parse_modify_report_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "InternalErrorException" => crate::error::ModifyReportDefinitionError {
-            meta: generic,
-            kind: crate::error::ModifyReportDefinitionErrorKind::InternalErrorException({
+        "InternalErrorException" => {
+            crate::error::ModifyReportDefinitionError::InternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::ModifyReportDefinitionError {
-            meta: generic,
-            kind: crate::error::ModifyReportDefinitionErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::ModifyReportDefinitionError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::ModifyReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::ModifyReportDefinitionError::generic(generic),
     })
 }
@@ -207,6 +222,9 @@ pub fn parse_modify_report_definition_response(
         #[allow(unused_mut)]
         let mut output = crate::output::modify_report_definition_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }
@@ -218,8 +236,11 @@ pub fn parse_put_report_definition_error(
     crate::output::PutReportDefinitionOutput,
     crate::error::PutReportDefinitionError,
 > {
-    let generic = crate::json_deser::parse_http_generic_error(response)
+    #[allow(unused_mut)]
+    let mut generic_builder = crate::json_deser::parse_http_error_metadata(response)
         .map_err(crate::error::PutReportDefinitionError::unhandled)?;
+    generic_builder = aws_http::request_id::apply_request_id(generic_builder, response.headers());
+    let generic = generic_builder.build();
     let error_code = match generic.code() {
         Some(code) => code,
         None => return Err(crate::error::PutReportDefinitionError::unhandled(generic)),
@@ -227,9 +248,8 @@ pub fn parse_put_report_definition_error(
 
     let _error_message = generic.message().map(|msg| msg.to_owned());
     Err(match error_code {
-        "DuplicateReportNameException" => crate::error::PutReportDefinitionError {
-            meta: generic,
-            kind: crate::error::PutReportDefinitionErrorKind::DuplicateReportNameException({
+        "DuplicateReportNameException" => {
+            crate::error::PutReportDefinitionError::DuplicateReportNameException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -237,34 +257,34 @@ pub fn parse_put_report_definition_error(
                         crate::error::duplicate_report_name_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_duplicate_report_name_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "InternalErrorException" => crate::error::PutReportDefinitionError {
-            meta: generic,
-            kind: crate::error::PutReportDefinitionErrorKind::InternalErrorException({
+            })
+        }
+        "InternalErrorException" => {
+            crate::error::PutReportDefinitionError::InternalErrorException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::internal_error_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_internal_error_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ReportLimitReachedException" => crate::error::PutReportDefinitionError {
-            meta: generic,
-            kind: crate::error::PutReportDefinitionErrorKind::ReportLimitReachedException({
+            })
+        }
+        "ReportLimitReachedException" => {
+            crate::error::PutReportDefinitionError::ReportLimitReachedException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
@@ -272,31 +292,32 @@ pub fn parse_put_report_definition_error(
                         crate::error::report_limit_reached_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_report_limit_reached_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
-        "ValidationException" => crate::error::PutReportDefinitionError {
-            meta: generic,
-            kind: crate::error::PutReportDefinitionErrorKind::ValidationException({
+            })
+        }
+        "ValidationException" => {
+            crate::error::PutReportDefinitionError::ValidationException({
                 #[allow(unused_mut)]
                 let mut tmp = {
                     #[allow(unused_mut)]
                     let mut output = crate::error::validation_exception::Builder::default();
                     let _ = response;
                     output = crate::json_deser::deser_structure_crate_error_validation_exception_json_err(response.body().as_ref(), output).map_err(crate::error::PutReportDefinitionError::unhandled)?;
+                    let output = output.meta(generic);
                     output.build()
                 };
                 if tmp.message.is_none() {
                     tmp.message = _error_message;
                 }
                 tmp
-            }),
-        },
+            })
+        }
         _ => crate::error::PutReportDefinitionError::generic(generic),
     })
 }
@@ -312,6 +333,9 @@ pub fn parse_put_report_definition_response(
         #[allow(unused_mut)]
         let mut output = crate::output::put_report_definition_output::Builder::default();
         let _ = response;
+        output._set_request_id(
+            aws_http::request_id::RequestId::request_id(response).map(str::to_string),
+        );
         output.build()
     })
 }

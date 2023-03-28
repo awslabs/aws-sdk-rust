@@ -27,15 +27,8 @@ pub enum Error {
     TooManyRequestsException(crate::error::TooManyRequestsException),
     /// <p>Amazon S3 throws this exception if you have too many tags in your tag set.</p>
     TooManyTagsException(crate::error::TooManyTagsException),
-    ///
     /// An unexpected error occurred (e.g., invalid JSON returned by the service or an unknown error code).
-    ///
-    /// When logging an error from the SDK, it is recommended that you either wrap the error in
-    /// [`DisplayErrorContext`](crate::types::DisplayErrorContext), use another
-    /// error reporter library that visits the error's cause/source chain, or call
-    /// [`Error::source`](std::error::Error::source) for more details about the underlying cause.
-    ///
-    Unhandled(crate::error::Unhandled),
+    Unhandled(aws_smithy_types::error::Unhandled),
 }
 impl std::fmt::Display for Error {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
@@ -67,16 +60,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateAccessPointError> for Error {
     fn from(err: crate::error::CreateAccessPointError) -> Self {
-        match err.kind {
-            crate::error::CreateAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::CreateAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -96,15 +94,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateAccessPointForObjectLambdaError> for Error {
     fn from(err: crate::error::CreateAccessPointForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::CreateAccessPointForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::CreateAccessPointForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -118,22 +123,27 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateBucketError> for Error {
     fn from(err: crate::error::CreateBucketError) -> Self {
-        match err.kind {
-            crate::error::CreateBucketErrorKind::BucketAlreadyExists(inner) => {
+        match err {
+            crate::error::CreateBucketError::BucketAlreadyExists(inner) => {
                 Error::BucketAlreadyExists(inner)
             }
-            crate::error::CreateBucketErrorKind::BucketAlreadyOwnedByYou(inner) => {
+            crate::error::CreateBucketError::BucketAlreadyOwnedByYou(inner) => {
                 Error::BucketAlreadyOwnedByYou(inner)
             }
-            crate::error::CreateBucketErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -146,28 +156,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateJobError> for Error {
     fn from(err: crate::error::CreateJobError) -> Self {
-        match err.kind {
-            crate::error::CreateJobErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::CreateJobError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::CreateJobErrorKind::IdempotencyException(inner) => {
+            crate::error::CreateJobError::IdempotencyException(inner) => {
                 Error::IdempotencyException(inner)
             }
-            crate::error::CreateJobErrorKind::InternalServiceException(inner) => {
+            crate::error::CreateJobError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::CreateJobErrorKind::TooManyRequestsException(inner) => {
+            crate::error::CreateJobError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::CreateJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::CreateJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -183,15 +198,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::CreateMultiRegionAccessPointError> for Error {
     fn from(err: crate::error::CreateMultiRegionAccessPointError) -> Self {
-        match err.kind {
-            crate::error::CreateMultiRegionAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::CreateMultiRegionAccessPointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -207,16 +229,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAccessPointError> for Error {
     fn from(err: crate::error::DeleteAccessPointError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::DeleteAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -236,15 +263,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAccessPointForObjectLambdaError> for Error {
     fn from(err: crate::error::DeleteAccessPointForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteAccessPointForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -261,16 +295,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAccessPointPolicyError> for Error {
     fn from(err: crate::error::DeleteAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::DeleteAccessPointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -294,15 +333,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteAccessPointPolicyForObjectLambdaError> for Error {
     fn from(err: crate::error::DeleteAccessPointPolicyForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::DeleteAccessPointPolicyForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteAccessPointPolicyForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -316,16 +362,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBucketError> for Error {
     fn from(err: crate::error::DeleteBucketError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::DeleteBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -346,15 +397,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBucketLifecycleConfigurationError> for Error {
     fn from(err: crate::error::DeleteBucketLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteBucketLifecycleConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -370,16 +428,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBucketPolicyError> for Error {
     fn from(err: crate::error::DeleteBucketPolicyError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::DeleteBucketPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -394,16 +457,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteBucketTaggingError> for Error {
     fn from(err: crate::error::DeleteBucketTaggingError) -> Self {
-        match err.kind {
-            crate::error::DeleteBucketTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::DeleteBucketTaggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -418,25 +486,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteJobTaggingError> for Error {
     fn from(err: crate::error::DeleteJobTaggingError) -> Self {
-        match err.kind {
-            crate::error::DeleteJobTaggingErrorKind::InternalServiceException(inner) => {
+        match err {
+            crate::error::DeleteJobTaggingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::DeleteJobTaggingErrorKind::NotFoundException(inner) => {
+            crate::error::DeleteJobTaggingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DeleteJobTaggingErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DeleteJobTaggingError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DeleteJobTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DeleteJobTaggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -452,15 +525,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteMultiRegionAccessPointError> for Error {
     fn from(err: crate::error::DeleteMultiRegionAccessPointError) -> Self {
-        match err.kind {
-            crate::error::DeleteMultiRegionAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteMultiRegionAccessPointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -477,16 +557,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeletePublicAccessBlockError> for Error {
     fn from(err: crate::error::DeletePublicAccessBlockError) -> Self {
-        match err.kind {
-            crate::error::DeletePublicAccessBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::DeletePublicAccessBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -506,15 +591,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteStorageLensConfigurationError> for Error {
     fn from(err: crate::error::DeleteStorageLensConfigurationError) -> Self {
-        match err.kind {
-            crate::error::DeleteStorageLensConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteStorageLensConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -539,15 +631,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DeleteStorageLensConfigurationTaggingError> for Error {
     fn from(err: crate::error::DeleteStorageLensConfigurationTaggingError) -> Self {
-        match err.kind {
-            crate::error::DeleteStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DeleteStorageLensConfigurationTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -561,28 +660,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeJobError> for Error {
     fn from(err: crate::error::DescribeJobError) -> Self {
-        match err.kind {
-            crate::error::DescribeJobErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::DescribeJobError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::DescribeJobErrorKind::InternalServiceException(inner) => {
+            crate::error::DescribeJobError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::DescribeJobErrorKind::NotFoundException(inner) => {
+            crate::error::DescribeJobError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::DescribeJobErrorKind::TooManyRequestsException(inner) => {
+            crate::error::DescribeJobError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::DescribeJobErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::DescribeJobError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -606,15 +710,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::DescribeMultiRegionAccessPointOperationError> for Error {
     fn from(err: crate::error::DescribeMultiRegionAccessPointOperationError) -> Self {
-        match err.kind {
-            crate::error::DescribeMultiRegionAccessPointOperationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::DescribeMultiRegionAccessPointOperationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -628,16 +739,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointError> for Error {
     fn from(err: crate::error::GetAccessPointError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetAccessPointError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -661,15 +777,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointConfigurationForObjectLambdaError> for Error {
     fn from(err: crate::error::GetAccessPointConfigurationForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointConfigurationForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetAccessPointConfigurationForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -686,15 +809,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointForObjectLambdaError> for Error {
     fn from(err: crate::error::GetAccessPointForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetAccessPointForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -711,16 +841,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointPolicyError> for Error {
     fn from(err: crate::error::GetAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetAccessPointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -744,15 +879,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointPolicyForObjectLambdaError> for Error {
     fn from(err: crate::error::GetAccessPointPolicyForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetAccessPointPolicyForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -769,15 +911,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointPolicyStatusError> for Error {
     fn from(err: crate::error::GetAccessPointPolicyStatusError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetAccessPointPolicyStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -802,15 +951,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetAccessPointPolicyStatusForObjectLambdaError> for Error {
     fn from(err: crate::error::GetAccessPointPolicyStatusForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::GetAccessPointPolicyStatusForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetAccessPointPolicyStatusForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -824,16 +980,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBucketError> for Error {
     fn from(err: crate::error::GetBucketError) -> Self {
-        match err.kind {
-            crate::error::GetBucketErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetBucketError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -853,15 +1014,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBucketLifecycleConfigurationError> for Error {
     fn from(err: crate::error::GetBucketLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetBucketLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetBucketLifecycleConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -875,16 +1043,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBucketPolicyError> for Error {
     fn from(err: crate::error::GetBucketPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetBucketPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetBucketPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -899,16 +1072,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBucketTaggingError> for Error {
     fn from(err: crate::error::GetBucketTaggingError) -> Self {
-        match err.kind {
-            crate::error::GetBucketTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetBucketTaggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -923,16 +1101,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetBucketVersioningError> for Error {
     fn from(err: crate::error::GetBucketVersioningError) -> Self {
-        match err.kind {
-            crate::error::GetBucketVersioningErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::GetBucketVersioningError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -945,25 +1128,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetJobTaggingError> for Error {
     fn from(err: crate::error::GetJobTaggingError) -> Self {
-        match err.kind {
-            crate::error::GetJobTaggingErrorKind::InternalServiceException(inner) => {
+        match err {
+            crate::error::GetJobTaggingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::GetJobTaggingErrorKind::NotFoundException(inner) => {
+            crate::error::GetJobTaggingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::GetJobTaggingErrorKind::TooManyRequestsException(inner) => {
+            crate::error::GetJobTaggingError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::GetJobTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetJobTaggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -979,15 +1167,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetMultiRegionAccessPointError> for Error {
     fn from(err: crate::error::GetMultiRegionAccessPointError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetMultiRegionAccessPointError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1008,15 +1203,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetMultiRegionAccessPointPolicyError> for Error {
     fn from(err: crate::error::GetMultiRegionAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetMultiRegionAccessPointPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1041,15 +1243,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetMultiRegionAccessPointPolicyStatusError> for Error {
     fn from(err: crate::error::GetMultiRegionAccessPointPolicyStatusError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointPolicyStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetMultiRegionAccessPointPolicyStatusError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1070,15 +1279,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetMultiRegionAccessPointRoutesError> for Error {
     fn from(err: crate::error::GetMultiRegionAccessPointRoutesError) -> Self {
-        match err.kind {
-            crate::error::GetMultiRegionAccessPointRoutesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetMultiRegionAccessPointRoutesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1095,19 +1311,24 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetPublicAccessBlockError> for Error {
     fn from(err: crate::error::GetPublicAccessBlockError) -> Self {
-        match err.kind {
-            crate::error::GetPublicAccessBlockErrorKind::NoSuchPublicAccessBlockConfiguration(
+        match err {
+            crate::error::GetPublicAccessBlockError::NoSuchPublicAccessBlockConfiguration(
                 inner,
             ) => Error::NoSuchPublicAccessBlockConfiguration(inner),
-            crate::error::GetPublicAccessBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::GetPublicAccessBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1123,15 +1344,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetStorageLensConfigurationError> for Error {
     fn from(err: crate::error::GetStorageLensConfigurationError) -> Self {
-        match err.kind {
-            crate::error::GetStorageLensConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetStorageLensConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1153,15 +1381,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::GetStorageLensConfigurationTaggingError> for Error {
     fn from(err: crate::error::GetStorageLensConfigurationTaggingError) -> Self {
-        match err.kind {
-            crate::error::GetStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::GetStorageLensConfigurationTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1177,16 +1412,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListAccessPointsError> for Error {
     fn from(err: crate::error::ListAccessPointsError) -> Self {
-        match err.kind {
-            crate::error::ListAccessPointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::ListAccessPointsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1206,15 +1446,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListAccessPointsForObjectLambdaError> for Error {
     fn from(err: crate::error::ListAccessPointsForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::ListAccessPointsForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::ListAccessPointsForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1228,25 +1475,30 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListJobsError> for Error {
     fn from(err: crate::error::ListJobsError) -> Self {
-        match err.kind {
-            crate::error::ListJobsErrorKind::InternalServiceException(inner) => {
+        match err {
+            crate::error::ListJobsError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::ListJobsErrorKind::InvalidNextTokenException(inner) => {
+            crate::error::ListJobsError::InvalidNextTokenException(inner) => {
                 Error::InvalidNextTokenException(inner)
             }
-            crate::error::ListJobsErrorKind::InvalidRequestException(inner) => {
+            crate::error::ListJobsError::InvalidRequestException(inner) => {
                 Error::InvalidRequestException(inner)
             }
-            crate::error::ListJobsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::ListJobsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1262,15 +1514,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListMultiRegionAccessPointsError> for Error {
     fn from(err: crate::error::ListMultiRegionAccessPointsError) -> Self {
-        match err.kind {
-            crate::error::ListMultiRegionAccessPointsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::ListMultiRegionAccessPointsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1286,16 +1545,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListRegionalBucketsError> for Error {
     fn from(err: crate::error::ListRegionalBucketsError) -> Self {
-        match err.kind {
-            crate::error::ListRegionalBucketsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::ListRegionalBucketsError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1311,15 +1575,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::ListStorageLensConfigurationsError> for Error {
     fn from(err: crate::error::ListStorageLensConfigurationsError) -> Self {
-        match err.kind {
-            crate::error::ListStorageLensConfigurationsErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::ListStorageLensConfigurationsError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1344,15 +1615,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutAccessPointConfigurationForObjectLambdaError> for Error {
     fn from(err: crate::error::PutAccessPointConfigurationForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::PutAccessPointConfigurationForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::PutAccessPointConfigurationForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1369,16 +1647,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutAccessPointPolicyError> for Error {
     fn from(err: crate::error::PutAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::PutAccessPointPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1402,15 +1685,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutAccessPointPolicyForObjectLambdaError> for Error {
     fn from(err: crate::error::PutAccessPointPolicyForObjectLambdaError) -> Self {
-        match err.kind {
-            crate::error::PutAccessPointPolicyForObjectLambdaErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::PutAccessPointPolicyForObjectLambdaError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1431,15 +1721,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutBucketLifecycleConfigurationError> for Error {
     fn from(err: crate::error::PutBucketLifecycleConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutBucketLifecycleConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::PutBucketLifecycleConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1453,16 +1750,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutBucketPolicyError> for Error {
     fn from(err: crate::error::PutBucketPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutBucketPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::PutBucketPolicyError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1477,16 +1779,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutBucketTaggingError> for Error {
     fn from(err: crate::error::PutBucketTaggingError) -> Self {
-        match err.kind {
-            crate::error::PutBucketTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::PutBucketTaggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1501,16 +1808,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutBucketVersioningError> for Error {
     fn from(err: crate::error::PutBucketVersioningError) -> Self {
-        match err.kind {
-            crate::error::PutBucketVersioningErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::PutBucketVersioningError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1523,28 +1835,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutJobTaggingError> for Error {
     fn from(err: crate::error::PutJobTaggingError) -> Self {
-        match err.kind {
-            crate::error::PutJobTaggingErrorKind::InternalServiceException(inner) => {
+        match err {
+            crate::error::PutJobTaggingError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::PutJobTaggingErrorKind::NotFoundException(inner) => {
+            crate::error::PutJobTaggingError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::PutJobTaggingErrorKind::TooManyRequestsException(inner) => {
+            crate::error::PutJobTaggingError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::PutJobTaggingErrorKind::TooManyTagsException(inner) => {
+            crate::error::PutJobTaggingError::TooManyTagsException(inner) => {
                 Error::TooManyTagsException(inner)
             }
-            crate::error::PutJobTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::PutJobTaggingError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1564,15 +1881,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutMultiRegionAccessPointPolicyError> for Error {
     fn from(err: crate::error::PutMultiRegionAccessPointPolicyError) -> Self {
-        match err.kind {
-            crate::error::PutMultiRegionAccessPointPolicyErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::PutMultiRegionAccessPointPolicyError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1589,16 +1913,21 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutPublicAccessBlockError> for Error {
     fn from(err: crate::error::PutPublicAccessBlockError) -> Self {
-        match err.kind {
-            crate::error::PutPublicAccessBlockErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+        match err {
+            crate::error::PutPublicAccessBlockError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1614,15 +1943,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutStorageLensConfigurationError> for Error {
     fn from(err: crate::error::PutStorageLensConfigurationError) -> Self {
-        match err.kind {
-            crate::error::PutStorageLensConfigurationErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::PutStorageLensConfigurationError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1644,15 +1980,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::PutStorageLensConfigurationTaggingError> for Error {
     fn from(err: crate::error::PutStorageLensConfigurationTaggingError) -> Self {
-        match err.kind {
-            crate::error::PutStorageLensConfigurationTaggingErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::PutStorageLensConfigurationTaggingError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1674,15 +2017,22 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::SubmitMultiRegionAccessPointRoutesError> for Error {
     fn from(err: crate::error::SubmitMultiRegionAccessPointRoutesError) -> Self {
-        match err.kind {
-            crate::error::SubmitMultiRegionAccessPointRoutesErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
+        match err {
+            crate::error::SubmitMultiRegionAccessPointRoutesError::Unhandled(inner) => {
+                Error::Unhandled(inner)
             }
         }
     }
@@ -1698,28 +2048,33 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateJobPriorityError> for Error {
     fn from(err: crate::error::UpdateJobPriorityError) -> Self {
-        match err.kind {
-            crate::error::UpdateJobPriorityErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateJobPriorityError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateJobPriorityErrorKind::InternalServiceException(inner) => {
+            crate::error::UpdateJobPriorityError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::UpdateJobPriorityErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateJobPriorityError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateJobPriorityErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateJobPriorityError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateJobPriorityErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateJobPriorityError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
@@ -1732,32 +2087,56 @@ where
             aws_smithy_http::result::SdkError::ServiceError(context) => {
                 Self::from(context.into_err())
             }
-            _ => Error::Unhandled(crate::error::Unhandled::new(err.into())),
+            _ => Error::Unhandled(
+                aws_smithy_types::error::Unhandled::builder()
+                    .meta(
+                        aws_smithy_types::error::metadata::ProvideErrorMetadata::meta(&err).clone(),
+                    )
+                    .source(err)
+                    .build(),
+            ),
         }
     }
 }
 impl From<crate::error::UpdateJobStatusError> for Error {
     fn from(err: crate::error::UpdateJobStatusError) -> Self {
-        match err.kind {
-            crate::error::UpdateJobStatusErrorKind::BadRequestException(inner) => {
+        match err {
+            crate::error::UpdateJobStatusError::BadRequestException(inner) => {
                 Error::BadRequestException(inner)
             }
-            crate::error::UpdateJobStatusErrorKind::InternalServiceException(inner) => {
+            crate::error::UpdateJobStatusError::InternalServiceException(inner) => {
                 Error::InternalServiceException(inner)
             }
-            crate::error::UpdateJobStatusErrorKind::JobStatusException(inner) => {
+            crate::error::UpdateJobStatusError::JobStatusException(inner) => {
                 Error::JobStatusException(inner)
             }
-            crate::error::UpdateJobStatusErrorKind::NotFoundException(inner) => {
+            crate::error::UpdateJobStatusError::NotFoundException(inner) => {
                 Error::NotFoundException(inner)
             }
-            crate::error::UpdateJobStatusErrorKind::TooManyRequestsException(inner) => {
+            crate::error::UpdateJobStatusError::TooManyRequestsException(inner) => {
                 Error::TooManyRequestsException(inner)
             }
-            crate::error::UpdateJobStatusErrorKind::Unhandled(inner) => {
-                Error::Unhandled(crate::error::Unhandled::new(inner.into()))
-            }
+            crate::error::UpdateJobStatusError::Unhandled(inner) => Error::Unhandled(inner),
         }
     }
 }
 impl std::error::Error for Error {}
+impl aws_http::request_id::RequestId for Error {
+    fn request_id(&self) -> Option<&str> {
+        match self {
+            Self::BadRequestException(e) => e.request_id(),
+            Self::BucketAlreadyExists(e) => e.request_id(),
+            Self::BucketAlreadyOwnedByYou(e) => e.request_id(),
+            Self::IdempotencyException(e) => e.request_id(),
+            Self::InternalServiceException(e) => e.request_id(),
+            Self::InvalidNextTokenException(e) => e.request_id(),
+            Self::InvalidRequestException(e) => e.request_id(),
+            Self::JobStatusException(e) => e.request_id(),
+            Self::NoSuchPublicAccessBlockConfiguration(e) => e.request_id(),
+            Self::NotFoundException(e) => e.request_id(),
+            Self::TooManyRequestsException(e) => e.request_id(),
+            Self::TooManyTagsException(e) => e.request_id(),
+            Self::Unhandled(e) => e.request_id(),
+        }
+    }
+}
